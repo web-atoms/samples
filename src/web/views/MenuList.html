@@ -1,0 +1,12 @@
+<AtomListBox.div
+    items="[ $viewModel.menuService.menus ]">
+    <div 
+        template="itemTemplate" 
+        event-click="{ () => this.data.click() }">
+        <span text="[$data.label]"></span>
+        <AtomItemsControl
+            style-display="[$data.expand ? '' : 'none']"
+            items="[$data.expand ? $data.children : [] ]"
+            item-template="{ __creator.itemTemplate }"></AtomItemsControl>
+    </div>
+</AtomListBox.div>

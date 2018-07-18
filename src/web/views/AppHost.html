@@ -1,0 +1,14 @@
+<script>
+    import { AppHostViewModel } from "../../view-models/AppHostViewModel";
+    import MenuList from "./MenuList";
+</script>
+<AtomGridView
+    view-model="{ this.resolve(AppHostViewModel) }"
+    columns="200, *"
+    rows="*">
+
+    <MenuList></MenuList>
+
+    <AtomTabbedPage row="0" column="1"></AtomTabbedPage>
+
+</AtomGridView>
