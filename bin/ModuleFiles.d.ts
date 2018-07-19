@@ -4,9 +4,9 @@ export declare const ModuleFiles: {
         "MenuList": string;
         "samples": {
             "viewPager": {
-                "ViewPager": string;
                 "Page1": string;
                 "Page2": string;
+                "ViewPager": string;
             };
         };
     };

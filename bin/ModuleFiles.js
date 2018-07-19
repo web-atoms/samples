@@ -16,9 +16,9 @@
             "MenuList": "web-atoms-samples/bin/{platform}/views/MenuList",
             "samples": {
                 "viewPager": {
-                    "ViewPager": "web-atoms-samples/bin/{platform}/views/samples/view-pager/ViewPager",
                     "Page1": "web-atoms-samples/bin/{platform}/views/samples/view-pager/Page1",
-                    "Page2": "web-atoms-samples/bin/{platform}/views/samples/view-pager/Page2"
+                    "Page2": "web-atoms-samples/bin/{platform}/views/samples/view-pager/Page2",
+                    "ViewPager": "web-atoms-samples/bin/{platform}/views/samples/view-pager/ViewPager"
                 }
             }
         }

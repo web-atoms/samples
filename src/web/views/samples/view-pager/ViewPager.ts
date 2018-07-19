@@ -1,9 +1,9 @@
 // tslint:disable
 import {BindableProperty} from "web-atoms-core/bin/core/BindableProperty";
+import {AtomListBox} from "web-atoms-core/bin/web/controls/AtomListBox";
 import {AtomViewPager} from "web-atoms-core/bin/web/controls/AtomViewPager";
 import {AtomGridView} from "web-atoms-core/bin/web/controls/AtomGridView";
 import {AtomControl} from "web-atoms-core/bin/web/controls/AtomControl";
-import {AtomListBox} from "web-atoms-core/bin/web/controls/AtomListBox";
 
     import { ViewPagerViewModel } from "./ViewPagerViewModel";
 
@@ -61,9 +61,14 @@ export default  class ViewPager extends AtomGridView {
             
             
             
+        e6.setPrimitiveValue(e6.element, "row", "1" );
+        
+
             e6.bind(e6.element, "items",  [["viewModel","pages"]], false , (v1) => (v1) );
 
-            e6.bind(e6.element, "value",  [["viewModel","currentPage"]], false , (v1) => (v1) );
+            e6.bind(e6.element, "value",  [["viewModel","currentPage"]], false , (v1) => {
+                return v1;
+            } );
             this.append(e6);
 
 

@@ -14,15 +14,15 @@ var __extends = (this && this.__extends) || (function () {
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "web-atoms-core/bin/web/controls/AtomViewPager", "web-atoms-core/bin/web/controls/AtomGridView", "web-atoms-core/bin/web/controls/AtomControl", "web-atoms-core/bin/web/controls/AtomListBox", "./ViewPagerViewModel"], factory);
+        define(["require", "exports", "web-atoms-core/bin/web/controls/AtomListBox", "web-atoms-core/bin/web/controls/AtomViewPager", "web-atoms-core/bin/web/controls/AtomGridView", "web-atoms-core/bin/web/controls/AtomControl", "./ViewPagerViewModel"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    var AtomListBox_1 = require("web-atoms-core/bin/web/controls/AtomListBox");
     var AtomViewPager_1 = require("web-atoms-core/bin/web/controls/AtomViewPager");
     var AtomGridView_1 = require("web-atoms-core/bin/web/controls/AtomGridView");
     var AtomControl_1 = require("web-atoms-core/bin/web/controls/AtomControl");
-    var AtomListBox_1 = require("web-atoms-core/bin/web/controls/AtomListBox");
     var ViewPagerViewModel_1 = require("./ViewPagerViewModel");
     var ViewPager = /** @class */ (function (_super) {
         __extends(ViewPager, _super);
@@ -49,8 +49,11 @@ var __extends = (this && this.__extends) || (function () {
             var e5 = document.createTextNode("\r\n\r\n    ");
             this.element.appendChild(e5);
             var e6 = new AtomViewPager_1.AtomViewPager(this.app);
+            e6.setPrimitiveValue(e6.element, "row", "1");
             e6.bind(e6.element, "items", [["viewModel", "pages"]], false, function (v1) { return (v1); });
-            e6.bind(e6.element, "value", [["viewModel", "currentPage"]], false, function (v1) { return (v1); });
+            e6.bind(e6.element, "value", [["viewModel", "currentPage"]], false, function (v1) {
+                return v1;
+            });
             this.append(e6);
             var e7 = document.createTextNode("\r\n");
             this.element.appendChild(e7);
