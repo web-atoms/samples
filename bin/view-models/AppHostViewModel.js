@@ -84,6 +84,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
                 return __generator(this, function (_a) {
                     ms = this.menuService;
                     ms.addLink("View Pager", "tab://app/" + ModuleFiles_1.ModuleFiles.views.samples.viewPager.ViewPager);
+                    ms.addLink("View Stack", "tab://app/" + ModuleFiles_1.ModuleFiles.views.samples.viewStack.ViewStack);
                     return [2 /*return*/];
                 });
             });

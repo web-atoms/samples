@@ -16,5 +16,6 @@ export class AppHostViewModel extends AtomViewModel {
     public async init(): Promise<any> {
         const ms = this.menuService;
         ms.addLink("View Pager", "tab://app/" + ModuleFiles.views.samples.viewPager.ViewPager);
+        ms.addLink("View Stack", "tab://app/" + ModuleFiles.views.samples.viewStack.ViewStack);
     }
 }

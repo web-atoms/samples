@@ -50,7 +50,9 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
         };
         MenuService.prototype.createLink = function (label, pageSrc, pageParameters, icon) {
             var nav = this.app.resolve(NavigationService_1.NavigationService);
-            var m = this.create(label, function () { return nav.openPage(pageSrc, pageParameters); }, icon);
+            var p = pageParameters || {};
+            p.title = p.title || label;
+            var m = this.create(label, function () { return nav.openPage(pageSrc, p); }, icon);
             return m;
         };
         MenuService.prototype.createGroup = function (label, icon) {

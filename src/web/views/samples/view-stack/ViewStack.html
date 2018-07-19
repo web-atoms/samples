@@ -1,0 +1,20 @@
+<AtomGridView 
+    properties="index: 0"
+    columns="*"
+    rows="50, *">
+
+    <div>
+        <button
+            enabled="[ $this.index ]"
+            event-click="{ () => this.index-- }">Previous</button>
+        <button
+            event-click="{ () => this.index++ }">Next</button>
+    </div>
+
+    <AtomViewStack 
+        row="1"
+        selected-index="[$this.index]">
+        <div>View 1</div>
+        <div>View 2</div>        
+    </AtomViewStack>
+</AtomGridView>

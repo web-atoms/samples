@@ -19,6 +19,9 @@
                     "Page1": "web-atoms-samples/bin/{platform}/views/samples/view-pager/Page1",
                     "Page2": "web-atoms-samples/bin/{platform}/views/samples/view-pager/Page2",
                     "ViewPager": "web-atoms-samples/bin/{platform}/views/samples/view-pager/ViewPager"
+                },
+                "viewStack": {
+                    "ViewStack": "web-atoms-samples/bin/{platform}/views/samples/view-stack/ViewStack"
                 }
             }
         }

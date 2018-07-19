@@ -39,7 +39,9 @@ export default class MenuService {
 
     public createLink(label: string, pageSrc: string, pageParameters?: INameValuePairs, icon?: string): MenuItem {
         const nav: NavigationService = this.app.resolve(NavigationService);
-        const m = this.create(label, () => nav.openPage(pageSrc, pageParameters), icon);
+        const p = pageParameters || {};
+        p.title = p.title || label;
+        const m = this.create(label, () => nav.openPage(pageSrc, p), icon);
         return m;
     }
 

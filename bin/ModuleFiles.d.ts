@@ -8,6 +8,9 @@ export declare const ModuleFiles: {
                 "Page2": string;
                 "ViewPager": string;
             };
+            "viewStack": {
+                "ViewStack": string;
+            };
         };
     };
 };
