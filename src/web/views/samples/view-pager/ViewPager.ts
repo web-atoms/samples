@@ -66,9 +66,7 @@ export default  class ViewPager extends AtomGridView {
 
             e6.bind(e6.element, "items",  [["viewModel","pages"]], false , (v1) => (v1) );
 
-            e6.bind(e6.element, "value",  [["viewModel","currentPage"]], false , (v1) => {
-                return v1;
-            } );
+            e6.bind(e6.element, "value",  [["viewModel","currentPage"]], false , (v1) => (v1) );
             this.append(e6);
 
 

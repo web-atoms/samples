@@ -51,9 +51,7 @@ var __extends = (this && this.__extends) || (function () {
             var e6 = new AtomViewPager_1.AtomViewPager(this.app);
             e6.setPrimitiveValue(e6.element, "row", "1");
             e6.bind(e6.element, "items", [["viewModel", "pages"]], false, function (v1) { return (v1); });
-            e6.bind(e6.element, "value", [["viewModel", "currentPage"]], false, function (v1) {
-                return v1;
-            });
+            e6.bind(e6.element, "value", [["viewModel", "currentPage"]], false, function (v1) { return (v1); });
             this.append(e6);
             var e7 = document.createTextNode("\r\n");
             this.element.appendChild(e7);
