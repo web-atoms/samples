@@ -53,14 +53,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
             var e4 = document.createElement("button");
             e2.appendChild(e4);
             this.bind(e4, "enabled", [["this", "index"]], false, function (v1) { return (v1); }, __creator);
-            this.setPrimitiveValue(e4, "eventClick", function () { return _this.index--; });
+            this.setPrimitiveValue(e4, "eventClick", function () { return _this.index = Math.max(0, _this.index - 1); });
             var e5 = document.createTextNode("Previous");
             e4.appendChild(e5);
             var e6 = document.createTextNode("\r\n        ");
             e2.appendChild(e6);
             var e7 = document.createElement("button");
             e2.appendChild(e7);
-            this.setPrimitiveValue(e7, "eventClick", function () { return _this.index++; });
+            this.setPrimitiveValue(e7, "eventClick", function () { return _this.index = Math.min(1, _this.index + 1); });
             var e8 = document.createTextNode("Next");
             e7.appendChild(e8);
             var e9 = document.createTextNode("\r\n    ");

@@ -46,7 +46,7 @@ export default  class ViewStack extends AtomGridView {
         
             this.bind(e4, "enabled",  [["this","index"]], false , (v1) => (v1) , __creator);
 
-                this.setPrimitiveValue(e4, "eventClick",  () => this.index-- );
+                this.setPrimitiveValue(e4, "eventClick",  () => this.index = Math.max(0, this.index - 1) );
         
         const e5 = document.createTextNode("Previous");
         
@@ -60,7 +60,7 @@ export default  class ViewStack extends AtomGridView {
         
         e2.appendChild(e7);
         
-                this.setPrimitiveValue(e7, "eventClick",  () => this.index++ );
+                this.setPrimitiveValue(e7, "eventClick",  () => this.index = Math.min(1, this.index + 1 ) );
         
         const e8 = document.createTextNode("Next");
         

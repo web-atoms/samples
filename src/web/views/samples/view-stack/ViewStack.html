@@ -6,9 +6,9 @@
     <div>
         <button
             enabled="[ $this.index ]"
-            event-click="{ () => this.index-- }">Previous</button>
+            event-click="{ () => this.index = Math.max(0, this.index - 1) }">Previous</button>
         <button
-            event-click="{ () => this.index++ }">Next</button>
+            event-click="{ () => this.index = Math.min(1, this.index + 1 ) }">Next</button>
     </div>
 
     <AtomViewStack 
