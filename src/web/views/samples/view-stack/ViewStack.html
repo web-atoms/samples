@@ -1,20 +1,22 @@
+<script>
+    import { ViewStackViewModel } from "./ViewStackViewModel";
+</script>
 <AtomGridView 
-    properties="index: 0"
+    view-model="{ this.resolve(ViewStackViewModel) }"
     columns="*"
     rows="50, *">
 
     <div>
-        <button
-            enabled="[ $this.index ]"
-            event-click="{ () => this.index = Math.max(0, this.index - 1) }">Previous</button>
-        <button
-            event-click="{ () => this.index = Math.min(1, this.index + 1 ) }">Next</button>
+        <AtomToggleButtonBar
+            items="{ $viewModel.items }"
+            value="$[viewModel.index]"></AtomToggleButtonBar>
     </div>
 
     <AtomViewStack 
         row="1"
-        selected-index="[$this.index]">
+        selected-index="[$viewModel.index]">
         <div>View 1</div>
-        <div>View 2</div>        
+        <div>View 2</div>  
+        <div>View 3</div>        
     </AtomViewStack>
 </AtomGridView>
