@@ -1,5 +1,5 @@
-import { BindableProperty } from "web-atoms-core/bin/core/BindableProperty";
-import { AtomViewModel } from "web-atoms-core/bin/view-model/AtomViewModel";
+import { BindableProperty } from "web-atoms-core/dist/core/BindableProperty";
+import { AtomViewModel } from "web-atoms-core/dist/view-model/AtomViewModel";
 import { ModuleFiles } from "../../../../ModuleFiles";
 
 export class ViewPagerViewModel extends AtomViewModel {

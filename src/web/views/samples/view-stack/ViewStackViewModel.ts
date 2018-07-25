@@ -1,4 +1,4 @@
-import { AtomViewModel } from "web-atoms-core/bin/view-model/AtomViewModel";
+import { AtomViewModel } from "web-atoms-core/dist/view-model/AtomViewModel";
 
 export class ViewStackViewModel extends AtomViewModel {
 

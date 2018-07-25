@@ -1,10 +1,10 @@
-import { App } from "web-atoms-core/bin/App";
-import { AtomList } from "web-atoms-core/bin/core/AtomList";
-import { BindableProperty } from "web-atoms-core/bin/core/BindableProperty";
-import { INameValuePairs } from "web-atoms-core/bin/core/types";
-import { Inject } from "web-atoms-core/bin/di/Inject";
-import { RegisterSingleton } from "web-atoms-core/bin/di/RegisterSingleton";
-import { NavigationService } from "web-atoms-core/bin/services/NavigationService";
+import { App } from "web-atoms-core/dist/App";
+import { AtomList } from "web-atoms-core/dist/core/AtomList";
+import { BindableProperty } from "web-atoms-core/dist/core/BindableProperty";
+import { INameValuePairs } from "web-atoms-core/dist/core/types";
+import { Inject } from "web-atoms-core/dist/di/Inject";
+import { RegisterSingleton } from "web-atoms-core/dist/di/RegisterSingleton";
+import { NavigationService } from "web-atoms-core/dist/services/NavigationService";
 import MenuItem from "../models/MenuItem";
 
 @RegisterSingleton

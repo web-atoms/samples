@@ -1,8 +1,8 @@
 // tslint:disable
-import {BindableProperty} from "web-atoms-core/bin/core/BindableProperty";
-import {AtomListBox} from "web-atoms-core/bin/web/controls/AtomListBox";
-import {AtomItemsControl} from "web-atoms-core/bin/web/controls/AtomItemsControl";
-import {AtomControl} from "web-atoms-core/bin/web/controls/AtomControl";
+import {BindableProperty} from "web-atoms-core/dist/core/BindableProperty";
+import {AtomListBox} from "web-atoms-core/dist/web/controls/AtomListBox";
+import {AtomItemsControl} from "web-atoms-core/dist/web/controls/AtomItemsControl";
+import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 export default  class MenuList extends AtomListBox {
 
                 

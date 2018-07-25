@@ -1,5 +1,5 @@
-import { Atom } from "web-atoms-core/bin/Atom";
-import WebApp from "web-atoms-core/bin/web/WebApp";
+import { Atom } from "web-atoms-core/dist/Atom";
+import WebApp from "web-atoms-core/dist/web/WebApp";
 import AppHost from "./views/AppHost";
 
 export default class DemoApp extends WebApp {

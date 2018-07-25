@@ -1,9 +1,9 @@
 // tslint:disable
-import {BindableProperty} from "web-atoms-core/bin/core/BindableProperty";
-import {AtomListBox} from "web-atoms-core/bin/web/controls/AtomListBox";
-import {AtomViewPager} from "web-atoms-core/bin/web/controls/AtomViewPager";
-import {AtomGridView} from "web-atoms-core/bin/web/controls/AtomGridView";
-import {AtomControl} from "web-atoms-core/bin/web/controls/AtomControl";
+import {BindableProperty} from "web-atoms-core/dist/core/BindableProperty";
+import {AtomListBox} from "web-atoms-core/dist/web/controls/AtomListBox";
+import {AtomViewPager} from "web-atoms-core/dist/web/controls/AtomViewPager";
+import {AtomGridView} from "web-atoms-core/dist/web/controls/AtomGridView";
+import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 
     import { ViewPagerViewModel } from "./ViewPagerViewModel";
 

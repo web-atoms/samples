@@ -1,6 +1,6 @@
-import { App } from "web-atoms-core/bin/App";
-import { AtomList } from "web-atoms-core/bin/core/AtomList";
-import { INameValuePairs } from "web-atoms-core/bin/core/types";
+import { App } from "web-atoms-core/dist/App";
+import { AtomList } from "web-atoms-core/dist/core/AtomList";
+import { INameValuePairs } from "web-atoms-core/dist/core/types";
 import MenuService from "../services/MenuService";
 
 export default class MenuItem {

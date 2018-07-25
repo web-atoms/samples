@@ -1,6 +1,6 @@
-import { App } from "web-atoms-core/bin/App";
-import { Inject } from "web-atoms-core/bin/di/Inject";
-import { AtomViewModel } from "web-atoms-core/bin/view-model/AtomViewModel";
+import { App } from "web-atoms-core/dist/App";
+import { Inject } from "web-atoms-core/dist/di/Inject";
+import { AtomViewModel } from "web-atoms-core/dist/view-model/AtomViewModel";
 import { ModuleFiles } from "../ModuleFiles";
 import MenuService from "../services/MenuService";
 

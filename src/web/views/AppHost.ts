@@ -1,7 +1,7 @@
 // tslint:disable
-import {BindableProperty} from "web-atoms-core/bin/core/BindableProperty";
-import {AtomTabbedPage} from "web-atoms-core/bin/web/controls/AtomTabbedPage";
-import {AtomGridView} from "web-atoms-core/bin/web/controls/AtomGridView";
+import {BindableProperty} from "web-atoms-core/dist/core/BindableProperty";
+import {AtomTabbedPage} from "web-atoms-core/dist/web/controls/AtomTabbedPage";
+import {AtomGridView} from "web-atoms-core/dist/web/controls/AtomGridView";
 
     import { AppHostViewModel } from "../../view-models/AppHostViewModel";
     import MenuList from "./MenuList";
