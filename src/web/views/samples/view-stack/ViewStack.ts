@@ -20,7 +20,7 @@ export default  class ViewStack extends AtomGridView {
                     
                     
                     
-                this.setPrimitiveValue(this.element, "viewModel",  this.resolve(ViewStackViewModel) );
+                this.viewModel =  this.resolve(ViewStackViewModel) ;
 
         this.setPrimitiveValue(this.element, "columns", "*" );
         

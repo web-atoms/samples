@@ -12,7 +12,6 @@
     UMD = UMD || { resolvePath: function (v) { return v; } };
     exports.ModuleFiles = {
         "views": {
-            "AppHost": "web-atoms-samples/dist/{platform}/views/AppHost",
             "MenuList": "web-atoms-samples/dist/{platform}/views/MenuList",
             "samples": {
                 "viewPager": {
@@ -23,7 +22,8 @@
                 "viewStack": {
                     "ViewStack": "web-atoms-samples/dist/{platform}/views/samples/view-stack/ViewStack"
                 }
-            }
+            },
+            "AppHost": "web-atoms-samples/dist/{platform}/views/AppHost"
         }
     };
 });

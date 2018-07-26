@@ -32,7 +32,7 @@ var __extends = (this && this.__extends) || (function () {
             var _this = this;
             _super.prototype.create.call(this);
             var __creator = this;
-            this.setPrimitiveValue(this.element, "viewModel", this.resolve(ViewStackViewModel_1.ViewStackViewModel));
+            this.viewModel = this.resolve(ViewStackViewModel_1.ViewStackViewModel);
             this.setPrimitiveValue(this.element, "columns", "*");
             this.setPrimitiveValue(this.element, "rows", "50, *");
             var e1 = document.createTextNode("\r\n\r\n    ");

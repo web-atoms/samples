@@ -20,7 +20,7 @@ export default  class AppHost extends AtomGridView {
                     
                     
                     
-                this.setPrimitiveValue(this.element, "viewModel",  this.resolve(AppHostViewModel) );
+                this.viewModel =  this.resolve(AppHostViewModel) ;
 
         this.setPrimitiveValue(this.element, "columns", "200, *" );
         

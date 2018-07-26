@@ -1,6 +1,5 @@
 export declare const ModuleFiles: {
     "views": {
-        "AppHost": string;
         "MenuList": string;
         "samples": {
             "viewPager": {
@@ -12,5 +11,6 @@ export declare const ModuleFiles: {
                 "ViewStack": string;
             };
         };
+        "AppHost": string;
     };
 };

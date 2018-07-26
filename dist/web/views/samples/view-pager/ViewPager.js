@@ -34,7 +34,7 @@ var __extends = (this && this.__extends) || (function () {
             var __creator = this;
             this.setPrimitiveValue(this.element, "columns", "*");
             this.setPrimitiveValue(this.element, "rows", "50, *");
-            this.setPrimitiveValue(this.element, "viewModel", this.resolve(ViewPagerViewModel_1.ViewPagerViewModel));
+            this.viewModel = this.resolve(ViewPagerViewModel_1.ViewPagerViewModel);
             var e1 = document.createTextNode("\r\n\r\n    ");
             this.element.appendChild(e1);
             var e2 = new AtomListBox_1.AtomListBox(this.app, document.createElement("div"));

@@ -18,6 +18,6 @@
   "homepage": "https://github.com/neurospeech/web-atoms-samples#readme",
   "dependencies": {
     "web-atoms-amd-loader": "^1.0.17",
-    "web-atoms-core": "^1.0.279"
+    "web-atoms-core": "^1.0.282"
   }
 }

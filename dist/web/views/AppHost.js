@@ -31,7 +31,7 @@ var __extends = (this && this.__extends) || (function () {
         AppHost.prototype.create = function () {
             _super.prototype.create.call(this);
             var __creator = this;
-            this.setPrimitiveValue(this.element, "viewModel", this.resolve(AppHostViewModel_1.AppHostViewModel));
+            this.viewModel = this.resolve(AppHostViewModel_1.AppHostViewModel);
             this.setPrimitiveValue(this.element, "columns", "200, *");
             this.setPrimitiveValue(this.element, "rows", "*");
             var e1 = document.createTextNode("\r\n\r\n    ");

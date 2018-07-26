@@ -27,7 +27,7 @@ export default  class ViewPager extends AtomGridView {
         this.setPrimitiveValue(this.element, "rows", "50, *" );
         
 
-                this.setPrimitiveValue(this.element, "viewModel",  this.resolve(ViewPagerViewModel) );
+                this.viewModel =  this.resolve(ViewPagerViewModel) ;
                     
         const e1 = document.createTextNode("\r\n\r\n    ");
         
