@@ -1,8 +1,7 @@
 <html>
     <head>
         <title>Web Atoms Core Samples</title>
-        <script type="text/javascript" src="./node_modules/systemjs/dist/system.src.js"></script>
-        <script type="text/javascript" src="./node_modules/web-atoms-core/umd.js"></script>
+        <script type="text/javascript" src="./node_modules/web-atoms-amd-loader/umd.js"></script>
     </head>
     <body>
         <script type="text/javascript">
@@ -10,7 +9,7 @@
             UMD.map("web-atoms-core", "./node_modules/web-atoms-core");
             UMD.map("web-atoms-samples", "./");
 
-            UMD.load("web-atoms-samples/bin/web/DemoApp.js").then(function (m) {
+            UMD.load("web-atoms-samples/dist/web/DemoApp.js").then(function (m) {
                 var app = new (m.default)();
             });
         </script>

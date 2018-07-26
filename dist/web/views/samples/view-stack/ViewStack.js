@@ -14,14 +14,14 @@ var __extends = (this && this.__extends) || (function () {
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "web-atoms-core/dist/web/controls/AtomViewStack", "web-atoms-core/dist/web/controls/AtomGridView", "web-atoms-core/dist/web/controls/AtomToggleButtonBar", "./ViewStackViewModel"], factory);
+        define(["require", "exports", "web-atoms-core/dist/web/controls/AtomToggleButtonBar", "web-atoms-core/dist/web/controls/AtomViewStack", "web-atoms-core/dist/web/controls/AtomGridView", "./ViewStackViewModel"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    var AtomToggleButtonBar_1 = require("web-atoms-core/dist/web/controls/AtomToggleButtonBar");
     var AtomViewStack_1 = require("web-atoms-core/dist/web/controls/AtomViewStack");
     var AtomGridView_1 = require("web-atoms-core/dist/web/controls/AtomGridView");
-    var AtomToggleButtonBar_1 = require("web-atoms-core/dist/web/controls/AtomToggleButtonBar");
     var ViewStackViewModel_1 = require("./ViewStackViewModel");
     var ViewStack = /** @class */ (function (_super) {
         __extends(ViewStack, _super);

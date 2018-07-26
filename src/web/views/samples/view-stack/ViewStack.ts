@@ -1,8 +1,8 @@
 // tslint:disable
 import {BindableProperty} from "web-atoms-core/dist/core/BindableProperty";
+import {AtomToggleButtonBar} from "web-atoms-core/dist/web/controls/AtomToggleButtonBar";
 import {AtomViewStack} from "web-atoms-core/dist/web/controls/AtomViewStack";
 import {AtomGridView} from "web-atoms-core/dist/web/controls/AtomGridView";
-import {AtomToggleButtonBar} from "web-atoms-core/dist/web/controls/AtomToggleButtonBar";
 
     import { ViewStackViewModel } from "./ViewStackViewModel";
 
