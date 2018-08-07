@@ -17,9 +17,9 @@
             Text="Sample"
             />
         <Label
-            x:Name="label1"
             Grid.Row="1"
             Grid.Column="1"
+            Text="@{ $viewModel.title }"
         />
     </Grid>
 </ContentPage>
