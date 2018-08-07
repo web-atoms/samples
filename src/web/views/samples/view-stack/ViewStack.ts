@@ -49,7 +49,7 @@ export default  class ViewStack extends AtomGridView {
             e4.setLocalValue(e4.element, "items", (this.viewModel.items)) );
 
             e4.bind(e4.element, "value",  [["viewModel","index"]], true  );
-            this.append(e4);
+            e2.appendChild(e4.element);
 
 
         const e5 = document.createTextNode("\r\n    ");
