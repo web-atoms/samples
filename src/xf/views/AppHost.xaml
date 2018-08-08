@@ -19,7 +19,7 @@
         <Label
             Grid.Row="1"
             Grid.Column="1"
-            Text="@{ $viewModel.title }"
+            Text="{{ $viewModel.title }"
         />
     </Grid>
 </ContentPage>

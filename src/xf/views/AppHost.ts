@@ -31,13 +31,18 @@
 	    
 	    <Label Text="Sample"/>
 	    
-	    <Label Grid.Row="1" Grid.Column="1"/>
+	    <Label Grid.Row="1" Grid.Column="1" x:Name="e1"/>
 	    
 	  </Grid>
 	  
 	</ContentPage>`);
 
                     
+            const e1 = this.find("e1");
+            
+            this.runAfterInit( () =>
+            this.setLocalValue(e1, "Text", (this.viewModel.title)) );
+
                 }
             }
 
