@@ -1,25 +1,31 @@
-<ContentPage
+<MasterDetailPage
         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-        xmlns="http://xamarin.com/schemas/2014/forms">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
+        xmlns="http://xamarin.com/schemas/2014/forms"
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Label
-            Text="Sample"
-            />
-        <Label
-            Grid.Row="1"
-            Grid.Column="1"
-            Text="{{ $viewModel.title }"
-        />
-    </Grid>
-</ContentPage>
+        xmlns:import-def="http://schema.neurospeech.com/web-atoms-core/js-import-default"
+        xmlns:import="http://schema.neurospeech.com/web-atoms-core/js-import"
+
+        import:AppHostViewModel="~src/view-models/AppHostViewModel"
+
+        viewModel="{{ this.resolve(AppHostViewModel) }"
+    >
+    <MasterDetailPage.Master>
+        <ContentPage>
+            <ListView
+                ItemsSource="[$viewModel.menuService.menus]">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Label
+                            Text="{{$data.label}"
+                            />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <ContentPage>
+            <Label Text="Loading..."/>
+        </ContentPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>
