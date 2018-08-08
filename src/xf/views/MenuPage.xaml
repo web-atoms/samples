@@ -1,0 +1,14 @@
+<ContentPage
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+        xmlns="http://xamarin.com/schemas/2014/forms">
+    <ListView
+        ItemsSource="[$viewModel.menuService.menus]">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <Label
+                    Text="{{$data.label}"
+                    />
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>
