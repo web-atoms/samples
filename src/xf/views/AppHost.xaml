@@ -2,13 +2,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
         xmlns="http://xamarin.com/schemas/2014/forms"
 
-        xmlns:AppHostViewModel="js-import-def:~src/view-models/AppHostViewModel"
-        xmlns:MenuPageNS="js-import-def:~src/xf/views/MenuPage"
+        xmlns:AppHostViewModel="js-import:~src/view-models/AppHostViewModel"
+        xmlns:MenuPage="js-import-def:~src/xf/views/MenuPage"
 
         viewModel="{{ this.resolve(AppHostViewModel) }"
     >
     <MasterDetailPage.Master>
-        <MenuPageNS:MenuPage/>
+        <MenuPage:MenuPage/>
     </MasterDetailPage.Master>
     <MasterDetailPage.Detail>
         <ContentPage>
