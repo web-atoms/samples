@@ -10,9 +10,11 @@ import MenuPage from "./MenuPage";
                 protected create(): void {
                     super.create();
 
+                    this.element = this.createControl("Xamarin.Forms.MasterDetailPage");
+
                     this.setImport(this.element,"MenuPage",() => new MenuPage(this.app));
 
-                    this.loadXaml(`	<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:atom="clr-namespace:WebAtoms;assembly=WebAtoms" x:Name="e1">
+                    this.loadXaml(`	<MasterDetailPage xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:atom="clr-namespace:WebAtoms;assembly=WebAtoms" x:Name="e1">
 	  
 	  <MasterDetailPage.Master>
 	    
@@ -22,7 +24,7 @@ import MenuPage from "./MenuPage";
 	  
 	  <MasterDetailPage.Detail>
 	    
-	    <ContentPage>
+	    <ContentPage Title="Test Detail">
 	      
 	      <Label Text="Loading..."/>
 	      

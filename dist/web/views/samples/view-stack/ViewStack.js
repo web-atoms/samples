@@ -46,7 +46,7 @@ var __extends = (this && this.__extends) || (function () {
                 return e4.setLocalValue(e4.element, "items", (_this.viewModel.items));
             });
             e4.bind(e4.element, "value", [["viewModel", "index"]], true);
-            this.append(e4);
+            e2.appendChild(e4.element);
             var e5 = document.createTextNode("\r\n    ");
             e2.appendChild(e5);
             var e6 = document.createTextNode("\r\n\r\n    ");

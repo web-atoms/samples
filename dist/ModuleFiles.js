@@ -23,7 +23,8 @@
                     "ViewStack": "web-atoms-samples/dist/{platform}/views/samples/view-stack/ViewStack"
                 }
             },
-            "AppHost": "web-atoms-samples/dist/{platform}/views/AppHost"
+            "AppHost": "web-atoms-samples/dist/{platform}/views/AppHost",
+            "MenuPage": "web-atoms-samples/dist/{platform}/views/MenuPage"
         }
     };
 });

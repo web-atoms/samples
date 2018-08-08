@@ -9,9 +9,11 @@
                 protected create(): void {
                     super.create();
 
+                    this.element = this.createControl("Xamarin.Forms.ContentPage");
+
                     
 
-                    this.loadXaml(`	<ContentPage xmlns="http://xamarin.com/schemas/2014/forms">
+                    this.loadXaml(`	<ContentPage xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns="http://xamarin.com/schemas/2014/forms" Title="Test">
 	  
 	  <ListView x:Name="e1">
 	    
@@ -38,6 +40,8 @@ function Root_e1_Creator(__creator: any): any {
 
                 protected create(): void {
                     super.create();
+
+                    this.element = this.createControl("Xamarin.Forms.Label");
 
                     
 
