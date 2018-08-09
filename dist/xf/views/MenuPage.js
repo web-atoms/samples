@@ -49,7 +49,7 @@ var __extends = (this && this.__extends) || (function () {
                 var _this = this;
                 _super.prototype.create.call(this);
                 this.element = this.createControl("Xamarin.Forms.Label");
-                this.loadXaml("\t<Label x:Name=\"e1\"/>");
+                this.loadXaml("\t<Label xmlns:x=\"http://schemas.microsoft.com/winfx/2009/xaml\" xmlns=\"http://xamarin.com/schemas/2014/forms\" x:Name=\"e1\"/>");
                 var e1 = this.find("e1");
                 this.runAfterInit(function () {
                     return _this.setLocalValue(e1, "Text", (_this.data.label));

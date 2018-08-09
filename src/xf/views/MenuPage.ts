@@ -45,7 +45,7 @@ function Root_e1_Creator(__creator: any): any {
 
                     
 
-                    this.loadXaml(`	<Label x:Name="e1"/>`);
+                    this.loadXaml(`	<Label xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns="http://xamarin.com/schemas/2014/forms" x:Name="e1"/>`);
 
                     
             const e1 = this.find("e1");
