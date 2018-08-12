@@ -53,6 +53,8 @@ function Root_e1_Creator(__creator: any): any {
             this.runAfterInit( () =>
             this.setLocalValue(e1, "Text", (this.data.label)) );
 
+                this.setPrimitiveValue(e1, "eventTapGesture",  () => this.data.click() );
+
                 }
             }
 

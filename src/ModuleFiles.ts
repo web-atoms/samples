@@ -16,6 +16,7 @@
       }
     },
     "AppHost": "web-atoms-samples/dist/{platform}/views/AppHost",
-    "MenuPage": "web-atoms-samples/dist/{platform}/views/MenuPage"
+    "MenuPage": "web-atoms-samples/dist/{platform}/views/MenuPage",
+    "Start": "web-atoms-samples/dist/{platform}/views/Start"
   }
 }

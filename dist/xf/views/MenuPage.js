@@ -54,6 +54,7 @@ var __extends = (this && this.__extends) || (function () {
                 this.runAfterInit(function () {
                     return _this.setLocalValue(e1, "Text", (_this.data.label));
                 });
+                this.setPrimitiveValue(e1, "eventTapGesture", function () { return _this.data.click(); });
             };
             return Root_e1;
         }(AtomXFControl_1.AtomXFControl));

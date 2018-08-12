@@ -13,5 +13,6 @@ export declare const ModuleFiles: {
         };
         "AppHost": string;
         "MenuPage": string;
+        "Start": string;
     };
 };

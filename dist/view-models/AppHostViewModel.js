@@ -61,39 +61,49 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "web-atoms-core/dist/App", "web-atoms-core/dist/di/Inject", "web-atoms-core/dist/view-model/AtomViewModel", "../ModuleFiles", "../services/MenuService"], factory);
+        define(["require", "exports", "web-atoms-core/dist/App", "web-atoms-core/dist/di/Inject", "web-atoms-core/dist/services/NavigationService", "web-atoms-core/dist/view-model/AtomViewModel", "../ModuleFiles", "../services/MenuService"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var App_1 = require("web-atoms-core/dist/App");
     var Inject_1 = require("web-atoms-core/dist/di/Inject");
+    var NavigationService_1 = require("web-atoms-core/dist/services/NavigationService");
     var AtomViewModel_1 = require("web-atoms-core/dist/view-model/AtomViewModel");
     var ModuleFiles_1 = require("../ModuleFiles");
     var MenuService_1 = require("../services/MenuService");
     var AppHostViewModel = /** @class */ (function (_super) {
         __extends(AppHostViewModel, _super);
-        function AppHostViewModel(app, menuService) {
+        function AppHostViewModel(app, menuService, navigationService) {
             var _this = _super.call(this, app) || this;
             _this.menuService = menuService;
+            _this.navigationService = navigationService;
             return _this;
         }
         AppHostViewModel.prototype.init = function () {
             return __awaiter(this, void 0, void 0, function () {
                 var ms;
                 return __generator(this, function (_a) {
-                    ms = this.menuService;
-                    ms.addLink("View Pager", "tab://app/" + ModuleFiles_1.ModuleFiles.views.samples.viewPager.ViewPager);
-                    ms.addLink("View Stack", "tab://app/" + ModuleFiles_1.ModuleFiles.views.samples.viewStack.ViewStack);
-                    return [2 /*return*/];
+                    switch (_a.label) {
+                        case 0:
+                            ms = this.menuService;
+                            ms.addLink("View Pager", "tab://app/" + ModuleFiles_1.ModuleFiles.views.samples.viewPager.ViewPager);
+                            ms.addLink("View Stack", "tab://app/" + ModuleFiles_1.ModuleFiles.views.samples.viewStack.ViewStack);
+                            return [4 /*yield*/, this.navigationService.openPage("tab://app/" + ModuleFiles_1.ModuleFiles.views.Start)];
+                        case 1:
+                            _a.sent();
+                            return [2 /*return*/];
+                    }
                 });
             });
         };
         AppHostViewModel = __decorate([
             __param(0, Inject_1.Inject),
             __param(1, Inject_1.Inject),
+            __param(2, Inject_1.Inject),
             __metadata("design:paramtypes", [App_1.App,
-                MenuService_1.default])
+                MenuService_1.default,
+                NavigationService_1.NavigationService])
         ], AppHostViewModel);
         return AppHostViewModel;
     }(AtomViewModel_1.AtomViewModel));

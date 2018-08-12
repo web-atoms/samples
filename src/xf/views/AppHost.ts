@@ -24,7 +24,7 @@ import MenuPage from "./MenuPage";
 	  
 	  <MasterDetailPage.Detail>
 	    
-	    <ContentPage Title="Test Detail">
+	    <ContentPage>
 	      
 	      <Label Text="Loading..."/>
 	      

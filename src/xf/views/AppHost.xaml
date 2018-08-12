@@ -11,7 +11,7 @@
         <MenuPage:MenuPage/>
     </MasterDetailPage.Master>
     <MasterDetailPage.Detail>
-        <ContentPage Title="Test Detail">
+        <ContentPage>
             <Label Text="Loading..."/>
         </ContentPage>
     </MasterDetailPage.Detail>
