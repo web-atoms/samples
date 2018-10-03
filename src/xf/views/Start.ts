@@ -1,6 +1,6 @@
 // tslint:disable
-        import { AtomXFControl } from "web-atoms-core/dist/xf/controls/AtomXFControl";
-            
+            import { AtomXFControl } from "web-atoms-core/dist/xf/controls/AtomXFControl";
+                
 
         
 

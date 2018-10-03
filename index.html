@@ -8,10 +8,8 @@
             UMD.map("reflect-metadata", "./node_modules/reflect-metadata/Reflect.js");
             UMD.map("web-atoms-core", "./node_modules/web-atoms-core");
             UMD.map("web-atoms-samples", "./");
-
-            UMD.load("web-atoms-samples/dist/web/DemoApp.js").then(function (m) {
-                var app = new (m.default)();
-            });
+            UMD.lang = "en-US";
+            UMD.loadView("web-atoms-samples/dist/web/views/AppHost", true);
         </script>
     </body>
 </html>

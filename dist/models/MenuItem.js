@@ -35,6 +35,9 @@
             this.children.add(m);
             return m;
         };
+        MenuItem.prototype.addTabLink = function (label, pageSrc, pageParameters, icon) {
+            return this.addLink(label, "tab://app/" + pageSrc, pageParameters, icon);
+        };
         return MenuItem;
     }());
     exports.default = MenuItem;

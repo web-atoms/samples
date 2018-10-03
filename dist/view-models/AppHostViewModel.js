@@ -82,13 +82,20 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         }
         AppHostViewModel.prototype.init = function () {
             return __awaiter(this, void 0, void 0, function () {
-                var ms;
+                var ms, home, binding, services, containers;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
                             ms = this.menuService;
-                            ms.addLink("View Pager", "tab://app/" + ModuleFiles_1.ModuleFiles.views.samples.viewPager.ViewPager);
-                            ms.addLink("View Stack", "tab://app/" + ModuleFiles_1.ModuleFiles.views.samples.viewStack.ViewStack);
+                            home = ms.addGroup("Home");
+                            home.addTabLink("Home", ModuleFiles_1.ModuleFiles.views.Start);
+                            binding = ms.addGroup("Binding");
+                            binding.addTabLink("Bindings", ModuleFiles_1.ModuleFiles.views.samples.bindings.Binding);
+                            services = ms.addGroup("Services");
+                            services.addTabLink("Http", ModuleFiles_1.ModuleFiles.views.samples.http.Movies);
+                            containers = ms.addGroup("Containers");
+                            containers.addTabLink("View Pager", ModuleFiles_1.ModuleFiles.views.samples.viewPager.ViewPager);
+                            containers.addTabLink("View Stack", ModuleFiles_1.ModuleFiles.views.samples.viewStack.ViewStack);
                             return [4 /*yield*/, this.navigationService.openPage("tab://app/" + ModuleFiles_1.ModuleFiles.views.Start)];
                         case 1:
                             _a.sent();

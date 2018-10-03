@@ -46,4 +46,8 @@ export default class MenuItem {
         this.children.add(m);
         return m;
     }
+
+    public addTabLink(label: string, pageSrc: string, pageParameters?: INameValuePairs, icon?: string): MenuItem {
+        return this.addLink(label, `tab://app/${pageSrc}`, pageParameters, icon);
+    }
 }

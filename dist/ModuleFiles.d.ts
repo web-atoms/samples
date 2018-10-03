@@ -2,6 +2,9 @@ export declare const ModuleFiles: {
     "views": {
         "MenuList": string;
         "samples": {
+            "bindings": {
+                "Binding": string;
+            };
             "viewPager": {
                 "Page1": string;
                 "Page2": string;
@@ -9,6 +12,9 @@ export declare const ModuleFiles: {
             };
             "viewStack": {
                 "ViewStack": string;
+            };
+            "http": {
+                "Movies": string;
             };
         };
         "AppHost": string;

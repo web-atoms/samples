@@ -16,4 +16,5 @@ export default class MenuItem {
     add(label: string, action: () => any, icon?: string): MenuItem;
     addGroup(label: string, icon?: string): MenuItem;
     addLink(label: string, pageSrc: string, pageParameters?: INameValuePairs, icon?: string): MenuItem;
+    addTabLink(label: string, pageSrc: string, pageParameters?: INameValuePairs, icon?: string): MenuItem;
 }

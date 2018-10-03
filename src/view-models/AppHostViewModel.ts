@@ -17,8 +17,18 @@ export class AppHostViewModel extends AtomViewModel {
 
     public async init(): Promise<any> {
         const ms = this.menuService;
-        ms.addLink("View Pager", "tab://app/" + ModuleFiles.views.samples.viewPager.ViewPager);
-        ms.addLink("View Stack", "tab://app/" + ModuleFiles.views.samples.viewStack.ViewStack);
+        const home = ms.addGroup("Home");
+        home.addTabLink("Home", ModuleFiles.views.Start);
+
+        const binding = ms.addGroup("Binding");
+        binding.addTabLink("Bindings", ModuleFiles.views.samples.bindings.Binding);
+
+        const services = ms.addGroup("Services");
+        services.addTabLink("Http", ModuleFiles.views.samples.http.Movies);
+
+        const containers = ms.addGroup("Containers");
+        containers.addTabLink("View Pager", ModuleFiles.views.samples.viewPager.ViewPager);
+        containers.addTabLink("View Stack", ModuleFiles.views.samples.viewStack.ViewStack);
 
         await this.navigationService.openPage(`tab://app/${ModuleFiles.views.Start}`);
     }

@@ -44,7 +44,7 @@ var __extends = (this && this.__extends) || (function () {
             e2.element.appendChild(e4);
             e2.bind(e2.element, "items", [["viewModel", "pages"]], false, function (v1) { return (v1); });
             e2.bind(e2.element, "value", [["viewModel", "currentPage"]], true);
-            e2.itemTemplate = ViewPager_itemTemplate_1Creator(this);
+            e2.itemTemplate = ViewPager_itemTemplate_1_2Creator(this);
             this.append(e2);
             var e5 = document.createTextNode("\r\n\r\n    ");
             this.element.appendChild(e5);
@@ -59,13 +59,13 @@ var __extends = (this && this.__extends) || (function () {
         return ViewPager;
     }(AtomGridView_1.AtomGridView));
     exports.default = ViewPager;
-    function ViewPager_itemTemplate_1Creator(__creator) {
+    function ViewPager_itemTemplate_1_2Creator(__creator) {
         return /** @class */ (function (_super) {
-            __extends(ViewPager_itemTemplate_1, _super);
-            function ViewPager_itemTemplate_1() {
+            __extends(ViewPager_itemTemplate_1_2, _super);
+            function ViewPager_itemTemplate_1_2() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
-            ViewPager_itemTemplate_1.prototype.create = function () {
+            ViewPager_itemTemplate_1_2.prototype.create = function () {
                 var _this = this;
                 _super.prototype.create.call(this);
                 ;
@@ -74,7 +74,7 @@ var __extends = (this && this.__extends) || (function () {
                     return _this.setLocalValue(_this.element, "text", (_this.data.label));
                 });
             };
-            return ViewPager_itemTemplate_1;
+            return ViewPager_itemTemplate_1_2;
         }(AtomControl_1.AtomControl));
     }
 });

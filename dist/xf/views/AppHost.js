@@ -33,7 +33,7 @@ var __extends = (this && this.__extends) || (function () {
             _super.prototype.create.call(this);
             this.element = this.createControl("Xamarin.Forms.MasterDetailPage");
             this.setImport(this.element, "MenuPage", function () { return new MenuPage_1.default(_this.app); });
-            this.loadXaml("\t<MasterDetailPage xmlns:x=\"http://schemas.microsoft.com/winfx/2009/xaml\" xmlns=\"http://xamarin.com/schemas/2014/forms\" xmlns:atom=\"clr-namespace:WebAtoms;assembly=WebAtoms\" x:Name=\"e1\">\n\t  \n\t  <MasterDetailPage.Master>\n\t    \n\t    <atom:JSObjectCreator Type=\"MenuPage\"/>\n\t    \n\t  </MasterDetailPage.Master>\n\t  \n\t  <MasterDetailPage.Detail>\n\t    \n\t    <ContentPage>\n\t      \n\t      <Label Text=\"Loading...\"/>\n\t      \n\t    </ContentPage>\n\t    \n\t  </MasterDetailPage.Detail>\n\t  \n\t</MasterDetailPage>");
+            this.loadXaml("\t<MasterDetailPage xmlns:x=\"http://schemas.microsoft.com/winfx/2009/xaml\" xmlns=\"http://xamarin.com/schemas/2014/forms\" xmlns:atom=\"clr-namespace:WebAtoms;assembly=WebAtoms\" x:Name=\"e1\">\n\t  \n\t  <MasterDetailPage.Master>\n\t    \n\t    <atom:AtomObjectCreator Type=\"MenuPage\"/>\n\t    \n\t  </MasterDetailPage.Master>\n\t  \n\t  <MasterDetailPage.Detail>\n\t    \n\t    <ContentPage>\n\t      \n\t      <Label Text=\"Loading...\"/>\n\t      \n\t    </ContentPage>\n\t    \n\t  </MasterDetailPage.Detail>\n\t  \n\t</MasterDetailPage>");
             var e1 = this.find("e1");
             this.setLocalValue(e1, "viewModel", this.resolve(AppHostViewModel_1.AppHostViewModel));
         };

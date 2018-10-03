@@ -6,6 +6,9 @@
   "views": {
     "MenuList": "web-atoms-samples/dist/{platform}/views/MenuList",
     "samples": {
+      "bindings": {
+        "Binding": "web-atoms-samples/dist/{platform}/views/samples/bindings/Binding"
+      },
       "viewPager": {
         "Page1": "web-atoms-samples/dist/{platform}/views/samples/view-pager/Page1",
         "Page2": "web-atoms-samples/dist/{platform}/views/samples/view-pager/Page2",
@@ -13,6 +16,9 @@
       },
       "viewStack": {
         "ViewStack": "web-atoms-samples/dist/{platform}/views/samples/view-stack/ViewStack"
+      },
+      "http": {
+        "Movies": "web-atoms-samples/dist/{platform}/views/samples/http/Movies"
       }
     },
     "AppHost": "web-atoms-samples/dist/{platform}/views/AppHost",

@@ -32,7 +32,7 @@ var __extends = (this && this.__extends) || (function () {
             var __creator = this;
             this.element = document.createElement("div");
             this.bind(this.element, "items", [["viewModel", "menuService", "menus"]], false, function (v1) { return (v1); });
-            this.itemTemplate = MenuList_itemTemplate_1Creator(this);
+            this.itemTemplate = MenuList_itemTemplate_1_1Creator(this);
             var e1 = document.createTextNode("\r\n    ");
             this.element.appendChild(e1);
             var e2 = document.createTextNode("\r\n");
@@ -41,13 +41,13 @@ var __extends = (this && this.__extends) || (function () {
         return MenuList;
     }(AtomListBox_1.AtomListBox));
     exports.default = MenuList;
-    function MenuList_itemTemplate_1Creator(__creator) {
+    function MenuList_itemTemplate_1_1Creator(__creator) {
         return /** @class */ (function (_super) {
-            __extends(MenuList_itemTemplate_1, _super);
-            function MenuList_itemTemplate_1() {
+            __extends(MenuList_itemTemplate_1_1, _super);
+            function MenuList_itemTemplate_1_1() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
-            MenuList_itemTemplate_1.prototype.create = function () {
+            MenuList_itemTemplate_1_1.prototype.create = function () {
                 var _this = this;
                 _super.prototype.create.call(this);
                 ;
@@ -68,7 +68,7 @@ var __extends = (this && this.__extends) || (function () {
                 var e5 = document.createTextNode("\r\n    ");
                 this.element.appendChild(e5);
             };
-            return MenuList_itemTemplate_1;
+            return MenuList_itemTemplate_1_1;
         }(AtomControl_1.AtomControl));
     }
 });

@@ -19,7 +19,7 @@ export default  class MenuList extends AtomListBox {
                     
             this.bind(this.element, "items",  [["viewModel","menuService","menus"]], false , (v1) => (v1) );
 
-        this.itemTemplate = MenuList_itemTemplate_1Creator(this);
+        this.itemTemplate = MenuList_itemTemplate_1_1Creator(this);
             
                     
         const e1 = document.createTextNode("\r\n    ");
@@ -32,8 +32,8 @@ export default  class MenuList extends AtomListBox {
                 }
             }
 
-            function MenuList_itemTemplate_1Creator(__creator){
-                return  class MenuList_itemTemplate_1 extends AtomControl {
+            function MenuList_itemTemplate_1_1Creator(__creator){
+                return  class MenuList_itemTemplate_1_1 extends AtomControl {
 
                 
 
