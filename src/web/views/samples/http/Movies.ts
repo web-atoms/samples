@@ -1,7 +1,7 @@
 // tslint:disable
 import {BindableProperty} from "web-atoms-core/dist/core/BindableProperty";
-import {AtomGridView} from "web-atoms-core/dist/web/controls/AtomGridView";
 import {AtomListBox} from "web-atoms-core/dist/web/controls/AtomListBox";
+import {AtomGridView} from "web-atoms-core/dist/web/controls/AtomGridView";
 import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 
 import MovieViewModel from "../../../../view-models/http/MovieViewModel";
@@ -51,7 +51,7 @@ export default  class Movies extends AtomGridView {
 
             e2.bind(e2.element, "items",  [["viewModel","movies","value"]], false , (v1) => (v1) );
 
-        e2.itemTemplate = Movies_itemTemplate_1_5Creator(this);
+        e2.itemTemplate = Movies_itemTemplate_1_2Creator(this);
             
             this.append(e2);
 
@@ -62,8 +62,8 @@ export default  class Movies extends AtomGridView {
                 }
             }
 
-            function Movies_itemTemplate_1_5Creator(__creator){
-                return  class Movies_itemTemplate_1_5 extends AtomControl {
+            function Movies_itemTemplate_1_2Creator(__creator){
+                return  class Movies_itemTemplate_1_2 extends AtomControl {
 
                 
 

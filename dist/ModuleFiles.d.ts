@@ -5,6 +5,9 @@ export declare const ModuleFiles: {
             "bindings": {
                 "Binding": string;
             };
+            "http": {
+                "Movies": string;
+            };
             "viewPager": {
                 "Page1": string;
                 "Page2": string;
@@ -12,9 +15,6 @@ export declare const ModuleFiles: {
             };
             "viewStack": {
                 "ViewStack": string;
-            };
-            "http": {
-                "Movies": string;
             };
         };
         "AppHost": string;

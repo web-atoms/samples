@@ -23,7 +23,9 @@ var __extends = (this && this.__extends) || (function () {
     var BindingViewModel = /** @class */ (function (_super) {
         __extends(BindingViewModel, _super);
         function BindingViewModel() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.title = "Binding";
+            return _this;
         }
         return BindingViewModel;
     }(AtomViewModel_1.AtomViewModel));

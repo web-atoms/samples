@@ -14,13 +14,13 @@ var __extends = (this && this.__extends) || (function () {
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "web-atoms-core/dist/web/controls/AtomGridView", "web-atoms-core/dist/web/controls/AtomListBox", "web-atoms-core/dist/web/controls/AtomControl", "../../../../view-models/http/MovieViewModel"], factory);
+        define(["require", "exports", "web-atoms-core/dist/web/controls/AtomListBox", "web-atoms-core/dist/web/controls/AtomGridView", "web-atoms-core/dist/web/controls/AtomControl", "../../../../view-models/http/MovieViewModel"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var AtomGridView_1 = require("web-atoms-core/dist/web/controls/AtomGridView");
     var AtomListBox_1 = require("web-atoms-core/dist/web/controls/AtomListBox");
+    var AtomGridView_1 = require("web-atoms-core/dist/web/controls/AtomGridView");
     var AtomControl_1 = require("web-atoms-core/dist/web/controls/AtomControl");
     var MovieViewModel_1 = require("../../../../view-models/http/MovieViewModel");
     var Movies = /** @class */ (function (_super) {
@@ -44,7 +44,7 @@ var __extends = (this && this.__extends) || (function () {
             e2.setPrimitiveValue(e2.element, "row", "1");
             e2.setPrimitiveValue(e2.element, "column", "1");
             e2.bind(e2.element, "items", [["viewModel", "movies", "value"]], false, function (v1) { return (v1); });
-            e2.itemTemplate = Movies_itemTemplate_1_5Creator(this);
+            e2.itemTemplate = Movies_itemTemplate_1_2Creator(this);
             this.append(e2);
             var e5 = document.createTextNode("\r\n\r\n");
             this.element.appendChild(e5);
@@ -52,13 +52,13 @@ var __extends = (this && this.__extends) || (function () {
         return Movies;
     }(AtomGridView_1.AtomGridView));
     exports.default = Movies;
-    function Movies_itemTemplate_1_5Creator(__creator) {
+    function Movies_itemTemplate_1_2Creator(__creator) {
         return /** @class */ (function (_super) {
-            __extends(Movies_itemTemplate_1_5, _super);
-            function Movies_itemTemplate_1_5() {
+            __extends(Movies_itemTemplate_1_2, _super);
+            function Movies_itemTemplate_1_2() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
-            Movies_itemTemplate_1_5.prototype.create = function () {
+            Movies_itemTemplate_1_2.prototype.create = function () {
                 var _this = this;
                 _super.prototype.create.call(this);
                 ;
@@ -73,7 +73,7 @@ var __extends = (this && this.__extends) || (function () {
                 var e3 = document.createTextNode("\r\n        ");
                 this.element.appendChild(e3);
             };
-            return Movies_itemTemplate_1_5;
+            return Movies_itemTemplate_1_2;
         }(AtomControl_1.AtomControl));
     }
 });
