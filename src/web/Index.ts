@@ -95,7 +95,7 @@ export default  class Index extends AtomGridView {
         
         e13.appendChild(e15);
         
-        this.setPrimitiveValue(e15, "href", "/uiv/web-atoms-samples/dist/web/views/AppHost" );
+        this.setPrimitiveValue(e15, "href", "/samples.html" );
         
 
         this.setPrimitiveValue(e15, "target", "_tab" );
