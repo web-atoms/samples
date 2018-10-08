@@ -2,7 +2,7 @@
             import { AtomXFControl } from "web-atoms-core/dist/xf/controls/AtomXFControl";
                 
 
-        import {AppHostViewModel} from "../../view-models/AppHostViewModel";
+        import AppHostViewModel from "../view-models/AppHostViewModel";
 import MenuPage from "./MenuPage";
 
         export default class Root extends AtomXFControl {

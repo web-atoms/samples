@@ -3,7 +3,7 @@ import {BindableProperty} from "web-atoms-core/dist/core/BindableProperty";
 import {AtomTabbedPage} from "web-atoms-core/dist/web/controls/AtomTabbedPage";
 import {AtomGridView} from "web-atoms-core/dist/web/controls/AtomGridView";
 
-    import { AppHostViewModel } from "../../view-models/AppHostViewModel";
+    import AppHostViewModel from "../../view-models/AppHostViewModel";
     import MenuList from "./MenuList";
 
 export default  class AppHost extends AtomGridView {

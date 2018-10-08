@@ -5,7 +5,7 @@ import { AtomViewModel } from "web-atoms-core/dist/view-model/AtomViewModel";
 import { ModuleFiles } from "../ModuleFiles";
 import MenuService from "../services/MenuService";
 
-export class AppHostViewModel extends AtomViewModel {
+export default class AppHostViewModel extends AtomViewModel {
 
     constructor(
         @Inject app: App,
