@@ -87,7 +87,7 @@ export default  class Movies extends AtomGridView {
         this.append(e2);
         
             this.runAfterInit( () =>
-            this.setLocalValue(e2, "text", ((this.data) ? this.data.name : undefined)) );
+            this.setLocalValue(e2, "text", (this.data.name)) );
         
 
         const e3 = document.createTextNode("\r\n        ");

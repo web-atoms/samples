@@ -3,6 +3,7 @@
 			UMD = UMD || { resolvePath: (v) => v };
 			export const ModuleFiles =
 				{
+  "Index": "web-atoms-samples/dist/{platform}/Index",
   "views": {
     "MenuList": "web-atoms-samples/dist/{platform}/views/MenuList",
     "samples": {

@@ -13,7 +13,7 @@
         <Entry Text="[$viewModel.title]">
 
         <Label Text="One Time Binding" />
-        <Entry Text="$[$viewModel.title]">
+         <Entry Text="$[$viewModel.title]">
 
     </StackLayout>
 
