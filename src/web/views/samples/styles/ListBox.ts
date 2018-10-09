@@ -1,12 +1,12 @@
 // tslint:disable
 import {BindableProperty} from "web-atoms-core/dist/core/BindableProperty";
-import {AtomListBox} from "web-atoms-core/dist/web/controls/AtomListBox";
-import {AtomGridView} from "web-atoms-core/dist/web/controls/AtomGridView";
 import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
+import {AtomListBox} from "web-atoms-core/dist/web/controls/AtomListBox";
 
-import MovieViewModel from "../../../../view-models/http/MovieViewModel";
+    import AppListBoxStyle from "../../../styles/AppListBoxStyle";
+    import MovieViewModel from "../../../../view-models/http/MovieViewModel";
 
-export default  class Movies extends AtomGridView {
+export default  class ListBox extends AtomControl {
 
                 
 
@@ -17,22 +17,16 @@ export default  class Movies extends AtomGridView {
 
                     
 
+                    this.element = document.createElement("div");
                     
                     
-                    
-        this.setPrimitiveValue(this.element, "rows", "5, *, 5" );
-        
-
-        this.setPrimitiveValue(this.element, "columns", "5, *, 5" );
-        
-
                 this.viewModel =  this.resolve(MovieViewModel) ;
                     
-        const e1 = document.createTextNode("\r\n\r\n    ");
+        const e1 = document.createTextNode("\r\n    ");
         
         this.element.appendChild(e1);
 
-            const e2 = new AtomListBox(this.app, document.createElement("div"));
+            const e2 = new AtomListBox(this.app);
             
             
         const e3 = document.createTextNode("\r\n        ");
@@ -43,27 +37,24 @@ export default  class Movies extends AtomGridView {
         
         e2.element.appendChild(e4);
             
-        e2.setPrimitiveValue(e2.element, "row", "1" );
-        
-
-        e2.setPrimitiveValue(e2.element, "column", "1" );
-        
+            e2.defaultControlStyle =  AppListBoxStyle ;
+            
 
             e2.bind(e2.element, "items",  [["viewModel","movies","value"]], false , (v1) => (v1) );
 
-        e2.itemTemplate = Movies_itemTemplate_1_2Creator(this);
+        e2.itemTemplate = ListBox_itemTemplate_1_5Creator(this);
             
             this.append(e2);
 
 
-        const e5 = document.createTextNode("\r\n\r\n");
+        const e5 = document.createTextNode("\r\n");
         
         this.element.appendChild(e5);
                 }
             }
 
-            function Movies_itemTemplate_1_2Creator(__creator){
-                return  class Movies_itemTemplate_1_2 extends AtomControl {
+            function ListBox_itemTemplate_1_5Creator(__creator){
+                return  class ListBox_itemTemplate_1_5 extends AtomControl {
 
                 
 

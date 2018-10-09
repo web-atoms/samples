@@ -14,6 +14,7 @@
         "Movies": "web-atoms-samples/dist/{platform}/views/samples/http/Movies"
       },
       "styles": {
+        "ListBox": "web-atoms-samples/dist/{platform}/views/samples/styles/ListBox",
         "Panel": "web-atoms-samples/dist/{platform}/views/samples/styles/Panel"
       },
       "viewPager": {

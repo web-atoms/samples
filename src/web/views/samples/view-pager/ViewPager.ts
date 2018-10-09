@@ -92,7 +92,7 @@ export default  class ViewPager extends AtomGridView {
                     
                     
             this.runAfterInit( () =>
-            this.setLocalValue(this.element, "text", (this.data.label)) );
+            this.setLocalValue(this.element, "text", ((this.data) ? this.data.label : undefined)) );
                     
                 }
             }

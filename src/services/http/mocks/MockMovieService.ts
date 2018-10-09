@@ -10,12 +10,17 @@ export default class MockMovieService extends MovieService {
         start: number,
         size: number): Promise<IPagedList<IMovie>> {
         return this.sendResult({
-            count: 1,
+            count: 2,
             value: [
                 {
                     name: "Inception",
                     genre: "Action"
+                },
+                {
+                    name: "True Lies",
+                    genre: "Action"
                 }
+
             ]
         });
     }

@@ -1,0 +1,13 @@
+<script>
+    import AppListBoxStyle from "~src\web\styles\AppListBoxStyle";
+    import MovieViewModel from "~src\view-models\http\MovieViewModel";
+</script>
+<div view-model="{ this.resolve(MovieViewModel) }">
+    <AtomListBox
+        default-style="{ AppListBoxStyle }"
+        items="[$viewModel.movies.value]">
+        <div template="itemTemplate">
+            <span text="{ $data.name }"></span>
+        </div>
+    </AtomListBox>
+</div>

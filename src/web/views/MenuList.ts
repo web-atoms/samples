@@ -22,11 +22,11 @@ export default  class MenuList extends AtomListBox {
         this.itemTemplate = MenuList_itemTemplate_1_1Creator(this);
             
                     
-        const e1 = document.createTextNode("\n    ");
+        const e1 = document.createTextNode("\r\n    ");
         
         this.element.appendChild(e1);
 
-        const e2 = document.createTextNode("\n");
+        const e2 = document.createTextNode("\r\n");
         
         this.element.appendChild(e2);
                 }
@@ -49,7 +49,7 @@ export default  class MenuList extends AtomListBox {
                     
                 this.setPrimitiveValue(this.element, "eventClick",  () => this.data.click() );
                     
-        const e1 = document.createTextNode("\n        ");
+        const e1 = document.createTextNode("\r\n        ");
         
         this.element.appendChild(e1);
 
@@ -60,7 +60,7 @@ export default  class MenuList extends AtomListBox {
             this.bind(e2, "text",  [["data","label"]], false , (v1) => (v1) );
         
 
-        const e3 = document.createTextNode("\n        ");
+        const e3 = document.createTextNode("\r\n        ");
         
         this.element.appendChild(e3);
 
@@ -76,7 +76,7 @@ export default  class MenuList extends AtomListBox {
             this.append(e4);
 
 
-        const e5 = document.createTextNode("\n    ");
+        const e5 = document.createTextNode("\r\n    ");
         
         this.element.appendChild(e5);
                 }

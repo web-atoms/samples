@@ -32,6 +32,7 @@ export default class AppHostViewModel extends AtomViewModel {
 
         const styles = ms.addGroup("Styles");
         styles.addTabLink("Panel", ModuleFiles.views.samples.styles.Panel);
+        styles.addTabLink("List Box", ModuleFiles.views.samples.styles.ListBox);
 
         await this.navigationService.openPage(`tab://app/${ModuleFiles.views.Start}`);
     }
