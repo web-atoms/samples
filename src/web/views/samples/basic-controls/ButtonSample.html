@@ -1,0 +1,43 @@
+<script>
+        import ButtonSampleViewModel from "~/src/view-models/basic-controls/ButtonSampleViewModel";
+        import { ButtonSampleStyle } from "../../../styles/ButtonSampleStyle";
+</script>
+<div view-model="{ this.resolve(ButtonSampleViewModel) }"
+    default-style="{ ButtonSampleStyle }">
+    <button style-class="[$this.controlStyle.addButton]"
+            event-click="{ ()=> $viewModel.addMovie() }">
+        Add New Movie
+    </button>
+    <AtomItemsControl.table 
+        style="border-collapse: collapse; margin-left: 10px; "
+        items="[$viewModel.movies.value]">
+        <thead>
+            <tr>
+                <th style="border:1px solid gray; padding: 10px; text-align: start;">
+                    Movie Name
+                </th>
+                <th style="border:1px solid gray; padding: 10px; text-align: start;">
+                    Movie Type
+                </th>
+            </tr>
+        </thead>
+        <tbody presenter="itemsPresenter">
+            <tr template="itemTemplate">
+                <td style="border:1px solid gray; padding: 10px;">
+                   <span 
+                        style = "font-size: 15px;
+                                font-weight: 400" 
+                        atom-text="{$data.name}">
+                    </span>
+                </td>
+                <td  style="border:1px solid gray; padding: 10px;">
+                   <span 
+                        style = "font-size: 15px;
+                                font-weight: 400" 
+                        atom-text="{$data.genre}">.
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </AtomItemsControl.table>
+</div>

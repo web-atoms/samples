@@ -51,7 +51,7 @@ export default  class Movies extends AtomGridView {
 
             e2.bind(e2.element, "items",  [["viewModel","movies","value"]], false , (v1) => (v1) );
 
-        e2.itemTemplate = Movies_itemTemplate_1_2Creator(this);
+        e2.itemTemplate = Movies_itemTemplate_1_7Creator(this);
             
             this.append(e2);
 
@@ -62,8 +62,8 @@ export default  class Movies extends AtomGridView {
                 }
             }
 
-            function Movies_itemTemplate_1_2Creator(__creator){
-                return  class Movies_itemTemplate_1_2 extends AtomControl {
+            function Movies_itemTemplate_1_7Creator(__creator){
+                return  class Movies_itemTemplate_1_7 extends AtomControl {
 
                 
 
@@ -87,7 +87,7 @@ export default  class Movies extends AtomGridView {
         this.append(e2);
         
             this.runAfterInit( () =>
-            this.setLocalValue(e2, "text", ((this.data) ? this.data.name : undefined)) );
+            this.setLocalValue(e2, "text", (this.data.name)) );
         
 
         const e3 = document.createTextNode("\r\n        ");

@@ -1,0 +1,15 @@
+<script>
+    import AtomComboBoxSampleViewModel from "~/src/view-models/basic-controls/AtomComboBoxSampleViewModel";
+</script>
+<div view-model="{ this.resolve(AtomComboBoxSampleViewModel) }" 
+        style="padding: 10px;">
+    <AtomComboBox.select 
+            label-path="name"
+            value-path="name"
+            items="[$viewModel.movies.value]"
+            value="^[$viewModel.name]"
+            style="width:200px;height:33px;margin-bottom:10px;">
+    </AtomComboBox.select>
+    <div text="['Selected Movie: ' + $viewModel.name]">
+    </div>
+</div>

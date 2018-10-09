@@ -48,7 +48,7 @@ export default  class ViewPager extends AtomGridView {
 
             e2.bind(e2.element, "value",  [["viewModel","currentPage"]], true  );
 
-        e2.itemTemplate = ViewPager_itemTemplate_1_3Creator(this);
+        e2.itemTemplate = ViewPager_itemTemplate_1_9Creator(this);
             
             this.append(e2);
 
@@ -76,8 +76,8 @@ export default  class ViewPager extends AtomGridView {
                 }
             }
 
-            function ViewPager_itemTemplate_1_3Creator(__creator){
-                return  class ViewPager_itemTemplate_1_3 extends AtomControl {
+            function ViewPager_itemTemplate_1_9Creator(__creator){
+                return  class ViewPager_itemTemplate_1_9 extends AtomControl {
 
                 
 
@@ -92,7 +92,7 @@ export default  class ViewPager extends AtomGridView {
                     
                     
             this.runAfterInit( () =>
-            this.setLocalValue(this.element, "text", ((this.data) ? this.data.label : undefined)) );
+            this.setLocalValue(this.element, "text", (this.data.label)) );
                     
                 }
             }

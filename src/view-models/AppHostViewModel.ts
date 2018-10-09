@@ -34,6 +34,14 @@ export default class AppHostViewModel extends AtomViewModel {
         styles.addTabLink("Panel", ModuleFiles.views.samples.styles.Panel);
         styles.addTabLink("List Box", ModuleFiles.views.samples.styles.ListBox);
 
+        const controls = ms.addGroup("Controls");
+        controls.addTabLink("Combo Box", ModuleFiles.views.samples.basicControls.AtomComboBoxSample);
+        controls.addTabLink("Items Control", ModuleFiles.views.samples.basicControls.AtomItemsControlSample);
+        controls.addTabLink("List Box",  ModuleFiles.views.samples.basicControls.AtomListBoxSample);
+        controls.addTabLink("Toggle Button Bar",  ModuleFiles.views.samples.basicControls.AtomToggleButtonBarSample);
+        controls.addTabLink("Grid View",  ModuleFiles.views.samples.basicControls.AtomGridViewSample);
+        controls.addTabLink("Window",  ModuleFiles.views.samples.basicControls.ButtonSample);
+
         await this.navigationService.openPage(`tab://app/${ModuleFiles.views.Start}`);
     }
 }

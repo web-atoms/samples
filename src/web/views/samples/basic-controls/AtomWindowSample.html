@@ -1,0 +1,89 @@
+<script>
+        import { AtomWindowSampleViewModel } from "~/src/view-models/basic-controls/AtomWindowSampleViewModel";
+</script>
+<AtomWindow 
+    view-model="{ this.resolve(AtomWindowSampleViewModel) }"
+    title="Add New Movie"
+    width="500px"
+    height="350px">
+    <div 
+        template="windowTemplate">
+        <table>
+            <tr>
+                <td>
+                    Name:
+                </td>
+                <td>
+                    <input 
+                        style="height: 30px;
+                        padding-left: 4px;
+                        width: 200px;"
+                        type="text" 
+                        placeholder="Enter Movie Name"
+                        value="^[viewModel.movie.name]" autofocus="autofocus" />
+                </td>
+                <td style="color:red; font-size:13px" text="[$viewModel.errorName]">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Type:
+                </td>
+                <td>
+                        <AtomComboBox.select 
+                            style="height: 30px;
+                            margin: 10px 0px;"
+                            label-path="label"
+                            value-path="value"
+                            items="[[{
+                                label: 'Select Type',
+                                value: ''
+                            },{
+                                label: 'Action',
+                                value: 'Action'
+                            },
+                            {
+                                label: 'Animated',
+                                value: 'Animated'
+                            },
+                            {
+                                label: 'Sci-Fi',
+                                value: 'Sci-Fi'
+                            },
+                            {
+                                label: 'Thriller',
+                                value: 'Thriller'
+                            },
+                            {
+                                label: 'Comedy',
+                                value: 'Comedy'
+                            },
+                            {
+                                label: 'Horror',
+                                value: 'Horror'
+                            }]]"
+                            value="^[$viewModel.movie.genre]"
+                            style="width:200px;height:33px;margin-bottom:10px;">
+                        </AtomComboBox.select>
+                </td>
+                <td style="color:red; font-size:13px" text="[$viewModel.errorType]"></td>
+            </tr>
+            <tr>
+                <td>
+                    Description:
+                </td>
+                <td colspan="2">
+                    <textarea 
+                        cols="30" 
+                        rows="10"
+                        placeholder="Enter Movie Description"
+                        value="$[viewModel.movie.description]"></textarea>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div template="commandTemplate">
+        <button event-click="{ () => $viewModel.save() }">Save</button>
+        <button event-click="{ () => $viewModel.cancel() }">Cancel</button>
+    </div>
+</AtomWindow>

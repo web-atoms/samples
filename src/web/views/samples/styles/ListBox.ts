@@ -1,7 +1,7 @@
 // tslint:disable
 import {BindableProperty} from "web-atoms-core/dist/core/BindableProperty";
-import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 import {AtomListBox} from "web-atoms-core/dist/web/controls/AtomListBox";
+import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 
     import AppListBoxStyle from "../../../styles/AppListBoxStyle";
     import MovieViewModel from "../../../../view-models/http/MovieViewModel";
@@ -42,7 +42,7 @@ export default  class ListBox extends AtomControl {
 
             e2.bind(e2.element, "items",  [["viewModel","movies","value"]], false , (v1) => (v1) );
 
-        e2.itemTemplate = ListBox_itemTemplate_1_5Creator(this);
+        e2.itemTemplate = ListBox_itemTemplate_1_8Creator(this);
             
             this.append(e2);
 
@@ -53,8 +53,8 @@ export default  class ListBox extends AtomControl {
                 }
             }
 
-            function ListBox_itemTemplate_1_5Creator(__creator){
-                return  class ListBox_itemTemplate_1_5 extends AtomControl {
+            function ListBox_itemTemplate_1_8Creator(__creator){
+                return  class ListBox_itemTemplate_1_8 extends AtomControl {
 
                 
 
@@ -78,7 +78,7 @@ export default  class ListBox extends AtomControl {
         this.append(e2);
         
             this.runAfterInit( () =>
-            this.setLocalValue(e2, "text", ((this.data) ? this.data.name : undefined)) );
+            this.setLocalValue(e2, "text", (this.data.name)) );
         
 
         const e3 = document.createTextNode("\r\n        ");
