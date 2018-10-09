@@ -30,6 +30,9 @@ export default class AppHostViewModel extends AtomViewModel {
         containers.addTabLink("View Pager", ModuleFiles.views.samples.viewPager.ViewPager);
         containers.addTabLink("View Stack", ModuleFiles.views.samples.viewStack.ViewStack);
 
+        const styles = ms.addGroup("Styles");
+        styles.addTabLink("Panel", ModuleFiles.views.samples.styles.Panel);
+
         await this.navigationService.openPage(`tab://app/${ModuleFiles.views.Start}`);
     }
 }

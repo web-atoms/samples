@@ -51,7 +51,7 @@ function Root_e1_Creator(__creator: any): any {
             const e1 = this.find("e1");
             
             this.runAfterInit( () =>
-            this.setLocalValue(e1, "Text", ((this.data) ? this.data.label : undefined)) );
+            this.setLocalValue(e1, "Text", (this.data.label)) );
 
                 this.setPrimitiveValue(e1, "eventTapGesture",  () => this.data.click() );
 

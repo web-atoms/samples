@@ -13,6 +13,9 @@
       "http": {
         "Movies": "web-atoms-samples/dist/{platform}/views/samples/http/Movies"
       },
+      "styles": {
+        "Panel": "web-atoms-samples/dist/{platform}/views/samples/styles/Panel"
+      },
       "viewPager": {
         "Page1": "web-atoms-samples/dist/{platform}/views/samples/view-pager/Page1",
         "Page2": "web-atoms-samples/dist/{platform}/views/samples/view-pager/Page2",
