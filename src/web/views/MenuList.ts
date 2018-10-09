@@ -3,7 +3,10 @@ import {BindableProperty} from "web-atoms-core/dist/core/BindableProperty";
 import {AtomListBox} from "web-atoms-core/dist/web/controls/AtomListBox";
 import {AtomItemsControl} from "web-atoms-core/dist/web/controls/AtomItemsControl";
 import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
-export default  class MenuList extends AtomListBox {
+
+    import MenuList from "../styles/MenuStyle";
+
+export default  class MenuList extends AtomItemsControl {
 
                 
 
@@ -17,23 +20,31 @@ export default  class MenuList extends AtomListBox {
                     this.element = document.createElement("div");
                     
                     
+            this.defaultControlStyle =  MenuList ;
+            
+
+                this.setPrimitiveValue(this.element, "styleClass",  this.controlStyle.root );
+
             this.bind(this.element, "items",  [["viewModel","menuService","menus"]], false , (v1) => (v1) );
 
-        this.itemTemplate = MenuList_itemTemplate_1_1Creator(this);
+        this.setPrimitiveValue(this.element, "style", "padding:5px" );
+        
+
+        this.itemTemplate = MenuList_itemTemplate_1_15Creator(this);
             
                     
-        const e1 = document.createTextNode("\r\n    ");
+        const e1 = document.createTextNode("\n    ");
         
         this.element.appendChild(e1);
 
-        const e2 = document.createTextNode("\r\n");
+        const e2 = document.createTextNode("\n");
         
         this.element.appendChild(e2);
                 }
             }
 
-            function MenuList_itemTemplate_1_1Creator(__creator){
-                return  class MenuList_itemTemplate_1_1 extends AtomControl {
+            function MenuList_itemTemplate_1_15Creator(__creator){
+                return  class MenuList_itemTemplate_1_15 extends AtomControl {
 
                 
 
@@ -49,7 +60,7 @@ export default  class MenuList extends AtomListBox {
                     
                 this.setPrimitiveValue(this.element, "eventClick",  () => this.data.click() );
                     
-        const e1 = document.createTextNode("\r\n        ");
+        const e1 = document.createTextNode("\n        ");
         
         this.element.appendChild(e1);
 
@@ -60,23 +71,23 @@ export default  class MenuList extends AtomListBox {
             this.bind(e2, "text",  [["data","label"]], false , (v1) => (v1) );
         
 
-        const e3 = document.createTextNode("\r\n        ");
+        const e3 = document.createTextNode("\n        ");
         
         this.element.appendChild(e3);
 
-            const e4 = new AtomItemsControl(this.app);
+            const e4 = new AtomListBox(this.app, document.createElement("div"));
             
             
             
-            e4.bind(e4.element, "styleDisplay",  [["data","expand"]], false , (v1) => (v1) ? '' : 'none' );
+            e4.bind(e4.element, "styleDisplay",  [["data","children"]], false , (v1) => (v1) ? '' : 'none' );
 
-            e4.bind(e4.element, "items",  [["data","expand"],["data","children"]], false , (v1,v2) => (v1) ? (v2) : [] );
+            e4.bind(e4.element, "items",  [["data","children"]], false , (v1) => (v1) );
 
                 e4.setPrimitiveValue(e4.element, "itemTemplate",  __creator.itemTemplate );
             this.append(e4);
 
 
-        const e5 = document.createTextNode("\r\n    ");
+        const e5 = document.createTextNode("\n    ");
         
         this.element.appendChild(e5);
                 }

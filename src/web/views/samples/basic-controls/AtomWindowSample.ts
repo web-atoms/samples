@@ -37,15 +37,15 @@ export default  class AtomWindowSample extends AtomWindow {
         this.commandTemplate = AtomWindowSample_commandTemplate_2_5Creator(this);
             
                     
-        const e1 = document.createTextNode("\r\n    ");
+        const e1 = document.createTextNode("\n    ");
         
         this.element.appendChild(e1);
 
-        const e2 = document.createTextNode("\r\n    ");
+        const e2 = document.createTextNode("\n    ");
         
         this.element.appendChild(e2);
 
-        const e3 = document.createTextNode("\r\n");
+        const e3 = document.createTextNode("\n");
         
         this.element.appendChild(e3);
                 }
@@ -67,7 +67,7 @@ export default  class AtomWindowSample extends AtomWindow {
                     
                     
                     
-        const e1 = document.createTextNode("\r\n        ");
+        const e1 = document.createTextNode("\n        ");
         
         this.element.appendChild(e1);
 
@@ -76,7 +76,7 @@ export default  class AtomWindowSample extends AtomWindow {
         this.append(e2);
         
         
-        const e3 = document.createTextNode("\r\n            ");
+        const e3 = document.createTextNode("\n            ");
         
         e2.appendChild(e3);
 
@@ -85,7 +85,7 @@ export default  class AtomWindowSample extends AtomWindow {
         e2.appendChild(e4);
         
         
-        const e5 = document.createTextNode("\r\n                ");
+        const e5 = document.createTextNode("\n                ");
         
         e4.appendChild(e5);
 
@@ -94,11 +94,11 @@ export default  class AtomWindowSample extends AtomWindow {
         e4.appendChild(e6);
         
         
-        const e7 = document.createTextNode("\r\n                    Name:\r\n                ");
+        const e7 = document.createTextNode("\n                    Name:\n                ");
         
         e6.appendChild(e7);
 
-        const e8 = document.createTextNode("\r\n                ");
+        const e8 = document.createTextNode("\n                ");
         
         e4.appendChild(e8);
 
@@ -107,7 +107,7 @@ export default  class AtomWindowSample extends AtomWindow {
         e4.appendChild(e9);
         
         
-        const e10 = document.createTextNode("\r\n                    ");
+        const e10 = document.createTextNode("\n                    ");
         
         e9.appendChild(e10);
 
@@ -115,7 +115,7 @@ export default  class AtomWindowSample extends AtomWindow {
         
         e9.appendChild(e11);
         
-        this.setPrimitiveValue(e11, "style", "height: 30px;\r\n                        padding-left: 4px;\r\n                        width: 200px;" );
+        this.setPrimitiveValue(e11, "style", "height: 30px;\n                        padding-left: 4px;\n                        width: 200px;" );
         
 
         this.setPrimitiveValue(e11, "type", "text" );
@@ -130,11 +130,11 @@ export default  class AtomWindowSample extends AtomWindow {
         
         
 
-        const e12 = document.createTextNode("\r\n                ");
+        const e12 = document.createTextNode("\n                ");
         
         e9.appendChild(e12);
 
-        const e13 = document.createTextNode("\r\n                ");
+        const e13 = document.createTextNode("\n                ");
         
         e4.appendChild(e13);
 
@@ -147,15 +147,15 @@ export default  class AtomWindowSample extends AtomWindow {
 
             this.bind(e14, "text",  [["viewModel","errorName"]], false , (v1) => (v1) );
         
-        const e15 = document.createTextNode("\r\n                ");
+        const e15 = document.createTextNode("\n                ");
         
         e14.appendChild(e15);
 
-        const e16 = document.createTextNode("\r\n            ");
+        const e16 = document.createTextNode("\n            ");
         
         e4.appendChild(e16);
 
-        const e17 = document.createTextNode("\r\n            ");
+        const e17 = document.createTextNode("\n            ");
         
         e2.appendChild(e17);
 
@@ -164,7 +164,7 @@ export default  class AtomWindowSample extends AtomWindow {
         e2.appendChild(e18);
         
         
-        const e19 = document.createTextNode("\r\n                ");
+        const e19 = document.createTextNode("\n                ");
         
         e18.appendChild(e19);
 
@@ -173,11 +173,11 @@ export default  class AtomWindowSample extends AtomWindow {
         e18.appendChild(e20);
         
         
-        const e21 = document.createTextNode("\r\n                    Type:\r\n                ");
+        const e21 = document.createTextNode("\n                    Type:\n                ");
         
         e20.appendChild(e21);
 
-        const e22 = document.createTextNode("\r\n                ");
+        const e22 = document.createTextNode("\n                ");
         
         e18.appendChild(e22);
 
@@ -186,18 +186,18 @@ export default  class AtomWindowSample extends AtomWindow {
         e18.appendChild(e23);
         
         
-        const e24 = document.createTextNode("\r\n                        ");
+        const e24 = document.createTextNode("\n                        ");
         
         e23.appendChild(e24);
 
             const e25 = new AtomComboBox(this.app, document.createElement("select"));
             
             
-        const e26 = document.createTextNode("\r\n                        ");
+        const e26 = document.createTextNode("\n                        ");
         
         e25.element.appendChild(e26);
             
-        e25.setPrimitiveValue(e25.element, "style", "height: 30px;\r\n                            margin: 10px 0px;" );
+        e25.setPrimitiveValue(e25.element, "style", "height: 30px;\n                            margin: 10px 0px;" );
         
 
         e25.setPrimitiveValue(e25.element, "labelPath", "label" );
@@ -238,11 +238,11 @@ export default  class AtomWindowSample extends AtomWindow {
             e23.appendChild(e25.element);
 
 
-        const e27 = document.createTextNode("\r\n                ");
+        const e27 = document.createTextNode("\n                ");
         
         e23.appendChild(e27);
 
-        const e28 = document.createTextNode("\r\n                ");
+        const e28 = document.createTextNode("\n                ");
         
         e18.appendChild(e28);
 
@@ -256,11 +256,11 @@ export default  class AtomWindowSample extends AtomWindow {
             this.bind(e29, "text",  [["viewModel","errorType"]], false , (v1) => (v1) );
         
 
-        const e30 = document.createTextNode("\r\n            ");
+        const e30 = document.createTextNode("\n            ");
         
         e18.appendChild(e30);
 
-        const e31 = document.createTextNode("\r\n            ");
+        const e31 = document.createTextNode("\n            ");
         
         e2.appendChild(e31);
 
@@ -269,7 +269,7 @@ export default  class AtomWindowSample extends AtomWindow {
         e2.appendChild(e32);
         
         
-        const e33 = document.createTextNode("\r\n                ");
+        const e33 = document.createTextNode("\n                ");
         
         e32.appendChild(e33);
 
@@ -278,11 +278,11 @@ export default  class AtomWindowSample extends AtomWindow {
         e32.appendChild(e34);
         
         
-        const e35 = document.createTextNode("\r\n                    Description:\r\n                ");
+        const e35 = document.createTextNode("\n                    Description:\n                ");
         
         e34.appendChild(e35);
 
-        const e36 = document.createTextNode("\r\n                ");
+        const e36 = document.createTextNode("\n                ");
         
         e32.appendChild(e36);
 
@@ -293,7 +293,7 @@ export default  class AtomWindowSample extends AtomWindow {
         this.setPrimitiveValue(e37, "colspan", "2" );
         
         
-        const e38 = document.createTextNode("\r\n                    ");
+        const e38 = document.createTextNode("\n                    ");
         
         e37.appendChild(e38);
 
@@ -313,19 +313,19 @@ export default  class AtomWindowSample extends AtomWindow {
             this.bind(e39, "value",  [["viewModel","movie","description"]], true  );
         
 
-        const e40 = document.createTextNode("\r\n                ");
+        const e40 = document.createTextNode("\n                ");
         
         e37.appendChild(e40);
 
-        const e41 = document.createTextNode("\r\n            ");
+        const e41 = document.createTextNode("\n            ");
         
         e32.appendChild(e41);
 
-        const e42 = document.createTextNode("\r\n        ");
+        const e42 = document.createTextNode("\n        ");
         
         e2.appendChild(e42);
 
-        const e43 = document.createTextNode("\r\n    ");
+        const e43 = document.createTextNode("\n    ");
         
         this.element.appendChild(e43);
                 }
@@ -351,7 +351,7 @@ function AtomWindowSample_commandTemplate_2_5Creator(__creator){
                     
                     
                     
-        const e1 = document.createTextNode("\r\n        ");
+        const e1 = document.createTextNode("\n        ");
         
         this.element.appendChild(e1);
 
@@ -366,7 +366,7 @@ function AtomWindowSample_commandTemplate_2_5Creator(__creator){
         
         e2.appendChild(e3);
 
-        const e4 = document.createTextNode("\r\n        ");
+        const e4 = document.createTextNode("\n        ");
         
         this.element.appendChild(e4);
 
@@ -381,7 +381,7 @@ function AtomWindowSample_commandTemplate_2_5Creator(__creator){
         
         e5.appendChild(e6);
 
-        const e7 = document.createTextNode("\r\n    ");
+        const e7 = document.createTextNode("\n    ");
         
         this.element.appendChild(e7);
                 }

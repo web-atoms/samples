@@ -25,14 +25,14 @@ export default  class AtomToggleButtonBarSample extends AtomControl {
         this.setPrimitiveValue(this.element, "style", "padding: 10px;" );
         
                     
-        const e1 = document.createTextNode("\r\n    ");
+        const e1 = document.createTextNode("\n    ");
         
         this.element.appendChild(e1);
 
             const e2 = new AtomToggleButtonBar(this.app);
             
             
-        const e3 = document.createTextNode("\r\n    ");
+        const e3 = document.createTextNode("\n    ");
         
         e2.element.appendChild(e3);
             
@@ -54,7 +54,7 @@ export default  class AtomToggleButtonBarSample extends AtomControl {
             this.append(e2);
 
 
-        const e4 = document.createTextNode("\r\n    ");
+        const e4 = document.createTextNode("\n    ");
         
         this.element.appendChild(e4);
 
@@ -62,16 +62,16 @@ export default  class AtomToggleButtonBarSample extends AtomControl {
         
         this.append(e5);
         
-        this.setPrimitiveValue(e5, "style", "font-size: 15px;\r\n                 margin-top: 20px;\r\n                 font-weight: 600" );
+        this.setPrimitiveValue(e5, "style", "font-size: 15px;\n                 margin-top: 20px;\n                 font-weight: 600" );
         
 
             this.bind(e5, "text",  [["viewModel","gender"]], false , (v1) => 'Selected Movie: ' + (v1) );
         
-        const e6 = document.createTextNode("\r\n    ");
+        const e6 = document.createTextNode("\n    ");
         
         e5.appendChild(e6);
 
-        const e7 = document.createTextNode("\r\n");
+        const e7 = document.createTextNode("\n");
         
         this.element.appendChild(e7);
                 }

@@ -1,12 +1,18 @@
-<AtomListBox.div
-    items="[ $viewModel.menuService.menus ]">
+<script>
+    import MenuList from "~src\web\styles\MenuStyle";
+</script>
+<AtomItemsControl.div
+    default-style="{ MenuList }"
+    style-class="{ this.controlStyle.root }"
+    items="[ $viewModel.menuService.menus ]"
+    style="padding:5px">
     <div 
         template="itemTemplate" 
         event-click="{ () => this.data.click() }">
         <span text="[$data.label]"></span>
-        <AtomItemsControl
-            style-display="[$data.expand ? '' : 'none']"
-            items="[$data.expand ? $data.children : [] ]"
-            item-template="{ __creator.itemTemplate }"></AtomItemsControl>
+        <AtomListBox.div
+            style-display="[$data.children ? '' : 'none']"
+            items="[$data.children]"
+            item-template="{ __creator.itemTemplate }"></AtomListBox.div>
     </div>
-</AtomListBox.div>
+</AtomItemsControl.div>
