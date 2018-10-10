@@ -1,12 +1,12 @@
 import { AtomStyle } from "web-atoms-core/dist/web/styles/AtomStyle";
 import { IStyleDeclaration } from "web-atoms-core/dist/web/styles/IStyleDeclaration";
-import { ModuleFiles } from "../../ModuleFiles";
+import AddDataUrl from "../images/AddDataUrl";
 
 export class ButtonSampleStyle extends AtomStyle {
 
     public get addButton(): IStyleDeclaration {
         return {
-            background: `url(${ModuleFiles.src.web.images.add_png}) no-repeat 5px center, #1ccacc`,
+            background: `url(${AddDataUrl}) no-repeat 5px center, #1ccacc`,
             backgroundSize: "16px 16px",
             margin: "10px",
             borderRadius: "5px",
