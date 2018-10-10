@@ -95,7 +95,7 @@ export default  class AtomItemsControlSample extends AtomControl {
         
 
             this.runAfterInit( () =>
-            this.setLocalValue(e2, "text", (this.data.name)) );
+            this.setLocalValue(e2, "text", ((this.data) ? this.data.name : undefined)) );
         
         const e3 = document.createTextNode("\n                    ");
         
@@ -113,7 +113,7 @@ export default  class AtomItemsControlSample extends AtomControl {
         
 
             this.runAfterInit( () =>
-            this.setLocalValue(e5, "text", '( '+(this.data.genre)+' )') );
+            this.setLocalValue(e5, "text", '( '+((this.data) ? this.data.genre : undefined)+' )') );
         
         const e6 = document.createTextNode("\n                    ");
         

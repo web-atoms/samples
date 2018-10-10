@@ -42,7 +42,7 @@ export default  class Binding extends AtomControl {
         this.append(e5);
         
             this.runAfterInit( () =>
-            this.setLocalValue(e5, "text", (this.viewModel.title)) );
+            this.setLocalValue(e5, "text", ((this.viewModel) ? this.viewModel.title : undefined)) );
         
 
         const e6 = document.createTextNode("\r\n\r\n    ");

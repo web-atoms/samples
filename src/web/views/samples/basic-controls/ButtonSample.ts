@@ -182,7 +182,7 @@ export default  class ButtonSample extends AtomControl {
         
 
             this.runAfterInit( () =>
-            this.setLocalValue(e4, "text", (this.data.name)) );
+            this.setLocalValue(e4, "text", ((this.data) ? this.data.name : undefined)) );
         
         const e5 = document.createTextNode("\n                    ");
         
@@ -215,7 +215,7 @@ export default  class ButtonSample extends AtomControl {
         
 
             this.runAfterInit( () =>
-            this.setLocalValue(e10, "text", (this.data.genre)) );
+            this.setLocalValue(e10, "text", ((this.data) ? this.data.genre : undefined)) );
         
         const e11 = document.createTextNode(".\n                    ");
         

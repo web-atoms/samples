@@ -45,7 +45,7 @@ export default  class AtomToggleButtonBarSample extends AtomControl {
         
 
             e2.runAfterInit( () =>
-            e2.setLocalValue(e2.element, "items", (this.viewModel.genderList)) );
+            e2.setLocalValue(e2.element, "items", ((this.viewModel) ? this.viewModel.genderList : undefined)) );
 
             e2.bind(e2.element, "value",  [["viewModel","gender"]], ["change", "keyup", "keydown", "blur"]  );
 

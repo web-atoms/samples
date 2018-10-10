@@ -120,7 +120,7 @@ export default  class AtomListBoxSample extends AtomControl {
         
 
             this.runAfterInit( () =>
-            this.setLocalValue(e4, "text", (this.data.name) + ' ( '+ (this.data.genre) +' )') );
+            this.setLocalValue(e4, "text", ((this.data) ? this.data.name : undefined) + ' ( '+ ((this.data) ? this.data.genre : undefined) +' )') );
         
         const e5 = document.createTextNode("\n                    ");
         
@@ -142,7 +142,7 @@ export default  class AtomListBoxSample extends AtomControl {
         
 
             this.runAfterInit( () =>
-            this.setLocalValue(e8, "text", (this.data.description)) );
+            this.setLocalValue(e8, "text", ((this.data) ? this.data.description : undefined)) );
         
         const e9 = document.createTextNode("\n                ");
         
