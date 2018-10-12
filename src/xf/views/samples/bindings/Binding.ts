@@ -13,16 +13,46 @@
 
                     
 
-                    this.loadXaml(`	<ContentPage xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns="http://xamarin.com/schemas/2014/forms" x:Name="e1">
+                    this.loadXaml(`	<ContentPage xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns="http://xamarin.com/schemas/2014/forms" x:Name="e4">
 	  
-	  <StackLayout></StackLayout>
+	  <StackLayout>
+	    
+	    <Label Text="One Time Binding"/>
+	    
+	    <Label x:Name="e1"/>
+	    
+	    <Label Text="One Way Binding"/>
+	    
+	    <Entry x:Name="e2"/>
+	    
+	    <Label Text="One Time Binding"/>
+	    
+	    <Entry x:Name="e3"/>
+	    
+	  </StackLayout>
 	  
 	</ContentPage>`);
 
                     
             const e1 = this.find("e1");
             
-                this.setLocalValue(e1, "viewModel",  this.resolve(BindingViewModel) );
+            this.runAfterInit( () =>
+            this.setLocalValue(e1, "Text", ((this.viewModel) ? this.viewModel.title : undefined)) );
+
+
+            const e2 = this.find("e2");
+            
+            this.bind(e2, "Text",  [["viewModel","title"]], false , (v1) => (v1) );
+
+
+            const e3 = this.find("e3");
+            
+            this.bind(e3, "Text",  [["viewModel","title"]], true  );
+
+
+            const e4 = this.find("e4");
+            
+                this.setLocalValue(e4, "viewModel",  this.resolve(BindingViewModel) );
 
                 }
             }

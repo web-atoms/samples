@@ -7,13 +7,13 @@
 
     <StackLayout>
         <Label Text="One Time Binding" />
-        <Label Text="${ $viewModel.title }">
+        <Label Text="${ $viewModel.title }"/>
 
         <Label Text="One Way Binding" />
-        <Entry Text="[$viewModel.title]">
+        <Entry Text="[$viewModel.title]"/>
 
         <Label Text="One Time Binding" />
-         <Entry Text="$[$viewModel.title]">
+        <Entry Text="$[$viewModel.title]"/>
 
     </StackLayout>
 
