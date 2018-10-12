@@ -4,7 +4,7 @@ import {AtomItemsControl} from "web-atoms-core/dist/web/controls/AtomItemsContro
 import {AtomListBox} from "web-atoms-core/dist/web/controls/AtomListBox";
 import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 
-    import MenuList from "../styles/MenuStyle";
+    import MenuStyle from "../styles/MenuStyle";
 
 export default  class MenuList extends AtomItemsControl {
 
@@ -20,7 +20,7 @@ export default  class MenuList extends AtomItemsControl {
                     this.element = document.createElement("div");
                     
                     
-            this.defaultControlStyle =  MenuList ;
+            this.defaultControlStyle =  MenuStyle ;
             
 
                 this.setPrimitiveValue(this.element, "styleClass",  this.controlStyle.root );
