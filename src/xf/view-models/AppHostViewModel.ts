@@ -30,6 +30,8 @@ export default class AppHostViewModel extends AtomViewModel {
         containers.addTabLink("View Pager", ModuleFiles.views.samples.viewPager.ViewPager);
         containers.addTabLink("View Stack", ModuleFiles.views.samples.viewStack.ViewStack);
 
-        await this.navigationService.openPage(`tab://app/${ModuleFiles.views.Start}`);
+        const a = this.navigationService.location.query.platform;
+        // tslint:disable-next-line:no-console
+        console.log(`platform = ${a};`);
     }
 }

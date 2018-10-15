@@ -16,6 +16,7 @@
         <Label
             Grid.Row="1"
             Grid.Column="1"
-            Text="Sample Start"/>
+            TextColor="#ff0000"
+            Text="Sample Start..."/>
     </Grid>
 </ContentPage>

@@ -24,9 +24,9 @@ import MenuPage from "./MenuPage";
 	  
 	  <MasterDetailPage.Detail>
 	    
-	    <ContentPage>
+	    <ContentPage Title="Web Atoms Demo">
 	      
-	      <Label Text="Loading..."/>
+	      <Label Text="Click on hamburger icon on left to get started..."/>
 	      
 	    </ContentPage>
 	    

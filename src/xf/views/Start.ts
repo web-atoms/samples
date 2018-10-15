@@ -37,7 +37,7 @@
 	      
 	    </Grid.ColumnDefinitions>
 	    
-	    <Label Grid.Row="1" Grid.Column="1" Text="Sample Start"/>
+	    <Label Grid.Row="1" Grid.Column="1" TextColor="#ff0000" Text="Sample Start..."/>
 	    
 	  </Grid>
 	  

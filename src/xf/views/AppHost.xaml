@@ -11,8 +11,8 @@
         <MenuPage:MenuPage/>
     </MasterDetailPage.Master>
     <MasterDetailPage.Detail>
-        <ContentPage>
-            <Label Text="Loading..."/>
+        <ContentPage Title="Web Atoms Demo">
+            <Label Text="Click on hamburger icon on left to get started..."/>
         </ContentPage>
     </MasterDetailPage.Detail>
 </MasterDetailPage>
