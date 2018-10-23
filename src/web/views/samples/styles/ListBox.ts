@@ -22,18 +22,18 @@ export default  class ListBox extends AtomControl {
                     
                 this.viewModel =  this.resolve(MovieViewModel) ;
                     
-        const e1 = document.createTextNode("\n    ");
+        const e1 = document.createTextNode("\r\n    ");
         
         this.element.appendChild(e1);
 
             const e2 = new AtomListBox(this.app);
             
             
-        const e3 = document.createTextNode("\n        ");
+        const e3 = document.createTextNode("\r\n        ");
         
         e2.element.appendChild(e3);
 
-        const e4 = document.createTextNode("\n    ");
+        const e4 = document.createTextNode("\r\n    ");
         
         e2.element.appendChild(e4);
             
@@ -47,7 +47,7 @@ export default  class ListBox extends AtomControl {
             this.append(e2);
 
 
-        const e5 = document.createTextNode("\n");
+        const e5 = document.createTextNode("\r\n");
         
         this.element.appendChild(e5);
                 }
@@ -69,7 +69,7 @@ export default  class ListBox extends AtomControl {
                     
                     
                     
-        const e1 = document.createTextNode("\n            ");
+        const e1 = document.createTextNode("\r\n            ");
         
         this.element.appendChild(e1);
 
@@ -81,7 +81,7 @@ export default  class ListBox extends AtomControl {
             this.setLocalValue(e2, "text", ((this.data) ? this.data.name : undefined)) );
         
 
-        const e3 = document.createTextNode("\n        ");
+        const e3 = document.createTextNode("\r\n        ");
         
         this.element.appendChild(e3);
                 }
