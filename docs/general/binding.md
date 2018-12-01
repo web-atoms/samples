@@ -28,6 +28,22 @@ So when you use `$viewModel.model.label`, entire expression is broken down in co
 
 > For one time binding in Xaml, you need to put $ before curly braces as single curly brace is reserved for Xaml binding.
 
+### Expression
+
+One time binding can be any valid TypeScript expression. You can call any method. Make sure you import corresponding module in start of the file.
+
+HTML
+```html
+    <span text="{ `${ $viewModel.model.firstName } ${ $viewModel.model.lastName }` }"></span>
+```
+
+XAML
+```xml
+    <Label Text="${ `${ $viewModel.model.firstName } ${ $viewModel.model.lastName }` }"/>
+```
+
+Ideally you must avoid custom expressions and must always create custom get properties on your view model and bind it.
+
 ## One Way Binding
 
 Building data aware application requires updating UI automatically when data changes. One way binding refreshes element automatically when data is modified by any one. To make it simpler, you have to write your binding expressions in square brackets []
@@ -61,4 +77,128 @@ XAML
     <Label Text="[$viewModel.time]"/>
 ```
 
-> Internally, whenever any UI view is bound by one way or two way
+> Internally, whenever any thing that is inside property path gets updated, expression is evaluated and property is set. If anything is evaluated as `undefined`, update is skipped. If anything is `null`, entire expression is evaluated as `null` and no error is reported.
+
+
+### Expression
+
+One way binding can be any valid TypeScript expression. You can call any method. Make sure you import corresponding module in start of the file.
+
+HTML
+```html
+    <span text="[ `${ $viewModel.model.firstName } ${ $viewModel.model.lastName }` ]"></span>
+```
+
+XAML
+```xml
+    <Label Text="[ `${ $viewModel.model.firstName } ${ $viewModel.model.lastName }` ]"/>
+```
+
+Ideally you must avoid custom expressions and must always create custom get properties on your view model and bind it.
+
+```typescript
+    @Watch
+    public get fullName(): string {
+        return `${this.model.firstName} ${this.model.lastName}`;
+    }
+```
+
+You must bind UI to `fullName`, instead of writing custom expressions. Benefit is, you can unit test it, you do not have to repeat expressions for different platform and you can perform formatting inside view model that is consitent for different platforms.
+
+## Two Way Binding
+
+Two way binding is created by prefixing $ before square brackets. This will update value inside model whenever it is changed in UI by user.
+
+HTML
+```html
+    
+    <input
+        type="text"
+        placeholder="Username"
+        value="$[viewModel.username]" />
+
+    <input 
+        type="password"
+        placeholder="Password"
+        value="$[viewModel.username]" />
+
+    <input type="checkbox" checked="$[viewModel.remember]" />
+```
+
+This will update username inside model whenver user modifies text inside edit. You can also bind `checked` property of checkbox. 
+
+For input element in HTML, binding is only updated on `change` event. If you want to update binding everytime a key is pressed. You can use carat `^` instead of `$`.
+
+HTML
+```html
+    <input 
+        type="search"
+        value="^[viewModel.search]"/>
+```
+
+In above example, search property in viewmodel is set everytime a key is pressed.
+
+You can bind properties of AtomControl derived control.
+HTML
+```html
+    <AtomComboBox
+        selectedIndex="$[viewModel.selectedIndex]"
+        />
+```
+
+XAML
+```xml
+    <Entry
+        Text="$[viewModel.username]"/>
+```
+
+### HTML Binding Extensions
+
+Following additional style and event binding extensions are available for binding. 
+
+## Style
+
+Style extension can be used in one time/one way binding. It cannot be used for two way binding.
+
+### Literal binding
+Literal binding helps in breakding down long style expressions into individual attributes;
+HTML
+```html
+    <div
+        style-display="block"
+        style-position="absolute"
+    />
+
+    <!-- It will be transformed in runtime as -->
+    <div style="display: block; position: absolute" />
+```
+
+### Expression binding
+Expression binding can be either one time or one way. It helps in separating style attributes.
+
+HTML
+```html
+    <div
+        style-position="absolute"
+        style-width="{ `${ $viewModel.width }px` }"
+        style-height="[ $viewModel.vertical ? '500px' : '200px' ]"
+        />
+```
+Here `position` is set as `absolute`, `width` is calculated by whatever was set on view model's `width` property. And `height` will update whenever `vertical` is modified on view model.
+
+## Event
+Event binding extension allows you to subscribe events. This extension also safely unsubscribes automatically when component is disposed.
+
+HTML
+```html
+    <button event-click="{ (e) => $viewModel.signup(e) }"></button>
+```
+
+## Event TapGesture
+
+Event TapGesture is special event associated with Xaml UI View to get notified of tap gesture.
+
+XAML
+```xml
+    <Label eventTapGesture="{ () => $viewModel.signup() }" />
+```
