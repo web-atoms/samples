@@ -240,7 +240,7 @@ public class SignupViewModel extends AtomViewModel {
 ```
 HTML
 ```html
-<div>
+<div view-model="{ this.resolve(SignupViewModel) }">
 
     <input placeholder="First name:" value="$[viewModel.model.firstName]">
     <span class="error" text="[$viewModel.errorFirstName]"></span>
