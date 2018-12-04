@@ -4,7 +4,7 @@ Web Atoms uses property binding syntax to bind view properties to data or view m
 
 ## One Time Binding
 
-Binding expression within curly braces are evaluated at time of initialization of control. You can consider them as simple eval expression which will be instantly evaluated at time of building of page.
+Binding expression within curly braces are evaluated at time of initialization of control. You can consider them as simple eval expression which will be instantly evaluated at time of building of page. These expressions are compiled so they are evaluated at runtime using `eval`. Web Atoms do not use `eval` anywhere.
 
 All expressions in following sample are one time binding expressions.
 
@@ -103,7 +103,7 @@ Ideally you must avoid custom expressions and must always create custom get prop
     }
 ```
 
-You must bind UI to `fullName`, instead of writing custom expressions. Benefit is, you can unit test it, you do not have to repeat expressions for different platform and you can perform formatting inside view model that is consitent for different platforms.
+You must bind UI to `fullName`, instead of writing custom expressions. Benefit is, you can unit test it, you do not have to repeat expressions for different platform and you can perform formatting inside view model that is consistent for different platforms.
 
 ## Two Way Binding
 
@@ -125,9 +125,9 @@ HTML
     <input type="checkbox" checked="$[viewModel.remember]" />
 ```
 
-This will update username inside model whenver user modifies text inside edit. You can also bind `checked` property of checkbox. 
+This will update username inside model whenever user modifies text inside edit. You can also bind `checked` property of checkbox. 
 
-For input element in HTML, binding is only updated on `change` event. If you want to update binding everytime a key is pressed. You can use carat `^` instead of `$`.
+For input element in HTML, binding is only updated on `change` event. If you want to update binding every time a key is pressed. You can use carat `^` instead of `$`.
 
 HTML
 ```html
@@ -136,7 +136,7 @@ HTML
         value="^[viewModel.search]"/>
 ```
 
-In above example, search property in viewmodel is set everytime a key is pressed.
+In above example, search property in `viewModel` is set every time a key is pressed.
 
 You can bind properties of AtomControl derived control.
 HTML
@@ -161,7 +161,7 @@ Following additional style and event binding extensions are available for bindin
 Style extension can be used in one time/one way binding. It cannot be used for two way binding.
 
 ### Literal binding
-Literal binding helps in breakding down long style expressions into individual attributes;
+Literal binding helps in breaking down long style expressions into individual attributes;
 HTML
 ```html
     <div

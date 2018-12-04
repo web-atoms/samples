@@ -33,6 +33,14 @@
         "ListBox": "web-atoms-samples/dist/{platform}/views/samples/styles/ListBox",
         "Panel": "web-atoms-samples/dist/{platform}/views/samples/styles/Panel"
       },
+      "validation": {
+        "SimpleValidation": "web-atoms-samples/dist/{platform}/views/samples/validation/SimpleValidation",
+        "CustomValidation": "web-atoms-samples/dist/{platform}/views/samples/validation/CustomValidation",
+        "multiViewModel": {
+          "Insurance": "web-atoms-samples/dist/{platform}/views/samples/validation/multi-view-model/Insurance",
+          "Applicant": "web-atoms-samples/dist/{platform}/views/samples/validation/multi-view-model/Applicant"
+        }
+      },
       "viewPager": {
         "Page1": "web-atoms-samples/dist/{platform}/views/samples/view-pager/Page1",
         "Page2": "web-atoms-samples/dist/{platform}/views/samples/view-pager/Page2",
@@ -44,6 +52,7 @@
     },
     "AppHost": "web-atoms-samples/dist/{platform}/views/AppHost",
     "MenuPage": "web-atoms-samples/dist/{platform}/views/MenuPage",
-    "Start": "web-atoms-samples/dist/{platform}/views/Start"
+    "Start": "web-atoms-samples/dist/{platform}/views/Start",
+    "MDHost": "web-atoms-samples/dist/{platform}/views/MDHost"
   }
 }

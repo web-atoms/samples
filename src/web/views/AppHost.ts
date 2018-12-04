@@ -28,7 +28,7 @@ export default  class AppHost extends AtomGridView {
         this.setPrimitiveValue(this.element, "rows", "*" );
         
                     
-        const e1 = document.createTextNode("\r\n\r\n    ");
+        const e1 = document.createTextNode("\n\n    ");
         
         this.element.appendChild(e1);
 
@@ -39,7 +39,7 @@ export default  class AppHost extends AtomGridView {
             this.append(e2);
 
 
-        const e3 = document.createTextNode("\r\n\r\n    ");
+        const e3 = document.createTextNode("\n\n    ");
         
         this.element.appendChild(e3);
 
@@ -55,7 +55,7 @@ export default  class AppHost extends AtomGridView {
             this.append(e4);
 
 
-        const e5 = document.createTextNode("\r\n\r\n");
+        const e5 = document.createTextNode("\n\n");
         
         this.element.appendChild(e5);
                 }

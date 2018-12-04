@@ -1,0 +1,14 @@
+<script>
+    import SimpleValidationViewModel from "~src/view-models/samples/validation/SimpleValidationViewModel";
+</script>
+<div view-model="{ this.resolve(SimpleValidationViewModel) }">
+    <div>
+        <input placeholder="Name" value="$[viewModel.model.name]"/>
+        <span style="color: red" text="[$viewModel.errorName]"></span>
+    </div>
+    <div>
+        <input placeholder="Email" value="$[viewModel.model.email]"/>
+        <span style="color: red" text="[$viewModel.errorEmail]"></span>
+    </div>
+    <button event-click="{ () => $viewModel.signup() }">Signup</button>
+</div>

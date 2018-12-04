@@ -2,7 +2,7 @@
 
 ## What is web atoms?
 
-"Web Atoms" is an advanced MVVM framework to write cross platform applications in `HTML5` and `Xamarin.Forms`. Unlike other frameworks, Web Atoms lets you divide User Interface logic in strict MVVM fashion and separates View in `HTML5` and `Xaml`. Benefit of separating User interface logic in ViewModel is you can individually unit test view model to make sure your logic is consitent across platforms.
+"Web Atoms" is an advanced MVVM framework to write cross platform applications in `HTML5` and `Xamarin.Forms`. Unlike other frameworks, Web Atoms lets you divide User Interface logic in strict MVVM fashion and separates View in `HTML5` and `Xaml`. Benefit of separating User interface logic in ViewModel is you can individually unit test view model to make sure your logic is consistent across platforms.
 
 Also everything is transpiled into JavaScript, your View Model and Services remain in JavaScript and in browser it works flawlessly.
 
@@ -12,7 +12,7 @@ In Xamarin.Forms, Web Atoms package written C# helps you easily host JavaScript 
 * Small application download size
 * Even Xaml views are converted to JavaScript
 * Reuse existing NuGet components by exposing via services
-* Host javascripts on server with instant updates to apps
+* Host javascript on server with instant updates to apps
 * No native compilation needed unless you add/modify native services written in c#
 * You can use Xaml binding as well as Web Atoms's JavaScript bindings 
 
@@ -85,7 +85,7 @@ It is important that you keep files inside `web` and `xf` folder, as module load
 
 ## AtomControl
 
-AtomControl is a UI control which contains logic to render visual elements on the screen. AtomControl has an initialization lifecyle that is common in every platform. However, rendering lifecycle differs on every platform. For example, `Xamarin.Forms` has its own render lifecycle so AtomControl only does binding to properties. In `Web Browser`, it has special lifecycle to render contents. Most of the time developer does not need to worry about it as controls are created with best performance in mind.
+AtomControl is a UI control which contains logic to render visual elements on the screen. AtomControl has an initialization lifecycle that is common in every platform. However, rendering lifecycle differs on every platform. For example, `Xamarin.Forms` has its own render lifecycle so AtomControl only does binding to properties. In `Web Browser`, it has special lifecycle to render contents. Most of the time developer does not need to worry about it as controls are created with best performance in mind.
 
 Following properties exist on AtomControl and they are **Logically Inherited**. 
 
@@ -103,7 +103,7 @@ In most of UI framework, view model is usually set in `data` property, which lea
 
 ### What is localViewModel ?
 
-To make reusable components easier, localViewModel can be used to host all logic that is only specific to the component. For example, lets say you want to create a calendar component. Local view model will contain all the logic to create list of all dates for currently displayed month and year. It will also create list of all years. All this logic will be independent of rendering logic and it can be put inside a view model which can be unit tested separately. Benefit here is, you can write a reusable view model for platform dependent component that has common logic across different platforms. So inside component, you will only write binding expressions to localviewmodel.
+To make reusable components easier, `localViewModel` can be used to host all logic that is only specific to the component. For example, lets say you want to create a calendar component. Local view model will contain all the logic to create list of all dates for currently displayed month and year. It will also create list of all years. All this logic will be independent of rendering logic and it can be put inside a view model which can be unit tested separately. Benefit here is, you can write a reusable view model for platform dependent component that has common logic across different platforms. So inside component, you will only write binding expressions to `localViewModel`.
 
 ## AtomViewModel
 
@@ -192,11 +192,11 @@ XAML
     <Label Text="[$viewModel.firstName]">
 ```
 
-You can bind any view property to `fullName` and it will refresh automatically whenever any changes was detected in `model.firstName` or `model.lastName`. Again, both must not initialzied to `undefined`.
+You can bind any view property to `fullName` and it will refresh automatically whenever any changes was detected in `model.firstName` or `model.lastName`. Again, both must not initialized to `undefined`.
 
 ### Validate property
 
-Though `@Watch` is great way to watch any property, we cannot use it for validation because as soon as page is loaded, user will be thrown with error messages. So we have created `@Valdiate` decorator which only returns an error message after `this.isValid` property is called.
+Though `@Watch` is great way to watch any property, we cannot use it for validation because as soon as page is loaded, user will be thrown with error messages. So we have created `@Validate` decorator which only returns an error message after `this.isValid` property is called.
 
 For example,
 

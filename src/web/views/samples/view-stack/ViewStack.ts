@@ -28,7 +28,7 @@ export default  class ViewStack extends AtomGridView {
         this.setPrimitiveValue(this.element, "rows", "50, *" );
         
                     
-        const e1 = document.createTextNode("\r\n\r\n    ");
+        const e1 = document.createTextNode("\n\n    ");
         
         this.element.appendChild(e1);
 
@@ -37,7 +37,7 @@ export default  class ViewStack extends AtomGridView {
         this.append(e2);
         
         
-        const e3 = document.createTextNode("\r\n        ");
+        const e3 = document.createTextNode("\n        ");
         
         e2.appendChild(e3);
 
@@ -52,18 +52,18 @@ export default  class ViewStack extends AtomGridView {
             e2.appendChild(e4.element);
 
 
-        const e5 = document.createTextNode("\r\n    ");
+        const e5 = document.createTextNode("\n    ");
         
         e2.appendChild(e5);
 
-        const e6 = document.createTextNode("\r\n\r\n    ");
+        const e6 = document.createTextNode("\n\n    ");
         
         this.element.appendChild(e6);
 
             const e7 = new AtomViewStack(this.app);
             
             
-        const e8 = document.createTextNode("\r\n        ");
+        const e8 = document.createTextNode("\n        ");
         
         e7.element.appendChild(e8);
 
@@ -76,7 +76,7 @@ export default  class ViewStack extends AtomGridView {
         
         e9.appendChild(e10);
 
-        const e11 = document.createTextNode("\r\n        ");
+        const e11 = document.createTextNode("\n        ");
         
         e7.element.appendChild(e11);
 
@@ -89,7 +89,7 @@ export default  class ViewStack extends AtomGridView {
         
         e12.appendChild(e13);
 
-        const e14 = document.createTextNode("  \r\n        ");
+        const e14 = document.createTextNode("  \n        ");
         
         e7.element.appendChild(e14);
 
@@ -102,7 +102,7 @@ export default  class ViewStack extends AtomGridView {
         
         e15.appendChild(e16);
 
-        const e17 = document.createTextNode("        \r\n    ");
+        const e17 = document.createTextNode("        \n    ");
         
         e7.element.appendChild(e17);
             
@@ -113,7 +113,7 @@ export default  class ViewStack extends AtomGridView {
             this.append(e7);
 
 
-        const e18 = document.createTextNode("\r\n");
+        const e18 = document.createTextNode("\n");
         
         this.element.appendChild(e18);
                 }

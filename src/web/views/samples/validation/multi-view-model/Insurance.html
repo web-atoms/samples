@@ -1,0 +1,22 @@
+<script>
+    import InsuranceViewModel from "~src/view-models/samples/validation/multi-view-model/InsuranceViewModel";
+    import Applicant from "~src/web/views/samples/validation/multi-view-model/Applicant";
+</script>
+<div view-model="{ this.resolve(InsuranceViewModel) }">
+    <div>
+        <input placeholder="Name" value="$[viewModel.model.broker]"/>
+        <span style="color: red" text="[$viewModel.errorBroker]"></span>
+    </div>
+
+    <AtomItemsControl items="{ $viewModel.model.applicants }">
+        <Applicant template="itemTemplate">
+        </Applicant>    
+    </AtomItemsControl>
+    <button event-click="{ () => $viewModel.addApplicant() }">Add Applicant</button>
+
+    <div>
+        Other fields...
+    </div>
+
+    <button event-click="{ () => $viewModel.save() }">Save</button>
+</div>

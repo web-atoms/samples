@@ -1,0 +1,22 @@
+<script>
+    import CustomValidationViewModel from "~src/view-models/samples/validation/CustomValidationViewModel";
+</script>
+<div view-model="{ this.resolve(CustomValidationViewModel) }">
+    <div>
+        <input placeholder="Name" value="$[viewModel.model.name]"/>
+        <span style="color: red" text="[$viewModel.errorName]"></span>
+    </div>
+    <AtomItemsControl items="{ $viewModel.model.emails }">
+        <div template="itemTemplate">
+            <input placeholder="Email" value="$[data.email]"/>
+            <span style="color: red" text="[$data.error]"></span>
+        </div>    
+    </AtomItemsControl>
+    <button event-click="{ () => $viewModel.addEmail() }">Add Email</button>
+
+    <div>
+        Other fields...
+    </div>
+
+    <button event-click="{ () => $viewModel.signup() }">Signup</button>
+</div>
