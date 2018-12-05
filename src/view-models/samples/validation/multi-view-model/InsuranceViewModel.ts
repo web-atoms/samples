@@ -2,7 +2,7 @@ import { Inject } from "web-atoms-core/dist/di/Inject";
 import { NavigationService } from "web-atoms-core/dist/services/NavigationService";
 import { AtomViewModel, Validate } from "web-atoms-core/dist/view-model/AtomViewModel";
 
-interface IInsurance  {
+export interface IInsurance  {
     id?: number;
     date?: Date;
     broker: string;

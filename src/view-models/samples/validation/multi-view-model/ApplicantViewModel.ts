@@ -10,13 +10,6 @@ export default class ApplicantViewModel extends AtomViewModel {
 
     public model: IApplicant;
 
-    public owner: any;
-
-    public init(): Promise<void> {
-        this.model = this.owner.data;
-        return super.init();
-    }
-
     @Validate
     public get errorName(): string {
         return this.model.name ? "" : "Name cannot be empty";

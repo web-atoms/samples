@@ -18,7 +18,7 @@ export default  class Applicant extends AtomControl {
                     this.element = document.createElement("div");
                     
                     
-                this.viewModel =  this.resolveWithParentViewModel(ApplicantViewModel) ;
+                this.viewModel =  this.resolve(ApplicantViewModel, () => ({ model: this.data, parent: this.parent.viewModel })) ;
 
         this.setPrimitiveValue(this.element, "style", "margin: 5px; padding: 5px; border: solid 1px lightgray; border-radius: 5px" );
         

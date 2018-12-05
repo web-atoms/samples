@@ -2,7 +2,7 @@
     import ApplicantViewModel from "~src/view-models/samples/validation/multi-view-model/ApplicantViewModel";
 </script>
 <div 
-    view-model="{ this.resolveWithParentViewModel(ApplicantViewModel) }"
+    view-model="{ this.resolve(ApplicantViewModel, () => ({ model: this.data, parent: this.parent.viewModel })) }"
     style="margin: 5px; padding: 5px; border: solid 1px lightgray; border-radius: 5px">
     <div>
         <input placeholder="Name" value="$[viewModel.model.name]"/>

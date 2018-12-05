@@ -1,7 +1,7 @@
 // tslint:disable
 import {BindableProperty} from "web-atoms-core/dist/core/BindableProperty";
-import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 import {AtomItemsControl} from "web-atoms-core/dist/web/controls/AtomItemsControl";
+import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 
     import InsuranceViewModel from "../../../../../view-models/samples/validation/multi-view-model/InsuranceViewModel";
     import Applicant from "./Applicant";
@@ -81,7 +81,7 @@ export default  class Insurance extends AtomControl {
             e9.runAfterInit( () =>
             e9.setLocalValue(e9.element, "items", (((this.viewModel) ? this.viewModel.model : undefined) ? this.viewModel.model.applicants : undefined)) );
 
-        e9.itemTemplate = Insurance_itemTemplate_1_21Creator(this);
+        e9.itemTemplate = Insurance_itemTemplate_1_10Creator(this);
             
             this.append(e9);
 
@@ -135,8 +135,8 @@ export default  class Insurance extends AtomControl {
                 }
             }
 
-            function Insurance_itemTemplate_1_21Creator(__creator){
-                return  class Insurance_itemTemplate_1_21 extends Applicant {
+            function Insurance_itemTemplate_1_10Creator(__creator){
+                return  class Insurance_itemTemplate_1_10 extends Applicant {
 
                 
 

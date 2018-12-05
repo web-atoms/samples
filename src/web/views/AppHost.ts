@@ -20,6 +20,9 @@ export default  class AppHost extends AtomGridView {
                     
                     
                     
+        this.setPrimitiveValue(this.element, "styleFontFamily", "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif" );
+        
+
                 this.viewModel =  this.resolve(AppHostViewModel) ;
 
         this.setPrimitiveValue(this.element, "columns", "200, *" );

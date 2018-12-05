@@ -20,26 +20,26 @@ export default class AppHostViewModel extends AtomViewModel {
     public async init(): Promise<any> {
         const ms = this.menuService;
         const home = ms.addGroup("Docs");
-        // home.addTabLink("Introduction", ModuleFiles.views.MDHost, {
-        //     url: UMD.resolvePath("web-atoms-samples/docs/general/introduction.md"),
-        //     title: "Introduction"
-        // });
-        // home.addTabLink("Dependency Injection", ModuleFiles.views.MDHost, {
-        //     url: UMD.resolvePath("web-atoms-samples/docs/general/dependency-injection.md"),
-        //     title: "Dependency Injection"
-        // });
-        // home.addTabLink("Binding", ModuleFiles.views.MDHost, {
-        //     url: UMD.resolvePath("web-atoms-samples/docs/general/binding.md"),
-        //     title: "Binding"
-        // });
-        // home.addTabLink("Ajax", ModuleFiles.views.MDHost, {
-        //     url: UMD.resolvePath("web-atoms-samples/docs/general/ajax.md"),
-        //     title: "Ajax"
-        // });
-        // home.addTabLink("Validation", ModuleFiles.views.MDHost, {
-        //     url: UMD.resolvePath("web-atoms-samples/docs/general/validation.md"),
-        //     title: "Validation"
-        // });
+        home.addTabLink("Introduction", ModuleFiles.views.MDHost, {
+            url: UMD.resolvePath("web-atoms-samples/docs/general/introduction.md"),
+            title: "Introduction"
+        });
+        home.addTabLink("Dependency Injection", ModuleFiles.views.MDHost, {
+            url: UMD.resolvePath("web-atoms-samples/docs/general/dependency-injection.md"),
+            title: "Dependency Injection"
+        });
+        home.addTabLink("Binding", ModuleFiles.views.MDHost, {
+            url: UMD.resolvePath("web-atoms-samples/docs/general/binding.md"),
+            title: "Binding"
+        });
+        home.addTabLink("Ajax", ModuleFiles.views.MDHost, {
+            url: UMD.resolvePath("web-atoms-samples/docs/general/ajax.md"),
+            title: "Ajax"
+        });
+        home.addTabLink("Validation", ModuleFiles.views.MDHost, {
+            url: UMD.resolvePath("web-atoms-samples/docs/general/validation.md"),
+            title: "Validation"
+        });
 
         const binding = ms.addGroup("Binding");
         binding.addTabLink("Bindings", ModuleFiles.views.samples.bindings.Binding);

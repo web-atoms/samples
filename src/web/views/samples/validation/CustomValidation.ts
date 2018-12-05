@@ -80,7 +80,7 @@ export default  class CustomValidation extends AtomControl {
             e9.runAfterInit( () =>
             e9.setLocalValue(e9.element, "items", (((this.viewModel) ? this.viewModel.model : undefined) ? this.viewModel.model.emails : undefined)) );
 
-        e9.itemTemplate = CustomValidation_itemTemplate_1_14Creator(this);
+        e9.itemTemplate = CustomValidation_itemTemplate_1_9Creator(this);
             
             this.append(e9);
 
@@ -134,8 +134,8 @@ export default  class CustomValidation extends AtomControl {
                 }
             }
 
-            function CustomValidation_itemTemplate_1_14Creator(__creator){
-                return  class CustomValidation_itemTemplate_1_14 extends AtomControl {
+            function CustomValidation_itemTemplate_1_9Creator(__creator){
+                return  class CustomValidation_itemTemplate_1_9 extends AtomControl {
 
                 
 
