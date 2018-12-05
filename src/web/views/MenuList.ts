@@ -30,7 +30,7 @@ export default  class MenuList extends AtomItemsControl {
         this.setPrimitiveValue(this.element, "style", "padding:5px" );
         
 
-        this.itemTemplate = MenuList_itemTemplate_1_1Creator(this);
+        this.itemTemplate = MenuList_itemTemplate_1_2Creator(this);
             
                     
         const e1 = document.createTextNode("\n    ");
@@ -43,8 +43,8 @@ export default  class MenuList extends AtomItemsControl {
                 }
             }
 
-            function MenuList_itemTemplate_1_1Creator(__creator){
-                return  class MenuList_itemTemplate_1_1 extends AtomControl {
+            function MenuList_itemTemplate_1_2Creator(__creator){
+                return  class MenuList_itemTemplate_1_2 extends AtomControl {
 
                 
 

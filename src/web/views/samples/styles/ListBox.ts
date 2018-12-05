@@ -42,7 +42,7 @@ export default  class ListBox extends AtomControl {
 
             e2.bind(e2.element, "items",  [["viewModel","movies","value"]], false , (v1) => (v1) );
 
-        e2.itemTemplate = ListBox_itemTemplate_1_8Creator(this);
+        e2.itemTemplate = ListBox_itemTemplate_1_9Creator(this);
             
             this.append(e2);
 
@@ -53,8 +53,8 @@ export default  class ListBox extends AtomControl {
                 }
             }
 
-            function ListBox_itemTemplate_1_8Creator(__creator){
-                return  class ListBox_itemTemplate_1_8 extends AtomControl {
+            function ListBox_itemTemplate_1_9Creator(__creator){
+                return  class ListBox_itemTemplate_1_9 extends AtomControl {
 
                 
 

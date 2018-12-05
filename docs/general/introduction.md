@@ -59,8 +59,7 @@ All web atoms modules are written (transpiled) as UMD module, suitable for testi
 ```
 
 ## Web Atoms Generator
-Each html file under `src` folder is transpiled to a TypeScript file that can contains a class derived from AtomControl. This class is a
-view that can be loaded with `UMD.loadView` method and it can be nested inside any other view.
+Each html file under `src` folder is transpiled to a TypeScript file that can contains a class derived from AtomControl. This class is a view that can be loaded with `UMD.loadView` method and it can be nested inside any other view.
 
 Similarly, each xaml file under `src` folder is transpiled to a TypeScript file, that can be used inside Xamarin.Forms application.
 

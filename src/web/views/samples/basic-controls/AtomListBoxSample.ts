@@ -56,7 +56,7 @@ export default  class AtomListBoxSample extends AtomControl {
         e2.setPrimitiveValue(e2.element, "style", " color:#7e7e7e;\n                width: 610px;\n                margin-top: 10px;\n                border: 1px solid #ccc; " );
         
 
-        e2.itemTemplate = AtomListBoxSample_itemTemplate_1_3Creator(this);
+        e2.itemTemplate = AtomListBoxSample_itemTemplate_1_4Creator(this);
             
             this.append(e2);
 
@@ -81,8 +81,8 @@ export default  class AtomListBoxSample extends AtomControl {
                 }
             }
 
-            function AtomListBoxSample_itemTemplate_1_3Creator(__creator){
-                return  class AtomListBoxSample_itemTemplate_1_3 extends AtomControl {
+            function AtomListBoxSample_itemTemplate_1_4Creator(__creator){
+                return  class AtomListBoxSample_itemTemplate_1_4 extends AtomControl {
 
                 
 

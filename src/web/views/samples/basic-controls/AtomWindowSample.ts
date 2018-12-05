@@ -31,10 +31,10 @@ export default  class AtomWindowSample extends AtomWindow {
         this.setPrimitiveValue(this.element, "height", "350px" );
         
 
-        this.windowTemplate = AtomWindowSample_windowTemplate_1_4Creator(this);
+        this.windowTemplate = AtomWindowSample_windowTemplate_1_5Creator(this);
             
 
-        this.commandTemplate = AtomWindowSample_commandTemplate_2_5Creator(this);
+        this.commandTemplate = AtomWindowSample_commandTemplate_2_6Creator(this);
             
                     
         const e1 = document.createTextNode("\n    ");
@@ -51,8 +51,8 @@ export default  class AtomWindowSample extends AtomWindow {
                 }
             }
 
-            function AtomWindowSample_windowTemplate_1_4Creator(__creator){
-                return  class AtomWindowSample_windowTemplate_1_4 extends AtomControl {
+            function AtomWindowSample_windowTemplate_1_5Creator(__creator){
+                return  class AtomWindowSample_windowTemplate_1_5 extends AtomControl {
 
                 
 
@@ -335,8 +335,8 @@ export default  class AtomWindowSample extends AtomWindow {
 
             
             }
-function AtomWindowSample_commandTemplate_2_5Creator(__creator){
-                return  class AtomWindowSample_commandTemplate_2_5 extends AtomControl {
+function AtomWindowSample_commandTemplate_2_6Creator(__creator){
+                return  class AtomWindowSample_commandTemplate_2_6 extends AtomControl {
 
                 
 

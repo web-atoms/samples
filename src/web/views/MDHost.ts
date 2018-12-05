@@ -1,9 +1,9 @@
 // tslint:disable
 import {BindableProperty} from "web-atoms-core/dist/core/BindableProperty";
-import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
-import {AtomItemsControl} from "web-atoms-core/dist/web/controls/AtomItemsControl";
 import {AtomGridSplitter} from "web-atoms-core/dist/web/controls/AtomGridSplitter";
+import {AtomItemsControl} from "web-atoms-core/dist/web/controls/AtomItemsControl";
 import {AtomGridView} from "web-atoms-core/dist/web/controls/AtomGridView";
+import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 
     import MDViewModel from "../../view-models/MDViewModel";
 
@@ -78,7 +78,7 @@ export default  class MDHost extends AtomGridView {
             e7.runAfterInit( () =>
             e7.setLocalValue(e7.element, "items", ((this.viewModel) ? this.viewModel.headers : undefined)) );
 
-        e7.itemTemplate = MDHost_itemTemplate_1_31Creator(this);
+        e7.itemTemplate = MDHost_itemTemplate_1_1Creator(this);
             
             this.append(e7);
 
@@ -89,8 +89,8 @@ export default  class MDHost extends AtomGridView {
                 }
             }
 
-            function MDHost_itemTemplate_1_31Creator(__creator){
-                return  class MDHost_itemTemplate_1_31 extends AtomControl {
+            function MDHost_itemTemplate_1_1Creator(__creator){
+                return  class MDHost_itemTemplate_1_1 extends AtomControl {
 
                 
 

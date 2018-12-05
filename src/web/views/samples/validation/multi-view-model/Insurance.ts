@@ -81,7 +81,7 @@ export default  class Insurance extends AtomControl {
             e9.runAfterInit( () =>
             e9.setLocalValue(e9.element, "items", (((this.viewModel) ? this.viewModel.model : undefined) ? this.viewModel.model.applicants : undefined)) );
 
-        e9.itemTemplate = Insurance_itemTemplate_1_10Creator(this);
+        e9.itemTemplate = Insurance_itemTemplate_1_11Creator(this);
             
             this.append(e9);
 
@@ -135,8 +135,8 @@ export default  class Insurance extends AtomControl {
                 }
             }
 
-            function Insurance_itemTemplate_1_10Creator(__creator){
-                return  class Insurance_itemTemplate_1_10 extends Applicant {
+            function Insurance_itemTemplate_1_11Creator(__creator){
+                return  class Insurance_itemTemplate_1_11 extends Applicant {
 
                 
 

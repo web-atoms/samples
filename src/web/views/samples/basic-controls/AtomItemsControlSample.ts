@@ -56,7 +56,7 @@ export default  class AtomItemsControlSample extends AtomControl {
             
             e5.bind(e5.element, "items",  [["viewModel","movies","value"]], false , (v1) => (v1) );
 
-        e5.itemTemplate = AtomItemsControlSample_itemTemplate_1_2Creator(this);
+        e5.itemTemplate = AtomItemsControlSample_itemTemplate_1_3Creator(this);
             
             this.append(e5);
 
@@ -67,8 +67,8 @@ export default  class AtomItemsControlSample extends AtomControl {
                 }
             }
 
-            function AtomItemsControlSample_itemTemplate_1_2Creator(__creator){
-                return  class AtomItemsControlSample_itemTemplate_1_2 extends AtomControl {
+            function AtomItemsControlSample_itemTemplate_1_3Creator(__creator){
+                return  class AtomItemsControlSample_itemTemplate_1_3 extends AtomControl {
 
                 
 

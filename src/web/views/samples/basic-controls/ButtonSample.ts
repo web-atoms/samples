@@ -132,7 +132,7 @@ export default  class ButtonSample extends AtomControl {
 
             e5.bind(e5.element, "items",  [["viewModel","movies","value"]], false , (v1) => (v1) );
 
-        e5.itemTemplate = ButtonSample_itemTemplate_1_6Creator(this);
+        e5.itemTemplate = ButtonSample_itemTemplate_1_7Creator(this);
             
             this.append(e5);
 
@@ -143,8 +143,8 @@ export default  class ButtonSample extends AtomControl {
                 }
             }
 
-            function ButtonSample_itemTemplate_1_6Creator(__creator){
-                return  class ButtonSample_itemTemplate_1_6 extends AtomControl {
+            function ButtonSample_itemTemplate_1_7Creator(__creator){
+                return  class ButtonSample_itemTemplate_1_7 extends AtomControl {
 
                 
 

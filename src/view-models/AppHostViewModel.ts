@@ -20,6 +20,7 @@ export default class AppHostViewModel extends AtomViewModel {
     public async init(): Promise<any> {
         const ms = this.menuService;
         const home = ms.addGroup("Docs");
+
         home.addTabLink("Introduction", ModuleFiles.views.MDHost, {
             url: UMD.resolvePath("web-atoms-samples/docs/general/introduction.md"),
             title: "Introduction"
@@ -68,6 +69,11 @@ export default class AppHostViewModel extends AtomViewModel {
         controls.addTabLink("Grid View",  ModuleFiles.views.samples.basicControls.AtomGridViewSample);
         controls.addTabLink("Window",  ModuleFiles.views.samples.basicControls.ButtonSample);
 
-        await this.navigationService.openPage(`tab://app/${ModuleFiles.views.Start}`);
+        this.app.callLater(async () => {
+            await this.navigationService.openPage(`tab://app/${ModuleFiles.views.MDHost}`, {
+                url: UMD.resolvePath("web-atoms-samples/docs/general/introduction.md"),
+                title: "Introduction"
+            });
+        });
     }
 }

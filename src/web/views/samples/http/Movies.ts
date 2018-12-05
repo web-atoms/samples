@@ -51,7 +51,7 @@ export default  class Movies extends AtomGridView {
 
             e2.bind(e2.element, "items",  [["viewModel","movies","value"]], false , (v1) => (v1) );
 
-        e2.itemTemplate = Movies_itemTemplate_1_7Creator(this);
+        e2.itemTemplate = Movies_itemTemplate_1_8Creator(this);
             
             this.append(e2);
 
@@ -62,8 +62,8 @@ export default  class Movies extends AtomGridView {
                 }
             }
 
-            function Movies_itemTemplate_1_7Creator(__creator){
-                return  class Movies_itemTemplate_1_7 extends AtomControl {
+            function Movies_itemTemplate_1_8Creator(__creator){
+                return  class Movies_itemTemplate_1_8 extends AtomControl {
 
                 
 
