@@ -273,13 +273,6 @@ export default class ApplicantViewModel extends AtomViewModel {
 
     public model: IApplicant;
 
-    public owner: any;
-
-    public init(): Promise<void> {
-        this.model = this.owner.data;
-        return super.init();
-    }
-
     @Validate
     public get errorName(): string {
         return this.model.name ? "" : "Name cannot be empty";
@@ -301,7 +294,7 @@ export default class ApplicantViewModel extends AtomViewModel {
 #### Applicant.html
 ```html
 <div 
-    view-model="{ this.resolveWithParentViewModel(ApplicantViewModel) }"
+    view-model="{ this.resolve(ApplicantViewModel, () => ({ model: this.data, parent: this.parent.viewModel })) }"
     style="margin: 5px; padding: 5px; border: solid 1px lightgray; border-radius: 5px">
     <div>
         <input placeholder="Name" value="$[viewModel.model.name]"/>
@@ -315,5 +308,7 @@ export default class ApplicantViewModel extends AtomViewModel {
     <button event-click="{ () => $viewModel.delete() }">Delete</button>
 </div>
 ```
+
+> You can initialize view model with additional properties.
 
 
