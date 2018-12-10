@@ -29,7 +29,7 @@ export default class MDViewModel extends AtomViewModel {
     public headers: any[] = [];
 
     @Inject
-    public mdService: MDService;
+    private mdService: MDService;
 
     public async init(): Promise<void> {
 
