@@ -37,7 +37,7 @@
             const e1 = this.find("e1");
             
             this.runAfterInit( () =>
-            this.setLocalValue(e1, "Text", ((this.viewModel) ? this.viewModel.title : undefined)) );
+            this.setLocalValue(e1, "Text",  ((this.viewModel) ? this.viewModel.title : undefined) ) );
 
 
             const e2 = this.find("e2");

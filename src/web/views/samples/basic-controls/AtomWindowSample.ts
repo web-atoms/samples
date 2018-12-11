@@ -360,7 +360,7 @@ function AtomWindowSample_commandTemplate_2_6Creator(__creator){
         this.append(e2);
         
             this.runAfterInit( () =>
-            this.setLocalValue(e2, "eventClick", () => (this.viewModel).save()) );
+            this.setLocalValue(e2, "eventClick",  () => (this.viewModel).save() ) );
         
         const e3 = document.createTextNode("Save");
         
@@ -375,7 +375,7 @@ function AtomWindowSample_commandTemplate_2_6Creator(__creator){
         this.append(e5);
         
             this.runAfterInit( () =>
-            this.setLocalValue(e5, "eventClick", () => (this.viewModel).cancel()) );
+            this.setLocalValue(e5, "eventClick",  () => (this.viewModel).cancel() ) );
         
         const e6 = document.createTextNode("Cancel");
         

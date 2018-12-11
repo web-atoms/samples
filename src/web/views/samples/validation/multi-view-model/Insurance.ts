@@ -79,7 +79,7 @@ export default  class Insurance extends AtomControl {
         e9.element.appendChild(e11);
             
             e9.runAfterInit( () =>
-            e9.setLocalValue(e9.element, "items", (((this.viewModel) ? this.viewModel.model : undefined) ? this.viewModel.model.applicants : undefined)) );
+            e9.setLocalValue(e9.element, "items",  (((this.viewModel) ? this.viewModel.model : undefined) ? this.viewModel.model.applicants : undefined) ) );
 
         e9.itemTemplate = Insurance_itemTemplate_1_11Creator(this);
             
@@ -95,7 +95,7 @@ export default  class Insurance extends AtomControl {
         this.append(e13);
         
             this.runAfterInit( () =>
-            this.setLocalValue(e13, "eventClick", () => (this.viewModel).addApplicant()) );
+            this.setLocalValue(e13, "eventClick",  () => (this.viewModel).addApplicant() ) );
         
         const e14 = document.createTextNode("Add Applicant");
         
@@ -123,7 +123,7 @@ export default  class Insurance extends AtomControl {
         this.append(e19);
         
             this.runAfterInit( () =>
-            this.setLocalValue(e19, "eventClick", () => (this.viewModel).save()) );
+            this.setLocalValue(e19, "eventClick",  () => (this.viewModel).save() ) );
         
         const e20 = document.createTextNode("Save");
         

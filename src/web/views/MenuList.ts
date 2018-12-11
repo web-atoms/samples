@@ -1,7 +1,6 @@
 // tslint:disable
 import {BindableProperty} from "web-atoms-core/dist/core/BindableProperty";
 import {AtomItemsControl} from "web-atoms-core/dist/web/controls/AtomItemsControl";
-import {AtomListBox} from "web-atoms-core/dist/web/controls/AtomListBox";
 import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 
     import MenuStyle from "../styles/MenuStyle";
@@ -23,9 +22,12 @@ export default  class MenuList extends AtomItemsControl {
             this.defaultControlStyle =  MenuStyle ;
             
 
-                this.setPrimitiveValue(this.element, "styleClass",  this.controlStyle.root );
+                    this.runAfterInit(() => {
+                        this.setPrimitiveValue(this.element, "styleClass",  this.controlStyle.root );
+                    });
+                    
 
-            this.bind(this.element, "items",  [["viewModel","menuService","menus"]], false , (v1) => (v1) );
+            this.bind(this.element, "items",  [["viewModel","menuService","menus"]], false , (v1) =>  (v1)  );
 
         this.setPrimitiveValue(this.element, "style", "padding:5px" );
         
@@ -75,7 +77,7 @@ export default  class MenuList extends AtomItemsControl {
         
         this.element.appendChild(e3);
 
-            const e4 = new AtomListBox(this.app, document.createElement("div"));
+            const e4 = new AtomItemsControl(this.app, document.createElement("div"));
             
             
             

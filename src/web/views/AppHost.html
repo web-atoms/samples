@@ -1,15 +1,35 @@
 <script>
     import AppHostViewModel from "~/src/view-models/AppHostViewModel";
     import MenuList from "./MenuList";
+    import GitHubMark32px from "~src/images/github/GitHubMark32px";
 </script>
 <AtomGridView
     style-font-family = "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"
     view-model="{ this.resolve(AppHostViewModel) }"
     columns="200, *"
-    rows="*">
+    rows="30, *, 30">
 
-    <MenuList></MenuList>
+    <header>
+        <h3 style="position: absolute; margin: 0; padding: 0; top: 5px; left: 5px;" text="<W/> Web Atoms"></h3>
+    </header>
 
-    <AtomTabbedPage row="0" column="1"></AtomTabbedPage>
+    <MenuList row="1"></MenuList>
+
+    <AtomTabbedPage row="0:2" column="1"></AtomTabbedPage>
+
+    <footer row="2" column="0:2" style="padding:5px;">
+        <span>© NeuroSpeech Technologies Pvt Ltd</span>
+        <div style="position: absolute; right: 5px; top: 5px">
+
+            <!-- Comment 1 -->
+
+            <img style="max-height: 16px" src="{ GitHubMark32px }" />
+            <a href="https://github.com/neurospeech/web-atoms-core" target="_blank">Source Code</a>
+
+            <img style="max-height: 16px" src="{ GitHubMark32px }" />
+            <a href="https://github.com/neurospeech/web-atoms-samples" target="_blank">Samples</a>
+
+        </div>
+    </footer>
 
 </AtomGridView>

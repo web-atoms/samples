@@ -78,7 +78,7 @@ export default  class ListBox extends AtomControl {
         this.append(e2);
         
             this.runAfterInit( () =>
-            this.setLocalValue(e2, "text", ((this.data) ? this.data.name : undefined)) );
+            this.setLocalValue(e2, "text",  ((this.data) ? this.data.name : undefined) ) );
         
 
         const e3 = document.createTextNode("\n        ");

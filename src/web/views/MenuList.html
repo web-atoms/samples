@@ -10,9 +10,9 @@
         template="itemTemplate" 
         event-click="{ () => this.data.click() }">
         <span text="[$data.label]"></span>
-        <AtomListBox.div
+        <AtomItemsControl.div
             style-display="[$data.children ? '' : 'none']"
             items="[$data.children]"
-            item-template="{ __creator.itemTemplate }"></AtomListBox.div>
+            item-template="{ __creator.itemTemplate }"></AtomItemsControl.div>
     </div>
 </AtomItemsControl.div>

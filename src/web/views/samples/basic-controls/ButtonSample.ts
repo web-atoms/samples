@@ -36,7 +36,7 @@ export default  class ButtonSample extends AtomControl {
             this.bind(e2, "styleClass",  [["this","controlStyle","addButton"]], false , (v1) => (v1) , __creator);
 
             this.runAfterInit( () =>
-            this.setLocalValue(e2, "eventClick", ()=> (this.viewModel).addMovie()) );
+            this.setLocalValue(e2, "eventClick",  ()=> (this.viewModel).addMovie() ) );
         
         const e3 = document.createTextNode("\n        Add New Movie\n    ");
         

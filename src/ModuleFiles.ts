@@ -4,6 +4,16 @@
 			export const ModuleFiles =
 				{
   "src": {
+    "images": {
+      "github": {
+        "GitHubMark120pxPlus_png": UMD.resolvePath("web-atoms-samples/src/images/github/GitHub-Mark-120px-plus.png"),
+        "GitHubMark32px_png": UMD.resolvePath("web-atoms-samples/src/images/github/GitHub-Mark-32px.png"),
+        "GitHubMark64px_png": UMD.resolvePath("web-atoms-samples/src/images/github/GitHub-Mark-64px.png"),
+        "GitHubMarkLight120pxPlus_png": UMD.resolvePath("web-atoms-samples/src/images/github/GitHub-Mark-Light-120px-plus.png"),
+        "GitHubMarkLight32px_png": UMD.resolvePath("web-atoms-samples/src/images/github/GitHub-Mark-Light-32px.png"),
+        "GitHubMarkLight64px_png": UMD.resolvePath("web-atoms-samples/src/images/github/GitHub-Mark-Light-64px.png")
+      }
+    },
     "web": {
       "images": {
         "add_png": UMD.resolvePath("web-atoms-samples/src/web/images/add.png")
