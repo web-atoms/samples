@@ -41,7 +41,10 @@ export default class AppHostViewModel extends AtomViewModel {
             url: UMD.resolvePath("web-atoms-samples/docs/general/validation.md"),
             title: "Validation"
         });
-
+        home.addTabLink("Styles", ModuleFiles.views.MDHost, {
+            url: UMD.resolvePath("web-atoms-samples/docs/web/styles.md"),
+            title: "Styles"
+        });
         const binding = ms.addGroup("Binding");
         binding.addTabLink("Bindings", ModuleFiles.views.samples.bindings.Binding);
 
