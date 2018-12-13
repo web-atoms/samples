@@ -78,7 +78,7 @@ export default  class CustomValidation extends AtomControl {
         e9.element.appendChild(e11);
             
             e9.runAfterInit( () =>
-            e9.setLocalValue(e9.element, "items",  (((this.viewModel) ? this.viewModel.model : undefined) ? this.viewModel.model.emails : undefined) ) );
+            e9.setLocalValue(e9.element, "items", (((this.viewModel) ? this.viewModel.model : undefined) ? this.viewModel.model.emails : undefined)) );
 
         e9.itemTemplate = CustomValidation_itemTemplate_1_10Creator(this);
             
@@ -94,7 +94,7 @@ export default  class CustomValidation extends AtomControl {
         this.append(e13);
         
             this.runAfterInit( () =>
-            this.setLocalValue(e13, "eventClick",  () => (this.viewModel).addEmail() ) );
+            this.setLocalValue(e13, "eventClick", () => (this.viewModel).addEmail()) );
         
         const e14 = document.createTextNode("Add Email");
         
@@ -122,7 +122,7 @@ export default  class CustomValidation extends AtomControl {
         this.append(e19);
         
             this.runAfterInit( () =>
-            this.setLocalValue(e19, "eventClick",  () => (this.viewModel).signup() ) );
+            this.setLocalValue(e19, "eventClick", () => (this.viewModel).signup()) );
         
         const e20 = document.createTextNode("Signup");
         

@@ -32,7 +32,7 @@ export default  class AppHost extends AtomGridView {
         this.setPrimitiveValue(this.element, "rows", "30, *, 30" );
         
                     
-        const e1 = document.createTextNode("\n\n    ");
+        const e1 = document.createTextNode("\r\n\r\n    ");
         
         this.element.appendChild(e1);
 
@@ -41,7 +41,7 @@ export default  class AppHost extends AtomGridView {
         this.append(e2);
         
         
-        const e3 = document.createTextNode("\n        ");
+        const e3 = document.createTextNode("\r\n        ");
         
         e2.appendChild(e3);
 
@@ -56,11 +56,11 @@ export default  class AppHost extends AtomGridView {
         
         
 
-        const e5 = document.createTextNode("\n    ");
+        const e5 = document.createTextNode("\r\n    ");
         
         e2.appendChild(e5);
 
-        const e6 = document.createTextNode("\n\n    ");
+        const e6 = document.createTextNode("\r\n\r\n    ");
         
         this.element.appendChild(e6);
 
@@ -73,7 +73,7 @@ export default  class AppHost extends AtomGridView {
             this.append(e7);
 
 
-        const e8 = document.createTextNode("\n\n    ");
+        const e8 = document.createTextNode("\r\n\r\n    ");
         
         this.element.appendChild(e8);
 
@@ -89,7 +89,7 @@ export default  class AppHost extends AtomGridView {
             this.append(e9);
 
 
-        const e10 = document.createTextNode("\n\n    ");
+        const e10 = document.createTextNode("\r\n\r\n    ");
         
         this.element.appendChild(e10);
 
@@ -106,7 +106,7 @@ export default  class AppHost extends AtomGridView {
         this.setPrimitiveValue(e11, "style", "padding:5px;" );
         
         
-        const e12 = document.createTextNode("\n        ");
+        const e12 = document.createTextNode("\r\n        ");
         
         e11.appendChild(e12);
 
@@ -119,7 +119,7 @@ export default  class AppHost extends AtomGridView {
         
         e13.appendChild(e14);
 
-        const e15 = document.createTextNode("\n        ");
+        const e15 = document.createTextNode("\r\n        ");
         
         e11.appendChild(e15);
 
@@ -130,13 +130,17 @@ export default  class AppHost extends AtomGridView {
         this.setPrimitiveValue(e16, "style", "position: absolute; right: 5px; top: 5px" );
         
         
-        const e17 = document.createTextNode("\n\n            ");
+        const e17 = document.createTextNode("\r\n\r\n            ");
         
         e16.appendChild(e17);
-// e18
-//  Comment 1 
 
-        const e19 = document.createTextNode("\n\n            ");
+        const e18 = document.createElement("undefined");
+        
+        e16.appendChild(e18);
+        
+        
+
+        const e19 = document.createTextNode("\r\n\r\n            ");
         
         e16.appendChild(e19);
 
@@ -150,7 +154,7 @@ export default  class AppHost extends AtomGridView {
                 this.setPrimitiveValue(e20, "src",  GitHubMark32px );
         
 
-        const e21 = document.createTextNode("\n            ");
+        const e21 = document.createTextNode("\r\n            ");
         
         e16.appendChild(e21);
 
@@ -168,7 +172,7 @@ export default  class AppHost extends AtomGridView {
         
         e22.appendChild(e23);
 
-        const e24 = document.createTextNode("\n\n            ");
+        const e24 = document.createTextNode("\r\n\r\n            ");
         
         e16.appendChild(e24);
 
@@ -182,7 +186,7 @@ export default  class AppHost extends AtomGridView {
                 this.setPrimitiveValue(e25, "src",  GitHubMark32px );
         
 
-        const e26 = document.createTextNode("\n            ");
+        const e26 = document.createTextNode("\r\n            ");
         
         e16.appendChild(e26);
 
@@ -200,15 +204,15 @@ export default  class AppHost extends AtomGridView {
         
         e27.appendChild(e28);
 
-        const e29 = document.createTextNode("\n\n        ");
+        const e29 = document.createTextNode("\r\n\r\n        ");
         
         e16.appendChild(e29);
 
-        const e30 = document.createTextNode("\n    ");
+        const e30 = document.createTextNode("\r\n    ");
         
         e11.appendChild(e30);
 
-        const e31 = document.createTextNode("\n\n");
+        const e31 = document.createTextNode("\r\n\r\n");
         
         this.element.appendChild(e31);
                 }

@@ -114,7 +114,7 @@ export default  class Applicant extends AtomControl {
         this.append(e16);
         
             this.runAfterInit( () =>
-            this.setLocalValue(e16, "eventClick",  () => (this.viewModel).delete() ) );
+            this.setLocalValue(e16, "eventClick", () => (this.viewModel).delete()) );
         
         const e17 = document.createTextNode("Delete");
         

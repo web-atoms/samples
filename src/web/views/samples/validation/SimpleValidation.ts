@@ -111,7 +111,7 @@ export default  class SimpleValidation extends AtomControl {
         this.append(e16);
         
             this.runAfterInit( () =>
-            this.setLocalValue(e16, "eventClick",  () => (this.viewModel).signup() ) );
+            this.setLocalValue(e16, "eventClick", () => (this.viewModel).signup()) );
         
         const e17 = document.createTextNode("Signup");
         
