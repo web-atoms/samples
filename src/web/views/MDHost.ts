@@ -76,7 +76,7 @@ export default  class MDHost extends AtomGridView {
         
 
             e7.runAfterInit( () =>
-            e7.setLocalValue(e7.element, "items", ((this.viewModel) ? this.viewModel.headers : undefined)) );
+            e7.setLocalValue(e7.element, "items",  ((this.viewModel) ? this.viewModel.headers : undefined) ) );
 
         e7.itemTemplate = MDHost_itemTemplate_1_1Creator(this);
             
@@ -108,13 +108,13 @@ export default  class MDHost extends AtomGridView {
         
 
             this.runAfterInit( () =>
-            this.setLocalValue(this.element, "stylePaddingLeft", ((this.data) ? this.data.pad : undefined) + 'px') );
+            this.setLocalValue(this.element, "stylePaddingLeft",  ((this.data) ? this.data.pad : undefined) + 'px' ) );
 
             this.runAfterInit( () =>
-            this.setLocalValue(this.element, "text", ((this.data) ? this.data.label : undefined)) );
+            this.setLocalValue(this.element, "text",  ((this.data) ? this.data.label : undefined) ) );
 
             this.runAfterInit( () =>
-            this.setLocalValue(this.element, "eventClick", () => (this.viewModel).show((this.data))) );
+            this.setLocalValue(this.element, "eventClick",  () => (this.viewModel).show((this.data)) ) );
                     
                 }
             }
