@@ -118,14 +118,14 @@ When you want to apply multiple classes together with some conditions, you can a
 ```html
 <div style-class="{
         this.controlStyle.item.className
-        + ' ' + this.controlStyle.selectedItem.className
+        + ' upload-button'
     }">
 </div>
 
 OR
 
 <div style-class="{
-        `${ this.controlStyle.item.className } ${this.controlStyle.selectedItem.className}`
+        `${ this.controlStyle.item.className } upload-button`
     }">
 </div>
 
@@ -134,12 +134,14 @@ OR
 
 <div style-class="{
     {
-        [this.controlStyle.item.className]: true,
-        [this.controlStyle.selectedItem.className]: true 
+        [this.controlStyle.root.className]: true,
+        'upload-button' : true 
     }
     }">
 </div>
 ```
+
+### Composite Style one way binding
 
 ```html
 <div style-class="[ 
