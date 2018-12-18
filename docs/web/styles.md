@@ -108,3 +108,17 @@ class ListStyle extends AtomStyle {
     }
 }
 ```
+
+## Composite Style Binding
+
+When you want to apply multiple classes together with some conditions, you can apply them in object notation with square brackets with reference to className of style. This is required to provide correct class name as class names are dynamically applied in runtime to avoid conflicts.
+
+```html
+<div style-class="[ 
+    {
+        [this.controlStyle.item.className]: true,
+        [this.controlStyle.selectedItem.className]: $data === $viewModel.selectedItem 
+    }
+    ]">
+</div>
+```
