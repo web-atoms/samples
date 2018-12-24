@@ -133,13 +133,15 @@ OR
 OR
 
 <div style-class="{
-    {
+    ({
         [this.controlStyle.root.className]: true,
         'upload-button' : true 
-    }
+    })
     }">
 </div>
 ```
+
+> Inside binding expression, you must put object notation inside round brackets.
 
 ### Composite Style one way binding
 
