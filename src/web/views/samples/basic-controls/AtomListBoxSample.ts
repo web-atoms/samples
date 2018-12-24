@@ -29,55 +29,36 @@ export default  class AtomListBoxSample extends AtomControl {
         this.setPrimitiveValue(this.element, "style", "padding: 10px;" );
         
                     
-        const e1 = document.createTextNode("\r\n    ");
-        
-        this.element.appendChild(e1);
-
-            const e2 = new AtomListBox(this.app, document.createElement("div"));
+            const e1 = new AtomListBox(this.app, document.createElement("div"));
             
             
-        const e3 = document.createTextNode("\r\n            ");
-        
-        e2.element.appendChild(e3);
-
-        const e4 = document.createTextNode("\r\n    ");
-        
-        e2.element.appendChild(e4);
             
-        e2.setPrimitiveValue(e2.element, "allowSelectFirst", "true" );
+        e1.setPrimitiveValue(e1.element, "allowSelectFirst", "true" );
         
 
-            e2.bind(e2.element, "items",  [["viewModel","movies","value"]], false , (v1) => (v1) );
+            e1.bind(e1.element, "items",  [["viewModel","movies","value"]], false , (v1) => (v1) );
 
-                e2.controlStyle =  ListBoxStyle ;
+                e1.controlStyle =  ListBoxStyle ;
 
-            e2.bind(e2.element, "selectedItem",  [["viewModel","movie"]], true  );
+            e1.bind(e1.element, "selectedItem",  [["viewModel","movie"]], true  );
 
-        e2.setPrimitiveValue(e2.element, "style", " color:#7e7e7e;\r\n                width: 610px;\r\n                margin-top: 10px;\r\n                border: 1px solid #ccc; " );
+        e1.setPrimitiveValue(e1.element, "style", " color:#7e7e7e;\r\n                width: 610px;\r\n                margin-top: 10px;\r\n                border: 1px solid #ccc; " );
         
 
-        e2.itemTemplate = AtomListBoxSample_itemTemplate_1_4Creator(this);
+        e1.itemTemplate = AtomListBoxSample_itemTemplate_1_4Creator(this);
             
-            this.append(e2);
+            this.append(e1);
 
 
-        const e5 = document.createTextNode("\r\n    ");
+        const e2 = document.createElement("div");
         
-        this.element.appendChild(e5);
-
-        const e6 = document.createElement("div");
+        this.append(e2);
         
-        this.append(e6);
-        
-        this.setPrimitiveValue(e6, "style", "font-size: 15px;\r\n                margin-top: 20px;\r\n                font-weight: 600" );
+        this.setPrimitiveValue(e2, "style", "font-size: 15px;\r\n                margin-top: 20px;\r\n                font-weight: 600" );
         
 
-            this.bind(e6, "text",  [["viewModel","movie","name"]], false , (v1) => 'Selected Item: ' + (v1) );
+            this.bind(e2, "text",  [["viewModel","movie","name"]], false , (v1) => 'Selected Item: ' + (v1) );
         
-
-        const e7 = document.createTextNode("\r\n");
-        
-        this.element.appendChild(e7);
                 }
             }
 
@@ -99,58 +80,32 @@ export default  class AtomListBoxSample extends AtomControl {
         this.setPrimitiveValue(this.element, "style", " border-bottom: 1px solid #ccc; \r\n                         border-radius: 0px;\r\n                         padding: 10px" );
         
                     
-        const e1 = document.createTextNode("\r\n                ");
+        const e1 = document.createElement("div");
         
-        this.element.appendChild(e1);
-
-        const e2 = document.createElement("div");
-        
-        this.append(e2);
+        this.append(e1);
         
         
-        const e3 = document.createTextNode("\r\n                    ");
+        const e2 = document.createElement("span");
         
-        e2.appendChild(e3);
-
-        const e4 = document.createElement("span");
+        e1.appendChild(e2);
         
-        e2.appendChild(e4);
-        
-        this.setPrimitiveValue(e4, "style", "font-size: 15px;\r\n                                font-weight: 600" );
+        this.setPrimitiveValue(e2, "style", "font-size: 15px;\r\n                                font-weight: 600" );
         
 
             this.runAfterInit( () =>
-            this.setLocalValue(e4, "text", ((this.data) ? this.data.name : undefined) + ' ( '+ ((this.data) ? this.data.genre : undefined) +' )') );
+            this.setLocalValue(e2, "text", ((this.data) ? this.data.name : undefined) + ' ( '+ ((this.data) ? this.data.genre : undefined) +' )') );
         
-        const e5 = document.createTextNode("\r\n                    ");
-        
-        e4.appendChild(e5);
 
-        const e6 = document.createTextNode("\r\n                ");
+        const e3 = document.createElement("div");
         
-        e2.appendChild(e6);
-
-        const e7 = document.createTextNode("\r\n                ");
+        this.append(e3);
         
-        this.element.appendChild(e7);
-
-        const e8 = document.createElement("div");
-        
-        this.append(e8);
-        
-        this.setPrimitiveValue(e8, "style", "font-size: 15px; \r\n                            font-weight: 400; \r\n                            padding-left: 15px;\r\n                            padding-top: 5px" );
+        this.setPrimitiveValue(e3, "style", "font-size: 15px; \r\n                            font-weight: 400; \r\n                            padding-left: 15px;\r\n                            padding-top: 5px" );
         
 
             this.runAfterInit( () =>
-            this.setLocalValue(e8, "text", ((this.data) ? this.data.description : undefined)) );
+            this.setLocalValue(e3, "text", ((this.data) ? this.data.description : undefined)) );
         
-        const e9 = document.createTextNode("\r\n                ");
-        
-        e8.appendChild(e9);
-
-        const e10 = document.createTextNode("\r\n            ");
-        
-        this.element.appendChild(e10);
                 }
             }
 

@@ -24,46 +24,27 @@ export default  class AtomItemsControlSample extends AtomControl {
         this.setPrimitiveValue(this.element, "style", "padding-left: 25px; padding-top: 5px" );
         
                     
-        const e1 = document.createTextNode("     \r\n    ");
+        const e1 = document.createElement("div");
         
-        this.element.appendChild(e1);
+        this.append(e1);
+        
+        this.setPrimitiveValue(e1, "style", "font-size: 15px;\r\n                 color: maroon;\r\n                 font-weight: 600" );
+        
+        
+        const e2 = document.createTextNode("\r\n                 Upcoming Movies:\r\n    ");
+        
+        e1.appendChild(e2);
 
-        const e2 = document.createElement("div");
-        
-        this.append(e2);
-        
-        this.setPrimitiveValue(e2, "style", "font-size: 15px;\r\n                 color: maroon;\r\n                 font-weight: 600" );
-        
-        
-        const e3 = document.createTextNode("\r\n                 Upcoming Movies:\r\n    ");
-        
-        e2.appendChild(e3);
-
-        const e4 = document.createTextNode("\r\n    ");
-        
-        this.element.appendChild(e4);
-
-            const e5 = new AtomItemsControl(this.app, document.createElement("ol"));
+            const e3 = new AtomItemsControl(this.app, document.createElement("ol"));
             
             
-        const e6 = document.createTextNode("\r\n            ");
-        
-        e5.element.appendChild(e6);
-
-        const e7 = document.createTextNode("\r\n    ");
-        
-        e5.element.appendChild(e7);
             
-            e5.bind(e5.element, "items",  [["viewModel","movies","value"]], false , (v1) => (v1) );
+            e3.bind(e3.element, "items",  [["viewModel","movies","value"]], false , (v1) => (v1) );
 
-        e5.itemTemplate = AtomItemsControlSample_itemTemplate_1_3Creator(this);
+        e3.itemTemplate = AtomItemsControlSample_itemTemplate_1_3Creator(this);
             
-            this.append(e5);
+            this.append(e3);
 
-
-        const e8 = document.createTextNode("\r\n");
-        
-        this.element.appendChild(e8);
                 }
             }
 
@@ -83,45 +64,27 @@ export default  class AtomItemsControlSample extends AtomControl {
                     
                     
                     
-        const e1 = document.createTextNode("\r\n                    ");
+        const e1 = document.createElement("span");
         
-        this.element.appendChild(e1);
+        this.append(e1);
+        
+        this.setPrimitiveValue(e1, "style", "font-size: 15px;\r\n                                font-weight: 600" );
+        
+
+            this.runAfterInit( () =>
+            this.setLocalValue(e1, "text", ((this.data) ? this.data.name : undefined)) );
+        
 
         const e2 = document.createElement("span");
         
         this.append(e2);
         
-        this.setPrimitiveValue(e2, "style", "font-size: 15px;\r\n                                font-weight: 600" );
+        this.setPrimitiveValue(e2, "style", "font-size: 15px; \r\n                                font-weight: 400; \r\n                                padding-left: 15px" );
         
 
             this.runAfterInit( () =>
-            this.setLocalValue(e2, "text", ((this.data) ? this.data.name : undefined)) );
+            this.setLocalValue(e2, "text", '( '+((this.data) ? this.data.genre : undefined)+' )') );
         
-        const e3 = document.createTextNode("\r\n                    ");
-        
-        e2.appendChild(e3);
-
-        const e4 = document.createTextNode("\r\n                    ");
-        
-        this.element.appendChild(e4);
-
-        const e5 = document.createElement("span");
-        
-        this.append(e5);
-        
-        this.setPrimitiveValue(e5, "style", "font-size: 15px; \r\n                                font-weight: 400; \r\n                                padding-left: 15px" );
-        
-
-            this.runAfterInit( () =>
-            this.setLocalValue(e5, "text", '( '+((this.data) ? this.data.genre : undefined)+' )') );
-        
-        const e6 = document.createTextNode("\r\n                    ");
-        
-        e5.appendChild(e6);
-
-        const e7 = document.createTextNode("\r\n                ");
-        
-        this.element.appendChild(e7);
                 }
             }
 
