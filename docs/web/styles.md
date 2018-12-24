@@ -145,10 +145,10 @@ OR
 
 ```html
 <div style-class="[ 
-    {
+    ({
         [this.controlStyle.item.className]: true,
         [this.controlStyle.selectedItem.className]: $data === $viewModel.selectedItem 
-    }
+    })
     ]">
 </div>
 ```

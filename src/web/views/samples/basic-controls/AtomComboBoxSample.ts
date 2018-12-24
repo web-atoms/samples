@@ -24,14 +24,14 @@ export default  class AtomComboBoxSample extends AtomControl {
         this.setPrimitiveValue(this.element, "style", "padding: 10px;" );
         
                     
-        const e1 = document.createTextNode("\n    ");
+        const e1 = document.createTextNode("\r\n    ");
         
         this.element.appendChild(e1);
 
             const e2 = new AtomComboBox(this.app, document.createElement("select"));
             
             
-        const e3 = document.createTextNode("\n    ");
+        const e3 = document.createTextNode("\r\n    ");
         
         e2.element.appendChild(e3);
             
@@ -50,7 +50,7 @@ export default  class AtomComboBoxSample extends AtomControl {
             this.append(e2);
 
 
-        const e4 = document.createTextNode("\n    ");
+        const e4 = document.createTextNode("\r\n    ");
         
         this.element.appendChild(e4);
 
@@ -60,11 +60,11 @@ export default  class AtomComboBoxSample extends AtomControl {
         
             this.bind(e5, "text",  [["viewModel","name"]], false , (v1) => 'Selected Movie: ' + (v1) );
         
-        const e6 = document.createTextNode("\n    ");
+        const e6 = document.createTextNode("\r\n    ");
         
         e5.appendChild(e6);
 
-        const e7 = document.createTextNode("\n");
+        const e7 = document.createTextNode("\r\n");
         
         this.element.appendChild(e7);
                 }

@@ -25,7 +25,7 @@ export default  class ButtonSample extends AtomControl {
 
                 this.viewModel =  this.resolve(ButtonSampleViewModel) ;
                     
-        const e1 = document.createTextNode("\n    ");
+        const e1 = document.createTextNode("\r\n    ");
         
         this.element.appendChild(e1);
 
@@ -38,18 +38,18 @@ export default  class ButtonSample extends AtomControl {
             this.runAfterInit( () =>
             this.setLocalValue(e2, "eventClick",  ()=> (this.viewModel).addMovie() ) );
         
-        const e3 = document.createTextNode("\n        Add New Movie\n    ");
+        const e3 = document.createTextNode("\r\n        Add New Movie\r\n    ");
         
         e2.appendChild(e3);
 
-        const e4 = document.createTextNode("\n    ");
+        const e4 = document.createTextNode("\r\n    ");
         
         this.element.appendChild(e4);
 
             const e5 = new AtomItemsControl(this.app, document.createElement("table"));
             
             
-        const e6 = document.createTextNode("\n        ");
+        const e6 = document.createTextNode("\r\n        ");
         
         e5.element.appendChild(e6);
 
@@ -58,7 +58,7 @@ export default  class ButtonSample extends AtomControl {
         e5.append(e7);
         
         
-        const e8 = document.createTextNode("\n            ");
+        const e8 = document.createTextNode("\r\n            ");
         
         e7.appendChild(e8);
 
@@ -67,7 +67,7 @@ export default  class ButtonSample extends AtomControl {
         e7.appendChild(e9);
         
         
-        const e10 = document.createTextNode("\n                ");
+        const e10 = document.createTextNode("\r\n                ");
         
         e9.appendChild(e10);
 
@@ -78,11 +78,11 @@ export default  class ButtonSample extends AtomControl {
         e5.setPrimitiveValue(e11, "style", "border:1px solid gray; padding: 10px; text-align: start;" );
         
         
-        const e12 = document.createTextNode("\n                    Movie Name\n                ");
+        const e12 = document.createTextNode("\r\n                    Movie Name\r\n                ");
         
         e11.appendChild(e12);
 
-        const e13 = document.createTextNode("\n                ");
+        const e13 = document.createTextNode("\r\n                ");
         
         e9.appendChild(e13);
 
@@ -93,19 +93,19 @@ export default  class ButtonSample extends AtomControl {
         e5.setPrimitiveValue(e14, "style", "border:1px solid gray; padding: 10px; text-align: start;" );
         
         
-        const e15 = document.createTextNode("\n                    Movie Type\n                ");
+        const e15 = document.createTextNode("\r\n                    Movie Type\r\n                ");
         
         e14.appendChild(e15);
 
-        const e16 = document.createTextNode("\n            ");
+        const e16 = document.createTextNode("\r\n            ");
         
         e9.appendChild(e16);
 
-        const e17 = document.createTextNode("\n        ");
+        const e17 = document.createTextNode("\r\n        ");
         
         e7.appendChild(e17);
 
-        const e18 = document.createTextNode("\n        ");
+        const e18 = document.createTextNode("\r\n        ");
         
         e5.element.appendChild(e18);
 
@@ -115,15 +115,15 @@ export default  class ButtonSample extends AtomControl {
         e5.append(e19);
         
         
-        const e20 = document.createTextNode("\n            ");
+        const e20 = document.createTextNode("\r\n            ");
         
         e19.appendChild(e20);
 
-        const e21 = document.createTextNode("\n        ");
+        const e21 = document.createTextNode("\r\n        ");
         
         e19.appendChild(e21);
 
-        const e22 = document.createTextNode("\n    ");
+        const e22 = document.createTextNode("\r\n    ");
         
         e5.element.appendChild(e22);
             
@@ -137,7 +137,7 @@ export default  class ButtonSample extends AtomControl {
             this.append(e5);
 
 
-        const e23 = document.createTextNode("\n");
+        const e23 = document.createTextNode("\r\n");
         
         this.element.appendChild(e23);
                 }
@@ -159,7 +159,7 @@ export default  class ButtonSample extends AtomControl {
                     
                     
                     
-        const e1 = document.createTextNode("\n                ");
+        const e1 = document.createTextNode("\r\n                ");
         
         this.element.appendChild(e1);
 
@@ -170,7 +170,7 @@ export default  class ButtonSample extends AtomControl {
         this.setPrimitiveValue(e2, "style", "border:1px solid gray; padding: 10px;" );
         
         
-        const e3 = document.createTextNode("\n                   ");
+        const e3 = document.createTextNode("\r\n                   ");
         
         e2.appendChild(e3);
 
@@ -178,21 +178,21 @@ export default  class ButtonSample extends AtomControl {
         
         e2.appendChild(e4);
         
-        this.setPrimitiveValue(e4, "style", "font-size: 15px;\n                                font-weight: 400" );
+        this.setPrimitiveValue(e4, "style", "font-size: 15px;\r\n                                font-weight: 400" );
         
 
             this.runAfterInit( () =>
             this.setLocalValue(e4, "text", ((this.data) ? this.data.name : undefined)) );
         
-        const e5 = document.createTextNode("\n                    ");
+        const e5 = document.createTextNode("\r\n                    ");
         
         e4.appendChild(e5);
 
-        const e6 = document.createTextNode("\n                ");
+        const e6 = document.createTextNode("\r\n                ");
         
         e2.appendChild(e6);
 
-        const e7 = document.createTextNode("\n                ");
+        const e7 = document.createTextNode("\r\n                ");
         
         this.element.appendChild(e7);
 
@@ -203,7 +203,7 @@ export default  class ButtonSample extends AtomControl {
         this.setPrimitiveValue(e8, "style", "border:1px solid gray; padding: 10px;" );
         
         
-        const e9 = document.createTextNode("\n                   ");
+        const e9 = document.createTextNode("\r\n                   ");
         
         e8.appendChild(e9);
 
@@ -211,21 +211,21 @@ export default  class ButtonSample extends AtomControl {
         
         e8.appendChild(e10);
         
-        this.setPrimitiveValue(e10, "style", "font-size: 15px;\n                                font-weight: 400" );
+        this.setPrimitiveValue(e10, "style", "font-size: 15px;\r\n                                font-weight: 400" );
         
 
             this.runAfterInit( () =>
             this.setLocalValue(e10, "text", ((this.data) ? this.data.genre : undefined)) );
         
-        const e11 = document.createTextNode(".\n                    ");
+        const e11 = document.createTextNode(".\r\n                    ");
         
         e10.appendChild(e11);
 
-        const e12 = document.createTextNode("\n                ");
+        const e12 = document.createTextNode("\r\n                ");
         
         e8.appendChild(e12);
 
-        const e13 = document.createTextNode("\n            ");
+        const e13 = document.createTextNode("\r\n            ");
         
         this.element.appendChild(e13);
                 }
