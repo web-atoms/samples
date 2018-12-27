@@ -5,9 +5,15 @@
     </head>
     <body>
         <script type="text/javascript">
-            UMD.map("reflect-metadata", "./node_modules/reflect-metadata/Reflect.js");
-            UMD.map("web-atoms-core", "./node_modules/web-atoms-core");
-            UMD.map("web-atoms-samples", "./");
+            UMD.packageResolver = function(pkg) {
+                if (pkg.name === "web-atoms-samples") {
+                    pkg.url = "/";
+                } else {
+                    pkg.url = "/node_modules/" + pkg.name;
+                }
+                return pkg;
+            };
+            UMD.resolveDependencies = true;
             UMD.lang = "en-US";
             UMD.loadView("web-atoms-samples/dist/web/views/AppHost", true);
         </script>
