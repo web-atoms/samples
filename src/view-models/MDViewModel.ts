@@ -90,7 +90,7 @@ export default class MDViewModel extends AtomViewModel {
             if ( /h[0-9]/i.test(ce.tagName)) {
                 this.headers.add({
                     label: (ce as HTMLHeadingElement ).innerText,
-                    pad: parseInt(ce.tagName.substr(1), 10) * 5,
+                    pad: parseFloat(ce.tagName.substr(1)) * 5,
                     value: ce
                 });
             }
