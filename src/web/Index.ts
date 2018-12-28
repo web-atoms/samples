@@ -18,102 +18,142 @@ export default  class Index extends AtomGridView {
         this.setPrimitiveValue(this.element, "rows", "50,*,30" );
         
                     
-        const e1 = document.createElement("header");
+        const e1 = document.createTextNode("\r\n    ");
         
-        this.append(e1);
+        this.element.appendChild(e1);
+
+        const e2 = document.createElement("header");
         
-        
-        const e2 = document.createElement("h3");
-        
-        e1.appendChild(e2);
-        
-        this.setPrimitiveValue(e2, "style", "padding:0; margin:5px" );
+        this.append(e2);
         
         
-        const e3 = document.createTextNode("Web Atoms");
+        const e3 = document.createTextNode("\r\n        ");
         
         e2.appendChild(e3);
 
-        const e4 = document.createElement("div");
+        const e4 = document.createElement("h3");
         
-        e1.appendChild(e4);
+        e2.appendChild(e4);
         
-        this.setPrimitiveValue(e4, "style", "font-size: smaller" );
+        this.setPrimitiveValue(e4, "style", "padding:0; margin:5px" );
         
         
-        const e5 = document.createTextNode("MVVM JavaScript Framework for Desktop/Mobile - ");
+        const e5 = document.createTextNode("Web Atoms");
         
         e4.appendChild(e5);
 
-        const e6 = document.createElement("span");
+        const e6 = document.createTextNode("\r\n        ");
         
-        e4.appendChild(e6);
-        
-        this.setPrimitiveValue(e6, "style", "font-weight: bold" );
-        
-        
-        const e7 = document.createTextNode("Made in India");
-        
-        e6.appendChild(e7);
+        e2.appendChild(e6);
 
-        const e8 = document.createElement("section");
+        const e7 = document.createElement("div");
         
-        this.append(e8);
+        e2.appendChild(e7);
         
-        this.setPrimitiveValue(e8, "row", "1" );
+        this.setPrimitiveValue(e7, "style", "font-size: smaller" );
         
+        
+        const e8 = document.createTextNode("MVVM JavaScript Framework for Desktop/Mobile - ");
+        
+        e7.appendChild(e8);
 
-        this.setPrimitiveValue(e8, "style", "margin: auto; position: absolute; left:0; top:0; bottom: 0; right:0; width: 200px; height: 50px; text-align: center" );
+        const e9 = document.createElement("span");
+        
+        e7.appendChild(e9);
+        
+        this.setPrimitiveValue(e9, "style", "font-weight: bold" );
         
         
-        const e9 = document.createElement("a");
-        
-        e8.appendChild(e9);
-        
-        this.setPrimitiveValue(e9, "href", "/samples.html" );
-        
-
-        this.setPrimitiveValue(e9, "target", "_tab" );
-        
-        
-        const e10 = document.createElement("button");
+        const e10 = document.createTextNode("Made in India");
         
         e9.appendChild(e10);
-        
-        
-        const e11 = document.createTextNode("Samples");
-        
-        e10.appendChild(e11);
 
-        const e12 = document.createElement("a");
+        const e11 = document.createTextNode("\r\n    ");
         
-        e8.appendChild(e12);
+        e2.appendChild(e11);
+
+        const e12 = document.createTextNode("\r\n    ");
         
-        this.setPrimitiveValue(e12, "href", "https://github.com/neurospeech/web-atoms-core" );
+        this.element.appendChild(e12);
+
+        const e13 = document.createElement("section");
+        
+        this.append(e13);
+        
+        this.setPrimitiveValue(e13, "row", "1" );
+        
+
+        this.setPrimitiveValue(e13, "style", "margin: auto; position: absolute; left:0; top:0; bottom: 0; right:0; width: 200px; height: 50px; text-align: center" );
         
         
-        const e13 = document.createElement("button");
-        
-        e12.appendChild(e13);
-        
-        
-        const e14 = document.createTextNode("Source Code");
+        const e14 = document.createTextNode("\r\n        ");
         
         e13.appendChild(e14);
 
-        const e15 = document.createElement("footer");
+        const e15 = document.createElement("a");
         
-        this.append(e15);
+        e13.appendChild(e15);
         
-        this.setPrimitiveValue(e15, "row", "2" );
+        this.setPrimitiveValue(e15, "href", "/samples.html" );
         
 
-        this.setPrimitiveValue(e15, "style", "text-align: right" );
+        this.setPrimitiveValue(e15, "target", "_tab" );
         
         
-        const e16 = document.createTextNode("\r\n        © NeuroSpeech Technologies Pvt Ltd\r\n    ");
+        const e16 = document.createElement("button");
         
         e15.appendChild(e16);
+        
+        
+        const e17 = document.createTextNode("Samples");
+        
+        e16.appendChild(e17);
+
+        const e18 = document.createTextNode("\r\n        ");
+        
+        e13.appendChild(e18);
+
+        const e19 = document.createElement("a");
+        
+        e13.appendChild(e19);
+        
+        this.setPrimitiveValue(e19, "href", "https://github.com/neurospeech/web-atoms-core" );
+        
+        
+        const e20 = document.createElement("button");
+        
+        e19.appendChild(e20);
+        
+        
+        const e21 = document.createTextNode("Source Code");
+        
+        e20.appendChild(e21);
+
+        const e22 = document.createTextNode("\r\n    ");
+        
+        e13.appendChild(e22);
+
+        const e23 = document.createTextNode("\r\n    ");
+        
+        this.element.appendChild(e23);
+
+        const e24 = document.createElement("footer");
+        
+        this.append(e24);
+        
+        this.setPrimitiveValue(e24, "row", "2" );
+        
+
+        this.setPrimitiveValue(e24, "style", "text-align: right" );
+        
+        
+        const e25 = document.createTextNode("\r\n        © NeuroSpeech Technologies Pvt Ltd\r\n    ");
+        
+        e24.appendChild(e25);
+
+        const e26 = document.createTextNode("\r\n");
+        
+        this.element.appendChild(e26);
                 }
             }
 

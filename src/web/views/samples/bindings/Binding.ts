@@ -20,54 +20,82 @@ export default  class Binding extends AtomControl {
                     
                 this.viewModel =  this.resolve(BindingViewModel) ;
                     
-        const e1 = document.createElement("div");
+        const e1 = document.createTextNode("\r\n    \r\n    ");
         
-        this.append(e1);
-        
-        
-        const e2 = document.createTextNode("One Time Binding");
-        
-        e1.appendChild(e2);
+        this.element.appendChild(e1);
 
-        const e3 = document.createElement("div");
+        const e2 = document.createElement("div");
         
-        this.append(e3);
+        this.append(e2);
+        
+        
+        const e3 = document.createTextNode("One Time Binding");
+        
+        e2.appendChild(e3);
+
+        const e4 = document.createTextNode("\r\n\r\n    ");
+        
+        this.element.appendChild(e4);
+
+        const e5 = document.createElement("div");
+        
+        this.append(e5);
         
             this.runAfterInit( () =>
-            this.setLocalValue(e3, "text",  ((this.viewModel) ? this.viewModel.title : undefined) ) );
+            this.setLocalValue(e5, "text",  ((this.viewModel) ? this.viewModel.title : undefined) ) );
         
 
-        const e4 = document.createElement("div");
+        const e6 = document.createTextNode("\r\n\r\n    ");
         
-        this.append(e4);
-        
-        
-        const e5 = document.createTextNode("One Way Binding - if you modify anything in following box, \r\n        it will not update anywhere");
-        
-        e4.appendChild(e5);
-
-        const e6 = document.createElement("input");
-        
-        this.append(e6);
-        
-            this.bind(e6, "value",  [["viewModel","title"]], false , (v1) => (v1) );
-        
+        this.element.appendChild(e6);
 
         const e7 = document.createElement("div");
         
         this.append(e7);
         
         
-        const e8 = document.createTextNode("Two Way Binding - if you modify anything here, it will \r\n        also update on one way binding but not one time binding");
+        const e8 = document.createTextNode("One Way Binding - if you modify anything in following box, \r\n        it will not update anywhere");
         
         e7.appendChild(e8);
 
-        const e9 = document.createElement("input");
+        const e9 = document.createTextNode("\r\n\r\n    ");
         
-        this.append(e9);
+        this.element.appendChild(e9);
+
+        const e10 = document.createElement("input");
         
-            this.bind(e9, "value",  [["viewModel","title"]], true  );
+        this.append(e10);
         
+            this.bind(e10, "value",  [["viewModel","title"]], false , (v1) => (v1) );
+        
+
+        const e11 = document.createTextNode("\r\n\r\n    ");
+        
+        this.element.appendChild(e11);
+
+        const e12 = document.createElement("div");
+        
+        this.append(e12);
+        
+        
+        const e13 = document.createTextNode("Two Way Binding - if you modify anything here, it will \r\n        also update on one way binding but not one time binding");
+        
+        e12.appendChild(e13);
+
+        const e14 = document.createTextNode("\r\n\r\n    ");
+        
+        this.element.appendChild(e14);
+
+        const e15 = document.createElement("input");
+        
+        this.append(e15);
+        
+            this.bind(e15, "value",  [["viewModel","title"]], true  );
+        
+
+        const e16 = document.createTextNode("\r\n\r\n");
+        
+        this.element.appendChild(e16);
                 }
             }
 

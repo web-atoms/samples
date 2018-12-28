@@ -21,73 +21,116 @@ export default  class CustomValidation extends AtomControl {
                     
                 this.viewModel =  this.resolve(CustomValidationViewModel) ;
                     
-        const e1 = document.createElement("div");
+        const e1 = document.createTextNode("\r\n    ");
         
-        this.append(e1);
+        this.element.appendChild(e1);
+
+        const e2 = document.createElement("div");
+        
+        this.append(e2);
         
         
-        const e2 = document.createElement("input");
+        const e3 = document.createTextNode("\r\n        ");
         
-        e1.appendChild(e2);
+        e2.appendChild(e3);
+
+        const e4 = document.createElement("input");
         
-        this.setPrimitiveValue(e2, "placeholder", "Name" );
+        e2.appendChild(e4);
+        
+        this.setPrimitiveValue(e4, "placeholder", "Name" );
         
 
-            this.bind(e2, "value",  [["viewModel","model","name"]], true  );
+            this.bind(e4, "value",  [["viewModel","model","name"]], true  );
         
 
-        const e3 = document.createElement("span");
+        const e5 = document.createTextNode("\r\n        ");
         
-        e1.appendChild(e3);
+        e2.appendChild(e5);
+
+        const e6 = document.createElement("span");
         
-        this.setPrimitiveValue(e3, "style", "color: red" );
+        e2.appendChild(e6);
+        
+        this.setPrimitiveValue(e6, "style", "color: red" );
         
 
-            this.bind(e3, "text",  [["viewModel","errorName"]], false , (v1) => (v1) );
+            this.bind(e6, "text",  [["viewModel","errorName"]], false , (v1) => (v1) );
         
 
-            const e4 = new AtomItemsControl(this.app);
+        const e7 = document.createTextNode("\r\n    ");
+        
+        e2.appendChild(e7);
+
+        const e8 = document.createTextNode("\r\n    ");
+        
+        this.element.appendChild(e8);
+
+            const e9 = new AtomItemsControl(this.app);
             
             
-            
-            e4.runAfterInit( () =>
-            e4.setLocalValue(e4.element, "items",  (((this.viewModel) ? this.viewModel.model : undefined) ? this.viewModel.model.emails : undefined) ) );
-
-        e4.itemTemplate = CustomValidation_itemTemplate_1_10Creator(this);
-            
-            this.append(e4);
-
-
-        const e5 = document.createElement("button");
+        const e10 = document.createTextNode("\r\n        ");
         
-        this.append(e5);
+        e9.element.appendChild(e10);
+
+        const e11 = document.createTextNode("    \r\n    ");
+        
+        e9.element.appendChild(e11);
+            
+            e9.runAfterInit( () =>
+            e9.setLocalValue(e9.element, "items",  (((this.viewModel) ? this.viewModel.model : undefined) ? this.viewModel.model.emails : undefined) ) );
+
+        e9.itemTemplate = CustomValidation_itemTemplate_1_10Creator(this);
+            
+            this.append(e9);
+
+
+        const e12 = document.createTextNode("\r\n    ");
+        
+        this.element.appendChild(e12);
+
+        const e13 = document.createElement("button");
+        
+        this.append(e13);
         
             this.runAfterInit( () =>
-            this.setLocalValue(e5, "eventClick",  () => (this.viewModel).addEmail() ) );
+            this.setLocalValue(e13, "eventClick",  () => (this.viewModel).addEmail() ) );
         
-        const e6 = document.createTextNode("Add Email");
+        const e14 = document.createTextNode("Add Email");
         
-        e5.appendChild(e6);
+        e13.appendChild(e14);
 
-        const e7 = document.createElement("div");
+        const e15 = document.createTextNode("\r\n\r\n    ");
         
-        this.append(e7);
-        
-        
-        const e8 = document.createTextNode("\r\n        Other fields...\r\n    ");
-        
-        e7.appendChild(e8);
+        this.element.appendChild(e15);
 
-        const e9 = document.createElement("button");
+        const e16 = document.createElement("div");
         
-        this.append(e9);
+        this.append(e16);
+        
+        
+        const e17 = document.createTextNode("\r\n        Other fields...\r\n    ");
+        
+        e16.appendChild(e17);
+
+        const e18 = document.createTextNode("\r\n\r\n    ");
+        
+        this.element.appendChild(e18);
+
+        const e19 = document.createElement("button");
+        
+        this.append(e19);
         
             this.runAfterInit( () =>
-            this.setLocalValue(e9, "eventClick",  () => (this.viewModel).signup() ) );
+            this.setLocalValue(e19, "eventClick",  () => (this.viewModel).signup() ) );
         
-        const e10 = document.createTextNode("Signup");
+        const e20 = document.createTextNode("Signup");
         
-        e9.appendChild(e10);
+        e19.appendChild(e20);
+
+        const e21 = document.createTextNode("\r\n");
+        
+        this.element.appendChild(e21);
                 }
             }
 
@@ -107,25 +150,37 @@ export default  class CustomValidation extends AtomControl {
                     
                     
                     
-        const e1 = document.createElement("input");
+        const e1 = document.createTextNode("\r\n            ");
         
-        this.append(e1);
-        
-        this.setPrimitiveValue(e1, "placeholder", "Email" );
-        
+        this.element.appendChild(e1);
 
-            this.bind(e1, "value",  [["data","email"]], true  );
-        
-
-        const e2 = document.createElement("span");
+        const e2 = document.createElement("input");
         
         this.append(e2);
         
-        this.setPrimitiveValue(e2, "style", "color: red" );
+        this.setPrimitiveValue(e2, "placeholder", "Email" );
         
 
-            this.bind(e2, "text",  [["data","error"]], false , (v1) => (v1) );
+            this.bind(e2, "value",  [["data","email"]], true  );
         
+
+        const e3 = document.createTextNode("\r\n            ");
+        
+        this.element.appendChild(e3);
+
+        const e4 = document.createElement("span");
+        
+        this.append(e4);
+        
+        this.setPrimitiveValue(e4, "style", "color: red" );
+        
+
+            this.bind(e4, "text",  [["data","error"]], false , (v1) => (v1) );
+        
+
+        const e5 = document.createTextNode("\r\n        ");
+        
+        this.element.appendChild(e5);
                 }
             }
 

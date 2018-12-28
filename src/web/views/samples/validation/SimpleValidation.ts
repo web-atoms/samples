@@ -20,66 +20,106 @@ export default  class SimpleValidation extends AtomControl {
                     
                 this.viewModel =  this.resolve(SimpleValidationViewModel) ;
                     
-        const e1 = document.createElement("div");
+        const e1 = document.createTextNode("\r\n    ");
         
-        this.append(e1);
+        this.element.appendChild(e1);
+
+        const e2 = document.createElement("div");
+        
+        this.append(e2);
         
         
-        const e2 = document.createElement("input");
+        const e3 = document.createTextNode("\r\n        ");
         
-        e1.appendChild(e2);
+        e2.appendChild(e3);
+
+        const e4 = document.createElement("input");
         
-        this.setPrimitiveValue(e2, "placeholder", "Name" );
+        e2.appendChild(e4);
+        
+        this.setPrimitiveValue(e4, "placeholder", "Name" );
         
 
-            this.bind(e2, "value",  [["viewModel","model","name"]], true  );
+            this.bind(e4, "value",  [["viewModel","model","name"]], true  );
         
 
-        const e3 = document.createElement("span");
+        const e5 = document.createTextNode("\r\n        ");
         
-        e1.appendChild(e3);
-        
-        this.setPrimitiveValue(e3, "style", "color: red" );
-        
-
-            this.bind(e3, "text",  [["viewModel","errorName"]], false , (v1) => (v1) );
-        
-
-        const e4 = document.createElement("div");
-        
-        this.append(e4);
-        
-        
-        const e5 = document.createElement("input");
-        
-        e4.appendChild(e5);
-        
-        this.setPrimitiveValue(e5, "placeholder", "Email" );
-        
-
-            this.bind(e5, "value",  [["viewModel","model","email"]], true  );
-        
+        e2.appendChild(e5);
 
         const e6 = document.createElement("span");
         
-        e4.appendChild(e6);
+        e2.appendChild(e6);
         
         this.setPrimitiveValue(e6, "style", "color: red" );
         
 
-            this.bind(e6, "text",  [["viewModel","errorEmail"]], false , (v1) => (v1) );
+            this.bind(e6, "text",  [["viewModel","errorName"]], false , (v1) => (v1) );
         
 
-        const e7 = document.createElement("button");
+        const e7 = document.createTextNode("\r\n    ");
         
-        this.append(e7);
+        e2.appendChild(e7);
+
+        const e8 = document.createTextNode("\r\n    ");
+        
+        this.element.appendChild(e8);
+
+        const e9 = document.createElement("div");
+        
+        this.append(e9);
+        
+        
+        const e10 = document.createTextNode("\r\n        ");
+        
+        e9.appendChild(e10);
+
+        const e11 = document.createElement("input");
+        
+        e9.appendChild(e11);
+        
+        this.setPrimitiveValue(e11, "placeholder", "Email" );
+        
+
+            this.bind(e11, "value",  [["viewModel","model","email"]], true  );
+        
+
+        const e12 = document.createTextNode("\r\n        ");
+        
+        e9.appendChild(e12);
+
+        const e13 = document.createElement("span");
+        
+        e9.appendChild(e13);
+        
+        this.setPrimitiveValue(e13, "style", "color: red" );
+        
+
+            this.bind(e13, "text",  [["viewModel","errorEmail"]], false , (v1) => (v1) );
+        
+
+        const e14 = document.createTextNode("\r\n    ");
+        
+        e9.appendChild(e14);
+
+        const e15 = document.createTextNode("\r\n    ");
+        
+        this.element.appendChild(e15);
+
+        const e16 = document.createElement("button");
+        
+        this.append(e16);
         
             this.runAfterInit( () =>
-            this.setLocalValue(e7, "eventClick",  () => (this.viewModel).signup() ) );
+            this.setLocalValue(e16, "eventClick",  () => (this.viewModel).signup() ) );
         
-        const e8 = document.createTextNode("Signup");
+        const e17 = document.createTextNode("Signup");
         
-        e7.appendChild(e8);
+        e16.appendChild(e17);
+
+        const e18 = document.createTextNode("\r\n");
+        
+        this.element.appendChild(e18);
                 }
             }
 

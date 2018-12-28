@@ -35,6 +35,13 @@ export default  class MenuList extends AtomItemsControl {
         this.itemTemplate = MenuList_itemTemplate_1_2Creator(this);
             
                     
+        const e1 = document.createTextNode("\n    ");
+        
+        this.element.appendChild(e1);
+
+        const e2 = document.createTextNode("\n");
+        
+        this.element.appendChild(e2);
                 }
             }
 
@@ -55,24 +62,36 @@ export default  class MenuList extends AtomItemsControl {
                     
                 this.setPrimitiveValue(this.element, "eventClick",  () => this.data.click() );
                     
-        const e1 = document.createElement("span");
+        const e1 = document.createTextNode("\n        ");
         
-        this.append(e1);
+        this.element.appendChild(e1);
+
+        const e2 = document.createElement("span");
         
-            this.bind(e1, "text",  [["data","label"]], false , (v1) => (v1) );
+        this.append(e2);
+        
+            this.bind(e2, "text",  [["data","label"]], false , (v1) => (v1) );
         
 
-            const e2 = new AtomItemsControl(this.app, document.createElement("div"));
+        const e3 = document.createTextNode("\n        ");
+        
+        this.element.appendChild(e3);
+
+            const e4 = new AtomItemsControl(this.app, document.createElement("div"));
             
             
             
-            e2.bind(e2.element, "styleDisplay",  [["data","children"]], false , (v1) => (v1) ? '' : 'none' );
+            e4.bind(e4.element, "styleDisplay",  [["data","children"]], false , (v1) => (v1) ? '' : 'none' );
 
-            e2.bind(e2.element, "items",  [["data","children"]], false , (v1) => (v1) );
+            e4.bind(e4.element, "items",  [["data","children"]], false , (v1) => (v1) );
 
-                e2.setPrimitiveValue(e2.element, "itemTemplate",  __creator.itemTemplate );
-            this.append(e2);
+                e4.setPrimitiveValue(e4.element, "itemTemplate",  __creator.itemTemplate );
+            this.append(e4);
 
+
+        const e5 = document.createTextNode("\n    ");
+        
+        this.element.appendChild(e5);
                 }
             }
 

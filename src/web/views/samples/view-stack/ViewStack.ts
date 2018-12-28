@@ -28,58 +28,94 @@ export default  class ViewStack extends AtomGridView {
         this.setPrimitiveValue(this.element, "rows", "50, *" );
         
                     
-        const e1 = document.createElement("div");
+        const e1 = document.createTextNode("\n\n    ");
         
-        this.append(e1);
+        this.element.appendChild(e1);
+
+        const e2 = document.createElement("div");
+        
+        this.append(e2);
         
         
-            const e2 = new AtomToggleButtonBar(this.app);
+        const e3 = document.createTextNode("\n        ");
+        
+        e2.appendChild(e3);
+
+            const e4 = new AtomToggleButtonBar(this.app);
             
             
             
-            e2.runAfterInit( () =>
-            e2.setLocalValue(e2.element, "items",  ((this.viewModel) ? this.viewModel.items : undefined) ) );
+            e4.runAfterInit( () =>
+            e4.setLocalValue(e4.element, "items",  ((this.viewModel) ? this.viewModel.items : undefined) ) );
 
-            e2.bind(e2.element, "value",  [["viewModel","index"]], true  );
-            e1.appendChild(e2.element);
+            e4.bind(e4.element, "value",  [["viewModel","index"]], true  );
+            e2.appendChild(e4.element);
 
 
-            const e3 = new AtomViewStack(this.app);
+        const e5 = document.createTextNode("\n    ");
+        
+        e2.appendChild(e5);
+
+        const e6 = document.createTextNode("\n\n    ");
+        
+        this.element.appendChild(e6);
+
+            const e7 = new AtomViewStack(this.app);
             
             
-        const e4 = document.createElement("div");
+        const e8 = document.createTextNode("\n        ");
         
-        e3.append(e4);
-        
-        
-        const e5 = document.createTextNode("View 1");
-        
-        e4.appendChild(e5);
+        e7.element.appendChild(e8);
 
-        const e6 = document.createElement("div");
+        const e9 = document.createElement("div");
         
-        e3.append(e6);
+        e7.append(e9);
         
         
-        const e7 = document.createTextNode("View 2");
+        const e10 = document.createTextNode("View 1");
         
-        e6.appendChild(e7);
+        e9.appendChild(e10);
 
-        const e8 = document.createElement("div");
+        const e11 = document.createTextNode("\n        ");
         
-        e3.append(e8);
+        e7.element.appendChild(e11);
+
+        const e12 = document.createElement("div");
+        
+        e7.append(e12);
         
         
-        const e9 = document.createTextNode("View 3");
+        const e13 = document.createTextNode("View 2");
         
-        e8.appendChild(e9);
+        e12.appendChild(e13);
+
+        const e14 = document.createTextNode("  \n        ");
+        
+        e7.element.appendChild(e14);
+
+        const e15 = document.createElement("div");
+        
+        e7.append(e15);
+        
+        
+        const e16 = document.createTextNode("View 3");
+        
+        e15.appendChild(e16);
+
+        const e17 = document.createTextNode("        \n    ");
+        
+        e7.element.appendChild(e17);
             
-        e3.setPrimitiveValue(e3.element, "row", "1" );
+        e7.setPrimitiveValue(e7.element, "row", "1" );
         
 
-            e3.bind(e3.element, "selectedIndex",  [["viewModel","index"]], false , (v1) => (v1) );
-            this.append(e3);
+            e7.bind(e7.element, "selectedIndex",  [["viewModel","index"]], false , (v1) => (v1) );
+            this.append(e7);
 
+
+        const e18 = document.createTextNode("\n");
+        
+        this.element.appendChild(e18);
                 }
             }
 

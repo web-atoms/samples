@@ -37,6 +37,17 @@ export default  class AtomWindowSample extends AtomWindow {
         this.commandTemplate = AtomWindowSample_commandTemplate_2_6Creator(this);
             
                     
+        const e1 = document.createTextNode("\n    ");
+        
+        this.element.appendChild(e1);
+
+        const e2 = document.createTextNode("\n    ");
+        
+        this.element.appendChild(e2);
+
+        const e3 = document.createTextNode("\n");
+        
+        this.element.appendChild(e3);
                 }
             }
 
@@ -56,92 +67,146 @@ export default  class AtomWindowSample extends AtomWindow {
                     
                     
                     
-        const e1 = document.createElement("table");
+        const e1 = document.createTextNode("\n        ");
         
-        this.append(e1);
+        this.element.appendChild(e1);
+
+        const e2 = document.createElement("table");
+        
+        this.append(e2);
         
         
-        const e2 = document.createElement("tr");
-        
-        e1.appendChild(e2);
-        
-        
-        const e3 = document.createElement("td");
+        const e3 = document.createTextNode("\n            ");
         
         e2.appendChild(e3);
-        
-        
-        const e4 = document.createTextNode("\r\n                    Name:\r\n                ");
-        
-        e3.appendChild(e4);
 
-        const e5 = document.createElement("td");
+        const e4 = document.createElement("tr");
         
-        e2.appendChild(e5);
+        e2.appendChild(e4);
         
         
-        const e6 = document.createElement("input");
+        const e5 = document.createTextNode("\n                ");
         
-        e5.appendChild(e6);
-        
-        this.setPrimitiveValue(e6, "style", "height: 30px;\r\n                        padding-left: 4px;\r\n                        width: 200px;" );
-        
+        e4.appendChild(e5);
 
-        this.setPrimitiveValue(e6, "type", "text" );
+        const e6 = document.createElement("td");
         
+        e4.appendChild(e6);
+        
+        
+        const e7 = document.createTextNode("\n                    Name:\n                ");
+        
+        e6.appendChild(e7);
 
-        this.setPrimitiveValue(e6, "placeholder", "Enter Movie Name" );
+        const e8 = document.createTextNode("\n                ");
         
+        e4.appendChild(e8);
 
-            this.bind(e6, "value",  [["viewModel","movie","name"]], ["change", "keyup", "keydown", "blur"]  );
-
-        this.setPrimitiveValue(e6, "autofocus", "autofocus" );
-        
-        
-
-        const e7 = document.createElement("td");
-        
-        e2.appendChild(e7);
-        
-        this.setPrimitiveValue(e7, "style", "color:red; font-size:13px" );
-        
-
-            this.bind(e7, "text",  [["viewModel","errorName"]], false , (v1) => (v1) );
-        
-
-        const e8 = document.createElement("tr");
-        
-        e1.appendChild(e8);
-        
-        
         const e9 = document.createElement("td");
         
-        e8.appendChild(e9);
+        e4.appendChild(e9);
         
         
-        const e10 = document.createTextNode("\r\n                    Type:\r\n                ");
+        const e10 = document.createTextNode("\n                    ");
         
         e9.appendChild(e10);
 
-        const e11 = document.createElement("td");
+        const e11 = document.createElement("input");
         
-        e8.appendChild(e11);
+        e9.appendChild(e11);
         
-        
-            const e12 = new AtomComboBox(this.app, document.createElement("select"));
-            
-            
-            
-        e12.setPrimitiveValue(e12.element, "style", "height: 30px;\r\n                            margin: 10px 0px;" );
+        this.setPrimitiveValue(e11, "style", "height: 30px;\n                        padding-left: 4px;\n                        width: 200px;" );
         
 
-        e12.setPrimitiveValue(e12.element, "labelPath", "label" );
+        this.setPrimitiveValue(e11, "type", "text" );
         
 
-        e12.setPrimitiveValue(e12.element, "valuePath", "value" );
+        this.setPrimitiveValue(e11, "placeholder", "Enter Movie Name" );
         
 
-            e12.bind(e12.element, "items",  [], false , () => [{
+            this.bind(e11, "value",  [["viewModel","movie","name"]], ["change", "keyup", "keydown", "blur"]  );
+
+        this.setPrimitiveValue(e11, "autofocus", "autofocus" );
+        
+        
+
+        const e12 = document.createTextNode("\n                ");
+        
+        e9.appendChild(e12);
+
+        const e13 = document.createTextNode("\n                ");
+        
+        e4.appendChild(e13);
+
+        const e14 = document.createElement("td");
+        
+        e4.appendChild(e14);
+        
+        this.setPrimitiveValue(e14, "style", "color:red; font-size:13px" );
+        
+
+            this.bind(e14, "text",  [["viewModel","errorName"]], false , (v1) => (v1) );
+        
+        const e15 = document.createTextNode("\n                ");
+        
+        e14.appendChild(e15);
+
+        const e16 = document.createTextNode("\n            ");
+        
+        e4.appendChild(e16);
+
+        const e17 = document.createTextNode("\n            ");
+        
+        e2.appendChild(e17);
+
+        const e18 = document.createElement("tr");
+        
+        e2.appendChild(e18);
+        
+        
+        const e19 = document.createTextNode("\n                ");
+        
+        e18.appendChild(e19);
+
+        const e20 = document.createElement("td");
+        
+        e18.appendChild(e20);
+        
+        
+        const e21 = document.createTextNode("\n                    Type:\n                ");
+        
+        e20.appendChild(e21);
+
+        const e22 = document.createTextNode("\n                ");
+        
+        e18.appendChild(e22);
+
+        const e23 = document.createElement("td");
+        
+        e18.appendChild(e23);
+        
+        
+        const e24 = document.createTextNode("\n                        ");
+        
+        e23.appendChild(e24);
+
+            const e25 = new AtomComboBox(this.app, document.createElement("select"));
+            
+            
+        const e26 = document.createTextNode("\n                        ");
+        
+        e25.element.appendChild(e26);
+            
+        e25.setPrimitiveValue(e25.element, "style", "height: 30px;\n                            margin: 10px 0px;" );
+        
+
+        e25.setPrimitiveValue(e25.element, "labelPath", "label" );
+        
+
+        e25.setPrimitiveValue(e25.element, "valuePath", "value" );
+        
+
+            e25.bind(e25.element, "items",  [], false , () => [{
                                 label: 'Select Type',
                                 value: ''
                             },{
@@ -169,56 +234,100 @@ export default  class AtomWindowSample extends AtomWindow {
                                 value: 'Horror'
                             }] );
 
-            e12.bind(e12.element, "value",  [["viewModel","movie","genre"]], ["change", "keyup", "keydown", "blur"]  );
-            e11.appendChild(e12.element);
+            e25.bind(e25.element, "value",  [["viewModel","movie","genre"]], ["change", "keyup", "keydown", "blur"]  );
+            e23.appendChild(e25.element);
 
 
-        const e13 = document.createElement("td");
+        const e27 = document.createTextNode("\n                ");
         
-        e8.appendChild(e13);
+        e23.appendChild(e27);
+
+        const e28 = document.createTextNode("\n                ");
         
-        this.setPrimitiveValue(e13, "style", "color:red; font-size:13px" );
+        e18.appendChild(e28);
+
+        const e29 = document.createElement("td");
+        
+        e18.appendChild(e29);
+        
+        this.setPrimitiveValue(e29, "style", "color:red; font-size:13px" );
         
 
-            this.bind(e13, "text",  [["viewModel","errorType"]], false , (v1) => (v1) );
+            this.bind(e29, "text",  [["viewModel","errorType"]], false , (v1) => (v1) );
         
 
-        const e14 = document.createElement("tr");
+        const e30 = document.createTextNode("\n            ");
         
-        e1.appendChild(e14);
-        
-        
-        const e15 = document.createElement("td");
-        
-        e14.appendChild(e15);
-        
-        
-        const e16 = document.createTextNode("\r\n                    Description:\r\n                ");
-        
-        e15.appendChild(e16);
+        e18.appendChild(e30);
 
-        const e17 = document.createElement("td");
+        const e31 = document.createTextNode("\n            ");
         
-        e14.appendChild(e17);
+        e2.appendChild(e31);
+
+        const e32 = document.createElement("tr");
         
-        this.setPrimitiveValue(e17, "colspan", "2" );
+        e2.appendChild(e32);
         
         
-        const e18 = document.createElement("textarea");
+        const e33 = document.createTextNode("\n                ");
         
-        e17.appendChild(e18);
+        e32.appendChild(e33);
+
+        const e34 = document.createElement("td");
         
-        this.setPrimitiveValue(e18, "cols", "30" );
+        e32.appendChild(e34);
+        
+        
+        const e35 = document.createTextNode("\n                    Description:\n                ");
+        
+        e34.appendChild(e35);
+
+        const e36 = document.createTextNode("\n                ");
+        
+        e32.appendChild(e36);
+
+        const e37 = document.createElement("td");
+        
+        e32.appendChild(e37);
+        
+        this.setPrimitiveValue(e37, "colspan", "2" );
+        
+        
+        const e38 = document.createTextNode("\n                    ");
+        
+        e37.appendChild(e38);
+
+        const e39 = document.createElement("textarea");
+        
+        e37.appendChild(e39);
+        
+        this.setPrimitiveValue(e39, "cols", "30" );
         
 
-        this.setPrimitiveValue(e18, "rows", "10" );
+        this.setPrimitiveValue(e39, "rows", "10" );
         
 
-        this.setPrimitiveValue(e18, "placeholder", "Enter Movie Description" );
+        this.setPrimitiveValue(e39, "placeholder", "Enter Movie Description" );
         
 
-            this.bind(e18, "value",  [["viewModel","movie","description"]], true  );
+            this.bind(e39, "value",  [["viewModel","movie","description"]], true  );
         
+
+        const e40 = document.createTextNode("\n                ");
+        
+        e37.appendChild(e40);
+
+        const e41 = document.createTextNode("\n            ");
+        
+        e32.appendChild(e41);
+
+        const e42 = document.createTextNode("\n        ");
+        
+        e2.appendChild(e42);
+
+        const e43 = document.createTextNode("\n    ");
+        
+        this.element.appendChild(e43);
                 }
             }
 
@@ -242,27 +351,39 @@ function AtomWindowSample_commandTemplate_2_6Creator(__creator){
                     
                     
                     
-        const e1 = document.createElement("button");
+        const e1 = document.createTextNode("\n        ");
         
-        this.append(e1);
-        
-            this.runAfterInit( () =>
-            this.setLocalValue(e1, "eventClick",  () => (this.viewModel).save() ) );
-        
-        const e2 = document.createTextNode("Save");
-        
-        e1.appendChild(e2);
+        this.element.appendChild(e1);
 
-        const e3 = document.createElement("button");
+        const e2 = document.createElement("button");
         
-        this.append(e3);
+        this.append(e2);
         
             this.runAfterInit( () =>
-            this.setLocalValue(e3, "eventClick",  () => (this.viewModel).cancel() ) );
+            this.setLocalValue(e2, "eventClick",  () => (this.viewModel).save() ) );
         
-        const e4 = document.createTextNode("Cancel");
+        const e3 = document.createTextNode("Save");
         
-        e3.appendChild(e4);
+        e2.appendChild(e3);
+
+        const e4 = document.createTextNode("\n        ");
+        
+        this.element.appendChild(e4);
+
+        const e5 = document.createElement("button");
+        
+        this.append(e5);
+        
+            this.runAfterInit( () =>
+            this.setLocalValue(e5, "eventClick",  () => (this.viewModel).cancel() ) );
+        
+        const e6 = document.createTextNode("Cancel");
+        
+        e5.appendChild(e6);
+
+        const e7 = document.createTextNode("\n    ");
+        
+        this.element.appendChild(e7);
                 }
             }
 

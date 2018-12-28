@@ -28,22 +28,37 @@ export default  class Movies extends AtomGridView {
 
                 this.viewModel =  this.resolve(MovieViewModel) ;
                     
-            const e1 = new AtomListBox(this.app, document.createElement("div"));
+        const e1 = document.createTextNode("\r\n\r\n    ");
+        
+        this.element.appendChild(e1);
+
+            const e2 = new AtomListBox(this.app, document.createElement("div"));
             
             
+        const e3 = document.createTextNode("\r\n        ");
+        
+        e2.element.appendChild(e3);
+
+        const e4 = document.createTextNode("\r\n    ");
+        
+        e2.element.appendChild(e4);
             
-        e1.setPrimitiveValue(e1.element, "row", "1" );
+        e2.setPrimitiveValue(e2.element, "row", "1" );
         
 
-        e1.setPrimitiveValue(e1.element, "column", "1" );
+        e2.setPrimitiveValue(e2.element, "column", "1" );
         
 
-            e1.bind(e1.element, "items",  [["viewModel","movies","value"]], false , (v1) => (v1) );
+            e2.bind(e2.element, "items",  [["viewModel","movies","value"]], false , (v1) => (v1) );
 
-        e1.itemTemplate = Movies_itemTemplate_1_8Creator(this);
+        e2.itemTemplate = Movies_itemTemplate_1_8Creator(this);
             
-            this.append(e1);
+            this.append(e2);
 
+
+        const e5 = document.createTextNode("\r\n\r\n");
+        
+        this.element.appendChild(e5);
                 }
             }
 
@@ -63,13 +78,21 @@ export default  class Movies extends AtomGridView {
                     
                     
                     
-        const e1 = document.createElement("span");
+        const e1 = document.createTextNode("\r\n            ");
         
-        this.append(e1);
+        this.element.appendChild(e1);
+
+        const e2 = document.createElement("span");
+        
+        this.append(e2);
         
             this.runAfterInit( () =>
-            this.setLocalValue(e1, "text", ((this.data) ? this.data.name : undefined)) );
+            this.setLocalValue(e2, "text", ((this.data) ? this.data.name : undefined)) );
         
+
+        const e3 = document.createTextNode("\r\n        ");
+        
+        this.element.appendChild(e3);
                 }
             }
 
