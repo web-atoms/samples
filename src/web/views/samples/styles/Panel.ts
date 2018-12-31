@@ -24,49 +24,29 @@ export default  class Panel extends AtomControl {
         this.setPrimitiveValue(this.element, "style", "padding:10px" );
         
                     
-        const e1 = document.createTextNode("\r\n\r\n    ");
+        const e1 = document.createElement("div");
         
-        this.element.appendChild(e1);
-
-        const e2 = document.createElement("div");
+        this.append(e1);
         
-        this.append(e2);
+            this.bind(e1, "styleClass",  [["this","controlStyle","root"]], false , (v1) => (v1) , __creator);
         
-            this.bind(e2, "styleClass",  [["this","controlStyle","root"]], false , (v1) => (v1) , __creator);
+        const e2 = document.createElement("header");
         
-        const e3 = document.createTextNode("\r\n        ");
+        e1.appendChild(e2);
+        
+        
+        const e3 = document.createTextNode("Header");
         
         e2.appendChild(e3);
 
-        const e4 = document.createElement("header");
+        const e4 = document.createElement("section");
         
-        e2.appendChild(e4);
+        e1.appendChild(e4);
         
         
-        const e5 = document.createTextNode("Header");
+        const e5 = document.createTextNode("Panel Text");
         
         e4.appendChild(e5);
-
-        const e6 = document.createTextNode("\r\n        ");
-        
-        e2.appendChild(e6);
-
-        const e7 = document.createElement("section");
-        
-        e2.appendChild(e7);
-        
-        
-        const e8 = document.createTextNode("Panel Text");
-        
-        e7.appendChild(e8);
-
-        const e9 = document.createTextNode("\r\n    ");
-        
-        e2.appendChild(e9);
-
-        const e10 = document.createTextNode("\r\n\r\n");
-        
-        this.element.appendChild(e10);
                 }
             }
 

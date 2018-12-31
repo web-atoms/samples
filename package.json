@@ -1,6 +1,6 @@
 {
   "name": "web-atoms-samples",
-  "version": "1.0.42",
+  "version": "1.0.43",
   "description": "Samples Repository for Web Atoms Core Samples",
   "main": "index.js",
   "scripts": {
@@ -19,7 +19,7 @@
   "homepage": "https://github.com/neurospeech/web-atoms-samples#readme",
   "dependencies": {
     "reflect-metadata": "^0.1.12",
-    "web-atoms-amd-loader": "^1.0.92",
-    "web-atoms-core": "^1.0.554"
+    "web-atoms-amd-loader": "^1.0.96",
+    "web-atoms-core": "^1.0.556"
   }
 }
