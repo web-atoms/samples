@@ -67,15 +67,9 @@ When we want to reuse a component and we want to style it differently we can ove
 ```typescript
 class EditorListStyle extends ListStyle {
 
-    public get baseRoot(): IStyleDeclaration {
-        // since you cannot access super.root, you 
-        // can use a convenient method to access super.root.
-        return this.getBaseProperty(ListStyle, "root")
-    }
-
     public get root(): IStyleDeclaration {
         return {
-            ... this.baseRoot,
+            ... super["root"],
             color: Colors.cyan,
 
             // if you do not provide subclasses here,
