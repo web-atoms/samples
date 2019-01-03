@@ -4,6 +4,7 @@
 
         import AppHostViewModel from "../view-models/AppHostViewModel";
 import MenuPage from "./MenuPage";
+import GithubIcon from "../../images/github/GitHubMark32px";
 
         export default class Root extends AtomXFControl {
 
@@ -14,7 +15,13 @@ import MenuPage from "./MenuPage";
 
                     this.setImport(this.element,"MenuPage",() => new MenuPage(this.app));
 
-                    this.loadXaml(`	<MasterDetailPage xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:atom="clr-namespace:WebAtoms;assembly=WebAtoms" x:Name="e1">
+                    this.loadXaml(`	<MasterDetailPage xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:wa="clr-namespace:WebAtoms;assembly=WebAtoms" xmlns:atom="clr-namespace:WebAtoms;assembly=WebAtoms" x:Name="e2">
+	  
+	  <MasterDetailPage.ToolbarItems>
+	    
+	    <wa:AtomToolbarItem x:Name="e1"/>
+	    
+	  </MasterDetailPage.ToolbarItems>
 	  
 	  <MasterDetailPage.Master>
 	    
@@ -37,7 +44,14 @@ import MenuPage from "./MenuPage";
                     
             const e1 = this.find("e1");
             
-                this.setLocalValue(e1, "viewModel",  this.resolve(AppHostViewModel) );
+                this.setPrimitiveValue(e1, "IconUrl", GithubIcon);
+
+                this.setPrimitiveValue(e1, "Command",  () => this.viewModel.openGithub() );
+
+
+            const e2 = this.find("e2");
+            
+                this.setLocalValue(e2, "viewModel",  this.resolve(AppHostViewModel) );
 
                 }
             }

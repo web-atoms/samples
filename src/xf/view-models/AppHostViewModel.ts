@@ -5,6 +5,8 @@ import { AtomViewModel } from "web-atoms-core/dist/view-model/AtomViewModel";
 import { ModuleFiles } from "../../ModuleFiles";
 import MenuService from "../../services/MenuService";
 
+declare var bridge: any;
+
 export default class AppHostViewModel extends AtomViewModel {
 
     constructor(
@@ -33,5 +35,9 @@ export default class AppHostViewModel extends AtomViewModel {
         const a = this.navigationService.location.query.platform;
         // tslint:disable-next-line:no-console
         console.log(`platform = ${a};`);
+    }
+
+    public openGithub(): void {
+        bridge.urlService.open("https://github.com/neurospeech/web-atoms-core");
     }
 }
