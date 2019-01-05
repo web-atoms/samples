@@ -20,7 +20,7 @@ public class TaskService extends BaseService {
     @Get("/tasks/{id}/attachments")
     public getAttachments(
         @Path("id") id: number
-    ): Promise<ITaskAttachment>;
+    ): Promise<ITaskAttachment[]>;
 
     @Put("/tasks")
     public createTask(@Body task: ITask): Promise<ITask>;
