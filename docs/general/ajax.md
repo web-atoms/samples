@@ -11,7 +11,10 @@ public class TaskService extends BaseService {
 
     @Get("/tasks")
     public getTasks(
-        @Query("search") search: string
+        @Query("search") search: string,
+        // default value should be specified in
+        // decorator and not in argument declaration
+        @Query("status", "open") status?: string
     ): Promise<ITask[]>
 
     @Get("/tasks/{id}/attachments")
