@@ -19,7 +19,7 @@
   "homepage": "https://github.com/neurospeech/web-atoms-samples#readme",
   "dependencies": {
     "reflect-metadata": "^0.1.12",
-    "web-atoms-amd-loader": "^1.0.96",
-    "web-atoms-core": "^1.0.558"
+    "web-atoms-amd-loader": "^1.0.103",
+    "web-atoms-core": "^1.0.576"
   }
 }
