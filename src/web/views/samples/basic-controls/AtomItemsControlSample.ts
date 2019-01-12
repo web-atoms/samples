@@ -28,10 +28,10 @@ export default  class AtomItemsControlSample extends AtomControl {
         
         this.append(e1);
         
-        this.setPrimitiveValue(e1, "style", "font-size: 15px;\r\n                 color: maroon;\r\n                 font-weight: 600" );
+        this.setPrimitiveValue(e1, "style", "font-size: 15px;\n                 color: maroon;\n                 font-weight: 600" );
         
         
-        const e2 = document.createTextNode("\r\n                 Upcoming Movies:\r\n    ");
+        const e2 = document.createTextNode("\n                 Upcoming Movies:\n    ");
         
         e1.appendChild(e2);
 
@@ -68,7 +68,7 @@ export default  class AtomItemsControlSample extends AtomControl {
         
         this.append(e1);
         
-        this.setPrimitiveValue(e1, "style", "font-size: 15px;\r\n                                font-weight: 600" );
+        this.setPrimitiveValue(e1, "style", "font-size: 15px;\n                                font-weight: 600" );
         
 
             this.runAfterInit( () =>
@@ -79,7 +79,7 @@ export default  class AtomItemsControlSample extends AtomControl {
         
         this.append(e2);
         
-        this.setPrimitiveValue(e2, "style", "font-size: 15px; \r\n                                font-weight: 400; \r\n                                padding-left: 15px" );
+        this.setPrimitiveValue(e2, "style", "font-size: 15px; \n                                font-weight: 400; \n                                padding-left: 15px" );
         
 
             this.runAfterInit( () =>

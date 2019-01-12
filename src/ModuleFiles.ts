@@ -59,6 +59,9 @@
       },
       "viewStack": {
         "ViewStack": "web-atoms-samples/dist/{platform}/views/samples/view-stack/ViewStack"
+      },
+      "responsive": {
+        "Responsive": "web-atoms-samples/dist/{platform}/views/samples/responsive/Responsive"
       }
     },
     "AppHost": "web-atoms-samples/dist/{platform}/views/AppHost",
