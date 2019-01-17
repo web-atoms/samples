@@ -1,0 +1,12 @@
+<script>
+    import DesktopView from "~src/web/views/samples/conditional/DesktopView";
+    import MobileView from "~src/web/views/samples/conditional/MobileView";
+</script>
+<div>
+    Following view will load conditionally based on screen type
+
+    <MobileView $if="{ this.app.screen.screenType == 'mobile' }"></MobileView>
+
+    <DesktopView $if="{ this.app.screen.screenType !== 'mobile' }"></DesktopView>
+
+</div>
