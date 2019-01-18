@@ -55,12 +55,12 @@ export default  class MenuList extends AtomItemsControl {
                     
                 this.setPrimitiveValue(this.element, "eventClick",  () => this.data.click() );
                     
-        const e1 = document.createElement("span");
-        
-        this.append(e1);
-        
+            const e1 = document.createElement("span");
+            
+            this.append(e1);
+            
             this.bind(e1, "text",  [["data","label"]], false , (v1) => (v1) );
-        
+            
 
             const e2 = new AtomItemsControl(this.app, document.createElement("div"));
             

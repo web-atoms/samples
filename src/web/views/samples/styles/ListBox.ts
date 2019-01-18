@@ -54,13 +54,13 @@ export default  class ListBox extends AtomControl {
                     
                     
                     
-        const e1 = document.createElement("span");
-        
-        this.append(e1);
-        
+            const e1 = document.createElement("span");
+            
+            this.append(e1);
+            
             this.runAfterInit( () =>
             this.setLocalValue(e1, "text",  ((this.data) ? this.data.name : undefined) ) );
-        
+            
                 }
             }
 

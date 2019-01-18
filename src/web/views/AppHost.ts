@@ -6,6 +6,7 @@ import {AtomGridView} from "web-atoms-core/dist/web/controls/AtomGridView";
     import AppHostViewModel from "../../view-models/AppHostViewModel";
     import MenuList from "./MenuList";
     import GitHubMark32px from "../../images/github/GitHubMark32px";
+    import AppTabStyle from "../styles/AppTabStyle";
 
 export default  class AppHost extends AtomGridView {
 
@@ -32,21 +33,21 @@ export default  class AppHost extends AtomGridView {
         this.setPrimitiveValue(this.element, "rows", "30, *, 30" );
         
                     
-        const e1 = document.createElement("header");
-        
-        this.append(e1);
-        
-        
-        const e2 = document.createElement("h3");
-        
-        e1.appendChild(e2);
-        
+            const e1 = document.createElement("header");
+            
+            this.append(e1);
+            
+            
+            const e2 = document.createElement("h3");
+            
+            e1.appendChild(e2);
+            
         this.setPrimitiveValue(e2, "style", "position: absolute; margin: 0; padding: 0; top: 5px; left: 5px;" );
         
 
         this.setPrimitiveValue(e2, "text", "<W/> Web Atoms" );
         
-        
+            
 
             const e3 = new MenuList(this.app);
             
@@ -61,6 +62,9 @@ export default  class AppHost extends AtomGridView {
             
             
             
+            e4.defaultControlStyle =  AppTabStyle ;
+            
+
         e4.setPrimitiveValue(e4.element, "row", "0:2" );
         
 
@@ -69,10 +73,10 @@ export default  class AppHost extends AtomGridView {
             this.append(e4);
 
 
-        const e5 = document.createElement("footer");
-        
-        this.append(e5);
-        
+            const e5 = document.createElement("footer");
+            
+            this.append(e5);
+            
         this.setPrimitiveValue(e5, "row", "2" );
         
 
@@ -81,72 +85,80 @@ export default  class AppHost extends AtomGridView {
 
         this.setPrimitiveValue(e5, "style", "padding:5px;" );
         
-        
-        const e6 = document.createElement("span");
-        
-        e5.appendChild(e6);
-        
-        
+            
+            const e6 = document.createElement("span");
+            
+            e5.appendChild(e6);
+            
+            
         const e7 = document.createTextNode("© NeuroSpeech Technologies Pvt Ltd");
         
         e6.appendChild(e7);
 
-        const e8 = document.createElement("div");
-        
-        e5.appendChild(e8);
-        
+            const e8 = document.createElement("div");
+            
+            e5.appendChild(e8);
+            
         this.setPrimitiveValue(e8, "style", "position: absolute; right: 5px; top: 5px" );
         
-        // e9
+            // e9
 //  Comment 1 
 
-        const e10 = document.createElement("img");
-        
-        e8.appendChild(e10);
-        
+            const e10 = document.createElement("img");
+            
+            e8.appendChild(e10);
+            
         this.setPrimitiveValue(e10, "style", "max-height: 16px" );
         
 
                 this.setPrimitiveValue(e10, "src",  GitHubMark32px );
-        
+            
 
-        const e11 = document.createElement("a");
-        
-        e8.appendChild(e11);
-        
+            const e11 = document.createElement("a");
+            
+            e8.appendChild(e11);
+            
         this.setPrimitiveValue(e11, "href", "https://github.com/neurospeech/web-atoms-core" );
         
 
         this.setPrimitiveValue(e11, "target", "_blank" );
         
-        
+            
         const e12 = document.createTextNode("Source Code");
         
         e11.appendChild(e12);
 
-        const e13 = document.createElement("img");
+            const e13 = document.createElement("span");
+            
+            e8.appendChild(e13);
+            
+        this.setPrimitiveValue(e13, "text", " " );
         
-        e8.appendChild(e13);
-        
-        this.setPrimitiveValue(e13, "style", "max-height: 16px" );
+            
+
+            const e14 = document.createElement("img");
+            
+            e8.appendChild(e14);
+            
+        this.setPrimitiveValue(e14, "style", "max-height: 16px" );
         
 
-                this.setPrimitiveValue(e13, "src",  GitHubMark32px );
+                this.setPrimitiveValue(e14, "src",  GitHubMark32px );
+            
+
+            const e15 = document.createElement("a");
+            
+            e8.appendChild(e15);
+            
+        this.setPrimitiveValue(e15, "href", "https://github.com/neurospeech/web-atoms-samples" );
         
 
-        const e14 = document.createElement("a");
+        this.setPrimitiveValue(e15, "target", "_blank" );
         
-        e8.appendChild(e14);
+            
+        const e16 = document.createTextNode("Samples");
         
-        this.setPrimitiveValue(e14, "href", "https://github.com/neurospeech/web-atoms-samples" );
-        
-
-        this.setPrimitiveValue(e14, "target", "_blank" );
-        
-        
-        const e15 = document.createTextNode("Samples");
-        
-        e14.appendChild(e15);
+        e15.appendChild(e16);
                 }
             }
 

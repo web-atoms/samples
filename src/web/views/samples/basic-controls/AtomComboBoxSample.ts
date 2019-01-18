@@ -43,12 +43,12 @@ export default  class AtomComboBoxSample extends AtomControl {
             this.append(e1);
 
 
-        const e2 = document.createElement("div");
-        
-        this.append(e2);
-        
+            const e2 = document.createElement("div");
+            
+            this.append(e2);
+            
             this.bind(e2, "text",  [["viewModel","name"]], false , (v1) => 'Selected Movie: ' + (v1) );
-        
+            
                 }
             }
 

@@ -28,11 +28,11 @@ export default  class ViewStack extends AtomGridView {
         this.setPrimitiveValue(this.element, "rows", "50, *" );
         
                     
-        const e1 = document.createElement("div");
-        
-        this.append(e1);
-        
-        
+            const e1 = document.createElement("div");
+            
+            this.append(e1);
+            
+            
             const e2 = new AtomToggleButtonBar(this.app);
             
             
@@ -47,29 +47,29 @@ export default  class ViewStack extends AtomGridView {
             const e3 = new AtomViewStack(this.app);
             
             
-        const e4 = document.createElement("div");
-        
-        e3.append(e4);
-        
-        
+            const e4 = document.createElement("div");
+            
+            e3.append(e4);
+            
+            
         const e5 = document.createTextNode("View 1");
         
         e4.appendChild(e5);
 
-        const e6 = document.createElement("div");
-        
-        e3.append(e6);
-        
-        
+            const e6 = document.createElement("div");
+            
+            e3.append(e6);
+            
+            
         const e7 = document.createTextNode("View 2");
         
         e6.appendChild(e7);
 
-        const e8 = document.createElement("div");
-        
-        e3.append(e8);
-        
-        
+            const e8 = document.createElement("div");
+            
+            e3.append(e8);
+            
+            
         const e9 = document.createTextNode("View 3");
         
         e8.appendChild(e9);

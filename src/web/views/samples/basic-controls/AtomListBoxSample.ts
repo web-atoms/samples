@@ -50,15 +50,15 @@ export default  class AtomListBoxSample extends AtomControl {
             this.append(e1);
 
 
-        const e2 = document.createElement("div");
-        
-        this.append(e2);
-        
+            const e2 = document.createElement("div");
+            
+            this.append(e2);
+            
         this.setPrimitiveValue(e2, "style", "font-size: 15px;\n                margin-top: 20px;\n                font-weight: 600" );
         
 
             this.bind(e2, "text",  [["viewModel","movie","name"]], false , (v1) => 'Selected Item: ' + (v1) );
-        
+            
                 }
             }
 
@@ -80,32 +80,32 @@ export default  class AtomListBoxSample extends AtomControl {
         this.setPrimitiveValue(this.element, "style", " border-bottom: 1px solid #ccc; \n                         border-radius: 0px;\n                         padding: 10px" );
         
                     
-        const e1 = document.createElement("div");
-        
-        this.append(e1);
-        
-        
-        const e2 = document.createElement("span");
-        
-        e1.appendChild(e2);
-        
+            const e1 = document.createElement("div");
+            
+            this.append(e1);
+            
+            
+            const e2 = document.createElement("span");
+            
+            e1.appendChild(e2);
+            
         this.setPrimitiveValue(e2, "style", "font-size: 15px;\n                                font-weight: 600" );
         
 
             this.runAfterInit( () =>
             this.setLocalValue(e2, "text", ((this.data) ? this.data.name : undefined) + ' ( '+ ((this.data) ? this.data.genre : undefined) +' )') );
-        
+            
 
-        const e3 = document.createElement("div");
-        
-        this.append(e3);
-        
+            const e3 = document.createElement("div");
+            
+            this.append(e3);
+            
         this.setPrimitiveValue(e3, "style", "font-size: 15px; \n                            font-weight: 400; \n                            padding-left: 15px;\n                            padding-top: 5px" );
         
 
             this.runAfterInit( () =>
             this.setLocalValue(e3, "text", ((this.data) ? this.data.description : undefined)) );
-        
+            
                 }
             }
 

@@ -26,16 +26,16 @@ export default  class MDHost extends AtomGridView {
 
                 this.viewModel =  this.resolve(MDViewModel, 'owner') ;
                     
-        const e1 = document.createElement("div");
-        
-        this.append(e1);
-        
+            const e1 = document.createElement("div");
+            
+            this.append(e1);
+            
         this.setPrimitiveValue(e1, "class", "md-host" );
         
 
         this.setPrimitiveValue(e1, "style", "width: 100%; height: 100%;" );
         
-        
+            
 
             const e2 = new AtomGridSplitter(this.app);
             
