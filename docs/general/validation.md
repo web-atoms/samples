@@ -10,7 +10,7 @@ For example,
 
 ```typescript
 
-public class SignupViewModel extends AtomViewModel {
+export default SignupViewModel extends AtomViewModel {
 
     @Inject
     public navigationService: NavigationService;

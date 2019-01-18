@@ -109,7 +109,7 @@ To make reusable components easier, `localViewModel` can be used to host all log
 `AtomViewModel` class provides necessary services and properties to write easily extensible view models. It has `init` and `dispose` methods to initialize and dispose your view model.
 
 ```typescript
-public class TaskListViewModel extends AtomViewModel {
+export default class TaskListViewModel extends AtomViewModel {
 
     // dynamically inject TaskService
     @Inject
@@ -128,7 +128,7 @@ public class TaskListViewModel extends AtomViewModel {
 Since view model does not have access to user interaction updates, View usually does two way binding to a property and when it is modified by user, we have to watch for changes and update view model. It is done via `@Watch` decorator.
 
 ```typescript
-public class TaskListViewModel extends AtomViewModel {
+export default class TaskListViewModel extends AtomViewModel {
 
     @Inject
     public taskService: TaskService;
@@ -201,7 +201,7 @@ For example,
 
 ```typescript
 
-public class SignupViewModel extends AtomViewModel {
+export default class SignupViewModel extends AtomViewModel {
 
     @Inject
     public navigationService: NavigationService;

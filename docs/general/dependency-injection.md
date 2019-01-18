@@ -14,7 +14,7 @@ Decorator `@RegisterSingleton` provides simple registration for singleton depend
 
 ```typescript
 @RegisterSingleton
-public class TaskService extends BaseService {
+export default class TaskService extends BaseService {
     ... 
 }
 ```
@@ -26,14 +26,14 @@ Decorator `@DISingleton` provides abstract class registration and mock registrat
 Dependency specified in `mock` will be injected in design time instead of registered class. 
 ```typescript
 @DISingleton({ mock: "./mocks/MockTaskService" })
-public class TaskService extends BaseService {
+export default class TaskService extends BaseService {
     ... 
 }
 ```
 
 File MockTaskService.ts
 ```typescript
-export default public class MockTaskService extends TaskService {
+export default class MockTaskService extends TaskService {
     // ... logic used in unit testing and design time
 } 
 ```
@@ -42,21 +42,21 @@ In the following example, we want to inject class based on the current selected 
 
 ```typescript
 @DISingleton({ inject: "./{lang}/StringResource" })
-public abstract class BaseStringResource {
+export abstract class BaseStringResource {
     public abstract get username(): string;
 }
 ```
 
 >/en-us/StringResource class
 ```typescript
-export default public class StringResource extends BaseStringResource {
+export default class StringResource extends BaseStringResource {
     public username = "Username";
 } 
 ```
 
 >/hi/StringResource class
 ```typescript
-export default public class StringResource extends BaseStringResource {
+export default class StringResource extends BaseStringResource {
     public username = "यूज़र नेम";
 } 
 ```
@@ -66,7 +66,7 @@ UMD loader can expand variable when dependencies are loaded and DI will correctl
 ## Constructor Injection
 
 ```typescript
-public class TaskListViewModel extends AtomViewModel {
+export default class TaskListViewModel extends AtomViewModel {
 
     // constructor injection..
     constructor(
@@ -81,7 +81,7 @@ public class TaskListViewModel extends AtomViewModel {
 
 ## Property Injection
 ```typescript
-public class TaskListViewModel extends AtomViewModel {
+export default class TaskListViewModel extends AtomViewModel {
 
     @Inject
     public taskService: TaskService;

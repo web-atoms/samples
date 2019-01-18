@@ -41,6 +41,10 @@ You can create new properties on custom control by specifying it in properties a
 ### DateSelector.html
 
 ```html
+<script>
+    // full path from the package folder beginning with ~
+    import DateSelectorViewModel from "~src/view-models/DateSelectorViewModel";
+</script>
 <div
     properties=" startYear: -10, endYear: 10, selectedDate: undefined "
     local-view-model="{ this.resolve(DateSelectorViewModel, () => ({ owner: this }) }">
@@ -118,6 +122,10 @@ export default class DateSelectorViewModel extends AtomViewModel {
 
 ### Usage
 ```html
+<script>
+    // full path from the package folder beginning with ~
+    import DateSelector from "~src/web/views/DateSelector";
+</script>
 <div>
     <DateSelector 
         selected-date="$[viewModel.startDate]" ></DateSelector>
@@ -125,4 +133,70 @@ export default class DateSelectorViewModel extends AtomViewModel {
         year-end="[$viewModel.startYear]"
         selected-date="$[viewModel.endDate]" ></DateSelector>
 </div>
+```
+
+### Referencing component from different package
+```html
+<script>
+    import DateSelector from "@private/package/dist/web/DateSelector";
+</script>
+<div>
+    <DateSelector 
+        selected-date="$[viewModel.startDate]" ></DateSelector>
+    <DateSelector 
+        year-end="[$viewModel.startYear]"
+        selected-date="$[viewModel.endDate]" ></DateSelector>
+</div>
+```
+
+### Passing DOM native methods to View Model
+
+As we do not want to reference any HTML native methods in View Model as we may execute view model on any platform. We will instead initialize view model and pass methods that can be executed on view model without referencing DOM.
+
+#### DomHelper
+```typescript
+export default class DomHelper {
+    public static focus(ctrl: AtomControl, className: string): (() => void) {
+        return () => {
+            const input = ctrl.element.getElementsByTagName("input")[0] as HTMLInputElement;
+            if (input) {
+                input.focus();
+            }
+        };
+    }
+}
+```
+
+#### HTML
+```html
+<script>
+    // full path from the package folder beginning with ~
+    import DateSelectorViewModel from "~src/view-models/DateSelectorViewModel";
+    import DomHelper from "~src/web/core/DomHelper";
+</script>
+
+<div
+    properties=" startYear: -10, endYear: 10, selectedDate: undefined "
+    local-view-model="{ this.resolve(DateSelectorViewModel, () => ({ focus: DomHelper.focus(this) })) }">
+    ...
+</div>
+```
+
+#### TypeScript
+```typescript
+export default class DateSelectorViewModel extends AtomViewModel {
+
+    // this will be set by initializer in View
+    // this method should not have any input/output parameter of native platform type
+    public focus: (() => void);
+
+    public async init(): Promise<void> {
+
+        // wait for 10 milliseconds for all initialization to finish
+        await Atom.delay(10);
+
+        this.focus();
+    }
+
+}
 ```

@@ -49,7 +49,7 @@ Ideally you must avoid custom expressions and must always create custom get prop
 Building data aware application requires updating UI automatically when data changes. One way binding refreshes element automatically when data is modified by any one. To make it simpler, you have to write your binding expressions in square brackets []
 
 ```typescript
-    public class TimerViewModel extends AtomViewModel {
+    export default class TimerViewModel extends AtomViewModel {
 
         public time: Date;
 

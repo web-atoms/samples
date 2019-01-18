@@ -4,7 +4,7 @@ Web Atoms provides convenient method to interact with REST API similar to RetroF
 ## Methods
 
 ```typescript
-public class TaskService extends BaseService {
+export default class TaskService extends BaseService {
 
     @Get("/user")
     public getUser(): Promise<IUser>;
