@@ -2,7 +2,7 @@
     "srcFolder":"src",
     "mode": "core",
     "pack": [
-        "dist/web/Index.js",
-        "dist/web/views/AppHost.js"
+        "dist/web/Index",
+        "dist/web/views/AppHost"
     ]
 }
