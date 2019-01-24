@@ -41,10 +41,11 @@ import AtomComboBox from "@web-atoms/xf-controls/dist/AtomComboBox";
                 this.setLocalValue(e1, "viewModel",  this.resolve(ComboBoxSampleViewModel) );
 
 
-        mAtomComboBox.setLocalValue(mAtomComboBox, "itemTemplate", () => new (Root_mAtomComboBox_Creator(this))(this.app));
+        mAtomComboBox.setLocalValue(this.mAtomComboBox, "itemTemplate", () => new (Root_mAtomComboBox_Creator(this))(this.app));
         
 
-                mAtomComboBox.setPrimitiveValue(mAtomComboBox, "itemsSource",  (fe) => this.viewModel.search(fe) );
+                mAtomComboBox.setPrimitiveValue(this.mAtomComboBox, "itemsSource",  (fe) => this.viewModel.search(fe) );
+                mAtomComboBox.setPrimitiveValue(this.mAtomComboBox, "valueFunc",  (item) => item.value );
                 }
             }
 

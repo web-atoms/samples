@@ -22,10 +22,10 @@ export default class ComboBoxSampleViewModel extends AtomViewModel {
         }
         return this.countries.filter((x) => {
             if (fe.search) {
+                if (fe.value) {
+                    return x.value === fe.value;
+                }
                 return x.label.includes(fe.search) || x.value.includes(fe.search);
-            }
-            if (fe.value) {
-                return x.value === fe.value;
             }
             return true;
         });

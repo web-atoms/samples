@@ -18,9 +18,9 @@
   },
   "homepage": "https://github.com/neurospeech/web-atoms-samples#readme",
   "dependencies": {
-    "@web-atoms/xf-controls": "^1.0.6",
+    "@web-atoms/xf-controls": "^1.0.15",
     "reflect-metadata": "^0.1.13",
     "web-atoms-amd-loader": "^1.0.124",
-    "web-atoms-core": "^1.0.592"
+    "web-atoms-core": "^1.0.594"
   }
 }
