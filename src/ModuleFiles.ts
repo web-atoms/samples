@@ -67,6 +67,9 @@
       },
       "viewStack": {
         "ViewStack": "web-atoms-samples/dist/{platform}/views/samples/view-stack/ViewStack"
+      },
+      "comboBox": {
+        "ComboBoxSample": "web-atoms-samples/dist/{platform}/views/samples/combo-box/ComboBoxSample"
       }
     },
     "AppHost": "web-atoms-samples/dist/{platform}/views/AppHost",

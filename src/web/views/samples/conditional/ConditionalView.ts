@@ -20,7 +20,7 @@ export default  class ConditionalView extends AtomControl {
                     
                     
                     
-        const e1 = document.createTextNode("\n    Following view will load conditionally based on screen type\n\n    ");
+        const e1 = document.createTextNode("\r\n    Following view will load conditionally based on screen type\r\n\r\n    ");
         
         this.element.appendChild(e1);
 

@@ -8,12 +8,18 @@ import GithubIcon from "../../images/github/GitHubMark32px";
 
         export default class Root extends AtomXFControl {
 
+                public mMenuPage;
+
+                
+
                 protected create(): void {
                     super.create();
 
                     this.element = this.createControl("Xamarin.Forms.MasterDetailPage");
 
-                    this.setImport(this.element,"MenuPage",() => new MenuPage(this.app));
+                    const mMenuPage = new MenuPage(this.app);
+            this.mMenuPage = mMenuPage.element;
+
 
                     this.loadXaml(`	<MasterDetailPage xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:wa="clr-namespace:WebAtoms;assembly=WebAtoms" xmlns:atom="clr-namespace:WebAtoms;assembly=WebAtoms" x:Name="e2">
 	  
@@ -25,7 +31,7 @@ import GithubIcon from "../../images/github/GitHubMark32px";
 	  
 	  <MasterDetailPage.Master>
 	    
-	    <atom:AtomObjectCreator Type="MenuPage"/>
+	    <atom:AtomObjectInjector Name="mMenuPage"/>
 	    
 	  </MasterDetailPage.Master>
 	  

@@ -34,7 +34,7 @@ export default  class ButtonSample extends AtomControl {
             this.runAfterInit( () =>
             this.setLocalValue(e1, "eventClick",  ()=> (this.viewModel).addMovie() ) );
             
-        const e2 = document.createTextNode("\n        Add New Movie\n    ");
+        const e2 = document.createTextNode("\r\n        Add New Movie\r\n    ");
         
         e1.appendChild(e2);
 
@@ -58,7 +58,7 @@ export default  class ButtonSample extends AtomControl {
         e3.setPrimitiveValue(e6, "style", "border:1px solid gray; padding: 10px; text-align: start;" );
         
             
-        const e7 = document.createTextNode("\n                    Movie Name\n                ");
+        const e7 = document.createTextNode("\r\n                    Movie Name\r\n                ");
         
         e6.appendChild(e7);
 
@@ -69,7 +69,7 @@ export default  class ButtonSample extends AtomControl {
         e3.setPrimitiveValue(e8, "style", "border:1px solid gray; padding: 10px; text-align: start;" );
         
             
-        const e9 = document.createTextNode("\n                    Movie Type\n                ");
+        const e9 = document.createTextNode("\r\n                    Movie Type\r\n                ");
         
         e8.appendChild(e9);
 
@@ -119,7 +119,7 @@ export default  class ButtonSample extends AtomControl {
             
             e1.appendChild(e2);
             
-        this.setPrimitiveValue(e2, "style", "font-size: 15px;\n                                font-weight: 400" );
+        this.setPrimitiveValue(e2, "style", "font-size: 15px;\r\n                                font-weight: 400" );
         
 
             this.runAfterInit( () =>
@@ -137,13 +137,13 @@ export default  class ButtonSample extends AtomControl {
             
             e3.appendChild(e4);
             
-        this.setPrimitiveValue(e4, "style", "font-size: 15px;\n                                font-weight: 400" );
+        this.setPrimitiveValue(e4, "style", "font-size: 15px;\r\n                                font-weight: 400" );
         
 
             this.runAfterInit( () =>
             this.setLocalValue(e4, "text", ((this.data) ? this.data.genre : undefined)) );
             
-        const e5 = document.createTextNode(".\n                    ");
+        const e5 = document.createTextNode(".\r\n                    ");
         
         e4.appendChild(e5);
                 }

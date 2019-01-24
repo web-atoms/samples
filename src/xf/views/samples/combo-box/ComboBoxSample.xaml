@@ -1,0 +1,22 @@
+<ContentPage
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+        xmlns="http://xamarin.com/schemas/2014/forms"
+        xmlns:ComboBoxSampleViewModel="js-import-def:~src/view-models/combo-box/ComboBoxSampleViewModel"
+        xmlns:AtomComboBox="js-import-def:@web-atoms/xf-controls/dist/AtomComboBox"
+        viewModel="{{ this.resolve(ComboBoxSampleViewModel) }" >
+
+    <StackLayout>
+
+        <AtomComboBox:AtomComboBox itemsSource="${ (fe) => this.viewModel.search(fe) }">
+            <AtomComboBox:AtomComboBox.itemTemplate>
+                <DataTemplate>
+                    <Label Text="[$data ? $data.label : 'Select']" />
+                </DataTemplate>
+            </AtomComboBox:AtomComboBox.itemTemplate>
+        </AtomComboBox:AtomComboBox>
+
+        <Label Text="One Time Binding" />
+
+    </StackLayout>
+
+</ContentPage>
