@@ -7,10 +7,12 @@
 
     <StackLayout>
 
-        <AtomComboBox:AtomComboBox itemsSource="${ (fe) => this.viewModel.search(fe) }">
+        <AtomComboBox:AtomComboBox
+            itemsSource="${ (fe) => this.viewModel.search(fe) }"
+            valueFunc="${ (item) => item.value }">
             <AtomComboBox:AtomComboBox.itemTemplate>
                 <DataTemplate>
-                    <Label Text="[$data ? $data.label : 'Select']" />
+                    <Label Text="[$data.label]" />
                 </DataTemplate>
             </AtomComboBox:AtomComboBox.itemTemplate>
         </AtomComboBox:AtomComboBox>

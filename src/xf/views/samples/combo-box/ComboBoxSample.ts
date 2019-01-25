@@ -45,6 +45,7 @@ import AtomComboBox from "@web-atoms/xf-controls/dist/AtomComboBox";
         
 
                 mAtomComboBox.setPrimitiveValue(this.mAtomComboBox, "itemsSource",  (fe) => this.viewModel.search(fe) );
+
                 mAtomComboBox.setPrimitiveValue(this.mAtomComboBox, "valueFunc",  (item) => item.value );
                 }
             }
@@ -70,7 +71,7 @@ function Root_mAtomComboBox_Creator(__creator: any): any {
                     
             const e1 = this.find("e1");
             
-            this.bind(e1, "Text",  [["data"],["data","label"]], false , (v1,v2) => (v1) ? (v2) : 'Select' );
+            this.bind(e1, "Text",  [["data","label"]], false , (v1) => (v1) );
 
                 }
             }
