@@ -4,16 +4,15 @@
     <head>
         <title>Web Atoms Core Samples</title>
         <script type="text/javascript" src="./node_modules/web-atoms-amd-loader/umd.js"></script>
-        <script>
-            UMD.map("web-atoms-samples","/");
-            UMD.map("web-atoms-core","/node_modules/web-atoms-core");
-            UMD.lang = "en-US";
-        </script>
         <script type="text/javascript" src="./dist/web/views/AppHost.pack.js"></script>
     </head>
     <body>
         <script type="text/javascript">
-            UMD.loadView("web-atoms-samples/dist/web/views/AppHost", true);
+            UMD.map("web-atoms-samples","/");
+            UMD.map("web-atoms-core","/node_modules/web-atoms-core");
+            UMD.lang = "en-US";
+            // UMD.loadView("web-atoms-samples/dist/web/views/AppHost", true);
+            UMD.loadView("web-atoms-samples/dist/web/Index", true);
         </script>
     </body>
 </html>
