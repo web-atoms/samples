@@ -71,7 +71,7 @@ export default  class AtomWindowSample extends AtomWindow {
             e2.appendChild(e3);
             
             
-        const e4 = document.createTextNode("\r\n                    Name:\r\n                ");
+        const e4 = document.createTextNode("\n                    Name:\n                ");
         
         e3.appendChild(e4);
 
@@ -84,7 +84,7 @@ export default  class AtomWindowSample extends AtomWindow {
             
             e5.appendChild(e6);
             
-        this.setPrimitiveValue(e6, "style", "height: 30px;\r\n                        padding-left: 4px;\r\n                        width: 200px;" );
+        this.setPrimitiveValue(e6, "style", "height: 30px;\n                        padding-left: 4px;\n                        width: 200px;" );
         
 
         this.setPrimitiveValue(e6, "type", "text" );
@@ -119,7 +119,7 @@ export default  class AtomWindowSample extends AtomWindow {
             e8.appendChild(e9);
             
             
-        const e10 = document.createTextNode("\r\n                    Type:\r\n                ");
+        const e10 = document.createTextNode("\n                    Type:\n                ");
         
         e9.appendChild(e10);
 
@@ -132,7 +132,7 @@ export default  class AtomWindowSample extends AtomWindow {
             
             
             
-        e12.setPrimitiveValue(e12.element, "style", "height: 30px;\r\n                            margin: 10px 0px;" );
+        e12.setPrimitiveValue(e12.element, "style", "height: 30px;\n                            margin: 10px 0px;" );
         
 
         e12.setPrimitiveValue(e12.element, "labelPath", "label" );
@@ -193,7 +193,7 @@ export default  class AtomWindowSample extends AtomWindow {
             e14.appendChild(e15);
             
             
-        const e16 = document.createTextNode("\r\n                    Description:\r\n                ");
+        const e16 = document.createTextNode("\n                    Description:\n                ");
         
         e15.appendChild(e16);
 

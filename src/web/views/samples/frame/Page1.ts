@@ -1,7 +1,7 @@
 // tslint:disable
 import {BindableProperty} from "web-atoms-core/dist/core/BindableProperty";
 import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
-export default  class MobileView extends AtomControl {
+export default  class Page1 extends AtomControl {
 
                 
 
@@ -16,7 +16,7 @@ export default  class MobileView extends AtomControl {
                     
                     
                     
-        const e1 = document.createTextNode("\n    This is mobile view\n");
+        const e1 = document.createTextNode("\r\n    Page 1\r\n");
         
         this.element.appendChild(e1);
                 }

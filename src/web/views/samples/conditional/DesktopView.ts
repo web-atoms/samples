@@ -16,7 +16,7 @@ export default  class DesktopView extends AtomControl {
                     
                     
                     
-        const e1 = document.createTextNode("\r\n    This is Desktop View\r\n");
+        const e1 = document.createTextNode("\n    This is Desktop View\n");
         
         this.element.appendChild(e1);
                 }

@@ -42,6 +42,10 @@
         "DesktopView": "web-atoms-samples/dist/{platform}/views/samples/conditional/DesktopView",
         "MobileView": "web-atoms-samples/dist/{platform}/views/samples/conditional/MobileView"
       },
+      "form": {
+        "SimpleForm": "web-atoms-samples/dist/{platform}/views/samples/form/SimpleForm",
+        "SideBySideForm": "web-atoms-samples/dist/{platform}/views/samples/form/SideBySideForm"
+      },
       "http": {
         "Movies": "web-atoms-samples/dist/{platform}/views/samples/http/Movies"
       },
@@ -70,6 +74,11 @@
       },
       "comboBox": {
         "ComboBoxSample": "web-atoms-samples/dist/{platform}/views/samples/combo-box/ComboBoxSample"
+      },
+      "frame": {
+        "FrameSample": "web-atoms-samples/dist/{platform}/views/samples/frame/FrameSample",
+        "Page1": "web-atoms-samples/dist/{platform}/views/samples/frame/Page1",
+        "Page2": "web-atoms-samples/dist/{platform}/views/samples/frame/Page2"
       }
     },
     "AppHost": "web-atoms-samples/dist/{platform}/views/AppHost",

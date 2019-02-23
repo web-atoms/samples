@@ -29,8 +29,16 @@ export default class AppHostViewModel extends AtomViewModel {
             url: UMD.resolvePath("web-atoms-samples/docs/general/dependency-injection.md"),
             title: "Dependency Injection"
         });
+        home.addTabLink("Messaging", ModuleFiles.views.MDHost, {
+            url: UMD.resolvePath("web-atoms-samples/docs/general/messaging.md"),
+            title: "Dependency Injection"
+        });
         home.addTabLink("Binding", ModuleFiles.views.MDHost, {
             url: UMD.resolvePath("web-atoms-samples/docs/general/binding.md"),
+            title: "Binding"
+        });
+        home.addTabLink("Binding Properties", ModuleFiles.views.MDHost, {
+            url: UMD.resolvePath("web-atoms-samples/docs/general/binding-properties.md"),
             title: "Binding"
         });
         home.addTabLink("Ajax", ModuleFiles.views.MDHost, {
@@ -64,6 +72,10 @@ export default class AppHostViewModel extends AtomViewModel {
         containers.addTabLink("View Pager", ModuleFiles.views.samples.viewPager.ViewPager);
         containers.addTabLink("View Stack", ModuleFiles.views.samples.viewStack.ViewStack);
 
+        const form = ms.addGroup("Form");
+        form.addTabLink("Simple", ModuleFiles.views.samples.form.SimpleForm);
+        form.addTabLink("Side by Side", ModuleFiles.views.samples.form.SideBySideForm);
+
         const styles = ms.addGroup("Styles");
         styles.addTabLink("Panel", ModuleFiles.views.samples.styles.Panel);
         styles.addTabLink("List Box", ModuleFiles.views.samples.styles.ListBox);
@@ -75,6 +87,7 @@ export default class AppHostViewModel extends AtomViewModel {
         controls.addTabLink("Toggle Button Bar",  ModuleFiles.views.samples.basicControls.AtomToggleButtonBarSample);
         controls.addTabLink("Grid View",  ModuleFiles.views.samples.basicControls.AtomGridViewSample);
         controls.addTabLink("Window",  ModuleFiles.views.samples.basicControls.ButtonSample);
+        controls.addTabLink("Frame",  ModuleFiles.views.samples.frame.FrameSample);
 
         this.app.callLater(async () => {
             await this.navigationService.openPage(`tab://app/${ModuleFiles.views.MDHost}`, {

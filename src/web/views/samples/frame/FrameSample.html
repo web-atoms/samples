@@ -1,0 +1,16 @@
+<script>
+    import FrameViewModel from "./FrameViewModel";
+</script>
+<AtomGridView
+    rows="100, *"
+    view-model="{ this.resolve(FrameViewModel) }">
+    <div>
+        <button event-click="{ () => this.viewModel.openPage1() }">Open Page 1</button>
+        </br>
+        <button event-click="{ () => this.viewModel.openPage2() }">Open Page 2</button>
+    </div>
+
+    <AtomFrame
+        row="1"
+        url="[$viewModel.url]"></AtomFrame>
+</AtomGridView>
