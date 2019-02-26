@@ -43,8 +43,19 @@
         "MobileView": "web-atoms-samples/dist/{platform}/views/samples/conditional/MobileView"
       },
       "form": {
+        "CustomFormSample": "web-atoms-samples/dist/{platform}/views/samples/form/CustomFormSample",
+        "CustomTemplate": "web-atoms-samples/dist/{platform}/views/samples/form/CustomTemplate",
+        "SideBySideForm": "web-atoms-samples/dist/{platform}/views/samples/form/SideBySideForm",
         "SimpleForm": "web-atoms-samples/dist/{platform}/views/samples/form/SimpleForm",
-        "SideBySideForm": "web-atoms-samples/dist/{platform}/views/samples/form/SideBySideForm"
+        "custom": {
+          "CustomFormSample": "web-atoms-samples/dist/{platform}/views/samples/form/custom/CustomFormSample",
+          "CustomTemplate": "web-atoms-samples/dist/{platform}/views/samples/form/custom/CustomTemplate"
+        }
+      },
+      "frame": {
+        "FrameSample": "web-atoms-samples/dist/{platform}/views/samples/frame/FrameSample",
+        "Page1": "web-atoms-samples/dist/{platform}/views/samples/frame/Page1",
+        "Page2": "web-atoms-samples/dist/{platform}/views/samples/frame/Page2"
       },
       "http": {
         "Movies": "web-atoms-samples/dist/{platform}/views/samples/http/Movies"
@@ -74,11 +85,6 @@
       },
       "comboBox": {
         "ComboBoxSample": "web-atoms-samples/dist/{platform}/views/samples/combo-box/ComboBoxSample"
-      },
-      "frame": {
-        "FrameSample": "web-atoms-samples/dist/{platform}/views/samples/frame/FrameSample",
-        "Page1": "web-atoms-samples/dist/{platform}/views/samples/frame/Page1",
-        "Page2": "web-atoms-samples/dist/{platform}/views/samples/frame/Page2"
       }
     },
     "AppHost": "web-atoms-samples/dist/{platform}/views/AppHost",

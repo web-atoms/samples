@@ -1,0 +1,26 @@
+<script>
+        import AtomFieldTemplate from "@web-atoms/web-controls/dist/form/AtomFieldTemplate";
+    </script>
+    <AtomFieldTemplate.div
+        class="[ ({
+            'form-field': 1,
+            'has-error': $this.field.hasError
+        }) ]"
+        >
+        <span
+            class="help"
+            event-click="{ () => this.field.openHelp() }" 
+            style-display="[$this.field.hasHelp ? '' : 'none']">?</span>
+        <label
+            class="label"
+            presenter="labelPresenter"
+            style-color="[$this.field.required ? 'red' : 'black']"
+            text="[$this.field.label]"></label>
+        <span
+            class="error"
+            style-display="[ $this.field.hasError ? '' : 'none' ]"
+            text="[$this.field.error]"></span>
+        <div 
+            class="presenter"
+            presenter="contentPresenter"></div>    
+    </AtomFieldTemplate.div>

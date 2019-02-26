@@ -41,6 +41,14 @@ export default  class ButtonSample extends AtomControl {
             const e3 = new AtomItemsControl(this.app, document.createElement("table"));
             
             
+        e3.setPrimitiveValue(e3.element, "style", "border-collapse: collapse; margin-left: 10px; " );
+        
+
+            e3.bind(e3.element, "items",  [["viewModel","movies","value"]], false , (v1) => (v1) );
+
+        e3.itemTemplate = ButtonSample_itemTemplate_1_7Creator(this);
+            
+            
             const e4 = document.createElement("thead");
             
             e3.append(e4);
@@ -78,14 +86,6 @@ export default  class ButtonSample extends AtomControl {
         e3.itemsPresenter = e10;
             e3.append(e10);
             
-            
-            
-        e3.setPrimitiveValue(e3.element, "style", "border-collapse: collapse; margin-left: 10px; " );
-        
-
-            e3.bind(e3.element, "items",  [["viewModel","movies","value"]], false , (v1) => (v1) );
-
-        e3.itemTemplate = ButtonSample_itemTemplate_1_7Creator(this);
             
             this.append(e3);
 

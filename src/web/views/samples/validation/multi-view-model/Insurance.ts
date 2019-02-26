@@ -50,11 +50,11 @@ export default  class Insurance extends AtomControl {
             const e4 = new AtomItemsControl(this.app);
             
             
-            
             e4.runAfterInit( () =>
             e4.setLocalValue(e4.element, "items",  (((this.viewModel) ? this.viewModel.model : undefined) ? this.viewModel.model.applicants : undefined) ) );
 
         e4.itemTemplate = Insurance_itemTemplate_1_11Creator(this);
+            
             
             this.append(e4);
 

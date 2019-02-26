@@ -25,13 +25,13 @@ export default  class ListBox extends AtomControl {
             const e1 = new AtomListBox(this.app);
             
             
-            
             e1.defaultControlStyle =  AppListBoxStyle ;
             
 
             e1.bind(e1.element, "items",  [["viewModel","movies","value"]], false , (v1) => (v1) );
 
         e1.itemTemplate = ListBox_itemTemplate_1_9Creator(this);
+            
             
             this.append(e1);
 

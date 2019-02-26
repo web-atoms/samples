@@ -38,10 +38,10 @@ export default  class AtomItemsControlSample extends AtomControl {
             const e3 = new AtomItemsControl(this.app, document.createElement("ol"));
             
             
-            
             e3.bind(e3.element, "items",  [["viewModel","movies","value"]], false , (v1) => (v1) );
 
         e3.itemTemplate = AtomItemsControlSample_itemTemplate_1_3Creator(this);
+            
             
             this.append(e3);
 

@@ -131,7 +131,6 @@ export default  class AtomWindowSample extends AtomWindow {
             const e12 = new AtomComboBox(this.app, document.createElement("select"));
             
             
-            
         e12.setPrimitiveValue(e12.element, "style", "height: 30px;\n                            margin: 10px 0px;" );
         
 
@@ -170,6 +169,7 @@ export default  class AtomWindowSample extends AtomWindow {
                             }] );
 
             e12.bind(e12.element, "value",  [["viewModel","movie","genre"]], ["change", "keyup", "keydown", "blur"]  );
+            
             e11.appendChild(e12.element);
 
 

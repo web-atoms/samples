@@ -32,18 +32,17 @@ export default  class ViewPager extends AtomGridView {
             const e1 = new AtomListBox(this.app, document.createElement("div"));
             
             
-            
             e1.bind(e1.element, "items",  [["viewModel","pages"]], false , (v1) => (v1) );
 
             e1.bind(e1.element, "value",  [["viewModel","currentPage"]], true  );
 
         e1.itemTemplate = ViewPager_itemTemplate_1_12Creator(this);
             
+            
             this.append(e1);
 
 
             const e2 = new AtomViewPager(this.app);
-            
             
             
         e2.setPrimitiveValue(e2.element, "row", "1" );
@@ -52,6 +51,7 @@ export default  class ViewPager extends AtomGridView {
             e2.bind(e2.element, "items",  [["viewModel","pages"]], false , (v1) => (v1) );
 
             e2.bind(e2.element, "value",  [["viewModel","currentPage"]], false , (v1) => (v1) );
+            
             this.append(e2);
 
                 }

@@ -75,6 +75,7 @@ export default class AppHostViewModel extends AtomViewModel {
         const form = ms.addGroup("Form");
         form.addTabLink("Simple", ModuleFiles.views.samples.form.SimpleForm);
         form.addTabLink("Side by Side", ModuleFiles.views.samples.form.SideBySideForm);
+        form.addTabLink("Custom Template", ModuleFiles.views.samples.form.custom.CustomFormSample);
 
         const styles = ms.addGroup("Styles");
         styles.addTabLink("Panel", ModuleFiles.views.samples.styles.Panel);

@@ -32,7 +32,6 @@ export default  class AtomListBoxSample extends AtomControl {
             const e1 = new AtomListBox(this.app, document.createElement("div"));
             
             
-            
         e1.setPrimitiveValue(e1.element, "allowSelectFirst", "true" );
         
 
@@ -46,6 +45,7 @@ export default  class AtomListBoxSample extends AtomControl {
         
 
         e1.itemTemplate = AtomListBoxSample_itemTemplate_1_4Creator(this);
+            
             
             this.append(e1);
 

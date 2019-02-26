@@ -28,7 +28,6 @@ export default  class AtomToggleButtonBarSample extends AtomControl {
             const e1 = new AtomToggleButtonBar(this.app);
             
             
-            
                 e1.controlStyle =  ToggleBarSampleStyle ;
 
         e1.setPrimitiveValue(e1.element, "labelPath", "label" );
@@ -44,6 +43,7 @@ export default  class AtomToggleButtonBarSample extends AtomControl {
 
         e1.setPrimitiveValue(e1.element, "style", "height:33px;" );
         
+            
             this.append(e1);
 
 

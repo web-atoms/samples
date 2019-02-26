@@ -40,14 +40,13 @@ export default  class MDHost extends AtomGridView {
             const e2 = new AtomGridSplitter(this.app);
             
             
-            
         e2.setPrimitiveValue(e2.element, "column", "1" );
         
+            
             this.append(e2);
 
 
             const e3 = new AtomItemsControl(this.app);
-            
             
             
         e3.setPrimitiveValue(e3.element, "column", "2" );
@@ -57,6 +56,7 @@ export default  class MDHost extends AtomGridView {
             e3.setLocalValue(e3.element, "items",  ((this.viewModel) ? this.viewModel.headers : undefined) ) );
 
         e3.itemTemplate = MDHost_itemTemplate_1_1Creator(this);
+            
             
             this.append(e3);
 

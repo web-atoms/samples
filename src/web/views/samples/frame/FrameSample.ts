@@ -1,6 +1,5 @@
 // tslint:disable
 import {BindableProperty} from "web-atoms-core/dist/core/BindableProperty";
-import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 import {AtomFrame} from "web-atoms-core/dist/web/controls/AtomFrame";
 import {AtomGridView} from "web-atoms-core/dist/web/controls/AtomGridView";
 
@@ -59,11 +58,11 @@ export default  class FrameSample extends AtomGridView {
             const e7 = new AtomFrame(this.app);
             
             
-            
         e7.setPrimitiveValue(e7.element, "row", "1" );
         
 
             e7.bind(e7.element, "url",  [["viewModel","url"]], false , (v1) => (v1) );
+            
             this.append(e7);
 
                 }

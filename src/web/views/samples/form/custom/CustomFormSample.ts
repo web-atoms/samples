@@ -2,11 +2,12 @@
 import {BindableProperty} from "web-atoms-core/dist/core/BindableProperty";
 import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 
-    import AtomForm from "@web-atoms/web-controls/dist/form/AtomForm";
-    import AtomField from "@web-atoms/web-controls/dist/form/AtomField";
-    import SignupFormViewModel from "../../../../view-models/form/SignupFormViewModel";
-
-export default  class SimpleForm extends AtomControl {
+        import AtomForm from "@web-atoms/web-controls/dist/form/AtomForm";
+        import AtomField from "@web-atoms/web-controls/dist/form/AtomField";
+        import SignupFormViewModel from "../../../../../view-models/form/SignupFormViewModel";
+        import CustomForm from "./CustomForm";
+    
+export default  class CustomFormSample extends AtomControl {
 
                 
 
@@ -22,7 +23,7 @@ export default  class SimpleForm extends AtomControl {
                     
                 this.viewModel =  this.resolve(SignupFormViewModel) ;
                     
-            const e1 = new AtomForm(this.app);
+            const e1 = new CustomForm(this.app);
             
             
             
@@ -90,6 +91,9 @@ export default  class SimpleForm extends AtomControl {
             
             e6.append(e7);
             
+        e6.setPrimitiveValue(e7, "style", "width: 500px" );
+        
+
         e6.setPrimitiveValue(e7, "type", "text" );
         
 

@@ -65,12 +65,12 @@ export default  class MenuList extends AtomItemsControl {
             const e2 = new AtomItemsControl(this.app, document.createElement("div"));
             
             
-            
             e2.bind(e2.element, "styleDisplay",  [["data","children"]], false , (v1) => (v1) ? '' : 'none' );
 
             e2.bind(e2.element, "items",  [["data","children"]], false , (v1) => (v1) );
 
                 e2.setPrimitiveValue(e2.element, "itemTemplate",  __creator.itemTemplate );
+            
             this.append(e2);
 
                 }

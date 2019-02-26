@@ -36,16 +36,21 @@ export default  class ViewStack extends AtomGridView {
             const e2 = new AtomToggleButtonBar(this.app);
             
             
-            
             e2.runAfterInit( () =>
             e2.setLocalValue(e2.element, "items",  ((this.viewModel) ? this.viewModel.items : undefined) ) );
 
             e2.bind(e2.element, "value",  [["viewModel","index"]], true  );
+            
             e1.appendChild(e2.element);
 
 
             const e3 = new AtomViewStack(this.app);
             
+            
+        e3.setPrimitiveValue(e3.element, "row", "1" );
+        
+
+            e3.bind(e3.element, "selectedIndex",  [["viewModel","index"]], false , (v1) => (v1) );
             
             const e4 = document.createElement("div");
             
@@ -73,11 +78,6 @@ export default  class ViewStack extends AtomGridView {
         const e9 = document.createTextNode("View 3");
         
         e8.appendChild(e9);
-            
-        e3.setPrimitiveValue(e3.element, "row", "1" );
-        
-
-            e3.bind(e3.element, "selectedIndex",  [["viewModel","index"]], false , (v1) => (v1) );
             this.append(e3);
 
                 }

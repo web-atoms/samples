@@ -8,7 +8,7 @@ export default class ResponsiveStyle extends AtomStyle {
 
     public theme = this.styleSheet as AtomTheme;
 
-    public app = this.styleSheet.app;
+    protected app = this.styleSheet.app;
 
     public get root(): IStyleDeclaration {
         return {

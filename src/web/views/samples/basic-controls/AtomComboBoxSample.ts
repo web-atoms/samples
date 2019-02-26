@@ -27,7 +27,6 @@ export default  class AtomComboBoxSample extends AtomControl {
             const e1 = new AtomComboBox(this.app, document.createElement("select"));
             
             
-            
         e1.setPrimitiveValue(e1.element, "labelPath", "name" );
         
 
@@ -40,6 +39,7 @@ export default  class AtomComboBoxSample extends AtomControl {
 
         e1.setPrimitiveValue(e1.element, "style", "width:200px;height:33px;margin-bottom:10px;" );
         
+            
             this.append(e1);
 
 

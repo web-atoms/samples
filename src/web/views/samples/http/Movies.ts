@@ -31,7 +31,6 @@ export default  class Movies extends AtomGridView {
             const e1 = new AtomListBox(this.app, document.createElement("div"));
             
             
-            
         e1.setPrimitiveValue(e1.element, "row", "1" );
         
 
@@ -41,6 +40,7 @@ export default  class Movies extends AtomGridView {
             e1.bind(e1.element, "items",  [["viewModel","movies","value"]], false , (v1) => (v1) );
 
         e1.itemTemplate = Movies_itemTemplate_1_8Creator(this);
+            
             
             this.append(e1);
 

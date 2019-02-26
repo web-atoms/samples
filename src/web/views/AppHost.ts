@@ -52,14 +52,13 @@ export default  class AppHost extends AtomGridView {
             const e3 = new MenuList(this.app);
             
             
-            
         e3.setPrimitiveValue(e3.element, "row", "1" );
         
+            
             this.append(e3);
 
 
             const e4 = new AtomTabbedPage(this.app);
-            
             
             
             e4.defaultControlStyle =  AppTabStyle ;
@@ -70,6 +69,7 @@ export default  class AppHost extends AtomGridView {
 
         e4.setPrimitiveValue(e4.element, "column", "1" );
         
+            
             this.append(e4);
 
 
