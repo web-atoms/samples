@@ -41,6 +41,10 @@ export default SignupViewModel extends AtomViewModel {
             await this.navigationService.alert(`Please enter required fields`);
             return;
         }
+
+        // optional, if you want to reuse same form
+        // you can call resetValidations to remove all errors
+        this.resetValidations();
     }
 
 }
