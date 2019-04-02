@@ -35,4 +35,9 @@ export default class SimpleValidationViewModel extends AtomViewModel {
         }
         await this.navigationService.alert("Save Successful", "Success");
     }
+
+    public cancel(): void {
+        // this will reset all validations and remove all errors.
+        this.resetValidations();
+    }
 }

@@ -80,6 +80,17 @@ export default  class SimpleValidation extends AtomControl {
         const e8 = document.createTextNode("Signup");
         
         e7.appendChild(e8);
+
+            const e9 = document.createElement("button");
+            
+            this.append(e9);
+            
+            this.runAfterInit( () =>
+            this.setLocalValue(e9, "eventClick",  () => (this.viewModel).cancel() ) );
+            
+        const e10 = document.createTextNode("Cancel");
+        
+        e9.appendChild(e10);
                 }
             }
 

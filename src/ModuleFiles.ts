@@ -43,14 +43,12 @@
         "MobileView": "web-atoms-samples/dist/{platform}/views/samples/conditional/MobileView"
       },
       "form": {
-        "CustomFormSample": "web-atoms-samples/dist/{platform}/views/samples/form/CustomFormSample",
-        "CustomTemplate": "web-atoms-samples/dist/{platform}/views/samples/form/CustomTemplate",
-        "SideBySideForm": "web-atoms-samples/dist/{platform}/views/samples/form/SideBySideForm",
-        "SimpleForm": "web-atoms-samples/dist/{platform}/views/samples/form/SimpleForm",
         "custom": {
           "CustomFormSample": "web-atoms-samples/dist/{platform}/views/samples/form/custom/CustomFormSample",
           "CustomTemplate": "web-atoms-samples/dist/{platform}/views/samples/form/custom/CustomTemplate"
-        }
+        },
+        "SideBySideForm": "web-atoms-samples/dist/{platform}/views/samples/form/SideBySideForm",
+        "SimpleForm": "web-atoms-samples/dist/{platform}/views/samples/form/SimpleForm"
       },
       "frame": {
         "FrameSample": "web-atoms-samples/dist/{platform}/views/samples/frame/FrameSample",
