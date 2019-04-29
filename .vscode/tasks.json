@@ -4,21 +4,34 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "type": "typescript",
-            "tsconfig": "tsconfig.json",
+            "label": "All Build",
+            "dependsOn":[
+                "TypeScript Build Watch",
+                "Web Atoms Dev Server",
+                "Component Compiler"
+            ],
+            "problemMatcher": [],
             "group": {
                 "kind": "build",
                 "isDefault": true
             }
         },
         {
+            "label": "TypeScript Build Watch",
+            "type": "typescript",
+            "tsconfig": "tsconfig.json",
+            "option": "watch",
+        },
+        {
             "label": "Web Atoms Dev Server",
             "command": "node",
             "args": [
                 "${env:APPDATA}/npm/node_modules/web-atoms-dev-server/index.js",
+                "https://v2018-test.800casting.com"
             ],
             "problemMatcher": []
-        },{
+        },
+        {
             "label": "Component Compiler",
             "command": "node",
             "isBackground": true,
@@ -30,7 +43,7 @@
             },
             "args": [
                 "${env:APPDATA}/npm/node_modules/web-atoms-generator/bin/component-generator.js",
-                "."
+                "app"
             ],
             "problemMatcher": {
                 "owner": "cc",

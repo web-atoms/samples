@@ -53,6 +53,10 @@ export default class AppHostViewModel extends AtomViewModel {
             url: UMD.resolvePath("web-atoms-samples/docs/web/styles.md"),
             title: "Styles"
         });
+        home.addTabLink("External Styles", ModuleFiles.views.MDHost, {
+            url: UMD.resolvePath("web-atoms-samples/docs/web/external-styles.md"),
+            title: "External Styles"
+        });
         home.addTabLink("Components", ModuleFiles.views.MDHost, {
             url: UMD.resolvePath("web-atoms-samples/docs/web/components.md"),
             title: "Components"
@@ -80,6 +84,7 @@ export default class AppHostViewModel extends AtomViewModel {
         const styles = ms.addGroup("Styles");
         styles.addTabLink("Panel", ModuleFiles.views.samples.styles.Panel);
         styles.addTabLink("List Box", ModuleFiles.views.samples.styles.ListBox);
+        styles.addTabLink("External", ModuleFiles.views.samples.styles.FontAwesome);
 
         const controls = ms.addGroup("Controls");
         controls.addTabLink("Combo Box", ModuleFiles.views.samples.basicControls.AtomComboBoxSample);

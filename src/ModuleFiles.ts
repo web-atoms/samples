@@ -62,6 +62,7 @@
         "Responsive": "web-atoms-samples/dist/{platform}/views/samples/responsive/Responsive"
       },
       "styles": {
+        "FontAwesome": "web-atoms-samples/dist/{platform}/views/samples/styles/FontAwesome",
         "ListBox": "web-atoms-samples/dist/{platform}/views/samples/styles/ListBox",
         "Panel": "web-atoms-samples/dist/{platform}/views/samples/styles/Panel"
       },
