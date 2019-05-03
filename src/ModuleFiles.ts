@@ -43,6 +43,7 @@
         "MobileView": "web-atoms-samples/dist/{platform}/views/samples/conditional/MobileView"
       },
       "form": {
+        "AutoFocusNext": "web-atoms-samples/dist/{platform}/views/samples/form/AutoFocusNext",
         "custom": {
           "CustomFormSample": "web-atoms-samples/dist/{platform}/views/samples/form/custom/CustomFormSample",
           "CustomTemplate": "web-atoms-samples/dist/{platform}/views/samples/form/custom/CustomTemplate"

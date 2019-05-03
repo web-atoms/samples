@@ -1,0 +1,51 @@
+<script>
+    import AtomForm from "@web-atoms/web-controls/dist/form/AtomForm";
+    import AtomField from "@web-atoms/web-controls/dist/form/AtomField";
+    import SignupFormViewModel from "~src/view-models/form/SignupFormViewModel";
+    import SideBySideFormStyle from "./SideBySideFormStyle"; 
+</script>
+<div view-model="{ this.resolve(SignupFormViewModel) }">
+    <AtomForm
+        focus-next-on-enter="{ true }"
+        event-submit="{ () => this.viewModel.signup() }"
+        default-style="{ SideBySideFormStyle }">
+            <AtomField
+            label="First name:"
+            required="true"
+            error="[$viewModel.errorFirstName]">
+            <input type="text" value="$[viewModel.model.firstName]"/>
+        </AtomField>
+        <AtomField
+            label="Last name:"
+            required="true"
+            error="[$viewModel.errorLastName]">
+            <input type="text" value="$[viewModel.model.lastName]"/>
+        </AtomField>
+        <AtomField
+            label="Email Address:"
+            required="true"
+            error="[$viewModel.errorEmailAddress]"
+            help-text="We will send you email to verify your account.">
+            <input 
+                style="width: 500px"
+                type="text" 
+                value="$[viewModel.model.emailAddress]"/>
+        </AtomField>
+        <AtomField
+            label="Password:"
+            required="true"
+            error="[$viewModel.errorPassword]">
+            <input type="text" value="$[viewModel.model.password]"/>
+        </AtomField>
+        <AtomField
+            label="Password (Again):"
+            required="true"
+            error="[$viewModel.errorPasswordAgain]">
+            <!-- last input must have submit class -->
+            <input 
+                class="submit"
+                type="text" value="$[viewModel.model.passwordAgain]"/>
+        </AtomField>
+    </AtomForm>
+    <button event-click="{ () => this.viewModel.signup() }">Signup</button>
+</div>

@@ -7,8 +7,8 @@
             "label": "All Build",
             "dependsOn":[
                 "TypeScript Build Watch",
-                "Web Atoms Dev Server",
-                "Component Compiler"
+                "Component Compiler",
+                "Web Atoms Dev Server"
             ],
             "problemMatcher": [],
             "group": {
