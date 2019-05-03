@@ -5,6 +5,8 @@
     import SideBySideFormStyle from "./SideBySideFormStyle"; 
 </script>
 <div view-model="{ this.resolve(SignupFormViewModel) }">
+    <h3>The focus will move to next input as you press enter</h3>
+    <!-- event-submit and focus-next-on-enter must be set -->
     <AtomForm
         focus-next-on-enter="{ true }"
         event-submit="{ () => this.viewModel.signup() }"
