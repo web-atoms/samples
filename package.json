@@ -17,6 +17,11 @@
     "url": "https://github.com/neurospeech/web-atoms-samples/issues"
   },
   "homepage": "https://github.com/neurospeech/web-atoms-samples#readme",
+  "bundleDependencies": [
+    "@web-atoms/web-controls",
+    "@web-atoms/xf-controls",
+    "web-atoms-core"
+  ],
   "dependencies": {
     "@web-atoms/web-controls": "^1.0.24",
     "@web-atoms/xf-controls": "^1.0.31",
