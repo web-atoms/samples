@@ -29,4 +29,25 @@ public class DetailViewModel extends AtomViewModel {
 }
 ```
 
+## Receive Annotation
 
+In order to retrieve message in a method, you can decorate it with `@Receive` decorator.
+
+```typescript
+public class DetailViewModel extends AtomViewModel {
+
+    @Receive("selected-message")
+    public onMessage(channel: string, msg: IMessage): void {
+
+    }
+
+}
+```
+
+## Broadcast message in a method
+
+```typescript
+public void broadcast(): void {
+    this.app.broadcast("channelName", msg);
+}
+```
