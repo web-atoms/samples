@@ -105,6 +105,9 @@ export default  class CustomFormSample extends AtomControl {
             const e8 = new AtomField(this.app);
             
             
+        e8.setPrimitiveValue(e8.element, "fieldClass", "small" );
+        
+
         e8.setPrimitiveValue(e8.element, "label", "Password:" );
         
 
@@ -128,6 +131,9 @@ export default  class CustomFormSample extends AtomControl {
             const e10 = new AtomField(this.app);
             
             
+        e10.setPrimitiveValue(e10.element, "fieldClass", "small" );
+        
+
         e10.setPrimitiveValue(e10.element, "label", "Password (Again):" );
         
 

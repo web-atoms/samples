@@ -17,9 +17,11 @@ export default  class CustomTemplate extends AtomFieldTemplate {
                     this.element = document.createElement("div");
                     
                     
-            this.bind(this.element, "class",  [["this","field","hasError"]], false , (v1) =>  ({
+            this.bind(this.element, "class",  [["this","field","fieldClass"],["this","field","fieldClass"],["this","field","hasError"],["this","field","visible"]], false , (v1,v2,v3,v4) =>  ({
             'form-field': 1,
-            'has-error': (v1)
+            [(v1)] : (v2),
+            'has-error': (v3),
+            'field-hidden': !(v4)
         })  , __creator);
                     
             const e1 = document.createElement("span");

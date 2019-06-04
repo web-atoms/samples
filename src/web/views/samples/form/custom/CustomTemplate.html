@@ -4,7 +4,9 @@
     <AtomFieldTemplate.div
         class="[ ({
             'form-field': 1,
-            'has-error': $this.field.hasError
+            [$this.field.fieldClass] : $this.field.fieldClass,
+            'has-error': $this.field.hasError,
+            'field-hidden': !$this.field.visible
         }) ]"
         >
         <span

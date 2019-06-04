@@ -16,7 +16,7 @@ export default  class MobileView extends AtomControl {
                     
                     
                     
-        const e1 = document.createTextNode("\r\n    This is mobile view\r\n");
+        const e1 = document.createTextNode("\n    This is mobile view\n");
         
         this.element.appendChild(e1);
                 }

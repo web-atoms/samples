@@ -20,6 +20,10 @@ export default class CustomFormStyle extends AtomStyle {
             width: "98%",
             verticalAlign: "top",
             subclasses: {
+                ".small": {
+                    display: "inline-block",
+                    width: "45%"
+                },
                 ".has-error": {
                     backgroundColor: Colors.red.withAlphaPercent(0.1)
                 },
