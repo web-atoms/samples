@@ -41,7 +41,7 @@ export default  class AtomListBoxSample extends AtomControl {
 
             e1.bind(e1.element, "selectedItem",  [["viewModel","movie"]], true  );
 
-        e1.setPrimitiveValue(e1.element, "style", " color:#7e7e7e;\n                width: 610px;\n                margin-top: 10px;\n                border: 1px solid #ccc; " );
+        e1.setPrimitiveValue(e1.element, "style", " color:#7e7e7e;\r\n                width: 610px;\r\n                margin-top: 10px;\r\n                border: 1px solid #ccc; " );
         
 
         e1.itemTemplate = AtomListBoxSample_itemTemplate_1_4Creator(this);
@@ -54,7 +54,7 @@ export default  class AtomListBoxSample extends AtomControl {
             
             this.append(e2);
             
-        this.setPrimitiveValue(e2, "style", "font-size: 15px;\n                margin-top: 20px;\n                font-weight: 600" );
+        this.setPrimitiveValue(e2, "style", "font-size: 15px;\r\n                margin-top: 20px;\r\n                font-weight: 600" );
         
 
             this.bind(e2, "text",  [["viewModel","movie","name"]], false , (v1) => 'Selected Item: ' + (v1) );
@@ -77,7 +77,7 @@ export default  class AtomListBoxSample extends AtomControl {
                     this.element = document.createElement("div");
                     
                     
-        this.setPrimitiveValue(this.element, "style", " border-bottom: 1px solid #ccc; \n                         border-radius: 0px;\n                         padding: 10px" );
+        this.setPrimitiveValue(this.element, "style", " border-bottom: 1px solid #ccc; \r\n                         border-radius: 0px;\r\n                         padding: 10px" );
         
                     
             const e1 = document.createElement("div");
@@ -89,7 +89,7 @@ export default  class AtomListBoxSample extends AtomControl {
             
             e1.appendChild(e2);
             
-        this.setPrimitiveValue(e2, "style", "font-size: 15px;\n                                font-weight: 600" );
+        this.setPrimitiveValue(e2, "style", "font-size: 15px;\r\n                                font-weight: 600" );
         
 
             this.runAfterInit( () =>
@@ -100,7 +100,7 @@ export default  class AtomListBoxSample extends AtomControl {
             
             this.append(e3);
             
-        this.setPrimitiveValue(e3, "style", "font-size: 15px; \n                            font-weight: 400; \n                            padding-left: 15px;\n                            padding-top: 5px" );
+        this.setPrimitiveValue(e3, "style", "font-size: 15px; \r\n                            font-weight: 400; \r\n                            padding-left: 15px;\r\n                            padding-top: 5px" );
         
 
             this.runAfterInit( () =>

@@ -51,7 +51,7 @@ export default  class AtomToggleButtonBarSample extends AtomControl {
             
             this.append(e2);
             
-        this.setPrimitiveValue(e2, "style", "font-size: 15px;\n                 margin-top: 20px;\n                 font-weight: 600" );
+        this.setPrimitiveValue(e2, "style", "font-size: 15px;\r\n                 margin-top: 20px;\r\n                 font-weight: 600" );
         
 
             this.bind(e2, "text",  [["viewModel","gender"]], false , (v1) => 'Selected Movie: ' + (v1) );

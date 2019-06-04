@@ -23,153 +23,164 @@ export default  class AutoFocusNext extends AtomControl {
                     
                 this.viewModel =  this.resolve(SignupFormViewModel) ;
                     
-            const e1 = new AtomForm(this.app);
+            const e1 = document.createElement("h3");
+            
+            this.append(e1);
             
             
-            e1.defaultControlStyle =  SideBySideFormStyle ;
+        const e2 = document.createTextNode("The focus will move to next input as you press enter");
+        
+        e1.appendChild(e2);
+// e3
+//  event-submit and focus-next-on-enter must be set 
+
+            const e4 = new AtomForm(this.app);
+            
+            
+            e4.defaultControlStyle =  SideBySideFormStyle ;
             
 
-                e1.setPrimitiveValue(e1.element, "focusNextOnEnter",  true );
+                e4.setPrimitiveValue(e4.element, "focusNextOnEnter",  true );
 
-                e1.setPrimitiveValue(e1.element, "eventSubmit",  () => this.viewModel.signup() );
+                e4.setPrimitiveValue(e4.element, "eventSubmit",  () => this.viewModel.signup() );
             
-            const e2 = new AtomField(this.app);
+            const e5 = new AtomField(this.app);
             
             
-        e2.setPrimitiveValue(e2.element, "label", "First name:" );
+        e5.setPrimitiveValue(e5.element, "label", "First name:" );
         
 
-        e2.setPrimitiveValue(e2.element, "required", "true" );
+        e5.setPrimitiveValue(e5.element, "required", "true" );
         
 
-            e2.bind(e2.element, "error",  [["viewModel","errorFirstName"]], false , (v1) => (v1) );
+            e5.bind(e5.element, "error",  [["viewModel","errorFirstName"]], false , (v1) => (v1) );
             
-            const e3 = document.createElement("input");
+            const e6 = document.createElement("input");
             
-            e2.append(e3);
+            e5.append(e6);
             
-        e2.setPrimitiveValue(e3, "type", "text" );
+        e5.setPrimitiveValue(e6, "type", "text" );
         
 
-            e2.bind(e3, "value",  [["viewModel","model","firstName"]], true  );
-            
-            e1.append(e2);
-
-
-            const e4 = new AtomField(this.app);
-            
-            
-        e4.setPrimitiveValue(e4.element, "label", "Last name:" );
-        
-
-        e4.setPrimitiveValue(e4.element, "required", "true" );
-        
-
-            e4.bind(e4.element, "error",  [["viewModel","errorLastName"]], false , (v1) => (v1) );
-            
-            const e5 = document.createElement("input");
+            e5.bind(e6, "value",  [["viewModel","model","firstName"]], true  );
             
             e4.append(e5);
+
+
+            const e7 = new AtomField(this.app);
             
-        e4.setPrimitiveValue(e5, "type", "text" );
+            
+        e7.setPrimitiveValue(e7.element, "label", "Last name:" );
         
 
-            e4.bind(e5, "value",  [["viewModel","model","lastName"]], true  );
-            
-            e1.append(e4);
-
-
-            const e6 = new AtomField(this.app);
-            
-            
-        e6.setPrimitiveValue(e6.element, "label", "Email Address:" );
+        e7.setPrimitiveValue(e7.element, "required", "true" );
         
 
-        e6.setPrimitiveValue(e6.element, "required", "true" );
+            e7.bind(e7.element, "error",  [["viewModel","errorLastName"]], false , (v1) => (v1) );
+            
+            const e8 = document.createElement("input");
+            
+            e7.append(e8);
+            
+        e7.setPrimitiveValue(e8, "type", "text" );
         
 
-            e6.bind(e6.element, "error",  [["viewModel","errorEmailAddress"]], false , (v1) => (v1) );
+            e7.bind(e8, "value",  [["viewModel","model","lastName"]], true  );
+            
+            e4.append(e7);
 
-        e6.setPrimitiveValue(e6.element, "helpText", "We will send you email to verify your account." );
-        
-            
-            const e7 = document.createElement("input");
-            
-            e6.append(e7);
-            
-        e6.setPrimitiveValue(e7, "style", "width: 500px" );
-        
 
-        e6.setPrimitiveValue(e7, "type", "text" );
+            const e9 = new AtomField(this.app);
+            
+            
+        e9.setPrimitiveValue(e9.element, "label", "Email Address:" );
         
 
-            e6.bind(e7, "value",  [["viewModel","model","emailAddress"]], true  );
-            
-            e1.append(e6);
-
-
-            const e8 = new AtomField(this.app);
-            
-            
-        e8.setPrimitiveValue(e8.element, "label", "Password:" );
+        e9.setPrimitiveValue(e9.element, "required", "true" );
         
 
-        e8.setPrimitiveValue(e8.element, "required", "true" );
+            e9.bind(e9.element, "error",  [["viewModel","errorEmailAddress"]], false , (v1) => (v1) );
+
+        e9.setPrimitiveValue(e9.element, "helpText", "We will send you email to verify your account." );
+        
+            
+            const e10 = document.createElement("input");
+            
+            e9.append(e10);
+            
+        e9.setPrimitiveValue(e10, "style", "width: 500px" );
         
 
-            e8.bind(e8.element, "error",  [["viewModel","errorPassword"]], false , (v1) => (v1) );
-            
-            const e9 = document.createElement("input");
-            
-            e8.append(e9);
-            
-        e8.setPrimitiveValue(e9, "type", "text" );
+        e9.setPrimitiveValue(e10, "type", "text" );
         
 
-            e8.bind(e9, "value",  [["viewModel","model","password"]], true  );
+            e9.bind(e10, "value",  [["viewModel","model","emailAddress"]], true  );
             
-            e1.append(e8);
+            e4.append(e9);
 
 
-            const e10 = new AtomField(this.app);
+            const e11 = new AtomField(this.app);
             
             
-        e10.setPrimitiveValue(e10.element, "label", "Password (Again):" );
+        e11.setPrimitiveValue(e11.element, "label", "Password:" );
         
 
-        e10.setPrimitiveValue(e10.element, "required", "true" );
+        e11.setPrimitiveValue(e11.element, "required", "true" );
         
 
-            e10.bind(e10.element, "error",  [["viewModel","errorPasswordAgain"]], false , (v1) => (v1) );
-            // e11
-//  last input must have submit class 
-
+            e11.bind(e11.element, "error",  [["viewModel","errorPassword"]], false , (v1) => (v1) );
+            
             const e12 = document.createElement("input");
             
-            e10.append(e12);
+            e11.append(e12);
             
-        e10.setPrimitiveValue(e12, "class", "submit" );
+        e11.setPrimitiveValue(e12, "type", "text" );
         
 
-        e10.setPrimitiveValue(e12, "type", "text" );
+            e11.bind(e12, "value",  [["viewModel","model","password"]], true  );
+            
+            e4.append(e11);
+
+
+            const e13 = new AtomField(this.app);
+            
+            
+        e13.setPrimitiveValue(e13.element, "label", "Password (Again):" );
         
 
-            e10.bind(e12, "value",  [["viewModel","model","passwordAgain"]], true  );
-            
-            e1.append(e10);
-
-            this.append(e1);
-
-
-            const e13 = document.createElement("button");
-            
-            this.append(e13);
-            
-                this.setPrimitiveValue(e13, "eventClick",  () => this.viewModel.signup() );
-            
-        const e14 = document.createTextNode("Signup");
+        e13.setPrimitiveValue(e13.element, "required", "true" );
         
-        e13.appendChild(e14);
+
+            e13.bind(e13.element, "error",  [["viewModel","errorPasswordAgain"]], false , (v1) => (v1) );
+            // e14
+//  last input must have submit class 
+
+            const e15 = document.createElement("input");
+            
+            e13.append(e15);
+            
+        e13.setPrimitiveValue(e15, "class", "submit" );
+        
+
+        e13.setPrimitiveValue(e15, "type", "text" );
+        
+
+            e13.bind(e15, "value",  [["viewModel","model","passwordAgain"]], true  );
+            
+            e4.append(e13);
+
+            this.append(e4);
+
+
+            const e16 = document.createElement("button");
+            
+            this.append(e16);
+            
+                this.setPrimitiveValue(e16, "eventClick",  () => this.viewModel.signup() );
+            
+        const e17 = document.createTextNode("Signup");
+        
+        e16.appendChild(e17);
                 }
             }
 

@@ -9,13 +9,9 @@ declare var UMD: any;
 
 export default class AppHostViewModel extends AtomViewModel {
 
-    constructor(
-        @Inject app: App,
-        @Inject public readonly menuService: MenuService,
-        @Inject public readonly navigationService: NavigationService
-    ) {
-        super(app);
-    }
+    @Inject public readonly menuService: MenuService;
+
+    @Inject public readonly navigationService: NavigationService;
 
     public async init(): Promise<any> {
         const ms = this.menuService;
@@ -37,10 +33,10 @@ export default class AppHostViewModel extends AtomViewModel {
             url: UMD.resolvePath("web-atoms-samples/docs/general/binding.md"),
             title: "Binding"
         });
-        home.addTabLink("Binding Properties", ModuleFiles.views.MDHost, {
-            url: UMD.resolvePath("web-atoms-samples/docs/general/binding-properties.md"),
-            title: "Binding"
-        });
+        // home.addTabLink("Binding Properties", ModuleFiles.views.MDHost, {
+        //     url: UMD.resolvePath("web-atoms-samples/docs/general/binding-properties.md"),
+        //     title: "Binding"
+        // });
         home.addTabLink("Ajax", ModuleFiles.views.MDHost, {
             url: UMD.resolvePath("web-atoms-samples/docs/general/ajax.md"),
             title: "Ajax"

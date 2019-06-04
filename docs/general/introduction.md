@@ -193,6 +193,49 @@ XAML
 
 You can bind any view property to `fullName` and it will refresh automatically whenever any changes was detected in `model.firstName` or `model.lastName`. Again, both must not initialized to `undefined`.
 
+### Watch Async Property
+
+Watch can also be applied on a readonly property that returns a promise, but you cannot mark get method as `async`
+
+```typescript
+
+    @Watch
+    public get messageList(): Promise<IMessage[]> {
+        return this.messageService.getList(
+            this.searchText,
+            this.archived
+            );
+    }
+
+```
+
+Now when you bind `messageList` to `items` property of `AtomItemsControl`, it will automatically refresh whenever any property mentioned in the method changes.
+
+In order to prevent frequent loading, you must provide `cancelToken` to cancel previous REST call, however, Web Atoms waits for 100 milliseconds before starting the actual call, so if the promise is refreshed quickly, previous call would not begin.
+
+```typescript
+
+    @Watch
+    public get messageList(): Promise<IMessage[]> {
+        const old = this.cancelToken;
+        if (old) {
+            old.cancel();
+        }
+        const c = new CancelToken();
+        this["cancelToken"] = c;
+        return this.messageService.getList(
+            this.searchText,
+            this.archived,
+            c
+        );
+    }
+
+```
+
+Writing `this["cancelToken"]` prevents binding to refresh token again.
+
+
+
 ### Validate property
 
 Though `@Watch` is great way to watch any property, we cannot use it for validation because as soon as page is loaded, user will be thrown with error messages. So we have created `@Validate` decorator which only returns an error message after `this.isValid` property is called.

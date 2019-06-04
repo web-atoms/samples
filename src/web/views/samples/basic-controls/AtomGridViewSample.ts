@@ -34,10 +34,10 @@ export default  class AtomGridViewSample extends AtomGridView {
         this.setPrimitiveValue(e1, "column", "0:2" );
         
 
-        this.setPrimitiveValue(e1, "style", "background-color: lightgreen;\n                height: 100%;" );
+        this.setPrimitiveValue(e1, "style", "background-color: lightgreen;\r\n                height: 100%;" );
         
             
-        const e2 = document.createTextNode("\n        Header\n    ");
+        const e2 = document.createTextNode("\r\n        Header\r\n    ");
         
         e1.appendChild(e2);
 
@@ -51,10 +51,10 @@ export default  class AtomGridViewSample extends AtomGridView {
         this.setPrimitiveValue(e3, "column", "0" );
         
 
-        this.setPrimitiveValue(e3, "style", "background-color: lightgrey;\n        height: 100%;" );
+        this.setPrimitiveValue(e3, "style", "background-color: lightgrey;\r\n        height: 100%;" );
         
             
-        const e4 = document.createTextNode("\n        TreeView\n    ");
+        const e4 = document.createTextNode("\r\n        TreeView\r\n    ");
         
         e3.appendChild(e4);
 
@@ -68,10 +68,10 @@ export default  class AtomGridViewSample extends AtomGridView {
         this.setPrimitiveValue(e5, "column", "1" );
         
 
-        this.setPrimitiveValue(e5, "style", "background-color: lightblue;\n        height: 100%;" );
+        this.setPrimitiveValue(e5, "style", "background-color: lightblue;\r\n        height: 100%;" );
         
             
-        const e6 = document.createTextNode("\n        Nested DockPanel Header\n    ");
+        const e6 = document.createTextNode("\r\n        Nested DockPanel Header\r\n    ");
         
         e5.appendChild(e6);
 
@@ -85,10 +85,10 @@ export default  class AtomGridViewSample extends AtomGridView {
         this.setPrimitiveValue(e7, "column", "1" );
         
 
-        this.setPrimitiveValue(e7, "style", "background-color: white;\n        height: 100%;" );
+        this.setPrimitiveValue(e7, "style", "background-color: white;\r\n        height: 100%;" );
         
             
-        const e8 = document.createTextNode("\n        Nested Fill Element\n    ");
+        const e8 = document.createTextNode("\r\n        Nested Fill Element\r\n    ");
         
         e7.appendChild(e8);
 
@@ -102,10 +102,10 @@ export default  class AtomGridViewSample extends AtomGridView {
         this.setPrimitiveValue(e9, "column", "1" );
         
 
-        this.setPrimitiveValue(e9, "style", "background-color: lightseagreen;\n        height: 100%;" );
+        this.setPrimitiveValue(e9, "style", "background-color: lightseagreen;\r\n        height: 100%;" );
         
             
-        const e10 = document.createTextNode("\n        Nested DockPanel Footer\n    ");
+        const e10 = document.createTextNode("\r\n        Nested DockPanel Footer\r\n    ");
         
         e9.appendChild(e10);
 
@@ -119,10 +119,10 @@ export default  class AtomGridViewSample extends AtomGridView {
         this.setPrimitiveValue(e11, "column", "0:2" );
         
 
-        this.setPrimitiveValue(e11, "style", "background-color: lightslategray;\n        height: 100%;" );
+        this.setPrimitiveValue(e11, "style", "background-color: lightslategray;\r\n        height: 100%;" );
         
             
-        const e12 = document.createTextNode("\n        Footer\n    ");
+        const e12 = document.createTextNode("\r\n        Footer\r\n    ");
         
         e11.appendChild(e12);
                 }
