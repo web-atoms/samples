@@ -83,6 +83,9 @@
       "viewStack": {
         "ViewStack": "web-atoms-samples/dist/{platform}/views/samples/view-stack/ViewStack"
       },
+      "virtualListBox": {
+        "VirtualListBoxSample": "web-atoms-samples/dist/{platform}/views/samples/virtual-list-box/VirtualListBoxSample"
+      },
       "comboBox": {
         "ComboBoxSample": "web-atoms-samples/dist/{platform}/views/samples/combo-box/ComboBoxSample"
       }
