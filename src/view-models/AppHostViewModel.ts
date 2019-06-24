@@ -21,13 +21,17 @@ export default class AppHostViewModel extends AtomViewModel {
             url: UMD.resolvePath("web-atoms-samples/docs/general/introduction.md"),
             title: "Introduction"
         });
+        home.addTabLink("Packer", ModuleFiles.views.MDHost, {
+            url: UMD.resolvePath("web-atoms-samples/docs/general/packer.md"),
+            title: "Packer"
+        });
         home.addTabLink("Dependency Injection", ModuleFiles.views.MDHost, {
             url: UMD.resolvePath("web-atoms-samples/docs/general/dependency-injection.md"),
             title: "Dependency Injection"
         });
         home.addTabLink("Messaging", ModuleFiles.views.MDHost, {
             url: UMD.resolvePath("web-atoms-samples/docs/general/messaging.md"),
-            title: "Dependency Injection"
+            title: "Messaging"
         });
         home.addTabLink("Binding", ModuleFiles.views.MDHost, {
             url: UMD.resolvePath("web-atoms-samples/docs/general/binding.md"),
@@ -44,6 +48,10 @@ export default class AppHostViewModel extends AtomViewModel {
         home.addTabLink("Validation", ModuleFiles.views.MDHost, {
             url: UMD.resolvePath("web-atoms-samples/docs/general/validation.md"),
             title: "Validation"
+        });
+        home.addTabLink("Navigation Service", ModuleFiles.views.MDHost, {
+            url: UMD.resolvePath("web-atoms-samples/docs/general/navigation-service.md"),
+            title: "Navigation Service"
         });
         home.addTabLink("Styles", ModuleFiles.views.MDHost, {
             url: UMD.resolvePath("web-atoms-samples/docs/web/styles.md"),

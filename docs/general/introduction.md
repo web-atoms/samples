@@ -58,6 +58,8 @@ All web atoms modules are written (transpiled) as UMD module, suitable for testi
 </html>
 ```
 
+> To pack and load all modules at once, please review `Packer`.
+
 ## Web Atoms Generator
 Each html file under `src` folder is transpiled to a TypeScript file that can contains a class derived from AtomControl. This class is a view that can be loaded with `UMD.loadView` method and it can be nested inside any other view.
 
@@ -81,6 +83,16 @@ root
 ```
 
 It is important that you keep files inside `web` and `xf` folder, as module loader will replace `{platform}` variable in url to corresponding folder to load views. This will make view models completely independent of platform.
+
+## Startup
+
+1. Install Visual Studio Code
+2. Install Node with NPM
+3. Start VS Code and create a new terminal
+4. Run `npm install -g web-atoms-generator @web-atoms/pack`
+5. Clone repository https://github.com/web-atoms/intro and rename package name in package.json, this will configure all tasks needed to run web atoms.
+6. Run VS Code tasks and run `All Build`
+7. This will start a small web server, you can open the displayed link in browser and all views will be displayed to test.
 
 ## AtomControl
 

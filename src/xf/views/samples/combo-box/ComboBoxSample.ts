@@ -71,7 +71,7 @@ function Root_mAtomComboBox_Creator(__creator: any): any {
                     
             const e1 = this.find("e1");
             
-            this.bind(e1, "Text",  [["data","label"]], false , (v1) => (v1) );
+            this.bind(e1, "Text",  [["data","label"]], false , null );
 
                 }
             }

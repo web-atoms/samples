@@ -46,7 +46,7 @@
 
             const e2 = this.find("e2");
             
-            this.bind(e2, "Text",  [["viewModel","title"]], false , (v1) => (v1) );
+            this.bind(e2, "Text",  [["viewModel","title"]], false , null );
 
 
             const e3 = this.find("e3");

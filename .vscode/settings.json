@@ -6,10 +6,13 @@
         "Neuro",
         "Signup",
         "Xamarin",
+        "downlevel",
         "eval",
         "lifecycle",
         "lightgray",
         "readonly",
-        "transpiled"
+        "templated",
+        "transpiled",
+        "waconfig"
     ]
 }

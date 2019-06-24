@@ -32,7 +32,7 @@
         this.setLocalValue(e1, "ItemTemplate", () => new (Root_e1_Creator(this))(this.app));
         
 
-            this.bind(e1, "ItemsSource",  [["viewModel","menuService","menus"]], false , (v1) => (v1) );
+            this.bind(e1, "ItemsSource",  [["viewModel","menuService","menus"]], false , null );
 
                 }
             }

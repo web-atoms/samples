@@ -200,3 +200,22 @@ export default class DateSelectorViewModel extends AtomViewModel {
 
 }
 ```
+
+## Custom Control Inject
+
+You can inject dependencies in Custom Control via `inject` property as shown below. Lets assume that you have string resources as `SRDate` which contains language specific text.
+
+```html
+<script>
+    import SRDate from "./strings/SRDate";
+</script>
+<div
+    inject=" srDate: SRDate ">
+    <!-- Display Month List -->
+    <AtomComboBox
+        items="{ this.srDate.monthList }"
+        ></AtomComboBox>
+</div>
+```
+
+> You must use injection in view only for single property access that is independent of the logic. For complex logic, please continue to write logic in view model so it can be unit tested without UI.
