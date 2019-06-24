@@ -226,8 +226,6 @@ In order to prevent frequent loading, you must provide `cancelToken` to cancel p
 
 ```
 
-Writing `this["cancelToken"]` prevents binding to refresh token again.
-
 ### CachedWatch decorator for async properties
 
 The only problem with `async` property is, every time you read it, it will execute remote request, so we recommend using `@CachedWatch` decorator instead of `@Watch`. It will return cached last promise unless any of referenced parameters were modified.
@@ -246,24 +244,22 @@ The only problem with `async` property is, every time you read it, it will execu
 
 ```
 
-Writing `this["cancelToken"]` prevents binding to refresh token again.
-
 Since you cannot write `async/await` in property getter, you can create an inline function and return its results.
 
 ```typescript
     @CachedWatch
     public get messageList(): Promise<IMessage[]> {
-        const af = async (st, a) => {
+        const af = async (st, a, c) => {
             const r = await this.messageService.getList(
                 st,
                 a,
-                this.newCancelToken("messageList")
+                c
             );
             // do something with r...
             return r;
         };
 
-        return af(this.searchText, this.archived);
+        return af(this.searchText, this.archived, this.newCancelToken("messageList"));
     }
 
 ```
