@@ -234,9 +234,59 @@ In order to prevent frequent loading, you must provide `cancelToken` to cancel p
 
 Writing `this["cancelToken"]` prevents binding to refresh token again.
 
+### CachedWatch decorator for async properties
+
+The only problem with `async` property is, every time you read it, it will execute remote request, so we recommend using `@CachedWatch` decorator instead of `@Watch`. It will return cached last promise unless any of referenced parameters were modified.
 
 
-### Validate property
+```typescript
+
+    @CachedWatch
+    public get messageList(): Promise<IMessage[]> {
+        const old = this.cancelToken;
+        if (old) {
+            old.cancel();
+        }
+        const c = new CancelToken();
+        this["cancelToken"] = c;
+        return this.messageService.getList(
+            this.searchText,
+            this.archived,
+            c
+        );
+    }
+
+```
+
+Writing `this["cancelToken"]` prevents binding to refresh token again.
+
+Since you cannot write `async/await` in property getter, you can create an inline function and return its results.
+
+```typescript
+    @CachedWatch
+    public get messageList(): Promise<IMessage[]> {
+        const af = async (st, a) => {
+            const old = this.cancelToken;
+            if (old) {
+                old.cancel();
+            }
+            const c = new CancelToken();
+            this["cancelToken"] = c;
+            const r = await this.messageService.getList(
+                st,
+                a,
+                c
+            );
+            // do something with r...
+            return r;
+        };
+
+        return af(this.searchText, this.archived);
+    }
+
+```
+
+### Validate decorator
 
 Though `@Watch` is great way to watch any property, we cannot use it for validation because as soon as page is loaded, user will be thrown with error messages. So we have created `@Validate` decorator which only returns an error message after `this.isValid` property is called.
 
