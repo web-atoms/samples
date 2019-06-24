@@ -211,22 +211,16 @@ Watch can also be applied on a readonly property that returns a promise, but you
 
 Now when you bind `messageList` to `items` property of `AtomItemsControl`, it will automatically refresh whenever any property mentioned in the method changes.
 
-In order to prevent frequent loading, you must provide `cancelToken` to cancel previous REST call, however, Web Atoms waits for 100 milliseconds before starting the actual call, so if the promise is refreshed quickly, previous call would not begin.
+In order to prevent frequent loading, you must provide `cancelToken` to cancel previous REST call, however, Web Atoms waits for 100 milliseconds before starting the actual call, so if the promise is refreshed quickly, previous call would not begin. Please note, AtomViewModel has a method called `newCancelToken` which will create new token and cancel the old one.
 
 ```typescript
 
     @Watch
     public get messageList(): Promise<IMessage[]> {
-        const old = this.cancelToken;
-        if (old) {
-            old.cancel();
-        }
-        const c = new CancelToken();
-        this["cancelToken"] = c;
         return this.messageService.getList(
             this.searchText,
             this.archived,
-            c
+            this.newCancelToken("messageList")
         );
     }
 
@@ -243,16 +237,10 @@ The only problem with `async` property is, every time you read it, it will execu
 
     @CachedWatch
     public get messageList(): Promise<IMessage[]> {
-        const old = this.cancelToken;
-        if (old) {
-            old.cancel();
-        }
-        const c = new CancelToken();
-        this["cancelToken"] = c;
         return this.messageService.getList(
             this.searchText,
             this.archived,
-            c
+            this.newCancelToken("messageList")
         );
     }
 
@@ -266,16 +254,10 @@ Since you cannot write `async/await` in property getter, you can create an inlin
     @CachedWatch
     public get messageList(): Promise<IMessage[]> {
         const af = async (st, a) => {
-            const old = this.cancelToken;
-            if (old) {
-                old.cancel();
-            }
-            const c = new CancelToken();
-            this["cancelToken"] = c;
             const r = await this.messageService.getList(
                 st,
                 a,
-                c
+                this.newCancelToken("messageList")
             );
             // do something with r...
             return r;
