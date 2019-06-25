@@ -5,16 +5,27 @@
 <AtomGridView 
     default-style="{ IndexStyle }"
     style-class="{ this.controlStyle.root }"
-    rows="50,*,30">
+    rows="60,*,30">
     <header>
-        <h3 style="padding:0; margin:5px">Web Atoms</h3>
-        <div style="font-size: smaller">MVVM JavaScript Framework for Desktop/Mobile - <span style="font-weight: bold">Made in India</span></div>
+        <h3 text="{ '<W/> Web Atoms' }"></h3>
+        <div>MVVM JavaScript Framework for Desktop/Mobile</div>
     </header>
-    <section row="1" style="margin: auto; position: absolute; left:0; top:0; bottom: 0; right:0; width: 200px; height: 50px; text-align: center">
-        <a href="/samples.html" target="_tab"><button>Samples</button></a>
-        <a href="https://github.com/neurospeech/web-atoms-core"><button>Source Code</button></a>
+    <section row="1">
+        <ul>
+            <li>Advanced MVVM Framework for JavaScript</li>
+            <li>Support for Browser as well as Xamarin.Forms</li>
+            <li>Simple Dependency Injection with Runtime Dependency Injection</li>
+            <li>Inbuilt Styling Support (no need for less/sass)</li>
+            <li>Programmable Styles</li>
+            <li>Simple Unit testing</li>
+            <li>Simple REST Interface inspired from RetroFit</li>
+        </ul>
+        <section style="margin: auto; position: absolute; left:0; top:0; bottom: 0; right:0; width: 200px; height: 50px; text-align: center">
+            <a href="/samples.html" target="_tab"><button>Samples</button></a>
+            <a href="https://github.com/neurospeech/web-atoms-core"><button>Source Code</button></a>
+        </section>
     </section>
     <footer row="2">
-        © NeuroSpeech Technologies Pvt Ltd, <img src="{ IndiaFlag32DataUrl }"/>Made in India
+        © NeuroSpeech Technologies Pvt Ltd, <img class="flag" src="{ IndiaFlag32DataUrl }"/>Made in India
     </footer>
 </AtomGridView>
