@@ -12,7 +12,8 @@
         "GitHubMarkLight120pxPlus_png": UMD.resolvePath("web-atoms-samples/src/images/github/GitHub-Mark-Light-120px-plus.png"),
         "GitHubMarkLight32px_png": UMD.resolvePath("web-atoms-samples/src/images/github/GitHub-Mark-Light-32px.png"),
         "GitHubMarkLight64px_png": UMD.resolvePath("web-atoms-samples/src/images/github/GitHub-Mark-Light-64px.png")
-      }
+      },
+      "indiaFlagIcon32_png": UMD.resolvePath("web-atoms-samples/src/images/india-flag-icon-32.png")
     },
     "web": {
       "images": {

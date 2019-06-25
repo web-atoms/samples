@@ -1,7 +1,10 @@
 // tslint:disable
 import {BindableProperty} from "web-atoms-core/dist/core/BindableProperty";
 import {AtomGridView} from "web-atoms-core/dist/web/controls/AtomGridView";
-	// tslint:disable
+	
+	    import IndexStyle from "./styles/IndexStyle";
+	    import IndiaFlag32DataUrl from "../images/IndiaFlagIcon32DataUrl";
+	
 	
 	export default class Index extends AtomGridView {
 		
@@ -10,6 +13,10 @@ import {AtomGridView} from "web-atoms-core/dist/web/controls/AtomGridView";
 			super.create();
 			
 			const __creator = this;
+			
+			this.defaultControlStyle =  IndexStyle ;
+			
+			this.runAfterInit(() => this.setPrimitiveValue(this.element, "styleClass",  this.controlStyle.root ));
 			
 			this.setPrimitiveValue(this.element, "rows", "50,*,30" );
 			
@@ -86,9 +93,16 @@ import {AtomGridView} from "web-atoms-core/dist/web/controls/AtomGridView";
 			
 			this.setPrimitiveValue(e15, "row", "2" );
 			
-			this.setPrimitiveValue(e15, "style", "text-align: right" );
-			
-			const e16 = document.createTextNode("\r\n        © NeuroSpeech Technologies Pvt Ltd\r\n    ");
+			const e16 = document.createTextNode("\r\n        © NeuroSpeech Technologies Pvt Ltd, ");
 			e15.appendChild(e16);
+			
+			const e17 = document.createElement("img");
+			
+			e15.appendChild(e17);
+			
+			this.setPrimitiveValue(e17, "src",  IndiaFlag32DataUrl );
+			
+			const e18 = document.createTextNode("Made in India\r\n    ");
+			e15.appendChild(e18);
 		}
 	}

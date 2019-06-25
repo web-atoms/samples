@@ -53,7 +53,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 				
 				e2.appendChild(e3);
 				
-				const e4 = document.createTextNode("\n                    Name:\n                ");
+				const e4 = document.createTextNode("\r\n                    Name:\r\n                ");
 				e3.appendChild(e4);
 				
 				const e5 = document.createElement("td");
@@ -64,7 +64,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 				
 				e5.appendChild(e6);
 				
-				this.setPrimitiveValue(e6, "style", "height: 30px;\n                        padding-left: 4px;\n                        width: 200px;" );
+				this.setPrimitiveValue(e6, "style", "height: 30px;\r\n                        padding-left: 4px;\r\n                        width: 200px;" );
 				
 				this.setPrimitiveValue(e6, "type", "text" );
 				
@@ -90,7 +90,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 				
 				e8.appendChild(e9);
 				
-				const e10 = document.createTextNode("\n                    Type:\n                ");
+				const e10 = document.createTextNode("\r\n                    Type:\r\n                ");
 				e9.appendChild(e10);
 				
 				const e11 = document.createElement("td");
@@ -99,7 +99,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 				
 				const e12 = new AtomComboBox(this.app, document.createElement("select"));
 				
-				e12.setPrimitiveValue(e12.element, "style", "height: 30px;\n                            margin: 10px 0px;" );
+				e12.setPrimitiveValue(e12.element, "style", "height: 30px;\r\n                            margin: 10px 0px;" );
 				
 				e12.setPrimitiveValue(e12.element, "labelPath", "label" );
 				
@@ -153,7 +153,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 				
 				e14.appendChild(e15);
 				
-				const e16 = document.createTextNode("\n                    Description:\n                ");
+				const e16 = document.createTextNode("\r\n                    Description:\r\n                ");
 				e15.appendChild(e16);
 				
 				const e17 = document.createElement("td");
