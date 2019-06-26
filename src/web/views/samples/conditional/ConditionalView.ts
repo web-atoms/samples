@@ -18,7 +18,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			const __creator = this;
 			
-			const e1 = document.createTextNode("\n    Following view will load conditionally based on screen type\n\n    ");
+			const e1 = document.createTextNode("\r\n    Following view will load conditionally based on screen type\r\n\r\n    ");
 			this.element.appendChild(e1);
 			
 			const e2 = new MobileView(this.app);
