@@ -75,51 +75,64 @@ import {AtomGridView} from "web-atoms-core/dist/web/controls/AtomGridView";
 			e5.appendChild(e8);
 			
 			this.setPrimitiveValue(e8, "style", "position: absolute; right: 5px; top: 5px" );
-			// e9
+			
+			const e9 = document.createElement("a");
+			
+			e8.appendChild(e9);
+			
+			this.setPrimitiveValue(e9, "href", "/docs" );
+			
+			this.setPrimitiveValue(e9, "target", "_blank" );
+			
+			this.setPrimitiveValue(e9, "style", "margin-right: 16px" );
+			
+			const e10 = document.createTextNode("API");
+			e9.appendChild(e10);
+			// e11
 			//  Comment 1 
 			
-			const e10 = document.createElement("img");
+			const e12 = document.createElement("img");
 			
-			e8.appendChild(e10);
+			e8.appendChild(e12);
 			
-			this.setPrimitiveValue(e10, "style", "max-height: 16px" );
+			this.setPrimitiveValue(e12, "style", "max-height: 16px; margin-right: 5px;" );
 			
-			this.setPrimitiveValue(e10, "src",  GitHubMark32px );
+			this.setPrimitiveValue(e12, "src",  GitHubMark32px );
 			
-			const e11 = document.createElement("a");
-			
-			e8.appendChild(e11);
-			
-			this.setPrimitiveValue(e11, "href", "https://github.com/neurospeech/web-atoms-core" );
-			
-			this.setPrimitiveValue(e11, "target", "_blank" );
-			
-			const e12 = document.createTextNode("Source Code");
-			e11.appendChild(e12);
-			
-			const e13 = document.createElement("span");
+			const e13 = document.createElement("a");
 			
 			e8.appendChild(e13);
 			
-			this.setPrimitiveValue(e13, "text", " " );
+			this.setPrimitiveValue(e13, "href", "https://github.com/neurospeech/web-atoms-core" );
 			
-			const e14 = document.createElement("img");
+			this.setPrimitiveValue(e13, "target", "_blank" );
 			
-			e8.appendChild(e14);
+			const e14 = document.createTextNode("Source Code");
+			e13.appendChild(e14);
 			
-			this.setPrimitiveValue(e14, "style", "max-height: 16px" );
-			
-			this.setPrimitiveValue(e14, "src",  GitHubMark32px );
-			
-			const e15 = document.createElement("a");
+			const e15 = document.createElement("span");
 			
 			e8.appendChild(e15);
 			
-			this.setPrimitiveValue(e15, "href", "https://github.com/neurospeech/web-atoms-samples" );
+			this.setPrimitiveValue(e15, "text", " " );
 			
-			this.setPrimitiveValue(e15, "target", "_blank" );
+			const e16 = document.createElement("img");
 			
-			const e16 = document.createTextNode("Samples");
-			e15.appendChild(e16);
+			e8.appendChild(e16);
+			
+			this.setPrimitiveValue(e16, "style", "max-height: 16px; margin-right: 5px;" );
+			
+			this.setPrimitiveValue(e16, "src",  GitHubMark32px );
+			
+			const e17 = document.createElement("a");
+			
+			e8.appendChild(e17);
+			
+			this.setPrimitiveValue(e17, "href", "https://github.com/neurospeech/web-atoms-samples" );
+			
+			this.setPrimitiveValue(e17, "target", "_blank" );
+			
+			const e18 = document.createTextNode("Samples");
+			e17.appendChild(e18);
 		}
 	}

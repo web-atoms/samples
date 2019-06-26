@@ -100,7 +100,7 @@ import {AtomGridView} from "web-atoms-core/dist/web/controls/AtomGridView";
 			
 			e5.appendChild(e21);
 			
-			this.setPrimitiveValue(e21, "style", "margin: auto; position: absolute; left:0; top:0; bottom: 0; right:0; width: 200px; height: 50px; text-align: center" );
+			this.setPrimitiveValue(e21, "style", "margin: auto; position: absolute; left:0; top:0; bottom: 0; right:0; width: 300px; height: 50px; text-align: center" );
 			
 			const e22 = document.createElement("a");
 			
@@ -121,33 +121,48 @@ import {AtomGridView} from "web-atoms-core/dist/web/controls/AtomGridView";
 			
 			e21.appendChild(e25);
 			
-			this.setPrimitiveValue(e25, "href", "https://github.com/neurospeech/web-atoms-core" );
+			this.setPrimitiveValue(e25, "href", "/docs" );
+			
+			this.setPrimitiveValue(e25, "target", "_tab" );
 			
 			const e26 = document.createElement("button");
 			
 			e25.appendChild(e26);
 			
-			const e27 = document.createTextNode("Source Code");
+			const e27 = document.createTextNode("API");
 			e26.appendChild(e27);
 			
-			const e28 = document.createElement("footer");
+			const e28 = document.createElement("a");
 			
-			this.append(e28);
+			e21.appendChild(e28);
 			
-			this.setPrimitiveValue(e28, "row", "2" );
+			this.setPrimitiveValue(e28, "href", "https://github.com/neurospeech/web-atoms-core" );
 			
-			const e29 = document.createTextNode("\r\n        © NeuroSpeech Technologies Pvt Ltd, ");
+			const e29 = document.createElement("button");
+			
 			e28.appendChild(e29);
 			
-			const e30 = document.createElement("img");
+			const e30 = document.createTextNode("Source Code");
+			e29.appendChild(e30);
 			
-			e28.appendChild(e30);
+			const e31 = document.createElement("footer");
 			
-			this.setPrimitiveValue(e30, "class", "flag" );
+			this.append(e31);
 			
-			this.setPrimitiveValue(e30, "src",  IndiaFlag32DataUrl );
+			this.setPrimitiveValue(e31, "row", "2" );
 			
-			const e31 = document.createTextNode("Made in India\r\n    ");
-			e28.appendChild(e31);
+			const e32 = document.createTextNode("\r\n        © NeuroSpeech Technologies Pvt Ltd, ");
+			e31.appendChild(e32);
+			
+			const e33 = document.createElement("img");
+			
+			e31.appendChild(e33);
+			
+			this.setPrimitiveValue(e33, "class", "flag" );
+			
+			this.setPrimitiveValue(e33, "src",  IndiaFlag32DataUrl );
+			
+			const e34 = document.createTextNode("Made in India\r\n    ");
+			e31.appendChild(e34);
 		}
 	}

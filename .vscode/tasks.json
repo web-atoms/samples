@@ -27,7 +27,7 @@
             "command": "node",
             "args": [
                 "${env:APPDATA}/npm/node_modules/web-atoms-dev-server/index.js",
-                "https://v2018-test.800casting.com"
+                "https://www.webatoms.in"
             ],
             "problemMatcher": []
         },
