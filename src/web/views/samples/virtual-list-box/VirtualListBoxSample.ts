@@ -51,7 +51,6 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 				
 				super.create();
 				
-				
 				this.setPrimitiveValue(this.element, "style", "display: inline-block; width: 200px; height: 200px; vertical-align: middle; text-align: center;" );
 				
 				const e1 = document.createElement("span");

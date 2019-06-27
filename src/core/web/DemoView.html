@@ -1,0 +1,23 @@
+<script>
+    import DemoViewStyle from "./DemoViewStyle";
+    import CodeView from "./CodeView";
+
+    function fromPath(p) {
+        var t = p.split("/");
+        var n = t[t.length - 1];
+        return {
+            label: n,
+            value: p
+        };
+    }
+
+</script>
+<div 
+    default-style="{ DemoViewStyle }"
+    @properties=" files: string[], file: string ">
+    <AtomToggleButtonBar
+        items="[ fromPath($this.files) ]"
+        value="$[this.file]"
+        ></AtomToggleButtonBar>
+    <CodeView src="[$this.file]"></CodeView>
+</div>

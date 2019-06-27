@@ -55,7 +55,6 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 				
 				super.create();
 				
-				
 				this.runAfterInit( () => this.setLocalValue(this.element, "text", ((this.data) ? this.data.label : undefined)) );
 			}
 		}

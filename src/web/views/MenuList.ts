@@ -41,7 +41,6 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 				
 				super.create();
 				
-				
 				this.setPrimitiveValue(this.element, "eventClick",  () => this.data.click() );
 				
 				const e1 = document.createElement("span");

@@ -57,7 +57,6 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 				
 				super.create();
 				
-				
 				this.setPrimitiveValue(this.element, "style", "font-size: 14px; margin: 5px;" );
 				
 				this.runAfterInit( () => this.setLocalValue(this.element, "stylePaddingLeft",  ((this.data) ? this.data.pad : undefined) + 'px' ) );

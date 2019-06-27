@@ -1,9 +1,16 @@
 // tslint:disable
 import {BindableProperty} from "web-atoms-core/dist/core/BindableProperty";
 import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
-	// tslint:disable
 	
-	export default class DesktopView extends AtomControl {
+	    import DemoView from "../../../../core/web/DemoView";
+	
+	    var files = [
+	        "@web-atoms-samples/src/core/samples",
+	    ];
+	
+	
+	
+	export default class Demo extends AtomControl {
 		
 		constructor(app: any, e?: any) {
 			super(app, e || document.createElement("div"));
@@ -15,7 +22,10 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			const __creator = this;
 			
-			const e1 = document.createTextNode("\n    This is Desktop View\n");
-			this.element.appendChild(e1);
+			const e1 = new DemoView(this.app);
+			
+			e1.setPrimitiveValue(e1.element, "files",  files );
+			
+			this.append(e1);
 		}
 	}

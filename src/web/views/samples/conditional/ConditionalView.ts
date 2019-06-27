@@ -18,15 +18,19 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			const __creator = this;
 			
-			const e1 = document.createTextNode("\r\n    Following view will load conditionally based on screen type\r\n\r\n    ");
+			const e1 = document.createTextNode("\n    Following view will load conditionally based on screen type\n\n    ");
 			this.element.appendChild(e1);
-			
-			const e2 = new MobileView(this.app);
-			
-			this.append(e2);
-			
-			const e3 = new DesktopView(this.app);
-			
-			this.append(e3);
+			if ( this.app.screen.screenType == 'mobile' ) {
+				
+				const e2 = new MobileView(this.app);
+				
+				this.append(e2);
+				}
+			if ( this.app.screen.screenType !== 'mobile' ) {
+				
+				const e3 = new DesktopView(this.app);
+				
+				this.append(e3);
+				}
 		}
 	}

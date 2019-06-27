@@ -82,7 +82,6 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			public create(): void {
 				
 				super.create();
-				
 			}
 		}
 	}
