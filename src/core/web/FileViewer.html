@@ -1,0 +1,29 @@
+<script>
+    import FileViewerStyle from "./FileViewerStyle";
+    import CodeView from "./CodeView";
+
+    function fromPath(e, files) {
+        e.atomControl.file = files[0];
+        return files.map((p) => {
+            var t = p.split("/");
+            var n = t[t.length - 1];
+            return {
+                label: n,
+                value: p
+            };
+        });
+    }
+
+</script>
+<div 
+    default-style="{ FileViewerStyle }"
+    style-class="{ this.controlStyle.root }"
+    @properties=" files: string[] = null , file: string = null ">
+    <AtomToggleButtonBar
+        items="[ fromPath($this.element, $this.files) ]"
+        value="$[this.file]"
+        ></AtomToggleButtonBar>
+    <div class="code">
+        <CodeView style="overflow: auto" src="[$this.file]"></CodeView>
+    </div>
+</div>

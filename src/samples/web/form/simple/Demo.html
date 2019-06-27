@@ -1,5 +1,7 @@
 <script>
     import DemoView from "~src/core/web/DemoView";
+    import FileViewer from "~src/core/web/FileViewer";
+    import SimpleForm from "./SimpleForm";
 
     var files = [
         "web-atoms-samples/src/samples/web/form/simple/SimpleForm.html",
@@ -8,7 +10,13 @@
 
 </script>
 <div>
-    <DemoView
+    <FileViewer
+        style="width: 800px; height: 400px"
         files="{ files }"
-        ></DemoView>
+        ></FileViewer>
+
+    <DemoView>
+        <SimpleForm></SimpleForm>
+    </DemoView>
+    
 </div>

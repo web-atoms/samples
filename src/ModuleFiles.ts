@@ -21,6 +21,22 @@
       }
     }
   },
+  "core": {
+    "web": {
+      "DemoView": "web-atoms-samples/dist/core/web/DemoView",
+      "FileViewer": "web-atoms-samples/dist/core/web/FileViewer"
+    }
+  },
+  "samples": {
+    "web": {
+      "form": {
+        "simple": {
+          "Demo": "web-atoms-samples/dist/samples/web/form/simple/Demo",
+          "SimpleForm": "web-atoms-samples/dist/samples/web/form/simple/SimpleForm"
+        }
+      }
+    }
+  },
   "Index": "web-atoms-samples/dist/{platform}/Index",
   "views": {
     "MDHost": "web-atoms-samples/dist/{platform}/views/MDHost",
@@ -94,20 +110,5 @@
     "AppHost": "web-atoms-samples/dist/{platform}/views/AppHost",
     "MenuPage": "web-atoms-samples/dist/{platform}/views/MenuPage",
     "Start": "web-atoms-samples/dist/{platform}/views/Start"
-  },
-  "core": {
-    "web": {
-      "DemoView": "web-atoms-samples/dist/core/web/DemoView"
-    }
-  },
-  "samples": {
-    "web": {
-      "form": {
-        "simple": {
-          "Demo": "web-atoms-samples/dist/samples/web/form/simple/Demo",
-          "SimpleForm": "web-atoms-samples/dist/samples/web/form/simple/SimpleForm"
-        }
-      }
-    }
   }
 }

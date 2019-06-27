@@ -1,57 +1,31 @@
-// tslint:disable
-import {BindableProperty} from "web-atoms-core/dist/core/BindableProperty";
-import {AtomToggleButtonBar} from "web-atoms-core/dist/web/controls/AtomToggleButtonBar";
-import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
-import {AtomFrame} from "web-atoms-core/dist/web/controls/AtomFrame";
-	
-	    import DemoViewStyle from "./DemoViewStyle";
-	    import CodeView from "./CodeView";
-	
-	    function fromPath(files) {
-	        return files.map((p) => {
-	            var t = p.split("/");
-	            var n = t[t.length - 1];
-	            return {
-	                label: n,
-	                value: p
-	            };
-	        });
-	    }
-	
-	
-	
-	export default class DemoView extends AtomControl {
-		
-		@BindableProperty
-		public  files:  string[] ;
-		
-		@BindableProperty
-		public  file:  string  ;
-		
-		constructor(app: any, e?: any) {
-			super(app, e || document.createElement("div"));
-		}
-		
-		public create(): void {
-			
-			super.create();
-			
-			const __creator = this;
-			
-			this.defaultControlStyle =  DemoViewStyle ;
-			
-			const e1 = new AtomToggleButtonBar(this.app);
-			
-			e1.bind(e1.element, "items",  [["this","files"]], false , (v1) =>  fromPath((v1))  , __creator);
-			
-			e1.bind(e1.element, "value",  [["this","file"]], true  ,null, __creator);
-			
-			this.append(e1);
-			
-			const e2 = new CodeView(this.app);
-			
-			e2.bind(e2.element, "src",  [["this","file"]], false , null , __creator);
-			
-			this.append(e2);
-		}
-	}
+import Colors from "web-atoms-core/dist/core/Colors";
+import { AtomControl } from "web-atoms-core/dist/web/controls/AtomControl";
+import { AtomStyle } from "web-atoms-core/dist/web/styles/AtomStyle";
+import { IStyleDeclaration } from "web-atoms-core/dist/web/styles/IStyleDeclaration";
+
+export class DemoViewStyle extends AtomStyle {
+
+    public get root(): IStyleDeclaration {
+        return {
+            verticalAlign: "top",
+            display: "inline-block",
+            borderColor: Colors.lightGray,
+            borderWidth: "1px",
+            borderStyle: "solid",
+            borderRadius: "5px",
+            padding: "5px",
+            margin: "5px",
+            minWidth: "300px",
+            minHeight: "400px"
+        };
+    }
+}
+
+export default class DemoView extends AtomControl {
+
+    protected preCreate(): void {
+        this.defaultControlStyle = DemoViewStyle;
+        this.element.classList.add(this.controlStyle.root.className);
+    }
+
+}

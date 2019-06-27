@@ -2,10 +2,10 @@
 import {BindableProperty} from "web-atoms-core/dist/core/BindableProperty";
 import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 	
-	        import AtomForm from "@web-atoms/web-controls/dist/form/AtomForm";
-	        import AtomField from "@web-atoms/web-controls/dist/form/AtomField";
-	        import SignupFormViewModel from "../../../../view-models/form/SignupFormViewModel";
-	    
+	    import AtomForm from "@web-atoms/web-controls/dist/form/AtomForm";
+	    import AtomField from "@web-atoms/web-controls/dist/form/AtomField";
+	    import SignupFormViewModel from "../../../../view-models/form/SignupFormViewModel";
+	
 	
 	export default class SimpleForm extends AtomControl {
 		

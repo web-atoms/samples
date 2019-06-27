@@ -26,7 +26,7 @@ export default class CodeView extends AtomControl {
     }
 
     private async generate(src: string): Promise<void> {
-        this.removeAllChildren(this.element);
+
         const highlight = await UMD.import("web-atoms-samples/scripts/highlight/highlight.pack.js");
 
         const md = this.app.resolve(MDService) as MDService;
@@ -37,7 +37,13 @@ export default class CodeView extends AtomControl {
 
         const pre = document.createElement("pre");
         const code = document.createElement("code");
-        code.textContent = text;
+        code.textContent = text
+            .split("\n")
+            .map((s) =>
+                s.endsWith("\r")
+                ? s.substr(0, s.length - 1)
+                : s )
+            .join("\n");
 
         const language = this.getLanguage(src);
 
@@ -45,9 +51,10 @@ export default class CodeView extends AtomControl {
         code.classList.add(`language-${language}`);
         pre.appendChild(code);
 
-        this.element.appendChild(pre);
 
         highlight.highlightBlock(pre);
+        this.removeAllChildren(this.element);
+        this.element.appendChild(pre);
     }
 
     private getLanguage(path: string): string {
