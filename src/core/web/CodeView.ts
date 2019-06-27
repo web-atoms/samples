@@ -35,12 +35,35 @@ export default class CodeView extends AtomControl {
 
         const text = await md.getUrl(src);
 
-        const e = document.createElement("code");
-        e.innerText = text;
+        const pre = document.createElement("pre");
+        const code = document.createElement("code");
+        code.textContent = text;
 
-        this.element.appendChild(e);
+        const language = this.getLanguage(src);
 
-        highlight.highlightBlock(e);
+        code.classList.add(language);
+        code.classList.add(`language-${language}`);
+        pre.appendChild(code);
+
+        this.element.appendChild(pre);
+
+        highlight.highlightBlock(pre);
+    }
+
+    private getLanguage(path: string): string {
+        if (/\.html$/gi.test(path)) {
+            return "html";
+        }
+        if (/\.ts$/gi.test(path)) {
+            return "typescript";
+        }
+        if (/\.js$/gi.test(path)) {
+            return "javascript";
+        }
+        if (/\.json$/gi.test(path)) {
+            return "json";
+        }
+        return "plain";
     }
 
 }

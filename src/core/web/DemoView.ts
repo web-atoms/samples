@@ -7,13 +7,15 @@ import {AtomFrame} from "web-atoms-core/dist/web/controls/AtomFrame";
 	    import DemoViewStyle from "./DemoViewStyle";
 	    import CodeView from "./CodeView";
 	
-	    function fromPath(p) {
-	        var t = p.split("/");
-	        var n = t[t.length - 1];
-	        return {
-	            label: n,
-	            value: p
-	        };
+	    function fromPath(files) {
+	        return files.map((p) => {
+	            var t = p.split("/");
+	            var n = t[t.length - 1];
+	            return {
+	                label: n,
+	                value: p
+	            };
+	        });
 	    }
 	
 	

@@ -5,7 +5,8 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 	    import DemoView from "../../../../core/web/DemoView";
 	
 	    var files = [
-	        "@web-atoms-samples/src/core/samples",
+	        "web-atoms-samples/src/samples/web/form/simple/SimpleForm.html",
+	        "web-atoms-samples/src/samples/web/form/simple/SimpleFormViewModel.ts"
 	    ];
 	
 	
