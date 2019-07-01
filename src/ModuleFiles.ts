@@ -23,7 +23,6 @@
   },
   "core": {
     "web": {
-      "DemoView": "web-atoms-samples/dist/core/web/DemoView",
       "FileViewer": "web-atoms-samples/dist/core/web/FileViewer"
     }
   },

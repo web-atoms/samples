@@ -38,7 +38,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			e3.setPrimitiveValue(e3.element, "column", "2" );
 			
-			e3.runAfterInit( () => e3.setLocalValue(e3.element, "items",  ((this.viewModel) ? this.viewModel.headers : undefined) ) );
+			e3.runAfterInit( () => e3.setLocalValue(e3.element, "items",  ((e3.viewModel) ? e3.viewModel.headers : undefined) ) );
 			
 			e3.itemTemplate = MDHost_itemTemplate_1_1Creator(this);
 			

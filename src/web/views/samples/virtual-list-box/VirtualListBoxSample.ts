@@ -26,7 +26,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			e1.setPrimitiveValue(e1.element, "style", "width: 800px; height: 800px;" );
 			
-			e1.runAfterInit( () => e1.setLocalValue(e1.element, "items",  ((this.viewModel) ? this.viewModel.items : undefined) ) );
+			e1.runAfterInit( () => e1.setLocalValue(e1.element, "items",  ((e1.viewModel) ? e1.viewModel.items : undefined) ) );
 			
 			e1.itemTemplate = VirtualListBoxSample_itemTemplate_1_13Creator(this);
 			

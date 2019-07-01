@@ -27,7 +27,7 @@ import {AtomGridView} from "web-atoms-core/dist/web/controls/AtomGridView";
 			
 			const e2 = new AtomToggleButtonBar(this.app);
 			
-			e2.runAfterInit( () => e2.setLocalValue(e2.element, "items",  ((this.viewModel) ? this.viewModel.items : undefined) ) );
+			e2.runAfterInit( () => e2.setLocalValue(e2.element, "items",  ((e2.viewModel) ? e2.viewModel.items : undefined) ) );
 			
 			e2.bind(e2.element, "value",  [["viewModel","index"]], true  );
 			

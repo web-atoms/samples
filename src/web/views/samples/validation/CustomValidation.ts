@@ -42,7 +42,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			const e4 = new AtomItemsControl(this.app);
 			
-			e4.runAfterInit( () => e4.setLocalValue(e4.element, "items",  (((this.viewModel) ? this.viewModel.model : undefined) ? this.viewModel.model.emails : undefined) ) );
+			e4.runAfterInit( () => e4.setLocalValue(e4.element, "items",  (((e4.viewModel) ? e4.viewModel.model : undefined) ? e4.viewModel.model.emails : undefined) ) );
 			
 			e4.itemTemplate = CustomValidation_itemTemplate_1_10Creator(this);
 			

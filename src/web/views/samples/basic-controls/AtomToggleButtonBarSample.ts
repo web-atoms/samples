@@ -31,7 +31,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			e1.setPrimitiveValue(e1.element, "valuePath", "value" );
 			
-			e1.runAfterInit( () => e1.setLocalValue(e1.element, "items", ((this.viewModel) ? this.viewModel.genderList : undefined)) );
+			e1.runAfterInit( () => e1.setLocalValue(e1.element, "items", ((e1.viewModel) ? e1.viewModel.genderList : undefined)) );
 			
 			e1.bind(e1.element, "value",  [["viewModel","gender"]], ["change", "keyup", "keydown", "blur"]  );
 			
