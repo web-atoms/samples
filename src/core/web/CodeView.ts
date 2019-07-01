@@ -51,7 +51,6 @@ export default class CodeView extends AtomControl {
         code.classList.add(`language-${language}`);
         pre.appendChild(code);
 
-
         highlight.highlightBlock(pre);
         this.removeAllChildren(this.element);
         this.element.appendChild(pre);
