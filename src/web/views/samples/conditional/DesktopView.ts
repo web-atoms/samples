@@ -15,7 +15,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			const __creator = this;
 			
-			const e1 = document.createTextNode("\n    This is Desktop View\n");
+			const e1 = document.createTextNode("\r\n    This is Desktop View\r\n");
 			this.element.appendChild(e1);
 		}
 	}
