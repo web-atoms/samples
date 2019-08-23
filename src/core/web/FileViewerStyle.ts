@@ -27,7 +27,8 @@ export default class FileViewerStyle extends AtomStyle {
                 },
                 " > .code": {
                     position: "absolute",
-                    marginTop: "30px",
+                    marginTop: "35px",
+                    backgroundColor: Colors.white,
                     left: 0,
                     top: 0,
                     right: 0,

@@ -7,6 +7,9 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 	    import CodeView from "./CodeView";
 	
 	    function fromPath(e, files) {
+			if(!files || !files.length) {
+				return null;
+			}
 	        e.atomControl.file = files[0];
 	        return files.map((p) => {
 	            var t = p.split("/");

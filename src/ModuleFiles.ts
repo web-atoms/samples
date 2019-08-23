@@ -33,6 +33,10 @@
           "Demo": "web-atoms-samples/dist/samples/web/form/simple/Demo",
           "SimpleForm": "web-atoms-samples/dist/samples/web/form/simple/SimpleForm"
         }
+      },
+      "calendar": {
+        "Calendar": "web-atoms-samples/dist/samples/web/calendar/Calendar",
+        "Demo": "web-atoms-samples/dist/samples/web/calendar/Demo"
       }
     }
   },

@@ -1,0 +1,9 @@
+<script>
+    import AtomCalendar from "@web-atoms/web-controls/dist/calendar/AtomCalendar"
+    import CalendarViewModel from "./CalendarViewModel";
+</script>
+<div view-model="{ this.resolve(CalendarViewModel) }">
+    <AtomCalendar event-date-clicked="{ (e) => this.viewModel.dateClicked(e.detail) }" >
+    </AtomCalendar>
+    <pre text="[$viewModel.log]"></pre>
+</div>

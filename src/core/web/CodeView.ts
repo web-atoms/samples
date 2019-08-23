@@ -26,6 +26,9 @@ export default class CodeView extends AtomControl {
     }
 
     private async generate(src: string): Promise<void> {
+        if (!src) {
+            return;
+        }
 
         const highlight = await UMD.import("web-atoms-samples/scripts/highlight/highlight.pack.js");
 
