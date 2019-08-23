@@ -19,6 +19,8 @@ export default class FileViewerStyle extends AtomStyle {
             borderRadius: "5px",
             padding: "5px",
             margin: "5px",
+            minHeight: "600px",
+            minWidth: "800px",
             subclasses: {
                 " > ul": {
                     position: "absolute",

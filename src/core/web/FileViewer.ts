@@ -7,10 +7,12 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 	    import CodeView from "./CodeView";
 	
 	    function fromPath(e, files) {
-			if(!files || !files.length) {
-				return null;
-			}
-	        e.atomControl.file = files[0];
+	
+	        if (!files || !files.length) {
+	            return null;
+	        }
+	        const owner = e.atomControl;
+	        owner.file = files[0];
 	        return files.map((p) => {
 	            var t = p.split("/");
 	            var n = t[t.length - 1];
@@ -21,15 +23,31 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 	        });
 	    }
 	
+	    function setView(e, d) {
+	        if (!e || !d) {
+	            return;
+	        }
+	        e.atomControl.demoPresenter = new (d)(e.atomControl.app);
+	    }
+	
 	
 	
 	export default class FileViewer extends AtomControl {
 		
 		@BindableProperty
-		public  files:  string[]   =  null ;
+		public  files:  string[]  ;
 		
 		@BindableProperty
-		public  file:  string   =  null ;
+		public  file:  string  ;
+		
+		@BindableProperty
+		public  require:  any  ;
+		
+		@BindableProperty
+		public  demo:  any  ;
+		
+		@BindableProperty
+		public  demoPresenter:  any  ;
 		
 		constructor(app: any, e?: any) {
 			super(app, e || document.createElement("div"));
@@ -39,11 +57,23 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			super.create();
 			
+			this. files =  null ;
+			
+			this. file =  null;
+			
+			this. require =  null;
+			
+			this. demo =  null;
+			
+			this. demoPresenter =  null ;
+			
 			const __creator = this;
 			
 			this.defaultControlStyle =  FileViewerStyle ;
 			
 			this.runAfterInit(() => this.setPrimitiveValue(this.element, "styleClass",  this.controlStyle.root ));
+			
+			this.bind(this.element, "none",  [["this","element"],["this","demo"]], false , (v1,v2) =>  setView((v1), (v2) )  , __creator);
 			
 			const e1 = new AtomToggleButtonBar(this.app);
 			
@@ -61,10 +91,18 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			const e3 = new CodeView(this.app);
 			
+			e3.bind(e3.element, "require",  [["this","require"]], false , null , __creator);
+			
 			e3.setPrimitiveValue(e3.element, "style", "overflow: auto" );
 			
 			e3.bind(e3.element, "src",  [["this","file"]], false , null , __creator);
 			
 			e2.appendChild(e3.element);
+			
+			const e4 = document.createElement("div");
+			
+			this.demoPresenter = e4;
+			
+			this.append(e4);
 		}
 	}

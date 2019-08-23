@@ -3,15 +3,18 @@
     import FileViewer from "~src/core/web/FileViewer";
     import SimpleForm from "./SimpleForm";
 
+    declare var require: any;
+
     var files = [
-        "web-atoms-samples/src/samples/web/form/simple/SimpleForm.html",
-        "web-atoms-samples/src/samples/web/form/simple/SimpleFormViewModel.ts"
+        "./SimpleForm.html",
+        "./SimpleFormViewModel.ts"
     ];
 
 </script>
 <div>
     <FileViewer
         style="width: 800px; height: 400px"
+        require="{ require }"
         files="{ files }"
         ></FileViewer>
 

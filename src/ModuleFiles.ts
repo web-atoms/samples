@@ -23,20 +23,25 @@
   },
   "core": {
     "web": {
-      "FileViewer": "web-atoms-samples/dist/core/web/FileViewer"
+      "FileViewer": "web-atoms-samples/dist/core/web/FileViewer",
+      "SampleView": "web-atoms-samples/dist/core/web/SampleView"
     }
   },
   "samples": {
     "web": {
+      "calendar": {
+        "Calendar": "web-atoms-samples/dist/samples/web/calendar/Calendar",
+        "Demo": "web-atoms-samples/dist/samples/web/calendar/Demo",
+        "simple": {
+          "Calendar": "web-atoms-samples/dist/samples/web/calendar/simple/Calendar",
+          "Demo": "web-atoms-samples/dist/samples/web/calendar/simple/Demo"
+        }
+      },
       "form": {
         "simple": {
           "Demo": "web-atoms-samples/dist/samples/web/form/simple/Demo",
           "SimpleForm": "web-atoms-samples/dist/samples/web/form/simple/SimpleForm"
         }
-      },
-      "calendar": {
-        "Calendar": "web-atoms-samples/dist/samples/web/calendar/Calendar",
-        "Demo": "web-atoms-samples/dist/samples/web/calendar/Demo"
       }
     }
   },

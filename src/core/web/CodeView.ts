@@ -16,6 +16,8 @@ class MDService extends BaseService {
 
 export default class CodeView extends AtomControl {
 
+    public require: any;
+
     private mSrc: string = null;
     public get src(): string {
         return this.mSrc;
@@ -25,9 +27,18 @@ export default class CodeView extends AtomControl {
         this.app.runAsync(() => this.generate(value));
     }
 
+    protected preCreate(): void {
+        this.require = null;
+    }
+
     private async generate(src: string): Promise<void> {
         if (!src) {
             return;
+        }
+
+        if (/^\./.test(src)) {
+            src = this.require.resolve(src);
+            src = src.replace("/dist/", "/src/");
         }
 
         const highlight = await UMD.import("web-atoms-samples/scripts/highlight/highlight.pack.js");

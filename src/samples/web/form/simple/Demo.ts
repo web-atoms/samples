@@ -6,9 +6,11 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 	    import FileViewer from "../../../../core/web/FileViewer";
 	    import SimpleForm from "./SimpleForm";
 	
+	    declare var require: any;
+	
 	    var files = [
-	        "web-atoms-samples/src/samples/web/form/simple/SimpleForm.html",
-	        "web-atoms-samples/src/samples/web/form/simple/SimpleFormViewModel.ts"
+	        "./SimpleForm.html",
+	        "./SimpleFormViewModel.ts"
 	    ];
 	
 	
@@ -28,6 +30,8 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			const e1 = new FileViewer(this.app);
 			
 			e1.setPrimitiveValue(e1.element, "style", "width: 800px; height: 400px" );
+			
+			e1.setPrimitiveValue(e1.element, "require",  require );
 			
 			e1.setPrimitiveValue(e1.element, "files",  files );
 			

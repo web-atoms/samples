@@ -3,7 +3,12 @@
     import CodeView from "./CodeView";
 
     function fromPath(e, files) {
-        e.atomControl.file = files[0];
+
+        if (!files || !files.length) {
+            return null;
+        }
+        const owner = e.atomControl;
+        owner.file = files[0];
         return files.map((p) => {
             var t = p.split("/");
             var n = t[t.length - 1];
@@ -14,16 +19,28 @@
         });
     }
 
+    function setView(e, d) {
+        if (!e || !d) {
+            return;
+        }
+        e.atomControl.demoPresenter = new (d)(e.atomControl.app);
+    }
+
 </script>
 <div 
     default-style="{ FileViewerStyle }"
     style-class="{ this.controlStyle.root }"
-    @properties=" files: string[] = null , file: string = null ">
+    @properties=" files: string[] = null , file: string = null, require: any = null, demo: any = null, demoPresenter: any = null "
+    none="[ setView($this.element, $this.demo ) ]">
     <AtomToggleButtonBar
         items="[ fromPath($this.element, $this.files) ]"
         value="$[this.file]"
         ></AtomToggleButtonBar>
     <div class="code">
-        <CodeView style="overflow: auto" src="[$this.file]"></CodeView>
+        <CodeView
+            require="[$this.require]" 
+            style="overflow: auto" src="[$this.file]"></CodeView>
     </div>
+
+    <div presenter="demoPresenter"></div>
 </div>
