@@ -2,6 +2,8 @@
 import {BindableProperty} from "web-atoms-core/dist/core/BindableProperty";
 import {AtomToggleButtonBar} from "web-atoms-core/dist/web/controls/AtomToggleButtonBar";
 import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
+import {AtomGridView} from "web-atoms-core/dist/web/controls/AtomGridView";
+import {AtomGridSplitter} from "web-atoms-core/dist/web/controls/AtomGridSplitter";
 	
 	    import FileViewerStyle from "./FileViewerStyle";
 	    import CodeView from "./CodeView";
@@ -27,12 +29,13 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 	        if (!e || !d) {
 	            return;
 	        }
-	        e.atomControl.demoPresenter = new (d)(e.atomControl.app);
+	        const c = new (d)(e.atomControl.app);
+	        e.atomControl.demoPresenter.appendChild(c.element);
 	    }
 	
 	
 	
-	export default class FileViewer extends AtomControl {
+	export default class FileViewer extends AtomGridView {
 		
 		@BindableProperty
 		public  files:  string[]  ;
@@ -48,10 +51,6 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 		
 		@BindableProperty
 		public  demoPresenter:  any  ;
-		
-		constructor(app: any, e?: any) {
-			super(app, e || document.createElement("div"));
-		}
 		
 		public create(): void {
 			
@@ -71,6 +70,10 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			this.defaultControlStyle =  FileViewerStyle ;
 			
+			this.setPrimitiveValue(this.element, "rows", "34, *" );
+			
+			this.setPrimitiveValue(this.element, "columns", "*, 5, 30%" );
+			
 			this.runAfterInit(() => this.setPrimitiveValue(this.element, "styleClass",  this.controlStyle.root ));
 			
 			this.bind(this.element, "none",  [["this","element"],["this","demo"]], false , (v1,v2) =>  setView((v1), (v2) )  , __creator);
@@ -87,6 +90,8 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			this.append(e2);
 			
+			this.setPrimitiveValue(e2, "row", "1" );
+			
 			this.setPrimitiveValue(e2, "class", "code" );
 			
 			const e3 = new CodeView(this.app);
@@ -99,10 +104,22 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			e2.appendChild(e3.element);
 			
-			const e4 = document.createElement("div");
+			const e4 = new AtomGridSplitter(this.app);
 			
-			this.demoPresenter = e4;
+			e4.setPrimitiveValue(e4.element, "row", "1" );
+			
+			e4.setPrimitiveValue(e4.element, "column", "1" );
 			
 			this.append(e4);
+			
+			const e5 = document.createElement("div");
+			
+			this.demoPresenter = e5;
+			
+			this.append(e5);
+			
+			this.setPrimitiveValue(e5, "row", "1" );
+			
+			this.setPrimitiveValue(e5, "column", "2" );
 		}
 	}

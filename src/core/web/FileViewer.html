@@ -23,24 +23,33 @@
         if (!e || !d) {
             return;
         }
-        e.atomControl.demoPresenter = new (d)(e.atomControl.app);
+        const c = new (d)(e.atomControl.app);
+        e.atomControl.demoPresenter.appendChild(c.element);
     }
 
 </script>
-<div 
+<AtomGridView
+    rows="34, *"
+    columns="*, 5, 30%"
     default-style="{ FileViewerStyle }"
     style-class="{ this.controlStyle.root }"
     @properties=" files: string[] = null , file: string = null, require: any = null, demo: any = null, demoPresenter: any = null "
     none="[ setView($this.element, $this.demo ) ]">
     <AtomToggleButtonBar
         items="[ fromPath($this.element, $this.files) ]"
-        value="$[this.file]"
-        ></AtomToggleButtonBar>
-    <div class="code">
+        value="$[this.file]"></AtomToggleButtonBar>
+    <div
+        row="1" 
+        class="code">
         <CodeView
             require="[$this.require]" 
             style="overflow: auto" src="[$this.file]"></CodeView>
     </div>
+    <AtomGridSplitter row="1" column="1"></AtomGridSplitter>
+    <div
+        row="1"
+        column="2" 
+        presenter="demoPresenter">
 
-    <div presenter="demoPresenter"></div>
-</div>
+    </div>
+</AtomGridView>

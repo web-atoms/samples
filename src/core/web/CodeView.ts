@@ -3,6 +3,7 @@ import { UMD } from "web-atoms-core/dist/core/types";
 import DISingleton from "web-atoms-core/dist/di/DISingleton";
 import { BaseService } from "web-atoms-core/dist/services/http/RestService";
 import { AtomControl } from "web-atoms-core/dist/web/controls/AtomControl";
+import { Atom } from "web-atoms-core/dist/Atom";
 
 @DISingleton()
 class MDService extends BaseService {
@@ -35,6 +36,8 @@ export default class CodeView extends AtomControl {
         if (!src) {
             return;
         }
+
+        await Atom.delay(1);
 
         if (/^\./.test(src)) {
             src = this.require.resolve(src);
