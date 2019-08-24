@@ -71,7 +71,7 @@ import {AtomGridView} from "web-atoms-core/dist/web/controls/AtomGridView";
 			
 			this.setPrimitiveValue(this.element, "rows", "34, *" );
 			
-			this.setPrimitiveValue(this.element, "columns", "*, 5, 30%" );
+			this.setPrimitiveValue(this.element, "columns", "*, 5, 50%" );
 			
 			this.runAfterInit(() => this.setPrimitiveValue(this.element, "styleClass",  this.controlStyle.root ));
 			

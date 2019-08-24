@@ -40,7 +40,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			e3.bind(e3.element, "items",  [["viewModel","movies","value"]], false , null );
 			
-			e3.itemTemplate = ButtonSample_itemTemplate_1_7Creator(this);
+			e3.itemTemplate = ButtonSample_itemTemplate_1_8Creator(this);
 			
 			const e4 = document.createElement("thead");
 			
@@ -78,8 +78,8 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 		}
 	}
 	
-	function ButtonSample_itemTemplate_1_7Creator(__creator) {
-		return class ButtonSample_itemTemplate_1_7 extends AtomControl {
+	function ButtonSample_itemTemplate_1_8Creator(__creator) {
+		return class ButtonSample_itemTemplate_1_8 extends AtomControl {
 			
 			constructor(app: any, e?: any) {
 				super(app, e || document.createElement("tr"));

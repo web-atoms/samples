@@ -76,6 +76,14 @@ export default class AppHostViewModel extends AtomViewModel {
         const services = ms.addGroup("Services");
         services.addTabLink("Http", ModuleFiles.views.samples.http.Movies);
 
+        const calendar = ms.addGroup("Calendar");
+        calendar.addTabLink("Simple", "web-atoms-samples/dist/samples/web/calendar/simple/Demo");
+        calendar.addTabLink("Custom Template", "web-atoms-samples/dist/samples/web/calendar/custom-template/Demo");
+
+        const dateField = ms.addGroup("Date Field");
+        dateField.addTabLink("Simple", "web-atoms-samples/dist/samples/web/date-field/simple/Demo");
+        dateField.addTabLink("Custom Template", "web-atoms-samples/dist/samples/web/date-field/custom-template/Demo");
+
         const containers = ms.addGroup("Containers");
         containers.addTabLink("View Pager", ModuleFiles.views.samples.viewPager.ViewPager);
         containers.addTabLink("View Stack", ModuleFiles.views.samples.viewStack.ViewStack);

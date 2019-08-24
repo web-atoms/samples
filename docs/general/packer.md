@@ -6,7 +6,8 @@ Web Atoms comes with its own `Packer` module to combine all modules in one singl
 
 1. All modules must be bundled so all dependencies can be resolved via node_modules folder
 2. List all generated module path in `waconfig.json` file as shown below
-3. After compilation, `@web-atoms/pack/index.s` must be executed in node with root folder of developed package
+3. After compilation, `@web-atoms/pack/index.js` must be executed in node with root folder of developed package
+5. All Web Atoms Component needed to be packed must have comment `// @web-atoms-pack: true` followed by an empty line
 
 ### waconfig.json
 
@@ -14,10 +15,7 @@ Web Atoms comes with its own `Packer` module to combine all modules in one singl
 {
     "srcFolder":"src",
     "mode": "core",
-    "pack": [
-        "dist/web/List.js",
-        "dist/web/Detail.js"
-    ]
+    "pack": []
 }
 ```
 

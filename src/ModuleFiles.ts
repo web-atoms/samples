@@ -40,6 +40,19 @@
         "simple": {
           "SimpleForm": "web-atoms-samples/dist/samples/web/form/simple/SimpleForm"
         }
+      },
+      "dateField": {
+        "simple": {
+          "Calendar": "web-atoms-samples/dist/samples/web/date-field/simple/Calendar",
+          "DateField": "web-atoms-samples/dist/samples/web/date-field/simple/DateField"
+        },
+        "customTemplate": {
+          "Calendar": "web-atoms-samples/dist/samples/web/date-field/custom-template/Calendar",
+          "DateField": "web-atoms-samples/dist/samples/web/date-field/custom-template/DateField"
+        },
+        "customTemplate_1": {
+          "DateField": "web-atoms-samples/dist/samples/web/date-field/custom-template.1/DateField"
+        }
       }
     }
   },

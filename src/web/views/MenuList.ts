@@ -26,12 +26,12 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			this.setPrimitiveValue(this.element, "style", "padding:5px" );
 			
-			this.itemTemplate = MenuList_itemTemplate_1_2Creator(this);
+			this.itemTemplate = MenuList_itemTemplate_1_3Creator(this);
 		}
 	}
 	
-	function MenuList_itemTemplate_1_2Creator(__creator) {
-		return class MenuList_itemTemplate_1_2 extends AtomControl {
+	function MenuList_itemTemplate_1_3Creator(__creator) {
+		return class MenuList_itemTemplate_1_3 extends AtomControl {
 			
 			constructor(app: any, e?: any) {
 				super(app, e || document.createElement("div"));

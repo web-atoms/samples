@@ -2,11 +2,11 @@
 import {BindableProperty} from "web-atoms-core/dist/core/BindableProperty";
 import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 	
-	    import AtomCalendar from "@web-atoms/web-controls/dist/calendar/AtomCalendar"
-	    import CalendarViewModel from "./CalendarViewModel";
+	    import AtomDateField from "@web-atoms/web-controls/dist/date-field/AtomDateField"
+	    import DateFieldViewModel from "./DateFieldViewModel";
 	
 	
-	export default class Calendar extends AtomControl {
+	export default class DateField extends AtomControl {
 		
 		constructor(app: any, e?: any) {
 			super(app, e || document.createElement("div"));
@@ -18,15 +18,15 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			const __creator = this;
 			
-			this.viewModel =  this.resolve(CalendarViewModel) ;
+			this.viewModel =  this.resolve(DateFieldViewModel) ;
 			
-			const e1 = new AtomCalendar(this.app);
+			const e1 = new AtomDateField(this.app);
 			
 			e1.setPrimitiveValue(e1.element, "styleWidth", "700px" );
 			
-			e1.setPrimitiveValue(e1.element, "eventDateClicked",  (e) => this.viewModel.dateClicked(e.detail) );
+			e1.setPrimitiveValue(e1.element, "eventResult",  (e) => this.viewModel.dateClicked(e.detail) );
 			
-			e1.itemTemplate = Calendar_itemTemplate_1_1Creator(this);
+			e1.itemTemplate = DateField_itemTemplate_1_22Creator(this);
 			
 			this.append(e1);
 			
@@ -38,8 +38,8 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 		}
 	}
 	
-	function Calendar_itemTemplate_1_1Creator(__creator) {
-		return class Calendar_itemTemplate_1_1 extends AtomControl {
+	function DateField_itemTemplate_1_22Creator(__creator) {
+		return class DateField_itemTemplate_1_22 extends AtomControl {
 			
 			constructor(app: any, e?: any) {
 				super(app, e || document.createElement("div"));
@@ -59,7 +59,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 				
 				this.runAfterInit( () => this.setLocalValue(e1, "text", ((this.data) ? this.data.label : undefined)) );
 				
-				this.bind(e1, "styleBackgroundColor",  [["viewModel"],["data"]], false , (v1,v2) =>  (v1).isOdd((v2)) ? 'lightgray' : ''  );
+				this.bind(e1, "styleBackgroundColor",  [["viewModel","parent"],["data"]], false , (v1,v2) =>  (v1).isOdd((v2)) ? 'lightgray' : ''  );
 				
 				this.bind(e1, "class",  [["data","isOtherMonth"],["data","isToday"],["data","isWeekend"],["localViewModel","selectedDate"],["data","value"],["localViewModel","enableFunc"],["localViewModel"],["data"]], false , (v1,v2,v3,v4,v5,v6,v7,v8) =>  ({
 				                    'date-css': 1,

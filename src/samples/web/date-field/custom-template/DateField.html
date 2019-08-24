@@ -1,0 +1,27 @@
+<script>
+    import AtomDateField from "@web-atoms/web-controls/dist/date-field/AtomDateField"
+    import DateFieldViewModel from "./DateFieldViewModel";
+</script>
+<div view-model="{ this.resolve(DateFieldViewModel) }">
+    <AtomDateField 
+        style-width="700px"
+        event-result="{ (e) => this.viewModel.dateClicked(e.detail) }" >
+        <div 
+            event-click="{ ()=> $localViewModel.dateClicked($data)}"
+            template="itemTemplate">
+            <div
+                style="min-width: 100px; height: 100px"
+                text="{$data.label}"
+                style-background-color="[ $viewModel.parent.isOdd($data) ? 'lightgray' : '' ]"
+                class="[ ({
+                    'date-css': 1,
+                    'is-other-month': $data.isOtherMonth,
+                    'is-today': $data.isToday,
+                    'is-weekend': $data.isWeekend,
+                    'is-selected': $localViewModel.selectedDate == $data.value,
+                    'is-disabled': $localViewModel.enableFunc ? $localViewModel.enableFunc($data) : 0
+                }) ]"></div>
+        </div>
+    </AtomDateField>
+    <pre text="[$viewModel.log]"></pre>
+</div>
