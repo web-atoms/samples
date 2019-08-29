@@ -3,6 +3,7 @@ import { Inject } from "web-atoms-core/dist/di/Inject";
 import { NavigationService } from "web-atoms-core/dist/services/NavigationService";
 import { AtomViewModel } from "web-atoms-core/dist/view-model/AtomViewModel";
 import { ModuleFiles } from "../ModuleFiles";
+import { addFormSamples } from "../samples/web/form/FormSamples";
 import MenuService from "../services/MenuService";
 
 declare var UMD: any;
@@ -89,10 +90,7 @@ export default class AppHostViewModel extends AtomViewModel {
         containers.addTabLink("View Stack", ModuleFiles.views.samples.viewStack.ViewStack);
 
         const form = ms.addGroup("Form");
-        form.addTabLink("Simple", ModuleFiles.views.samples.form.SimpleForm);
-        form.addTabLink("Side by Side", ModuleFiles.views.samples.form.SideBySideForm);
-        form.addTabLink("Custom Template", ModuleFiles.views.samples.form.custom.CustomFormSample);
-        form.addTabLink("Auto Focus", ModuleFiles.views.samples.form.AutoFocusNext);
+        addFormSamples(form);
 
         const styles = ms.addGroup("Styles");
         styles.addTabLink("Panel", ModuleFiles.views.samples.styles.Panel);

@@ -3,7 +3,7 @@ import SimpleForm from "./SimpleForm";
 
 declare var require: any;
 
-export default class Demo extends FileViewer {
+export default class SimpleDemo extends FileViewer {
 
 	public create(): void {
 
@@ -12,7 +12,7 @@ export default class Demo extends FileViewer {
 		this.require = require;
 		this.files = [
 			"./SimpleForm.html",
-			"./SimpleFormViewModel.ts"
+			"../SimpleFormViewModel.ts"
 		];
 		this.demo = SimpleForm;
 	}

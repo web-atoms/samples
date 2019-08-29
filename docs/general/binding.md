@@ -202,3 +202,13 @@ XAML
 ```xml
     <Label eventTapGesture="{ () => $viewModel.signup() }" />
 ```
+
+# How Web Atoms manages bindings?
+
+We wanted to make binding extremely easy without having to code too much, so we created a Binder that creates additional fields in an object and manages refresh callbacks. The reason we did not use `Object.watch` is, it does not support refreshing a readonly property. Binder allows refreshing property of any object, so anyone is watching for any change, their callback is invoked by Binding. Binding does not maintain central repository, this makes updates very fast, with little overhead in memory as every refresh handle exists inside the target object, it is also easy to debug and visualize binding.
+
+Also, you do not need to explicitly create getter and setter to support binding, whenever Binder tries to watch an object, if object has getter and setter, it assumes that creator will refresh property. If object is a plain object without any prototype, Binder will convert members to getter/setter and inject code to refresh property inside setter.
+
+This is the reason, you will not see any `watch` being explicitly called to watch an object, in fact, you will never need to worry about how to refresh the UI. If UI has one way binding, it will refresh automatically when it is updated. Attributes `@Watch` and `@Validate` works magically.
+
+You never have to think, what to observe, when to observe and where to observe.

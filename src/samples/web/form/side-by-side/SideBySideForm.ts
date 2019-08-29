@@ -4,7 +4,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 	
 	        import AtomForm from "@web-atoms/web-controls/dist/form/AtomForm";
 	        import AtomField from "@web-atoms/web-controls/dist/form/AtomField";
-	        import SignupFormViewModel from "../../../../view-models/form/SignupFormViewModel";
+	        import SimpleFormViewModel from "../SimpleFormViewModel";
 	        import SideBySideFormStyle from "./SideBySideFormStyle"; 
 	    
 	
@@ -20,7 +20,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			const __creator = this;
 			
-			this.viewModel =  this.resolve(SignupFormViewModel) ;
+			this.viewModel =  this.resolve(SimpleFormViewModel) ;
 			
 			const e1 = new AtomForm(this.app);
 			

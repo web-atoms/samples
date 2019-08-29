@@ -45,7 +45,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			e4.runAfterInit( () => e4.setLocalValue(e4.element, "items",  (((e4.viewModel) ? e4.viewModel.model : undefined) ? e4.viewModel.model.applicants : undefined) ) );
 			
-			e4.itemTemplate = Insurance_itemTemplate_1_12Creator(this);
+			e4.itemTemplate = Insurance_itemTemplate_1_13Creator(this);
 			
 			this.append(e4);
 			
@@ -76,8 +76,8 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 		}
 	}
 	
-	function Insurance_itemTemplate_1_12Creator(__creator) {
-		return class Insurance_itemTemplate_1_12 extends Applicant {
+	function Insurance_itemTemplate_1_13Creator(__creator) {
+		return class Insurance_itemTemplate_1_13 extends Applicant {
 			
 			public create(): void {
 				

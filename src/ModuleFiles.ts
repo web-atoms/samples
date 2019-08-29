@@ -36,22 +36,27 @@
           "Calendar": "web-atoms-samples/dist/samples/web/calendar/simple/Calendar"
         }
       },
-      "form": {
-        "simple": {
-          "SimpleForm": "web-atoms-samples/dist/samples/web/form/simple/SimpleForm"
-        }
-      },
       "dateField": {
-        "simple": {
-          "Calendar": "web-atoms-samples/dist/samples/web/date-field/simple/Calendar",
-          "DateField": "web-atoms-samples/dist/samples/web/date-field/simple/DateField"
-        },
         "customTemplate": {
-          "Calendar": "web-atoms-samples/dist/samples/web/date-field/custom-template/Calendar",
           "DateField": "web-atoms-samples/dist/samples/web/date-field/custom-template/DateField"
         },
-        "customTemplate_1": {
-          "DateField": "web-atoms-samples/dist/samples/web/date-field/custom-template.1/DateField"
+        "simple": {
+          "DateField": "web-atoms-samples/dist/samples/web/date-field/simple/DateField"
+        }
+      },
+      "form": {
+        "autoFocus": {
+          "AutoFocusNext": "web-atoms-samples/dist/samples/web/form/auto-focus/AutoFocusNext"
+        },
+        "custom": {
+          "CustomFormSample": "web-atoms-samples/dist/samples/web/form/custom/CustomFormSample",
+          "CustomTemplate": "web-atoms-samples/dist/samples/web/form/custom/CustomTemplate"
+        },
+        "sideBySide": {
+          "SideBySideForm": "web-atoms-samples/dist/samples/web/form/side-by-side/SideBySideForm"
+        },
+        "simple": {
+          "SimpleForm": "web-atoms-samples/dist/samples/web/form/simple/SimpleForm"
         }
       }
     }
@@ -77,15 +82,6 @@
         "ConditionalView": "web-atoms-samples/dist/{platform}/views/samples/conditional/ConditionalView",
         "DesktopView": "web-atoms-samples/dist/{platform}/views/samples/conditional/DesktopView",
         "MobileView": "web-atoms-samples/dist/{platform}/views/samples/conditional/MobileView"
-      },
-      "form": {
-        "AutoFocusNext": "web-atoms-samples/dist/{platform}/views/samples/form/AutoFocusNext",
-        "custom": {
-          "CustomFormSample": "web-atoms-samples/dist/{platform}/views/samples/form/custom/CustomFormSample",
-          "CustomTemplate": "web-atoms-samples/dist/{platform}/views/samples/form/custom/CustomTemplate"
-        },
-        "SideBySideForm": "web-atoms-samples/dist/{platform}/views/samples/form/SideBySideForm",
-        "SimpleForm": "web-atoms-samples/dist/{platform}/views/samples/form/SimpleForm"
       },
       "frame": {
         "FrameSample": "web-atoms-samples/dist/{platform}/views/samples/frame/FrameSample",

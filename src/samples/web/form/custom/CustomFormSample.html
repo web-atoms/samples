@@ -1,12 +1,12 @@
 <script>
         import AtomForm from "@web-atoms/web-controls/dist/form/AtomForm";
         import AtomField from "@web-atoms/web-controls/dist/form/AtomField";
-        import SignupFormViewModel from "~src/view-models/form/SignupFormViewModel";
-        import SideBySideFormStyle from "./SideBySideFormStyle"; 
+        import SimpleFormViewModel from "../SimpleFormViewModel";
+        import CustomForm from "./CustomForm";
     </script>
-    <div view-model="{ this.resolve(SignupFormViewModel) }">
-        <AtomForm default-style="{ SideBySideFormStyle }">
-                <AtomField
+    <div view-model="{ this.resolve(SimpleFormViewModel) }">
+        <CustomForm>
+            <AtomField
                 label="First name:"
                 required="true"
                 error="[$viewModel.errorFirstName]">
@@ -29,17 +29,19 @@
                     value="$[viewModel.model.emailAddress]"/>
             </AtomField>
             <AtomField
+                field-class="small"
                 label="Password:"
                 required="true"
                 error="[$viewModel.errorPassword]">
                 <input type="text" value="$[viewModel.model.password]"/>
             </AtomField>
             <AtomField
+                field-class="small"
                 label="Password (Again):"
                 required="true"
                 error="[$viewModel.errorPasswordAgain]">
                 <input type="text" value="$[viewModel.model.passwordAgain]"/>
             </AtomField>
-        </AtomForm>
+        </CustomForm>
         <button event-click="{ () => this.viewModel.signup() }">Signup</button>
     </div>

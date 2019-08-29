@@ -1,9 +1,9 @@
 <script>
     import AtomForm from "@web-atoms/web-controls/dist/form/AtomForm";
     import AtomField from "@web-atoms/web-controls/dist/form/AtomField";
-    import SignupFormViewModel from "~src/view-models/form/SignupFormViewModel";
+    import SimpleFormViewModel from "../SimpleFormViewModel";
 </script>
-<div view-model="{ this.resolve(SignupFormViewModel) }">
+<div view-model="{ this.resolve(SimpleFormViewModel) }">
     <AtomForm>
             <AtomField
             label="First name:"

@@ -35,14 +35,14 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			e3.bind(e3.element, "items",  [["viewModel","movies","value"]], false , null );
 			
-			e3.itemTemplate = AtomItemsControlSample_itemTemplate_1_4Creator(this);
+			e3.itemTemplate = AtomItemsControlSample_itemTemplate_1_5Creator(this);
 			
 			this.append(e3);
 		}
 	}
 	
-	function AtomItemsControlSample_itemTemplate_1_4Creator(__creator) {
-		return class AtomItemsControlSample_itemTemplate_1_4 extends AtomControl {
+	function AtomItemsControlSample_itemTemplate_1_5Creator(__creator) {
+		return class AtomItemsControlSample_itemTemplate_1_5 extends AtomControl {
 			
 			constructor(app: any, e?: any) {
 				super(app, e || document.createElement("li"));
