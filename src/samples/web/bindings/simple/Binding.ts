@@ -2,7 +2,7 @@
 import {BindableProperty} from "web-atoms-core/dist/core/BindableProperty";
 import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 	
-	    import BindingViewModel from "../../../../view-models/samples/bindings/BindingViewModel";
+	    import BindingViewModel from "../BindingViewModel";
 	
 	
 	export default class Binding extends AtomControl {

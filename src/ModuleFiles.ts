@@ -58,6 +58,12 @@
         "simple": {
           "SimpleForm": "web-atoms-samples/dist/samples/web/form/simple/SimpleForm"
         }
+      },
+      "bindings": {
+        "Binding": "web-atoms-samples/dist/samples/web/bindings/Binding",
+        "simple": {
+          "Binding": "web-atoms-samples/dist/samples/web/bindings/simple/Binding"
+        }
       }
     }
   },

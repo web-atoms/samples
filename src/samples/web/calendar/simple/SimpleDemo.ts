@@ -3,7 +3,7 @@ import Calendar from "./Calendar";
 
 declare var require: any;
 
-export default class Demo extends FileViewer {
+export default class SimpleDemo extends FileViewer {
 
 	public create(): void {
 

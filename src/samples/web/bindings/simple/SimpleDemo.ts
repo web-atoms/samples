@@ -1,19 +1,19 @@
 import FileViewer from "../../../../core/web/FileViewer";
-import Calendar from "./Calendar";
+import Binding from "./Binding";
 
 declare var require: any;
 
-export default class Demo extends FileViewer {
+export default class SimpleDemo extends FileViewer {
 
 	public create(): void {
 
 		super.create();
 
 		this.files = [
-			"./Calendar.html",
-			"./CalendarViewModel.ts"
+			"./Binding.html",
+			"../BindingViewModel.ts"
 		];
 		this.require = require;
-		this.demo = Calendar;
+		this.demo = Binding;
 	}
 }

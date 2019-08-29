@@ -12,9 +12,9 @@ export default class CustomDemo extends FileViewer {
 		this.require = require;
 		this.files = [
 			"./CustomFormSample.html",
-			"./CustomFormSampleStyle.ts",
+			"./CustomTemplate.html",
+			"./CustomFormStyle.ts",
 			"./CustomForm.ts",
-			"./CustomTemplate.ts",
 			"../SimpleFormViewModel.ts"
 		];
 		this.demo = CustomFormSample;

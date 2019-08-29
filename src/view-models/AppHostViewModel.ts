@@ -3,8 +3,11 @@ import { Inject } from "web-atoms-core/dist/di/Inject";
 import { NavigationService } from "web-atoms-core/dist/services/NavigationService";
 import { AtomViewModel } from "web-atoms-core/dist/view-model/AtomViewModel";
 import { ModuleFiles } from "../ModuleFiles";
+import { addCalendarSamples } from "../samples/web/calendar/CalendarSamples";
+import { addDateFields } from "../samples/web/date-field/DateFieldSamples";
 import { addFormSamples } from "../samples/web/form/FormSamples";
 import MenuService from "../services/MenuService";
+import { addBindingSamples } from "../samples/web/bindings/BindingSamples";
 
 declare var UMD: any;
 
@@ -66,8 +69,8 @@ export default class AppHostViewModel extends AtomViewModel {
             url: UMD.resolvePath("web-atoms-samples/docs/web/components.md"),
             title: "Components"
         });
-        const binding = ms.addGroup("Binding");
-        binding.addTabLink("Bindings", ModuleFiles.views.samples.bindings.Binding);
+
+        addBindingSamples(ms);
 
         const validations = ms.addGroup("Validations");
         validations.addTabLink("Simple", ModuleFiles.views.samples.validation.SimpleValidation);
@@ -77,20 +80,15 @@ export default class AppHostViewModel extends AtomViewModel {
         const services = ms.addGroup("Services");
         services.addTabLink("Http", ModuleFiles.views.samples.http.Movies);
 
-        const calendar = ms.addGroup("Calendar");
-        calendar.addTabLink("Simple", "web-atoms-samples/dist/samples/web/calendar/simple/Demo");
-        calendar.addTabLink("Custom Template", "web-atoms-samples/dist/samples/web/calendar/custom-template/Demo");
+        addCalendarSamples(ms);
 
-        const dateField = ms.addGroup("Date Field");
-        dateField.addTabLink("Simple", "web-atoms-samples/dist/samples/web/date-field/simple/Demo");
-        dateField.addTabLink("Custom Template", "web-atoms-samples/dist/samples/web/date-field/custom-template/Demo");
+        addDateFields(ms);
 
         const containers = ms.addGroup("Containers");
         containers.addTabLink("View Pager", ModuleFiles.views.samples.viewPager.ViewPager);
         containers.addTabLink("View Stack", ModuleFiles.views.samples.viewStack.ViewStack);
 
-        const form = ms.addGroup("Form");
-        addFormSamples(form);
+        addFormSamples(ms);
 
         const styles = ms.addGroup("Styles");
         styles.addTabLink("Panel", ModuleFiles.views.samples.styles.Panel);

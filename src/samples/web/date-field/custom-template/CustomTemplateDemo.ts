@@ -3,7 +3,7 @@ import DateField from "./DateField";
 
 declare var require: any;
 
-export default class Demo extends FileViewer {
+export default class CustomTemplateDemo extends FileViewer {
 
 	public create(): void {
 
