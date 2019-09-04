@@ -3,7 +3,7 @@ import {BindableProperty} from "web-atoms-core/dist/core/BindableProperty";
 import {AtomItemsControl} from "web-atoms-core/dist/web/controls/AtomItemsControl";
 import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 	
-	    import CustomValidationViewModel from "../../../../view-models/samples/validation/CustomValidationViewModel";
+	    import CustomValidationViewModel from "./CustomValidationViewModel";
 	
 	
 	export default class CustomValidation extends AtomControl {
@@ -44,7 +44,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			e4.runAfterInit( () => e4.setLocalValue(e4.element, "items",  (((e4.viewModel) ? e4.viewModel.model : undefined) ? e4.viewModel.model.emails : undefined) ) );
 			
-			e4.itemTemplate = CustomValidation_itemTemplate_1_12Creator(this);
+			e4.itemTemplate = CustomValidation_itemTemplate_1_19Creator(this);
 			
 			this.append(e4);
 			
@@ -75,8 +75,8 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 		}
 	}
 	
-	function CustomValidation_itemTemplate_1_12Creator(__creator) {
-		return class CustomValidation_itemTemplate_1_12 extends AtomControl {
+	function CustomValidation_itemTemplate_1_19Creator(__creator) {
+		return class CustomValidation_itemTemplate_1_19 extends AtomControl {
 			
 			constructor(app: any, e?: any) {
 				super(app, e || document.createElement("div"));

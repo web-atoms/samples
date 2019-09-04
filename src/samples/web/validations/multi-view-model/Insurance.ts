@@ -3,7 +3,7 @@ import {BindableProperty} from "web-atoms-core/dist/core/BindableProperty";
 import {AtomItemsControl} from "web-atoms-core/dist/web/controls/AtomItemsControl";
 import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 	
-	    import InsuranceViewModel from "../../../../../view-models/samples/validation/multi-view-model/InsuranceViewModel";
+	    import InsuranceViewModel from "./InsuranceViewModel";
 	    import Applicant from "./Applicant";
 	
 	
@@ -45,7 +45,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			e4.runAfterInit( () => e4.setLocalValue(e4.element, "items",  (((e4.viewModel) ? e4.viewModel.model : undefined) ? e4.viewModel.model.applicants : undefined) ) );
 			
-			e4.itemTemplate = Insurance_itemTemplate_1_13Creator(this);
+			e4.itemTemplate = Insurance_itemTemplate_1_21Creator(this);
 			
 			this.append(e4);
 			
@@ -76,8 +76,8 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 		}
 	}
 	
-	function Insurance_itemTemplate_1_13Creator(__creator) {
-		return class Insurance_itemTemplate_1_13 extends Applicant {
+	function Insurance_itemTemplate_1_21Creator(__creator) {
+		return class Insurance_itemTemplate_1_21 extends Applicant {
 			
 			public create(): void {
 				

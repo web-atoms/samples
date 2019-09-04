@@ -28,7 +28,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			e1.bind(e1.element, "value",  [["viewModel","currentPage"]], true  );
 			
-			e1.itemTemplate = ViewPager_itemTemplate_1_14Creator(this);
+			e1.itemTemplate = ViewPager_itemTemplate_1_16Creator(this);
 			
 			this.append(e1);
 			
@@ -44,8 +44,8 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 		}
 	}
 	
-	function ViewPager_itemTemplate_1_14Creator(__creator) {
-		return class ViewPager_itemTemplate_1_14 extends AtomControl {
+	function ViewPager_itemTemplate_1_16Creator(__creator) {
+		return class ViewPager_itemTemplate_1_16 extends AtomControl {
 			
 			constructor(app: any, e?: any) {
 				super(app, e || document.createElement("span"));

@@ -3,10 +3,10 @@ import {BindableProperty} from "web-atoms-core/dist/core/BindableProperty";
 import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 	
 	    import AtomDateField from "@web-atoms/web-controls/dist/date-field/AtomDateField"
-	    import DateFieldViewModel from "./DateFieldViewModel";
+	    import CustomDateFieldViewModel from "./CustomDateFieldViewModel";
 	
 	
-	export default class DateField extends AtomControl {
+	export default class CustomDateField extends AtomControl {
 		
 		constructor(app: any, e?: any) {
 			super(app, e || document.createElement("div"));
@@ -18,7 +18,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			const __creator = this;
 			
-			this.viewModel =  this.resolve(DateFieldViewModel) ;
+			this.viewModel =  this.resolve(CustomDateFieldViewModel) ;
 			
 			const e1 = new AtomDateField(this.app);
 			
@@ -26,7 +26,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			e1.setPrimitiveValue(e1.element, "eventResult",  (e) => this.viewModel.dateClicked(e.detail) );
 			
-			e1.itemTemplate = DateField_itemTemplate_1_2Creator(this);
+			e1.itemTemplate = CustomDateField_itemTemplate_1_25Creator(this);
 			
 			this.append(e1);
 			
@@ -38,8 +38,8 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 		}
 	}
 	
-	function DateField_itemTemplate_1_2Creator(__creator) {
-		return class DateField_itemTemplate_1_2 extends AtomControl {
+	function CustomDateField_itemTemplate_1_25Creator(__creator) {
+		return class CustomDateField_itemTemplate_1_25 extends AtomControl {
 			
 			constructor(app: any, e?: any) {
 				super(app, e || document.createElement("div"));

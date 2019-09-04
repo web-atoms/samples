@@ -3,11 +3,12 @@ import { Inject } from "web-atoms-core/dist/di/Inject";
 import { NavigationService } from "web-atoms-core/dist/services/NavigationService";
 import { AtomViewModel } from "web-atoms-core/dist/view-model/AtomViewModel";
 import { ModuleFiles } from "../ModuleFiles";
+import { addBindingSamples } from "../samples/web/bindings/BindingSamples";
 import { addCalendarSamples } from "../samples/web/calendar/CalendarSamples";
 import { addDateFields } from "../samples/web/date-field/DateFieldSamples";
 import { addFormSamples } from "../samples/web/form/FormSamples";
+import { addValidationSamples } from "../samples/web/validations/ValidationSamples";
 import MenuService from "../services/MenuService";
-import { addBindingSamples } from "../samples/web/bindings/BindingSamples";
 
 declare var UMD: any;
 
@@ -72,10 +73,12 @@ export default class AppHostViewModel extends AtomViewModel {
 
         addBindingSamples(ms);
 
-        const validations = ms.addGroup("Validations");
-        validations.addTabLink("Simple", ModuleFiles.views.samples.validation.SimpleValidation);
-        validations.addTabLink("Custom", ModuleFiles.views.samples.validation.CustomValidation);
-        validations.addTabLink("Multi VM", ModuleFiles.views.samples.validation.multiViewModel.Insurance);
+        addValidationSamples(ms);
+
+        // const validations = ms.addGroup("Validations");
+        // validations.addTabLink("Simple", ModuleFiles.views.samples.validation.SimpleValidation);
+        // validations.addTabLink("Custom", ModuleFiles.views.samples.validation.CustomValidation);
+        // validations.addTabLink("Multi VM", ModuleFiles.views.samples.validation.multiViewModel.Insurance);
 
         const services = ms.addGroup("Services");
         services.addTabLink("Http", ModuleFiles.views.samples.http.Movies);

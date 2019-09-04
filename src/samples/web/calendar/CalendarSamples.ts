@@ -1,13 +1,30 @@
 import resolveModulePath from "../../../core/web/resolveModulePath";
-import MenuItem from "../../../models/MenuItem";
+import MenuItem, { asClass, asView } from "../../../models/MenuItem";
 import MenuService from "../../../services/MenuService";
-import CustomTemplateDemo from "./custom-template/CustomTemplateDemo";
-import SimpleDemo from "./simple/SimpleDemo";
+import CustomCalendar from "./custom-template/CustomCalendar";
+import CustomCalendarViewModel from "./custom-template/CustomCalendarViewModel";
+import Calendar from "./simple/Calendar";
+import CalendarViewModel from "./simple/CalendarViewModel";
 
 declare var require: { resolve: (a) => string };
 
 export function addCalendarSamples(ms: MenuService) {
-    const form = ms.addGroup("Calendar");
-    form.addTabLink("Simple", resolveModulePath(require, SimpleDemo));
-    form.addTabLink("Custom Template", resolveModulePath(require, CustomTemplateDemo));
+    ms.addSamples(require, "Calendar", [
+        {
+            label: "Simple",
+            demo: Calendar,
+            files: [
+                asView(Calendar),
+                asClass(CalendarViewModel)
+            ]
+        },
+        {
+            label: "Custom",
+            demo: CustomCalendar,
+            files: [
+                asView(CustomCalendar),
+                asClass(CustomCalendarViewModel)
+            ]
+        }
+    ]);
 }

@@ -2,10 +2,10 @@
 import {BindableProperty} from "web-atoms-core/dist/core/BindableProperty";
 import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 	
-	    import ApplicantViewModel from "../../../../../view-models/samples/validation/multi-view-model/ApplicantViewModel";
+	    import SimpleValidationViewModel from "./SimpleValidationViewModel";
 	
 	
-	export default class Applicant extends AtomControl {
+	export default class SimpleValidation extends AtomControl {
 		
 		constructor(app: any, e?: any) {
 			super(app, e || document.createElement("div"));
@@ -17,9 +17,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			const __creator = this;
 			
-			this.viewModel =  this.resolve(ApplicantViewModel, () => ({ model: this.data, parent: this.parent.viewModel })) ;
-			
-			this.setPrimitiveValue(this.element, "style", "margin: 5px; padding: 5px; border: solid 1px lightgray; border-radius: 5px" );
+			this.viewModel =  this.resolve(SimpleValidationViewModel) ;
 			
 			const e1 = document.createElement("div");
 			
@@ -49,9 +47,9 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			e4.appendChild(e5);
 			
-			this.setPrimitiveValue(e5, "placeholder", "Address" );
+			this.setPrimitiveValue(e5, "placeholder", "Email" );
 			
-			this.bind(e5, "value",  [["viewModel","model","address"]], true  );
+			this.bind(e5, "value",  [["viewModel","model","email"]], true  );
 			
 			const e6 = document.createElement("span");
 			
@@ -59,15 +57,24 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			this.setPrimitiveValue(e6, "style", "color: red" );
 			
-			this.bind(e6, "text",  [["viewModel","errorAddress"]], false , null );
+			this.bind(e6, "text",  [["viewModel","errorEmail"]], false , null );
 			
 			const e7 = document.createElement("button");
 			
 			this.append(e7);
 			
-			this.runAfterInit( () => this.setLocalValue(e7, "eventClick",  () => (this.viewModel).delete() ) );
+			this.runAfterInit( () => this.setLocalValue(e7, "eventClick",  () => (this.viewModel).signup() ) );
 			
-			const e8 = document.createTextNode("Delete");
+			const e8 = document.createTextNode("Signup");
 			e7.appendChild(e8);
+			
+			const e9 = document.createElement("button");
+			
+			this.append(e9);
+			
+			this.runAfterInit( () => this.setLocalValue(e9, "eventClick",  () => (this.viewModel).cancel() ) );
+			
+			const e10 = document.createTextNode("Cancel");
+			e9.appendChild(e10);
 		}
 	}

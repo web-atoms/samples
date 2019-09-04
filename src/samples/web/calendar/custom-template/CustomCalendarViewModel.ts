@@ -1,6 +1,6 @@
 import { AtomViewModel } from "web-atoms-core/dist/view-model/AtomViewModel";
 
-export default class DateFieldViewModel extends AtomViewModel {
+export default class CustomCalendarViewModel extends AtomViewModel {
 
     public log: string = "";
 

@@ -3,10 +3,10 @@ import {BindableProperty} from "web-atoms-core/dist/core/BindableProperty";
 import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 	
 	    import AtomCalendar from "@web-atoms/web-controls/dist/calendar/AtomCalendar"
-	    import CalendarViewModel from "./CalendarViewModel";
+	    import CustomCalendarViewModel from "./CustomCalendarViewModel";
 	
 	
-	export default class Calendar extends AtomControl {
+	export default class CustomCalendar extends AtomControl {
 		
 		constructor(app: any, e?: any) {
 			super(app, e || document.createElement("div"));
@@ -18,7 +18,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			const __creator = this;
 			
-			this.viewModel =  this.resolve(CalendarViewModel) ;
+			this.viewModel =  this.resolve(CustomCalendarViewModel) ;
 			
 			const e1 = new AtomCalendar(this.app);
 			
@@ -26,7 +26,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			e1.setPrimitiveValue(e1.element, "eventDateClicked",  (e) => this.viewModel.dateClicked(e.detail) );
 			
-			e1.itemTemplate = Calendar_itemTemplate_1_1Creator(this);
+			e1.itemTemplate = CustomCalendar_itemTemplate_1_23Creator(this);
 			
 			this.append(e1);
 			
@@ -38,8 +38,8 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 		}
 	}
 	
-	function Calendar_itemTemplate_1_1Creator(__creator) {
-		return class Calendar_itemTemplate_1_1 extends AtomControl {
+	function CustomCalendar_itemTemplate_1_23Creator(__creator) {
+		return class CustomCalendar_itemTemplate_1_23 extends AtomControl {
 			
 			constructor(app: any, e?: any) {
 				super(app, e || document.createElement("div"));

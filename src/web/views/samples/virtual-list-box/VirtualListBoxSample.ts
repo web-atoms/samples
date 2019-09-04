@@ -28,7 +28,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			e1.runAfterInit( () => e1.setLocalValue(e1.element, "items",  ((e1.viewModel) ? e1.viewModel.items : undefined) ) );
 			
-			e1.itemTemplate = VirtualListBoxSample_itemTemplate_1_15Creator(this);
+			e1.itemTemplate = VirtualListBoxSample_itemTemplate_1_17Creator(this);
 			
 			const e2 = document.createElement("div");
 			
@@ -40,8 +40,8 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 		}
 	}
 	
-	function VirtualListBoxSample_itemTemplate_1_15Creator(__creator) {
-		return class VirtualListBoxSample_itemTemplate_1_15 extends AtomControl {
+	function VirtualListBoxSample_itemTemplate_1_17Creator(__creator) {
+		return class VirtualListBoxSample_itemTemplate_1_17 extends AtomControl {
 			
 			constructor(app: any, e?: any) {
 				super(app, e || document.createElement("div"));

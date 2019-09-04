@@ -28,9 +28,15 @@
   },
   "samples": {
     "web": {
+      "bindings": {
+        "simple": {
+          "Binding": "web-atoms-samples/dist/samples/web/bindings/simple/Binding"
+        }
+      },
       "calendar": {
         "customTemplate": {
-          "Calendar": "web-atoms-samples/dist/samples/web/calendar/custom-template/Calendar"
+          "Calendar": "web-atoms-samples/dist/samples/web/calendar/custom-template/Calendar",
+          "CustomCalendar": "web-atoms-samples/dist/samples/web/calendar/custom-template/CustomCalendar"
         },
         "simple": {
           "Calendar": "web-atoms-samples/dist/samples/web/calendar/simple/Calendar"
@@ -38,7 +44,8 @@
       },
       "dateField": {
         "customTemplate": {
-          "DateField": "web-atoms-samples/dist/samples/web/date-field/custom-template/DateField"
+          "DateField": "web-atoms-samples/dist/samples/web/date-field/custom-template/DateField",
+          "CustomDateField": "web-atoms-samples/dist/samples/web/date-field/custom-template/CustomDateField"
         },
         "simple": {
           "DateField": "web-atoms-samples/dist/samples/web/date-field/simple/DateField"
@@ -59,10 +66,24 @@
           "SimpleForm": "web-atoms-samples/dist/samples/web/form/simple/SimpleForm"
         }
       },
-      "bindings": {
-        "Binding": "web-atoms-samples/dist/samples/web/bindings/Binding",
+      "validations": {
+        "validation": {
+          "CustomValidation": "web-atoms-samples/dist/samples/web/validations/validation/CustomValidation",
+          "multiViewModel": {
+            "Applicant": "web-atoms-samples/dist/samples/web/validations/validation/multi-view-model/Applicant",
+            "Insurance": "web-atoms-samples/dist/samples/web/validations/validation/multi-view-model/Insurance"
+          },
+          "SimpleValidation": "web-atoms-samples/dist/samples/web/validations/validation/SimpleValidation"
+        },
         "simple": {
-          "Binding": "web-atoms-samples/dist/samples/web/bindings/simple/Binding"
+          "SimpleValidation": "web-atoms-samples/dist/samples/web/validations/simple/SimpleValidation"
+        },
+        "custom": {
+          "CustomValidation": "web-atoms-samples/dist/samples/web/validations/custom/CustomValidation"
+        },
+        "multiViewModel": {
+          "Applicant": "web-atoms-samples/dist/samples/web/validations/multi-view-model/Applicant",
+          "Insurance": "web-atoms-samples/dist/samples/web/validations/multi-view-model/Insurance"
         }
       }
     }
@@ -80,9 +101,6 @@
         "AtomToggleButtonBarSample": "web-atoms-samples/dist/{platform}/views/samples/basic-controls/AtomToggleButtonBarSample",
         "AtomWindowSample": "web-atoms-samples/dist/{platform}/views/samples/basic-controls/AtomWindowSample",
         "ButtonSample": "web-atoms-samples/dist/{platform}/views/samples/basic-controls/ButtonSample"
-      },
-      "bindings": {
-        "Binding": "web-atoms-samples/dist/{platform}/views/samples/bindings/Binding"
       },
       "conditional": {
         "ConditionalView": "web-atoms-samples/dist/{platform}/views/samples/conditional/ConditionalView",
@@ -123,6 +141,9 @@
       },
       "virtualListBox": {
         "VirtualListBoxSample": "web-atoms-samples/dist/{platform}/views/samples/virtual-list-box/VirtualListBoxSample"
+      },
+      "bindings": {
+        "Binding": "web-atoms-samples/dist/{platform}/views/samples/bindings/Binding"
       },
       "comboBox": {
         "ComboBoxSample": "web-atoms-samples/dist/{platform}/views/samples/combo-box/ComboBoxSample"
