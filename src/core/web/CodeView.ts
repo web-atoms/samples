@@ -9,8 +9,13 @@ import { AtomControl } from "web-atoms-core/dist/web/controls/AtomControl";
 class MDService extends BaseService {
 
     public async getUrl(url: string): Promise<string> {
-        const a = await this.ajax(url, { method: "GET" });
-        return a.responseText;
+        const b = this.app.createBusyIndicator();
+        try {
+            const a = await this.ajax(url, { method: "GET" });
+            return a.responseText;
+        } finally {
+            b.dispose();
+        }
     }
 
 }
@@ -37,6 +42,8 @@ export default class CodeView extends AtomControl {
             return;
         }
 
+        const last = src;
+
         await Atom.delay(1);
 
         if (/^\./.test(src)) {
@@ -51,6 +58,10 @@ export default class CodeView extends AtomControl {
         src = UMD.resolvePath(src);
 
         const text = await md.getUrl(src);
+
+        if (last !== this.src) {
+            return;
+        }
 
         const pre = document.createElement("pre");
         const code = document.createElement("code");
