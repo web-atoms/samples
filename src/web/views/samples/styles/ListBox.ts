@@ -27,14 +27,14 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			e1.bind(e1.element, "items",  [["viewModel","movies","value"]], false , null );
 			
-			e1.itemTemplate = ListBox_itemTemplate_1_13Creator(this);
+			e1.itemTemplate = ListBox_itemTemplate_1_14Creator(this);
 			
 			this.append(e1);
 		}
 	}
 	
-	function ListBox_itemTemplate_1_13Creator(__creator) {
-		return class ListBox_itemTemplate_1_13 extends AtomControl {
+	function ListBox_itemTemplate_1_14Creator(__creator) {
+		return class ListBox_itemTemplate_1_14 extends AtomControl {
 			
 			constructor(app: any, e?: any) {
 				super(app, e || document.createElement("div"));

@@ -40,14 +40,14 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			e3.runAfterInit( () => e3.setLocalValue(e3.element, "items",  ((e3.viewModel) ? e3.viewModel.headers : undefined) ) );
 			
-			e3.itemTemplate = MDHost_itemTemplate_1_5Creator(this);
+			e3.itemTemplate = MDHost_itemTemplate_1_7Creator(this);
 			
 			this.append(e3);
 		}
 	}
 	
-	function MDHost_itemTemplate_1_5Creator(__creator) {
-		return class MDHost_itemTemplate_1_5 extends AtomControl {
+	function MDHost_itemTemplate_1_7Creator(__creator) {
+		return class MDHost_itemTemplate_1_7 extends AtomControl {
 			
 			constructor(app: any, e?: any) {
 				super(app, e || document.createElement("div"));

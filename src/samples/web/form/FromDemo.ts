@@ -9,13 +9,13 @@ declare var require: any;
 export default class FormDemo extends FileViewer {
 
     public create(): void {
+        super.create();
         this.require = require;
         this.demo = SimpleForm;
         this.files = [
             resolveModulePath(require, SimpleForm).replace("/dist/", "/src/") + ".html",
             resolveModulePath(require, SimpleFormViewModel).replace("/dist/", "/src/") + ".ts"
         ];
-        super.create();
     }
 
 }

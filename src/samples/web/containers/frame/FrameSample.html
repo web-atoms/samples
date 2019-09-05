@@ -1,0 +1,15 @@
+<script>
+    import FrameViewModel from "./FrameViewModel";
+    import Start from "./Start";
+</script>
+<div
+    view-model="{ this.resolve(FrameViewModel) }"
+    >
+    <button event-click="{ () => this.viewModel.back() }">Back</button>
+    <div style="position: relative; width: 200px; height: 200px; margin: 20px; border: solid 1px gray; border-radius: 5px;">
+        <AtomFrame
+            name="sample">
+
+        </AtomFrame>
+    </div>
+</div>

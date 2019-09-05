@@ -29,14 +29,14 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			e1.bind(e1.element, "items",  [["viewModel","movies","value"]], false , null );
 			
-			e1.itemTemplate = Movies_itemTemplate_1_17Creator(this);
+			e1.itemTemplate = Movies_itemTemplate_1_4Creator(this);
 			
 			this.append(e1);
 		}
 	}
 	
-	function Movies_itemTemplate_1_17Creator(__creator) {
-		return class Movies_itemTemplate_1_17 extends AtomControl {
+	function Movies_itemTemplate_1_4Creator(__creator) {
+		return class Movies_itemTemplate_1_4 extends AtomControl {
 			
 			constructor(app: any, e?: any) {
 				super(app, e || document.createElement("div"));

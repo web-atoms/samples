@@ -94,6 +94,8 @@ import {AtomGridView} from "web-atoms-core/dist/web/controls/AtomGridView";
 			
 			this.setPrimitiveValue(e15, "row", "1" );
 			
+			this.setPrimitiveValue(e15, "style", "position: absolute; left: 0; top: 0; right: 0; bottom:0; overflow: auto" );
+			
 			const e16 = document.createElement("ul");
 			
 			e15.appendChild(e16);
@@ -147,28 +149,34 @@ import {AtomGridView} from "web-atoms-core/dist/web/controls/AtomGridView";
 			const e30 = document.createTextNode("Simple REST Interface inspired from RetroFit");
 			e29.appendChild(e30);
 			
-			const e31 = new FormDemo(this.app);
+			const e31 = document.createElement("div");
 			
-			e15.appendChild(e31.element);
+			e15.appendChild(e31);
 			
-			const e32 = document.createElement("footer");
+			this.setPrimitiveValue(e31, "style", "margin-left: 5%; width: 90%; height: 640px; position: relative;" );
 			
-			this.append(e32);
+			const e32 = new FormDemo(this.app);
 			
-			this.setPrimitiveValue(e32, "row", "2" );
+			e31.appendChild(e32.element);
 			
-			const e33 = document.createTextNode("\r\n        © NeuroSpeech Technologies Pvt Ltd, ");
-			e32.appendChild(e33);
+			const e33 = document.createElement("footer");
 			
-			const e34 = document.createElement("img");
+			this.append(e33);
 			
-			e32.appendChild(e34);
+			this.setPrimitiveValue(e33, "row", "2" );
 			
-			this.setPrimitiveValue(e34, "class", "flag" );
+			const e34 = document.createTextNode("\r\n        © NeuroSpeech Technologies Pvt Ltd, ");
+			e33.appendChild(e34);
 			
-			this.setPrimitiveValue(e34, "src",  IndiaFlag32DataUrl );
+			const e35 = document.createElement("img");
 			
-			const e35 = document.createTextNode("Made in India\r\n    ");
-			e32.appendChild(e35);
+			e33.appendChild(e35);
+			
+			this.setPrimitiveValue(e35, "class", "flag" );
+			
+			this.setPrimitiveValue(e35, "src",  IndiaFlag32DataUrl );
+			
+			const e36 = document.createTextNode("Made in India\r\n    ");
+			e33.appendChild(e36);
 		}
 	}

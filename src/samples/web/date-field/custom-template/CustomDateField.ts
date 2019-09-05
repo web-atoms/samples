@@ -26,7 +26,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			e1.setPrimitiveValue(e1.element, "eventResult",  (e) => this.viewModel.dateClicked(e.detail) );
 			
-			e1.itemTemplate = CustomDateField_itemTemplate_1_2Creator(this);
+			e1.itemTemplate = CustomDateField_itemTemplate_1_3Creator(this);
 			
 			this.append(e1);
 			
@@ -38,8 +38,8 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 		}
 	}
 	
-	function CustomDateField_itemTemplate_1_2Creator(__creator) {
-		return class CustomDateField_itemTemplate_1_2 extends AtomControl {
+	function CustomDateField_itemTemplate_1_3Creator(__creator) {
+		return class CustomDateField_itemTemplate_1_3 extends AtomControl {
 			
 			constructor(app: any, e?: any) {
 				super(app, e || document.createElement("div"));

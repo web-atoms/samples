@@ -41,6 +41,23 @@
           "Calendar": "web-atoms-samples/dist/samples/web/calendar/simple/Calendar"
         }
       },
+      "containers": {
+        "viewPager": {
+          "Page1": "web-atoms-samples/dist/samples/web/containers/view-pager/Page1",
+          "Page2": "web-atoms-samples/dist/samples/web/containers/view-pager/Page2",
+          "ViewPager": "web-atoms-samples/dist/samples/web/containers/view-pager/ViewPager"
+        },
+        "viewStack": {
+          "ViewStack": "web-atoms-samples/dist/samples/web/containers/view-stack/ViewStack"
+        },
+        "frame": {
+          "FrameSample": "web-atoms-samples/dist/samples/web/containers/frame/FrameSample",
+          "Page1": "web-atoms-samples/dist/samples/web/containers/frame/Page1",
+          "FramePage2": "web-atoms-samples/dist/samples/web/containers/frame/FramePage2",
+          "FramePage1": "web-atoms-samples/dist/samples/web/containers/frame/FramePage1",
+          "Start": "web-atoms-samples/dist/samples/web/containers/frame/Start"
+        }
+      },
       "dateField": {
         "customTemplate": {
           "CustomDateField": "web-atoms-samples/dist/samples/web/date-field/custom-template/CustomDateField"
@@ -64,6 +81,13 @@
           "SimpleForm": "web-atoms-samples/dist/samples/web/form/simple/SimpleForm"
         }
       },
+      "services": {
+        "http": {
+          "simple": {
+            "Movies": "web-atoms-samples/dist/samples/web/services/http/simple/Movies"
+          }
+        }
+      },
       "validations": {
         "custom": {
           "CustomValidation": "web-atoms-samples/dist/samples/web/validations/custom/CustomValidation"
@@ -74,23 +98,6 @@
         },
         "simple": {
           "SimpleValidation": "web-atoms-samples/dist/samples/web/validations/simple/SimpleValidation"
-        }
-      },
-      "services": {
-        "http": {
-          "simple": {
-            "Movies": "web-atoms-samples/dist/samples/web/services/http/simple/Movies"
-          }
-        }
-      },
-      "containers": {
-        "viewPager": {
-          "Page1": "web-atoms-samples/dist/samples/web/containers/view-pager/Page1",
-          "Page2": "web-atoms-samples/dist/samples/web/containers/view-pager/Page2",
-          "ViewPager": "web-atoms-samples/dist/samples/web/containers/view-pager/ViewPager"
-        },
-        "viewStack": {
-          "ViewStack": "web-atoms-samples/dist/samples/web/containers/view-stack/ViewStack"
         }
       }
     }
@@ -119,9 +126,6 @@
         "Page1": "web-atoms-samples/dist/{platform}/views/samples/frame/Page1",
         "Page2": "web-atoms-samples/dist/{platform}/views/samples/frame/Page2"
       },
-      "http": {
-        "Movies": "web-atoms-samples/dist/{platform}/views/samples/http/Movies"
-      },
       "responsive": {
         "Responsive": "web-atoms-samples/dist/{platform}/views/samples/responsive/Responsive"
       },
@@ -129,14 +133,6 @@
         "FontAwesome": "web-atoms-samples/dist/{platform}/views/samples/styles/FontAwesome",
         "ListBox": "web-atoms-samples/dist/{platform}/views/samples/styles/ListBox",
         "Panel": "web-atoms-samples/dist/{platform}/views/samples/styles/Panel"
-      },
-      "viewPager": {
-        "Page1": "web-atoms-samples/dist/{platform}/views/samples/view-pager/Page1",
-        "Page2": "web-atoms-samples/dist/{platform}/views/samples/view-pager/Page2",
-        "ViewPager": "web-atoms-samples/dist/{platform}/views/samples/view-pager/ViewPager"
-      },
-      "viewStack": {
-        "ViewStack": "web-atoms-samples/dist/{platform}/views/samples/view-stack/ViewStack"
       },
       "virtualListBox": {
         "VirtualListBoxSample": "web-atoms-samples/dist/{platform}/views/samples/virtual-list-box/VirtualListBoxSample"

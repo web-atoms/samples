@@ -26,23 +26,23 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			this.append(e1);
 			
-			this.setPrimitiveValue(e1, "style", "font-size: 15px;\n                 color: maroon;\n                 font-weight: 600" );
+			this.setPrimitiveValue(e1, "style", "font-size: 15px;\r\n                 color: maroon;\r\n                 font-weight: 600" );
 			
-			const e2 = document.createTextNode("\n                 Upcoming Movies:\n    ");
+			const e2 = document.createTextNode("\r\n                 Upcoming Movies:\r\n    ");
 			e1.appendChild(e2);
 			
 			const e3 = new AtomItemsControl(this.app, document.createElement("ol"));
 			
 			e3.bind(e3.element, "items",  [["viewModel","movies","value"]], false , null );
 			
-			e3.itemTemplate = AtomItemsControlSample_itemTemplate_1_7Creator(this);
+			e3.itemTemplate = AtomItemsControlSample_itemTemplate_1_9Creator(this);
 			
 			this.append(e3);
 		}
 	}
 	
-	function AtomItemsControlSample_itemTemplate_1_7Creator(__creator) {
-		return class AtomItemsControlSample_itemTemplate_1_7 extends AtomControl {
+	function AtomItemsControlSample_itemTemplate_1_9Creator(__creator) {
+		return class AtomItemsControlSample_itemTemplate_1_9 extends AtomControl {
 			
 			constructor(app: any, e?: any) {
 				super(app, e || document.createElement("li"));
@@ -56,7 +56,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 				
 				this.append(e1);
 				
-				this.setPrimitiveValue(e1, "style", "font-size: 15px;\n                                font-weight: 600" );
+				this.setPrimitiveValue(e1, "style", "font-size: 15px;\r\n                                font-weight: 600" );
 				
 				this.runAfterInit( () => this.setLocalValue(e1, "text", ((this.data) ? this.data.name : undefined)) );
 				
@@ -64,7 +64,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 				
 				this.append(e2);
 				
-				this.setPrimitiveValue(e2, "style", "font-size: 15px; \n                                font-weight: 400; \n                                padding-left: 15px" );
+				this.setPrimitiveValue(e2, "style", "font-size: 15px; \r\n                                font-weight: 400; \r\n                                padding-left: 15px" );
 				
 				this.runAfterInit( () => this.setLocalValue(e2, "text", '( '+((this.data) ? this.data.genre : undefined)+' )') );
 			}
