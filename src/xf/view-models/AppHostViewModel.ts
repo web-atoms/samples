@@ -25,12 +25,12 @@ export default class AppHostViewModel extends AtomViewModel {
         const binding = ms.addGroup("Binding");
         binding.addTabLink("Bindings", ModuleFiles.views.samples.bindings.Binding);
 
-        const services = ms.addGroup("Services");
-        services.addTabLink("Http", ModuleFiles.views.samples.http.Movies);
+        // const services = ms.addGroup("Services");
+        // services.addTabLink("Http", ModuleFiles.views.samples.http.Movies);
 
-        const containers = ms.addGroup("Containers");
-        containers.addTabLink("View Pager", ModuleFiles.views.samples.viewPager.ViewPager);
-        containers.addTabLink("View Stack", ModuleFiles.views.samples.viewStack.ViewStack);
+        // const containers = ms.addGroup("Containers");
+        // containers.addTabLink("View Pager", ModuleFiles.views.samples.viewPager.ViewPager);
+        // containers.addTabLink("View Stack", ModuleFiles.views.samples.viewStack.ViewStack);
 
         const a = this.navigationService.location.query.platform;
         // tslint:disable-next-line:no-console

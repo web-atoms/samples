@@ -3,8 +3,8 @@ import {BindableProperty} from "web-atoms-core/dist/core/BindableProperty";
 import {AtomListBox} from "web-atoms-core/dist/web/controls/AtomListBox";
 import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 	
-	    import AppListBoxStyle from "../../../styles/AppListBoxStyle";
-	    import MovieViewModel from "../../../../view-models/http/MovieViewModel";
+	    import AppListBoxStyle from "./AppListBoxStyle";
+	    import MovieViewModel from "./MovieViewModel";
 	
 	
 	export default class ListBox extends AtomControl {
@@ -27,14 +27,14 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			e1.bind(e1.element, "items",  [["viewModel","movies","value"]], false , null );
 			
-			e1.itemTemplate = ListBox_itemTemplate_1_14Creator(this);
+			e1.itemTemplate = ListBox_itemTemplate_1_18Creator(this);
 			
 			this.append(e1);
 		}
 	}
 	
-	function ListBox_itemTemplate_1_14Creator(__creator) {
-		return class ListBox_itemTemplate_1_14 extends AtomControl {
+	function ListBox_itemTemplate_1_18Creator(__creator) {
+		return class ListBox_itemTemplate_1_18 extends AtomControl {
 			
 			constructor(app: any, e?: any) {
 				super(app, e || document.createElement("div"));

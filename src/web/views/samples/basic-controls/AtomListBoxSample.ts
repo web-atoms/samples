@@ -4,7 +4,8 @@ import {AtomListBox} from "web-atoms-core/dist/web/controls/AtomListBox";
 import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 	
 	    import AtomListBoxSampleViewModel from "../../../../view-models/basic-controls/AtomListBoxSampleViewModel";    
-	import ListBoxStyle from "../../../styles/ListBoxStyle";
+	    import ListBoxStyle from "../../../../samples/web/styles/list-box/ListBoxStyle";
+	
 	import { ListBoxSampleStyle } from "../../../styles/ListBoxSampleStyle";
 	
 	
@@ -38,7 +39,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			e1.setPrimitiveValue(e1.element, "style", " color:#7e7e7e;\r\n                width: 610px;\r\n                margin-top: 10px;\r\n                border: 1px solid #ccc; " );
 			
-			e1.itemTemplate = AtomListBoxSample_itemTemplate_1_10Creator(this);
+			e1.itemTemplate = AtomListBoxSample_itemTemplate_1_19Creator(this);
 			
 			this.append(e1);
 			
@@ -52,8 +53,8 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 		}
 	}
 	
-	function AtomListBoxSample_itemTemplate_1_10Creator(__creator) {
-		return class AtomListBoxSample_itemTemplate_1_10 extends AtomControl {
+	function AtomListBoxSample_itemTemplate_1_19Creator(__creator) {
+		return class AtomListBoxSample_itemTemplate_1_19 extends AtomControl {
 			
 			constructor(app: any, e?: any) {
 				super(app, e || document.createElement("div"));

@@ -5,12 +5,13 @@ import { AtomViewModel } from "web-atoms-core/dist/view-model/AtomViewModel";
 import { ModuleFiles } from "../ModuleFiles";
 import { addBindingSamples } from "../samples/web/bindings/BindingSamples";
 import { addCalendarSamples } from "../samples/web/calendar/CalendarSamples";
+import addContainerSamples from "../samples/web/containers/ContainerSamples";
 import { addDateFields } from "../samples/web/date-field/DateFieldSamples";
 import { addFormSamples } from "../samples/web/form/FormSamples";
+import addHttpServiceSamples from "../samples/web/services/http/HttpServices";
+import addStyleSamples from "../samples/web/styles/StyleSamples";
 import { addValidationSamples } from "../samples/web/validations/ValidationSamples";
 import MenuService from "../services/MenuService";
-import addHttpServiceSamples from "../samples/web/services/http/HttpServices";
-import addContainerSamples from "../samples/web/containers/ContainerSamples";
 
 declare var UMD: any;
 
@@ -96,10 +97,12 @@ export default class AppHostViewModel extends AtomViewModel {
 
         addFormSamples(ms);
 
-        const styles = ms.addGroup("Styles");
-        styles.addTabLink("Panel", ModuleFiles.views.samples.styles.Panel);
-        styles.addTabLink("List Box", ModuleFiles.views.samples.styles.ListBox);
-        styles.addTabLink("External", ModuleFiles.views.samples.styles.FontAwesome);
+        addStyleSamples(ms);
+
+        // const styles = ms.addGroup("Styles");
+        // styles.addTabLink("Panel", ModuleFiles.views.samples.styles.Panel);
+        // styles.addTabLink("List Box", ModuleFiles.views.samples.styles.ListBox);
+        // styles.addTabLink("External", ModuleFiles.views.samples.styles.FontAwesome);
 
         const controls = ms.addGroup("Controls");
         controls.addTabLink("Combo Box", ModuleFiles.views.samples.basicControls.AtomComboBoxSample);

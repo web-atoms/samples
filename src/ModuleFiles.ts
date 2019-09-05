@@ -99,6 +99,14 @@
         "simple": {
           "SimpleValidation": "web-atoms-samples/dist/samples/web/validations/simple/SimpleValidation"
         }
+      },
+      "styles": {
+        "listBox": {
+          "ListBox": "web-atoms-samples/dist/samples/web/styles/list-box/ListBox"
+        },
+        "panel": {
+          "Panel": "web-atoms-samples/dist/samples/web/styles/panel/Panel"
+        }
       }
     }
   },

@@ -2,7 +2,7 @@
 import {BindableProperty} from "web-atoms-core/dist/core/BindableProperty";
 import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 	
-	    import AppPanelStyle from "../../../styles/AppPanelStyle";
+	    import AppPanelStyle from "./AppPanelStyle";
 	
 	
 	export default class Panel extends AtomControl {
