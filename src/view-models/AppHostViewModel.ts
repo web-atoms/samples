@@ -9,6 +9,8 @@ import { addDateFields } from "../samples/web/date-field/DateFieldSamples";
 import { addFormSamples } from "../samples/web/form/FormSamples";
 import { addValidationSamples } from "../samples/web/validations/ValidationSamples";
 import MenuService from "../services/MenuService";
+import addHttpServiceSamples from "../samples/web/services/http/HttpServices";
+import addContainerSamples from "../samples/web/containers/ContainerSamples";
 
 declare var UMD: any;
 
@@ -80,16 +82,17 @@ export default class AppHostViewModel extends AtomViewModel {
         // validations.addTabLink("Custom", ModuleFiles.views.samples.validation.CustomValidation);
         // validations.addTabLink("Multi VM", ModuleFiles.views.samples.validation.multiViewModel.Insurance);
 
-        const services = ms.addGroup("Services");
-        services.addTabLink("Http", ModuleFiles.views.samples.http.Movies);
+        addHttpServiceSamples(ms);
 
         addCalendarSamples(ms);
 
         addDateFields(ms);
 
-        const containers = ms.addGroup("Containers");
-        containers.addTabLink("View Pager", ModuleFiles.views.samples.viewPager.ViewPager);
-        containers.addTabLink("View Stack", ModuleFiles.views.samples.viewStack.ViewStack);
+        addContainerSamples(ms);
+
+        // const containers = ms.addGroup("Containers");
+        // containers.addTabLink("View Pager", ModuleFiles.views.samples.viewPager.ViewPager);
+        // containers.addTabLink("View Stack", ModuleFiles.views.samples.viewStack.ViewStack);
 
         addFormSamples(ms);
 

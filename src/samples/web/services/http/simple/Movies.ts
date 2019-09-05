@@ -4,7 +4,7 @@ import {AtomListBox} from "web-atoms-core/dist/web/controls/AtomListBox";
 import {AtomGridView} from "web-atoms-core/dist/web/controls/AtomGridView";
 import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 	
-	import MovieViewModel from "../../../../view-models/http/MovieViewModel";
+	import MovieViewModel from "./MovieViewModel";
 	
 	
 	export default class Movies extends AtomGridView {
@@ -29,14 +29,14 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			e1.bind(e1.element, "items",  [["viewModel","movies","value"]], false , null );
 			
-			e1.itemTemplate = Movies_itemTemplate_1_12Creator(this);
+			e1.itemTemplate = Movies_itemTemplate_1_17Creator(this);
 			
 			this.append(e1);
 		}
 	}
 	
-	function Movies_itemTemplate_1_12Creator(__creator) {
-		return class Movies_itemTemplate_1_12 extends AtomControl {
+	function Movies_itemTemplate_1_17Creator(__creator) {
+		return class Movies_itemTemplate_1_17 extends AtomControl {
 			
 			constructor(app: any, e?: any) {
 				super(app, e || document.createElement("div"));

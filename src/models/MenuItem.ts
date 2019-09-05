@@ -88,6 +88,7 @@ export default class MenuItem {
         label: string,
         demo: any,
         files: IType[],
+        designMode: boolean = true,
         icon?: string): MenuItem {
         const require = this.require;
 
@@ -98,6 +99,7 @@ export default class MenuItem {
 
         const c = class CFV extends FileViewer {
             public create(): void {
+                this.designMode = designMode;
                 super.create();
                 this.require = require;
                 this.files = fs;

@@ -35,7 +35,6 @@
       },
       "calendar": {
         "customTemplate": {
-          "Calendar": "web-atoms-samples/dist/samples/web/calendar/custom-template/Calendar",
           "CustomCalendar": "web-atoms-samples/dist/samples/web/calendar/custom-template/CustomCalendar"
         },
         "simple": {
@@ -44,7 +43,6 @@
       },
       "dateField": {
         "customTemplate": {
-          "DateField": "web-atoms-samples/dist/samples/web/date-field/custom-template/DateField",
           "CustomDateField": "web-atoms-samples/dist/samples/web/date-field/custom-template/CustomDateField"
         },
         "simple": {
@@ -67,23 +65,32 @@
         }
       },
       "validations": {
-        "validation": {
-          "CustomValidation": "web-atoms-samples/dist/samples/web/validations/validation/CustomValidation",
-          "multiViewModel": {
-            "Applicant": "web-atoms-samples/dist/samples/web/validations/validation/multi-view-model/Applicant",
-            "Insurance": "web-atoms-samples/dist/samples/web/validations/validation/multi-view-model/Insurance"
-          },
-          "SimpleValidation": "web-atoms-samples/dist/samples/web/validations/validation/SimpleValidation"
-        },
-        "simple": {
-          "SimpleValidation": "web-atoms-samples/dist/samples/web/validations/simple/SimpleValidation"
-        },
         "custom": {
           "CustomValidation": "web-atoms-samples/dist/samples/web/validations/custom/CustomValidation"
         },
         "multiViewModel": {
           "Applicant": "web-atoms-samples/dist/samples/web/validations/multi-view-model/Applicant",
           "Insurance": "web-atoms-samples/dist/samples/web/validations/multi-view-model/Insurance"
+        },
+        "simple": {
+          "SimpleValidation": "web-atoms-samples/dist/samples/web/validations/simple/SimpleValidation"
+        }
+      },
+      "services": {
+        "http": {
+          "simple": {
+            "Movies": "web-atoms-samples/dist/samples/web/services/http/simple/Movies"
+          }
+        }
+      },
+      "containers": {
+        "viewPager": {
+          "Page1": "web-atoms-samples/dist/samples/web/containers/view-pager/Page1",
+          "Page2": "web-atoms-samples/dist/samples/web/containers/view-pager/Page2",
+          "ViewPager": "web-atoms-samples/dist/samples/web/containers/view-pager/ViewPager"
+        },
+        "viewStack": {
+          "ViewStack": "web-atoms-samples/dist/samples/web/containers/view-stack/ViewStack"
         }
       }
     }
@@ -122,14 +129,6 @@
         "FontAwesome": "web-atoms-samples/dist/{platform}/views/samples/styles/FontAwesome",
         "ListBox": "web-atoms-samples/dist/{platform}/views/samples/styles/ListBox",
         "Panel": "web-atoms-samples/dist/{platform}/views/samples/styles/Panel"
-      },
-      "validation": {
-        "CustomValidation": "web-atoms-samples/dist/{platform}/views/samples/validation/CustomValidation",
-        "multiViewModel": {
-          "Applicant": "web-atoms-samples/dist/{platform}/views/samples/validation/multi-view-model/Applicant",
-          "Insurance": "web-atoms-samples/dist/{platform}/views/samples/validation/multi-view-model/Insurance"
-        },
-        "SimpleValidation": "web-atoms-samples/dist/{platform}/views/samples/validation/SimpleValidation"
       },
       "viewPager": {
         "Page1": "web-atoms-samples/dist/{platform}/views/samples/view-pager/Page1",

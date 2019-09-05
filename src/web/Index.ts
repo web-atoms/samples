@@ -4,6 +4,8 @@ import {AtomGridView} from "web-atoms-core/dist/web/controls/AtomGridView";
 	
 	    import IndexStyle from "./styles/IndexStyle";
 	    import IndiaFlag32DataUrl from "../images/IndiaFlagIcon32DataUrl";
+	    import FormDemo from "../samples/web/form/FromDemo";
+	    
 	
 	
 	export default class Index extends AtomGridView {
@@ -18,7 +20,7 @@ import {AtomGridView} from "web-atoms-core/dist/web/controls/AtomGridView";
 			
 			this.runAfterInit(() => this.setPrimitiveValue(this.element, "styleClass",  this.controlStyle.root ));
 			
-			this.setPrimitiveValue(this.element, "rows", "60,*,30" );
+			this.setPrimitiveValue(this.element, "rows", "70,*,30" );
 			
 			const e1 = document.createElement("header");
 			
@@ -39,130 +41,134 @@ import {AtomGridView} from "web-atoms-core/dist/web/controls/AtomGridView";
 			
 			const e5 = document.createElement("section");
 			
-			this.append(e5);
+			e1.appendChild(e5);
 			
-			this.setPrimitiveValue(e5, "row", "1" );
+			this.setPrimitiveValue(e5, "style", "margin: auto; margin-right:10px; position: absolute; left:0; top:0; bottom: 0; right:0; width: 300px; height: 50px; text-align: center" );
 			
-			const e6 = document.createElement("ul");
+			const e6 = document.createElement("a");
 			
 			e5.appendChild(e6);
 			
-			const e7 = document.createElement("li");
+			this.setPrimitiveValue(e6, "href", "/samples.html" );
+			
+			this.setPrimitiveValue(e6, "target", "_tab" );
+			
+			const e7 = document.createElement("button");
 			
 			e6.appendChild(e7);
 			
-			const e8 = document.createTextNode("Advanced MVVM Framework for JavaScript");
+			const e8 = document.createTextNode("Samples");
 			e7.appendChild(e8);
 			
-			const e9 = document.createElement("li");
+			const e9 = document.createElement("a");
 			
-			e6.appendChild(e9);
+			e5.appendChild(e9);
 			
-			const e10 = document.createTextNode("Support for Browser as well as Xamarin.Forms");
+			this.setPrimitiveValue(e9, "href", "/docs" );
+			
+			this.setPrimitiveValue(e9, "target", "_tab" );
+			
+			const e10 = document.createElement("button");
+			
 			e9.appendChild(e10);
 			
-			const e11 = document.createElement("li");
+			const e11 = document.createTextNode("API");
+			e10.appendChild(e11);
 			
-			e6.appendChild(e11);
+			const e12 = document.createElement("a");
 			
-			const e12 = document.createTextNode("Simple Dependency Injection with Runtime Dependency Injection");
-			e11.appendChild(e12);
+			e5.appendChild(e12);
 			
-			const e13 = document.createElement("li");
+			this.setPrimitiveValue(e12, "href", "https://github.com/neurospeech/web-atoms-core" );
 			
-			e6.appendChild(e13);
+			const e13 = document.createElement("button");
 			
-			const e14 = document.createTextNode("Inbuilt Styling Support (no need for less/sass)");
+			e12.appendChild(e13);
+			
+			const e14 = document.createTextNode("Source Code");
 			e13.appendChild(e14);
 			
-			const e15 = document.createElement("li");
+			const e15 = document.createElement("section");
 			
-			e6.appendChild(e15);
+			this.append(e15);
 			
-			const e16 = document.createTextNode("Programmable Styles");
+			this.setPrimitiveValue(e15, "row", "1" );
+			
+			const e16 = document.createElement("ul");
+			
 			e15.appendChild(e16);
 			
 			const e17 = document.createElement("li");
 			
-			e6.appendChild(e17);
+			e16.appendChild(e17);
 			
-			const e18 = document.createTextNode("Simple Unit testing");
+			const e18 = document.createTextNode("Advanced MVVM Framework for JavaScript");
 			e17.appendChild(e18);
 			
 			const e19 = document.createElement("li");
 			
-			e6.appendChild(e19);
+			e16.appendChild(e19);
 			
-			const e20 = document.createTextNode("Simple REST Interface inspired from RetroFit");
+			const e20 = document.createTextNode("Support for Browser as well as Xamarin.Forms");
 			e19.appendChild(e20);
 			
-			const e21 = document.createElement("section");
+			const e21 = document.createElement("li");
 			
-			e5.appendChild(e21);
+			e16.appendChild(e21);
 			
-			this.setPrimitiveValue(e21, "style", "margin: auto; position: absolute; left:0; top:0; bottom: 0; right:0; width: 300px; height: 50px; text-align: center" );
-			
-			const e22 = document.createElement("a");
-			
+			const e22 = document.createTextNode("Simple Dependency Injection with Runtime Dependency Injection");
 			e21.appendChild(e22);
 			
-			this.setPrimitiveValue(e22, "href", "/samples.html" );
+			const e23 = document.createElement("li");
 			
-			this.setPrimitiveValue(e22, "target", "_tab" );
+			e16.appendChild(e23);
 			
-			const e23 = document.createElement("button");
-			
-			e22.appendChild(e23);
-			
-			const e24 = document.createTextNode("Samples");
+			const e24 = document.createTextNode("Inbuilt Styling Support (no need for less/sass)");
 			e23.appendChild(e24);
 			
-			const e25 = document.createElement("a");
+			const e25 = document.createElement("li");
 			
-			e21.appendChild(e25);
+			e16.appendChild(e25);
 			
-			this.setPrimitiveValue(e25, "href", "/docs" );
-			
-			this.setPrimitiveValue(e25, "target", "_tab" );
-			
-			const e26 = document.createElement("button");
-			
+			const e26 = document.createTextNode("Programmable Styles");
 			e25.appendChild(e26);
 			
-			const e27 = document.createTextNode("API");
-			e26.appendChild(e27);
+			const e27 = document.createElement("li");
 			
-			const e28 = document.createElement("a");
+			e16.appendChild(e27);
 			
-			e21.appendChild(e28);
+			const e28 = document.createTextNode("Simple Unit testing");
+			e27.appendChild(e28);
 			
-			this.setPrimitiveValue(e28, "href", "https://github.com/neurospeech/web-atoms-core" );
+			const e29 = document.createElement("li");
 			
-			const e29 = document.createElement("button");
+			e16.appendChild(e29);
 			
-			e28.appendChild(e29);
-			
-			const e30 = document.createTextNode("Source Code");
+			const e30 = document.createTextNode("Simple REST Interface inspired from RetroFit");
 			e29.appendChild(e30);
 			
-			const e31 = document.createElement("footer");
+			const e31 = new FormDemo(this.app);
 			
-			this.append(e31);
+			e15.appendChild(e31.element);
 			
-			this.setPrimitiveValue(e31, "row", "2" );
+			const e32 = document.createElement("footer");
 			
-			const e32 = document.createTextNode("\r\n        © NeuroSpeech Technologies Pvt Ltd, ");
-			e31.appendChild(e32);
+			this.append(e32);
 			
-			const e33 = document.createElement("img");
+			this.setPrimitiveValue(e32, "row", "2" );
 			
-			e31.appendChild(e33);
+			const e33 = document.createTextNode("\r\n        © NeuroSpeech Technologies Pvt Ltd, ");
+			e32.appendChild(e33);
 			
-			this.setPrimitiveValue(e33, "class", "flag" );
+			const e34 = document.createElement("img");
 			
-			this.setPrimitiveValue(e33, "src",  IndiaFlag32DataUrl );
+			e32.appendChild(e34);
 			
-			const e34 = document.createTextNode("Made in India\r\n    ");
-			e31.appendChild(e34);
+			this.setPrimitiveValue(e34, "class", "flag" );
+			
+			this.setPrimitiveValue(e34, "src",  IndiaFlag32DataUrl );
+			
+			const e35 = document.createTextNode("Made in India\r\n    ");
+			e32.appendChild(e35);
 		}
 	}

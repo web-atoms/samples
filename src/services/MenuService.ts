@@ -69,12 +69,19 @@ export default class MenuService {
     public addSamples(
         require: any,
         label: string,
-        samples: Array<{ label: string, demo: any, files: IType[] }>,
+        samples: ISample[],
         icon?: string
     ) {
         const g = this.addGroup(label, icon, require);
         for (const iterator of samples) {
-            g.addSample(iterator.label, iterator.demo, iterator.files);
+            g.addSample(iterator.label, iterator.demo, iterator.files, iterator.designMode);
         }
     }
+}
+
+export interface ISample {
+    label: string;
+    demo: any;
+    files: IType[];
+    designMode?: boolean;
 }

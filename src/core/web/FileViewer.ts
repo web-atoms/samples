@@ -7,6 +7,8 @@ import {AtomGridView} from "web-atoms-core/dist/web/controls/AtomGridView";
 	    import FileViewerStyle from "./FileViewerStyle";
 	    import CodeView from "./CodeView";
 	
+	    declare var UMD: any;
+	
 	    function fromPath(e, files) {
 	
 	        if (!files || !files.length) {
@@ -28,8 +30,11 @@ import {AtomGridView} from "web-atoms-core/dist/web/controls/AtomGridView";
 	        if (!e || !d) {
 	            return;
 	        }
+	        const old = UMD.mock;
+	        UMD.mock = e.atomControl.designMode;
 	        const c = new (d)(e.atomControl.app);
 	        e.atomControl.demoPresenter.appendChild(c.element);
+	        UMD.mock = old;
 	    }
 	
 	
@@ -49,6 +54,9 @@ import {AtomGridView} from "web-atoms-core/dist/web/controls/AtomGridView";
 		public  demo:  any  ;
 		
 		@BindableProperty
+		public  designMode:  boolean  ;
+		
+		@BindableProperty
 		public  demoPresenter:  any  ;
 		
 		public create(): void {
@@ -62,6 +70,8 @@ import {AtomGridView} from "web-atoms-core/dist/web/controls/AtomGridView";
 			this. require =  null;
 			
 			this. demo =  null;
+			
+			this. designMode =  true;
 			
 			this. demoPresenter =  null ;
 			

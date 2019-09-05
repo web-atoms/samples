@@ -2,6 +2,8 @@
     import FileViewerStyle from "./FileViewerStyle";
     import CodeView from "./CodeView";
 
+    declare var UMD: any;
+
     function fromPath(e, files) {
 
         if (!files || !files.length) {
@@ -23,8 +25,11 @@
         if (!e || !d) {
             return;
         }
+        const old = UMD.mock;
+        UMD.mock = e.atomControl.designMode;
         const c = new (d)(e.atomControl.app);
         e.atomControl.demoPresenter.appendChild(c.element);
+        UMD.mock = old;
     }
 
 </script>
@@ -33,7 +38,7 @@
     columns="*, 5, 50%"
     default-style="{ FileViewerStyle }"
     style-class="{ this.controlStyle.root }"
-    @properties=" files: string[] = null , file: string = null, require: any = null, demo: any = null, demoPresenter: any = null "
+    @properties=" files: string[] = null , file: string = null, require: any = null, demo: any = null, designMode: boolean = true, demoPresenter: any = null "
     none="[ setView($this.element, $this.demo ) ]">
     <AtomToggleButtonBar
         items="[ fromPath($this.element, $this.files) ]"

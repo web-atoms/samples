@@ -1,0 +1,19 @@
+<script>
+    import { ViewPagerViewModel } from "./ViewPagerViewModel";
+</script>
+<AtomGridView
+    columns="*"
+    rows="50, *"
+    view-model="{ this.resolve(ViewPagerViewModel) }">
+
+    <AtomListBox.div
+        items="[$viewModel.pages]"
+        value="$[viewModel.currentPage]">
+        <span template="itemTemplate" text="{$data.label}"></span>
+    </AtomListBox.div>
+
+    <AtomViewPager 
+        row="1"
+        items="[$viewModel.pages]"
+        value="[$viewModel.currentPage]"></AtomViewPager>
+</AtomGridView>
