@@ -11,7 +11,7 @@ import {AtomGridView} from "web-atoms-core/dist/web/controls/AtomGridView";
 	
 	    function fromPath(e, files) {
 	
-	        if (!files || !files.length) {
+	        if (!e || !files || !files.length) {
 	            return null;
 	        }
 	        const owner = e.atomControl;
