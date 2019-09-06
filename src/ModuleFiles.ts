@@ -42,6 +42,12 @@
         }
       },
       "containers": {
+        "frame": {
+          "FramePage1": "web-atoms-samples/dist/samples/web/containers/frame/FramePage1",
+          "FramePage2": "web-atoms-samples/dist/samples/web/containers/frame/FramePage2",
+          "FrameSample": "web-atoms-samples/dist/samples/web/containers/frame/FrameSample",
+          "Start": "web-atoms-samples/dist/samples/web/containers/frame/Start"
+        },
         "viewPager": {
           "Page1": "web-atoms-samples/dist/samples/web/containers/view-pager/Page1",
           "Page2": "web-atoms-samples/dist/samples/web/containers/view-pager/Page2",
@@ -49,13 +55,6 @@
         },
         "viewStack": {
           "ViewStack": "web-atoms-samples/dist/samples/web/containers/view-stack/ViewStack"
-        },
-        "frame": {
-          "FrameSample": "web-atoms-samples/dist/samples/web/containers/frame/FrameSample",
-          "Page1": "web-atoms-samples/dist/samples/web/containers/frame/Page1",
-          "FramePage2": "web-atoms-samples/dist/samples/web/containers/frame/FramePage2",
-          "FramePage1": "web-atoms-samples/dist/samples/web/containers/frame/FramePage1",
-          "Start": "web-atoms-samples/dist/samples/web/containers/frame/Start"
         }
       },
       "dateField": {
@@ -88,6 +87,14 @@
           }
         }
       },
+      "styles": {
+        "listBox": {
+          "ListBox": "web-atoms-samples/dist/samples/web/styles/list-box/ListBox"
+        },
+        "panel": {
+          "Panel": "web-atoms-samples/dist/samples/web/styles/panel/Panel"
+        }
+      },
       "validations": {
         "custom": {
           "CustomValidation": "web-atoms-samples/dist/samples/web/validations/custom/CustomValidation"
@@ -98,14 +105,6 @@
         },
         "simple": {
           "SimpleValidation": "web-atoms-samples/dist/samples/web/validations/simple/SimpleValidation"
-        }
-      },
-      "styles": {
-        "listBox": {
-          "ListBox": "web-atoms-samples/dist/samples/web/styles/list-box/ListBox"
-        },
-        "panel": {
-          "Panel": "web-atoms-samples/dist/samples/web/styles/panel/Panel"
         }
       }
     }
@@ -136,11 +135,6 @@
       },
       "responsive": {
         "Responsive": "web-atoms-samples/dist/{platform}/views/samples/responsive/Responsive"
-      },
-      "styles": {
-        "FontAwesome": "web-atoms-samples/dist/{platform}/views/samples/styles/FontAwesome",
-        "ListBox": "web-atoms-samples/dist/{platform}/views/samples/styles/ListBox",
-        "Panel": "web-atoms-samples/dist/{platform}/views/samples/styles/Panel"
       },
       "virtualListBox": {
         "VirtualListBoxSample": "web-atoms-samples/dist/{platform}/views/samples/virtual-list-box/VirtualListBoxSample"

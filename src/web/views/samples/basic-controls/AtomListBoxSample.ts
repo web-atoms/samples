@@ -39,7 +39,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			e1.setPrimitiveValue(e1.element, "style", " color:#7e7e7e;\r\n                width: 610px;\r\n                margin-top: 10px;\r\n                border: 1px solid #ccc; " );
 			
-			e1.itemTemplate = AtomListBoxSample_itemTemplate_1_19Creator(this);
+			e1.itemTemplate = AtomListBoxSample_itemTemplate_1_11Creator(this);
 			
 			this.append(e1);
 			
@@ -53,8 +53,8 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 		}
 	}
 	
-	function AtomListBoxSample_itemTemplate_1_19Creator(__creator) {
-		return class AtomListBoxSample_itemTemplate_1_19 extends AtomControl {
+	function AtomListBoxSample_itemTemplate_1_11Creator(__creator) {
+		return class AtomListBoxSample_itemTemplate_1_11 extends AtomControl {
 			
 			constructor(app: any, e?: any) {
 				super(app, e || document.createElement("div"));

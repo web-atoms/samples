@@ -23,14 +23,14 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			this.setPrimitiveValue(this.element, "height", "350px" );
 			
-			this.windowTemplate = AtomWindowSample_windowTemplate_1_11Creator(this);
+			this.windowTemplate = AtomWindowSample_windowTemplate_1_12Creator(this);
 			
-			this.commandTemplate = AtomWindowSample_commandTemplate_2_12Creator(this);
+			this.commandTemplate = AtomWindowSample_commandTemplate_2_13Creator(this);
 		}
 	}
 	
-	function AtomWindowSample_windowTemplate_1_11Creator(__creator) {
-		return class AtomWindowSample_windowTemplate_1_11 extends AtomControl {
+	function AtomWindowSample_windowTemplate_1_12Creator(__creator) {
+		return class AtomWindowSample_windowTemplate_1_12 extends AtomControl {
 			
 			constructor(app: any, e?: any) {
 				super(app, e || document.createElement("div"));
@@ -176,8 +176,8 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 		}
 	}
 	
-	function AtomWindowSample_commandTemplate_2_12Creator(__creator) {
-		return class AtomWindowSample_commandTemplate_2_12 extends AtomControl {
+	function AtomWindowSample_commandTemplate_2_13Creator(__creator) {
+		return class AtomWindowSample_commandTemplate_2_13 extends AtomControl {
 			
 			constructor(app: any, e?: any) {
 				super(app, e || document.createElement("div"));
