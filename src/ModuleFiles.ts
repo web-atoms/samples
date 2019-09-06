@@ -55,6 +55,10 @@
         },
         "viewStack": {
           "ViewStack": "web-atoms-samples/dist/samples/web/containers/view-stack/ViewStack"
+        },
+        "gridView": {
+          "AtomGridViewSample": "web-atoms-samples/dist/samples/web/containers/grid-view/AtomGridViewSample",
+          "GridViewSample": "web-atoms-samples/dist/samples/web/containers/grid-view/GridViewSample"
         }
       },
       "dateField": {
@@ -78,6 +82,27 @@
         },
         "simple": {
           "SimpleForm": "web-atoms-samples/dist/samples/web/form/simple/SimpleForm"
+        }
+      },
+      "list": {
+        "virtualListBox": {
+          "VirtualListBoxSample": "web-atoms-samples/dist/samples/web/list/virtual-list-box/VirtualListBoxSample"
+        },
+        "itemsControl": {
+          "AtomItemsControlSample": "web-atoms-samples/dist/samples/web/list/items-control/AtomItemsControlSample",
+          "ItemsControlSample": "web-atoms-samples/dist/samples/web/list/items-control/ItemsControlSample"
+        },
+        "comboBox": {
+          "AtomComboBoxSample": "web-atoms-samples/dist/samples/web/list/combo-box/AtomComboBoxSample",
+          "ComboBoxSample": "web-atoms-samples/dist/samples/web/list/combo-box/ComboBoxSample"
+        },
+        "listBox": {
+          "AtomListBoxSample": "web-atoms-samples/dist/samples/web/list/list-box/AtomListBoxSample",
+          "ListBoxSample": "web-atoms-samples/dist/samples/web/list/list-box/ListBoxSample"
+        },
+        "toggleButtonBar": {
+          "AtomToggleButtonBarSample": "web-atoms-samples/dist/samples/web/list/toggle-button-bar/AtomToggleButtonBarSample",
+          "ToggleButtonBarSample": "web-atoms-samples/dist/samples/web/list/toggle-button-bar/ToggleButtonBarSample"
         }
       },
       "services": {
@@ -105,6 +130,13 @@
         },
         "simple": {
           "SimpleValidation": "web-atoms-samples/dist/samples/web/validations/simple/SimpleValidation"
+        }
+      },
+      "window": {
+        "simple": {
+          "AtomWindowSample": "web-atoms-samples/dist/samples/web/window/simple/AtomWindowSample",
+          "WindowSample": "web-atoms-samples/dist/samples/web/window/simple/WindowSample",
+          "WindowDemo": "web-atoms-samples/dist/samples/web/window/simple/WindowDemo"
         }
       }
     }
@@ -135,9 +167,6 @@
       },
       "responsive": {
         "Responsive": "web-atoms-samples/dist/{platform}/views/samples/responsive/Responsive"
-      },
-      "virtualListBox": {
-        "VirtualListBoxSample": "web-atoms-samples/dist/{platform}/views/samples/virtual-list-box/VirtualListBoxSample"
       },
       "bindings": {
         "Binding": "web-atoms-samples/dist/{platform}/views/samples/bindings/Binding"

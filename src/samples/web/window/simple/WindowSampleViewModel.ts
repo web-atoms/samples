@@ -4,9 +4,9 @@ import { Inject } from "web-atoms-core/dist/di/Inject";
 import { NavigationService } from "web-atoms-core/dist/services/NavigationService";
 import { BindableReceive, Validate } from "web-atoms-core/dist/view-model/AtomViewModel";
 import { AtomWindowViewModel } from "web-atoms-core/dist/view-model/AtomWindowViewModel";
-import IMovie from "../../models/IMovie";
+import IMovie from "../../../../models/IMovie";
 
-export class AtomWindowSampleViewModel extends AtomWindowViewModel {
+export class WindowSampleViewModel extends AtomWindowViewModel {
     @BindableProperty
     public movie: IMovie = {
         name: "",
@@ -24,11 +24,37 @@ export class AtomWindowSampleViewModel extends AtomWindowViewModel {
         return this.movie.genre ? "" : "*Type cannot be empty";
     }
 
-    constructor(
-        @Inject app: App,
-        @Inject private windowService: NavigationService) {
-        super(app);
+    public get types() {
+        return [{
+            label: "Select Type",
+            value: ""
+        }, {
+            label: "Action",
+            value: "Action"
+        },
+        {
+            label: "Animated",
+            value: "Animated"
+        },
+        {
+            label: "Sci-Fi",
+            value: "Sci-Fi"
+        },
+        {
+            label: "Thriller",
+            value: "Thriller"
+        },
+        {
+            label: "Comedy",
+            value: "Comedy"
+        },
+        {
+            label: "Horror",
+            value: "Horror"
+        }];
     }
+
+    @Inject private windowService: NavigationService;
 
     public async save(): Promise<any> {
         if (!this.isValid) {

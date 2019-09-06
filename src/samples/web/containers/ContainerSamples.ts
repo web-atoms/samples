@@ -11,6 +11,7 @@ import ViewPager from "./view-pager/ViewPager";
 import { ViewPagerViewModel } from "./view-pager/ViewPagerViewModel";
 import ViewStack from "./view-stack/ViewStack";
 import { ViewStackViewModel } from "./view-stack/ViewStackViewModel";
+import GridViewSample from "./grid-view/GridViewSample";
 
 declare var require: any;
 
@@ -26,6 +27,13 @@ export default function addContainerSamples(ms: MenuService) {
                 asView(Start),
                 asView(FramePage1),
                 asView(FramePage2)
+            ]
+        },
+        {
+            label: "Grid View",
+            demo: GridViewSample,
+            files: [
+                asView(GridViewSample)
             ]
         },
         {

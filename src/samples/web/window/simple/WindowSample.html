@@ -1,8 +1,8 @@
 <script>
-        import { AtomWindowSampleViewModel } from "~/src/view-models/basic-controls/AtomWindowSampleViewModel";
+        import { WindowSampleViewModel } from "./WindowSampleViewModel";
 </script>
 <AtomWindow 
-    view-model="{ this.resolve(AtomWindowSampleViewModel) }"
+    view-model="{ this.resolve(WindowSampleViewModel) }"
     title="Add New Movie"
     width="500px"
     height="350px">
@@ -35,33 +35,7 @@
                             margin: 10px 0px;"
                             label-path="label"
                             value-path="value"
-                            items="[[{
-                                label: 'Select Type',
-                                value: ''
-                            },{
-                                label: 'Action',
-                                value: 'Action'
-                            },
-                            {
-                                label: 'Animated',
-                                value: 'Animated'
-                            },
-                            {
-                                label: 'Sci-Fi',
-                                value: 'Sci-Fi'
-                            },
-                            {
-                                label: 'Thriller',
-                                value: 'Thriller'
-                            },
-                            {
-                                label: 'Comedy',
-                                value: 'Comedy'
-                            },
-                            {
-                                label: 'Horror',
-                                value: 'Horror'
-                            }]]"
+                            items="{ $viewModel.types }"
                             value="^[$viewModel.movie.genre]"
                             style="width:200px;height:33px;margin-bottom:10px;">
                         </AtomComboBox.select>

@@ -1,5 +1,9 @@
 import { AtomViewModel } from "web-atoms-core/dist/view-model/AtomViewModel";
-import { IConfigItem } from "../../../../../models/IConfigItem";
+
+export interface IConfigItem {
+    label: string;
+    value: string;
+}
 
 export default class VirtualListViewModel extends AtomViewModel {
 

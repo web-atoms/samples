@@ -1,0 +1,8 @@
+<script>
+    import { NavigationService } from "web-atoms-core/dist/services/NavigationService";
+    import WindowSample from "./WindowSample";
+</script>
+<div
+    @inject=" navigationService: NavigationService">
+    <button event-click="{ () => this.navigationService.openPage(WindowSample) }" >Open Window</button>
+</div>

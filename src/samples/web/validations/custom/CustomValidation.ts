@@ -44,7 +44,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			e4.runAfterInit( () => e4.setLocalValue(e4.element, "items",  (((e4.viewModel) ? e4.viewModel.model : undefined) ? e4.viewModel.model.emails : undefined) ) );
 			
-			e4.itemTemplate = CustomValidation_itemTemplate_1_6Creator(this);
+			e4.itemTemplate = CustomValidation_itemTemplate_1_7Creator(this);
 			
 			this.append(e4);
 			
@@ -75,8 +75,8 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 		}
 	}
 	
-	function CustomValidation_itemTemplate_1_6Creator(__creator) {
-		return class CustomValidation_itemTemplate_1_6 extends AtomControl {
+	function CustomValidation_itemTemplate_1_7Creator(__creator) {
+		return class CustomValidation_itemTemplate_1_7 extends AtomControl {
 			
 			constructor(app: any, e?: any) {
 				super(app, e || document.createElement("div"));

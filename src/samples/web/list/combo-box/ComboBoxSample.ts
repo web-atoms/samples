@@ -3,10 +3,10 @@ import {BindableProperty} from "web-atoms-core/dist/core/BindableProperty";
 import {AtomComboBox} from "web-atoms-core/dist/web/controls/AtomComboBox";
 import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 	
-	    import AtomComboBoxSampleViewModel from "../../../../view-models/basic-controls/AtomComboBoxSampleViewModel";
+	    import ComboBoxViewModel from "./ComboBoxViewModel";
 	
 	
-	export default class AtomComboBoxSample extends AtomControl {
+	export default class ComboBoxSample extends AtomControl {
 		
 		constructor(app: any, e?: any) {
 			super(app, e || document.createElement("div"));
@@ -18,7 +18,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			const __creator = this;
 			
-			this.viewModel =  this.resolve(AtomComboBoxSampleViewModel) ;
+			this.viewModel =  this.resolve(ComboBoxViewModel) ;
 			
 			this.setPrimitiveValue(this.element, "style", "padding: 10px;" );
 			

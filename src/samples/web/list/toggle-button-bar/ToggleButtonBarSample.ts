@@ -3,11 +3,11 @@ import {BindableProperty} from "web-atoms-core/dist/core/BindableProperty";
 import {AtomToggleButtonBar} from "web-atoms-core/dist/web/controls/AtomToggleButtonBar";
 import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 	
-	    import AtomToggleButtonBarSampleViewModel from "../../../../view-models/basic-controls/AtomToggleButtonBarSampleViewModel";
-	    import ToggleBarSampleStyle from "../../../styles/ToggleBarSampleStyle";
+	    import ViewModel from "./ViewModel";
+	    import ToggleBarSampleStyle from "./ToggleBarSampleStyle";
 	
 	
-	export default class AtomToggleButtonBarSample extends AtomControl {
+	export default class ToggleButtonBarSample extends AtomControl {
 		
 		constructor(app: any, e?: any) {
 			super(app, e || document.createElement("div"));
@@ -19,7 +19,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			const __creator = this;
 			
-			this.viewModel =  this.resolve(AtomToggleButtonBarSampleViewModel) ;
+			this.viewModel =  this.resolve(ViewModel) ;
 			
 			this.setPrimitiveValue(this.element, "style", "padding: 10px;" );
 			
@@ -43,7 +43,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			this.append(e2);
 			
-			this.setPrimitiveValue(e2, "style", "font-size: 15px;\r\n                 margin-top: 20px;\r\n                 font-weight: 600" );
+			this.setPrimitiveValue(e2, "style", "font-size: 15px;\n                 margin-top: 20px;\n                 font-weight: 600" );
 			
 			this.bind(e2, "text",  [["viewModel","gender"]], false , (v1) => 'Selected Movie: ' + (v1) );
 		}

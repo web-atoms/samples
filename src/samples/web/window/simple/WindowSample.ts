@@ -4,10 +4,10 @@ import {AtomWindow} from "web-atoms-core/dist/web/controls/AtomWindow";
 import {AtomComboBox} from "web-atoms-core/dist/web/controls/AtomComboBox";
 import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 	
-	        import { AtomWindowSampleViewModel } from "../../../../view-models/basic-controls/AtomWindowSampleViewModel";
+	        import { WindowSampleViewModel } from "./WindowSampleViewModel";
 	
 	
-	export default class AtomWindowSample extends AtomWindow {
+	export default class WindowSample extends AtomWindow {
 		
 		public create(): void {
 			
@@ -15,7 +15,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			const __creator = this;
 			
-			this.viewModel =  this.resolve(AtomWindowSampleViewModel) ;
+			this.viewModel =  this.resolve(WindowSampleViewModel) ;
 			
 			this.setPrimitiveValue(this.element, "title", "Add New Movie" );
 			
@@ -23,14 +23,14 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			this.setPrimitiveValue(this.element, "height", "350px" );
 			
-			this.windowTemplate = AtomWindowSample_windowTemplate_1_12Creator(this);
+			this.windowTemplate = WindowSample_windowTemplate_1_35Creator(this);
 			
-			this.commandTemplate = AtomWindowSample_commandTemplate_2_13Creator(this);
+			this.commandTemplate = WindowSample_commandTemplate_2_36Creator(this);
 		}
 	}
 	
-	function AtomWindowSample_windowTemplate_1_12Creator(__creator) {
-		return class AtomWindowSample_windowTemplate_1_12 extends AtomControl {
+	function WindowSample_windowTemplate_1_35Creator(__creator) {
+		return class WindowSample_windowTemplate_1_35 extends AtomControl {
 			
 			constructor(app: any, e?: any) {
 				super(app, e || document.createElement("div"));
@@ -52,7 +52,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 				
 				e2.appendChild(e3);
 				
-				const e4 = document.createTextNode("\r\n                    Name:\r\n                ");
+				const e4 = document.createTextNode("\n                    Name:\n                ");
 				e3.appendChild(e4);
 				
 				const e5 = document.createElement("td");
@@ -63,7 +63,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 				
 				e5.appendChild(e6);
 				
-				this.setPrimitiveValue(e6, "style", "height: 30px;\r\n                        padding-left: 4px;\r\n                        width: 200px;" );
+				this.setPrimitiveValue(e6, "style", "height: 30px;\n                        padding-left: 4px;\n                        width: 200px;" );
 				
 				this.setPrimitiveValue(e6, "type", "text" );
 				
@@ -89,7 +89,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 				
 				e8.appendChild(e9);
 				
-				const e10 = document.createTextNode("\r\n                    Type:\r\n                ");
+				const e10 = document.createTextNode("\n                    Type:\n                ");
 				e9.appendChild(e10);
 				
 				const e11 = document.createElement("td");
@@ -98,39 +98,13 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 				
 				const e12 = new AtomComboBox(this.app, document.createElement("select"));
 				
-				e12.setPrimitiveValue(e12.element, "style", "height: 30px;\r\n                            margin: 10px 0px;" );
+				e12.setPrimitiveValue(e12.element, "style", "height: 30px;\n                            margin: 10px 0px;" );
 				
 				e12.setPrimitiveValue(e12.element, "labelPath", "label" );
 				
 				e12.setPrimitiveValue(e12.element, "valuePath", "value" );
 				
-				e12.bind(e12.element, "items",  [], false , () => [{
-				                                label: 'Select Type',
-				                                value: ''
-				                            },{
-				                                label: 'Action',
-				                                value: 'Action'
-				                            },
-				                            {
-				                                label: 'Animated',
-				                                value: 'Animated'
-				                            },
-				                            {
-				                                label: 'Sci-Fi',
-				                                value: 'Sci-Fi'
-				                            },
-				                            {
-				                                label: 'Thriller',
-				                                value: 'Thriller'
-				                            },
-				                            {
-				                                label: 'Comedy',
-				                                value: 'Comedy'
-				                            },
-				                            {
-				                                label: 'Horror',
-				                                value: 'Horror'
-				                            }] );
+				e12.runAfterInit( () => e12.setLocalValue(e12.element, "items",  ((e12.viewModel) ? e12.viewModel.types : undefined) ) );
 				
 				e12.bind(e12.element, "value",  [["viewModel","movie","genre"]], ["change", "keyup", "keydown", "blur"]  );
 				
@@ -152,7 +126,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 				
 				e14.appendChild(e15);
 				
-				const e16 = document.createTextNode("\r\n                    Description:\r\n                ");
+				const e16 = document.createTextNode("\n                    Description:\n                ");
 				e15.appendChild(e16);
 				
 				const e17 = document.createElement("td");
@@ -176,8 +150,8 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 		}
 	}
 	
-	function AtomWindowSample_commandTemplate_2_13Creator(__creator) {
-		return class AtomWindowSample_commandTemplate_2_13 extends AtomControl {
+	function WindowSample_commandTemplate_2_36Creator(__creator) {
+		return class WindowSample_commandTemplate_2_36 extends AtomControl {
 			
 			constructor(app: any, e?: any) {
 				super(app, e || document.createElement("div"));

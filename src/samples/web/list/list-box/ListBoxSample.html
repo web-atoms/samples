@@ -1,10 +1,11 @@
 <script>
-    import AtomListBoxSampleViewModel from "~/src/view-models/basic-controls/AtomListBoxSampleViewModel";    
-    import ListBoxStyle from "../../../../samples/web/styles/list-box/ListBoxStyle";
+    import ListBoxViewModel from "./ListBoxViewModel";    
+    import ListBoxSampleStyle from "./ListBoxSampleStyle";
 
-import { ListBoxSampleStyle } from "../../../styles/ListBoxSampleStyle";
+    import ListBoxStyle from "./ListBoxStyle";
+
 </script>
-<div view-model="{ this.resolve(AtomListBoxSampleViewModel) }" 
+<div view-model="{ this.resolve(ListBoxViewModel) }" 
     default-style="{ ListBoxSampleStyle }"
     style="padding: 10px;">
     <AtomListBox.div 

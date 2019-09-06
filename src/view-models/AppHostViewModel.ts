@@ -8,9 +8,11 @@ import { addCalendarSamples } from "../samples/web/calendar/CalendarSamples";
 import addContainerSamples from "../samples/web/containers/ContainerSamples";
 import { addDateFields } from "../samples/web/date-field/DateFieldSamples";
 import { addFormSamples } from "../samples/web/form/FormSamples";
+import addListSamples from "../samples/web/list/ListSamples";
 import addHttpServiceSamples from "../samples/web/services/http/HttpServices";
 import addStyleSamples from "../samples/web/styles/StyleSamples";
 import { addValidationSamples } from "../samples/web/validations/ValidationSamples";
+import addWindowSamples from "../samples/web/window/WindowSamples";
 import MenuService from "../services/MenuService";
 
 declare var UMD: any;
@@ -85,17 +87,21 @@ export default class AppHostViewModel extends AtomViewModel {
 
         addHttpServiceSamples(ms);
 
+        addContainerSamples(ms);
+
+        addListSamples(ms);
+
+        addFormSamples(ms);
+
         addCalendarSamples(ms);
 
         addDateFields(ms);
-
-        addContainerSamples(ms);
 
         // const containers = ms.addGroup("Containers");
         // containers.addTabLink("View Pager", ModuleFiles.views.samples.viewPager.ViewPager);
         // containers.addTabLink("View Stack", ModuleFiles.views.samples.viewStack.ViewStack);
 
-        addFormSamples(ms);
+        addWindowSamples(ms);
 
         addStyleSamples(ms);
 
@@ -104,14 +110,14 @@ export default class AppHostViewModel extends AtomViewModel {
         // styles.addTabLink("List Box", ModuleFiles.views.samples.styles.ListBox);
         // styles.addTabLink("External", ModuleFiles.views.samples.styles.FontAwesome);
 
-        const controls = ms.addGroup("Controls");
-        controls.addTabLink("Combo Box", ModuleFiles.views.samples.basicControls.AtomComboBoxSample);
-        controls.addTabLink("Items Control", ModuleFiles.views.samples.basicControls.AtomItemsControlSample);
-        controls.addTabLink("List Box",  ModuleFiles.views.samples.basicControls.AtomListBoxSample);
-        controls.addTabLink("Toggle Button Bar",  ModuleFiles.views.samples.basicControls.AtomToggleButtonBarSample);
-        controls.addTabLink("Grid View",  ModuleFiles.views.samples.basicControls.AtomGridViewSample);
-        controls.addTabLink("Window",  ModuleFiles.views.samples.basicControls.ButtonSample);
-        controls.addTabLink("Frame",  ModuleFiles.views.samples.frame.FrameSample);
+        // const controls = ms.addGroup("Controls");
+        // controls.addTabLink("Combo Box", ModuleFiles.views.samples.basicControls.AtomComboBoxSample);
+        // controls.addTabLink("Items Control", ModuleFiles.views.samples.basicControls.AtomItemsControlSample);
+        // controls.addTabLink("List Box",  ModuleFiles.views.samples.basicControls.AtomListBoxSample);
+        // controls.addTabLink("Toggle Button Bar",  ModuleFiles.views.samples.basicControls.AtomToggleButtonBarSample);
+        // controls.addTabLink("Grid View",  ModuleFiles.views.samples.basicControls.AtomGridViewSample);
+        // controls.addTabLink("Window",  ModuleFiles.views.samples.basicControls.ButtonSample);
+        // controls.addTabLink("Frame",  ModuleFiles.views.samples.frame.FrameSample);
 
         this.app.callLater(async () => {
             await this.navigationService.openPage(`tab://app/${ModuleFiles.views.MDHost}`, {

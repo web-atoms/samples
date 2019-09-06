@@ -1,7 +1,16 @@
 import DISingleton from "web-atoms-core/dist/di/DISingleton";
 import { BaseService, Get, Path, Query } from "web-atoms-core/dist/services/http/RestService";
-import IMovie from "../../models/IMovie";
-import IPagedList from "../../models/IPagedList";
+
+export interface IPagedList<T> {
+    count: number;
+    value: T[];
+}
+
+export interface IMovie {
+    name: string;
+    genre: string;
+    description?: string;
+}
 
 /**
  * It is easy to mock any web service by specifying mock parameter while

@@ -1,7 +1,7 @@
 import { AtomListBoxStyle } from "web-atoms-core/dist/web/styles/AtomListBoxStyle";
 import { IStyleDeclaration } from "web-atoms-core/dist/web/styles/IStyleDeclaration";
 
-export class ListBoxSampleStyle extends AtomListBoxStyle {
+export default class ListBoxSampleStyle extends AtomListBoxStyle {
 
     public get labelText(): IStyleDeclaration {
         return {
