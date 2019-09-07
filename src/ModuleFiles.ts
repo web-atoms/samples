@@ -48,6 +48,9 @@
           "FrameSample": "web-atoms-samples/dist/samples/web/containers/frame/FrameSample",
           "Start": "web-atoms-samples/dist/samples/web/containers/frame/Start"
         },
+        "gridView": {
+          "GridViewSample": "web-atoms-samples/dist/samples/web/containers/grid-view/GridViewSample"
+        },
         "viewPager": {
           "Page1": "web-atoms-samples/dist/samples/web/containers/view-pager/Page1",
           "Page2": "web-atoms-samples/dist/samples/web/containers/view-pager/Page2",
@@ -55,10 +58,6 @@
         },
         "viewStack": {
           "ViewStack": "web-atoms-samples/dist/samples/web/containers/view-stack/ViewStack"
-        },
-        "gridView": {
-          "AtomGridViewSample": "web-atoms-samples/dist/samples/web/containers/grid-view/AtomGridViewSample",
-          "GridViewSample": "web-atoms-samples/dist/samples/web/containers/grid-view/GridViewSample"
         }
       },
       "dateField": {
@@ -85,24 +84,20 @@
         }
       },
       "list": {
-        "virtualListBox": {
-          "VirtualListBoxSample": "web-atoms-samples/dist/samples/web/list/virtual-list-box/VirtualListBoxSample"
-        },
-        "itemsControl": {
-          "AtomItemsControlSample": "web-atoms-samples/dist/samples/web/list/items-control/AtomItemsControlSample",
-          "ItemsControlSample": "web-atoms-samples/dist/samples/web/list/items-control/ItemsControlSample"
-        },
         "comboBox": {
-          "AtomComboBoxSample": "web-atoms-samples/dist/samples/web/list/combo-box/AtomComboBoxSample",
           "ComboBoxSample": "web-atoms-samples/dist/samples/web/list/combo-box/ComboBoxSample"
         },
+        "itemsControl": {
+          "ItemsControlSample": "web-atoms-samples/dist/samples/web/list/items-control/ItemsControlSample"
+        },
         "listBox": {
-          "AtomListBoxSample": "web-atoms-samples/dist/samples/web/list/list-box/AtomListBoxSample",
           "ListBoxSample": "web-atoms-samples/dist/samples/web/list/list-box/ListBoxSample"
         },
         "toggleButtonBar": {
-          "AtomToggleButtonBarSample": "web-atoms-samples/dist/samples/web/list/toggle-button-bar/AtomToggleButtonBarSample",
           "ToggleButtonBarSample": "web-atoms-samples/dist/samples/web/list/toggle-button-bar/ToggleButtonBarSample"
+        },
+        "virtualListBox": {
+          "VirtualListBoxSample": "web-atoms-samples/dist/samples/web/list/virtual-list-box/VirtualListBoxSample"
         }
       },
       "services": {
@@ -133,10 +128,15 @@
         }
       },
       "window": {
+        "inlinePageLink": {
+          "InlinePageLinkDemo": "web-atoms-samples/dist/samples/web/window/inline-page-link/InlinePageLinkDemo"
+        },
+        "pageLink": {
+          "PageLinkDemo": "web-atoms-samples/dist/samples/web/window/page-link/PageLinkDemo"
+        },
         "simple": {
-          "AtomWindowSample": "web-atoms-samples/dist/samples/web/window/simple/AtomWindowSample",
-          "WindowSample": "web-atoms-samples/dist/samples/web/window/simple/WindowSample",
-          "WindowDemo": "web-atoms-samples/dist/samples/web/window/simple/WindowDemo"
+          "WindowDemo": "web-atoms-samples/dist/samples/web/window/simple/WindowDemo",
+          "WindowSample": "web-atoms-samples/dist/samples/web/window/simple/WindowSample"
         }
       }
     }
@@ -146,15 +146,6 @@
     "MDHost": "web-atoms-samples/dist/{platform}/views/MDHost",
     "MenuList": "web-atoms-samples/dist/{platform}/views/MenuList",
     "samples": {
-      "basicControls": {
-        "AtomComboBoxSample": "web-atoms-samples/dist/{platform}/views/samples/basic-controls/AtomComboBoxSample",
-        "AtomGridViewSample": "web-atoms-samples/dist/{platform}/views/samples/basic-controls/AtomGridViewSample",
-        "AtomItemsControlSample": "web-atoms-samples/dist/{platform}/views/samples/basic-controls/AtomItemsControlSample",
-        "AtomListBoxSample": "web-atoms-samples/dist/{platform}/views/samples/basic-controls/AtomListBoxSample",
-        "AtomToggleButtonBarSample": "web-atoms-samples/dist/{platform}/views/samples/basic-controls/AtomToggleButtonBarSample",
-        "AtomWindowSample": "web-atoms-samples/dist/{platform}/views/samples/basic-controls/AtomWindowSample",
-        "ButtonSample": "web-atoms-samples/dist/{platform}/views/samples/basic-controls/ButtonSample"
-      },
       "conditional": {
         "ConditionalView": "web-atoms-samples/dist/{platform}/views/samples/conditional/ConditionalView",
         "DesktopView": "web-atoms-samples/dist/{platform}/views/samples/conditional/DesktopView",

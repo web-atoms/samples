@@ -1,0 +1,20 @@
+<script>
+    import PageLinkViewModel from "./PageLinkViewModel";
+    import WindowSample from "../simple/WindowSample";
+</script>
+<div view-model="{ this.resolve(PageLinkViewModel) }" >
+
+    <!-- Clicking this button will open the window -->
+    <!-- And result will be sent in the event -->
+
+    <AtomPageLink.button
+        page="{ WindowSample }"
+        parameters="{ {  } }"
+        event-result="{ (e) => this.viewModel.onResult(e.detail) }"
+        event-error="{ (e) => this.viewModel.onError(e.detail) }"
+        >Open</AtomPageLink.button>
+
+    <div text="[ $viewModel.result ]"></div>
+
+    <div text="[ $viewModel.error ]" style="color: red"></div>
+</div>

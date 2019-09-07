@@ -40,7 +40,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			e1.setPrimitiveValue(e1.element, "style", " color:#7e7e7e;\n                width: 610px;\n                margin-top: 10px;\n                border: 1px solid #ccc; " );
 			
-			e1.itemTemplate = ListBoxSample_itemTemplate_1_24Creator(this);
+			e1.itemTemplate = ListBoxSample_itemTemplate_1_5Creator(this);
 			
 			this.append(e1);
 			
@@ -54,8 +54,8 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 		}
 	}
 	
-	function ListBoxSample_itemTemplate_1_24Creator(__creator) {
-		return class ListBoxSample_itemTemplate_1_24 extends AtomControl {
+	function ListBoxSample_itemTemplate_1_5Creator(__creator) {
+		return class ListBoxSample_itemTemplate_1_5 extends AtomControl {
 			
 			constructor(app: any, e?: any) {
 				super(app, e || document.createElement("div"));
