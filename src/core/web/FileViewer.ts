@@ -79,7 +79,7 @@ import {AtomGridView} from "web-atoms-core/dist/web/controls/AtomGridView";
 			
 			this.defaultControlStyle =  FileViewerStyle ;
 			
-			this.setPrimitiveValue(this.element, "rows", "34, *" );
+			this.setPrimitiveValue(this.element, "rows", "36, *" );
 			
 			this.setPrimitiveValue(this.element, "columns", "*, 5, 50%" );
 			
@@ -88,6 +88,8 @@ import {AtomGridView} from "web-atoms-core/dist/web/controls/AtomGridView";
 			this.bind(this.element, "none",  [["this","element"],["this","demo"]], false , (v1,v2) =>  setView((v1), (v2) )  , __creator);
 			
 			const e1 = new AtomToggleButtonBar(this.app);
+			
+			e1.setPrimitiveValue(e1.element, "column", "0: 3" );
 			
 			e1.bind(e1.element, "items",  [["this","element"],["this","files"]], false , (v1,v2) =>  fromPath((v1), (v2))  , __creator);
 			
