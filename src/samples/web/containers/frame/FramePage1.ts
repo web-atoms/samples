@@ -17,7 +17,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			this.setPrimitiveValue(this.element, "style", "padding: 5px;" );
 			
-			const e1 = document.createTextNode("\n    Frame Page 1\n");
+			const e1 = document.createTextNode("\r\n    Frame Page 1\r\n");
 			this.element.appendChild(e1);
 		}
 	}

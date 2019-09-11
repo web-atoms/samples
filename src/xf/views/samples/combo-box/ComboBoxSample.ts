@@ -1,15 +1,18 @@
 	// tslint:disable
 	import { AtomXFControl } from "web-atoms-core/dist/xf/controls/AtomXFControl";
+	import { AtomBridge } from "web-atoms-core/dist/core/AtomBridge";
 	import ComboBoxSampleViewModel from "../../../../view-models/combo-box/ComboBoxSampleViewModel";
 	import AtomComboBox from "@web-atoms/xf-controls/dist/AtomComboBox";
 	export default class Root extends AtomXFControl {
 		
 		public mAtomComboBox;
+		
+		constructor(app: any, e?: any) {
+			super(app, e || AtomBridge.instance.create("Xamarin.Forms.ContentPage"));
+		}
 		protected create(): void  {
 			
 			super.create();
-			
-			this.element = this.createControl("Xamarin.Forms.ContentPage");
 			
 			const mAtomComboBox = new AtomComboBox(this.app);
 			this.mAtomComboBox = mAtomComboBox.element;
@@ -39,11 +42,13 @@
 	}
 	function Root_mAtomComboBox_Creator(__creator: any): any {
 		return class Root_mAtomComboBox extends AtomXFControl {
+			
+			constructor(app: any, e?: any) {
+				super(app, e || AtomBridge.instance.create("Xamarin.Forms.Label"));
+			}
 			protected create(): void  {
 				
 				super.create();
-				
-				this.element = this.createControl("Xamarin.Forms.Label");
 				
 				this.loadXaml(`	<Label xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:atom="clr-namespace:WebAtoms;assembly=WebAtoms" x:Name="e1"/>`);
 				

@@ -1,16 +1,19 @@
 	// tslint:disable
 	import { AtomXFControl } from "web-atoms-core/dist/xf/controls/AtomXFControl";
+	import { AtomBridge } from "web-atoms-core/dist/core/AtomBridge";
 	import AppHostViewModel from "../view-models/AppHostViewModel";
 	import MenuPage from "./MenuPage";
 	import GithubIcon from "../../images/github/GitHubMark32px";
 	export default class Root extends AtomXFControl {
 		
 		public mMenuPage;
+		
+		constructor(app: any, e?: any) {
+			super(app, e || AtomBridge.instance.create("Xamarin.Forms.MasterDetailPage"));
+		}
 		protected create(): void  {
 			
 			super.create();
-			
-			this.element = this.createControl("Xamarin.Forms.MasterDetailPage");
 			
 			const mMenuPage = new MenuPage(this.app);
 			this.mMenuPage = mMenuPage.element;

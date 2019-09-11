@@ -1,11 +1,14 @@
 	// tslint:disable
 	import { AtomXFControl } from "web-atoms-core/dist/xf/controls/AtomXFControl";
+	import { AtomBridge } from "web-atoms-core/dist/core/AtomBridge";
 	export default class Root extends AtomXFControl {
+		
+		constructor(app: any, e?: any) {
+			super(app, e || AtomBridge.instance.create("Xamarin.Forms.ContentPage"));
+		}
 		protected create(): void  {
 			
 			super.create();
-			
-			this.element = this.createControl("Xamarin.Forms.ContentPage");
 			
 			this.loadXaml(`	<ContentPage xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns="http://xamarin.com/schemas/2014/forms" Title="Test">
 				  
