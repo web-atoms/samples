@@ -1,8 +1,14 @@
+<script>
+    import FramePage2 from "./FramePage2";
+</script>
 <div style="padding: 5px;">
     Start Page.
 
     <!-- Frame's view model has parent set to Frame Host's View Model -->
 
     <button event-click="{ () => this.parent.viewModel.openPage1() }">Open Page 1</button>
-    <button event-click="{ () => this.parent.viewModel.openPage2() }">Open Page 2</button>
+    <AtomPageLink.button
+        page="{ FramePage2 }"
+        options="{ { target: 'sample' } }"
+        >Open Page 2</AtomPageLink.button>
 </div>

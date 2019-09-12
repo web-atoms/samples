@@ -36,11 +36,4 @@ export default class FrameViewModel extends AtomViewModel {
             }));
     }
 
-    public async openPage2(): Promise<void> {
-        this.app.runAsync(() =>
-            this.navigationService.openPage(FramePage2, null, {
-                // target is the name of AtomFrame
-                target: "sample"
-            }));
-    }
 }
