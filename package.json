@@ -1,6 +1,6 @@
 {
   "name": "web-atoms-samples",
-  "version": "1.0.110",
+  "version": "1.0.111",
   "description": "Samples Repository for Web Atoms Core Samples",
   "main": "index.js",
   "scripts": {
