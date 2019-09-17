@@ -15,7 +15,7 @@ jobs:
           node-version: 12
       - run: npm install
       - run: npm install typescript @web-atoms/pack
-      - run: tsc
+      - run: tsc .
       - run: node ./node_modules/@web-atoms/pack/index.js .
       - run: npm test
 
