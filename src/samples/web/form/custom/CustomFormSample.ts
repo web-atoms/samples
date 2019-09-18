@@ -6,7 +6,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 	        import AtomField from "@web-atoms/web-controls/dist/form/AtomField";
 	        import SimpleFormViewModel from "../SimpleFormViewModel";
 	        import CustomForm from "./CustomForm";
-	    
+	
 	
 	export default class CustomFormSample extends AtomControl {
 		
@@ -96,7 +96,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			e8.append(e9);
 			
-			e8.setPrimitiveValue(e9, "type", "text" );
+			e8.setPrimitiveValue(e9, "type", "password" );
 			
 			e8.bind(e9, "value",  [["viewModel","model","password"]], true  );
 			
@@ -116,7 +116,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			e10.append(e11);
 			
-			e10.setPrimitiveValue(e11, "type", "text" );
+			e10.setPrimitiveValue(e11, "type", "password" );
 			
 			e10.bind(e11, "value",  [["viewModel","model","passwordAgain"]], true  );
 			

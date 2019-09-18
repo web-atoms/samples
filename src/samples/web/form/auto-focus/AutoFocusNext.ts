@@ -109,7 +109,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			e11.append(e12);
 			
-			e11.setPrimitiveValue(e12, "type", "text" );
+			e11.setPrimitiveValue(e12, "type", "password" );
 			
 			e11.bind(e12, "value",  [["viewModel","model","password"]], true  );
 			
@@ -131,7 +131,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			e13.setPrimitiveValue(e15, "class", "submit" );
 			
-			e13.setPrimitiveValue(e15, "type", "text" );
+			e13.setPrimitiveValue(e15, "type", "password" );
 			
 			e13.bind(e15, "value",  [["viewModel","model","passwordAgain"]], true  );
 			

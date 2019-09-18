@@ -32,13 +32,13 @@
                 label="Password:"
                 required="true"
                 error="[$viewModel.errorPassword]">
-                <input type="text" value="$[viewModel.model.password]"/>
+                <input type="password" value="$[viewModel.model.password]"/>
             </AtomField>
             <AtomField
                 label="Password (Again):"
                 required="true"
                 error="[$viewModel.errorPasswordAgain]">
-                <input type="text" value="$[viewModel.model.passwordAgain]"/>
+                <input type="password" value="$[viewModel.model.passwordAgain]"/>
             </AtomField>
         </AtomForm>
         <button event-click="{ () => this.viewModel.signup() }">Signup</button>
