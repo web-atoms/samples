@@ -1,7 +1,7 @@
 // tslint:disable
 import {BindableProperty} from "web-atoms-core/dist/core/BindableProperty";
-import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 import {AtomPageLink} from "web-atoms-core/dist/web/controls/AtomPageLink";
+import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 	
 	    import FramePage2 from "./FramePage2";
 	
@@ -20,7 +20,7 @@ import {AtomPageLink} from "web-atoms-core/dist/web/controls/AtomPageLink";
 			
 			this.setPrimitiveValue(this.element, "style", "padding: 5px;" );
 			
-			const e1 = document.createTextNode("\n    Start Page.\n\n    ");
+			const e1 = document.createTextNode("\r\n    Start Page.\r\n\r\n    ");
 			this.element.appendChild(e1);
 			// e2
 			//  Frame's view model has parent set to Frame Host's View Model 

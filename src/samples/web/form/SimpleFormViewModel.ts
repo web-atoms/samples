@@ -1,6 +1,8 @@
+import Markdown from "web-atoms-core/dist/core/Markdown";
 import { Inject } from "web-atoms-core/dist/di/Inject";
 import { NavigationService } from "web-atoms-core/dist/services/NavigationService";
 import { AtomViewModel, Validate } from "web-atoms-core/dist/view-model/AtomViewModel";
+import EnforceValid from "web-atoms-core/dist/view-model/EnforceValid";
 
 export default class SimpleFormViewModel extends AtomViewModel {
 
@@ -47,11 +49,9 @@ export default class SimpleFormViewModel extends AtomViewModel {
     @Inject
     private navigationService: NavigationService;
 
+    @EnforceValid // @ReportError
     public async signup(): Promise<void> {
-        if (!this.isValid) {
-            return await this.navigationService.alert("Please complete all required fields");
-        }
-        await this.navigationService.alert("Signup success");
+        await this.navigationService.alert( Markdown.from("Signup **success**"));
     }
 
 }

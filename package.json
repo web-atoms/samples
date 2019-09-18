@@ -23,10 +23,10 @@
     "web-atoms-core"
   ],
   "dependencies": {
-    "@web-atoms/web-controls": "^1.0.86",
-    "@web-atoms/xf-controls": "^1.0.32",
+    "@web-atoms/web-controls": "^1.0.91",
+    "@web-atoms/xf-controls": "^1.0.40",
     "reflect-metadata": "^0.1.13",
-    "web-atoms-amd-loader": "^1.0.363",
-    "web-atoms-core": "^1.0.820"
+    "web-atoms-amd-loader": "^1.0.369",
+    "web-atoms-core": "^1.0.841"
   }
 }
