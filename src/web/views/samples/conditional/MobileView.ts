@@ -15,7 +15,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			const __creator = this;
 			
-			const e1 = document.createTextNode("\n    This is mobile view\n");
+			const e1 = document.createTextNode("\r\n    This is mobile view\r\n");
 			this.element.appendChild(e1);
 		}
 	}
