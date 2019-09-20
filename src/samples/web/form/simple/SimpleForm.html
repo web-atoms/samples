@@ -1,9 +1,9 @@
 <script>
     import AtomForm from "@web-atoms/web-controls/dist/form/AtomForm";
     import AtomField from "@web-atoms/web-controls/dist/form/AtomField";
-    import SimpleFormViewModel from "../SimpleFormViewModel";
+    import SimpleViewModel from "./SimpleViewModel";
 </script>
-<div view-model="{ this.resolve(SimpleFormViewModel) }">
+<div view-model="{ this.resolve(SimpleViewModel) }">
     <AtomForm>
             <AtomField
             label="First name:"
@@ -23,6 +23,16 @@
             error="[$viewModel.errorEmailAddress]"
             help-text="We will send you email to verify your account.">
             <input type="text" value="$[viewModel.model.emailAddress]"/>
+        </AtomField>
+        <AtomField label="Country:">
+            <AtomComboBox
+                items="[$viewModel.countryList]"
+                value="$[viewModel.model.country]"></AtomComboBox>
+        </AtomField>
+        <AtomField label="State:">
+            <AtomComboBox
+                items="[$viewModel.stateList]"
+                value="$[viewModel.model.state]"></AtomComboBox>
         </AtomField>
         <AtomField
             label="Password:"

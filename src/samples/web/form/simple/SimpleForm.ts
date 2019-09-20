@@ -1,10 +1,11 @@
 // tslint:disable
 import {BindableProperty} from "web-atoms-core/dist/core/BindableProperty";
+import {AtomComboBox} from "web-atoms-core/dist/web/controls/AtomComboBox";
 import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 	
 	    import AtomForm from "@web-atoms/web-controls/dist/form/AtomForm";
 	    import AtomField from "@web-atoms/web-controls/dist/form/AtomField";
-	    import SimpleFormViewModel from "../SimpleFormViewModel";
+	    import SimpleViewModel from "./SimpleViewModel";
 	
 	
 	export default class SimpleForm extends AtomControl {
@@ -19,7 +20,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			const __creator = this;
 			
-			this.viewModel =  this.resolve(SimpleFormViewModel) ;
+			this.viewModel =  this.resolve(SimpleViewModel) ;
 			
 			const e1 = new AtomForm(this.app);
 			
@@ -81,49 +82,77 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			const e8 = new AtomField(this.app);
 			
-			e8.setPrimitiveValue(e8.element, "label", "Password:" );
+			e8.setPrimitiveValue(e8.element, "label", "Country:" );
 			
-			e8.setPrimitiveValue(e8.element, "required", "true" );
+			const e9 = new AtomComboBox(this.app);
 			
-			e8.bind(e8.element, "error",  [["viewModel","errorPassword"]], false , null );
+			e9.bind(e9.element, "items",  [["viewModel","countryList"]], false , null );
 			
-			const e9 = document.createElement("input");
+			e9.bind(e9.element, "value",  [["viewModel","model","country"]], true  );
 			
 			e8.append(e9);
-			
-			e8.setPrimitiveValue(e9, "type", "password" );
-			
-			e8.bind(e9, "value",  [["viewModel","model","password"]], true  );
 			
 			e1.append(e8);
 			
 			const e10 = new AtomField(this.app);
 			
-			e10.setPrimitiveValue(e10.element, "label", "Password (Again):" );
+			e10.setPrimitiveValue(e10.element, "label", "State:" );
 			
-			e10.setPrimitiveValue(e10.element, "required", "true" );
+			const e11 = new AtomComboBox(this.app);
 			
-			e10.bind(e10.element, "error",  [["viewModel","errorPasswordAgain"]], false , null );
+			e11.bind(e11.element, "items",  [["viewModel","stateList"]], false , null );
 			
-			const e11 = document.createElement("input");
+			e11.bind(e11.element, "value",  [["viewModel","model","state"]], true  );
 			
 			e10.append(e11);
 			
-			e10.setPrimitiveValue(e11, "type", "password" );
-			
-			e10.bind(e11, "value",  [["viewModel","model","passwordAgain"]], true  );
-			
 			e1.append(e10);
+			
+			const e12 = new AtomField(this.app);
+			
+			e12.setPrimitiveValue(e12.element, "label", "Password:" );
+			
+			e12.setPrimitiveValue(e12.element, "required", "true" );
+			
+			e12.bind(e12.element, "error",  [["viewModel","errorPassword"]], false , null );
+			
+			const e13 = document.createElement("input");
+			
+			e12.append(e13);
+			
+			e12.setPrimitiveValue(e13, "type", "password" );
+			
+			e12.bind(e13, "value",  [["viewModel","model","password"]], true  );
+			
+			e1.append(e12);
+			
+			const e14 = new AtomField(this.app);
+			
+			e14.setPrimitiveValue(e14.element, "label", "Password (Again):" );
+			
+			e14.setPrimitiveValue(e14.element, "required", "true" );
+			
+			e14.bind(e14.element, "error",  [["viewModel","errorPasswordAgain"]], false , null );
+			
+			const e15 = document.createElement("input");
+			
+			e14.append(e15);
+			
+			e14.setPrimitiveValue(e15, "type", "password" );
+			
+			e14.bind(e15, "value",  [["viewModel","model","passwordAgain"]], true  );
+			
+			e1.append(e14);
 			
 			this.append(e1);
 			
-			const e12 = document.createElement("button");
+			const e16 = document.createElement("button");
 			
-			this.append(e12);
+			this.append(e16);
 			
-			this.setPrimitiveValue(e12, "eventClick",  () => this.viewModel.signup() );
+			this.setPrimitiveValue(e16, "eventClick",  () => this.viewModel.signup() );
 			
-			const e13 = document.createTextNode("Signup");
-			e12.appendChild(e13);
+			const e17 = document.createTextNode("Signup");
+			e16.appendChild(e17);
 		}
 	}

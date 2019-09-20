@@ -1,8 +1,8 @@
 import Markdown from "web-atoms-core/dist/core/Markdown";
 import { Inject } from "web-atoms-core/dist/di/Inject";
 import { NavigationService } from "web-atoms-core/dist/services/NavigationService";
+import Action from "web-atoms-core/dist/view-model/Action";
 import { AtomViewModel, Validate } from "web-atoms-core/dist/view-model/AtomViewModel";
-import EnforceValid from "web-atoms-core/dist/view-model/EnforceValid";
 
 export default class SimpleFormViewModel extends AtomViewModel {
 
@@ -49,7 +49,7 @@ export default class SimpleFormViewModel extends AtomViewModel {
     @Inject
     private navigationService: NavigationService;
 
-    @EnforceValid // @ReportError
+    @Action({ validate: true, success: null }) // @ReportError
     public async signup(): Promise<void> {
         await this.navigationService.alert( Markdown.from("Signup **success**"));
     }

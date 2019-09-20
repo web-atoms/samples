@@ -8,7 +8,10 @@ import CustomFormStyle from "./custom/CustomFormStyle";
 import CustomTemplate from "./custom/CustomTemplate";
 import SideBySideForm from "./side-by-side/SideBySideForm";
 import SideBySideFormStyle from "./side-by-side/SideBySideFormStyle";
+import MockSignupService from "./simple/MockSignupService";
+import SignupService from "./simple/SignupService";
 import SimpleForm from "./simple/SimpleForm";
+import SimpleViewModel from "./simple/SimpleViewModel";
 import SimpleFormViewModel from "./SimpleFormViewModel";
 
 declare var require: { resolve: (a) => string };
@@ -20,7 +23,9 @@ export function addFormSamples(ms: MenuService) {
             demo: SimpleForm,
             files: [
                 asView(SimpleForm),
-                asClass(SimpleFormViewModel)
+                asClass(SimpleViewModel),
+                asClass(SignupService),
+                asClass(MockSignupService)
             ]
         },
         {
