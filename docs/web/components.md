@@ -210,7 +210,7 @@ You can inject dependencies in Custom Control via `inject` property as shown bel
     import SRDate from "./strings/SRDate";
 </script>
 <div
-    inject=" srDate: SRDate ">
+    @inject =" srDate: SRDate ">
     <!-- Display Month List -->
     <AtomComboBox
         items="{ this.srDate.monthList }"

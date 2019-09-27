@@ -123,6 +123,7 @@ Lets say you have a filter option and you want to display a popup, and as you ma
 
     <AtomPopupButton>
         <div template="popupTemplate">
+            <!-- Created window/popup can access parent view model as `viewModel.parent` -->
             <input 
                 type="search"
                 value="$[viewModel.parent.search]"/>
@@ -145,14 +146,15 @@ export default class ListViewModel extends AtomViewModel {
 
     public search: string = null;
 
+    public items: ITaskItem[] = null;
+
     @Inject
     private taskService: TaskService;
 
-    @CachedWatch
-    public get items(): Promise<ITaskItem[]> {
-        return this.taskService.list(
-            this.search,
-            this.newCancelToken("items"));
+    @Load({ init: true, watch: true })
+    public async loadItems(ct: CancelToken): Promise<void> {
+        this.items = 
+            await this.taskService.list( this.search, ct);
     }
 
 }
