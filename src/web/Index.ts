@@ -51,7 +51,7 @@ import {AtomGridView} from "web-atoms-core/dist/web/controls/AtomGridView";
 			
 			this.setPrimitiveValue(e6, "href", "/samples.html" );
 			
-			this.setPrimitiveValue(e6, "target", "_tab" );
+			this.setPrimitiveValue(e6, "target", "samples" );
 			
 			const e7 = document.createElement("button");
 			
@@ -66,7 +66,7 @@ import {AtomGridView} from "web-atoms-core/dist/web/controls/AtomGridView";
 			
 			this.setPrimitiveValue(e9, "href", "/docs" );
 			
-			this.setPrimitiveValue(e9, "target", "_tab" );
+			this.setPrimitiveValue(e9, "target", "docs" );
 			
 			const e10 = document.createElement("button");
 			
@@ -80,6 +80,8 @@ import {AtomGridView} from "web-atoms-core/dist/web/controls/AtomGridView";
 			e5.appendChild(e12);
 			
 			this.setPrimitiveValue(e12, "href", "https://github.com/neurospeech/web-atoms-core" );
+			
+			this.setPrimitiveValue(e12, "target", "source" );
 			
 			const e13 = document.createElement("button");
 			
