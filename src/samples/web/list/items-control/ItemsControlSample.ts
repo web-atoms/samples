@@ -6,7 +6,10 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 	        import ItemsControlViewModel from "./ItemsControlViewModel";
 	
 	
+	declare var UMD: any;
+	const __moduleName = this.filename;
 	export default class ItemsControlSample extends AtomControl {
+		public static readonly _$_url = __moduleName ;
 		
 		constructor(app: any, e?: any) {
 			super(app, e || document.createElement("div"));

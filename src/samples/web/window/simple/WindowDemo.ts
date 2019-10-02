@@ -6,7 +6,10 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 	    import WindowSample from "./WindowSample";
 	
 	
+	declare var UMD: any;
+	const __moduleName = this.filename;
 	export default class WindowDemo extends AtomControl {
+		public static readonly _$_url = __moduleName ;
 		
 		protected navigationService:  NavigationService;
 		

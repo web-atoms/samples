@@ -3,7 +3,10 @@ import {BindableProperty} from "web-atoms-core/dist/core/BindableProperty";
 import {AtomGridView} from "web-atoms-core/dist/web/controls/AtomGridView";
 	// tslint:disable
 	
+	declare var UMD: any;
+	const __moduleName = this.filename;
 	export default class GridViewSample extends AtomGridView {
+		public static readonly _$_url = __moduleName ;
 		
 		public create(): void {
 			

@@ -9,7 +9,10 @@ import {AtomGridView} from "web-atoms-core/dist/web/controls/AtomGridView";
 	    import AppTabStyle from "../styles/AppTabStyle";
 	
 	
+	declare var UMD: any;
+	const __moduleName = this.filename;
 	export default class AppHost extends AtomGridView {
+		public static readonly _$_url = __moduleName ;
 		
 		public create(): void {
 			

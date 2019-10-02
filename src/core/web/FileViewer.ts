@@ -39,7 +39,10 @@ import {AtomGridView} from "web-atoms-core/dist/web/controls/AtomGridView";
 	
 	
 	
+	declare var UMD: any;
+	const __moduleName = this.filename;
 	export default class FileViewer extends AtomGridView {
+		public static readonly _$_url = __moduleName ;
 		
 		@BindableProperty
 		public  files:  string[]  ;

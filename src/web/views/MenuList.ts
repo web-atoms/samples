@@ -6,7 +6,10 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 	    import MenuStyle from "../styles/MenuStyle";
 	
 	
+	declare var UMD: any;
+	const __moduleName = this.filename;
 	export default class MenuList extends AtomItemsControl {
+		public static readonly _$_url = __moduleName ;
 		
 		constructor(app: any, e?: any) {
 			super(app, e || document.createElement("div"));

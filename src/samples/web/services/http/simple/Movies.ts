@@ -7,7 +7,10 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 	import MovieViewModel from "./MovieViewModel";
 	
 	
+	declare var UMD: any;
+	const __moduleName = this.filename;
 	export default class Movies extends AtomGridView {
+		public static readonly _$_url = __moduleName ;
 		
 		public create(): void {
 			

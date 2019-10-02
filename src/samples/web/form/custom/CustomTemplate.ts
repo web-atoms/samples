@@ -4,7 +4,10 @@ import {BindableProperty} from "web-atoms-core/dist/core/BindableProperty";
 	        import AtomFieldTemplate from "@web-atoms/web-controls/dist/form/AtomFieldTemplate";
 	    
 	
+	declare var UMD: any;
+	const __moduleName = this.filename;
 	export default class CustomTemplate extends AtomFieldTemplate {
+		public static readonly _$_url = __moduleName ;
 		
 		constructor(app: any, e?: any) {
 			super(app, e || document.createElement("div"));

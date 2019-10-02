@@ -7,7 +7,10 @@ import {AtomGridView} from "web-atoms-core/dist/web/controls/AtomGridView";
 	    import { ViewStackViewModel } from "./ViewStackViewModel";
 	
 	
+	declare var UMD: any;
+	const __moduleName = this.filename;
 	export default class ViewStack extends AtomGridView {
+		public static readonly _$_url = __moduleName ;
 		
 		public create(): void {
 			

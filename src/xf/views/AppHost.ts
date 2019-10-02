@@ -4,7 +4,10 @@
 	import AppHostViewModel from "../view-models/AppHostViewModel";
 	import MenuPage from "./MenuPage";
 	import GithubIcon from "../../images/github/GitHubMark32px";
+	declare var UMD: any;
+	const __moduleName = this.filename;
 	export default class Root extends AtomXFControl {
+		public static readonly _$_url = __moduleName ;
 		
 		public mMenuPage;
 		

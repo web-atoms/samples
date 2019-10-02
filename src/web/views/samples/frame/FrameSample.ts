@@ -6,7 +6,10 @@ import {AtomGridView} from "web-atoms-core/dist/web/controls/AtomGridView";
 	    import FrameViewModel from "./FrameViewModel";
 	
 	
+	declare var UMD: any;
+	const __moduleName = this.filename;
 	export default class FrameSample extends AtomGridView {
+		public static readonly _$_url = __moduleName ;
 		
 		public create(): void {
 			

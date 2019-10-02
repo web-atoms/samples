@@ -3,7 +3,10 @@
 	import { AtomBridge } from "web-atoms-core/dist/core/AtomBridge";
 	import ComboBoxSampleViewModel from "../../../../view-models/combo-box/ComboBoxSampleViewModel";
 	import AtomComboBox from "@web-atoms/xf-controls/dist/AtomComboBox";
+	declare var UMD: any;
+	const __moduleName = this.filename;
 	export default class Root extends AtomXFControl {
+		public static readonly _$_url = __moduleName ;
 		
 		public mAtomComboBox;
 		

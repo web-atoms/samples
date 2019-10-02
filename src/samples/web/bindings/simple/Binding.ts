@@ -5,7 +5,10 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 	    import BindingViewModel from "../BindingViewModel";
 	
 	
+	declare var UMD: any;
+	const __moduleName = this.filename;
 	export default class Binding extends AtomControl {
+		public static readonly _$_url = __moduleName ;
 		
 		constructor(app: any, e?: any) {
 			super(app, e || document.createElement("div"));
