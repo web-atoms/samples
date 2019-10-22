@@ -104,15 +104,20 @@ NavigationService is singleton dependency which is injected by web atoms automat
     // opens or hosts given page and returns result
     // returned by the page's view model
     public openPage<T>(
-        url: string,
-        params: { [key: string]: any }): Promise<T>;
+        url: string | IClassOf<AtomControl>,
+        params: { [key: string]: any },
+        options: {
+            target?: string,
+            clearHistory?: boolean,
+            cancelToken?: CancelToken
+        }): Promise<T>;
 
     public alert(
-        message: string,
+        message: string | FormattedString,
         title: string): Promise<void>; 
     
     // returns true if yes was selected by user
     public confirm(
-        message: string,
+        message: string | FormattedString,
         title: string): Promise<bool>;
 ```

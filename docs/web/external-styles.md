@@ -43,3 +43,5 @@ export default class FontAwesomeStyle extends AtomStyle {
 Once external style sheet is attached, you can use its classes anywhere in the page, if multiple registration are performed for same url, only first style sheet will be attached to the page, all subsequent calls will be ignored.
 
 The reason we allow declaring external style sheet in individual style of component is, we want developer to fully experience runtime styles even at design time for even single component.
+
+> This is just an example, by default FontAwesome is already included on the page when Web Atoms is initialized.

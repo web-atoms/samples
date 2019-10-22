@@ -1,6 +1,7 @@
 import { Inject } from "web-atoms-core/dist/di/Inject";
 import { NavigationService } from "web-atoms-core/dist/services/NavigationService";
 import { AtomViewModel, Validate } from "web-atoms-core/dist/view-model/AtomViewModel";
+import bindProperty from "web-atoms-core/dist/view-model/bindProperty";
 
 export interface IModel {
     name: string;
@@ -46,7 +47,7 @@ export default class CustomValidationViewModel extends AtomViewModel {
             if (!email.email) {
                 isValid = false;
                 if (email.error === undefined) {
-                    this.bind(email, "error", email, [["email"]], (v) => this.getEmailError(email));
+                    bindProperty(this, email, "error", email, [["email"]], (v) => this.getEmailError(email));
                 }
             }
         }
