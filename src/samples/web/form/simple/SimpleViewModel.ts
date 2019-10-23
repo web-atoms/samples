@@ -22,6 +22,15 @@ export default class SimpleViewModel extends AtomViewModel {
 
     public stateList: any;
 
+    /**
+     * Validate decorator will begin watching changes in property and it will
+     * return error if validation failed. First time, when the form is empty,
+     * no error will be displayed.
+     *
+     * But as soon as you hit `this.isValid` or method is decorated with `@Action({ validate: true})`
+     * the errors bound to UI element will display an error. And it will automatically remove when
+     * the property is modified.
+     */
     @Validate
     public get errorFirstName(): string {
         return this.model.firstName ? null : "First name is required";
@@ -57,13 +66,18 @@ export default class SimpleViewModel extends AtomViewModel {
     @Inject
     private signupService: SignupService;
 
+    /**
+     * This method will be executed automatically when view model is initialized.
+     */
     @Load({ init: true })
     public async loadCountries(): Promise<void> {
         this.countryList = await this.signupService.countries();
     }
 
     /**
-     * This method reloads whenever country is changed
+     * This method will be executed when view model is initialized. This method will
+     * also be executed when any property chain of `this` e.g. `this.model.country` is
+     * modified.
      */
     @Load({ init: true, watch: true, watchDelayMS: 1 })
     public async loadStates(ct: CancelToken): Promise<void> {
@@ -71,6 +85,15 @@ export default class SimpleViewModel extends AtomViewModel {
         this.model.state = this.stateList[0].value;
     }
 
+    /**
+     * Argument `validate` true will force validation error to be displayed and it will stop execution if
+     * there are any validations that have failed.
+     *
+     * Argument `success` will display an alert with message if the execution was successful.
+     *
+     * By default this method will display an alert if there was any exception while trying to execute
+     * this method.
+     */
     @Action({ validate: true, success: "Signup success"})
     public async signup(): Promise<void> {
         await this.signupService.signup(this.model);
