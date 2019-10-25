@@ -18,7 +18,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			const __creator = this;
 			
-			const e1 = document.createTextNode("\r\n    Start demo by clicking links on the left\r\n");
+			const e1 = document.createTextNode("\n    Start demo by clicking links on the left\n");
 			this.element.appendChild(e1);
 		}
 	}
