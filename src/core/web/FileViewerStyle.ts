@@ -6,7 +6,7 @@ import { IStyleDeclaration } from "web-atoms-core/dist/web/styles/IStyleDeclarat
 export default class FileViewerStyle extends AtomStyle {
 
     public init(): void {
-        this.registerExternalStyleSheet(UMD.resolvePath("web-atoms-samples/scripts/highlight/styles/vs.css"));
+        this.registerExternalStyleSheet(UMD.resolvePath("@web-atoms/samples/scripts/highlight/styles/vs.css"));
     }
 
     public get root(): IStyleDeclaration {

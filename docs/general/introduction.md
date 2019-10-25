@@ -42,7 +42,7 @@ All web atoms modules are written (transpiled) as UMD module, suitable for testi
             // path (from cdn)
             UMD.map("reflect-metadata", "./node_modules/reflect-metadata/Reflect.js");
             UMD.map("web-atoms-core", "./node_modules/web-atoms-core");
-            UMD.map("web-atoms-samples", "./");
+            UMD.map("@web-atoms/samples", "./");
 
             // set language
             UMD.lang = "en-US";
@@ -52,7 +52,7 @@ All web atoms modules are written (transpiled) as UMD module, suitable for testi
             // package to url. And it will create an instance of
             // App class and it will host the view `AppHost` in the
             // body of this document
-            UMD.loadView("web-atoms-samples/dist/web/views/AppHost", true);
+            UMD.loadView("@web-atoms/samples/dist/web/views/AppHost", true);
         </script>
     </body>
 </html>

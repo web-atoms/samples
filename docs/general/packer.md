@@ -41,13 +41,13 @@ Please note, you must add generated JavaScript file path in pack config.
         document.body.appendChild(script);
     }) (
         /** Absolute or Page relative url to packed JavaScript **/
-        "https://cdn.jsdelivr.net/npm/web-atoms-samples@1.0.83/dist/web/Index.pack.min.js",
+        "https://cdn.jsdelivr.net/npm/@web-atoms/samples@1.0.129/dist/web/Index.pack.min.js",
         function () {
             /** Setup name of Root Package with a URL to folder that contains node_modules **/
-            UMD.setupRoot("web-atoms-samples", "https://cdn.jsdelivr.net/npm/web-atoms-samples@1.0.83");
+            UMD.setupRoot("@web-atoms/samples", "https://cdn.jsdelivr.net/npm/@web-atoms/samples@1.0.129");
             UMD.lang = "en-US";
             /** Load absolute module path, it must start with package name **/
-            UMD.loadView("web-atoms-samples/dist/web/Index", /* designMode */ 0);
+            UMD.loadView("@web-atoms/samples/dist/web/Index", /* designMode */ 0);
         });
 </script>
 ```

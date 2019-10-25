@@ -131,7 +131,7 @@ import {AtomGridView} from "web-atoms-core/dist/web/controls/AtomGridView";
 			
 			e8.appendChild(e17);
 			
-			this.setPrimitiveValue(e17, "href", "https://github.com/neurospeech/web-atoms-samples" );
+			this.setPrimitiveValue(e17, "href", "https://github.com/web-atoms/samples" );
 			
 			this.setPrimitiveValue(e17, "target", "_blank" );
 			

@@ -37,7 +37,7 @@ export default class MDViewModel extends AtomViewModel {
             styleSheetAdded = true;
             const link = document.createElement("link");
             link.rel = "stylesheet";
-            link.href = UMD.resolvePath("web-atoms-samples/scripts/highlight/styles/dark.css");
+            link.href = UMD.resolvePath("@web-atoms/samples/scripts/highlight/styles/dark.css");
             document.head.appendChild(link);
         }
 
@@ -65,7 +65,7 @@ export default class MDViewModel extends AtomViewModel {
             this.findHeader(md);
         }, 100);
 
-        const highlight = await UMD.import("web-atoms-samples/scripts/highlight/highlight.pack.js");
+        const highlight = await UMD.import("@web-atoms/samples/scripts/highlight/highlight.pack.js");
 
         const all = document.querySelectorAll("pre > code");
         // tslint:disable-next-line:prefer-for-of

@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/neurospeech/web-atoms-samples.git"
+    "url": "git+https://github.com/web-atoms/samples.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/neurospeech/web-atoms-samples/issues"
+    "url": "https://github.com/web-atoms/samples/issues"
   },
-  "homepage": "https://github.com/neurospeech/web-atoms-samples#readme",
+  "homepage": "https://github.com/web-atoms/samples#readme",
   "bundleDependencies": [
     "@web-atoms/web-controls",
     "@web-atoms/xf-controls",

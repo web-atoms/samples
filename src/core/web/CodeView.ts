@@ -51,7 +51,7 @@ export default class CodeView extends AtomControl {
             src = src.replace("/dist/", "/src/");
         }
 
-        const highlight = await UMD.import("web-atoms-samples/scripts/highlight/highlight.pack.js");
+        const highlight = await UMD.import("@web-atoms/samples/scripts/highlight/highlight.pack.js");
 
         const md = this.app.resolve(MDService) as MDService;
 
