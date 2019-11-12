@@ -27,34 +27,40 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			//  Clicking this button will open the window 
 			// e2
 			//  And result will be sent in the event 
+			// e3
+			//  Event get-parameters will be executed before
+			//         opening window/popup, parameters set on this event
+			//         will override bound parameters. It is recommended
+			//         to use event-get-parameters over parameters binding
+			//         as it will reduce binding memory  
 			
-			const e3 = new AtomPageLink(this.app, document.createElement("button"));
+			const e4 = new AtomPageLink(this.app, document.createElement("button"));
 			
-			e3.setPrimitiveValue(e3.element, "page",  WindowSample );
+			e4.setPrimitiveValue(e4.element, "page",  WindowSample );
 			
-			e3.setPrimitiveValue(e3.element, "parameters",  {  } );
+			e4.setPrimitiveValue(e4.element, "eventGetParameters",  (e) => e.detail.parameters = { name: 'demo' } );
 			
-			e3.setPrimitiveValue(e3.element, "eventResult",  (e) => this.viewModel.onResult(e.detail) );
+			e4.setPrimitiveValue(e4.element, "eventResult",  (e) => this.viewModel.onResult(e.detail) );
 			
-			e3.setPrimitiveValue(e3.element, "eventError",  (e) => this.viewModel.onError(e.detail) );
+			e4.setPrimitiveValue(e4.element, "eventError",  (e) => this.viewModel.onError(e.detail) );
 			
-			const e4 = document.createTextNode("Open");
-			e3.element.appendChild(e4);
+			const e5 = document.createTextNode("Open");
+			e4.element.appendChild(e5);
 			
-			this.append(e3);
-			
-			const e5 = document.createElement("div");
-			
-			this.append(e5);
-			
-			this.bind(e5, "text",  [["viewModel","result"]], false , null );
+			this.append(e4);
 			
 			const e6 = document.createElement("div");
 			
 			this.append(e6);
 			
-			this.bind(e6, "text",  [["viewModel","error"]], false , null );
+			this.bind(e6, "text",  [["viewModel","result"]], false , null );
 			
-			this.setPrimitiveValue(e6, "style", "color: red" );
+			const e7 = document.createElement("div");
+			
+			this.append(e7);
+			
+			this.bind(e7, "text",  [["viewModel","error"]], false , null );
+			
+			this.setPrimitiveValue(e7, "style", "color: red" );
 		}
 	}

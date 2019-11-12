@@ -24,10 +24,10 @@
   ],
   "dependencies": {
     "@web-atoms/date-time": "^1.0.21",
-    "@web-atoms/web-controls": "^1.0.103",
+    "@web-atoms/web-controls": "^1.0.106",
     "@web-atoms/xf-controls": "^1.0.42",
     "reflect-metadata": "^0.1.13",
     "web-atoms-amd-loader": "^1.0.373",
-    "web-atoms-core": "^1.0.880"
+    "web-atoms-core": "^1.0.891"
   }
 }

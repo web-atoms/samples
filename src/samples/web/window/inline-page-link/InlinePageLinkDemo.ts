@@ -30,7 +30,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			const e3 = new AtomPageLink(this.app, document.createElement("button"));
 			
-			e3.setPrimitiveValue(e3.element, "parameters",  {  } );
+			e3.setPrimitiveValue(e3.element, "eventGetParameters",  (e) => e.detail.parameters = { message: 'Demo' } );
 			
 			e3.setPrimitiveValue(e3.element, "eventResult",  (e) => this.viewModel.onResult(e.detail) );
 			
@@ -38,7 +38,7 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 			
 			e3.setPrimitiveValue(e3.element, "text", "Open" );
 			
-			e3.page = InlinePageLinkDemo_page_1_11Creator(this);
+			e3.page = InlinePageLinkDemo_page_1_16Creator(this);
 			
 			this.append(e3);
 			
@@ -58,8 +58,8 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 		}
 	}
 	
-	function InlinePageLinkDemo_page_1_11Creator(__creator) {
-		return class InlinePageLinkDemo_page_1_11 extends AtomControl {
+	function InlinePageLinkDemo_page_1_16Creator(__creator) {
+		return class InlinePageLinkDemo_page_1_16 extends AtomControl {
 			
 			constructor(app: any, e?: any) {
 				super(app, e || document.createElement("div"));
@@ -80,24 +80,30 @@ import {AtomControl} from "web-atoms-core/dist/web/controls/AtomControl";
 				
 				this.append(e3);
 				
-				const e4 = document.createTextNode("This will close as soon as you click outside of it");
-				e3.appendChild(e4);
+				this.runAfterInit( () => this.setLocalValue(e3, "text",  ((this.viewModel) ? this.viewModel.message : undefined) ) );
 				
-				const e5 = document.createElement("div");
+				const e4 = document.createElement("div");
 				
-				this.append(e5);
+				this.append(e4);
 				
-				const e6 = document.createTextNode("You can access parent viewModel by referring $viewModel.parent");
-				e5.appendChild(e6);
+				const e5 = document.createTextNode("This will close as soon as you click outside of it");
+				e4.appendChild(e5);
 				
-				const e7 = document.createElement("button");
+				const e6 = document.createElement("div");
 				
-				this.append(e7);
+				this.append(e6);
 				
-				this.runAfterInit( () => this.setLocalValue(e7, "eventClick",  () => (this.viewModel).close('success') ) );
+				const e7 = document.createTextNode("You can access parent viewModel by referring $viewModel.parent");
+				e6.appendChild(e7);
 				
-				const e8 = document.createTextNode("Ok");
-				e7.appendChild(e8);
+				const e8 = document.createElement("button");
+				
+				this.append(e8);
+				
+				this.runAfterInit( () => this.setLocalValue(e8, "eventClick",  () => (this.viewModel).close('success') ) );
+				
+				const e9 = document.createTextNode("Ok");
+				e8.appendChild(e9);
 			}
 		}
 	}

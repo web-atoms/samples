@@ -7,9 +7,15 @@
     <!-- Clicking this button will open the window -->
     <!-- And result will be sent in the event -->
 
+    <!-- Event get-parameters will be executed before
+        opening window/popup, parameters set on this event
+        will override bound parameters. It is recommended
+        to use event-get-parameters over parameters binding
+        as it will reduce binding memory  -->
+
     <AtomPageLink.button
         page="{ WindowSample }"
-        parameters="{ {  } }"
+        event-get-parameters="{ (e) => e.detail.parameters = { name: 'demo' } }"
         event-result="{ (e) => this.viewModel.onResult(e.detail) }"
         event-error="{ (e) => this.viewModel.onError(e.detail) }"
         >Open</AtomPageLink.button>

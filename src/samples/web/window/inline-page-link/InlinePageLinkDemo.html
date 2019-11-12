@@ -8,12 +8,13 @@
     <!-- And result will be sent in the event -->
 
     <AtomPageLink.button
-        parameters="{ {  } }"
+        event-get-parameters="{ (e) => e.detail.parameters = { message: 'Demo' } }"
         event-result="{ (e) => this.viewModel.onResult(e.detail) }"
         event-error="{ (e) => this.viewModel.onError(e.detail) }"
         text="Open">
         <div template="page">
             <div>This is the popup window</div>
+            <div text="{ $viewModel.message }"></div>
             <div>This will close as soon as you click outside of it</div>
             <div>You can access parent viewModel by referring $viewModel.parent</div>
             <button event-click="{ () => $viewModel.close('success') }" >Ok</button>
