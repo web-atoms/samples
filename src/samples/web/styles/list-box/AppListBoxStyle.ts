@@ -1,6 +1,6 @@
-import Colors from "web-atoms-core/dist/core/Colors";
-import { AtomListBoxStyle } from "web-atoms-core/dist/web/styles/AtomListBoxStyle";
-import { IStyleDeclaration } from "web-atoms-core/dist/web/styles/IStyleDeclaration";
+import Colors from "@web-atoms/core/dist/core/Colors";
+import { AtomListBoxStyle } from "@web-atoms/core/dist/web/styles/AtomListBoxStyle";
+import { IStyleDeclaration } from "@web-atoms/core/dist/web/styles/IStyleDeclaration";
 
 export default class AppListBoxStyle extends AtomListBoxStyle {
 

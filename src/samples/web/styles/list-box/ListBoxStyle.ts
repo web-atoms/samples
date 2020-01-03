@@ -1,5 +1,5 @@
-import { AtomListBoxStyle } from "web-atoms-core/dist/web/styles/AtomListBoxStyle";
-import { IStyleDeclaration } from "web-atoms-core/dist/web/styles/IStyleDeclaration";
+import { AtomListBoxStyle } from "@web-atoms/core/dist/web/styles/AtomListBoxStyle";
+import { IStyleDeclaration } from "@web-atoms/core/dist/web/styles/IStyleDeclaration";
 export default class ListBoxStyle extends AtomListBoxStyle {
 
     public get item(): IStyleDeclaration {

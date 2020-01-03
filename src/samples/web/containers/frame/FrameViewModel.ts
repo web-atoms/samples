@@ -1,6 +1,6 @@
-import { Inject } from "web-atoms-core/dist/di/Inject";
-import { NavigationService } from "web-atoms-core/dist/services/NavigationService";
-import { AtomViewModel } from "web-atoms-core/dist/view-model/AtomViewModel";
+import { Inject } from "@web-atoms/core/dist/di/Inject";
+import { NavigationService } from "@web-atoms/core/dist/services/NavigationService";
+import { AtomViewModel } from "@web-atoms/core/dist/view-model/AtomViewModel";
 import FramePage1 from "./FramePage1";
 import FramePage2 from "./FramePage2";
 import Start from "./Start";

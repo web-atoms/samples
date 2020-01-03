@@ -1,10 +1,10 @@
-import Markdown from "web-atoms-core/dist/core/Markdown";
-import { CancelToken } from "web-atoms-core/dist/core/types";
-import { Inject } from "web-atoms-core/dist/di/Inject";
-import { NavigationService } from "web-atoms-core/dist/services/NavigationService";
-import Action from "web-atoms-core/dist/view-model/Action";
-import { AtomViewModel, Validate } from "web-atoms-core/dist/view-model/AtomViewModel";
-import Load from "web-atoms-core/dist/view-model/Load";
+import Markdown from "@web-atoms/core/dist/core/Markdown";
+import { CancelToken } from "@web-atoms/core/dist/core/types";
+import { Inject } from "@web-atoms/core/dist/di/Inject";
+import { NavigationService } from "@web-atoms/core/dist/services/NavigationService";
+import Action from "@web-atoms/core/dist/view-model/Action";
+import { AtomViewModel, Validate } from "@web-atoms/core/dist/view-model/AtomViewModel";
+import Load from "@web-atoms/core/dist/view-model/Load";
 import SignupService, { IUser } from "./SignupService";
 
 export default class SimpleViewModel extends AtomViewModel {

@@ -1,6 +1,6 @@
-import Colors from "web-atoms-core/dist/core/Colors";
-import { AtomStyle } from "web-atoms-core/dist/web/styles/AtomStyle";
-import { IStyleDeclaration } from "web-atoms-core/dist/web/styles/IStyleDeclaration";
+import Colors from "@web-atoms/core/dist/core/Colors";
+import { AtomStyle } from "@web-atoms/core/dist/web/styles/AtomStyle";
+import { IStyleDeclaration } from "@web-atoms/core/dist/web/styles/IStyleDeclaration";
 
 export default class MenuStyle extends AtomStyle {
 

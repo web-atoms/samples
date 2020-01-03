@@ -1,5 +1,5 @@
-import { AtomTabbedPageStyle } from "web-atoms-core/dist/web/styles/AtomTabbedPageStyle";
-import { IStyleDeclaration } from "web-atoms-core/dist/web/styles/IStyleDeclaration";
+import { AtomTabbedPageStyle } from "@web-atoms/core/dist/web/styles/AtomTabbedPageStyle";
+import { IStyleDeclaration } from "@web-atoms/core/dist/web/styles/IStyleDeclaration";
 
 export default class AppTabStyle extends AtomTabbedPageStyle {
 

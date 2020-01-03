@@ -1,6 +1,6 @@
-import { Inject } from "web-atoms-core/dist/di/Inject";
-import { NavigationService } from "web-atoms-core/dist/services/NavigationService";
-import { AtomViewModel, Validate } from "web-atoms-core/dist/view-model/AtomViewModel";
+import { Inject } from "@web-atoms/core/dist/di/Inject";
+import { NavigationService } from "@web-atoms/core/dist/services/NavigationService";
+import { AtomViewModel, Validate } from "@web-atoms/core/dist/view-model/AtomViewModel";
 import InsuranceViewModel, { IApplicant } from "./InsuranceViewModel";
 
 export default class ApplicantViewModel extends AtomViewModel {

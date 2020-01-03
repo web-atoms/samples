@@ -1,6 +1,6 @@
 import AtomFormStyle from "@web-atoms/web-controls/dist/form/AtomFormStyle";
-import Colors from "web-atoms-core/dist/core/Colors";
-import { IStyleDeclaration } from "web-atoms-core/dist/web/styles/IStyleDeclaration";
+import Colors from "@web-atoms/core/dist/core/Colors";
+import { IStyleDeclaration } from "@web-atoms/core/dist/web/styles/IStyleDeclaration";
 
 export default class SideBySideFormStyle extends AtomFormStyle {
 

@@ -1,5 +1,5 @@
-import { AtomToggleButtonBarStyle } from "web-atoms-core/dist/web/styles/AtomToggleButtonBarStyle";
-import { IStyleDeclaration } from "web-atoms-core/dist/web/styles/IStyleDeclaration";
+import { AtomToggleButtonBarStyle } from "@web-atoms/core/dist/web/styles/AtomToggleButtonBarStyle";
+import { IStyleDeclaration } from "@web-atoms/core/dist/web/styles/IStyleDeclaration";
 export default class ToggleBarSampleStyle extends AtomToggleButtonBarStyle {
 
     public get item(): IStyleDeclaration {
