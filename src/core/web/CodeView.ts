@@ -85,8 +85,8 @@ export default class CodeView extends AtomControl {
     }
 
     private getLanguage(path: string): string {
-        if (/\.html$/gi.test(path)) {
-            return "html";
+        if (/\.tsx$/gi.test(path)) {
+            return "typescript";
         }
         if (/\.ts$/gi.test(path)) {
             return "typescript";
