@@ -67,10 +67,12 @@ export default class CodeView extends AtomControl {
         const code = document.createElement("code");
         code.textContent = text
             .split("\n")
-            .map((s) =>
-                s.endsWith("\r")
-                ? s.substr(0, s.length - 1)
-                : s )
+            .map((s) => {
+                while (s.endsWith("\r")) {
+                    s = s.substr(0, s.length - 1);
+                }
+                return s;
+            })
             .join("\n");
 
         const language = this.getLanguage(src);
