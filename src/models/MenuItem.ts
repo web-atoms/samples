@@ -13,7 +13,7 @@ export interface IType {
 export function asView(a: any): IType {
     return {
         class: a,
-        extension: ".html"
+        extension: ".tsx"
     };
 }
 
