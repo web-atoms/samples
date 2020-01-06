@@ -31,6 +31,10 @@ export default class AppHostViewModel extends AtomViewModel {
             url: UMD.resolvePath("@web-atoms/samples/docs/general/introduction.md"),
             title: "Introduction"
         });
+        home.addTabLink("Getting Started", ModuleFiles.views.MDHost, {
+            url: UMD.resolvePath("@web-atoms/samples/docs/general/getting-started.md"),
+            title: "Getting Started"
+        });
         home.addTabLink("Packer", ModuleFiles.views.MDHost, {
             url: UMD.resolvePath("@web-atoms/samples/docs/general/packer.md"),
             title: "Packer"
