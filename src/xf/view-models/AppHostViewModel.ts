@@ -2,8 +2,9 @@ import { App } from "@web-atoms/core/dist/App";
 import { Inject } from "@web-atoms/core/dist/di/Inject";
 import { NavigationService } from "@web-atoms/core/dist/services/NavigationService";
 import { AtomViewModel } from "@web-atoms/core/dist/view-model/AtomViewModel";
-import { ModuleFiles } from "../../ModuleFiles";
 import MenuService from "../../services/MenuService";
+import Start from "../../xf/views/Start";
+import Binding from "../views/samples/bindings/Binding";
 
 declare var bridge: any;
 
@@ -20,10 +21,10 @@ export default class AppHostViewModel extends AtomViewModel {
     public async init(): Promise<any> {
         const ms = this.menuService;
         const home = ms.addGroup("Home");
-        home.addTabLink("Home", ModuleFiles.views.Start);
+        home.addTabLink("Home", Start);
 
         const binding = ms.addGroup("Binding");
-        binding.addTabLink("Bindings", ModuleFiles.views.samples.bindings.Binding);
+        binding.addTabLink("Bindings", Binding);
 
         // const services = ms.addGroup("Services");
         // services.addTabLink("Http", ModuleFiles.views.samples.http.Movies);

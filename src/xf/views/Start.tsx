@@ -4,7 +4,7 @@ import { ColumnDefinition, ContentPage, Grid, Label, RowDefinition } from "@web-
 
 // tslint:disable
 	
-export default class Root extends AtomContentPage {
+export default class Start extends AtomContentPage {
 
 	protected create(): void  {
 		
