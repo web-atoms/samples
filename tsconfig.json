@@ -11,6 +11,10 @@
         "emitDecoratorMetadata": true,
         "jsx": "react",
         "jsxFactory": "XNode.create",
+        "baseUrl": ".",
+        "paths": {
+            "@web-atoms/samples/src/*": [ "./src/*" ]
+        },
         "lib": [
             "es6",
             "dom"

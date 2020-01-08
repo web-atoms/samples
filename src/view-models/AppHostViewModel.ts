@@ -2,7 +2,6 @@ import { App } from "@web-atoms/core/dist/App";
 import { Inject } from "@web-atoms/core/dist/di/Inject";
 import { NavigationService } from "@web-atoms/core/dist/services/NavigationService";
 import { AtomViewModel } from "@web-atoms/core/dist/view-model/AtomViewModel";
-import { ModuleFiles } from "../ModuleFiles";
 import { addBindingSamples } from "../samples/web/bindings/BindingSamples";
 import { addCalendarSamples } from "../samples/web/calendar/CalendarSamples";
 import addContainerSamples from "../samples/web/containers/ContainerSamples";
@@ -14,6 +13,7 @@ import addStyleSamples from "../samples/web/styles/StyleSamples";
 import { addValidationSamples } from "../samples/web/validations/ValidationSamples";
 import addWindowSamples from "../samples/web/window/WindowSamples";
 import MenuService from "../services/MenuService";
+import MDHost from "../web/views/MDHost";
 
 declare var UMD: any;
 
@@ -27,55 +27,55 @@ export default class AppHostViewModel extends AtomViewModel {
         const ms = this.menuService;
         const home = ms.addGroup("Docs");
 
-        home.addTabLink("Introduction", ModuleFiles.views.MDHost, {
+        home.addTabLink("Introduction", MDHost, {
             url: UMD.resolvePath("@web-atoms/samples/docs/general/introduction.md"),
             title: "Introduction"
         });
-        home.addTabLink("Getting Started", ModuleFiles.views.MDHost, {
+        home.addTabLink("Getting Started", MDHost, {
             url: UMD.resolvePath("@web-atoms/samples/docs/general/getting-started.md"),
             title: "Getting Started"
         });
-        home.addTabLink("Packer", ModuleFiles.views.MDHost, {
+        home.addTabLink("Packer", MDHost, {
             url: UMD.resolvePath("@web-atoms/samples/docs/general/packer.md"),
             title: "Packer"
         });
-        home.addTabLink("Dependency Injection", ModuleFiles.views.MDHost, {
+        home.addTabLink("Dependency Injection", MDHost, {
             url: UMD.resolvePath("@web-atoms/samples/docs/general/dependency-injection.md"),
             title: "Dependency Injection"
         });
-        home.addTabLink("Messaging", ModuleFiles.views.MDHost, {
+        home.addTabLink("Messaging", MDHost, {
             url: UMD.resolvePath("@web-atoms/samples/docs/general/messaging.md"),
             title: "Messaging"
         });
-        home.addTabLink("Binding", ModuleFiles.views.MDHost, {
+        home.addTabLink("Binding", MDHost, {
             url: UMD.resolvePath("@web-atoms/samples/docs/general/binding.md"),
             title: "Binding"
         });
-        // home.addTabLink("Binding Properties", ModuleFiles.views.MDHost, {
+        // home.addTabLink("Binding Properties", MDHost, {
         //     url: UMD.resolvePath("@web-atoms/samples/docs/general/binding-properties.md"),
         //     title: "Binding"
         // });
-        home.addTabLink("Ajax", ModuleFiles.views.MDHost, {
+        home.addTabLink("Ajax", MDHost, {
             url: UMD.resolvePath("@web-atoms/samples/docs/general/ajax.md"),
             title: "Ajax"
         });
-        home.addTabLink("Validation", ModuleFiles.views.MDHost, {
+        home.addTabLink("Validation", MDHost, {
             url: UMD.resolvePath("@web-atoms/samples/docs/general/validation.md"),
             title: "Validation"
         });
-        home.addTabLink("Navigation Service", ModuleFiles.views.MDHost, {
+        home.addTabLink("Navigation Service", MDHost, {
             url: UMD.resolvePath("@web-atoms/samples/docs/general/navigation-service.md"),
             title: "Navigation Service"
         });
-        home.addTabLink("Styles", ModuleFiles.views.MDHost, {
+        home.addTabLink("Styles", MDHost, {
             url: UMD.resolvePath("@web-atoms/samples/docs/web/styles.md"),
             title: "Styles"
         });
-        home.addTabLink("External Styles", ModuleFiles.views.MDHost, {
+        home.addTabLink("External Styles", MDHost, {
             url: UMD.resolvePath("@web-atoms/samples/docs/web/external-styles.md"),
             title: "External Styles"
         });
-        home.addTabLink("Components", ModuleFiles.views.MDHost, {
+        home.addTabLink("Components", MDHost, {
             url: UMD.resolvePath("@web-atoms/samples/docs/web/components.md"),
             title: "Components"
         });
@@ -85,9 +85,9 @@ export default class AppHostViewModel extends AtomViewModel {
         addValidationSamples(ms);
 
         // const validations = ms.addGroup("Validations");
-        // validations.addTabLink("Simple", ModuleFiles.views.samples.validation.SimpleValidation);
-        // validations.addTabLink("Custom", ModuleFiles.views.samples.validation.CustomValidation);
-        // validations.addTabLink("Multi VM", ModuleFiles.views.samples.validation.multiViewModel.Insurance);
+        // validations.addTabLink("Simple", samples.validation.SimpleValidation);
+        // validations.addTabLink("Custom", samples.validation.CustomValidation);
+        // validations.addTabLink("Multi VM", samples.validation.multiViewModel.Insurance);
 
         addHttpServiceSamples(ms);
 
@@ -102,29 +102,29 @@ export default class AppHostViewModel extends AtomViewModel {
         addDateFields(ms);
 
         // const containers = ms.addGroup("Containers");
-        // containers.addTabLink("View Pager", ModuleFiles.views.samples.viewPager.ViewPager);
-        // containers.addTabLink("View Stack", ModuleFiles.views.samples.viewStack.ViewStack);
+        // containers.addTabLink("View Pager", samples.viewPager.ViewPager);
+        // containers.addTabLink("View Stack", samples.viewStack.ViewStack);
 
         addWindowSamples(ms);
 
         addStyleSamples(ms);
 
         // const styles = ms.addGroup("Styles");
-        // styles.addTabLink("Panel", ModuleFiles.views.samples.styles.Panel);
-        // styles.addTabLink("List Box", ModuleFiles.views.samples.styles.ListBox);
-        // styles.addTabLink("External", ModuleFiles.views.samples.styles.FontAwesome);
+        // styles.addTabLink("Panel", samples.styles.Panel);
+        // styles.addTabLink("List Box", samples.styles.ListBox);
+        // styles.addTabLink("External", samples.styles.FontAwesome);
 
         // const controls = ms.addGroup("Controls");
-        // controls.addTabLink("Combo Box", ModuleFiles.views.samples.basicControls.AtomComboBoxSample);
-        // controls.addTabLink("Items Control", ModuleFiles.views.samples.basicControls.AtomItemsControlSample);
-        // controls.addTabLink("List Box",  ModuleFiles.views.samples.basicControls.AtomListBoxSample);
-        // controls.addTabLink("Toggle Button Bar",  ModuleFiles.views.samples.basicControls.AtomToggleButtonBarSample);
-        // controls.addTabLink("Grid View",  ModuleFiles.views.samples.basicControls.AtomGridViewSample);
-        // controls.addTabLink("Window",  ModuleFiles.views.samples.basicControls.ButtonSample);
-        // controls.addTabLink("Frame",  ModuleFiles.views.samples.frame.FrameSample);
+        // controls.addTabLink("Combo Box", samples.basicControls.AtomComboBoxSample);
+        // controls.addTabLink("Items Control", samples.basicControls.AtomItemsControlSample);
+        // controls.addTabLink("List Box",  samples.basicControls.AtomListBoxSample);
+        // controls.addTabLink("Toggle Button Bar",  samples.basicControls.AtomToggleButtonBarSample);
+        // controls.addTabLink("Grid View",  samples.basicControls.AtomGridViewSample);
+        // controls.addTabLink("Window",  samples.basicControls.ButtonSample);
+        // controls.addTabLink("Frame",  samples.frame.FrameSample);
 
         this.app.callLater(async () => {
-            await this.navigationService.openPage(`tab://app/${ModuleFiles.views.MDHost}`, {
+            await this.navigationService.openPage(`tab://app/${MDHost}`, {
                 url: UMD.resolvePath("@web-atoms/samples/docs/general/introduction.md"),
                 title: "Introduction"
             });

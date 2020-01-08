@@ -5,14 +5,20 @@ import {BindableProperty} from "@web-atoms/core/dist/core/BindableProperty";
 import {AtomTabbedPage} from "@web-atoms/core/dist/web/controls/AtomTabbedPage";
 import {AtomGridView} from "@web-atoms/core/dist/web/controls/AtomGridView";
 
-    import AppHostViewModel from "../../view-models/AppHostViewModel";
-    import MenuList from "./MenuList";
-    import GitHubMark32px from "../../images/github/GitHubMark32px";
-    import AppTabStyle from "../styles/AppTabStyle";
+    import AppHostViewModel from "../../view-models/AppHostViewModel";
+
+    import MenuList from "./MenuList";
+
+    import GitHubMark32px from "@web-atoms/samples/src/images/github/GitHub-Mark-32px.png";
+
+    import AppTabStyle from "../styles/AppTabStyle";
 
 
-export default class AppHost extends AtomGridView {	
-	public create(): void {		this.viewModel =  this.resolve(AppHostViewModel) ;
+
+export default class AppHost extends AtomGridView {
+	
+	public create(): void {
+		this.viewModel =  this.resolve(AppHostViewModel) ;
 
 		this.render(
 		<div
@@ -22,41 +28,58 @@ export default class AppHost extends AtomGridView {
 			<header>
 				<h3
 					style="position: absolute; margin: 0; padding: 0; top: 5px; left: 5px;"
-					text="<W/> Web Atoms">				</h3>			</header>
+					text="<W/> Web Atoms">
+				</h3>
+			</header>
 			<MenuList
-				row="1">			</MenuList>
+				row="1">
+			</MenuList>
 			<AtomTabbedPage
 				row="0:2"
-				column="1">			</AtomTabbedPage>
+				column="1">
+			</AtomTabbedPage>
 			<footer
 				row="2"
 				column="0:2"
 				style="padding:5px;">
 				<span>
-					© NeuroSpeech Technologies Pvt Ltd				</span>
+					© NeuroSpeech Technologies Pvt Ltd
+				</span>
 				<div
 					style="position: absolute; right: 5px; top: 5px">
 					<a
 						href="/docs"
 						target="_blank"
 						style="margin-right: 16px">
-						API					</a>
-					{/* e11
+						API
+					</a>
+					{/* e11
+
 					//  Comment 1  */}
 					<img
 						style="max-height: 16px; margin-right: 5px;"
-						src={Bind.oneTime(() => GitHubMark32px)}>					</img>
+						src={Bind.oneTime(() => GitHubMark32px)}>
+					</img>
 					<a
 						href="https://github.com/neurospeech/web-atoms-core"
 						target="_blank">
-						Source Code					</a>
+						Source Code
+					</a>
 					<span
-						text=" ">					</span>
+						text=" ">
+					</span>
 					<img
 						style="max-height: 16px; margin-right: 5px;"
-						src={Bind.oneTime(() => GitHubMark32px)}>					</img>
+						src={Bind.oneTime(() => GitHubMark32px)}>
+					</img>
 					<a
 						href="https://github.com/web-atoms/samples"
 						target="_blank">
-						Samples					</a>				</div>			</footer>		</div>
-		);	}}
+						Samples
+					</a>
+				</div>
+			</footer>
+		</div>
+		);
+	}
+}
