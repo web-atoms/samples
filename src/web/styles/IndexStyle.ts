@@ -1,10 +1,13 @@
 import Colors from "@web-atoms/core/dist/core/Colors";
 import { AtomStyle } from "@web-atoms/core/dist/web/styles/AtomStyle";
+import { AtomTheme } from "@web-atoms/core/dist/web/styles/AtomTheme";
 import { IStyleDeclaration } from "@web-atoms/core/dist/web/styles/IStyleDeclaration";
 import BgMasthead from "@web-atoms/samples/src/web/images/bg-masthead.jpg";
 import IndiaFlagIcon32 from "../../images/IndiaFlagIcon32";
 
 export default class IndexStyle extends AtomStyle {
+
+    public screen = (this.styleSheet as AtomTheme).app.screen;
 
     public get root(): IStyleDeclaration {
         return {
@@ -33,7 +36,7 @@ export default class IndexStyle extends AtomStyle {
                     backgroundSize: "cover",
                     subclasses: {
                         " h1": {
-                            fontSize: "3.5rem",
+                            fontSize: this.screen.screenType === "mobile" ? "2.25rem" : "3.5rem",
                             color: "#fff",
                             textTransform: "uppercase",
                             marginBottom: ".5rem",
