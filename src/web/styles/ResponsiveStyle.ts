@@ -1,8 +1,8 @@
-import Colors from "web-atoms-core/dist/core/Colors";
-import { AtomStyle } from "web-atoms-core/dist/web/styles/AtomStyle";
-import { AtomTheme } from "web-atoms-core/dist/web/styles/AtomTheme";
-import { IStyleDeclaration } from "web-atoms-core/dist/web/styles/IStyleDeclaration";
-import StyleBuilder from "web-atoms-core/dist/web/styles/StyleBuilder";
+import Colors from "@web-atoms/core/dist/core/Colors";
+import { AtomStyle } from "@web-atoms/core/dist/web/styles/AtomStyle";
+import { AtomTheme } from "@web-atoms/core/dist/web/styles/AtomTheme";
+import { IStyleDeclaration } from "@web-atoms/core/dist/web/styles/IStyleDeclaration";
+import StyleBuilder from "@web-atoms/core/dist/web/styles/StyleBuilder";
 
 export default class ResponsiveStyle extends AtomStyle {
 

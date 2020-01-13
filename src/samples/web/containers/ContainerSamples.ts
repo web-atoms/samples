@@ -5,13 +5,13 @@ import FramePage2 from "./frame/FramePage2";
 import FrameSample from "./frame/FrameSample";
 import FrameViewModel from "./frame/FrameViewModel";
 import Start from "./frame/Start";
+import GridViewSample from "./grid-view/GridViewSample";
 import Page1 from "./view-pager/Page1";
 import Page2 from "./view-pager/Page2";
 import ViewPager from "./view-pager/ViewPager";
 import { ViewPagerViewModel } from "./view-pager/ViewPagerViewModel";
 import ViewStack from "./view-stack/ViewStack";
 import { ViewStackViewModel } from "./view-stack/ViewStackViewModel";
-import GridViewSample from "./grid-view/GridViewSample";
 
 declare var require: any;
 

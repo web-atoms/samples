@@ -1,5 +1,5 @@
-import DISingleton from "web-atoms-core/dist/di/DISingleton";
-import { BaseService, Get, Path, Query } from "web-atoms-core/dist/services/http/RestService";
+import DISingleton from "@web-atoms/core/dist/di/DISingleton";
+import { BaseService, Get, Path, Query } from "@web-atoms/core/dist/services/http/RestService";
 
 export interface IPagedList<T> {
     count: number;

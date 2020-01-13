@@ -1,7 +1,7 @@
-import { App } from "web-atoms-core/dist/App";
-import { BindableProperty } from "web-atoms-core/dist/core/BindableProperty";
-import { Inject } from "web-atoms-core/dist/di/Inject";
-import { AtomViewModel } from "web-atoms-core/dist/view-model/AtomViewModel";
+import { App } from "@web-atoms/core/dist/App";
+import { BindableProperty } from "@web-atoms/core/dist/core/BindableProperty";
+import { Inject } from "@web-atoms/core/dist/di/Inject";
+import { AtomViewModel } from "@web-atoms/core/dist/view-model/AtomViewModel";
 import MovieService, { IMovie, IPagedList } from "../../services/http/simple/MovieService";
 
 export default class ListBoxViewModel extends AtomViewModel {

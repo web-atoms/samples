@@ -17,6 +17,8 @@
     },
     "web": {
       "images": {
+        "bgMasthead_jpg": UMD.resolvePath("@web-atoms/samples/src/web/images/bg-masthead.jpg"),
+        "logo1_png": UMD.resolvePath("@web-atoms/samples/src/web/images/logo1.png"),
         "add_png": UMD.resolvePath("@web-atoms/samples/src/web/images/add.png")
       }
     }

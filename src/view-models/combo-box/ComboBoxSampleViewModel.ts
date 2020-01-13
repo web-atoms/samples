@@ -1,6 +1,6 @@
-import { AtomViewModel } from "web-atoms-core/dist/view-model/AtomViewModel";
+import { AtomViewModel } from "@web-atoms/core/dist/view-model/AtomViewModel";
 
-import IFetchEvent from "web-atoms-core/dist/core/IFetchEvent";
+import IFetchEvent from "@web-atoms/core/dist/core/IFetchEvent";
 
 function country(label: string, value: string) {
     return { label, value };

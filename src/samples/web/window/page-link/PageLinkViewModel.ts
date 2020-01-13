@@ -1,6 +1,6 @@
-import { Inject } from "web-atoms-core/dist/di/Inject";
-import { JsonService } from "web-atoms-core/dist/services/JsonService";
-import { AtomViewModel } from "web-atoms-core/dist/view-model/AtomViewModel";
+import { Inject } from "@web-atoms/core/dist/di/Inject";
+import { JsonService } from "@web-atoms/core/dist/services/JsonService";
+import { AtomViewModel } from "@web-atoms/core/dist/view-model/AtomViewModel";
 import { IMovie } from "../../services/http/simple/MovieService";
 
 export default class PageLinkViewModel extends AtomViewModel {

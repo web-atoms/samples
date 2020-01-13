@@ -6,7 +6,7 @@ UMD.map("@web-atoms/samples","/");
 UMD.loadView(
     "@web-atoms/samples/dist/xf/views/AppHost",
     true,
-    "web-atoms-core/dist/xf/XFApp")
+    "@web-atoms/core/dist/xf/XFApp")
     .then(function() {})
     .catch(function(e) {
         console.error(e);

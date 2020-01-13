@@ -23,11 +23,12 @@
     "web-atoms-core"
   ],
   "dependencies": {
+    "@web-atoms/core": "^1.1.7",
     "@web-atoms/date-time": "^1.0.21",
-    "@web-atoms/web-controls": "^1.0.106",
-    "@web-atoms/xf-controls": "^1.0.42",
-    "reflect-metadata": "^0.1.13",
-    "web-atoms-amd-loader": "^1.0.373",
-    "web-atoms-core": "^1.0.891"
+    "@web-atoms/module-loader": "^1.0.395",
+    "@web-atoms/storage": "^1.0.12",
+    "@web-atoms/web-controls": "^1.1.13",
+    "@web-atoms/xf-controls": "^1.0.68",
+    "reflect-metadata": "^0.1.13"
   }
 }

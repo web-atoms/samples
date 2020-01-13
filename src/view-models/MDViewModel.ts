@@ -1,8 +1,8 @@
-import { Atom } from "web-atoms-core/dist/Atom";
-import { Inject } from "web-atoms-core/dist/di/Inject";
-import { RegisterSingleton } from "web-atoms-core/dist/di/RegisterSingleton";
-import { BaseService, Get } from "web-atoms-core/dist/services/http/RestService";
-import { AtomViewModel } from "web-atoms-core/dist/view-model/AtomViewModel";
+import { Atom } from "@web-atoms/core/dist/Atom";
+import { Inject } from "@web-atoms/core/dist/di/Inject";
+import { RegisterSingleton } from "@web-atoms/core/dist/di/RegisterSingleton";
+import { BaseService, Get } from "@web-atoms/core/dist/services/http/RestService";
+import { AtomViewModel } from "@web-atoms/core/dist/view-model/AtomViewModel";
 
 declare var UMD;
 

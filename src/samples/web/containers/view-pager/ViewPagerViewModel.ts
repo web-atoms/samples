@@ -1,5 +1,5 @@
-import { BindableProperty } from "web-atoms-core/dist/core/BindableProperty";
-import { AtomViewModel } from "web-atoms-core/dist/view-model/AtomViewModel";
+import { BindableProperty } from "@web-atoms/core/dist/core/BindableProperty";
+import { AtomViewModel } from "@web-atoms/core/dist/view-model/AtomViewModel";
 import resolveModulePath from "../../../../core/web/resolveModulePath";
 import { ModuleFiles } from "../../../../ModuleFiles";
 import Page1 from "./Page1";

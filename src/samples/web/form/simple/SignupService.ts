@@ -1,6 +1,6 @@
-import { CancelToken } from "web-atoms-core/dist/core/types";
-import DISingleton from "web-atoms-core/dist/di/DISingleton";
-import { BaseService, Body, Get, Path, Post } from "web-atoms-core/dist/services/http/RestService";
+import { CancelToken } from "@web-atoms/core/dist/core/types";
+import DISingleton from "@web-atoms/core/dist/di/DISingleton";
+import { BaseService, Body, Get, Path, Post } from "@web-atoms/core/dist/services/http/RestService";
 
 export interface IUser {
     firstName: string;

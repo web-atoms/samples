@@ -1,4 +1,4 @@
-import { AtomViewModel } from "web-atoms-core/dist/view-model/AtomViewModel";
+import { AtomViewModel } from "@web-atoms/core/dist/view-model/AtomViewModel";
 import { ModuleFiles } from "../../../../ModuleFiles";
 
 export default class FrameViewModel extends AtomViewModel {

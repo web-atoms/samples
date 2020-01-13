@@ -1,6 +1,6 @@
-import { App } from "web-atoms-core/dist/App";
-import { AtomList } from "web-atoms-core/dist/core/AtomList";
-import { INameValuePairs } from "web-atoms-core/dist/core/types";
+import { App } from "@web-atoms/core/dist/App";
+import { AtomList } from "@web-atoms/core/dist/core/AtomList";
+import { INameValuePairs } from "@web-atoms/core/dist/core/types";
 import FileViewer from "../core/web/FileViewer";
 import resolveModulePath from "../core/web/resolveModulePath";
 import MenuService from "../services/MenuService";
