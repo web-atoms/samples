@@ -124,9 +124,11 @@ export default class AppHostViewModel extends AtomViewModel {
         // controls.addTabLink("Frame",  samples.frame.FrameSample);
 
         this.app.callLater(async () => {
-            await this.navigationService.openPage(`tab://app/${MDHost}`, {
+            await this.navigationService.openPage(MDHost, {
                 url: UMD.resolvePath("@web-atoms/samples/docs/general/introduction.md"),
                 title: "Introduction"
+            }, {
+                target: "app"
             });
         });
     }
