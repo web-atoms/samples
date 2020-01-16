@@ -11,6 +11,8 @@ import {AtomGridView} from "@web-atoms/core/dist/web/controls/AtomGridView";
     import FormDemo from "../samples/web/form/FromDemo";
 import { AtomControl } from "@web-atoms/core/dist/web/controls/AtomControl";
 import logo from "@web-atoms/samples/src/web/images/logo.png";
+import AtomForm from "@web-atoms/web-controls/dist/form/AtomForm";
+import AtomField from "@web-atoms/web-controls/dist/form/AtomField";
 
 
 
@@ -197,6 +199,43 @@ export default class Index extends AtomControl {
 							<h2 class="mt-0">Let's Get In Touch!</h2>
 							<hr class="divider my-4"></hr>
 							<p class="text-muted mb-5">Ready to start your next project with us? Give us a call or send us an email and we will get back to you as soon as possible!</p>
+							<AtomForm
+								focus-next-on-enter="{ true }"
+								event-submit="{ () => this.viewModel.signup() }"
+								default-style="{ SideBySideFormStyle }">
+								<AtomField
+									label="First name:"
+									required="true"
+									error="[$viewModel.errorFirstName]">
+									<input type="text" value="$[viewModel.model.firstName]"/>
+								</AtomField>
+								<AtomField
+									label="Last name:"
+									required="true"
+									error="[$viewModel.errorLastName]">
+									<input type="text" value="$[viewModel.model.lastName]"/>
+								</AtomField>
+								<AtomField
+									label="Email Address:"
+									required="true"
+									error="[$viewModel.errorEmailAddress]">
+									<input 
+										style="width: 500px"
+										type="text" 
+										value="$[viewModel.model.emailAddress]"/>
+								</AtomField>
+								<AtomField
+									label="Email Address:"
+									required="true"
+									error="[$viewModel.errorEmailAddress]"
+									class="submit">
+									<input 
+										style="width: 500px"
+										type="text" 
+										value="$[viewModel.model.emailAddress]"/>
+								</AtomField>
+							</AtomForm>
+							<button event-click="{ () => this.viewModel.signup() }">Signup</button>
 						</div>
 					</div>
 					<div class="row justify-content-center">
