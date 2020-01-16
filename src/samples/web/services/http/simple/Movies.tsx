@@ -5,11 +5,14 @@ import {BindableProperty} from "@web-atoms/core/dist/core/BindableProperty";
 import {AtomListBox} from "@web-atoms/core/dist/web/controls/AtomListBox";
 import {AtomGridView} from "@web-atoms/core/dist/web/controls/AtomGridView";
 
-import MovieViewModel from "./MovieViewModel";
+import MovieViewModel from "./MovieViewModel";
 
 
-export default class Movies extends AtomGridView {	
-	public create(): void {		this.viewModel =  this.resolve(MovieViewModel) ;
+
+export default class Movies extends AtomGridView {
+	
+	public create(): void {
+		this.viewModel =  this.resolve(MovieViewModel) ;
 
 		this.render(
 		<div
@@ -23,5 +26,12 @@ export default class Movies extends AtomGridView {
 				<AtomListBox.itemTemplate>
 					<div>
 						<span
-							text={Bind.oneTime((x) => x.data.name)}>						</span>					</div>				</AtomListBox.itemTemplate>			</AtomListBox>		</div>
-		);	}}
+							text={Bind.oneTime((x) => x.data.name)}>
+						</span>
+					</div>
+				</AtomListBox.itemTemplate>
+			</AtomListBox>
+		</div>
+		);
+	}
+}

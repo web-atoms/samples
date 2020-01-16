@@ -5,11 +5,14 @@ import {BindableProperty} from "@web-atoms/core/dist/core/BindableProperty";
 import {AtomComboBox} from "@web-atoms/core/dist/web/controls/AtomComboBox";
 import {AtomWindow} from "@web-atoms/core/dist/web/controls/AtomWindow";
 
-        import { WindowSampleViewModel } from "./WindowSampleViewModel";
+        import { WindowSampleViewModel } from "./WindowSampleViewModel";
 
 
-export default class WindowSample extends AtomWindow {	
-	public create(): void {		this.viewModel =  this.resolve(WindowSampleViewModel) ;
+
+export default class WindowSample extends AtomWindow {
+	
+	public create(): void {
+		this.viewModel =  this.resolve(WindowSampleViewModel) ;
 
 		this.render(
 		<div
@@ -22,8 +25,10 @@ export default class WindowSample extends AtomWindow {
 						<tr>
 							<td>
 
-								                    Name:
-								                							</td>
+								                    Name:
+
+								                
+							</td>
 							<td>
 								<input
 									style="height: 30px;
@@ -32,15 +37,21 @@ export default class WindowSample extends AtomWindow {
 									type="text"
 									placeholder="Enter Movie Name"
 									value={Bind.twoWays((x) => x.viewModel.movie.name, ["change", "keyup", "keydown", "blur"])}
-									autofocus="autofocus">								</input>							</td>
+									autofocus="autofocus">
+								</input>
+							</td>
 							<td
 								style="color:red; font-size:13px"
-								text={Bind.oneWay((x) => x.viewModel.errorName)}>							</td>						</tr>
+								text={Bind.oneWay((x) => x.viewModel.errorName)}>
+							</td>
+						</tr>
 						<tr>
 							<td>
 
-								                    Type:
-								                							</td>
+								                    Type:
+
+								                
+							</td>
 							<td>
 								<AtomComboBox
 									style="height: 30px;
@@ -49,28 +60,47 @@ export default class WindowSample extends AtomWindow {
 									valuePath="value"
 									items={Bind.oneTime((x) => x.viewModel.types)}
 									value={Bind.twoWays((x) => x.viewModel.movie.genre, ["change", "keyup", "keydown", "blur"])}
-									for="select">								</AtomComboBox>							</td>
+									for="select">
+								</AtomComboBox>
+							</td>
 							<td
 								style="color:red; font-size:13px"
-								text={Bind.oneWay((x) => x.viewModel.errorType)}>							</td>						</tr>
+								text={Bind.oneWay((x) => x.viewModel.errorType)}>
+							</td>
+						</tr>
 						<tr>
 							<td>
 
-								                    Description:
-								                							</td>
+								                    Description:
+
+								                
+							</td>
 							<td
 								colspan="2">
 								<textarea
 									cols="30"
 									rows="10"
 									placeholder="Enter Movie Description"
-									value={Bind.twoWays((x) => x.viewModel.movie.description)}>								</textarea>							</td>						</tr>					</table>				</div>			</AtomWindow.windowTemplate>
+									value={Bind.twoWays((x) => x.viewModel.movie.description)}>
+								</textarea>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</AtomWindow.windowTemplate>
 			<AtomWindow.commandTemplate>
 				<div>
 					<button
 						eventClick={Bind.event((x) => (x.viewModel).save())}>
-						Save					</button>
+						Save
+					</button>
 					<button
 						eventClick={Bind.event((x) => (x.viewModel).cancel())}>
-						Cancel					</button>				</div>			</AtomWindow.commandTemplate>		</div>
-		);	}}
+						Cancel
+					</button>
+				</div>
+			</AtomWindow.commandTemplate>
+		</div>
+		);
+	}
+}

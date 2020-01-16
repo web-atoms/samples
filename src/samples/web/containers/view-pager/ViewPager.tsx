@@ -6,11 +6,14 @@ import {AtomListBox} from "@web-atoms/core/dist/web/controls/AtomListBox";
 import {AtomViewPager} from "@web-atoms/core/dist/web/controls/AtomViewPager";
 import {AtomGridView} from "@web-atoms/core/dist/web/controls/AtomGridView";
 
-    import { ViewPagerViewModel } from "./ViewPagerViewModel";
+    import { ViewPagerViewModel } from "./ViewPagerViewModel";
 
 
-export default class ViewPager extends AtomGridView {	
-	public create(): void {		this.viewModel =  this.resolve(ViewPagerViewModel) ;
+
+export default class ViewPager extends AtomGridView {
+	
+	public create(): void {
+		this.viewModel =  this.resolve(ViewPagerViewModel) ;
 
 		this.render(
 		<div
@@ -22,9 +25,16 @@ export default class ViewPager extends AtomGridView {
 				for="div">
 				<AtomListBox.itemTemplate>
 					<span
-						text={Bind.oneTime((x) => x.data.label)}>					</span>				</AtomListBox.itemTemplate>			</AtomListBox>
+						text={Bind.oneTime((x) => x.data.label)}>
+					</span>
+				</AtomListBox.itemTemplate>
+			</AtomListBox>
 			<AtomViewPager
 				row="1"
 				items={Bind.oneWay((x) => x.viewModel.pages)}
-				value={Bind.oneWay((x) => x.viewModel.currentPage)}>			</AtomViewPager>		</div>
-		);	}}
+				value={Bind.oneWay((x) => x.viewModel.currentPage)}>
+			</AtomViewPager>
+		</div>
+		);
+	}
+}

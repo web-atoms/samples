@@ -4,16 +4,24 @@ import XNode from "@web-atoms/core/dist/core/XNode"
 import {BindableProperty} from "@web-atoms/core/dist/core/BindableProperty";
 import {AtomControl} from "@web-atoms/core/dist/web/controls/AtomControl";
 
-        import AtomForm from "@web-atoms/web-controls/dist/form/AtomForm";
-        import AtomField from "@web-atoms/web-controls/dist/form/AtomField";
-        import SimpleFormViewModel from "../SimpleFormViewModel";
-        import SideBySideFormStyle from "./SideBySideFormStyle"; 
+        import AtomForm from "@web-atoms/web-controls/dist/form/AtomForm";
+
+        import AtomField from "@web-atoms/web-controls/dist/form/AtomField";
+
+        import SimpleFormViewModel from "../SimpleFormViewModel";
+
+        import SideBySideFormStyle from "./SideBySideFormStyle"; 
 
 
-export default class SideBySideForm extends AtomControl {	
-	constructor(app: any, e?: any) {		super(app, e || document.createElement("div"));	}
 
-	public create(): void {		this.viewModel =  this.resolve(SimpleFormViewModel) ;
+export default class SideBySideForm extends AtomControl {
+	
+	constructor(app: any, e?: any) {
+		super(app, e || document.createElement("div"));
+	}
+
+	public create(): void {
+		this.viewModel =  this.resolve(SimpleFormViewModel) ;
 
 		this.render(
 		<div>
@@ -24,14 +32,18 @@ export default class SideBySideForm extends AtomControl {
 					error={Bind.oneWay((x) => x.viewModel.errorFirstName)}>
 					<input
 						type="text"
-						value={Bind.twoWays((x) => x.viewModel.model.firstName)}>					</input>				</AtomField>
+						value={Bind.twoWays((x) => x.viewModel.model.firstName)}>
+					</input>
+				</AtomField>
 				<AtomField
 					label="Last name:"
 					required="true"
 					error={Bind.oneWay((x) => x.viewModel.errorLastName)}>
 					<input
 						type="text"
-						value={Bind.twoWays((x) => x.viewModel.model.lastName)}>					</input>				</AtomField>
+						value={Bind.twoWays((x) => x.viewModel.model.lastName)}>
+					</input>
+				</AtomField>
 				<AtomField
 					label="Email Address:"
 					required="true"
@@ -40,22 +52,33 @@ export default class SideBySideForm extends AtomControl {
 					<input
 						style="width: 500px"
 						type="text"
-						value={Bind.twoWays((x) => x.viewModel.model.emailAddress)}>					</input>				</AtomField>
+						value={Bind.twoWays((x) => x.viewModel.model.emailAddress)}>
+					</input>
+				</AtomField>
 				<AtomField
 					label="Password:"
 					required="true"
 					error={Bind.oneWay((x) => x.viewModel.errorPassword)}>
 					<input
 						type="password"
-						value={Bind.twoWays((x) => x.viewModel.model.password)}>					</input>				</AtomField>
+						value={Bind.twoWays((x) => x.viewModel.model.password)}>
+					</input>
+				</AtomField>
 				<AtomField
 					label="Password (Again):"
 					required="true"
 					error={Bind.oneWay((x) => x.viewModel.errorPasswordAgain)}>
 					<input
 						type="password"
-						value={Bind.twoWays((x) => x.viewModel.model.passwordAgain)}>					</input>				</AtomField>			</AtomForm>
+						value={Bind.twoWays((x) => x.viewModel.model.passwordAgain)}>
+					</input>
+				</AtomField>
+			</AtomForm>
 			<button
 				eventClick={Bind.event((x) => this.viewModel.signup())}>
-				Signup			</button>		</div>
-		);	}}
+				Signup
+			</button>
+		</div>
+		);
+	}
+}

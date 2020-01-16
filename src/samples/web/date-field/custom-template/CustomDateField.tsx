@@ -4,14 +4,20 @@ import XNode from "@web-atoms/core/dist/core/XNode"
 import {BindableProperty} from "@web-atoms/core/dist/core/BindableProperty";
 import {AtomControl} from "@web-atoms/core/dist/web/controls/AtomControl";
 
-    import AtomDateField from "@web-atoms/web-controls/dist/date-field/AtomDateField"
-    import CustomDateFieldViewModel from "./CustomDateFieldViewModel";
+    import AtomDateField from "@web-atoms/web-controls/dist/date-field/AtomDateField"
+
+    import CustomDateFieldViewModel from "./CustomDateFieldViewModel";
 
 
-export default class CustomDateField extends AtomControl {	
-	constructor(app: any, e?: any) {		super(app, e || document.createElement("div"));	}
 
-	public create(): void {		this.viewModel =  this.resolve(CustomDateFieldViewModel) ;
+export default class CustomDateField extends AtomControl {
+	
+	constructor(app: any, e?: any) {
+		super(app, e || document.createElement("div"));
+	}
+
+	public create(): void {
+		this.viewModel =  this.resolve(CustomDateFieldViewModel) ;
 
 		this.render(
 		<div>
@@ -32,7 +38,15 @@ export default class CustomDateField extends AtomControl {
                     'is-weekend': x.data.isWeekend,
                     'is-selected': x.localViewModel.selectedDate == x.data.value,
                     'is-disabled': x.localViewModel.enableFunc ? x.localViewModel.enableFunc(x.data) : 0
-                }))}>						</div>					</div>				</AtomDateField.itemTemplate>			</AtomDateField>
+                }))}>
+						</div>
+					</div>
+				</AtomDateField.itemTemplate>
+			</AtomDateField>
 			<pre
-				text={Bind.oneWay((x) => x.viewModel.log)}>			</pre>		</div>
-		);	}}
+				text={Bind.oneWay((x) => x.viewModel.log)}>
+			</pre>
+		</div>
+		);
+	}
+}

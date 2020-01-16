@@ -5,11 +5,14 @@ import {BindableProperty} from "@web-atoms/core/dist/core/BindableProperty";
 import {AtomFrame} from "@web-atoms/core/dist/web/controls/AtomFrame";
 import {AtomGridView} from "@web-atoms/core/dist/web/controls/AtomGridView";
 
-    import FrameViewModel from "./FrameViewModel";
+    import FrameViewModel from "./FrameViewModel";
 
 
-export default class FrameSample extends AtomGridView {	
-	public create(): void {		this.viewModel =  this.resolve(FrameViewModel) ;
+
+export default class FrameSample extends AtomGridView {
+	
+	public create(): void {
+		this.viewModel =  this.resolve(FrameViewModel) ;
 
 		this.render(
 		<div
@@ -17,12 +20,20 @@ export default class FrameSample extends AtomGridView {
 			<div>
 				<button
 					eventClick={Bind.event((x) => this.viewModel.openPage1())}>
-					Open Page 1				</button>
-				<br>				</br>
+					Open Page 1
+				</button>
+				<br>
+				</br>
 				<button
 					eventClick={Bind.event((x) => this.viewModel.openPage2())}>
-					Open Page 2				</button>			</div>
+					Open Page 2
+				</button>
+			</div>
 			<AtomFrame
 				row="1"
-				url={Bind.oneWay((x) => x.viewModel.url)}>			</AtomFrame>		</div>
-		);	}}
+				url={Bind.oneWay((x) => x.viewModel.url)}>
+			</AtomFrame>
+		</div>
+		);
+	}
+}

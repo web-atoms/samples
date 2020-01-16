@@ -9,33 +9,67 @@ import {AtomGridView} from "@web-atoms/core/dist/web/controls/AtomGridView";
 
     import MenuList from "./MenuList";
 
-    import GitHubMark32px from "@web-atoms/samples/src/images/github/GitHub-Mark-32px.png";
+    import GitHubMark32px from "../../images/github/GitHubMark32px";
 
     import AppTabStyle from "../styles/AppTabStyle";
+	import logo from "@web-atoms/samples/src/web/images/logo.png";
+import IndexStyle from "../styles/IndexStyle";
 
 
 
 export default class AppHost extends AtomGridView {
 	
+	public viewModel: AppHostViewModel;
+
+	
+
 	public create(): void {
+		this.defaultControlStyle = IndexStyle;
 		this.viewModel =  this.resolve(AppHostViewModel) ;
 
 		this.render(
 		<div
 			styleFontFamily="'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"
 			columns="200, *"
-			rows="30, *, 30">
-			<header>
-				<h3
-					style="position: absolute; margin: 0; padding: 0; top: 5px; left: 5px;"
-					text="<W/> Web Atoms">
-				</h3>
+			rows="90, *, 30"
+			styleClass={Bind.oneTime(() => this.controlStyle.root)}>
+			<header 
+				column="0:2"
+				row="0">
+				
+			<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+				<div class="container" style="max-width: 2000px">
+			
+				<a class="navbar-brand js-scroll-trigger" href="#page-top"> <img src={Bind.oneTime(() => logo)}/> &nbsp;WEB ATOMS</a>
+				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav ml-auto my-2 my-lg-0">
+					<li class="nav-item">
+						<a class="nav-link js-scroll-trigger" href="#about">About</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link js-scroll-trigger" href="#services">Services</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link js-scroll-trigger" href="#Price">Buy</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+					</li>
+					</ul>
+				</div>
+				</div>
+			</nav>
 			</header>
 			<MenuList
+				column="0"
 				row="1">
 			</MenuList>
+			
 			<AtomTabbedPage
-				row="0:2"
+				row="1"
 				column="1">
 			</AtomTabbedPage>
 			<footer

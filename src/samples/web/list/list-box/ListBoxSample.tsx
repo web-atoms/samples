@@ -5,17 +5,24 @@ import {BindableProperty} from "@web-atoms/core/dist/core/BindableProperty";
 import {AtomListBox} from "@web-atoms/core/dist/web/controls/AtomListBox";
 import {AtomControl} from "@web-atoms/core/dist/web/controls/AtomControl";
 
-    import ListBoxViewModel from "./ListBoxViewModel";    
-    import ListBoxSampleStyle from "./ListBoxSampleStyle";
+    import ListBoxViewModel from "./ListBoxViewModel";    
 
-    import ListBoxStyle from "./ListBoxStyle";
-
+    import ListBoxSampleStyle from "./ListBoxSampleStyle";
 
 
-export default class ListBoxSample extends AtomControl {	
-	constructor(app: any, e?: any) {		super(app, e || document.createElement("div"));	}
+    import ListBoxStyle from "./ListBoxStyle";
 
-	public create(): void {		this.viewModel =  this.resolve(ListBoxViewModel) ;
+
+
+
+export default class ListBoxSample extends AtomControl {
+	
+	constructor(app: any, e?: any) {
+		super(app, e || document.createElement("div"));
+	}
+
+	public create(): void {
+		this.viewModel =  this.resolve(ListBoxViewModel) ;
 		this.defaultControlStyle = ListBoxSampleStyle;
 
 		this.render(
@@ -40,16 +47,26 @@ export default class ListBoxSample extends AtomControl {
 							<span
 								style="font-size: 15px;
                                 font-weight: 600"
-								text={Bind.oneTime((x) => x.data.name + ' ( '+ x.data.genre +' )')}>							</span>						</div>
+								text={Bind.oneTime((x) => x.data.name + ' ( '+ x.data.genre +' )')}>
+							</span>
+						</div>
 						<div
 							style="font-size: 15px; 
                             font-weight: 400; 
                             padding-left: 15px;
                             padding-top: 5px"
-							text={Bind.oneTime((x) => x.data.description)}>						</div>					</div>				</AtomListBox.itemTemplate>			</AtomListBox>
+							text={Bind.oneTime((x) => x.data.description)}>
+						</div>
+					</div>
+				</AtomListBox.itemTemplate>
+			</AtomListBox>
 			<div
 				style="font-size: 15px;
                 margin-top: 20px;
                 font-weight: 600"
-				text={Bind.oneWay((x) => 'Selected Item: ' + x.viewModel.movie.name)}>			</div>		</div>
-		);	}}
+				text={Bind.oneWay((x) => 'Selected Item: ' + x.viewModel.movie.name)}>
+			</div>
+		</div>
+		);
+	}
+}

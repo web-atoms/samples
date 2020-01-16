@@ -5,14 +5,20 @@ import {BindableProperty} from "@web-atoms/core/dist/core/BindableProperty";
 import {AtomListBox} from "@web-atoms/core/dist/web/controls/AtomListBox";
 import {AtomControl} from "@web-atoms/core/dist/web/controls/AtomControl";
 
-    import AppListBoxStyle from "./AppListBoxStyle";
-    import MovieViewModel from "./MovieViewModel";
+    import AppListBoxStyle from "./AppListBoxStyle";
+
+    import MovieViewModel from "./MovieViewModel";
 
 
-export default class ListBox extends AtomControl {	
-	constructor(app: any, e?: any) {		super(app, e || document.createElement("div"));	}
 
-	public create(): void {		this.viewModel =  this.resolve(MovieViewModel) ;
+export default class ListBox extends AtomControl {
+	
+	constructor(app: any, e?: any) {
+		super(app, e || document.createElement("div"));
+	}
+
+	public create(): void {
+		this.viewModel =  this.resolve(MovieViewModel) ;
 
 		this.render(
 		<div>
@@ -21,5 +27,12 @@ export default class ListBox extends AtomControl {
 				<AtomListBox.itemTemplate>
 					<div>
 						<span
-							text={Bind.oneTime((x) => x.data.name)}>						</span>					</div>				</AtomListBox.itemTemplate>			</AtomListBox>		</div>
-		);	}}
+							text={Bind.oneTime((x) => x.data.name)}>
+						</span>
+					</div>
+				</AtomListBox.itemTemplate>
+			</AtomListBox>
+		</div>
+		);
+	}
+}

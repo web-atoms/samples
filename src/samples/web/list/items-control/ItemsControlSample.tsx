@@ -5,13 +5,18 @@ import {BindableProperty} from "@web-atoms/core/dist/core/BindableProperty";
 import {AtomItemsControl} from "@web-atoms/core/dist/web/controls/AtomItemsControl";
 import {AtomControl} from "@web-atoms/core/dist/web/controls/AtomControl";
 
-        import ItemsControlViewModel from "./ItemsControlViewModel";
+        import ItemsControlViewModel from "./ItemsControlViewModel";
 
 
-export default class ItemsControlSample extends AtomControl {	
-	constructor(app: any, e?: any) {		super(app, e || document.createElement("div"));	}
 
-	public create(): void {		this.viewModel =  this.resolve(ItemsControlViewModel) ;
+export default class ItemsControlSample extends AtomControl {
+	
+	constructor(app: any, e?: any) {
+		super(app, e || document.createElement("div"));
+	}
+
+	public create(): void {
+		this.viewModel =  this.resolve(ItemsControlViewModel) ;
 
 		this.render(
 		<div
@@ -21,8 +26,10 @@ export default class ItemsControlSample extends AtomControl {
                  color: maroon;
                  font-weight: 600">
 
-				                 Upcoming Movies:
-				    			</div>
+				                 Upcoming Movies:
+
+				    
+			</div>
 			<AtomItemsControl
 				items={Bind.oneWay((x) => x.viewModel.movies.value)}
 				for="ol">
@@ -31,10 +38,18 @@ export default class ItemsControlSample extends AtomControl {
 						<span
 							style="font-size: 15px;
                                 font-weight: 600"
-							text={Bind.oneTime((x) => x.data.name)}>						</span>
+							text={Bind.oneTime((x) => x.data.name)}>
+						</span>
 						<span
 							style="font-size: 15px; 
                                 font-weight: 400; 
                                 padding-left: 15px"
-							text={Bind.oneTime((x) => '( '+x.data.genre+' )')}>						</span>					</li>				</AtomItemsControl.itemTemplate>			</AtomItemsControl>		</div>
-		);	}}
+							text={Bind.oneTime((x) => '( '+x.data.genre+' )')}>
+						</span>
+					</li>
+				</AtomItemsControl.itemTemplate>
+			</AtomItemsControl>
+		</div>
+		);
+	}
+}

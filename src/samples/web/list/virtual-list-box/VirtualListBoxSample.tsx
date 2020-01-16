@@ -5,13 +5,18 @@ import {BindableProperty} from "@web-atoms/core/dist/core/BindableProperty";
 import {AtomItemsControl} from "@web-atoms/core/dist/web/controls/AtomItemsControl";
 import {AtomControl} from "@web-atoms/core/dist/web/controls/AtomControl";
 
-    import VirtualListViewModel from "./view-model/VirtualListViewModel";
+    import VirtualListViewModel from "./view-model/VirtualListViewModel";
 
 
-export default class VirtualListBoxSample extends AtomControl {	
-	constructor(app: any, e?: any) {		super(app, e || document.createElement("div"));	}
 
-	public create(): void {		this.viewModel =  this.resolve(VirtualListViewModel) ;
+export default class VirtualListBoxSample extends AtomControl {
+	
+	constructor(app: any, e?: any) {
+		super(app, e || document.createElement("div"));
+	}
+
+	public create(): void {
+		this.viewModel =  this.resolve(VirtualListViewModel) ;
 
 		this.render(
 		<div>
@@ -23,7 +28,15 @@ export default class VirtualListBoxSample extends AtomControl {
 					<div
 						style="display: inline-block; width: 200px; height: 200px; vertical-align: middle; text-align: center;">
 						<span
-							text={Bind.oneTime((x) => x.data.label)}>						</span>					</div>				</AtomItemsControl.itemTemplate>
+							text={Bind.oneTime((x) => x.data.label)}>
+						</span>
+					</div>
+				</AtomItemsControl.itemTemplate>
 				<div
-					presenter={Bind.presenter("itemsPresenter")}>				</div>			</AtomItemsControl>		</div>
-		);	}}
+					presenter={Bind.presenter("itemsPresenter")}>
+				</div>
+			</AtomItemsControl>
+		</div>
+		);
+	}
+}
