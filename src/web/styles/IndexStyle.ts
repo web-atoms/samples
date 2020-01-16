@@ -231,8 +231,11 @@ export default class IndexStyle extends AtomStyle {
                             backgroundImage: IndiaFlagIcon32
                         },
                         " .f-address li i": {
-                            color: "#2995de",
+                            color: "#ea7225",
                             fontSize: "18px"
+                        },
+                        " .f-address": {
+                           listStyleType: "none"
                         },
                         " .f-address li a": {
                             color: "#ccc"
@@ -244,7 +247,7 @@ export default class IndexStyle extends AtomStyle {
                                     subclasses: {
                                         " label": {
                                             float: "left",
-                                            border: "2px solid #ccc",
+                                            border: "2px solid #ea7225",
                                             padding: "1px 7px",
                                             textAlign: "center",
                                             marginRight: "1rem !important",
