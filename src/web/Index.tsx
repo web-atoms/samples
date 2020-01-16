@@ -1,18 +1,14 @@
 // tslint:disable
 import Bind from "@web-atoms/core/dist/core/Bind"
 import XNode from "@web-atoms/core/dist/core/XNode"
-import {BindableProperty} from "@web-atoms/core/dist/core/BindableProperty";
-import {AtomGridView} from "@web-atoms/core/dist/web/controls/AtomGridView";
 
-    import IndexStyle from "./styles/IndexStyle";
-
-    import IndiaFlag32DataUrl from "../images/IndiaFlagIcon32DataUrl";
-
-    import FormDemo from "../samples/web/form/FromDemo";
+import IndexStyle from "./styles/IndexStyle";
 import { AtomControl } from "@web-atoms/core/dist/web/controls/AtomControl";
 import logo from "@web-atoms/samples/src/web/images/logo.png";
 import AtomForm from "@web-atoms/web-controls/dist/form/AtomForm";
 import AtomField from "@web-atoms/web-controls/dist/form/AtomField";
+import IndexViewModel from "../view-models/IndexViewModel";
+import IndexFormStyle from "./styles/IndexFormStyle";
 
 
 
@@ -21,6 +17,7 @@ export default class Index extends AtomControl {
 	
 	public create(): void {
 		this.defaultControlStyle = IndexStyle;
+		this.viewModel = this.resolve(IndexViewModel);
 
 		this.render(
 		<div
@@ -29,22 +26,34 @@ export default class Index extends AtomControl {
 				<div class="container">
 			
 				<a class="navbar-brand js-scroll-trigger" href="#page-top"> <img src={Bind.oneTime(() => logo)}/> &nbsp;WEB ATOMS</a>
-				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<button class="navbar-toggler navbar-toggler-right" 
+						type="button" 
+						data-toggle="collapse" 
+						data-target="#navbarResponsive" 
+						aria-controls="navbarResponsive" 
+						aria-expanded="false" 
+						aria-label="Toggle navigation"
+						eventClick={Bind.event((x) => (x.viewModel).menuClick())}>
 					<span class="navbar-toggler-icon"></span>
 				</button>
-				<div class="collapse navbar-collapse" id="navbarResponsive">
+				<div class="collapse navbar-collapse"
+					styleClass={Bind.oneWay(() => this.viewModel.collapsed ? 'collapse navbar-collapse show' : 'collapse navbar-collapse')} id="navbarResponsive">
 					<ul class="navbar-nav ml-auto my-2 my-lg-0">
 					<li class="nav-item">
-						<a class="nav-link js-scroll-trigger" href="#about">About</a>
+						<a class="nav-link js-scroll-trigger" 
+						eventClick={Bind.event((x) => (x.viewModel).menuClick())} href="#about">About</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link js-scroll-trigger" href="#services">Services</a>
+						<a class="nav-link js-scroll-trigger"
+						eventClick={Bind.event((x) => (x.viewModel).menuClick())} href="#services">Services</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link js-scroll-trigger" href="#Price">Buy</a>
+						<a class="nav-link js-scroll-trigger"
+						eventClick={Bind.event((x) => (x.viewModel).menuClick())} href="#Price">Buy</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+						<a class="nav-link js-scroll-trigger"
+						eventClick={Bind.event((x) => (x.viewModel).menuClick())} href="#contact">Contact</a>
 					</li>
 					</ul>
 				</div>
@@ -200,42 +209,54 @@ export default class Index extends AtomControl {
 							<hr class="divider my-4"></hr>
 							<p class="text-muted mb-5">Ready to start your next project with us? Give us a call or send us an email and we will get back to you as soon as possible!</p>
 							<AtomForm
-								focus-next-on-enter="{ true }"
-								event-submit="{ () => this.viewModel.signup() }"
-								default-style="{ SideBySideFormStyle }">
+								focusNextOnEnter="{ true }"
+								eventSubmit ={Bind.event((x) => (x.viewModel).onSubmit())}
+								controlStyle={ IndexFormStyle }>
 								<AtomField
 									label="First name:"
 									required="true"
-									error="[$viewModel.errorFirstName]">
-									<input type="text" value="$[viewModel.model.firstName]"/>
+									error={Bind.twoWays(() => this.viewModel.errorFirstName)}>
+									<input type="text" 
+									placeholder="Enter first name"
+									value={Bind.twoWays(() => this.viewModel.model.firstName)}/>
 								</AtomField>
 								<AtomField
 									label="Last name:"
 									required="true"
-									error="[$viewModel.errorLastName]">
-									<input type="text" value="$[viewModel.model.lastName]"/>
+									error={Bind.twoWays(() => this.viewModel.errorLastName)}>
+									<input type="text"
+									placeholder="Enter last name"
+									value={Bind.twoWays(() => this.viewModel.model.lastName)}/>
 								</AtomField>
 								<AtomField
 									label="Email Address:"
 									required="true"
-									error="[$viewModel.errorEmailAddress]">
+									error={Bind.twoWays(() => this.viewModel.errorEmailAddress)}>
 									<input 
-										style="width: 500px"
 										type="text" 
-										value="$[viewModel.model.emailAddress]"/>
+										placeholder="Enter email address"
+										value={Bind.twoWays(() => this.viewModel.model.emailAddress)}/>
 								</AtomField>
 								<AtomField
-									label="Email Address:"
+									label="Message:"
 									required="true"
-									error="[$viewModel.errorEmailAddress]"
+									error={Bind.twoWays(() => this.viewModel.errorMessage)}
 									class="submit">
-									<input 
-										style="width: 500px"
-										type="text" 
-										value="$[viewModel.model.emailAddress]"/>
+									<textarea 
+										placeholder="Type your message"
+										value={Bind.twoWays(() => this.viewModel.model.message)}></textarea>
 								</AtomField>
 							</AtomForm>
-							<button event-click="{ () => this.viewModel.signup() }">Signup</button>
+							<div style="text-align: start; margin-top: 10px">
+							<button type="button" 
+									class="btn btn-success" 
+									style=" padding: 5px 25px; 
+											border-radius: 2px;
+											color: #fff;
+											background-color: #f4623a;
+											border-color: #f4623a;" 
+									eventClick={Bind.event((x) => (x.viewModel).onSubmit())}>Submit</button>
+							</div>
 						</div>
 					</div>
 					<div class="row justify-content-center">
