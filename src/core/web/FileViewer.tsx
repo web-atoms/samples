@@ -6,42 +6,71 @@ import {AtomToggleButtonBar} from "@web-atoms/core/dist/web/controls/AtomToggleB
 import {AtomGridSplitter} from "@web-atoms/core/dist/web/controls/AtomGridSplitter";
 import {AtomGridView} from "@web-atoms/core/dist/web/controls/AtomGridView";
 
-    import FileViewerStyle from "./FileViewerStyle";
-    import CodeView from "./CodeView";
+    import FileViewerStyle from "./FileViewerStyle";
 
-    declare var UMD: any;
-
-    function fromPath(e, files) {
-
-        if (!e || !files || !files.length) {
-            return null;
-        }
-        const owner = e.atomControl;
-        owner.file = files[0];
-        return files.map((p) => {
-            var t = p.split("/");
-            var n = t[t.length - 1];
-            return {
-                label: n,
-                value: p
-            };
-        });
-    }
-
-    function setView(e, d) {
-        if (!e || !d) {
-            return;
-        }
-        const old = UMD.mock;
-        UMD.mock = e.atomControl.designMode;
-        const c = new (d)(e.atomControl.app);
-        e.atomControl.demoPresenter.appendChild(c.element);
-        UMD.mock = old;
-    }
+    import CodeView from "./CodeView";
 
 
+    declare var UMD: any;
 
-export default class FileViewer extends AtomGridView {	
+
+    function fromPath(e, files) {
+
+
+        if (!e || !files || !files.length) {
+
+            return null;
+
+        }
+
+        const owner = e.atomControl;
+
+        owner.file = files[0];
+
+        return files.map((p) => {
+
+            var t = p.split("/");
+
+            var n = t[t.length - 1];
+
+            return {
+
+                label: n,
+
+                value: p
+
+            };
+
+        });
+
+    }
+
+
+    function setView(e, d) {
+
+        if (!e || !d) {
+
+            return;
+
+        }
+
+        const old = UMD.mock;
+
+        UMD.mock = e.atomControl.designMode;
+
+        const c = new (d)(e.atomControl.app);
+
+        e.atomControl.demoPresenter.appendChild(c.element);
+
+        UMD.mock = old;
+
+    }
+
+
+
+
+export default class FileViewer extends AtomGridView {
+	
 	@BindableProperty
 	public files: string[] ;
 
@@ -60,7 +89,8 @@ export default class FileViewer extends AtomGridView {
 	@BindableProperty
 	public demoPresenter: any ;
 
-	public create(): void {		this.defaultControlStyle = FileViewerStyle;
+	public create(): void {
+		this.defaultControlStyle = FileViewerStyle;
 
 		this.files = null;
 		this.file = null;
@@ -70,26 +100,35 @@ export default class FileViewer extends AtomGridView {
 		this.demoPresenter = null;
 		this.render(
 		<div
-			rows="36, *"
-			columns="*, 5, 50%"
+			rows="36, 5, *, 5"
+			columns="5, *, 5, 5, 5, 50%"
 			styleClass={Bind.oneTime(() => this.controlStyle.root)}
 			none={Bind.oneWay(() => setView(this.element, this.demo ))}>
 			<AtomToggleButtonBar
-				column="0: 3"
+				column="0: 6"
 				items={Bind.oneWay(() => fromPath(this.element, this.files))}
-				value={Bind.twoWays(() => this.file)}>			</AtomToggleButtonBar>
+				value={Bind.twoWays(() => this.file)}>
+			</AtomToggleButtonBar>
 			<div
-				row="1"
+				column="1"
+				row="2"
 				class="code">
 				<CodeView
 					require={Bind.oneWay(() => this.require)}
 					style="overflow: auto"
-					src={Bind.oneWay(() => this.file)}>				</CodeView>			</div>
+					src={Bind.oneWay(() => this.file)}>
+				</CodeView>
+			</div>
 			<AtomGridSplitter
-				row="1"
-				column="1">			</AtomGridSplitter>
+				row="2"
+				column="3">
+			</AtomGridSplitter>
 			<div
-				row="1"
-				column="2"
-				presenter={Bind.presenter("demoPresenter")}>			</div>		</div>
-		);	}}
+				row="2"
+				column="5"
+				presenter={Bind.presenter("demoPresenter")}>
+			</div>
+		</div>
+		);
+	}
+}

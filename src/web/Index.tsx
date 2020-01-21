@@ -9,9 +9,7 @@ import AtomForm from "@web-atoms/web-controls/dist/form/AtomForm";
 import AtomField from "@web-atoms/web-controls/dist/form/AtomField";
 import IndexViewModel from "../view-models/IndexViewModel";
 import IndexFormStyle from "./styles/IndexFormStyle";
-
-
-
+import FormDemo from "../samples/web/form/FromDemo";
 
 export default class Index extends AtomControl {
 	
@@ -45,7 +43,11 @@ export default class Index extends AtomControl {
 					</li>
 					<li class="nav-item">
 						<a class="nav-link js-scroll-trigger"
-						eventClick={Bind.event((x) => (x.viewModel).menuClick())} href="#services">Services</a>
+						href="#services">Features</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link js-scroll-trigger"
+						href="./samples.html">Documentation</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link js-scroll-trigger"
@@ -64,29 +66,34 @@ export default class Index extends AtomControl {
 				<div class="container h-100">
 				<div class="row h-100 align-items-center justify-content-center text-center">
 					<div class="col-lg-10 align-self-end">
-					<h1 class="text-uppercase text-white font-weight-bold">Your Favorite Source of web atom controls</h1>
+					<h1 class="text-white font-weight-bold">Advanced MVVM Framework for TypeScript(JavaScript)</h1>
 					<hr class="divider my-4"></hr>
 					</div>
 					<div class="col-lg-8 align-self-baseline">
-					<p class="text-white-75 font-weight-light mb-5">"Web Atoms" is an advanced MVVM framework to write cross platform applications in HTML5 and Xamarin.Forms.</p>
+					<p class="text-white-75 font-weight-light mb-5">MVVM Framework for Web and Xamarin.Forms, Hot Reload Xamarin.Forms Apps in Live Environment</p>
+					<p class="text-white-50 mb-4 text-left">
+						<ul>
+							<li>MVVM Pattern - ViewModel and Services in TypeScript for Web and Xamarin.Forms</li>
+							<li>View in TSX (JSX) - for Web and Xamarin.Forms</li>
+							<li>One time, One way, Two way Binding</li>
+							<li>Simple Dependency Injection</li>
+							<li>Simple Internationalization using Dependency Injection</li>
+							<li>Simple Unit Tests</li>
+							<li>Easy HTTP Rest API</li>
+							<li>Design time mocks</li>
+							<li>Use VS Code to Build Xamarin.Forms Apps</li>
+						</ul>
+					</p>					
 					<a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
 					</div>
 				</div>
 				</div>
 			</header>
-
-			<section class="page-section bg-primary" id="about">
+			<section class="page-section" style="background-color: ">
 				<div class="container">
-				<div class="row justify-content-center">
-					<div class="col-lg-8 text-center">
-					<h2 class="text-white mt-0">Web Atoms</h2>
-					<hr class="divider light my-4"></hr>
-					<p class="text-white-50 mb-4"> Each html file under src folder is transpiled to a TypeScript file that can contains a class derived from AtomControl. This class is a view that can be loaded with UMD.loadView method and it can be nested inside any other view.</p>
-					<a class="btn btn-light btn-xl js-scroll-trigger" 
-						href="/samples.html"
-						target="samples">Get Started!</a>
-					</div>
-				</div>
+					<div class="row text-left" style="position: relative; min-height: 600px; width: 90%">
+						<FormDemo></FormDemo>
+					</div>					
 				</div>
 			</section>
 			<section class="page-section" id="services">
@@ -97,29 +104,31 @@ export default class Index extends AtomControl {
 					<div class="col-lg-3 col-md-6 text-center">
 					<div class="mt-5">
 						<i class="fas fa-4x fa-gem text-primary mb-4"></i>
-						<h3 class="h4 mb-2">Web Controls</h3>
-						<p class="text-muted mb-0">"Web Atoms" is an advanced MVVM framework to write cross platform applications</p>
+						<h3 class="h4 mb-2">Controls</h3>
+						<p class="text-muted mb-0">Line of Business Controls for Web and Xamarin.Forms</p>
 					</div>
 					</div>
 					<div class="col-lg-3 col-md-6 text-center">
 					<div class="mt-5">
 						<i class="fas fa-4x fa-laptop-code text-primary mb-4"></i>
-						<h3 class="h4 mb-2">Up to Date</h3>
-						<p class="text-muted mb-0">All dependencies are kept current to keep things fresh.</p>
+						<h3 class="h4 mb-2">Leverage TSX</h3>
+						<p class="text-muted mb-0">All Views (for Web and Xamarin.Forms) can be written in TSX.</p>
 					</div>
 					</div>
 					<div class="col-lg-3 col-md-6 text-center">
 					<div class="mt-5">
 						<i class="fas fa-4x fa-globe text-primary mb-4"></i>
-						<h3 class="h4 mb-2">Ready to Publish</h3>
-						<p class="text-muted mb-0">You can use this design as is, or you can make changes!</p>
+						<h3 class="h4 mb-2">Live Hot Reload</h3>
+						<p class="text-muted mb-0">Hot Reload Xamarin.Forms Applications from web server!</p>
 					</div>
 					</div>
 					<div class="col-lg-3 col-md-6 text-center">
 					<div class="mt-5">
 						<i class="fas fa-4x fa-sun text-primary mb-4"></i>
-						<h3 class="h4 mb-2">Generator</h3>
-						<p class="text-muted mb-0">Each html file under src folder is transpiled to a TypeScript file that can contains a class derived from AtomControl.</p>
+						<h3 class="h4 mb-2">Simple License</h3>
+						<p class="text-muted mb-0">
+							MIT License for Web, Single Commercial License for Single Xamarin.Forms App, with unlimited users.
+						</p>
 					</div>
 					</div>
 				</div>
@@ -129,155 +138,40 @@ export default class Index extends AtomControl {
 				<div class="container">
 					<div class="row justify-content-center">
 						<div class="col-lg-8 text-center">
-							<h2 class="text-white mt-0">Price Table</h2>
+							<h2 class="text-white mt-0">Simple Licensing</h2>
 							<hr class="divider light my-4"></hr>
 						</div>
 					</div>
 				</div>
 				<section class="pricing py-5">
 					<div class="container">
-						<div class="row">
-							<div class="col-lg-4">
-								<div class="card mb-5 mb-lg-0">
-								<div class="card-body">
-									<h5 class="card-title text-muted text-uppercase text-center">Android</h5>
-									<h6 class="card-price text-center">$699<span class="period">/Year</span></h6>
-									<hr></hr>
-									<ul class="fa-ul">
-									<li><span class="fa-li"><i class="fas fa-check"></i></span>Single User</li>
-									<li><span class="fa-li"><i class="fas fa-check"></i></span>5GB Storage</li>
-									<li><span class="fa-li"><i class="fas fa-check"></i></span>Unlimited Public Projects</li>
-									<li><span class="fa-li"><i class="fas fa-check"></i></span>Community Access</li>
-									<li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Unlimited Private Projects</li>
-									<li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Dedicated Phone Support</li>
-									<li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Free Subdomain</li>
-									<li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Monthly Status Reports</li>
-									</ul>
-									<a href="#" class="btn btn-block btn-primary text-uppercase">Button</a>
-								</div>
-								</div>
-							</div>
-							<div class="col-lg-4">
-								<div class="card mb-5 mb-lg-0">
-								<div class="card-body">
-									<h5 class="card-title text-muted text-uppercase text-center">IOS</h5>
-									<h6 class="card-price text-center">$699<span class="period">/Year</span></h6>
-									<hr></hr>
-									<ul class="fa-ul">
-									<li><span class="fa-li"><i class="fas fa-check"></i></span><strong>5 Users</strong></li>
-									<li><span class="fa-li"><i class="fas fa-check"></i></span>50GB Storage</li>
-									<li><span class="fa-li"><i class="fas fa-check"></i></span>Unlimited Public Projects</li>
-									<li><span class="fa-li"><i class="fas fa-check"></i></span>Community Access</li>
-									<li><span class="fa-li"><i class="fas fa-check"></i></span>Unlimited Private Projects</li>
-									<li><span class="fa-li"><i class="fas fa-check"></i></span>Dedicated Phone Support</li>
-									<li><span class="fa-li"><i class="fas fa-check"></i></span>Free Subdomain</li>
-									<li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Monthly Status Reports</li>
-									</ul>
-									<a href="#" class="btn btn-block btn-primary text-uppercase">Button</a>
-								</div>
-								</div>
-							</div>
-							<div class="col-lg-4">
-								<div class="card">
-								<div class="card-body">
-									<h5 class="card-title text-muted text-uppercase text-center">Pro (BOTH)</h5>
-									<h6 class="card-price text-center">$999<span class="period">/Year</span></h6>
-									<hr></hr>
-									<ul class="fa-ul">
-									<li><span class="fa-li"><i class="fas fa-check"></i></span><strong>Unlimited Users</strong></li>
-									<li><span class="fa-li"><i class="fas fa-check"></i></span>150GB Storage</li>
-									<li><span class="fa-li"><i class="fas fa-check"></i></span>Unlimited Public Projects</li>
-									<li><span class="fa-li"><i class="fas fa-check"></i></span>Community Access</li>
-									<li><span class="fa-li"><i class="fas fa-check"></i></span>Unlimited Private Projects</li>
-									<li><span class="fa-li"><i class="fas fa-check"></i></span>Dedicated Phone Support</li>
-									<li><span class="fa-li"><i class="fas fa-check"></i></span><strong>Unlimited</strong> Free Subdomains</li>
-									<li><span class="fa-li"><i class="fas fa-check"></i></span>Monthly Status Reports</li>
-									</ul>
-									<a href="#" class="btn btn-block btn-primary text-uppercase">Button</a>
-								</div>
-								</div>
-							</div>
-							</div>
+						<div class="row text-white">
+							<ul>
+								<li>MIT License for Web, for all types of web application</li>
+								<li>Single commercial license for single Xamarin.Forms App</li>
+								<li>License key is unique for product ID and Xamarin.Forms Assembly Version</li>
+								<li>Xamarin.Forms Android, $699 with One Year Upgrades</li>
+								<li>Xamarin.Forms iOS, $699 with One Year Upgrades</li>
+								<li>Xamarin.Forms Mobile (iOS + Android), $999 with One Year Upgrades</li>
+								<li>For open source discount, please contact us</li>
+							</ul>						
+						</div>
 					</div>
 				</section>
-			</section>
-			<section class="page-section" id="contact">
-				<div class="container">
-					<div class="row justify-content-center">
-						<div class="col-lg-8 text-center">
-							<h2 class="mt-0">Let's Get In Touch!</h2>
-							<hr class="divider my-4"></hr>
-							<p class="text-muted mb-5">Ready to start your next project with us? Give us a call or send us an email and we will get back to you as soon as possible!</p>
-							<AtomForm
-								focusNextOnEnter="{ true }"
-								eventSubmit ={Bind.event((x) => (x.viewModel).onSubmit())}
-								controlStyle={ IndexFormStyle }>
-								<AtomField
-									label="First name:"
-									required="true"
-									error={Bind.twoWays(() => this.viewModel.errorFirstName)}>
-									<input type="text" 
-									placeholder="Enter first name"
-									value={Bind.twoWays(() => this.viewModel.model.firstName)}/>
-								</AtomField>
-								<AtomField
-									label="Last name:"
-									required="true"
-									error={Bind.twoWays(() => this.viewModel.errorLastName)}>
-									<input type="text"
-									placeholder="Enter last name"
-									value={Bind.twoWays(() => this.viewModel.model.lastName)}/>
-								</AtomField>
-								<AtomField
-									label="Email Address:"
-									required="true"
-									error={Bind.twoWays(() => this.viewModel.errorEmailAddress)}>
-									<input 
-										type="text" 
-										placeholder="Enter email address"
-										value={Bind.twoWays(() => this.viewModel.model.emailAddress)}/>
-								</AtomField>
-								<AtomField
-									label="Message:"
-									required="true"
-									error={Bind.twoWays(() => this.viewModel.errorMessage)}
-									class="submit">
-									<textarea 
-										placeholder="Type your message"
-										value={Bind.twoWays(() => this.viewModel.model.message)}></textarea>
-								</AtomField>
-							</AtomForm>
-							<div style="text-align: start; margin-top: 10px">
-							<button type="button" 
-									class="btn btn-success" 
-									style=" padding: 5px 25px; 
-											border-radius: 2px;
-											color: #fff;
-											background-color: #f4623a;
-											border-color: #f4623a;" 
-									eventClick={Bind.event((x) => (x.viewModel).onSubmit())}>Submit</button>
-							</div>
-						</div>
-					</div>
-					<div class="row justify-content-center">
-						<div class="col-lg-8 text-center">
-						</div>
-					</div>
-				</div>
 			</section>
 			<footer class="pt-5 pb-4" id="contact">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-3 col-md-6 col-sm-6 mt-2 mb-4">
 						<h5 class="mb-4 font-weight-bold">ABOUT US</h5>
-						<p class="mb-4">Etiam laoreet in ex quis efficitur.</p>
+						<p class="mb-4">Reach US at,</p>
 						<ul class="f-address">
 							<li>
 								<div class="row">
 									<div class="col-1"><i class="fas fa-map-marker"></i></div>
 									<div class="col-10">
 										<h6 class="font-weight-bold mb-0">Address:</h6>
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+										<p>Unit 103, Building 3, Sector 3, Millennium Business Park, Mahape, Navi Mumbai</p>
 									</div>
 								</div>
 							</li>
@@ -286,7 +180,7 @@ export default class Index extends AtomControl {
 									<div class="col-1"><i class="far fa-envelope"></i></div>
 									<div class="col-10">
 										<h6 class="font-weight-bold mb-0">Have any questions?</h6>
-										<p><a href="#">Support@userthemes.com</a></p>
+										<p><a href="#">Support@neurospeech.com</a></p>
 									</div>
 								</div>
 							</li>
@@ -295,7 +189,7 @@ export default class Index extends AtomControl {
 									<div class="col-1"><i class="fas fa-phone-volume"></i></div>
 									<div class="col-10">
 										<h6 class="font-weight-bold mb-0">Address:</h6>
-										<p><a href="#">+XX (0) XX XX-XXXX-XXXX</a></p>
+										<p><a href="#">+91 22 27781459</a></p>
 									</div>
 								</div>
 							</li>
@@ -371,7 +265,7 @@ export default class Index extends AtomControl {
 				<div class="row">
 					<div class="col-md-12 ">
 						<div class="text-center text-white">
-							&copy; 2018 Your Company. All Rights Reserved.
+							&copy; 2018 NeuroSpeech Technologies Pvt Ltd (India). All Rights Reserved.
 						</div>
 					</div>
 				</div>

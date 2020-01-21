@@ -13,6 +13,7 @@ export default class FileViewerStyle extends AtomStyle {
         return {
             position: "relative",
             display: "inline-block",
+            backgroundColor: Colors.whiteSmoke,
             borderColor: Colors.lightGray,
             borderWidth: "1px",
             borderStyle: "solid",
@@ -20,7 +21,7 @@ export default class FileViewerStyle extends AtomStyle {
             padding: "5px",
             margin: "5px",
             minHeight: "600px",
-            minWidth: "800px",
+            minWidth: "90%",
             subclasses: {
                 " > ul": {
                     position: "absolute",

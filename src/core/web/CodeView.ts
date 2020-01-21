@@ -63,6 +63,7 @@ export default class CodeView extends AtomControl {
             return;
         }
 
+        this.removeAllChildren(this.element);
         const pre = document.createElement("pre");
         const code = document.createElement("code");
         code.textContent = text
@@ -71,18 +72,18 @@ export default class CodeView extends AtomControl {
                 while (s.endsWith("\r")) {
                     s = s.substr(0, s.length - 1);
                 }
+                s = s.replace(/\t/g, "   ");
                 return s;
             })
             .join("\n");
 
         const language = this.getLanguage(src);
 
-        code.classList.add(language);
-        code.classList.add(`language-${language}`);
+        pre.classList.add(language);
+        pre.classList.add(`language-${language}`);
         pre.appendChild(code);
 
         highlight.highlightBlock(pre);
-        this.removeAllChildren(this.element);
         this.element.appendChild(pre);
     }
 

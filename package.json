@@ -18,17 +18,18 @@
   },
   "homepage": "https://github.com/web-atoms/samples#readme",
   "bundleDependencies": [
+    "@web-atoms/core",
+    "@web-atoms/date-time",
+    "@web-atoms/module-loader",
     "@web-atoms/web-controls",
-    "@web-atoms/xf-controls",
-    "web-atoms-core"
+    "@web-atoms/xf-controls"
   ],
   "dependencies": {
-    "@web-atoms/core": "^1.1.26",
-    "@web-atoms/date-time": "^1.0.21",
-    "@web-atoms/module-loader": "^1.0.396",
-    "@web-atoms/web-controls": "^1.1.16",
-    "@web-atoms/xf-controls": "^1.0.83",
-    "reflect-metadata": "^0.1.13",
-    "web-atoms-core": "^1.1.26"
+    "@web-atoms/core": "^1.1.29",
+    "@web-atoms/date-time": "^1.0.22",
+    "@web-atoms/module-loader": "^1.0.405",
+    "@web-atoms/web-controls": "^1.1.17",
+    "@web-atoms/xf-controls": "^1.0.84",
+    "reflect-metadata": "^0.1.13"
   }
 }

@@ -1,23 +1,12 @@
-// tslint:disable
 import Bind from "@web-atoms/core/dist/core/Bind"
 import XNode from "@web-atoms/core/dist/core/XNode"
-import {BindableProperty} from "@web-atoms/core/dist/core/BindableProperty";
 import {AtomComboBox} from "@web-atoms/core/dist/web/controls/AtomComboBox";
 import {AtomControl} from "@web-atoms/core/dist/web/controls/AtomControl";
-
-    import AtomForm from "@web-atoms/web-controls/dist/form/AtomForm";
-
-    import AtomField from "@web-atoms/web-controls/dist/form/AtomField";
-
-    import SimpleViewModel from "./SimpleViewModel";
-
-
+import AtomField from "@web-atoms/web-controls/dist/form/AtomField";
+import AtomForm from "@web-atoms/web-controls/dist/form/AtomForm";
+import SimpleViewModel from "./SimpleViewModel";
 
 export default class SimpleForm extends AtomControl {
-	
-	constructor(app: any, e?: any) {
-		super(app, e || document.createElement("div"));
-	}
 
 	public create(): void {
 		this.viewModel =  this.resolve(SimpleViewModel) ;

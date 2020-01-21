@@ -9,6 +9,9 @@ import SimpleFormViewModel from "./SimpleFormViewModel";
 
 declare var require: any;
 
+declare var UMD: any;
+UMD.designMode = true;
+
 export default class FormDemo extends FileViewer {
 
     public create(): void {
@@ -16,7 +19,8 @@ export default class FormDemo extends FileViewer {
         this.require = require;
         this.demo = SimpleForm;
         this.files = [
-            resolveModulePath(require, SimpleForm).replace("/dist/", "/src/") + ".html",
+            resolveModulePath(require, SimpleForm).replace("/dist/", "/src/") + ".tsx",
+            "@web-atoms/samples/src/samples/web/form/simple/SimpleFormXF.tsx",
             resolveModulePath(require, SimpleViewModel).replace("/dist/", "/src/") + ".ts",
             resolveModulePath(require, SignupService).replace("/dist/", "/src/") + ".ts",
             resolveModulePath(require, MockSignupService).replace("/dist/", "/src/") + ".ts"
