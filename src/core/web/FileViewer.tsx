@@ -6,7 +6,7 @@ import {AtomToggleButtonBar} from "@web-atoms/core/dist/web/controls/AtomToggleB
 import {AtomGridSplitter} from "@web-atoms/core/dist/web/controls/AtomGridSplitter";
 import {AtomGridView} from "@web-atoms/core/dist/web/controls/AtomGridView";
 
-    import FileViewerStyle from "./FileViewerStyle";
+    import FileViewerStyle, { MobileFileViewerStyle, FileBarStyle } from "./FileViewerStyle";
 
     import CodeView from "./CodeView";
 
@@ -90,7 +90,7 @@ export default class FileViewer extends AtomGridView {
 	public demoPresenter: any ;
 
 	public create(): void {
-		this.defaultControlStyle = FileViewerStyle;
+		this.defaultControlStyle = this.app.screen.screenType === "mobile" ? MobileFileViewerStyle : FileViewerStyle;
 
 		this.files = null;
 		this.file = null;
@@ -100,18 +100,20 @@ export default class FileViewer extends AtomGridView {
 		this.demoPresenter = null;
 		this.render(
 		<div
-			rows="36, 5, *, 5"
-			columns="5, *, 5, 5, 5, 50%"
+			rows= {Bind.oneTime(() => this.app.screen.screenType === "mobile" ? "120, 400, 5, 590" : "40, 5, *, 5")}
+			columns= {Bind.oneTime(() => this.app.screen.screenType === "mobile" ? "100%" : "5, *, 5, 5, 5, 50%")}
 			styleClass={Bind.oneTime(() => this.controlStyle.root)}
 			none={Bind.oneWay(() => setView(this.element, this.demo ))}>
 			<AtomToggleButtonBar
-				column="0: 6"
+				column= {Bind.oneTime(() => this.app.screen.screenType === "mobile" ? "0" : "0: 6")}
 				items={Bind.oneWay(() => fromPath(this.element, this.files))}
-				value={Bind.twoWays(() => this.file)}>
+				value={Bind.twoWays(() => this.file)}
+				controlStyle = {FileBarStyle}
+				style = "padding: 0; background: #222">
 			</AtomToggleButtonBar>
 			<div
-				column="1"
-				row="2"
+				column={Bind.oneTime(() => this.app.screen.screenType === "mobile" ? "0" : "1")}
+				row={Bind.oneTime(() => this.app.screen.screenType === "mobile" ? "1" : "2")}
 				class="code">
 				<CodeView
 					require={Bind.oneWay(() => this.require)}
@@ -121,11 +123,12 @@ export default class FileViewer extends AtomGridView {
 			</div>
 			<AtomGridSplitter
 				row="2"
-				column="3">
+				column={Bind.oneTime(() => this.app.screen.screenType === "mobile" ? "0" : "3")}>
 			</AtomGridSplitter>
 			<div
-				row="2"
-				column="5"
+				row={Bind.oneTime(() => this.app.screen.screenType === "mobile" ? "3" : "2")}
+				column={Bind.oneTime(() => this.app.screen.screenType === "mobile" ? "0" : "5")}
+				style="padding: 0.5rem; overflow: auto"
 				presenter={Bind.presenter("demoPresenter")}>
 			</div>
 		</div>

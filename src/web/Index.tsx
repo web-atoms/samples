@@ -47,7 +47,7 @@ export default class Index extends AtomControl {
 					</li>
 					<li class="nav-item">
 						<a class="nav-link js-scroll-trigger"
-						href="./samples.html">Documentation</a>
+						href="./samples.html" target="_blank">Documentation</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link js-scroll-trigger"
@@ -62,7 +62,7 @@ export default class Index extends AtomControl {
 				</div>
 			</nav>
 
-			<header class="masthead">
+			<header class="masthead" id="about">
 				<div class="container h-100">
 				<div class="row h-100 align-items-center justify-content-center text-center">
 					<div class="col-lg-10 align-self-end" style="padding:0">
@@ -89,9 +89,10 @@ export default class Index extends AtomControl {
 				</div>
 				</div>
 			</header>
-			<section class="page-section" style="background-color: ">
+			<section class="page-section">
 				<div class="container">
-					<div class="row text-left" style="position: relative; min-height: 600px; width: 90%">
+					<div class="row text-left" style="position: relative; min-height: 600px; width: 100%; margin: 0; overflow: auto"
+					styleMinHeight={Bind.oneTime(() => this.app.screen.screenType === "mobile" ? "1120px" : "600px")}>
 						<FormDemo></FormDemo>
 					</div>					
 				</div>
@@ -195,7 +196,7 @@ export default class Index extends AtomControl {
 							</li>
 						</ul>
 					</div>
-					<div class="col-lg-3 col-md-6 col-sm-6 mt-2 mb-4">
+					{/* <div class="col-lg-3 col-md-6 col-sm-6 mt-2 mb-4">
 						<h5 class="mb-4 font-weight-bold">FRESH TWEETS</h5>
 						<ul class="f-address">
 							<li>
@@ -226,8 +227,8 @@ export default class Index extends AtomControl {
 								</div>
 							</li>
 						</ul>
-					</div>
-					<div class="col-lg-3 col-md-6 col-sm-6 mt-2 mb-4">
+					</div> */}
+					{/* <div class="col-lg-3 col-md-6 col-sm-6 mt-2 mb-4">
 						<h5 class="mb-4 font-weight-bold">LATEST UPDATES</h5>
 						<ul class="recent-post">
 							<li>
@@ -243,7 +244,7 @@ export default class Index extends AtomControl {
 								<span>Rendomised words which dont look eveable.</span>
 							</li>
 						</ul>
-					</div>
+					</div> */}
 					<div class="col-lg-3 col-md-6 col-sm-6 mt-2 mb-4">
 						<h5 class="mb-4 font-weight-bold">CONNECT WITH US</h5>
 						<div class="input-group">
