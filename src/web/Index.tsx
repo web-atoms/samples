@@ -65,7 +65,7 @@ export default class Index extends AtomControl {
 			<header class="masthead">
 				<div class="container h-100">
 				<div class="row h-100 align-items-center justify-content-center text-center">
-					<div class="col-lg-10 align-self-end">
+					<div class="col-lg-10 align-self-end" style="padding:0">
 					<h1 class="text-white font-weight-bold">Advanced MVVM Framework for TypeScript(JavaScript)</h1>
 					<hr class="divider my-4"></hr>
 					</div>

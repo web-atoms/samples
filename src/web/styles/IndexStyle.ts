@@ -24,10 +24,10 @@ export default class IndexStyle extends AtomStyle {
                     }
                 },
                 " .masthead": {
-                    height: "100vh",
+                    height: this.screen.screenType === "mobile" ? "auto" :  "100vh",
                     minHeight: "40rem",
-                    paddingTop: "72px",
-                    paddingBottom: "0",
+                    paddingTop: this.screen.screenType === "mobile" ? "110px" :  "72px",
+                    paddingBottom: this.screen.screenType === "mobile" ? "30px" :  "0",
                     background: "linear-gradient(to bottom,rgba(92,77,66,.8) 0,rgba(92,77,66,.8) 100%),url("
                     + BgMasthead + ")",
                     backgroundPosition: "center",
@@ -36,7 +36,7 @@ export default class IndexStyle extends AtomStyle {
                     backgroundSize: "cover",
                     subclasses: {
                         " h1": {
-                            fontSize: this.screen.screenType === "mobile" ? "2.25rem" : "3.5rem",
+                            fontSize: this.screen.screenType === "mobile" ? "1.7rem" : "3.5rem",
                             color: "#fff",
                             textTransform: "uppercase",
                             marginBottom: ".5rem",
