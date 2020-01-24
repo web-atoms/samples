@@ -307,7 +307,8 @@ export default class IndexStyle extends AtomStyle {
                             fontSize: "18px"
                         },
                         " .f-address": {
-                           listStyleType: "none"
+                           listStyleType: "none",
+                           paddingLeft: "0"
                         },
                         " .f-address li a": {
                             color: "#ccc"
