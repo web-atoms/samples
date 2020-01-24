@@ -20,7 +20,7 @@ export default class MDHost extends AtomGridView {
 			columns="*, 5, 200">
 			<div
 				class="md-host"
-				style="width: 100%; height: 100%;">
+				style="width: 100%; height: 100%; overflow: auto; padding: 16px 32px;">
 			</div>
 			<AtomGridSplitter
 				column="1">

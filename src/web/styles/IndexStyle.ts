@@ -23,6 +23,78 @@ export default class IndexStyle extends AtomStyle {
                         }
                     }
                 },
+                " .md-host": {
+                    subclasses: {
+                        " .page": {
+                            lineHeight: "1.5",
+                            letterSpacing: "0.04rem",
+                            height: "100%",
+                            width: "100%",
+                            subclasses: {
+                                " h1": {
+                                    fontSize: "42px",
+                                    fontWeight: "400",
+                                    color: "#0e0e0e",
+                                    marginBottom: "20px"
+                                },
+                                " h2": {
+                                    fontSize: "32px",
+                                    fontWeight: "400",
+                                    color: "#0e0e0e",
+                                    margin: "10px 0"
+                                },
+                                " h3": {
+                                    fontSize: "25px",
+                                    fontWeight: "400",
+                                    color: "#0e0e0e",
+                                    margin: "10px 0"
+                                },
+                                " p": {
+                                    fontSize: "15px",
+                                    letterSpacing: "0.05rem",
+                                    lineHeight: "1.6"
+                                },
+                                " pre": {
+                                    padding: "40px 20px",
+                                    background: "#f1f1f1",
+                                    subclasses: {
+                                        " code": {
+                                            borderLeft: "4px solid #f58d70",
+                                            backgroundColor: "white",
+                                            color: "black",
+                                            subclasses: {
+                                                " .hljs-keyword, .hljs-selector-tag, .hljs-literal, .hljs-section, .hljs-link": {
+                                                    color: "#9C27B0"
+                                                },
+                                                " .hljs-quote, .hljs-deletion, .hljs-meta": {
+                                                    color: "#3F51B5 !important"
+                                                },
+                                                " .hljs-title, .hljs-type, .hljs-attribute, .hljs-symbol, .hljs-bullet, .hljs-addition, .hljs-variable, .hljs-template-tag, .hljs-template-variable": {
+                                                    color: "#ec4c00"
+                                                },
+                                                " .hljs-built_in": {
+                                                    color: "#00927c"
+                                                },
+                                                " .hljs-comment": {
+                                                    color: "#008000"
+                                                },
+                                                " .hljs-name": {
+                                                    color: "#A52A2A"
+                                                },
+                                                " .hljs-attr": {
+                                                    color: "#FF0000"
+                                                },
+                                                " .hljs-string": {
+                                                    color: "#0000CD"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
                 " .masthead": {
                     height: this.screen.screenType === "mobile" ? "auto" :  "100vh",
                     minHeight: "40rem",

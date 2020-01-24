@@ -29,8 +29,8 @@ export default class AppHost extends AtomGridView {
 
 		this.render(
 		<div
-			styleFontFamily="'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"
-			columns="200, *"
+			styleFontFamily="'Segoe UI',Arial,sans-serif"
+			columns="210, *"
 			rows="90, *, 30"
 			styleClass={Bind.oneTime(() => this.controlStyle.root)}>
 			<header 

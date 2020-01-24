@@ -7,8 +7,21 @@ export default class MenuStyle extends AtomStyle {
     public get root(): IStyleDeclaration {
         return {
             height: "100%",
+            width: "100%",
+            overflowX: "hidden",
             overflowY: "auto",
+            color: "#000!important",
+            backgroundColor: "#f1f1f1!important",
+            padding: "5px",
+            paddingTop: "10px",
             subclasses: {
+                " > div span": {
+                    fontSize: "21px",
+                    margin: "-4px 0 4px 0",
+                    width: "204px",
+                    color: "#0e0e0e",
+                    paddingLeft: "5px",
+                },
                 " > *": {
                     padding: "5px",
                     color: Colors.gray,
@@ -22,9 +35,10 @@ export default class MenuStyle extends AtomStyle {
                         },
                         " > div > div span": {
                             display: "inline-block",
-                            color: Colors.darkSlateBlue,
+                            color: "#333",
                             margin: "4px",
-                            paddingLeft: "10px",
+                            paddingLeft: "2px",
+                            fontSize: "15px",
                             subclasses: {
                                 ":hover": {
                                     cursor: "pointer",

@@ -55,9 +55,9 @@ export default class MDViewModel extends AtomViewModel {
         const md = document.createElement("div");
 
         md.innerHTML = converter.makeHtml(text);
-        md.style.overflow = "auto";
         md.style.width = "100%";
         md.style.height = "100%";
+        md.className = "page";
 
         mdRoot.appendChild(md);
 

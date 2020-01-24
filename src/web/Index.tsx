@@ -146,7 +146,7 @@ export default class Index extends AtomControl {
 				</div>
 				<section class="pricing py-5">
 					<div class="container">
-						<div class="row text-white">
+						<div class="row text-white" style="margin: auto;width: 52%;">
 							<ul>
 								<li>MIT License for Web, for all types of web application</li>
 								<li>Single commercial license for single Xamarin.Forms App</li>
