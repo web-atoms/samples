@@ -17,26 +17,33 @@ export default class MDHost extends AtomGridView {
 
 		this.render(
 		<div
-			columns="*, 5, 200">
+			columns="*, 0, 200">
 			<div
 				class="md-host"
-				style="width: 100%; height: 100%; overflow: auto; padding: 16px 32px;">
+				style="width: 100%; height: 100%; overflow: auto; padding: 16px 50px;">
 			</div>
 			<AtomGridSplitter
 				column="1">
 			</AtomGridSplitter>
-			<AtomItemsControl
-				column="2"
-				items={Bind.oneTime((x) => x.viewModel.headers)}>
-				<AtomItemsControl.itemTemplate>
-					<div
-						style="font-size: 14px; margin: 5px;"
-						stylePaddingLeft={Bind.oneTime((x) => x.data.pad + 'px')}
-						text={Bind.oneTime((x) => x.data.label)}
-						eventClick={Bind.event((x) => (x.viewModel).show((x.data)))}>
-					</div>
-				</AtomItemsControl.itemTemplate>
-			</AtomItemsControl>
+			<div 
+				column="2">
+				<h3 style="font-size: 22px;
+					font-weight: 500;
+					color: #0e0e0e;
+					margin: 10px 10px 15px;">Quick Links</h3>	
+				<AtomItemsControl
+					items={Bind.oneTime((x) => x.viewModel.headers)}>
+					<AtomItemsControl.itemTemplate>
+						<div
+							style="font-size: 14px; margin: 5px; cursor: pointer"
+							stylePaddingLeft={Bind.oneTime((x) => x.data.pad + 'px')}
+							text={Bind.oneTime((x) => x.data.label)}
+							eventClick={Bind.event((x) => (x.viewModel).show((x.data)))}>
+						</div>
+					</AtomItemsControl.itemTemplate>
+				</AtomItemsControl>
+			</div>
+
 		</div>
 		);
 	}

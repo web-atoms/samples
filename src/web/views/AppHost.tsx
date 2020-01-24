@@ -11,9 +11,9 @@ import {AtomGridView} from "@web-atoms/core/dist/web/controls/AtomGridView";
 
     import GitHubMark32px from "../../images/github/GitHubMark32px";
 
-    import AppTabStyle from "../styles/AppTabStyle";
 	import logo from "@web-atoms/samples/src/web/images/logo.png";
 import IndexStyle from "../styles/IndexStyle";
+import { SampleTabbedStyle } from "../styles/SampleTabbedStyle";
 
 
 
@@ -69,6 +69,7 @@ export default class AppHost extends AtomGridView {
 			</MenuList>
 			
 			<AtomTabbedPage
+				controlStyle={SampleTabbedStyle}
 				row="1"
 				column="1">
 			</AtomTabbedPage>
