@@ -38,11 +38,10 @@ All web atoms modules are written (transpiled) as UMD module, suitable for testi
     <body>
         <script type="text/javascript">
 
-            // map every package and its relative or absolute
-            // path (from cdn)
-            UMD.map("reflect-metadata", "./node_modules/reflect-metadata/Reflect.js");
-            UMD.map("web-atoms-core", "./node_modules/web-atoms-core");
-            UMD.map("@web-atoms/samples", "./");
+            // map path of Application Package
+            // all dependencies will be loaded from
+            // node_modules folder inside Application Package
+            UMD.setupRoot("@web-atoms/samples", "./");
 
             // set language
             UMD.lang = "en-US";
@@ -52,7 +51,11 @@ All web atoms modules are written (transpiled) as UMD module, suitable for testi
             // package to url. And it will create an instance of
             // App class and it will host the view `AppHost` in the
             // body of this document
-            UMD.loadView("@web-atoms/samples/dist/web/views/AppHost", true);
+            UMD.loadView(
+                /** Path to module (node resolution style) */
+                "@web-atoms/samples/dist/web/views/AppHost",
+                /** Design Mode to enable mock*/
+                false /*true*/);
         </script>
     </body>
 </html>
@@ -78,8 +81,8 @@ root
      + services     // all services inside this folder
      + tests        // all unit tests
      + view-models  // all view models must be placed here
-     + web          // all html files must be placed inside web folder
-     + xf           // all xaml files must be placed inside xf folder
+     + web          // all tsx files must be placed inside web folder
+     + xf           // all tsx files must be placed inside xf folder
 ```
 
 It is important that you keep files inside `web` and `xf` folder, as module loader will replace `{platform}` variable in url to corresponding folder to load views. This will make view models completely independent of platform.
@@ -89,7 +92,7 @@ It is important that you keep files inside `web` and `xf` folder, as module load
 1. Install Visual Studio Code
 2. Install Node with NPM
 3. Start VS Code and create a new terminal
-4. Run `npm install -g web-atoms-generator @web-atoms/pack`
+4. Run `npm install -g @web-atoms/pack @web-atoms/dev-server`
 5. Clone repository https://github.com/web-atoms/intro and rename package name in package.json, this will configure all tasks needed to run web atoms.
 6. Run VS Code tasks and run `All Build`
 7. This will start a small web server, you can open the displayed link in browser and all views will be displayed to test.
@@ -129,8 +132,9 @@ export default class TaskListViewModel extends AtomViewModel {
 
     public tasks: ITaskModel[];
 
-    public async init(): Promise<void> {
-        this.tasks = await this.taskService.loadTasks();
+    @Load({ init: true })
+    public async loadTasks(ct?: CancelToken): Promise<void> {
+        this.tasks = await this.taskService.loadTasks(ct);
     }
 }
 ```
@@ -151,38 +155,31 @@ export default class TaskListViewModel extends AtomViewModel {
 
     public range = { start: 0, size: 10 };
 
-    public async init(): Promise<void> {
-        this.loadTasks(null);
-    }
-
     // whenever any of search, range.start or range.size 
     // property is modified
     // automatically call this method
-    @Watch
-    public watchSearch(): void {
-        this.loadTasks(
-            this.search, this.range.start, this.range.size );
-    }
-
-    private async loadTasks(
-        search: string,
-        start: number,
-        size: number
-    ): Promise<void> {
+    @Load({ init: true })
+    public async loadTasks(ct?: CancelToken): void {
+        const search = this.search;
+        const start = this.range.start;
+        const size = this.range.size;
         this.tasks = 
-            await this.taskService.loadTasks(search, start, size);
+            await this.taskService.loadTasks(
+                search, start, size, ct);
     }
 }
 ```
-By convention, `@Watch` decorated method must be prefixed with `watch` word. Even if it is named differently, `@Watch` decorator will still watch for changes.
+By convention, `@Load` decorated method must be prefixed with `load` word. Even if it is named differently, `@Load` decorator will still watch for changes.
 
-Watch decorator automatically starts watching every expression that starts with `this.`, it ignores methods and it watches only properties. For performance, this decorator does not parse javascript code, it only looks for `this.identifier.identifier...` expression and creates map of watching every single property in entire expression.
+Load decorator will execute method when `init` is `true`, and it will watch for any changes for property path starting with `this` when `watch` is set to `true`.
 
->  Every property accessed inside `@Watch` decorated method must be initialized to `non undefined` value. Since binding framework ignores `undefined`
+This decorator automatically starts watching every expression that starts with `this.`, it ignores methods and it watches only properties. For performance, this decorator does not parse javascript code, it only looks for `this.identifier.identifier...` expression and creates map of watching every single property in entire expression.
+
+>  Every property accessed inside `@Load({ watch: true })` decorated method must be initialized to `non undefined` value. Since binding framework ignores `undefined`
 
 ### Watch property
 
-Watch can also be defined on a readonly property.
+In order to update a readonly property, you can set `@Watch` on getter method, this will cause Binding Framework to update UI element bound to this property.
 
 ```typescript
 
@@ -194,13 +191,13 @@ Watch can also be defined on a readonly property.
 ```
 
 HTML
-```html
-    <span text="[$viewModel.fullName]"></span>
+```typescript
+    <span text={Bind.oneWay( () => this.viewModel.fullName )}></span>
 ```
 
-XAML
-```xml
-    <Label Text="[$viewModel.firstName]">
+Xamarin.Forms
+```typescript
+    <XF.Label text={Bind.oneWay( () => this.viewModel.fullName )}/>
 ```
 
 You can bind any view property to `fullName` and it will refresh automatically whenever any changes was detected in `model.firstName` or `model.lastName`. Again, both must not initialized to `undefined`.
@@ -222,59 +219,6 @@ Watch can also be applied on a readonly property that returns a promise, but you
 ```
 
 Now when you bind `messageList` to `items` property of `AtomItemsControl`, it will automatically refresh whenever any property mentioned in the method changes.
-
-In order to prevent frequent loading, you must provide `cancelToken` to cancel previous REST call, however, Web Atoms waits for 100 milliseconds before starting the actual call, so if the promise is refreshed quickly, previous call would not begin. Please note, AtomViewModel has a method called `newCancelToken` which will create new token and cancel the old one.
-
-```typescript
-
-    @Watch
-    public get messageList(): Promise<IMessage[]> {
-        return this.messageService.getList(
-            this.searchText,
-            this.archived,
-            this.newCancelToken("messageList")
-        );
-    }
-
-```
-
-### CachedWatch decorator for async properties
-
-The only problem with `async` property is, every time you read it, it will execute remote request, so we recommend using `@CachedWatch` decorator instead of `@Watch`. It will return cached last promise unless any of referenced parameters were modified.
-
-
-```typescript
-
-    @CachedWatch
-    public get messageList(): Promise<IMessage[]> {
-        return this.messageService.getList(
-            this.searchText,
-            this.archived,
-            this.newCancelToken("messageList")
-        );
-    }
-
-```
-
-Since you cannot write `async/await` in property getter, you can create an inline function and return its results.
-
-```typescript
-    @CachedWatch
-    public get messageList(): Promise<IMessage[]> {
-        const af = async (st, a, c) => {
-            const r = await this.messageService.getList(
-                st,
-                a,
-                c
-            );
-            // do something with r...
-            return r;
-        };
-
-        return af(this.searchText, this.archived, this.newCancelToken("messageList"));
-    }
-
-```
 
 ### Validate decorator
 
@@ -307,57 +251,91 @@ export default class SignupViewModel extends AtomViewModel {
         return this.model.firstName ? "" : "Last name is required";
     }
 
+    /** This decorator will validate all error properties
+     * and it will execute method only if there are no validation
+     * errors.
+     */
+    @Action({ validate: true })
     public signup(): Promise<void> {
-
-        // as soon as this property is called first time
-        // validation decorator will update and error will be displayed
-        if (!this.isValid) {
-            await this.navigationService.alert(`Please enter required fields`);
-            return;
-        }
+        // do signup...
     }
 
 }
 
 ```
 HTML
-```html
-<div view-model="{ this.resolve(SignupViewModel) }">
+```typescript
 
-    <input placeholder="First name:" value="$[viewModel.model.firstName]">
-    <span class="error" text="[$viewModel.errorFirstName]"></span>
+export default class Signup extends AtomControl {
 
-    <input placeholder="Last name:" value="$[viewModel.model.lastName]">
-    <span class="error" text="[$viewModel.errorLastName]"></span>
+    /** This enables intellisense, do not initialize this*/
+    public viewModel: SignupViewModel;
 
-    ...
+    public create() {
+        this.viewModel = this.resolve(SignupViewModel);
 
-    <button event-click="{ () => $viewModel.signup() }">Signup</button>
+        this.render(<div>
+        <AtomForm>
+            <AtomField
+                label="Username"
+                error={Bind.oneWay(() => this.viewModel.errorUsername)}>
+                <input
+                    value={Bind.twoWays(() => this.viewModel.model.firstName)}/>
+            </AtomField>
+            <AtomField
+                label="Password"
+                error={Bind.oneWay(() => this.viewModel.errorPassword)}>
+                <input
+                    type="password"
+                    value={Bind.twoWays(() => this.viewModel.model.password)}/>
+            </AtomField>
+            <AtomField>
+                <button
+                    eventClick={Bind.event(() => this.viewModel.signup())} 
+                    text="Signup"/>
+            </AtomField>
+        </AtomForm>
+        </div>);
+    }
 
-</div>
+}
 ```
 
-XAML
-```xml
+Xamarin.Forms
+```typescript
+export default class Signup extends AtomXFContentPage {
 
-    <Entry 
-        Placeholder="First name:" 
-        Text="$[viewModel.model.firstName]"/>
-    <Label
-        Style="Error" 
-        Text="[$viewModel.errorFirstName]"/>
+    /** This enables intellisense, do not initialize this*/
+    public viewModel: SignupViewModel;
 
-    <Entry 
-        Placeholder="Last name:" 
-        Text="$[viewModel.model.lastName]"/>
-    <Label
-        Style="Error" 
-        Text="[$viewModel.errorLastName]"/>
+    public create() {
+        this.viewModel = this.resolve(SignupViewModel);
 
-    ...
+        this.render(<XF.ContentPage>
+        <AtomForm>
+            <AtomField
+                label="Username"
+                error={Bind.oneWay(() => this.viewModel.errorUsername)}>
+                <Entry
+                    text={Bind.twoWays(() => this.viewModel.model.firstName)}/>
+            </AtomField>
+            <AtomField
+                label="Password"
+                error={Bind.oneWay(() => this.viewModel.errorPassword)}>
+                <Entry
+                    isPassword={true}
+                    text={Bind.twoWays(() => this.viewModel.model.password)}/>
+            </AtomField>
+            <AtomField>
+                <button
+                    eventClick={Bind.event(() => this.viewModel.signup())} 
+                    text="Signup"/>
+            </AtomField>
+        </AtomForm>
+        </XF.ContentPage>);
+    }
 
-    <Button Command="{ () => $viewModel.signup() }">Signup</Button>
-
+}
 ```
 
 In above example, when page is loaded, error spans will not display anything. Even if `firstName` and `lastName` both are empty. As soon as user clicks `Signup` button, `this.isValid` get method will start watching for changes in all `@Validate` decorator methods and user interface will start displaying error message.

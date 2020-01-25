@@ -47,7 +47,7 @@ export default class Index extends AtomControl {
 					</li>
 					<li class="nav-item">
 						<a class="nav-link js-scroll-trigger"
-						href="./samples.html" target="_blank">Documentation</a>
+						href="/samples.html" target="_blank">Documentation</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link js-scroll-trigger"

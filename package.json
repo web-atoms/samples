@@ -25,11 +25,11 @@
     "@web-atoms/xf-controls"
   ],
   "dependencies": {
-    "@web-atoms/core": "^1.1.29",
+    "@web-atoms/core": "^1.1.49",
     "@web-atoms/date-time": "^1.0.22",
     "@web-atoms/module-loader": "^1.0.405",
     "@web-atoms/web-controls": "^1.1.17",
-    "@web-atoms/xf-controls": "^1.0.84",
+    "@web-atoms/xf-controls": "^1.0.90",
     "reflect-metadata": "^0.1.13"
   }
 }
