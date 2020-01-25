@@ -1,22 +1,21 @@
 import Bind from "@web-atoms/core/dist/core/Bind";
 import XNode from "@web-atoms/core/dist/core/XNode";
-import AtomComboBox from "@web-atoms/xf-controls/dist/combo-box/AtomComboBox";
-import WA from "@web-atoms/xf-controls/dist/controls/WA";
-import XF from "@web-atoms/xf-controls/dist/controls/XF";
-import AtomContentPage from "@web-atoms/xf-controls/dist/pages/AtomContentPage";
+import WA from "@web-atoms/xf-controls/dist/clr/WA";
+import XF from "@web-atoms/xf-controls/dist/clr/XF";
+import AtomXFComboBox from "@web-atoms/xf-controls/dist/combo-box/AtomXFComboBox";
+import AtomXFContentPage from "@web-atoms/xf-controls/dist/pages/AtomXFContentPage";
 import SimpleViewModel from "./SimpleViewModel";
 
 /**
  * Xamarin Forms Sample
  */
-export default class SimpleFormXF extends AtomContentPage {
+export default class SimpleFormXF extends AtomXFContentPage {
 
     public viewModel: SimpleViewModel;
 
     public create() {
 
         this.viewModel = this.resolve(SimpleViewModel);
-
         this.render(<XF.ContentPage>
             <WA.AtomForm>
                 <WA.AtomField
@@ -39,16 +38,16 @@ export default class SimpleFormXF extends AtomContentPage {
                 </WA.AtomField>
                 <WA.AtomField
                     label="Country:">
-                    <AtomComboBox
+                    <AtomXFComboBox
                         label="label"
-                        selectedItem={Bind.twoWays(() => this.viewModel.model.country)}
+                        value={Bind.twoWays(() => this.viewModel.model.country)}
                         items={Bind.oneWay(() => this.viewModel.countryList)}/>
                 </WA.AtomField>
                 <WA.AtomField
                     label="State:">
-                    <AtomComboBox
+                    <AtomXFComboBox
                         label="label"
-                        selectedItem={Bind.twoWays(() => this.viewModel.model.state)}
+                        value={Bind.twoWays(() => this.viewModel.model.state)}
                         items={Bind.oneWay(() => this.viewModel.stateList)}/>
                 </WA.AtomField>
                 <WA.AtomField
