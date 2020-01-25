@@ -33,15 +33,8 @@ export default SignupViewModel extends AtomViewModel {
         return this.model.firstName ? "" : "Last name is required";
     }
 
-    public signup(): Promise<void> {
-
-        // as soon as this property is called first time
-        // validation decorator will update and error will be displayed
-        if (!this.isValid) {
-            await this.navigationService.alert(`Please enter required fields`);
-            return;
-        }
-
+    @Action({ validate: true })
+    public async signup() {
         // optional, if you want to reuse same form
         // you can call resetValidations to remove all errors
         this.resetValidations();
@@ -51,43 +44,78 @@ export default SignupViewModel extends AtomViewModel {
 
 ```
 HTML
-```html
-<div view-model="{ this.resolve(SignupViewModel) }">
+```typescript
+export default class Signup extends AtomControl {
 
-    <input placeholder="First name:" value="$[viewModel.model.firstName]">
-    <span class="error" text="[$viewModel.errorFirstName]"></span>
+    /** This enables intellisense, do not initialize this*/
+    public viewModel: SignupViewModel;
 
-    <input placeholder="Last name:" value="$[viewModel.model.lastName]">
-    <span class="error" text="[$viewModel.errorLastName]"></span>
+    public create() {
+        this.viewModel = this.resolve(SignupViewModel);
 
-    ...
+        this.render(<div>
+        <AtomForm>
+            <AtomField
+                label="Username"
+                error={Bind.oneWay(() => this.viewModel.errorUsername)}>
+                <input
+                    value={Bind.twoWays(() => this.viewModel.model.firstName)}/>
+            </AtomField>
+            <AtomField
+                label="Password"
+                error={Bind.oneWay(() => this.viewModel.errorPassword)}>
+                <input
+                    type="password"
+                    value={Bind.twoWays(() => this.viewModel.model.password)}/>
+            </AtomField>
+            <AtomField>
+                <button
+                    eventClick={Bind.event(() => this.viewModel.signup())} 
+                    text="Signup"/>
+            </AtomField>
+        </AtomForm>
+        </div>);
+    }
 
-    <button event-click="{ () => $viewModel.signup() }">Signup</button>
-
-</div>
+}
 ```
 
-XAML
-```xml
+Xamarin.Forms
+```typescript
 
-    <Entry 
-        Placeholder="First name:" 
-        Text="$[viewModel.model.firstName]"/>
-    <Label
-        Style="Error" 
-        Text="[$viewModel.errorFirstName]"/>
+export default class Signup extends AtomXFContentPage {
 
-    <Entry 
-        Placeholder="Last name:" 
-        Text="$[viewModel.model.lastName]"/>
-    <Label
-        Style="Error" 
-        Text="[$viewModel.errorLastName]"/>
+    /** This enables intellisense, do not initialize this*/
+    public viewModel: SignupViewModel;
 
-    ...
+    public create() {
+        this.viewModel = this.resolve(SignupViewModel);
 
-    <Button Command="{ () => $viewModel.signup() }">Signup</Button>
+        this.render(<XF.ContentPage>
+        <AtomForm>
+            <AtomField
+                label="Username"
+                error={Bind.oneWay(() => this.viewModel.errorUsername)}>
+                <Entry
+                    text={Bind.twoWays(() => this.viewModel.model.firstName)}/>
+            </AtomField>
+            <AtomField
+                label="Password"
+                error={Bind.oneWay(() => this.viewModel.errorPassword)}>
+                <Entry
+                    isPassword={true}
+                    text={Bind.twoWays(() => this.viewModel.model.password)}/>
+            </AtomField>
+            <AtomField>
+                <button
+                    eventClick={Bind.event(() => this.viewModel.signup())} 
+                    text="Signup"/>
+            </AtomField>
+        </AtomForm>
+        </XF.ContentPage>);
+    }
 
+}
 ```
 
 In above example, when page is loaded, error spans will not display anything. Even if `firstName` and `lastName` both are empty. As soon as user clicks `Signup` button, `this.isValid` get method will start watching for changes in all `@Validate` decorator methods and user interface will start displaying error message.
@@ -136,8 +164,9 @@ export default class CustomValidationViewModel extends AtomViewModel {
         });
     }
 
+    @Action({ validate: true })
     public async signup(): Promise<void> {
-        let isValid = this.isValid;
+        let isValid = false;
 
         for (const email of this.model.emails) {
             if (!email.email) {
@@ -166,24 +195,53 @@ export default class CustomValidationViewModel extends AtomViewModel {
 ```
 
 HTML
-```html
-<div view-model="{ this.resolve(SignupViewModel) }">
+```typescript
 
-    <input placeholder="Name:" value="$[viewModel.model.name]">
-    <span class="error" text="[$viewModel.errorName]"></span>
+export default class CustomValidation extends AtomControl {
 
-    <AtomItemsControl>
-        <div template="itemTemplate">
-            <input value="$[data.email]" />
-            <span style="color: red" text="[data.error]"></span>
-        </div>
-    </AtomItemsControl>
-    <button event-click="{ () => $viewModel.addEmail() }">Add Email</button>
-    ...
+   public create(): void {
+      this.viewModel =  this.resolve(CustomValidationViewModel) ;
 
-    <button event-click="{ () => $viewModel.signup() }">Signup</button>
-
-</div>
+      this.render(
+      <div>
+         <div>
+            <input
+               placeholder="Name"
+               value={Bind.twoWays((x) => x.viewModel.model.name)}>
+            </input>
+            <span
+               style="color: red"
+               text={Bind.oneWay((x) => x.viewModel.errorName)}>
+            </span>
+         </div>
+         <AtomItemsControl
+            items={Bind.oneTime((x) => x.viewModel.model.emails)}>
+            <AtomItemsControl.itemTemplate>
+               <div>
+                  <input
+                     placeholder="Email"
+                     value={Bind.twoWays((x) => x.data.email)}>
+                  </input>
+                  <span
+                     style="color: red"
+                     text={Bind.oneWay((x) => x.data.error)}>
+                  </span>
+               </div>
+            </AtomItemsControl.itemTemplate>
+         </AtomItemsControl>
+         <button
+            eventClick={Bind.event((x) => (x.viewModel).addEmail())}>
+            Add Email
+         </button>
+         <div>Other fields...</div>
+         <button
+            eventClick={Bind.event((x) => (x.viewModel).signup())}>
+            Signup
+         </button>
+      </div>
+      );
+   }
+}
 ```
 
 In above example, when page is loaded, a default email address is already added in the list. And when someone tries to signup, it will raise an error if email address is empty. The `bind` will force error to automatically go away as soon as email types something.
@@ -235,11 +293,8 @@ export default class InsuranceViewModel extends AtomViewModel {
         });
     }
 
+    @Action({ validate: true })
     public async save(): Promise<void> {
-        if (!this.isValid) {
-            await this.navigationService.alert("Please fix all errors", "Error");
-            return;
-        }
         await this.navigationService.alert("Save Successful", "Success");
     }
 
@@ -247,24 +302,43 @@ export default class InsuranceViewModel extends AtomViewModel {
 ```
 #### Insurance.html
 ```html
-<div view-model="{ this.resolve(InsuranceViewModel) }">
-    <div>
-        <input placeholder="Name" value="$[viewModel.model.broker]"/>
-        <span style="color: red" text="[$viewModel.errorBroker]"></span>
-    </div>
+export default class Insurance extends AtomControl {
 
-    <AtomItemsControl items="{ $viewModel.model.applicants }">
-        <Applicant template="itemTemplate">
-        </Applicant>    
-    </AtomItemsControl>
-    <button event-click="{ () => $viewModel.addApplicant() }">Add Applicant</button>
+   public create(): void {
+      this.viewModel =  this.resolve(InsuranceViewModel) ;
 
-    <div>
-        Other fields...
-    </div>
-
-    <button event-click="{ () => $viewModel.save() }">Save</button>
-</div>
+      this.render(
+      <div>
+         <div>
+            <input
+               placeholder="Name"
+               value={Bind.twoWays((x) => x.viewModel.model.broker)}>
+            </input>
+            <span
+               style="color: red"
+               text={Bind.oneWay((x) => x.viewModel.errorBroker)}>
+            </span>
+         </div>
+         <AtomItemsControl
+            items={Bind.oneTime((x) => x.viewModel.model.applicants)}>
+            <AtomItemsControl.itemTemplate>
+               <Applicant>
+               </Applicant>
+            </AtomItemsControl.itemTemplate>
+         </AtomItemsControl>
+         <button
+            eventClick={Bind.event((x) => (x.viewModel).addApplicant())}>
+            Add Applicant
+         </button>
+         <div>Other fields...</div>
+         <button
+            eventClick={Bind.event((x) => (x.viewModel).save())}>
+            Save
+         </button>
+      </div>
+      );
+   }
+}
 ```
 
 ### Nested Applicant View
@@ -296,21 +370,52 @@ export default class ApplicantViewModel extends AtomViewModel {
 }
 ```
 #### Applicant.html
-```html
-<div 
-    view-model="{ this.resolve(ApplicantViewModel, () => ({ model: this.data, parent: this.parent.viewModel })) }"
-    style="margin: 5px; padding: 5px; border: solid 1px lightgray; border-radius: 5px">
-    <div>
-        <input placeholder="Name" value="$[viewModel.model.name]"/>
-        <span style="color: red" text="[$viewModel.errorName]"></span>
-    </div>
-    <div>
-        <input placeholder="Address" value="$[viewModel.model.address]"/>
-        <span style="color: red" text="[$viewModel.errorAddress]"></span>
-    </div>
+```typescript
+export default class Applicant extends AtomControl {
+   
+   public create(): void {
 
-    <button event-click="{ () => $viewModel.delete() }">Delete</button>
-</div>
+       /** Following method will initialize and bind parent property of
+        * ApplicantViewModel to InsuranceViewModel, this is specified in the form
+        * of lambda so it will bind correctly after the control has been created
+        * successfully.
+        *
+        * After parent is attached, parent view model will include all children validations
+        * and will fail to validate if any of child is invalid
+        */
+      this.viewModel =  this.resolve(ApplicantViewModel, () => ({ model: this.data, parent: this.parent.viewModel })) ;
+
+      this.render(
+      <div
+         style="margin: 5px; padding: 5px; border: solid 1px lightgray; border-radius: 5px">
+         <div>
+            <input
+               placeholder="Name"
+               value={Bind.twoWays((x) => x.viewModel.model.name)}>
+            </input>
+            <span
+               style="color: red"
+               text={Bind.oneWay((x) => x.viewModel.errorName)}>
+            </span>
+         </div>
+         <div>
+            <input
+               placeholder="Address"
+               value={Bind.twoWays((x) => x.viewModel.model.address)}>
+            </input>
+            <span
+               style="color: red"
+               text={Bind.oneWay((x) => x.viewModel.errorAddress)}>
+            </span>
+         </div>
+         <button
+            eventClick={Bind.event((x) => (x.viewModel).delete())}>
+            Delete
+         </button>
+      </div>
+      );
+   }
+}
 ```
 
 > You can initialize view model with additional properties.

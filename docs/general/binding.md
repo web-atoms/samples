@@ -284,15 +284,59 @@ Event binding extension allows you to subscribe events. This extension also safe
 HTML
 ```typescript
     <button
-        eventClick={ (e) => this.viewModel.signup(e) }/>
+        eventClick={ (e) => this.viewModel.signup() }/>
     <button
-        eventClick={ (e) => this.viewModel.signup(e) }/>
+        eventClick={ Bind.event((s, e) => this.viewModel.signup()) }/>
 ```
 
-XAML
+The difference between two syntax is, in first example, first argument is the event object. But for element inside item template, to access data, second syntax is recommended where first parameter is nearest `AtomControl` parent and second argument is event object.
+
+For AtomItemsControl/AtomComboBox/AtomListBox in HTML
 ```typescript
-    <XF.Label eventTapGesture="{ () => $viewModel.signup() }" />
+    <AtomItemsControl
+        items={Bind.oneWay(() => this.viewModel.items)}>
+        <AtomItemsControl.itemTemplate>
+            <div>
+                <span
+                    text={Bind.oneTime((s) => s.data.label)}/>
+                <button
+                    eventClick={Bind.event((s, e) => this.viewModel.delete(s.data))}
+                    text="Delete"/>
+            </div>
+        </AtomItemsControl.itemTemplate>
+    </AtomItemsControl>
 ```
+
+Xamarin.Forms with GestureRecognizer
+```typescript
+    <XF.Label text="Open">
+        <XF.Label.GestureRecognizers>
+            <TapGestureRecognizer
+                command={Bind.event((s, e) => this.viewModel.open())}
+                />
+        </XF.Label.GestureRecognizers>
+    </XF.Label>
+```
+Xamarin.Forms
+ListView/CollectionView with GestureRecognizer
+```typescript
+    <XF.CollectionView
+        itemsSource={Bind.oneWay(() => this.viewModel.items)}>
+        <XF.CollectionView.ItemTemplate>
+            <XF.DataTemplate>
+                <XF.Label>
+                    <XF.Label.GestureRecognizers>
+                        <TapGestureRecognizer
+                            command={Bind.event((s, e) => this.viewModel.delete(s.data))}
+                            />
+                    </XF.Label.GestureRecognizers>
+                </XF.Label>
+            </XF.DataTemplate>
+        </XF.CollectionView.ItemTemplate>
+    </XF.CollectionView>
+```
+
+In above example, first parameter is nearest `AtomXFControl` whose `data` property is item of the array set to `itemsSource` property
 
 # How Web Atoms manages bindings?
 

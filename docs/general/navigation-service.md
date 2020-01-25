@@ -9,9 +9,13 @@ To open popup and window, you can use `NavigationService` which is an abstract n
 ### OpenWindow method
 
 ```typescript
-    this.navigationService.openWindow(url, {
+    this.navigationService.openWindow(url or AtomComponent, {
         param1: value1,
         param2: value2
+    }, {
+        clearHistory?: boolean,
+        target?: string,
+        cancelToken?: CancelToken
     });
 ```
 You can use this method to create a window. If you do not create view model in your window view, then a new view model will be created and it will be attached automatically to newly created window.
@@ -23,20 +27,30 @@ Since each window will have its own `ViewModel`, you must either pass data separ
 ### Pass parameters to Window View Model
 
 #### Alert.html
-```html
-<script>
-    import AlertViewModel from "./AlertViewModel";
-</script>
-<AtomWindow.div>
-    <div template="windowTemplate">
-        <div text="{ $viewModel.message }"></div>
-    </div>
-    <div template="commandTemplate">
-        <button 
-            event-click="{ () => this.viewModel.cancel() }"
-            >Cancel</button>
-    </div>
-</AtomWindow.div>
+```typescript
+export default class Alert extends AtomWindow {
+
+    public viewModel: AlertViewModel;
+
+    public create() {
+        this.viewModel = this.resolve(AlertViewModel);
+
+        this.render(<div>
+            {/** Contents of the Window */}
+            <AtomWindow.windowTemplate>
+                <div
+                    text={Bind.oneWay(() => this.viewModel.message)}/>
+            </AtomWindow.windowTemplate>
+            {/** Command bar displayed at bottom of the window */}
+            <AtomWindow.commandTemplate>
+                <button
+                    text="Ok"
+                    eventClick={() => this.viewModel.cancel()}
+                    />
+            </AtomWindow.commandTemplate>
+        </div>);
+    }
+}
 ```
 
 #### AlertViewModel.ts
@@ -82,27 +96,36 @@ export default class LoginWindowViewModel extends AtomWindowViewModel {
 
 ```
 #### LoginWindow.html
-```html
-<script>
-    import LoginWindowViewModel from "./LoginWindowViewModel";
-</script>
-<AtomWindow.div>
-    <div template="windowTemplate">
-        ... login user interface
-    </div>
-    <div template="commandTemplate">
-        <button 
-            event-click="{ () => this.viewModel.login() }"
-            >Login</button>
-    </div>
-</AtomWindow.div>
+```typescript
+export default class LoginWindow extends AtomWindow {
+
+    public viewModel: LoginWindowViewModel;
+
+    public create() {
+        this.viewModel = this.resolve(LoginWindowViewModel);
+        this.render(<div>
+            <AtomWindow.windowTemplate>
+                <div>
+                    ... other login ui elements
+                </div>
+            </AtomWindow.windowTemplate>
+            <AtomWindow.commandTemplate>
+                <button
+                    text="Login"
+                    eventClick={() => this.viewModel.login()}
+                    />
+            </AtomWindow.commandTemplate>
+        </div>);
+    }
+
+}
 ```
 
 #### Caller
 
 ```typescript
 
-    const l = await this.openWindow(
+    const l = await this.navigationService.openWindow(
         "@package/id/dist/LoginWindow"
     );
 
@@ -114,28 +137,34 @@ Lets say you have a filter option and you want to display a popup, and as you ma
 
 #### List.html
 
-```html
-<script>
-    import AtomPopupButton from "@web-atoms/web-controls/dist/buttons/AtomPopupButton";
-    import ListViewModel from "./ListViewModel";
-</script>
-<div>
+```typescript
+export default class List extends AtomControl {
 
-    <AtomPopupButton>
-        <div template="popupTemplate">
-            <!-- Created window/popup can access parent view model as `viewModel.parent` -->
-            <input 
-                type="search"
-                value="$[viewModel.parent.search]"/>
-        </div>
-    </AtomPopupButton>
+    public viewModel: ListViewModel;
 
-    <AtomListBox items="[$viewModel.items]">
-        ...
-    </AtomListBox>
+    public create() {
+        this.render(<div>
+            <AtomPopupButton>
+                <AtomPopupButton.page>
+                    {/** Since this is a popup page, it will have its own
+                    view model, but that can be accessed via parameter
+                    passed in binding method.
+                    
+                    For this case, `s.viewModel.parent.search` and `this.viewModel.search` both are same*/}
+                    <input
+                        type="search"
+                        value={Bind.twoWays((s) => s.viewModel.parent.search)}
+                        />
+                </AtomPopupButton.page>
+            </AtomPopupButton>
 
-</div>
+            <AtomListBox items={Bind.oneWay(() => this.viewModel.items)}>
+                ...
+            </AtomListBox>            
+        </div>);
+    }
 
+}
 ```
 
 #### ListViewMode.ts

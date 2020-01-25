@@ -6,10 +6,18 @@ You can easily create and reuse your components. Every html file is transpiled t
 
 ### Timer.html
 
-```html
-<div local-view-model="{ this.resolve(TimerViewModel) }">
-    <span text="[ $viewModel.time ]" ></span>
-</div>
+```typescript
+export default class Timer extends AtomControl {
+
+    public localViewModel: TimerViewModel;
+
+    public create() {
+        this.localViewModel = this.resolve(TimerViewModel);
+        this.render(<div>
+            <span text={Bind.oneWay(() => this.localViewModel.time)}/>
+        </div>);
+    }
+}
 ```
 
 ### TimerViewModel.ts
@@ -40,18 +48,58 @@ You can create new properties on custom control by specifying it in properties a
 
 ### DateSelector.html
 
-```html
+```typescript
+export default class DateSelector extends AtomControl {
+
+    public localViewModel: DateSelectorViewModel;
+
+    /** Do not initialize properties here*/
+    public startYear: number;
+    public endYear: number;
+
+    /** By convention, preCreate should always call super,
+     * and all default property initialization must occur here,
+     * as descendants of this component can override `create` method
+     * to change look and feel
+     */
+    public preCreate() {
+
+        super.preCreate();
+
+        /** Initialize all properties here, the must be initialized to null
+         * or default, otherwise binding will not work.
+         * 
+         * The reason behind this is, if property is undefined on the current AtomComponent, it is assumed that binding should be set to same name property on the element.
+         */
+
+        this.startYear = -10;
+        this.endYear = 10;
+        this.selectedDate = null;
+
+        this.localViewModel = this.resolve(DateSelectorViewModel,
+            () => ({ owner: this }));
+    }
+
+    public create() {
+        this.render(<div>
+            <AtomComboBox
+                value={Bind.twoWays(() => this.localViewModel.day)}
+                items={Bind.oneWay(() => this.localViewModel.dayList)}/>
+            <AtomComboBox
+                value={Bind.twoWays(() => this.localViewModel.month)}
+                items={Bind.oneWay(() => this.localViewModel.monthList)}/>
+            <AtomComboBox
+                value={Bind.twoWays(() => this.localViewModel.year)}
+                items={Bind.oneWay(() => this.localViewModel.yearList)}/>
+        </div>);
+
+    }
+
+}
 <script>
     // full path from the package folder beginning with ~
     import DateSelectorViewModel from "~src/view-models/DateSelectorViewModel";
 </script>
-<div
-    properties=" startYear: -10, endYear: 10, selectedDate: undefined "
-    local-view-model="{ this.resolve(DateSelectorViewModel, () => ({ owner: this }) }">
-    <AtomComboBox items="{ $localViewModel.dayList }" value="$[localViewModel.day]" ></AtomComboBox>
-    <AtomComboBox items="{ $localViewModel.monthList }" value="$[localViewModel.month]" ></AtomComboBox>
-    <AtomComboBox items="{ $localViewModel.yearList }" value="$[localViewModel.year]" ></AtomComboBox>
-</div>
 ```
 
 ```typescript
@@ -121,32 +169,23 @@ export default class DateSelectorViewModel extends AtomViewModel {
 ```
 
 ### Usage
-```html
-<script>
-    // full path from the package folder beginning with ~
-    import DateSelector from "~src/web/views/DateSelector";
-</script>
-<div>
-    <DateSelector 
-        selected-date="$[viewModel.startDate]" ></DateSelector>
-    <DateSelector 
-        year-end="[$viewModel.startYear]"
-        selected-date="$[viewModel.endDate]" ></DateSelector>
-</div>
-```
+```typescript
+export default class Date extends AtomControl {
 
-### Referencing component from different package
-```html
-<script>
-    import DateSelector from "@private/package/dist/web/DateSelector";
-</script>
-<div>
-    <DateSelector 
-        selected-date="$[viewModel.startDate]" ></DateSelector>
-    <DateSelector 
-        year-end="[$viewModel.startYear]"
-        selected-date="$[viewModel.endDate]" ></DateSelector>
-</div>
+    public create() {
+        this.render(
+            <div>
+                <DateSelector
+                    selectedDate={Bind.twoWays(() => this.viewModel.startDate)}
+                    />
+                <DateSelector
+                    selectedDate={Bind.twoWays(() => this.viewModel.endDate)}
+                    />
+            </div>
+        );
+    }
+
+}
 ```
 
 ### Passing DOM native methods to View Model
@@ -156,7 +195,7 @@ As we do not want to reference any HTML native methods in View Model as we may e
 #### DomHelper
 ```typescript
 export default class DomHelper {
-    public static focus(ctrl: AtomControl, className: string): (() => void) {
+    public static focus(ctrl: AtomControl, className?: string): (() => void) {
         return () => {
             const input = ctrl.element.getElementsByTagName("input")[0] as HTMLInputElement;
             if (input) {
@@ -168,18 +207,11 @@ export default class DomHelper {
 ```
 
 #### HTML
-```html
-<script>
-    // full path from the package folder beginning with ~
-    import DateSelectorViewModel from "~src/view-models/DateSelectorViewModel";
-    import DomHelper from "~src/web/core/DomHelper";
-</script>
-
-<div
-    properties=" startYear: -10, endYear: 10, selectedDate: undefined "
-    local-view-model="{ this.resolve(DateSelectorViewModel, () => ({ focus: DomHelper.focus(this) })) }">
-    ...
-</div>
+```typescript
+    this.localViewModel = this.resolve(DateSelectorViewModel,
+        () => ({
+            focus: DomHelper.focus(this)
+        }));
 ```
 
 #### TypeScript
@@ -203,19 +235,26 @@ export default class DateSelectorViewModel extends AtomViewModel {
 
 ## Custom Control Inject
 
-You can inject dependencies in Custom Control via `inject` property as shown below. Lets assume that you have string resources as `SRDate` which contains language specific text.
+You can resolve dependencies in Custom Control as shown below. `@Inject` does not work in Custom UI Component because resolving them is costly operation and can slow down initialization, as usually single `ViewModel` is used for many UI elements, it is convenient to initialize dependencies in ViewModel with `@Inject`. 
 
-```html
-<script>
-    import SRDate from "./strings/SRDate";
-</script>
-<div
-    @inject =" srDate: SRDate ">
-    <!-- Display Month List -->
-    <AtomComboBox
-        items="{ this.srDate.monthList }"
-        ></AtomComboBox>
-</div>
+```typescript
+export default class Custom extends AtomControl {
+
+    public srDate: SRDate;
+
+    public preCreate() {
+        this.srDate = this.resolve(SRDate);
+    }
+
+    public create() {
+        this.render(<div>
+            <AtomComboBox
+                items={this.srDate.monthList}
+                />
+        </div>);
+    }
+
+}
 ```
 
 > You must use injection in view only for single property access that is independent of the logic. For complex logic, please continue to write logic in view model so it can be unit tested without UI.
