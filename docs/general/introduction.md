@@ -9,12 +9,12 @@ Also everything is transpiled into JavaScript, your View Model and Services rema
 In Xamarin.Forms, Web Atoms package written C# helps you easily host JavaScript modules inside an application and entire User Interface is hosed via JavaScript.
 
 ### Benefits of Web Atoms with Xamarin.Forms
+* Write TSX instead of XAML
 * Small application download size
-* Even Xaml views are converted to JavaScript
+* Dynamic Module Loading from web
 * Reuse existing NuGet components by exposing via services
 * Host javascript on server with instant updates to apps
 * No native compilation needed unless you add/modify native services written in c#
-* You can use Xaml binding as well as Web Atoms's JavaScript bindings 
 
 ## Requirements
 
@@ -62,13 +62,6 @@ All web atoms modules are written (transpiled) as UMD module, suitable for testi
 ```
 
 > To pack and load all modules at once, please review `Packer`.
-
-## Web Atoms Generator
-Each html file under `src` folder is transpiled to a TypeScript file that can contains a class derived from AtomControl. This class is a view that can be loaded with `UMD.loadView` method and it can be nested inside any other view.
-
-Similarly, each xaml file under `src` folder is transpiled to a TypeScript file, that can be used inside Xamarin.Forms application.
-
-Please refer to generator for how to setup.
 
 ## Directory structure
 

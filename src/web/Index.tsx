@@ -99,7 +99,7 @@ export default class Index extends AtomControl {
 			</section>
 			<section class="page-section" id="services">
 				<div class="container">
-				<h2 class="text-center mt-0">At Your Service</h2>
+				<h2 class="text-center mt-0">Xamarin.Forms with TypeScript</h2>
 				<hr class="divider my-4"></hr>
 				<div class="row">
 					<div class="col-lg-3 col-md-6 text-center">
