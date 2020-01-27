@@ -12,15 +12,15 @@ export default class GridSample extends AtomXFContentPage {
 
                     {/** Row Definitions */}
 
-                    <XF.Grid.RowDefinitions>
+                    <XF.Grid.rowDefinitions>
                         <XF.RowDefinition height="auto"/>
                         <XF.RowDefinition/>
-                    </XF.Grid.RowDefinitions>
+                    </XF.Grid.rowDefinitions>
 
                     <XF.SearchBar/>
 
                     <XF.CollectionView
-                        { ... XF.Grid.Row(1) }>
+                        { ... XF.Grid.row(1) }>
                     </XF.CollectionView>
                 </XF.Grid>
             </XF.ContentPage>

@@ -8,13 +8,13 @@ export default class GridSample extends AtomXFContentPage {
 
         this.render(
             <XF.ContentPage>
-                <XF.ContentPage.ToolbarItems>
+                <XF.ContentPage.toolbarItems>
                     <WA.AtomToolBarItem
                         text="Add"
                         isVisible={Bind.oneWay(() => this.viewModel.showAdd)}
                         command={Bind.event(() => this.viewModel.addItem())}
                         />
-                </XF.ContentPage.ToolbarItems>
+                </XF.ContentPage.toolbarItems>
                 <XF.Grid>
 
                 </XF.Grid>

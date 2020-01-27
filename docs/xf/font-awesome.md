@@ -25,11 +25,11 @@ export default class Sample extends AtomXFContentPage {
 
                     {/** ImageSource */}
                     <XF.ImageButton>
-                        <XF.ImageButton.Source>
+                        <XF.ImageButton.source>
                             <XF.FontImageSource
                                 glyph={FontAwesomeRegular.smiley}
                                 fontFamily={FontAwesomeRegular} />
-                        </XF.ImageButton.Source>
+                        </XF.ImageButton.source>
                     </XF.ImageButton>
 
                 </XF.StackLayout>

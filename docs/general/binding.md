@@ -310,11 +310,11 @@ For AtomItemsControl/AtomComboBox/AtomListBox in HTML
 Xamarin.Forms with GestureRecognizer
 ```typescript
     <XF.Label text="Open">
-        <XF.Label.GestureRecognizers>
+        <XF.Label.gestureRecognizers>
             <TapGestureRecognizer
                 command={Bind.event((s, e) => this.viewModel.open())}
                 />
-        </XF.Label.GestureRecognizers>
+        </XF.Label.gestureRecognizers>
     </XF.Label>
 ```
 Xamarin.Forms
@@ -325,11 +325,11 @@ ListView/CollectionView with GestureRecognizer
         <XF.CollectionView.ItemTemplate>
             <XF.DataTemplate>
                 <XF.Label>
-                    <XF.Label.GestureRecognizers>
+                    <XF.Label.gestureRecognizers>
                         <TapGestureRecognizer
                             command={Bind.event((s, e) => this.viewModel.delete(s.data))}
                             />
-                    </XF.Label.GestureRecognizers>
+                    </XF.Label.gestureRecognizers>
                 </XF.Label>
             </XF.DataTemplate>
         </XF.CollectionView.ItemTemplate>

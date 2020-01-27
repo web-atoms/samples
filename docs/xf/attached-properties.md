@@ -6,10 +6,10 @@ Setting Attached BindableProperty is little tricky, it is done as shown below.
 ```typescript
 
     <XF.Label
-        { ... XF.Grid.Row(1) }
-        { ... XF.Grid.Column(1) }
-        { ... XF.Grid.RowSpan(2) }
-        { ... XF.Grid.ColumnSpan(2) }
+        { ... XF.Grid.row(1) }
+        { ... XF.Grid.column(1) }
+        { ... XF.Grid.rowSpan(2) }
+        { ... XF.Grid.columnSpan(2) }
         />
 
 ```
@@ -18,14 +18,14 @@ Setting Attached BindableProperty is little tricky, it is done as shown below.
 ```typescript
 
     <XF.StackLayout
-        { ... XF.BindableLayout.ItemsSource(Bind.oneWay(() => this.viewModel.items)) }
+        { ... XF.BindableLayout.itemsSource(Bind.oneWay(() => this.viewModel.items)) }
         >
-        <XF.BindableLayout.ItemTemplate>
+        <XF.BindableLayout.itemTemplate>
             <XF.DataTemplate>
                 <Label
                     text={Bind.oneWay((x) => x.data.label)}/>
             </XF.DataTemplate>
-        </XF.BindableLayout.ItemTemplate>
+        </XF.BindableLayout.itemTemplate>
     </XF.StackLayout>
 
 ```
