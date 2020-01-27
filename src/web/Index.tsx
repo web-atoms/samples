@@ -229,6 +229,6 @@ export default class Index extends AtomControl {
 		);
 
 		// breaks seo waiting
-		this.app.appReady = true;
+		(window as any).appReady = true;
 	}
 }
