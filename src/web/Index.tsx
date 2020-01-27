@@ -227,5 +227,8 @@ export default class Index extends AtomControl {
 		</section>
 		</div>
 		);
+
+		// breaks seo waiting
+		this.app.appReady = true;
 	}
 }
