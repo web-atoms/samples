@@ -135,7 +135,7 @@ export default class Index extends AtomControl {
 				</div>
 				</div>
 			</section>
-			<section class="page-section bg-primary" id="Price">
+			{/* <section class="page-section bg-primary" id="Price">
 				<div class="container">
 					<div class="row justify-content-center">
 						<div class="col-lg-8 text-center">
@@ -159,7 +159,76 @@ export default class Index extends AtomControl {
 						</div>
 					</div>
 				</section>
-			</section>
+			</section> */}
+
+		<section  class="page-section bg-primary" id="Price">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-8 text-center">
+				<h2 class="text-white mt-0">Price Table			</h2>
+				<hr class="divider light my-4"/>
+				</div>
+			</div>
+			</div>
+			<section class="pricing py-5">
+					<div class="container">
+					<table>
+					<thead>
+						<tr>
+						 
+							<th>PRODUCT</th>
+							<th>LICENCE</th>
+							<th>PRICE</th>
+						</tr>
+					</thead>
+					<tbody>
+					 
+						<tr></tr>
+						<tr>
+              
+						<td>WEB</td>
+						<td>MIT</td>
+						<td><p align="center"> <a href="https://www.webatoms.in/samples.html" target="_blank" class="btn btn-block btn-primary text-uppercase"> Free <br/>Download</a></p></td>
+						</tr>
+						<tr>
+					
+					<td>XF DROID</td>
+					<td>COMMERCIAL</td>
+					<td><p align="center"> <a href="#" class="btn btn-block btn-primary text-uppercase"> $699 <br/>BUYNOW</a></p></td>
+					</tr>
+					<tr>
+					
+					<td>XF iOS</td>
+					<td>COMMERCIAL</td>
+					<td><p align="center"> <a href="#" class="btn btn-block btn-primary text-uppercase"> $699 <br/>BUYNOW</a> </p></td>
+					</tr>
+					<tr>
+					
+					<td>XF MOBILE <br/>
+						(ios + Droid)</td>
+					<td>COMMERCIAL</td>
+					<td><p align="center"> <a href="#" class="btn btn-block btn-primary text-uppercase"> $999 <br/>BUYNOW</a> </p></td>
+					</tr>
+					<tr>
+					
+					<td>XF MOBILE SOURCE <br/>
+						(ios + Droid)</td>
+					<td>COMMERCIAL</td>
+					<td><p align="center"> <a href="#" class="btn btn-block btn-primary text-uppercase"> $9,999 <br/>BUYNOW</a> </p></td>
+					</tr>
+          </tbody>
+        </table>
+					</div>
+				</section>
+			 
+			<div class="component">
+			 
+
+					 
+				</div>
+		 
+		</section>
+ 
 			<footer class="pt-5 pb-4" id="contact">
 			<div class="container">
 				<div class="row">
