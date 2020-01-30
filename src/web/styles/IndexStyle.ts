@@ -130,7 +130,7 @@ export default class IndexStyle extends AtomStyle {
                             color: "#fff",
                             backgroundColor: "#f4623a",
                             borderColor: "#f4623a",
-                           
+
                             subclasses: {
                                 ":hover": {
                                     color: "#fff",
@@ -182,7 +182,7 @@ export default class IndexStyle extends AtomStyle {
                             color: "#212529",
                             backgroundColor: "#f8f9fa",
                             borderColor: "#f8f9fa",
-                
+
                             subclasses: {
                                 ":hover": {
                                     color: "#212529",
@@ -275,7 +275,7 @@ export default class IndexStyle extends AtomStyle {
                                 " .btn-primary": {
                                     color: "#fff",
                                     backgroundColor: "#f4623a",
-                                    maxWidth:"180px",
+                                    maxWidth: "180px",
                                     borderColor: "#f4623a"
                                 }
                             }
@@ -298,30 +298,31 @@ export default class IndexStyle extends AtomStyle {
                     width: "100%",
                     backgroundColor: "#fff",
                     marginBottom: "3em",
-                     
+
                 },
-                
+
                 " table.tr.td.a":  {
                     maxWidth: "180px",
-                     
+
                 },
                " td, th": {
-                    padding: "0.75em  ",
+                    padding: this.screen.screenType === "mobile" ? "0.3em" : "0.75em",
                     border: "1px solid #f4623a",
+                    fontSize: this.screen.screenType === "mobile" ? "13px" : "inherit"
                 },
                    " td.err": {
                     backgroundColor: "#e992b9 ",
-                        color:"#fff",
+                        color: "#fff",
                         fontSize: "0.75em",
                         textAlign: "center",
                         lineHeight: "0",
                     },
-                   
+
                 "th ": {
                     backgroundColor: "#4b423b",
                     fontWeight: "bold",
-                    color:"#fff",
-                    
+                    color: "#fff",
+
                 },
 
                 "tbody th": {
@@ -330,7 +331,7 @@ export default class IndexStyle extends AtomStyle {
 
                 "tbody tr:nth-child(2n-1)":  {
                     backgroundColor: "#f5f5f5",
-                    
+
                 },
                " tbody tr:hover": {
                     backgroundColor: "rgba(255,209,202,.3)",
@@ -338,24 +339,19 @@ export default class IndexStyle extends AtomStyle {
 
                " th": {
                     backgroundColor: "#4b423b",
-                    fontWeight:"Bold",
-                   color:"#fff",
+                    fontWeight: "Bold",
+                   color: "#fff",
                     whiteSpace: "no",
                 },
-            
 
                 " component": {
                     lineHeight: "1.5em",
-                    margin:"auto",
+                    margin: "auto",
                     padding: "2em 0 3em",
                     width: "90%",
-                    maxWidth:" 1000px",
-                    overflow:" hidden",
+                    maxWidth: " 1000px",
+                    overflow: " hidden",
                 },
-               
-
-
-
                 " footer": {
                     color: "#fff",
                     backgroundAttachment: "fixed",
@@ -426,11 +422,6 @@ export default class IndexStyle extends AtomStyle {
                         }
                     }
                 },
-
-
-
- 
-
 
                 " .copyright": {
                     backgroundColor: "#111",
