@@ -178,7 +178,8 @@ export default class Index extends AtomControl {
 						 
 							<th>PRODUCT</th>
 							<th>LICENCE</th>
-							<th>PRICE</th>
+							<th> PRICE </th>
+							<th>  </th>
 						</tr>
 					</thead>
 					<tbody>
@@ -188,33 +189,39 @@ export default class Index extends AtomControl {
               
 						<td>WEB</td>
 						<td>MIT</td>
-						<td><p align="center"> <a href="https://www.webatoms.in/samples.html" target="_blank" class="btn btn-block btn-primary text-uppercase"> Free <br/>Download</a></p></td>
+						<td><p align="center">  Free </p></td>
+						<td><p align="center">  <a href="https://www.webatoms.in/samples.html" target="_blank" class="btn btn-block btn-primary text-uppercase"> Download</a></p></td>
 						</tr>
 						<tr>
 					
 					<td>XF DROID</td>
 					<td>COMMERCIAL</td>
-					<td><p align="center"> <a href="#" class="btn btn-block btn-primary text-uppercase"> $699 <br/>BUYNOW</a></p></td>
+					<td><p align="center">  $699 </p></td>
+					<td><p align="center"> <a href="#" class="btn btn-block btn-primary text-uppercase"> BUYNOW</a></p></td>
 					</tr>
 					<tr>
 					
 					<td>XF iOS</td>
 					<td>COMMERCIAL</td>
-					<td><p align="center"> <a href="#" class="btn btn-block btn-primary text-uppercase"> $699 <br/>BUYNOW</a> </p></td>
+					<td><p align="center">  $699 </p></td>
+					<td><p align="center"> <a href="#" class="btn btn-block btn-primary text-uppercase"> BUYNOW</a> </p></td>
 					</tr>
 					<tr>
 					
 					<td>XF MOBILE <br/>
 						(ios + Droid)</td>
 					<td>COMMERCIAL</td>
-					<td><p align="center"> <a href="#" class="btn btn-block btn-primary text-uppercase"> $999 <br/>BUYNOW</a> </p></td>
+
+					<td><p align="center">  $999 </p></td>
+					<td><p align="center"> <a href="#" class="btn btn-block btn-primary text-uppercase"> BUYNOW</a> </p></td>
 					</tr>
 					<tr>
 					
 					<td>XF MOBILE SOURCE <br/>
 						(ios + Droid)</td>
 					<td>COMMERCIAL</td>
-					<td><p align="center"> <a href="#" class="btn btn-block btn-primary text-uppercase"> $9,999 <br/>BUYNOW</a> </p></td>
+					<td><p align="center">  $9,999 </p></td>
+					<td><p align="center"> <a href="#" class="btn btn-block btn-primary text-uppercase"> BUYNOW</a> </p></td>
 					</tr>
           </tbody>
         </table>

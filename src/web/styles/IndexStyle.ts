@@ -306,8 +306,8 @@ export default class IndexStyle extends AtomStyle {
                      
                 },
                " td, th": {
-                    padding: "0.75em 1.5em",
-                
+                    padding: "0.75em  ",
+                    border: "1px solid #f4623a",
                 },
                    " td.err": {
                     backgroundColor: "#e992b9 ",
@@ -318,14 +318,14 @@ export default class IndexStyle extends AtomStyle {
                     },
                    
                 "th ": {
-                    backgroundColor: "#31bc86",
+                    backgroundColor: "#4b423b",
                     fontWeight: "bold",
                     color:"#fff",
                     
                 },
 
                 "tbody th": {
-                    backgroundColor: "#2ea879",
+                    backgroundColor: "#4b423b",
                 },
 
                 "tbody tr:nth-child(2n-1)":  {
@@ -337,7 +337,7 @@ export default class IndexStyle extends AtomStyle {
                 },
 
                " th": {
-                    backgroundColor: "#000",
+                    backgroundColor: "#4b423b",
                     fontWeight:"Bold",
                    color:"#fff",
                     whiteSpace: "no",
