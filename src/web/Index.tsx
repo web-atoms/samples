@@ -179,7 +179,7 @@ export default class Index extends AtomControl {
 							<th>PRODUCT</th>
 							<th>LICENCE</th>
 							<th> PRICE </th>
-							<th> DOWNLOAD </th>
+							<th>  </th>
 						</tr>
 					</thead>
 					<tbody>

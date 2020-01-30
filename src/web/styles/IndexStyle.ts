@@ -314,7 +314,7 @@ export default class IndexStyle extends AtomStyle {
                         color:"#fff",
                         fontSize: "0.75em",
                         textAlign: "center",
-                        lineHeight: "1",
+                        lineHeight: "0",
                     },
                    
                 "th ": {
