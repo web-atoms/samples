@@ -43,7 +43,7 @@ Exposing CLR service is very easy, all you have to do is implement an empty inte
             // only properties are deeply copied
             var copy = context.Serialize(list, SerializationMode.Copy);
 
-            return copy;
+            return jsArray;
 
         }
 
