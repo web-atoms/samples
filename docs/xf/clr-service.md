@@ -73,7 +73,7 @@ Exposing CLR service is very easy, all you have to do is implement an empty inte
     export default class FileService {
 
         /**
-        * This is first synchronous method, naming convetion should be
+        * This is first synchronous method, naming convention should be
         * as per JavaScript, camel case.
         */
         public getVersion(): string {
@@ -108,7 +108,7 @@ This method will create a deep copy of CLR Object as dictionary which you can ea
 
 This method is also very slow as deep copy operation will take more time.
 
-Deserialization will also be slow as it will completey construct new object with all properties.
+Deserialization will also be slow as it will completely construct new object with all properties.
 
 ### Reference
 Keeps reference along with serialization, every property is serialized as getter/setter, upon deserialization, same object will be returned.

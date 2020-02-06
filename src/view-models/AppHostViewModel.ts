@@ -81,6 +81,12 @@ export default class AppHostViewModel extends AtomViewModel {
         });
 
         const xf = ms.addGroup("Xamarin.Forms");
+
+        xf.addTabLink("CLR Interop", MDHost, {
+            url: UMD.resolvePath("@web-atoms/samples/docs/xf/clr-service.md"),
+            title: "CLR Interop"
+        });
+
         xf.addTabLink("Attached Properties", MDHost, {
             url: UMD.resolvePath("@web-atoms/samples/docs/xf/attached-properties.md"),
             title: "Attached Properties"
