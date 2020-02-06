@@ -23,11 +23,10 @@ Exposing CLR service is very easy, all you have to do is implement an empty inte
 
             var list = await localFileService.SearchAsync(pattern);
 
-            // this creates JSON styled objects that be accessed in JavaScript, note
-            // only properties are deeply copied
-            var copy = context.CopyObject(list);
+            var jsArray = context.CreateArray();
+            jsArray.AddRange(list.Select(x => context.Convert(x)));
 
-            return copy;
+            return jsArray;
 
         }
 
