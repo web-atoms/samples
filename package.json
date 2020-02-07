@@ -27,7 +27,6 @@
   "dependencies": {
     "@web-atoms/core": "^1.1.62",
     "@web-atoms/date-time": "^1.0.22",
-    "@web-atoms/dev-server": "^1.0.106",
     "@web-atoms/module-loader": "^1.0.407",
     "@web-atoms/web-controls": "^1.1.22",
     "@web-atoms/xf-controls": "^1.0.97",
