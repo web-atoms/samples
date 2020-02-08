@@ -18,6 +18,8 @@ Exposing CLR service is very easy, all you have to do is implement an empty inte
         /// Synchronous method
         ///</summary>
         public string GetVersion(IJSContext context) {
+            // convert method converts basic types (string, int, float, date) etc to native JS types
+            // otherwise it wraps an object and you cannot call any methods on it
             return context.Convert("current version");
         }
 
@@ -68,37 +70,37 @@ Exposing CLR service is very easy, all you have to do is implement an empty inte
 
     @DISingleton({
         // registered service...
-        global: "bridge.fileService"
+        global: "bridge.fileService",
+
+        // optional for mocking
+        mock: "./mocks/FileService"
     })
-    export default class FileService {
+    export default abstract class FileService {
 
         /**
         * This is first synchronous method, naming convention should be
         * as per JavaScript, camel case.
         */
-        public getVersion(): string {
-            return null;
-        }
+        public abstract getVersion(): string;
 
         /**
         * Asynchronous method should return a promise
         */
-        public isStorageAvailable(): Promise<boolean> {
-            return null;
-        }
+        public abstract isStorageAvailable(): Promise<boolean>;
 
         /**
         * Do not specify first parameter as context
         */
-        public searchFiles(pattern: string): Promise<any[]> {
-            // dummy return, this will never be executed
-            // this class is only a placeholder for intellisense
-            return null;
-        }
+        public abstract searchFiles(pattern: string): Promise<any[]>;
         
     }
 
 ```
+
+### Why do we have to declare class in TypeScript
+The way dependency injection works, decorators cannot be declared on interfaces as in C# and Java. TypeScript decorators can only be applied on classes.
+
+You can also create mock which will be available in design time and unit tests.
 
 ## Serialization Modes
 
@@ -115,4 +117,10 @@ Keeps reference along with serialization, every property is serialized as getter
 
 This method is useful for self referencing objects, but this may cause memory leak if you keep reference in JavaScript and JavaScript garbage collector fails to dispose object.
 
-This method is faster at time of deserialization as it simply returns referenced object.
+Deserialization is faster as it simply returns referenced object.
+
+### WeakReference
+Same as `Reference` but it only keeps weak reference, you will get object disposed if you try to access object in JavaScript and it is disposed in CLR. CLR is very aggressive while disposing objects, so this may not work if you do not keep reference in CLR. This is also recommended method as it will avoid memory leaks.
+
+### Wrap
+This is default serialization method for any object. Object will simply be wrapped and no methods/properties are exposed.

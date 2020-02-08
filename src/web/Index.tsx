@@ -197,14 +197,14 @@ export default class Index extends AtomControl {
 					<td>XF DROID</td>
 					<td>COMMERCIAL</td>
 					<td><p align="center" style="margin-bottom: 0">  $699 </p></td>
-					<td><p align="center" style="margin-bottom: 0"> <a href="#" class="btn btn-block btn-primary text-uppercase"> BUYNOW</a></p></td>
+					<td><p align="center" style="margin-bottom: 0"> <a href="/ui/Purchase?id=webatoms.xf.droid" class="btn btn-block btn-primary text-uppercase"> BUYNOW</a></p></td>
 					</tr>
 					<tr>
 					
 					<td>XF iOS</td>
 					<td>COMMERCIAL</td>
 					<td><p align="center" style="margin-bottom: 0">  $699 </p></td>
-					<td><p align="center" style="margin-bottom: 0"> <a href="#" class="btn btn-block btn-primary text-uppercase"> BUYNOW</a> </p></td>
+					<td><p align="center" style="margin-bottom: 0"> <a href="/ui/Purchase?id=webatoms.xf.ios" class="btn btn-block btn-primary text-uppercase"> BUYNOW</a> </p></td>
 					</tr>
 					<tr>
 					
@@ -213,7 +213,7 @@ export default class Index extends AtomControl {
 					<td>COMMERCIAL</td>
 
 					<td><p align="center" style="margin-bottom: 0">  $999 </p></td>
-					<td><p align="center" style="margin-bottom: 0"> <a href="#" class="btn btn-block btn-primary text-uppercase"> BUYNOW</a> </p></td>
+					<td><p align="center" style="margin-bottom: 0"> <a href="/ui/Purchase?id=webatoms.xf.mobile" class="btn btn-block btn-primary text-uppercase"> BUYNOW</a> </p></td>
 					</tr>
 					<tr>
 					
@@ -221,7 +221,7 @@ export default class Index extends AtomControl {
 						(ios + Droid)</td>
 					<td>COMMERCIAL</td>
 					<td><p align="center" style="margin-bottom: 0">  $9,999 </p></td>
-					<td><p align="center" style="margin-bottom: 0"> <a href="#" class="btn btn-block btn-primary text-uppercase"> BUYNOW</a> </p></td>
+					<td><p align="center" style="margin-bottom: 0"> <a href="/ui/Purchase?id=webatoms.xf.source" class="btn btn-block btn-primary text-uppercase"> BUYNOW</a> </p></td>
 					</tr>
           </tbody>
         </table>
