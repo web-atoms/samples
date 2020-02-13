@@ -22,7 +22,8 @@
     "@web-atoms/date-time",
     "@web-atoms/module-loader",
     "@web-atoms/web-controls",
-    "@web-atoms/xf-controls"
+    "@web-atoms/xf-controls",
+    "@web-atoms/xf-samples"
   ],
   "dependencies": {
     "@web-atoms/core": "^1.1.62",
@@ -30,6 +31,7 @@
     "@web-atoms/module-loader": "^1.0.407",
     "@web-atoms/web-controls": "^1.1.22",
     "@web-atoms/xf-controls": "^1.0.97",
+    "@web-atoms/xf-samples": "^1.0.41",
     "reflect-metadata": "^0.1.13"
   }
 }
