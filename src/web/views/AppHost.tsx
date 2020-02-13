@@ -21,12 +21,13 @@ export default class AppHost extends AtomGridView {
 	
 	public viewModel: AppHostViewModel;
 
-	
+	public createViewModel() {
+		this.viewModel =  this.resolve(AppHostViewModel);		
+	}
 
 	public create(): void {
 		this.defaultControlStyle = IndexStyle;
-		this.viewModel =  this.resolve(AppHostViewModel) ;
-
+		this.createViewModel();
 		this.render(
 		<div
 			styleFontFamily="'Segoe UI',Arial,sans-serif"
