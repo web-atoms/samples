@@ -99,6 +99,81 @@ export default class XFAppHostViewModel extends AtomViewModel {
             title: "Font Awesome"
         });
 
+        const form = "@web-atoms/xf-samples/src/samples";
+        this.menuService.addSamples(require, "Form", [
+            {
+                label: "Label",
+                demo: `${form}/label/label.png`,
+                files: [
+                    `${form}/label/LabelView.tsx`
+                ]
+            },
+            {
+                label: "CheckBox",
+                demo: `${form}/check-box/check-box.png`,
+                files: [
+                    `${form}/check-box/CheckBoxView.tsx`,
+                    `${form}/check-box/CheckBoxSampleViewModel.tsx`
+                ]
+            },
+            {
+                label: "Entry",
+                demo: `${form}/entry/entry.png`,
+                files: [
+                    `${form}/entry/EntryView.tsx`,
+                    `${form}/entry/EntryViewModel.tsx`
+                ]
+            },
+            {
+                label: "Button",
+                demo: `${form}/button/button.png`,
+                files: [
+                    `${form}/button/ButtonView.tsx`,
+                    `${form}/button/ButtonViewModel.tsx`
+                ]
+            },
+            {
+                label: "Image Button",
+                demo: `${form}/button/image-button/image-button.png`,
+                files: [
+                    `${form}/button/image-button/ImageButtonView.tsx`,
+                    `${form}/button/ButtonViewModel.tsx`
+                ]
+            },
+            {
+                label: "Search Bar",
+                demo: `${form}/search-bar/search-bar.png`,
+                files: [
+                    `${form}/search-bar/SearchBarView.tsx`,
+                    `${form}/search-bar/SearchBarViewModel.tsx`
+                ]
+            },
+            {
+                label: "Date Picker",
+                demo: `${form}/date-picker/date-picker.png`,
+                files: [
+                    `${form}/date-picker/DatePickerView.tsx`,
+                    `${form}/date-picker/DatePickerViewModel.tsx`
+                ]
+            },
+            {
+                label: "Slider",
+                demo: `${form}/slider/slider.png`,
+                files: [
+                    `${form}/slider/SliderView.tsx`,
+                    `${form}/slider/SliderViewModel.tsx`
+                ]
+            },
+            {
+                label: "Stepper",
+                demo: `${form}/stepper/stepper.png`,
+                files: [
+                    `${form}/stepper/StepperView.tsx`,
+                    `${form}/stepper/StepperViewModel.tsx`
+                ]
+            },
+        ]);
+
         const layout = "@web-atoms/xf-samples/src/samples/layout/multiple-content";
         this.menuService.addSamples(require, "Layouts", [
             {
