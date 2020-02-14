@@ -1,6 +1,6 @@
 import { App } from "@web-atoms/core/dist/App";
 import { AtomList } from "@web-atoms/core/dist/core/AtomList";
-import { INameValuePairs } from "@web-atoms/core/dist/core/types";
+import { INameValuePairs, UMD } from "@web-atoms/core/dist/core/types";
 import FileViewer from "../core/web/FileViewer";
 import ImageView from "../core/web/ImageView";
 import resolveModulePath from "../core/web/resolveModulePath";
@@ -102,7 +102,7 @@ export default class MenuItem {
         });
 
         if (!demo.isControl) {
-            const src = demo;
+            const src = UMD.resolvePath(demo);
             demo = class ImageViewEx extends ImageView {
                 public create() {
                     this.image = src;

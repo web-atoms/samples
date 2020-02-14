@@ -99,17 +99,26 @@ export default class XFAppHostViewModel extends AtomViewModel {
             title: "Font Awesome"
         });
 
+        const stackLayout = "@web-atoms/xf-samples/src/samples/layout/multiple-content/stack-layout";
         this.menuService.addSamples(require, "Layouts", [
             {
                 label: "Stack Layout",
                 // tslint:disable-next-line: max-line-length
-                demo: "https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/layouts/stack-layout-images/spacing-zero.png",
+                demo: `${stackLayout}/stack-layout.png`,
                 files: [
-                    "@web-atoms/xf-samples/src/samples/layout/multiple-content/stack-layout/StackLayoutView.tsx"
+                    `${stackLayout}/StackLayoutView.tsx`
                 ]
             }
         ]);
 
+        this.app.callLater(async () => {
+            await this.navigationService.openPage(MDHost, {
+                url: UMD.resolvePath("@web-atoms/samples/docs/general/introduction.md"),
+                title: "Introduction"
+            }, {
+                target: "app"
+            });
+        });
     }
 
     public openGithub(): void {
