@@ -99,16 +99,36 @@ export default class XFAppHostViewModel extends AtomViewModel {
             title: "Font Awesome"
         });
 
-        const stackLayout = "@web-atoms/xf-samples/src/samples/layout/multiple-content/stack-layout";
+        const layout = "@web-atoms/xf-samples/src/samples/layout/multiple-content";
         this.menuService.addSamples(require, "Layouts", [
             {
                 label: "Stack Layout",
-                // tslint:disable-next-line: max-line-length
-                demo: `${stackLayout}/stack-layout.png`,
+                demo: `${layout}/stack-layout/stack-layout.png`,
                 files: [
-                    `${stackLayout}/StackLayoutView.tsx`
+                    `${layout}/stack-layout/StackLayoutView.tsx`
                 ]
-            }
+            },
+            {
+                label: "Absolute Layout",
+                demo: `${layout}/absolute-layout/absolute-layout.png`,
+                files: [
+                    `${layout}/absolute-layout/AbsoluteLayoutView.tsx`
+                ]
+            },
+            {
+                label: "Flex Layout",
+                demo: `${layout}/flex-layout/flex-layout.png`,
+                files: [
+                    `${layout}/flex-layout/FlexLayoutView.tsx`
+                ]
+            },
+            {
+                label: "Grid Layout",
+                demo: `${layout}/grid-layout/grid-layout.png`,
+                files: [
+                    `${layout}/grid-layout/GridLayoutView.tsx`
+                ]
+            },
         ]);
 
         this.app.callLater(async () => {
