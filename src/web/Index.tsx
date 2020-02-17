@@ -11,6 +11,8 @@ import IndexViewModel from "../view-models/IndexViewModel";
 import IndexFormStyle from "./styles/IndexFormStyle";
 import FormDemo from "../samples/web/form/FromDemo";
 
+// @web-atoms-pack: true
+/** XF Home Page */
 export default class Index extends AtomControl {
 	
 	public create(): void {
