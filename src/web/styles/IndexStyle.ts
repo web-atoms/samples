@@ -56,7 +56,9 @@ export default class IndexStyle extends AtomStyle {
                                 },
                                 " pre": {
                                     padding: "40px 20px",
-                                    background: "#f1f1f1",
+                                    background: "#ffffff",
+                                    border: "solid 1px lightgray",
+                                    borderRadius: "20px",
                                     subclasses: {
                                         " code": {
                                             borderLeft: "4px solid #f58d70",

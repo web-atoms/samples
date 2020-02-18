@@ -15,8 +15,8 @@ import {AtomGridView} from "@web-atoms/core/dist/web/controls/AtomGridView";
 import IndexStyle from "../styles/IndexStyle";
 import { SampleTabbedStyle } from "../styles/SampleTabbedStyle";
 
-
-
+// @web-atoms-pack: true
+/** Web Samples */
 export default class AppHost extends AtomGridView {
 	
 	public viewModel: AppHostViewModel;

@@ -11,6 +11,8 @@ import IndexViewModel from "../view-models/IndexViewModel";
 import IndexFormStyle from "./styles/IndexFormStyle";
 import FormDemo from "../samples/web/form/FromDemo";
 
+// @web-atoms-pack: true
+/** XF Home Page */
 export default class Index extends AtomControl {
 	
 	public create(): void {
@@ -47,7 +49,11 @@ export default class Index extends AtomControl {
 					</li>
 					<li class="nav-item">
 						<a class="nav-link js-scroll-trigger"
-						href="/samples.html" target="_blank">Documentation</a>
+						href="/xf/samples.html" target="_blank">XF Docs</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link js-scroll-trigger"
+						href="/samples.html" target="_blank">Web Docs</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link js-scroll-trigger"

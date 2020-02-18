@@ -344,6 +344,52 @@ export default class XFAppHostViewModel extends AtomViewModel {
             },
         ]);
 
+        const view = "@web-atoms/xf-samples/src/samples/collection-view";
+        this.menuService.addSamples(require, "Collection View", [
+            {
+                label: "Vertical List",
+                demo: `${view}/vertical-list/vertical-list.png`,
+                files: [
+                    `${view}/vertical-list/VerticalListSample.tsx`
+                ]
+            },
+            {
+                label: "Horizontal List",
+                demo: `${view}/horizontal-list/horizontal-list.png`,
+                files: [
+                    `${view}/horizontal-list/HorizontalListSample.tsx`
+                ]
+            },
+            {
+                label: "Vertical Grid",
+                demo: `${view}/vertical-grid/vertical-grid.png`,
+                files: [
+                    `${view}/vertical-grid/VerticalGridSample.tsx`
+                ]
+            },
+            {
+                label: "Horizontal Grid",
+                demo: `${view}/horizontal-grid/horizontal-grid.png`,
+                files: [
+                    `${view}/horizontal-grid/HorizontalGridSample.tsx`
+                ]
+            },
+            {
+                label: "Header Footer",
+                demo: `${view}/header-footer/header-footer.png`,
+                files: [
+                    `${view}/header-footer/HeaderFooterSample.tsx`
+                ]
+            },
+            {
+                label: "Swipe",
+                demo: `${view}/swipe/swipe.png`,
+                files: [
+                    `${view}/swipe/SwipeCollectionViewSample.tsx`
+                ]
+            }
+        ]);
+
         this.app.callLater(async () => {
             await this.navigationService.openPage(MDHost, {
                 url: UMD.resolvePath("@web-atoms/samples/docs/general/introduction.md"),
