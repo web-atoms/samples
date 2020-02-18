@@ -105,7 +105,8 @@ export default class XFAppHostViewModel extends AtomViewModel {
                 label: "Label",
                 demo: `${form}/label/label.png`,
                 files: [
-                    `${form}/label/LabelView.tsx`
+                    `${form}/label/LabelView.tsx`,
+                    `${form}/label/LabelViewModel.ts`
                 ]
             },
             {
@@ -113,7 +114,7 @@ export default class XFAppHostViewModel extends AtomViewModel {
                 demo: `${form}/check-box/check-box.png`,
                 files: [
                     `${form}/check-box/CheckBoxView.tsx`,
-                    `${form}/check-box/CheckBoxSampleViewModel.tsx`
+                    `${form}/check-box/CheckBoxSampleViewModel.ts`
                 ]
             },
             {
@@ -121,7 +122,14 @@ export default class XFAppHostViewModel extends AtomViewModel {
                 demo: `${form}/entry/entry.png`,
                 files: [
                     `${form}/entry/EntryView.tsx`,
-                    `${form}/entry/EntryViewModel.tsx`
+                    `${form}/entry/EntryViewModel.ts`
+                ]
+            },
+            {
+                label: "Image",
+                demo: `${form}/image/image.png`,
+                files: [
+                    `${form}/image/ImageView.tsx`
                 ]
             },
             {
@@ -129,7 +137,7 @@ export default class XFAppHostViewModel extends AtomViewModel {
                 demo: `${form}/button/button.png`,
                 files: [
                     `${form}/button/ButtonView.tsx`,
-                    `${form}/button/ButtonViewModel.tsx`
+                    `${form}/button/ButtonViewModel.ts`
                 ]
             },
             {
@@ -137,7 +145,7 @@ export default class XFAppHostViewModel extends AtomViewModel {
                 demo: `${form}/button/image-button/image-button.png`,
                 files: [
                     `${form}/button/image-button/ImageButtonView.tsx`,
-                    `${form}/button/ButtonViewModel.tsx`
+                    `${form}/button/ButtonViewModel.ts`
                 ]
             },
             {
@@ -145,7 +153,7 @@ export default class XFAppHostViewModel extends AtomViewModel {
                 demo: `${form}/search-bar/search-bar.png`,
                 files: [
                     `${form}/search-bar/SearchBarView.tsx`,
-                    `${form}/search-bar/SearchBarViewModel.tsx`
+                    `${form}/search-bar/SearchBarViewModel.ts`
                 ]
             },
             {
@@ -153,7 +161,7 @@ export default class XFAppHostViewModel extends AtomViewModel {
                 demo: `${form}/date-picker/date-picker.png`,
                 files: [
                     `${form}/date-picker/DatePickerView.tsx`,
-                    `${form}/date-picker/DatePickerViewModel.tsx`
+                    `${form}/date-picker/DatePickerViewModel.ts`
                 ]
             },
             {
@@ -161,7 +169,7 @@ export default class XFAppHostViewModel extends AtomViewModel {
                 demo: `${form}/slider/slider.png`,
                 files: [
                     `${form}/slider/SliderView.tsx`,
-                    `${form}/slider/SliderViewModel.tsx`
+                    `${form}/slider/SliderViewModel.ts`
                 ]
             },
             {
@@ -169,7 +177,15 @@ export default class XFAppHostViewModel extends AtomViewModel {
                 demo: `${form}/stepper/stepper.png`,
                 files: [
                     `${form}/stepper/StepperView.tsx`,
-                    `${form}/stepper/StepperViewModel.tsx`
+                    `${form}/stepper/StepperViewModel.ts`
+                ]
+            },
+            {
+                label: "Simple Form",
+                demo: `${form}/form/simple/simple-form.png`,
+                files: [
+                    `${form}/form/simple/SimpleForm.tsx`,
+                    `${form}/form/simple/SimpleFormViewModel.ts`
                 ]
             },
         ]);
@@ -201,7 +217,129 @@ export default class XFAppHostViewModel extends AtomViewModel {
                 label: "Grid Layout",
                 demo: `${layout}/grid-layout/grid-layout.png`,
                 files: [
-                    `${layout}/grid-layout/GridLayoutView.tsx`
+                    `${layout}/grid-layout/GridView.tsx`
+                ]
+            },
+        ]);
+
+        const samples = "@web-atoms/xf-samples/src/samples";
+        this.menuService.addSamples(require, "Pages", [
+            {
+                label: "Tabbed Page",
+                demo: `${samples}/tabbed-page/tabbed-page.png`,
+                files: [
+                    `${samples}/tabbed-page/TabbedPageView.tsx`
+                ]
+            },
+            {
+                label: "Carousel Page",
+                demo: `${samples}/carousel/carousel-page/carousel-page.png`,
+                files: [
+                    `${samples}/carousel/carousel-page/CarouselPageView.tsx`
+                ]
+            },
+        ]);
+
+        this.menuService.addSamples(require, "View", [
+            {
+                label: "List View",
+                demo: `${samples}/list/list-view/list.png`,
+                files: [
+                    `${samples}/list/list-view/List.tsx`,
+                    `${samples}/list/list-view/ListViewModel.ts`
+                ]
+            },
+            {
+                label: "List Template Selector",
+                demo: `${samples}/list/template-selector/list-with-template.png`,
+                files: [
+                    `${samples}/list/template-selector/ListWithTemplates.tsx`,
+                    `${samples}/list/list-view/ListViewModel.ts`
+                ]
+            },
+            {
+                label: "Carousel View",
+                demo: `${samples}/carousel/carousel-view/carousel-page.png`,
+                files: [
+                    `${samples}/carousel/carousel-view/CarouselView.tsx`,
+                    `${samples}/carousel/carousel-view/CarouselViewModel.ts`
+                ]
+            },
+            {
+                label: "Refresh View",
+                demo: `${samples}/refresh-view/refresh-view.png`,
+                files: [
+                    `${samples}/refresh-view/RefreshView.tsx`,
+                    `${samples}/refresh-view/RefreshViewModel.ts`
+                ]
+            },
+            {
+                label: "Web View",
+                demo: `${samples}/web-view/web-view.png`,
+                files: [
+                    `${samples}/web-view/WebView.tsx`
+                ]
+            },
+        ]);
+
+        this.menuService.addSamples(require, "Box View", [
+            {
+                label: "Box View",
+                demo: `${form}/box/BoxView.png`,
+                files: [
+                    `${form}/box/BoxView.tsx`
+                ]
+            },
+        ]);
+
+        this.menuService.addSamples(require, "Toggle Button", [
+            {
+                label: "Toggle Button",
+                demo: `${form}/toggle-button-bar/simple/toggle-button-bar.png`,
+                files: [
+                    `${form}/toggle-button-bar/simple/ToggleButtonBar.tsx`,
+                    `${form}/toggle-button-bar/simple/ToggleButtonBarViewModel.ts`
+                ]
+            },
+            {
+                label: "Custom Toggle Button",
+                demo: `${form}/toggle-button-bar/custom/custom-toggle-button-bar.png`,
+                files: [
+                    `${form}/toggle-button-bar/custom/CustomToggleButtonBar.tsx`,
+                    `${form}/toggle-button-bar/simple/ToggleButtonBarViewModel.ts`
+                ]
+            },
+        ]);
+
+        this.menuService.addSamples(require, "ComboBox", [
+            {
+                label: "ComboBox",
+                demo: `${form}/combo-box/combo-box.png`,
+                files: [
+                    `${form}/combo-box/ComboBoxSample.tsx`,
+                    `${form}/toggle-button-bar/simple/ToggleButtonBarViewModel.ts`
+                ]
+            },
+        ]);
+
+        this.menuService.addSamples(require, "Toolbar Item", [
+            {
+                label: "Toolbar Item",
+                demo: `${samples}/toolbar-item/toolbar-item.png`,
+                files: [
+                    `${samples}/toolbar-item/ToolbarItemView.tsx`,
+                    `${samples}/toolbar-item/ToolbarItemViewModel.ts`
+                ]
+            },
+        ]);
+
+        this.menuService.addSamples(require, "Menu Item", [
+            {
+                label: "Menu Item",
+                demo: `${form}/menu-item/menu-item.png`,
+                files: [
+                    `${form}/menu-item/MenuItemView.tsx`,
+                    `${form}/menu-item/MenuItemViewModel.ts`
                 ]
             },
         ]);
