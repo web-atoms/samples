@@ -98,22 +98,20 @@ export default class FileViewer extends AtomGridView {
 		this.demo = null;
 		this.designMode = true;
 		this.demoPresenter = null;
-		this.render(
-		<div
-			rows= {Bind.oneTime(() => this.app.screen.screenType === "mobile" ? "120, 400, 5, 590" : "40, 5, *, 5")}
-			columns= {Bind.oneTime(() => this.app.screen.screenType === "mobile" ? "100%" : "5, *, 5, 5, 5, 50%")}
+		this.render( this.app.screen.screenType !== "mobile"
+			? <div
+			rows="36, *"
+			columns="*, 5, 50%"
 			styleClass={Bind.oneTime(() => this.controlStyle.root)}
 			none={Bind.oneWay(() => setView(this.element, this.demo ))}>
 			<AtomToggleButtonBar
-				column= {Bind.oneTime(() => this.app.screen.screenType === "mobile" ? "0" : "0: 6")}
-				items={Bind.oneWay(() => fromPath(this.element, this.files))}
-				value={Bind.twoWays(() => this.file)}
 				controlStyle = {FileBarStyle}
-				style = "padding: 0; background: #222">
+				column="0: 3"
+				items={Bind.oneWay(() => fromPath(this.element, this.files))}
+				value={Bind.twoWays(() => this.file)}>
 			</AtomToggleButtonBar>
 			<div
-				column={Bind.oneTime(() => this.app.screen.screenType === "mobile" ? "0" : "1")}
-				row={Bind.oneTime(() => this.app.screen.screenType === "mobile" ? "1" : "2")}
+				row="1"
 				class="code">
 				<CodeView
 					require={Bind.oneWay(() => this.require)}
@@ -122,12 +120,42 @@ export default class FileViewer extends AtomGridView {
 				</CodeView>
 			</div>
 			<AtomGridSplitter
-				row="2"
-				column={Bind.oneTime(() => this.app.screen.screenType === "mobile" ? "0" : "3")}>
+				row="1"
+				column="1">
 			</AtomGridSplitter>
 			<div
-				row={Bind.oneTime(() => this.app.screen.screenType === "mobile" ? "3" : "2")}
-				column={Bind.oneTime(() => this.app.screen.screenType === "mobile" ? "0" : "5")}
+				row="1"
+				column="2"
+				style="margin: 5px"
+				presenter={Bind.presenter("demoPresenter")}>
+			</div>
+		</div>
+		:					
+		<div
+			rows="120, 400, 5, 590"
+			columns="100%"
+			styleClass={Bind.oneTime(() => this.controlStyle.root)}
+			none={Bind.oneWay(() => setView(this.element, this.demo ))}>
+			<AtomToggleButtonBar
+				items={Bind.oneWay(() => fromPath(this.element, this.files))}
+				value={Bind.twoWays(() => this.file)}
+				controlStyle = {FileBarStyle}
+				style = "padding: 0; background: #222">
+			</AtomToggleButtonBar>
+			<div
+				row="1"
+				class="code">
+				<CodeView
+					require={Bind.oneWay(() => this.require)}
+					style="overflow: auto"
+					src={Bind.oneWay(() => this.file)}>
+				</CodeView>
+			</div>
+			<AtomGridSplitter
+				row="2">
+			</AtomGridSplitter>
+			<div
+				row="3"
 				style="padding: 0.5rem; overflow: auto"
 				presenter={Bind.presenter("demoPresenter")}>
 			</div>
