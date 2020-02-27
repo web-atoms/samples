@@ -26,7 +26,7 @@
     "@web-atoms/xf-samples"
   ],
   "dependencies": {
-    "@web-atoms/core": "^1.1.100",
+    "@web-atoms/core": "^1.1.105",
     "@web-atoms/date-time": "^1.0.22",
     "@web-atoms/module-loader": "^1.0.407",
     "@web-atoms/web-controls": "^1.1.22",
