@@ -17,12 +17,10 @@ export default class MenuList extends AtomItemsControl {
 		<div
 			styleClass={Bind.oneTime(() => this.controlStyle.root)}
 			items={Bind.oneWay((x) => x.viewModel.menuService.menus)}
-			style="padding:5px"
 			for="div">
 			<AtomItemsControl.itemTemplate>
-				<div
-					eventClick={Bind.event((x) => (x.data).click())}>
-					<span
+				<div eventClick={Bind.event((x) => (x.data).click())}>
+					<span 
 						text={Bind.oneWay((x) => x.data.label)}>
 					</span>
 					<AtomItemsControl

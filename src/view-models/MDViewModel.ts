@@ -37,7 +37,7 @@ export default class MDViewModel extends AtomViewModel {
             styleSheetAdded = true;
             const link = document.createElement("link");
             link.rel = "stylesheet";
-            link.href = UMD.resolvePath("@web-atoms/samples/scripts/highlight/styles/dark.css");
+            link.href = UMD.resolvePath("@web-atoms/samples/scripts/highlight/styles/light.css");
             document.head.appendChild(link);
         }
 
@@ -55,9 +55,9 @@ export default class MDViewModel extends AtomViewModel {
         const md = document.createElement("div");
 
         md.innerHTML = converter.makeHtml(text);
-        md.style.overflow = "auto";
         md.style.width = "100%";
         md.style.height = "100%";
+        md.className = "page";
 
         mdRoot.appendChild(md);
 

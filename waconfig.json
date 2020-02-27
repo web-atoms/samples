@@ -1,8 +1,4 @@
 {
     "srcFolder":"src",
-    "mode": "core",
-    "pack": [
-        "dist/web/Index",
-        "dist/web/views/AppHost"
-    ]
+    "mode": "core"
 }

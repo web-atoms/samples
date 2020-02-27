@@ -1,14 +1,15 @@
 import { App } from "@web-atoms/core/dist/App";
 import { AtomList } from "@web-atoms/core/dist/core/AtomList";
-import { INameValuePairs } from "@web-atoms/core/dist/core/types";
+import { INameValuePairs, UMD } from "@web-atoms/core/dist/core/types";
 import FileViewer from "../core/web/FileViewer";
+import ImageView from "../core/web/ImageView";
 import resolveModulePath from "../core/web/resolveModulePath";
 import MenuService from "../services/MenuService";
 
-export interface IType {
+export type IType = string | {
     class: any;
     extension: string;
-}
+};
 
 export function asView(a: any): IType {
     return {
@@ -93,9 +94,22 @@ export default class MenuItem {
         const require = this.require;
 
         const fs = files.map((f) => {
-            const path = resolveModulePath(require, f.class);
-            return path.replace("/dist/", "/src/") + f.extension;
+            if (typeof f === "object" && f.class) {
+                const path = resolveModulePath(require, f.class);
+                return path.replace("/dist/", "/src/") + f.extension;
+            }
+            return f.toString();
         });
+
+        if (!demo.isControl) {
+            const src = UMD.resolvePath(demo);
+            demo = class ImageViewEx extends ImageView {
+                public create() {
+                    this.image = src;
+                    super.create();
+                }
+            };
+        }
 
         const c = class CFV extends FileViewer {
             public create(): void {

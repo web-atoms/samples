@@ -11,26 +11,27 @@ import {AtomGridView} from "@web-atoms/core/dist/web/controls/AtomGridView";
 
     import GitHubMark32px from "../../images/github/GitHubMark32px";
 
-    import AppTabStyle from "../styles/AppTabStyle";
 	import logo from "@web-atoms/samples/src/web/images/logo.png";
 import IndexStyle from "../styles/IndexStyle";
+import { SampleTabbedStyle } from "../styles/SampleTabbedStyle";
 
-
-
+// @web-atoms-pack: true
+/** Web Samples */
 export default class AppHost extends AtomGridView {
 	
 	public viewModel: AppHostViewModel;
 
-	
+	public createViewModel() {
+		this.viewModel =  this.resolve(AppHostViewModel);		
+	}
 
 	public create(): void {
 		this.defaultControlStyle = IndexStyle;
-		this.viewModel =  this.resolve(AppHostViewModel) ;
-
+		this.createViewModel();
 		this.render(
 		<div
-			styleFontFamily="'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"
-			columns="200, *"
+			styleFontFamily="'Segoe UI',Arial,sans-serif"
+			columns="210, *"
 			rows="90, *, 30"
 			styleClass={Bind.oneTime(() => this.controlStyle.root)}>
 			<header 
@@ -69,6 +70,7 @@ export default class AppHost extends AtomGridView {
 			</MenuList>
 			
 			<AtomTabbedPage
+				controlStyle={SampleTabbedStyle}
 				row="1"
 				column="1">
 			</AtomTabbedPage>

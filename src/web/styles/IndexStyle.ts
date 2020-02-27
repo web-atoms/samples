@@ -23,11 +23,85 @@ export default class IndexStyle extends AtomStyle {
                         }
                     }
                 },
+                " .md-host": {
+                    subclasses: {
+                        " .page": {
+                            lineHeight: "1.5",
+                            letterSpacing: "0.04rem",
+                            height: "100%",
+                            width: "100%",
+                            subclasses: {
+                                " h1": {
+                                    fontSize: "42px",
+                                    fontWeight: "400",
+                                    color: "#0e0e0e",
+                                    marginBottom: "20px"
+                                },
+                                " h2": {
+                                    fontSize: "32px",
+                                    fontWeight: "400",
+                                    color: "#0e0e0e",
+                                    margin: "10px 0"
+                                },
+                                " h3": {
+                                    fontSize: "25px",
+                                    fontWeight: "400",
+                                    color: "#0e0e0e",
+                                    margin: "10px 0"
+                                },
+                                " p": {
+                                    fontSize: "15px",
+                                    letterSpacing: "0.05rem",
+                                    lineHeight: "1.6"
+                                },
+                                " pre": {
+                                    padding: "40px 20px",
+                                    background: "#ffffff",
+                                    border: "solid 1px lightgray",
+                                    borderRadius: "20px",
+                                    subclasses: {
+                                        " code": {
+                                            borderLeft: "4px solid #f58d70",
+                                            backgroundColor: "white",
+                                            color: "black",
+                                            subclasses: {
+                                                " .hljs-keyword, .hljs-selector-tag, .hljs-literal, .hljs-section, .hljs-link": {
+                                                    color: "#9C27B0"
+                                                },
+                                                " .hljs-quote, .hljs-deletion, .hljs-meta": {
+                                                    color: "#3F51B5 !important"
+                                                },
+                                                " .hljs-title, .hljs-type, .hljs-attribute, .hljs-symbol, .hljs-bullet, .hljs-addition, .hljs-variable, .hljs-template-tag, .hljs-template-variable": {
+                                                    color: "#ec4c00"
+                                                },
+                                                " .hljs-built_in": {
+                                                    color: "#00927c"
+                                                },
+                                                " .hljs-comment": {
+                                                    color: "#008000"
+                                                },
+                                                " .hljs-name": {
+                                                    color: "#A52A2A"
+                                                },
+                                                " .hljs-attr": {
+                                                    color: "#FF0000"
+                                                },
+                                                " .hljs-string": {
+                                                    color: "#0000CD"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
                 " .masthead": {
-                    height: "100vh",
+                    height: this.screen.screenType === "mobile" ? "auto" :  "100vh",
                     minHeight: "40rem",
-                    paddingTop: "72px",
-                    paddingBottom: "0",
+                    paddingTop: this.screen.screenType === "mobile" ? "110px" :  "72px",
+                    paddingBottom: this.screen.screenType === "mobile" ? "30px" :  "0",
                     background: "linear-gradient(to bottom,rgba(92,77,66,.8) 0,rgba(92,77,66,.8) 100%),url("
                     + BgMasthead + ")",
                     backgroundPosition: "center",
@@ -36,7 +110,7 @@ export default class IndexStyle extends AtomStyle {
                     backgroundSize: "cover",
                     subclasses: {
                         " h1": {
-                            fontSize: this.screen.screenType === "mobile" ? "2.25rem" : "3.5rem",
+                            fontSize: this.screen.screenType === "mobile" ? "1.7rem" : "3.5rem",
                             color: "#fff",
                             textTransform: "uppercase",
                             marginBottom: ".5rem",
@@ -58,6 +132,7 @@ export default class IndexStyle extends AtomStyle {
                             color: "#fff",
                             backgroundColor: "#f4623a",
                             borderColor: "#f4623a",
+
                             subclasses: {
                                 ":hover": {
                                     color: "#fff",
@@ -109,6 +184,7 @@ export default class IndexStyle extends AtomStyle {
                             color: "#212529",
                             backgroundColor: "#f8f9fa",
                             borderColor: "#f8f9fa",
+
                             subclasses: {
                                 ":hover": {
                                     color: "#212529",
@@ -201,6 +277,7 @@ export default class IndexStyle extends AtomStyle {
                                 " .btn-primary": {
                                     color: "#fff",
                                     backgroundColor: "#f4623a",
+                                    maxWidth: "180px",
                                     borderColor: "#f4623a"
                                 }
                             }
@@ -218,6 +295,65 @@ export default class IndexStyle extends AtomStyle {
                 " img.flag": {
                     maxHeight: "15px"
                 },
+
+                " table":  {
+                    width: "100%",
+                    backgroundColor: "#fff",
+                    marginBottom: "3em",
+
+                },
+
+                " table.tr.td.a":  {
+                    maxWidth: "180px",
+
+                },
+               " td, th": {
+                    padding: this.screen.screenType === "mobile" ? "0.3em" : "0.75em",
+                    border: "1px solid #f4623a",
+                    fontSize: this.screen.screenType === "mobile" ? "13px" : "inherit"
+                },
+                   " td.err": {
+                    backgroundColor: "#e992b9 ",
+                        color: "#fff",
+                        fontSize: "0.75em",
+                        textAlign: "center",
+                        lineHeight: "0",
+                    },
+
+                "th ": {
+                    backgroundColor: "#4b423b",
+                    fontWeight: "bold",
+                    color: "#fff",
+
+                },
+
+                "tbody th": {
+                    backgroundColor: "#4b423b",
+                },
+
+                "tbody tr:nth-child(2n-1)":  {
+                    backgroundColor: "#f5f5f5",
+
+                },
+               " tbody tr:hover": {
+                    backgroundColor: "rgba(255,209,202,.3)",
+                },
+
+               " th": {
+                    backgroundColor: "#4b423b",
+                    fontWeight: "Bold",
+                   color: "#fff",
+                    whiteSpace: "no",
+                },
+
+                " component": {
+                    lineHeight: "1.5em",
+                    margin: "auto",
+                    padding: "2em 0 3em",
+                    width: "90%",
+                    maxWidth: " 1000px",
+                    overflow: " hidden",
+                },
                 " footer": {
                     color: "#fff",
                     backgroundAttachment: "fixed",
@@ -231,8 +367,12 @@ export default class IndexStyle extends AtomStyle {
                             backgroundImage: IndiaFlagIcon32
                         },
                         " .f-address li i": {
-                            color: "#2995de",
+                            color: "#ea7225",
                             fontSize: "18px"
+                        },
+                        " .f-address": {
+                           listStyleType: "none",
+                           paddingLeft: "0"
                         },
                         " .f-address li a": {
                             color: "#ccc"
@@ -244,7 +384,7 @@ export default class IndexStyle extends AtomStyle {
                                     subclasses: {
                                         " label": {
                                             float: "left",
-                                            border: "2px solid #ccc",
+                                            border: "2px solid #ea7225",
                                             padding: "1px 7px",
                                             textAlign: "center",
                                             marginRight: "1rem !important",
@@ -284,6 +424,7 @@ export default class IndexStyle extends AtomStyle {
                         }
                     }
                 },
+
                 " .copyright": {
                     backgroundColor: "#111",
                     padding: "12px 0",

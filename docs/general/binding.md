@@ -2,47 +2,77 @@
 
 Web Atoms uses property binding syntax to bind view properties to data or view model properties.
 
+## Simple Expression
+
+HTML
+```typescript
+    <span text={this.viewModel.model.label}/>
+```
+
+Xamarin.Forms
+```typescript
+    <XF.Label
+        text={this.viewModel.model.label}
+        />
+```
+
 ## One Time Binding
 
-Binding expression within curly braces are evaluated at time of initialization of control. You can consider them as simple eval expression which will be instantly evaluated at time of building of page. These expressions are compiled so they are evaluated at runtime using `eval`. Web Atoms do not use `eval` anywhere.
+Binding expression within curly braces are evaluated at time of initialization of control. One Time binding differs from simple expression in a way that one time binding has little delay and is executed after control's constructor is successfully completed.
 
 All expressions in following sample are one time binding expressions.
 
 HTML
-```html
-    <span text="{ this.viewModel.model.label }"></span>
-
-    <span text="{ $viewModel.model.label }"></span>
+```typescript
+    <span text={Bind.oneTime(() => this.viewModel.model.label)}/>
 ```
 
-XAML
-```xml
-    <Label Text="${ this.viewModel.model.label }"/>
-
-    <Label Text="${ $viewModel.model.label }"/>
+Xamarin.Forms
+```typescript
+    <XF.Label
+        text={Bind.oneTime(() => this.viewModel.model.label)}/>
 ```
 
 There are two ways you can write one time bindings. First is a simple TypeScript expression that is evaluated at time of initialization and property is set. However, if model is `null` or `undefined`, it will lead to errors.
 
 So when you use `$viewModel.model.label`, entire expression is broken down in conditional if and in case of `null` or `undefined`, evaluation is skipped.
 
-> For one time binding in Xaml, you need to put $ before curly braces as single curly brace is reserved for Xaml binding.
-
 ### Expression
 
 One time binding can be any valid TypeScript expression. You can call any method. Make sure you import corresponding module in start of the file.
 
 HTML
-```html
-    <span text="{ `${ $viewModel.model.firstName } ${ $viewModel.model.lastName }` }"></span>
+```typescript
+    <span
+        text={Bind.oneTime(() =>
+            `${this.viewModel.model.firstName} `${this.viewModel.model.lastName}`)}></span>
 ```
 
-XAML
-```xml
-    <Label Text="${ `${ $viewModel.model.firstName } ${ $viewModel.model.lastName }` }"/>
+Xamarin.Forms
+```typescript
+    <XF.Label
+        text={Bind.oneTime(() =>
+            `${this.viewModel.model.firstName} `${this.viewModel.model.lastName}`)}></span>
 ```
-
 Ideally you must avoid custom expressions and must always create custom get properties on your view model and bind it.
+
+### Items Control
+
+For control that has multiple items, in item template, `Bind.oneTime` method will pass a parameter to nearest `AtomControl` parent whose' data property will be available as individual item of array.
+
+HTML
+```typescript
+    <AtomItemsControl
+        items={Bind.oneTime(() => this.viewModel.items )}>
+        <AtomItemsControl.itemTemplate>
+            <div>
+                <span text={Bind.oneTime((x) => x.data.label)}/>
+            </div>
+        </AtomItemsControl.itemTemplate>
+    </AtomItemsControl>
+```
+
+> For Xamarin.Forms, inside ItemTemplate, it is recommended to use only `OneWay` binding, because data is not available when the component is created.
 
 ## One Way Binding
 
@@ -69,12 +99,14 @@ Building data aware application requires updating UI automatically when data cha
 ```
 
 HTML
-```html
-    <span text="[$viewModel.time]"></span>
+```typescript
+    <span
+        text={Bind.oneWay(() => this.viewModel.time)}/>
 ```
-XAML
+Xamarin.Forms
 ```xml
-    <Label Text="[$viewModel.time]"/>
+    <XF.Label
+        text={Bind.oneWay(() => this.viewModel.time)}/>
 ```
 
 > Internally, whenever any thing that is inside property path gets updated, expression is evaluated and property is set. If anything is evaluated as `undefined`, update is skipped. If anything is `null`, entire expression is evaluated as `null` and no error is reported.
@@ -84,14 +116,17 @@ XAML
 
 One way binding can be any valid TypeScript expression. You can call any method. Make sure you import corresponding module in start of the file.
 
-HTML
-```html
-    <span text="[ `${ $viewModel.model.firstName } ${ $viewModel.model.lastName }` ]"></span>
+```typescript
+    <span
+        text={Bind.oneWay(() =>
+            `${this.viewModel.model.firstName} `${this.viewModel.model.lastName}`)}></span>
 ```
 
-XAML
-```xml
-    <Label Text="[ `${ $viewModel.model.firstName } ${ $viewModel.model.lastName }` ]"/>
+Xamarin.Forms
+```typescript
+    <XF.Label
+        text={Bind.oneWay(() =>
+            `${this.viewModel.model.firstName} `${this.viewModel.model.lastName}`)}></span>
 ```
 
 Ideally you must avoid custom expressions and must always create custom get properties on your view model and bind it.
@@ -110,46 +145,103 @@ You must bind UI to `fullName`, instead of writing custom expressions. Benefit i
 Two way binding is created by prefixing $ before square brackets. This will update value inside model whenever it is changed in UI by user.
 
 HTML
-```html
-    
-    <input
-        type="text"
-        placeholder="Username"
-        value="$[viewModel.username]" />
+```typescript
+export default class Signup extends AtomControl {
 
-    <input 
-        type="password"
-        placeholder="Password"
-        value="$[viewModel.username]" />
+    /** This enables intellisense, do not initialize this*/
+    public viewModel: SignupViewModel;
 
-    <input type="checkbox" checked="$[viewModel.remember]" />
+    public create() {
+        this.viewModel = this.resolve(SignupViewModel);
+
+        this.render(<div>
+        <AtomForm>
+            <AtomField
+                label="Username"
+                error={Bind.oneWay(() => this.viewModel.errorUsername)}>
+                <input
+                    value={Bind.twoWays(() => this.viewModel.model.firstName)}/>
+            </AtomField>
+            <AtomField
+                label="Password"
+                error={Bind.oneWay(() => this.viewModel.errorPassword)}>
+                <input
+                    type="password"
+                    value={Bind.twoWays(() => this.viewModel.model.password)}/>
+            </AtomField>
+            <AtomField>
+                <button
+                    eventClick={Bind.event(() => this.viewModel.signup())} 
+                    text="Signup"/>
+            </AtomField>
+        </AtomForm>
+        </div>);
+    }
+}
+```
+
+Xamarin.Forms
+```typescript
+export default class Signup extends AtomXFContentPage {
+
+    /** This enables intellisense, do not initialize this*/
+    public viewModel: SignupViewModel;
+
+    public create() {
+        this.viewModel = this.resolve(SignupViewModel);
+
+        this.render(<XF.ContentPage>
+        <AtomForm>
+            <AtomField
+                label="Username"
+                error={Bind.oneWay(() => this.viewModel.errorUsername)}>
+                <Entry
+                    text={Bind.twoWays(() => this.viewModel.model.firstName)}/>
+            </AtomField>
+            <AtomField
+                label="Password"
+                error={Bind.oneWay(() => this.viewModel.errorPassword)}>
+                <Entry
+                    isPassword={true}
+                    text={Bind.twoWays(() => this.viewModel.model.password)}/>
+            </AtomField>
+            <AtomField>
+                <button
+                    eventClick={Bind.event(() => this.viewModel.signup())} 
+                    text="Signup"/>
+            </AtomField>
+        </AtomForm>
+        </XF.ContentPage>);
+    }
+
+}
 ```
 
 This will update username inside model whenever user modifies text inside edit. You can also bind `checked` property of checkbox. 
 
-For input element in HTML, binding is only updated on `change` event. If you want to update binding every time a key is pressed. You can use carat `^` instead of `$`.
+For input element in HTML, binding is only updated on `change` event. If you want to update binding every time a key is pressed. You can use specify name of events to update bindings on as shown below.
 
 HTML
-```html
+```typescript
     <input 
         type="search"
-        value="^[viewModel.search]"/>
+        value={Bind.twoWays(() => this.viewModel.search), ["keyup", "keypress", "blur"])}/>
 ```
 
 In above example, search property in `viewModel` is set every time a key is pressed.
 
 You can bind properties of AtomControl derived control.
 HTML
-```html
+```typescript
     <AtomComboBox
-        selectedIndex="$[viewModel.selectedIndex]"
+        selectedIndex={Bind.twoWays(() => this.viewModel.selectedIndex)}
         />
 ```
 
 XAML
-```xml
-    <Entry
-        Text="$[viewModel.username]"/>
+```typescript
+    <XF.Entry
+        text={Bind.twoWays(() => this.viewModel.search)}/>
 ```
 
 ### HTML Binding Extensions
@@ -177,31 +269,74 @@ HTML
 Expression binding can be either one time or one way. It helps in separating style attributes.
 
 HTML
-```html
+```typescript
     <div
         style-position="absolute"
-        style-width="{ `${ $viewModel.width }px` }"
-        style-height="[ $viewModel.vertical ? '500px' : '200px' ]"
+        style-width={`${ this.viewModel.width }px` }
+        style-height={Bind.oneWay(() => this.viewModel.vertical ? '500px' : '200px' )}
         />
 ```
 Here `position` is set as `absolute`, `width` is calculated by whatever was set on view model's `width` property. And `height` will update whenever `vertical` is modified on view model.
 
-## Event
+## Event Binding
 Event binding extension allows you to subscribe events. This extension also safely unsubscribes automatically when component is disposed.
 
 HTML
-```html
-    <button event-click="{ (e) => $viewModel.signup(e) }"></button>
+```typescript
+    <button
+        eventClick={ (e) => this.viewModel.signup() }/>
+    <button
+        eventClick={ Bind.event((s, e) => this.viewModel.signup()) }/>
 ```
 
-## Event TapGesture
+The difference between two syntax is, in first example, first argument is the event object. But for element inside item template, to access data, second syntax is recommended where first parameter is nearest `AtomControl` parent and second argument is event object.
 
-Event TapGesture is special event associated with Xaml UI View to get notified of tap gesture.
-
-XAML
-```xml
-    <Label eventTapGesture="{ () => $viewModel.signup() }" />
+For AtomItemsControl/AtomComboBox/AtomListBox in HTML
+```typescript
+    <AtomItemsControl
+        items={Bind.oneWay(() => this.viewModel.items)}>
+        <AtomItemsControl.itemTemplate>
+            <div>
+                <span
+                    text={Bind.oneTime((s) => s.data.label)}/>
+                <button
+                    eventClick={Bind.event((s, e) => this.viewModel.delete(s.data))}
+                    text="Delete"/>
+            </div>
+        </AtomItemsControl.itemTemplate>
+    </AtomItemsControl>
 ```
+
+Xamarin.Forms with GestureRecognizer
+```typescript
+    <XF.Label text="Open">
+        <XF.Label.gestureRecognizers>
+            <TapGestureRecognizer
+                command={Bind.event((s, e) => this.viewModel.open())}
+                />
+        </XF.Label.gestureRecognizers>
+    </XF.Label>
+```
+Xamarin.Forms
+ListView/CollectionView with GestureRecognizer
+```typescript
+    <XF.CollectionView
+        itemsSource={Bind.oneWay(() => this.viewModel.items)}>
+        <XF.CollectionView.ItemTemplate>
+            <XF.DataTemplate>
+                <XF.Label>
+                    <XF.Label.gestureRecognizers>
+                        <TapGestureRecognizer
+                            command={Bind.event((s, e) => this.viewModel.delete(s.data))}
+                            />
+                    </XF.Label.gestureRecognizers>
+                </XF.Label>
+            </XF.DataTemplate>
+        </XF.CollectionView.ItemTemplate>
+    </XF.CollectionView>
+```
+
+In above example, first parameter is nearest `AtomXFControl` whose `data` property is item of the array set to `itemsSource` property
 
 # How Web Atoms manages bindings?
 
