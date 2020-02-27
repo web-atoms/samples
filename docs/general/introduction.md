@@ -24,6 +24,16 @@ In Xamarin.Forms, Web Atoms package written C# helps you easily host JavaScript 
 4. Visual Studio for Xamarin.Forms app [optional]
 5. Gitlense [optional]
 
+## Lets run Samples for Xamarin.Forms
+
+1. Download XF-Samples from https://github.com/web-atoms/xf-samples
+2. Run `npm install`
+3. In VS Code, run Tasks, run `All Tasks`
+4. Open `XFSamples.sln` in Visual Studio
+5. Go to file `App.xaml.cs`
+6. Change root to `http://..../` displayed in step 3
+7. If you are unable to run it from there, you can still use cdn to run published samples
+
 ## UMD Loader
 
 All web atoms modules are written (transpiled) as UMD module, suitable for testing in node as well as to load in browser with AMD Loader.
