@@ -259,7 +259,7 @@ export default class XFAppHostViewModel extends AtomViewModel {
             },
             {
                 label: "Carousel View",
-                demo: `${samples}/carousel/carousel-view/carousel-page.png`,
+                demo: `${samples}/carousel/carousel-view/carousel-view.png`,
                 files: [
                     `${samples}/carousel/carousel-view/CarouselView.tsx`,
                     `${samples}/carousel/carousel-view/CarouselViewModel.ts`
@@ -280,12 +280,19 @@ export default class XFAppHostViewModel extends AtomViewModel {
                     `${samples}/web-view/WebView.tsx`
                 ]
             },
+            {
+                label: "Content View",
+                demo: `${samples}/layout/single-content/content-view/content-view.png`,
+                files: [
+                    `${samples}/layout/single-content/content-view/ContentView.tsx`
+                ]
+            }
         ]);
 
         this.menuService.addSamples(require, "Box View", [
             {
                 label: "Box View",
-                demo: `${form}/box/BoxView.png`,
+                demo: `${form}/box/box-view.png`,
                 files: [
                     `${form}/box/BoxView.tsx`
                 ]
@@ -317,7 +324,7 @@ export default class XFAppHostViewModel extends AtomViewModel {
                 demo: `${form}/combo-box/combo-box.png`,
                 files: [
                     `${form}/combo-box/ComboBoxSample.tsx`,
-                    `${form}/toggle-button-bar/simple/ToggleButtonBarViewModel.ts`
+                    `${form}/combo-box/ComboBoxSampleViewModel.ts`
                 ]
             },
         ]);
