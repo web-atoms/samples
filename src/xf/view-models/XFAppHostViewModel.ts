@@ -357,35 +357,40 @@ export default class XFAppHostViewModel extends AtomViewModel {
                 label: "Vertical List",
                 demo: `${view}/vertical-list/vertical-list-sample.png`,
                 files: [
-                    `${view}/vertical-list/VerticalListSample.tsx`
+                    `${view}/vertical-list/VerticalListSample.tsx`,
+                    `${view}/vertical-list/VerticalListViewModel.ts`
                 ]
             },
             {
                 label: "Horizontal List",
                 demo: `${view}/horizontal-list/horizontal-list-sample.png`,
                 files: [
-                    `${view}/horizontal-list/HorizontalListSample.tsx`
+                    `${view}/horizontal-list/HorizontalListSample.tsx`,
+                    `${view}/horizontal-list/HorizontalListViewModel.ts`
                 ]
             },
             {
                 label: "Vertical Grid",
                 demo: `${view}/vertical-grid/vertical-grid-sample.png`,
                 files: [
-                    `${view}/vertical-grid/VerticalGridSample.tsx`
+                    `${view}/vertical-grid/VerticalGridSample.tsx`,
+                    `${view}/vertical-grid/VerticalGridViewModel.ts`
                 ]
             },
             {
                 label: "Horizontal Grid",
                 demo: `${view}/horizontal-grid/horizontal-grid-sample.png`,
                 files: [
-                    `${view}/horizontal-grid/HorizontalGridSample.tsx`
+                    `${view}/horizontal-grid/HorizontalGridSample.tsx`,
+                    `${view}/horizontal-grid/HorizontalGridViewModel.ts`
                 ]
             },
             {
                 label: "Header Footer",
                 demo: `${view}/header-footer/header-footer-sample.png`,
                 files: [
-                    `${view}/header-footer/HeaderFooterSample.tsx`
+                    `${view}/header-footer/HeaderFooterSample.tsx`,
+                    `${view}/header-footer/HeaderFooterSample.ts`
                 ]
             },
             {
