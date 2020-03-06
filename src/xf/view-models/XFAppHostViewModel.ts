@@ -348,42 +348,42 @@ export default class XFAppHostViewModel extends AtomViewModel {
         this.menuService.addSamples(require, "Collection View", [
             {
                 label: "Vertical List",
-                demo: `${view}/vertical-list/vertical-list.png`,
+                demo: `${view}/vertical-list/vertical-list-sample.png`,
                 files: [
                     `${view}/vertical-list/VerticalListSample.tsx`
                 ]
             },
             {
                 label: "Horizontal List",
-                demo: `${view}/horizontal-list/horizontal-list.png`,
+                demo: `${view}/horizontal-list/horizontal-list-sample.png`,
                 files: [
                     `${view}/horizontal-list/HorizontalListSample.tsx`
                 ]
             },
             {
                 label: "Vertical Grid",
-                demo: `${view}/vertical-grid/vertical-grid.png`,
+                demo: `${view}/vertical-grid/vertical-grid-sample.png`,
                 files: [
                     `${view}/vertical-grid/VerticalGridSample.tsx`
                 ]
             },
             {
                 label: "Horizontal Grid",
-                demo: `${view}/horizontal-grid/horizontal-grid.png`,
+                demo: `${view}/horizontal-grid/horizontal-grid-sample.png`,
                 files: [
                     `${view}/horizontal-grid/HorizontalGridSample.tsx`
                 ]
             },
             {
                 label: "Header Footer",
-                demo: `${view}/header-footer/header-footer.png`,
+                demo: `${view}/header-footer/header-footer-sample.png`,
                 files: [
                     `${view}/header-footer/HeaderFooterSample.tsx`
                 ]
             },
             {
                 label: "Swipe",
-                demo: `${view}/swipe/swipe.png`,
+                demo: `${view}/swipe/SwipeViewSample.png`,
                 files: [
                     `${view}/swipe/SwipeCollectionViewSample.tsx`
                 ]
