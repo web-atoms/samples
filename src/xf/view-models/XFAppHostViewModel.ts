@@ -390,7 +390,7 @@ export default class XFAppHostViewModel extends AtomViewModel {
                 demo: `${view}/header-footer/header-footer-sample.png`,
                 files: [
                     `${view}/header-footer/HeaderFooterSample.tsx`,
-                    `${view}/header-footer/HeaderFooterSample.ts`
+                    `${view}/header-footer/HeaderFooterViewModel.ts`
                 ]
             },
             {
