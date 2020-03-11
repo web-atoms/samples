@@ -165,6 +165,14 @@ export default class XFAppHostViewModel extends AtomViewModel {
                 ]
             },
             {
+                label: "Time Picker",
+                demo: `${form}/time-picker/TimePicker.png`,
+                files: [
+                    `${form}/time-picker/TimePickerSample.tsx`,
+                    `${form}/time-picker/TimePickerViewModel.ts`
+                ]
+            },
+            {
                 label: "Slider",
                 demo: `${form}/slider/slider.png`,
                 files: [
