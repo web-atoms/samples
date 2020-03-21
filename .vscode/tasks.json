@@ -26,7 +26,7 @@
             "command": "node",
             "args": [
                 "${env:APPDATA}/npm/node_modules/@web-atoms/dev-server/index.js",
-                "https://www.webatoms.in"
+                "https://test.webatoms.in"
             ],
             "problemMatcher": []
         }

@@ -165,6 +165,14 @@ export default class XFAppHostViewModel extends AtomViewModel {
                 ]
             },
             {
+                label: "Time Picker",
+                demo: `${form}/time-picker/time-picker.png`,
+                files: [
+                    `${form}/time-picker/TimePickerSample.tsx`,
+                    `${form}/time-picker/TimePickerViewModel.ts`
+                ]
+            },
+            {
                 label: "Slider",
                 demo: `${form}/slider/slider.png`,
                 files: [
@@ -259,7 +267,7 @@ export default class XFAppHostViewModel extends AtomViewModel {
             },
             {
                 label: "Carousel View",
-                demo: `${samples}/carousel/carousel-view/carousel-page.png`,
+                demo: `${samples}/carousel/carousel-view/carousel-view.png`,
                 files: [
                     `${samples}/carousel/carousel-view/CarouselView.tsx`,
                     `${samples}/carousel/carousel-view/CarouselViewModel.ts`
@@ -280,12 +288,19 @@ export default class XFAppHostViewModel extends AtomViewModel {
                     `${samples}/web-view/WebView.tsx`
                 ]
             },
+            {
+                label: "Content View",
+                demo: `${samples}/layout/single-content/content-view/content-view.png`,
+                files: [
+                    `${samples}/layout/single-content/content-view/ContentView.tsx`
+                ]
+            }
         ]);
 
         this.menuService.addSamples(require, "Box View", [
             {
                 label: "Box View",
-                demo: `${form}/box/BoxView.png`,
+                demo: `${form}/box/box-view.png`,
                 files: [
                     `${form}/box/BoxView.tsx`
                 ]
@@ -317,7 +332,7 @@ export default class XFAppHostViewModel extends AtomViewModel {
                 demo: `${form}/combo-box/combo-box.png`,
                 files: [
                     `${form}/combo-box/ComboBoxSample.tsx`,
-                    `${form}/toggle-button-bar/simple/ToggleButtonBarViewModel.ts`
+                    `${form}/combo-box/ComboBoxSampleViewModel.ts`
                 ]
             },
         ]);
@@ -348,42 +363,47 @@ export default class XFAppHostViewModel extends AtomViewModel {
         this.menuService.addSamples(require, "Collection View", [
             {
                 label: "Vertical List",
-                demo: `${view}/vertical-list/vertical-list.png`,
+                demo: `${view}/vertical-list/vertical-list-sample.png`,
                 files: [
-                    `${view}/vertical-list/VerticalListSample.tsx`
+                    `${view}/vertical-list/VerticalListSample.tsx`,
+                    `${view}/vertical-list/VerticalListViewModel.ts`
                 ]
             },
             {
                 label: "Horizontal List",
-                demo: `${view}/horizontal-list/horizontal-list.png`,
+                demo: `${view}/horizontal-list/horizontal-list-sample.png`,
                 files: [
-                    `${view}/horizontal-list/HorizontalListSample.tsx`
+                    `${view}/horizontal-list/HorizontalListSample.tsx`,
+                    `${view}/horizontal-list/HorizontalListViewModel.ts`
                 ]
             },
             {
                 label: "Vertical Grid",
-                demo: `${view}/vertical-grid/vertical-grid.png`,
+                demo: `${view}/vertical-grid/vertical-grid-sample.png`,
                 files: [
-                    `${view}/vertical-grid/VerticalGridSample.tsx`
+                    `${view}/vertical-grid/VerticalGridSample.tsx`,
+                    `${view}/vertical-grid/VerticalGridViewModel.ts`
                 ]
             },
             {
                 label: "Horizontal Grid",
-                demo: `${view}/horizontal-grid/horizontal-grid.png`,
+                demo: `${view}/horizontal-grid/horizontal-grid-sample.png`,
                 files: [
-                    `${view}/horizontal-grid/HorizontalGridSample.tsx`
+                    `${view}/horizontal-grid/HorizontalGridSample.tsx`,
+                    `${view}/horizontal-grid/HorizontalGridViewModel.ts`
                 ]
             },
             {
                 label: "Header Footer",
-                demo: `${view}/header-footer/header-footer.png`,
+                demo: `${view}/header-footer/header-footer-sample.png`,
                 files: [
-                    `${view}/header-footer/HeaderFooterSample.tsx`
+                    `${view}/header-footer/HeaderFooterSample.tsx`,
+                    `${view}/header-footer/HeaderFooterViewModel.ts`
                 ]
             },
             {
                 label: "Swipe",
-                demo: `${view}/swipe/swipe.png`,
+                demo: `${view}/swipe/SwipeViewSample.png`,
                 files: [
                     `${view}/swipe/SwipeCollectionViewSample.tsx`
                 ]

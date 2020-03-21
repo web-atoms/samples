@@ -10,6 +10,7 @@ import AtomField from "@web-atoms/web-controls/dist/form/AtomField";
 import IndexViewModel from "../view-models/IndexViewModel";
 import IndexFormStyle from "./styles/IndexFormStyle";
 import FormDemo from "../samples/web/form/FromDemo";
+import MastheadIcon from "@web-atoms/samples/src/web/images/masthead-icon.jpg";
 
 // @web-atoms-pack: true
 /** XF Home Page */
@@ -25,7 +26,7 @@ export default class Index extends AtomControl {
 			<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
 				<div class="container">
 			
-				<a class="navbar-brand js-scroll-trigger" href="#page-top"> <img src={Bind.oneTime(() => logo)}/> &nbsp;WEB ATOMS</a>
+				<a class="navbar-brand js-scroll-trigger" href="https://www.webatoms.in/index.html"> <img src={Bind.oneTime(() => logo)}/> &nbsp;WEB ATOMS</a>
 				<button class="navbar-toggler navbar-toggler-right" 
 						type="button" 
 						data-toggle="collapse" 
@@ -75,10 +76,10 @@ export default class Index extends AtomControl {
 					<h1 class="text-white font-weight-bold">Advanced MVVM Framework for TypeScript(JavaScript)</h1>
 					<hr class="divider my-4"></hr>
 					</div>
-					<div class="col-lg-8 align-self-baseline">
+					<div class="col-lg-12 align-self-baseline">
 					<p class="text-white-75 font-weight-light mb-5">MVVM Framework for Web and Xamarin.Forms, Hot Reload Xamarin.Forms Apps in Live Environment</p>
-					<p class="text-white-50 mb-4 text-left">
-						<ul>
+					<p class="text-white-75 mb-4 text-left">
+						<ul style="display:inline-block">
 							<li>MVVM Pattern - ViewModel and Services in TypeScript for Web and Xamarin.Forms</li>
 							<li>View in TSX (JSX) - for Web and Xamarin.Forms</li>
 							<li>One time, One way, Two way Binding</li>
@@ -89,8 +90,17 @@ export default class Index extends AtomControl {
 							<li>Design time mocks</li>
 							<li>Use VS Code to Build Xamarin.Forms Apps</li>
 						</ul>
+						<img styleWidth={Bind.oneTime(() => this.app.screen.screenType === "mobile" ? "100%" : "390px")}  
+							styleFloat={Bind.oneTime(() => this.app.screen.screenType === "mobile" ? "none" : "right")} 
+							style=" display: inline-block; 
+									vertical-align: top;
+									box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);" 
+							src={MastheadIcon}></img>
 					</p>					
-					<a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
+					<a class="btn btn-primary btn-xl js-scroll-trigger"
+						styleMarginLeft={Bind.oneTime(() => this.app.screen.screenType === "mobile" ? "0" : "40px")}  
+						styleFloat={Bind.oneTime(() => this.app.screen.screenType === "mobile" ? "none" : "left")}
+						href="#about">Find Out More</a>
 					</div>
 				</div>
 				</div>

@@ -1,6 +1,6 @@
 {
   "name": "@web-atoms/samples",
-  "version": "1.1.32",
+  "version": "1.1.35",
   "description": "Samples Repository for Web Atoms Core Samples",
   "main": "index.js",
   "scripts": {
@@ -26,12 +26,12 @@
     "@web-atoms/xf-samples"
   ],
   "dependencies": {
-    "@web-atoms/core": "^1.1.105",
-    "@web-atoms/date-time": "^1.0.22",
-    "@web-atoms/module-loader": "^1.0.407",
+    "@web-atoms/core": "^1.1.107",
+    "@web-atoms/date-time": "^1.0.23",
+    "@web-atoms/module-loader": "^1.0.408",
     "@web-atoms/web-controls": "^1.1.22",
-    "@web-atoms/xf-controls": "^1.0.103",
-    "@web-atoms/xf-samples": "^1.0.47",
+    "@web-atoms/xf-controls": "^1.0.115",
+    "@web-atoms/xf-samples": "^1.0.55",
     "reflect-metadata": "^0.1.13"
   }
 }
