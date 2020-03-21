@@ -236,7 +236,7 @@ export default class XFAppHostViewModel extends AtomViewModel {
                 label: "Tabbed Page",
                 demo: `${samples}/tabbed-page/tabbed-page.PNG`,
                 files: [
-                    `${samples}/tabbed-page/TabbedPageView.tsx`
+                    `${samples}/tabbed-page/TabbedPageVIew.tsx`
                 ]
             },
             {
