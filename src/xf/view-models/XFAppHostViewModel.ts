@@ -127,7 +127,7 @@ export default class XFAppHostViewModel extends AtomViewModel {
             },
             {
                 label: "Image",
-                demo: `${form}/image/image.png`,
+                demo: `${form}/image/image.PNG`,
                 files: [
                     `${form}/image/ImageView.tsx`
                 ]
@@ -142,7 +142,7 @@ export default class XFAppHostViewModel extends AtomViewModel {
             },
             {
                 label: "Image Button",
-                demo: `${form}/button/image-button/image-button.PNG`,
+                demo: `${form}/button/image-button/image-button.png`,
                 files: [
                     `${form}/button/image-button/ImageButtonView.tsx`,
                     `${form}/button/ButtonViewModel.ts`
