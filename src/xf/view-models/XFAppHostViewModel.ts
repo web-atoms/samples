@@ -100,7 +100,27 @@ export default class XFAppHostViewModel extends AtomViewModel {
         });
 
         const form = "@web-atoms/xf-samples/src/samples";
+
         this.menuService.addSamples(require, "Form", [
+            {
+                label: "Simple Form",
+                demo: `${form}/form/simple/simple-form.PNG`,
+                files: [
+                    `${form}/form/simple/SimpleForm.tsx`,
+                    `${form}/form/simple/SimpleFormViewModel.ts`
+                ]
+            },
+            {
+                label: "Custom Template",
+                demo: `${form}/form/simple/simple-form.PNG`,
+                files: [
+                    `${form}/form/custom/CustomForm.tsx`,
+                    `${form}/form/simple/SimpleFormViewModel.ts`
+                ]
+            }
+        ]);
+
+        this.menuService.addSamples(require, "Form Elements", [
             {
                 label: "Label",
                 demo: `${form}/label/label.PNG`,
@@ -187,15 +207,7 @@ export default class XFAppHostViewModel extends AtomViewModel {
                     `${form}/stepper/StepperView.tsx`,
                     `${form}/stepper/StepperViewModel.ts`
                 ]
-            },
-            {
-                label: "Simple Form",
-                demo: `${form}/form/simple/simple-form.PNG`,
-                files: [
-                    `${form}/form/simple/SimpleForm.tsx`,
-                    `${form}/form/simple/SimpleFormViewModel.ts`
-                ]
-            },
+            }
         ]);
 
         const layout = "@web-atoms/xf-samples/src/samples/layout/multiple-content";
