@@ -108,7 +108,7 @@ export default class Index extends AtomControl {
 					<div class="row">
 					<div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
 						<div class="icon-box">
-							<div class="icon"><i class="bx bxl-dribbble"></i></div>
+							<div class="icon"><i class="fas fa-4x fa-gem"></i></div>
 							<h4 class="title"><a href="">Controls</a></h4>
 							<p class="description"> Line of Business Controls for Web and Xamarin.Forms</p>
 						</div>
@@ -116,7 +116,7 @@ export default class Index extends AtomControl {
 
 					<div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
 						<div class="icon-box">
-						<div class="icon"><i class="bx bx-file"></i></div>
+						<div class="icon"><i class="fas fa-4x fa-laptop-code"></i></div>
 						<h4 class="title"><a href="">Leverage TSX</a></h4>
 						<p class="description">All Views (for Web and Xamarin.Forms) can be written in TSX.</p>
 						</div>
@@ -124,7 +124,7 @@ export default class Index extends AtomControl {
 
 					<div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="300">
 						<div class="icon-box">
-						<div class="icon"><i class="bx bx-tachometer"></i></div>
+						<div class="icon"><i class="fas fa-4x fa-globe"></i></div>
 						<h4 class="title"><a href="">Live Hot Reload</a></h4>
 						<p class="description">Hot Reload Xamarin.Forms Applications from web server!</p>
 						</div>
@@ -132,7 +132,7 @@ export default class Index extends AtomControl {
 
 					<div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="400">
 						<div class="icon-box">
-						<div class="icon"><i class="bx bx-world"></i></div>
+						<div class="icon"><i class="fas fa-4x fa-sun"></i></div>
 						<h4 class="title"><a href="">Simple License</a></h4>
 						<p class="description">MIT License for Web, Single Commercial License for Single Xamarin.Forms App, with unlimited users.</p>
 						</div>
@@ -225,7 +225,7 @@ export default class Index extends AtomControl {
 						<div class="row justify-content-center">
 						<div class="col-lg-6">
 							<h4>Join Our Newsletter</h4>
-							<p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+							<p>Stay up-to-date on the latest news and expert insights</p>
 							<form action="" method="post">
 							<input type="email" name="email"></input><input type="submit" value="Subscribe"></input>
 							</form>
@@ -276,13 +276,12 @@ export default class Index extends AtomControl {
 
 						<div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="400">
 							<h4>Our Social Networks</h4>
-							<p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
 							<div class="social-links mt-3">
-							<a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-							<a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-							<a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-							<a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-							<a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+							<a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+							<a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+							<a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+							<a href="#" class="google-plus"><i class="fab fa-pinterest"></i></a>
+							<a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
 							</div>
 						</div>
 

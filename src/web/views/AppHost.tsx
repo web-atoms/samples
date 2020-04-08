@@ -12,7 +12,7 @@ import {AtomGridView} from "@web-atoms/core/dist/web/controls/AtomGridView";
     import GitHubMark32px from "../../images/github/GitHubMark32px";
 
 	import logo from "@web-atoms/samples/src/web/images/logo.png";
-import IndexStyle from "../styles/IndexStyle";
+import OldIndexStyle from "../styles/OldIndexStyle";
 import { SampleTabbedStyle } from "../styles/SampleTabbedStyle";
 
 // @web-atoms-pack: true
@@ -26,7 +26,7 @@ export default class AppHost extends AtomGridView {
 	}
 
 	public create(): void {
-		this.defaultControlStyle = IndexStyle;
+		this.defaultControlStyle = OldIndexStyle;
 		this.createViewModel();
 		this.render(
 		<div
