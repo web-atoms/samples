@@ -21,7 +21,7 @@ export default class VirtualListBoxSample extends AtomControl {
 		this.render(
 		<div>
 			<AtomItemsControl
-				uiVirtualize={Bind.oneTime(() => true)}
+				uiVirtualize={true}
 				style="width: 800px; height: 800px;"
 				items={Bind.oneTime((x) => x.viewModel.items)}>
 				<AtomItemsControl.itemTemplate>
