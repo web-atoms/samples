@@ -39,16 +39,15 @@ export default class Index extends AtomControl {
 				<nav class="nav-menu d-none d-lg-block">
 					<ul>
 					<li class="active"><a href="#header">Home</a></li>
-					<li><a href="#about">About Us</a></li>
+					<li><a href="#main">About Us</a></li>
 					<li><a href="#services">Features</a></li>
 					<li><a href="https://www.webatoms.in/xf/samples.html" target="_blank">XF Docs</a></li>
 					<li><a href="https://www.webatoms.in/samples.html" target="_blank">Web Docs</a></li>
-						<li><a href="#portfolio">Buy</a></li>
-					<li><a href="#team">Team</a></li>
+					<li><a href="#team">Buy</a></li>
 				
 					<li><a href="#contact">Contact Us</a></li>
 
-					<li class="get-started"><a href="#about">Get Started</a></li>
+					<li class="get-started"><a href="https://www.webatoms.in/xf/samples.html">Get Started</a></li>
 					</ul>
 				</nav>
 
@@ -61,7 +60,7 @@ export default class Index extends AtomControl {
 						<h1>ADVANCED MVVM FRAMEWORK FOR TYPESCRIPT(JAVASCRIPT)<br></br>
 						</h1>
 						<h2>MVVM Framework for Web and Xamarin.Forms, Hot Reload Xamarin.Forms Apps in Live Environment</h2>
-						<a href="#about" class="btn-get-started scrollto">Get Started</a>
+						<a href="https://www.webatoms.in/xf/samples.html" class="btn-get-started scrollto">Get Started</a>
 						</div>
 						<div class="col-lg-6 order-1 order-lg-2 hero-img">
 						<img src={HeroImg} class="img-fluid animated" alt=""></img>
@@ -250,22 +249,24 @@ export default class Index extends AtomControl {
 							<div class="address">
 								<i class="icofont-google-map"></i>
 								<h4>Location:</h4>
-								<p>A108 Adam Street, New York, NY 535022</p>
+								<p>Unit 103, Building 3, <br></br>
+									Sector 3, Millennium Business Park,<br></br>
+									Mahape, Navi Mumbai</p>
 							</div>
 
 							<div class="email">
 								<i class="icofont-envelope"></i>
 								<h4>Email:</h4>
-								<p>info@example.com</p>
+								<p>Support@neurospeech.com</p>
 							</div>
 
 							<div class="phone">
 								<i class="icofont-phone"></i>
 								<h4>Call:</h4>
-								<p>+1 5589 55488 55s</p>
+								<p>+91 22 27781459</p>
 							</div>
 
-							<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.997827121327!2d73.0170401142132!3d19.107751255940656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c0e7bb361575%3A0x44c18999c53fed6a!2sNeuroSpeech%20Technologies%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1586355911330!5m2!1sen!2sin" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
 							</div>
 
 						</div>
