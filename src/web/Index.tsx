@@ -142,6 +142,99 @@ export default class Index extends AtomControl {
 
 				</div>
 				</section>
+				<section id="portfolio" class="portfolio">
+					<div class="container">
+						<div class="section-title" data-aos="fade-up">
+							<h2>WebAtoms Sample</h2>
+							<p>Check out our WebAtoms sample</p>
+						</div>
+						<div class="row text-left" 
+							style="position: relative; 
+							min-height: 600px; 
+							width: 100%; 
+							margin: 0; 
+							overflow: auto"
+							styleMinHeight={Bind.oneTime(() => this.app.screen.screenType === "mobile" 
+									? "1120px" : 
+									"600px")}>
+							<FormDemo></FormDemo>
+						</div>
+					</div>
+				</section>
+				<section id="team" class="team">
+					<div class="container">
+						<div class="section-title" data-aos="fade-up">
+							<h2>Our Plan</h2>
+							<p>Choose the plan that's right for you</p>
+						</div>
+						<div class="price-table">
+							<table>
+								<thead>
+									<tr>
+										<th>PRODUCT</th>
+										<th>LICENCE</th>
+										<th> PRICE </th>
+										<th>  </th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>WEB</td>
+										<td>MIT</td>
+										<td>Free</td>
+										<td><p align="center" style="margin-bottom: 0">  <a href="https://www.webatoms.in/samples.html" target="_blank" class="btn btn-block btn-primary text-uppercase"> Download</a></p></td>
+									</tr>
+									<tr>
+										<td>XF DROID</td>
+										<td>COMMERCIAL</td>
+										<td>$699</td>
+										<td><p align="center" 
+											style="margin-bottom: 0"> 
+											<a href="/ui/Purchase?id=webatoms.xf.droid" 
+												class="btn btn-block btn-primary text-uppercase"> BUY NOW</a>
+											</p>
+										</td>
+									</tr>
+									<tr>
+										<td>XF iOS</td>
+										<td>COMMERCIAL</td>
+										<td>$699</td>
+										<td><p align="center" 
+											style="margin-bottom: 0"> 
+											<a href="/ui/Purchase?id=webatoms.xf.ios" 
+											class="btn btn-block btn-primary text-uppercase"> BUY NOW</a> 
+											</p>
+										</td>
+									</tr>
+									<tr>
+										<td>XF MOBILE <br/>
+											(ios + Droid)</td>
+										<td>COMMERCIAL</td>
+										<td>$999</td>
+										<td><p align="center" 
+											style="margin-bottom: 0"> 
+											<a href="/ui/Purchase?id=webatoms.xf.mobile" 
+												class="btn btn-block btn-primary text-uppercase"> BUY NOW</a> 
+											</p>
+										</td>
+									</tr>
+									<tr>
+										<td>XF MOBILE SOURCE <br/>
+											(ios + Droid)</td>
+										<td>COMMERCIAL</td>
+										<td>$9,999</td>
+										<td><p align="center" 
+											style="margin-bottom: 0"> 
+											<a href="/ui/Purchase?id=webatoms.xf.source" 
+											class="btn btn-block btn-primary text-uppercase"> BUY NOW</a> 
+											</p>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</section>
 				<section id="contact" class="contact">
 					<div class="container">
 

@@ -111,6 +111,12 @@ export class FileBarStyle extends AtomToggleButtonBarStyle {
 
     public screen = (this.styleSheet as AtomTheme).app.screen;
 
+    public get root(): IStyleDeclaration {
+        return {
+            padding: "2px 5px"
+        };
+    }
+
     public get item(): IStyleDeclaration {
         return {
             ... this.getBaseProperty(FileBarStyle , "item"),
