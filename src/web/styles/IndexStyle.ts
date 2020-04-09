@@ -133,6 +133,42 @@ export default class IndexStyle extends AtomStyle {
                         }
                     }
                 },
+                " section": {
+                    padding: "60px 0"
+                },
+                " .section-bg": {
+                    backgroundColor: "#f9e8df",
+                },
+                " .section-title": {
+                    textAlign: "center",
+                    paddingBottom: "30px"
+                },
+                " .section-title h2": {
+                    fontSize: "24px",
+                    fontWeight: "700",
+                    paddingBottom: "0",
+                    lineHeight: "1px",
+                    marginBottom: "15px",
+                    color: "#c2b7b1",
+                  },
+                 " .section-title p": {
+                    paddingBottom: "15px",
+                    marginBottom: "15px",
+                    position: "relative",
+                    fontSize: "32px",
+                    fontWeight: "700",
+                    color: "#242424",
+                },
+                " .section-title p::after": {
+                    content: "",
+                    position: "absolute",
+                    display: "block",
+                    width: "60px",
+                    height: "2px",
+                    background: "#eb5d1e",
+                    bottom: "0",
+                    left: "calc(50% - 30px)",
+                },
                 " #hero": {
                     width: "100%",
                     height: this.screen.screenType === "mobile" ? "auto" : "70vh",
@@ -181,7 +217,78 @@ export default class IndexStyle extends AtomStyle {
                         }
                     }
                 },
+                " #main": {
+                    marginTop: "72px"
+                },
+                " .about": {
+                    subclasses: {
+                        " h3": {
+                            fontWeight: "700",
+                            fontSize: "34px",
+                            color: "#242424",
+                        },
+                        " h4": {
+                            fontSize: "20px",
+                            fontWeight: "700",
+                            marginTop: "5px",
+                            color: "#7a6960",
+                        },
+                        " i": {
+                            fontSize: "48px",
+                            marginTop: "15px",
+                            color: "#f39e7a",
+                        },
+                        " p": {
+                            fontSize: "15px",
+                            color: "#5a6570"
+                        },
+                        " .about-img img": {
+                            maxWidth: this.screen.screenType === "mobile" ? "70%" : ""
+                        }
+                    }
+                },
+                " .services": {
+                    subclasses: {
+                        " .icon-box": {
+                            padding: "30px",
+                            position: "relative",
+                            overflow: "hidden",
+                            margin: "0  0 40px 0",
+                            background: "#fff",
+                            boxShadow: "0 10px 29px 0 rgba(68, 88, 144, 0.1)",
+                            transition: "all 0.3s ease-in-out",
+                            borderRadius: "15px",
+                            textAlign: "center",
+                            borderBottom: "3px solid #fff",
+                        },
+                        " .icon-box:hover": {
+                            transform: "translateY(-5px)",
+                            borderColor: "#ef7f4d",
+                        },
+                        " .icon i": {
+                            fontSize: "48px",
+                            lineHeight: "1",
+                            marginBottom: "15px",
+                            color: "#ef7f4d",
+                        },
+                        " .title": {
+                            fontWeight: "700",
+                            marginBottom: "15px",
+                            fontSize: "18px",
+                        },
+                        " .title a": {
+                            color: "#111",
+                        },
+                        " .description": {
+                            fontSize: "15px",
+                            lineHeight: "28px",
+                            marginBottom: "0"
+                        }
+                    }
+                },
                 " .team": {
+                    background: "#f9e8df",
+                    padding: "60px 0",
                     subclasses: {
                         " table":  {
                             overflow: "hidden",
@@ -232,6 +339,151 @@ export default class IndexStyle extends AtomStyle {
                         }
 
                     }
+                },
+                " .contact": {
+                    subclasses: {
+                      " .info": {
+                            borderTop: "3px solid #eb5d1e",
+                            borderBottom: "3px solid #eb5d1e",
+                            padding: "30px",
+                            background: "#fff",
+                            width: "100%",
+                            boxShadow: "0 0 24px 0 rgba(0, 0, 0, 0.12)",
+                        },
+                        " .info i": {
+                            fontSize: "20px",
+                            color: "#eb5d1e",
+                            float: "left",
+                            width: "44px",
+                            height: "44px",
+                            background: "#fdf1ec",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            borderRadius: "50px",
+                            transition: "all 0.3s ease-in-out"
+                        },
+                        " .info h4": {
+                            padding: "0 0 0 60px",
+                            fontSize: "22px",
+                            fontWeight: "600",
+                            marginBottom: "5px",
+                            color: "#7a6960",
+                        },
+                        " .info p": {
+                            padding: "0 0 10px 60px",
+                            marginBottom: "20px",
+                            fontSize: "14px",
+                            color: "#ab9d95"
+                        },
+                        " .info .email p": {
+                            paddingTop: "5px",
+                        },
+                        " .info .social-links": {
+                            paddingLeft: "60px",
+                          },
+                        " .info .social-links a": {
+                            fontSize: "18px",
+                            display: "inline-block",
+                            background: "#333",
+                            color: "#fff",
+                            lineHeight: "1",
+                            padding: "8px 0",
+                            borderRadius: "50%",
+                            textAlign: "center",
+                            width: "36px",
+                            height: "36px",
+                            transition: "0.3s",
+                            marginRight: "10px",
+                          },
+                        " .info .social-links a:hover": {
+                            background: "#eb5d1e",
+                            color: "#fff",
+                          },
+                        " .info .email:hover i,.info .address:hover i,.info .phone:hover i": {
+                            background: "#eb5d1e",
+                            color: "#fff",
+                        },
+                        " .php-email-form": {
+                            width: "100%",
+                            borderTop: "3px solid #eb5d1e",
+                            borderBottom: "3px solid #eb5d1e",
+                            padding: "30px",
+                            background: "#fff",
+                            boxShadow: "0 0 24px 0 rgba(0, 0, 0, 0.12)",
+                          },
+                        " .php-email-form .form-group": {
+                            paddingBottom: "8px",
+                          },
+                        " .php-email-form .validate": {
+                            display: "none",
+                            color: "red",
+                            margin: "0",
+                            fontWeight: "400",
+                            fontSize: "13px",
+                          },
+                        " .php-email-form .error-message": {
+                            display: "none",
+                            color: "#fff",
+                            background: "#ed3c0d",
+                            textAlign: "center",
+                            padding: "15px",
+                            fontWeight: "600",
+                          },
+                        " .php-email-form .sent-message": {
+                            display: "none",
+                            color: "#fff",
+                            background: "#18d26e",
+                            textAlign: "center",
+                            padding: "15px",
+                            fontWeight: "600",
+                          },
+                        " .php-email-form .loading": {
+                            display: "none",
+                            background: "#fff",
+                            textAlign: "center",
+                            padding: "15px",
+                          },
+                        " .php-email-form .loading:before": {
+                            content: "",
+                            display: "inline-block",
+                            borderRadius: "50%",
+                            width: "24px",
+                            height: "24px",
+                            margin: "0 10px -6px 0",
+                            border: "3px solid #18d26e",
+                            borderTopColor: "#eee",
+                            animation: "animate-loading 1s linear infinite",
+                          },
+                        " .php-email-form input,.php-email-form textarea": {
+                            borderRadius: "0",
+                            boxShadow: "none",
+                            fontSize: "14px",
+                          },
+                        " .php-email-form input": {
+                            height: "44px",
+                          },
+                        " .php-email-form textarea": {
+                            padding: "10px 12px",
+                          },
+                        " .php-email-form button[type='submit'] ": {
+                            background: "#eb5d1e",
+                            border: "0",
+                            padding: "10px 24px",
+                            color: "#fff",
+                            transition: "0.4s",
+                            borderRadius: "4px",
+                          },
+                       " .php-email-form button[type='submit']:hover": {
+                            background: "#ef7f4d"
+                          }
+                    }
+                },
+                " #footer": {
+                    padding: "0 0 30px 0",
+                    color: "#212529",
+                    fontSize: "14px",
+                    background: "#f9e8df"
                 }
             }
         };
