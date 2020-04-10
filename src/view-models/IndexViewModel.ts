@@ -37,8 +37,13 @@ export default class IndexViewModel extends AtomViewModel {
         return this.model.message ? null : "Message is required";
     }
 
-    @Action({ validate: true, success: "Email sent successfully."})
+    @Action({successTitle: "  ", success: "Email sent successfully."})
     public async onSubmit() {
+        // await this.windowService.alert("Email sent successfully.");
+    }
+
+    @Action({successTitle: "  ", success: "Subscribed successfully."})
+    public async onSubscribe() {
         // await this.windowService.alert("Email sent successfully.");
     }
 

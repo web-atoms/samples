@@ -298,7 +298,8 @@ export default class IndexStyle extends AtomStyle {
                             border: "1px solid #000000",
                             marginBottom: "3em",
                             borderRadius: "5px",
-                            padding: "0"
+                            padding: "0",
+                            boxShadow: "0 0 24px 0 rgba(0, 0, 0, 0.12)"
                         },
                         " table > thead > tr": {
                             backgroundColor: "#270c00"
@@ -466,7 +467,7 @@ export default class IndexStyle extends AtomStyle {
                         " .php-email-form textarea": {
                             padding: "10px 12px",
                           },
-                        " .php-email-form button[type='submit'] ": {
+                        " .php-email-form button ": {
                             background: "#eb5d1e",
                             border: "0",
                             padding: "10px 24px",
@@ -474,7 +475,7 @@ export default class IndexStyle extends AtomStyle {
                             transition: "0.4s",
                             borderRadius: "4px",
                           },
-                       " .php-email-form button[type='submit']:hover": {
+                       " .php-email-form button:hover": {
                             background: "#ef7f4d"
                           }
                     }
@@ -513,7 +514,7 @@ export default class IndexStyle extends AtomStyle {
                             padding: "4px 4px",
                             width: "calc(100% - 100px)",
                           },
-                          " .footer-newsletter form input[type='submit']": {
+                          " .footer-newsletter form button": {
                             position: "absolute",
                             top: "0",
                             right: "0",
@@ -527,7 +528,7 @@ export default class IndexStyle extends AtomStyle {
                             borderRadius: "4px",
                             boxShadow: "0px 2px 15px rgba(0, 0, 0, 0.1)",
                           },
-                          " .footer-newsletter form input[type='submit']:hover": {
+                          " .footer-newsletter form button:hover": {
                             background: "#c54811",
                           },
                           " .footer-top": {
@@ -569,7 +570,7 @@ export default class IndexStyle extends AtomStyle {
                           " .footer-top .footer-links ul i": {
                             paddingRight: "2px",
                             color: "#f39e7a",
-                            fontSize: "18px",
+                            fontSize: "11px",
                             lineHeight: "1",
                           },
                           " .footer-top .footer-links ul li": {

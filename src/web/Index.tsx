@@ -237,7 +237,7 @@ export default class Index extends AtomControl {
 
 						<div class="section-title" data-aos="fade-up">
 						<h2>Contact Us</h2>
-						<p>Contact us the get started</p>
+						<p>Contact us for any queries</p>
 						</div>
 
 						<div class="row">
@@ -270,7 +270,7 @@ export default class Index extends AtomControl {
 						</div>
 
 						<div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-							<form action="forms/contact.php" method="post" role="form" class="php-email-form">
+							<form  class="php-email-form">
 							<div class="form-row">
 								<div class="form-group col-md-6">
 								<label for="name">Your Name</label>
@@ -298,7 +298,7 @@ export default class Index extends AtomControl {
 								<div class="error-message"></div>
 								<div class="sent-message">Your message has been sent. Thank you!</div>
 							</div>
-							<div class="text-center"><button type="submit">Send Message</button></div>
+							<div class="text-center"><button eventClick={Bind.event(() => this.viewModel.onSubmit())} >Send Message</button></div>
 							</form>
 						</div>
 
@@ -318,8 +318,8 @@ export default class Index extends AtomControl {
 						<div class="col-lg-6">
 							<h4>Join Our Newsletter</h4>
 							<p>Stay up-to-date on the latest news and expert insights</p>
-							<form action="" method="post">
-							<input type="email" name="email"></input><input type="submit" value="Subscribe"></input>
+							<form>
+							<input type="email" name="email"></input><button eventClick={Bind.event(() => this.viewModel.onSubscribe())}  text="Subscribe"></button>
 							</form>
 						</div>
 						</div>
@@ -347,22 +347,22 @@ export default class Index extends AtomControl {
 						<div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="200">
 							<h4>Useful Links</h4>
 							<ul>
-							<li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-							<li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-							<li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-							<li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-							<li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+							<li><i class="fas fa-chevron-right"></i> <a href="#">Home</a></li>
+							<li><i class="fas fa-chevron-right"></i> <a href="#about">About us</a></li>
+							<li><i class="fas fa-chevron-right"></i> <a href="https://www.webatoms.in/xf/samples.html">Xamarin.Forms  Docs</a></li>
+							<li><i class="fas fa-chevron-right"></i> <a href="https://www.webatoms.in/samples.html">Web Docs</a></li>
+							<li><i class="fas fa-chevron-right"></i> <a href="#team">Buy</a></li>
 							</ul>
 						</div>
 
 						<div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="300">
 							<h4>Our Services</h4>
 							<ul>
-							<li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-							<li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-							<li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-							<li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-							<li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+							<li><i class="fas fa-chevron-right"></i> <a href="#team">Web Development</a></li>
+							<li><i class="fas fa-chevron-right"></i> <a href="#team">XF Android</a></li>
+							<li><i class="fas fa-chevron-right"></i> <a href="#team">XF iOS</a></li>
+							<li><i class="fas fa-chevron-right"></i> <a href="#team">XF Mobile</a></li>
+							<li><i class="fas fa-chevron-right"></i> <a href="#team">XF Mobile Source</a></li>
 							</ul>
 						</div>
 
