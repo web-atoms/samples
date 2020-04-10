@@ -23,8 +23,6 @@ export default class Index extends AtomControl {
 	public create(): void {
 		this.defaultControlStyle = IndexStyle;
 		this.viewModel = this.resolve(IndexViewModel);
-		const wa = this.app as WebApp;
-        wa.installStyleSheet("@web-atoms/samples/src/web/styles/style.css");
         
 		this.render(
 		<div
@@ -391,7 +389,7 @@ export default class Index extends AtomControl {
 					</div>
 				</footer>
 
-				<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+				<a href="#" class="back-to-top"><i class="fas fa-angle-up"></i></a>
 
 		</div>
 		);
