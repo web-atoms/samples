@@ -33,22 +33,61 @@ export default class Index extends AtomControl {
 				<div class="logo mr-auto">
 					<h1 class="text-light"><a href="index.html"><span><img src={Logo} width="50" height="50"></img>WebAtoms</span></a></h1>
 				</div>
-
-				<nav class="nav-menu d-none d-lg-block">
+				<button type="button" 
+				class="mobile-nav-toggle d-lg-none"
+				eventClick={Bind.event((x) => (x.viewModel).menuClick())}><i class="fas fa-bars"
+				styleClass={Bind.oneWay(() => this.viewModel.collapsed ? 'fas fa-times' : 'fas fa-bars')}
+				styleColor={Bind.oneWay(() => this.viewModel.collapsed ? 'White' : '#7a6960')}></i></button>
+				<nav styleClass={Bind.oneWay(() => this.viewModel.collapsed ? 'mobile-nav d-lg-none' : 'nav-menu d-none d-lg-block')}>
 					<ul>
-					<li class="active"><a href="#header">Home</a></li>
-					<li><a href="#main">About Us</a></li>
-					<li><a href="#services">Features</a></li>
-					<li><a href="https://www.webatoms.in/xf/samples.html" target="_blank">XF Docs</a></li>
-					<li><a href="https://www.webatoms.in/samples.html" target="_blank">Web Docs</a></li>
-					<li><a href="#team">Buy</a></li>
+					<li class="active">
+						<a href="#header" 
+							eventClick={Bind.event((x) => (x.viewModel).menuClick())}>Home
+						</a>
+					</li>
+					<li>
+						<a href="#main" 
+							eventClick={Bind.event((x) => (x.viewModel).menuClick())}>About Us
+						</a>
+					</li>
+					<li>
+						<a href="#services" 
+							eventClick={Bind.event((x) => (x.viewModel).menuClick())}>Features
+						</a>
+					</li>
+					<li>
+						<a href="https://www.webatoms.in/xf/samples.html" 
+							eventClick={Bind.event((x) => (x.viewModel).menuClick())}
+							target="_blank">XF Docs
+						</a>
+					</li>
+					<li>
+						<a href="https://www.webatoms.in/samples.html"
+							eventClick={Bind.event((x) => (x.viewModel).menuClick())}
+							target="_blank">Web Docs
+						</a>
+					</li>
+					<li>
+						<a href="#team"
+							eventClick={Bind.event((x) => (x.viewModel).menuClick())}>Buy
+						</a>
+					</li>
 				
-					<li><a href="#contact">Contact Us</a></li>
+					<li>
+						<a href="#contact"
+							eventClick={Bind.event((x) => (x.viewModel).menuClick())}>Contact Us
+						</a>
+					</li>
 
-					<li class="get-started"><a href="https://www.webatoms.in/xf/samples.html">Get Started</a></li>
+					<li class="get-started">
+						<a href="https://www.webatoms.in/xf/samples.html"
+							eventClick={Bind.event((x) => (x.viewModel).menuClick())}>Get Started
+						</a>
+					</li>
 					</ul>
 				</nav>
-
+				<div class="mobile-nav-overly"
+				styleDisplay={Bind.oneWay(() => this.viewModel.collapsed ? 'block' : 'none')}></div>
 				</div>
 			</header>
 			<section id="hero" class="d-flex align-items-center">

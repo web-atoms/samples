@@ -311,7 +311,7 @@ export default class IndexStyle extends AtomStyle {
                             backgroundColor: "#f5f5f5"
                         },
                        " td, th": {
-                            padding: this.screen.screenType === "mobile" ? "0.3em" : "0.75em",
+                            padding: this.screen.screenType === "mobile" ? "12px 5px" : "0.75em",
                             fontSize: this.screen.screenType === "mobile" ? "13px" : "inherit"
                         },
                            " td.err": {
@@ -336,7 +336,9 @@ export default class IndexStyle extends AtomStyle {
                             color: "#fff",
                             backgroundColor: "#eb5d1e",
                             borderColor: "#eb5d1e",
-                            width: "140px"
+                            width:  this.screen.screenType === "mobile" ? "100px" : "140px",
+                            fontSize:  this.screen.screenType === "mobile" ? "13px" : "",
+                            margin:  this.screen.screenType === "mobile" ? "5px" : "",
                         }
 
                     }
@@ -572,6 +574,7 @@ export default class IndexStyle extends AtomStyle {
                             color: "#f39e7a",
                             fontSize: "11px",
                             lineHeight: "1",
+                            marginRight: "5px"
                           },
                           " .footer-top .footer-links ul li": {
                             padding: "10px 0",
@@ -657,7 +660,7 @@ export default class IndexStyle extends AtomStyle {
                     bottom: "0",
                     zIndex: "9999",
                     overflowY: "auto",
-                    left: "-260px",
+                    left: "0",
                     width: "260px",
                     paddingTop: "18px",
                     background: "#242424",
@@ -728,7 +731,7 @@ export default class IndexStyle extends AtomStyle {
                   textAlign: "right",
                 },
                 " .mobile-nav-toggle i": {
-                  color: "#7a6960",
+                  color: "#7a6960"
                 },
                 " .mobile-nav-overly": {
                   width: "100%",

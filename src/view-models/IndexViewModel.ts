@@ -48,7 +48,9 @@ export default class IndexViewModel extends AtomViewModel {
     }
 
     public menuClick() {
-        this.collapsed = !this.collapsed;
+        if (this.app.screen.screenType === "mobile") {
+            this.collapsed = !this.collapsed;
+        }
     }
 
 }
