@@ -26,7 +26,8 @@ export default class Index extends AtomControl {
         
 		this.render(
 		<div
-			styleClass={Bind.oneTime(() => this.controlStyle.root)}>
+			styleClass={Bind.oneTime(() => this.controlStyle.root)}
+			id="page-top">
 			<header id="header" class="fixed-top">
 				<div class="container-fluid d-flex">
 
@@ -41,7 +42,7 @@ export default class Index extends AtomControl {
 				<nav styleClass={Bind.oneWay(() => this.viewModel.collapsed ? 'mobile-nav d-lg-none' : 'nav-menu d-none d-lg-block')}>
 					<ul>
 					<li class="active">
-						<a href="#header" 
+						<a href="#page-top" 
 							eventClick={Bind.event((x) => (x.viewModel).menuClick())}>Home
 						</a>
 					</li>
