@@ -48,11 +48,11 @@ export default class Index extends AtomControl {
 							eventClick={Bind.event((x) => (x.viewModel).menuClick())}>Home
 						</a>
 					</li>
-					<li>
+					{/* <li>
 						<a href="#main" 
 							eventClick={Bind.event((x) => (x.viewModel).menuClick())}>About Us
 						</a>
-					</li>
+					</li> */}
 					<li>
 						<a href="#services" 
 							eventClick={Bind.event((x) => (x.viewModel).menuClick())}>Features
@@ -83,10 +83,13 @@ export default class Index extends AtomControl {
 					</li>
 
 					<li class="get-started">
-						<a href="https://www.webatoms.in/xf/samples.html"
-							eventClick={Bind.event((x) => (x.viewModel).menuClick())}>Get Started
+						<a href="#download">Get Started</a>
+					</li>
+					<li class="get-started">
+						<a href="https://github.com/web-atoms/core/issues" target="_tab">Support
 						</a>
 					</li>
+
 					</ul>
 				</nav>
 				<div class="mobile-nav-overly"
@@ -97,9 +100,9 @@ export default class Index extends AtomControl {
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1">
-						<h1>ADVANCED MVVM FRAMEWORK FOR TYPESCRIPT(JAVASCRIPT)<br></br>
+						<h1>JavaScript bridge for Xamarin.Forms<br></br>
 						</h1>
-						<h2>MVVM Framework for Web and Xamarin.Forms, Hot Reload Xamarin.Forms Apps in Live Environment</h2>
+						<h2>TypeScript + TSX for Xamarin.Forms, Hot Reload Your App in Production Environment</h2>
 						<a href="https://www.webatoms.in/xf/samples.html" class="btn-get-started scrollto">Get Started</a>
 						</div>
 						<div class="col-lg-6 order-1 order-lg-2 hero-img">
@@ -200,6 +203,36 @@ export default class Index extends AtomControl {
 						</div>
 					</div>
 				</section>
+
+				<section id="download" class="services section-bg">
+				<div class="container">
+
+					<div class="section-title" data-aos="fade-up">
+					<h2>Try Now</h2>
+					<p>Xamarin.Forms with TypeScript</p>
+					</div>
+
+					<div class="row"  style="background-color: black; color: white">
+						<pre style="color: white">
+							<ol>
+								<li>
+									Download github repo from <a href="https://github.com/web-atoms/xf-samples" target="_tab">https://github.com/web-atoms/xf-samples</a>
+								</li>
+								<li>Open project in Visual Studio 3</li>
+								<li>Run <code>npm install</code></li>
+								<li>In VS Code, run Tasks, run <code>All Tasks</code></li>
+								<li>Open <code>XFDemo.sln</code> in Visual Studio (This needs to be done only once)</li>
+								<li>Go to file <code>App.xaml.cs</code></li>
+								<li>Change root to <code>http://.../</code> displayed in step 4</li>
+								<li>If you are unable to run it from there, you can still use CDN to run published samples</li>
+							</ol>
+						</pre>
+					</div>
+
+				</div>
+				</section>
+
+
 				<section id="team" class="team">
 					<div class="container">
 						<div class="section-title" data-aos="fade-up">
@@ -364,7 +397,7 @@ export default class Index extends AtomControl {
 				
 				<footer id="footer">
 
-					<div class="footer-newsletter" data-aos="fade-up">
+					{/* <div class="footer-newsletter" data-aos="fade-up">
 					<div class="container">
 						<div class="row justify-content-center">
 						<div class="col-lg-6">
@@ -376,14 +409,14 @@ export default class Index extends AtomControl {
 						</div>
 						</div>
 					</div>
-					</div>
+					</div> */}
 
 					<div class="footer-top">
 					<div class="container">
 						<div class="row">
 
 						<div class="col-lg-3 col-md-6 footer-contact" data-aos="fade-up" data-aos-delay="100">
-							<h3>WebAtoms</h3>
+							<h5>NeuroSpeech Technologies Pvt Ltd</h5>
 							<p>
 							
 							Unit 103, Building 3, <br></br>
@@ -419,13 +452,11 @@ export default class Index extends AtomControl {
 						</div>
 
 						<div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="400">
-							<h4>Our Social Networks</h4>
+							<h4>Networks</h4>
 							<div class="social-links mt-3">
-							<a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
-							<a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-							<a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
-							<a href="#" class="google-plus"><i class="fab fa-pinterest"></i></a>
-							<a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
+							<a href="https://twitter.com/WebAtoms" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
+							<a eventClick={() => alert("Facebook? Seriously for development?")} class="facebook"><i class="fab fa-facebook-f"></i></a>
+							<a href="https://github.com/web-atoms" target="_blank" class="github"><i class="fab fa-github"></i></a>
 							</div>
 						</div>
 
