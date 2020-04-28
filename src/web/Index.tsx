@@ -14,7 +14,8 @@ import MastheadIcon from "@web-atoms/samples/src/web/images/masthead-icon.jpg";
 import Logo from "@web-atoms/samples/src/web/images/logo.png";
 import HeroImg from "@web-atoms/samples/src/web/images/hero-img.svg";
 import AboutImg from "@web-atoms/samples/src/web/images/about-img.svg";
-import WebApp from "@web-atoms/core/dist/web/WebApp";
+export { default as WebApp } from "@web-atoms/core/dist/web/WebApp";
+export { WindowService as W } from "@web-atoms/core/dist/web/services/WindowService";
 
 // @web-atoms-pack: true
 /** XF Home Page */
