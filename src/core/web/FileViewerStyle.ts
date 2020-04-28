@@ -1,15 +1,10 @@
 import Colors from "@web-atoms/core/dist/core/Colors";
-import { UMD } from "@web-atoms/core/dist/core/types";
 import { AtomStyle } from "@web-atoms/core/dist/web/styles/AtomStyle";
 import { AtomTheme } from "@web-atoms/core/dist/web/styles/AtomTheme";
 import { AtomToggleButtonBarStyle } from "@web-atoms/core/dist/web/styles/AtomToggleButtonBarStyle";
 import { IStyleDeclaration } from "@web-atoms/core/dist/web/styles/IStyleDeclaration";
 
 export default class FileViewerStyle extends AtomStyle {
-
-    public init(): void {
-        this.registerExternalStyleSheet(UMD.resolvePath("@web-atoms/samples/scripts/highlight/styles/vs.css"));
-    }
 
     public get root(): IStyleDeclaration {
         return {
@@ -58,10 +53,6 @@ export default class FileViewerStyle extends AtomStyle {
 }
 
 export class MobileFileViewerStyle extends AtomStyle {
-
-    public init(): void {
-        this.registerExternalStyleSheet(UMD.resolvePath("@web-atoms/samples/scripts/highlight/styles/vs.css"));
-    }
 
     public get root(): IStyleDeclaration {
         return {

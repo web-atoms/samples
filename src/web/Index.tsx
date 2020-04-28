@@ -20,6 +20,8 @@ import WebApp from "@web-atoms/core/dist/web/WebApp";
 /** XF Home Page */
 export default class Index extends AtomControl {
 	
+	public viewModel: IndexViewModel;
+
 	public create(): void {
 		this.defaultControlStyle = IndexStyle;
 		this.viewModel = this.resolve(IndexViewModel);
@@ -272,7 +274,7 @@ export default class Index extends AtomControl {
 						</div>
 					</div>
 				</section>
-				<section id="contact" class="contact">
+				{/* <section id="contact" class="contact">
 					<div class="container">
 
 						<div class="section-title" data-aos="fade-up">
@@ -295,7 +297,7 @@ export default class Index extends AtomControl {
 							<div class="email">
 								<i class="icofont-envelope"></i>
 								<h4>Email:</h4>
-								<p>Support@neurospeech.com</p>
+								<p>support@neurospeech.com</p>
 							</div>
 
 							<div class="phone">
@@ -304,9 +306,13 @@ export default class Index extends AtomControl {
 								<p>+91 22 27781459</p>
 							</div>
 
-							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.997827121327!2d73.0170401142132!3d19.107751255940656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c0e7bb361575%3A0x44c18999c53fed6a!2sNeuroSpeech%20Technologies%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1586355911330!5m2!1sen!2sin" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
 							</div>
 
+						</div>
+						<div class="col-lg-5 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+							<div class="info">
+							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.997827121327!2d73.0170401142132!3d19.107751255940656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c0e7bb361575%3A0x44c18999c53fed6a!2sNeuroSpeech%20Technologies%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1586355911330!5m2!1sen!2sin" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+							</div>
 						</div>
 
 						<div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
@@ -314,38 +320,44 @@ export default class Index extends AtomControl {
 							<div class="form-row">
 								<div class="form-group col-md-6">
 								<label for="name">Your Name</label>
-								<input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-								<div class="validate"></div>
+								<input 
+									type="text"
+									class="form-control" id="name" 
+									placeholder="Please enter at least 4 chars"
+									value={Bind.twoWays(() => this.viewModel.model.name)} />
+								<div class="validate" text={Bind.oneWay(() => this.viewModel.errorName)}/>
 								</div>
 								<div class="form-group col-md-6">
 								<label for="name">Your Email</label>
-								<input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" />
-								<div class="validate"></div>
+								<input type="email" class="form-control" name="email" id="email" 
+									placeholder="Please enter a valid email"
+									value={Bind.twoWays(() => this.viewModel.model.emailAddress)} />
+								<div class="validate" text={Bind.oneWay(() => this.viewModel.errorEmailAddress)}/>
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="name">Subject</label>
-								<input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+								<input type="text" 
+									class="form-control" 
+									name="subject" id="subject" placeholder="Please enter at least 8 chars of subject"
+									value={Bind.twoWays(() => this.viewModel.model.subject)} 
+									/>
 								<div class="validate"></div>
 							</div>
 							<div class="form-group">
 								<label for="name">Message</label>
-								<textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
+								<textarea class="form-control" name="message" rows="10" placeholder="Please write something for us"></textarea>
 								<div class="validate"></div>
-							</div>
-							<div class="mb-3">
-								<div class="loading">Loading</div>
-								<div class="error-message"></div>
-								<div class="sent-message">Your message has been sent. Thank you!</div>
 							</div>
 							<div class="text-center"><button eventClick={Bind.event(() => this.viewModel.onSubmit())} >Send Message</button></div>
 							</form>
 						</div>
 
-						</div>
+						 
+						 </div>
 
-					</div>
-					</section>
+						</div>
+					</section> */}
 
 				</main>
 

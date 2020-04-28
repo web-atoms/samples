@@ -419,7 +419,6 @@ export default class IndexStyle extends AtomStyle {
                             paddingBottom: "8px",
                           },
                         " .php-email-form .validate": {
-                            display: "none",
                             color: "red",
                             margin: "0",
                             fontWeight: "400",

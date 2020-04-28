@@ -4,6 +4,7 @@ import { UMD } from "@web-atoms/core/dist/core/types";
 import DISingleton from "@web-atoms/core/dist/di/DISingleton";
 import { BaseService } from "@web-atoms/core/dist/services/http/RestService";
 import { AtomControl } from "@web-atoms/core/dist/web/controls/AtomControl";
+import WebApp from "@web-atoms/core/dist/web/WebApp";
 
 @DISingleton()
 class MDService extends BaseService {
@@ -50,6 +51,10 @@ export default class CodeView extends AtomControl {
             src = this.require.resolve(src);
             src = src.replace("/dist/", "/src/");
         }
+
+        const ss = UMD.resolvePath("@web-atoms/samples/scripts/highlight/styles/vs.css");
+        const app = this.app as WebApp;
+        app.installStyleSheet(ss);
 
         const highlight = await UMD.import("@web-atoms/samples/scripts/highlight/highlight.pack.js");
 
