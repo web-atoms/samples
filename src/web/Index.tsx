@@ -104,7 +104,7 @@ export default class Index extends AtomControl {
 						<h1>JavaScript bridge for Xamarin.Forms<br></br>
 						</h1>
 						<h2>TypeScript + TSX for Xamarin.Forms, Hot Reload Your App in Production Environment</h2>
-						<a href="https://www.webatoms.in/xf/samples.html" class="btn-get-started scrollto">Get Started</a>
+						<a href="#download" class="btn-get-started scrollto">Get Started</a>
 						</div>
 						<div class="col-lg-6 order-1 order-lg-2 hero-img">
 						<img src={HeroImg} class="img-fluid animated" alt=""></img>
