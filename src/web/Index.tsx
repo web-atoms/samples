@@ -220,6 +220,7 @@ export default class Index extends AtomControl {
 									Download github repo from <a href="https://github.com/web-atoms/xf-samples" target="_tab">https://github.com/web-atoms/xf-samples</a>
 								</li>
 								<li>Open project in Visual Studio Code</li>
+								<li>Run <code>npm install -g @web-atoms/dev-server</code></li>
 								<li>Run <code>npm install</code></li>
 								<li>In VS Code, run Tasks, run <code>All Tasks</code></li>
 								<li>Open <code>XFDemo.sln</code> in Visual Studio (This needs to be done only once)</li>
