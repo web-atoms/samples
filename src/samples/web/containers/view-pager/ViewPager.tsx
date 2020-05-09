@@ -11,6 +11,8 @@ import {AtomGridView} from "@web-atoms/core/dist/web/controls/AtomGridView";
 
 
 export default class ViewPager extends AtomGridView {
+
+	public viewModel: ViewPagerViewModel;
 	
 	public create(): void {
 		this.viewModel =  this.resolve(ViewPagerViewModel) ;
@@ -20,8 +22,8 @@ export default class ViewPager extends AtomGridView {
 			columns="*"
 			rows="50, *">
 			<AtomListBox
-				items={Bind.oneWay((x) => x.viewModel.pages)}
-				value={Bind.twoWays((x) => x.viewModel.currentPage)}
+				items={Bind.oneWay(() => this.viewModel.pages)}
+				value={Bind.twoWays(() => this.viewModel.currentPage)}
 				for="div">
 				<AtomListBox.itemTemplate>
 					<span
@@ -31,8 +33,8 @@ export default class ViewPager extends AtomGridView {
 			</AtomListBox>
 			<AtomViewPager
 				row="1"
-				items={Bind.oneWay((x) => x.viewModel.pages)}
-				value={Bind.oneWay((x) => x.viewModel.currentPage)}>
+				items={Bind.oneWay(() => this.viewModel.pages)}
+				value={Bind.oneWay(() => this.viewModel.currentPage)}>
 			</AtomViewPager>
 		</div>
 		);

@@ -11,6 +11,8 @@ import {AtomControl} from "@web-atoms/core/dist/web/controls/AtomControl";
 
 
 export default class CustomDateField extends AtomControl {
+
+	public viewModel: CustomDateFieldViewModel;
 	
 	constructor(app: any, e?: any) {
 		super(app, e || document.createElement("div"));

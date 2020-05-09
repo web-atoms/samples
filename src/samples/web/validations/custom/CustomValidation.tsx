@@ -1,19 +1,12 @@
-// tslint:disable
 import Bind from "@web-atoms/core/dist/core/Bind"
 import XNode from "@web-atoms/core/dist/core/XNode"
-import {BindableProperty} from "@web-atoms/core/dist/core/BindableProperty";
-import {AtomItemsControl} from "@web-atoms/core/dist/web/controls/AtomItemsControl";
 import {AtomControl} from "@web-atoms/core/dist/web/controls/AtomControl";
-
-    import CustomValidationViewModel from "./CustomValidationViewModel";
-
-
+import {AtomItemsControl} from "@web-atoms/core/dist/web/controls/AtomItemsControl";
+import CustomValidationViewModel from "./CustomValidationViewModel";
 
 export default class CustomValidation extends AtomControl {
-	
-	constructor(app: any, e?: any) {
-		super(app, e || document.createElement("div"));
-	}
+
+	public viewModel: CustomValidationViewModel;
 
 	public create(): void {
 		this.viewModel =  this.resolve(CustomValidationViewModel) ;
@@ -23,15 +16,15 @@ export default class CustomValidation extends AtomControl {
 			<div>
 				<input
 					placeholder="Name"
-					value={Bind.twoWays((x) => x.viewModel.model.name)}>
+					value={Bind.twoWays(() => this.viewModel.model.name)}>
 				</input>
 				<span
 					style="color: red"
-					text={Bind.oneWay((x) => x.viewModel.errorName)}>
+					text={Bind.oneWay(() => this.viewModel.errorName)}>
 				</span>
 			</div>
 			<AtomItemsControl
-				items={Bind.oneTime((x) => x.viewModel.model.emails)}>
+				items={Bind.oneTime(() => this.viewModel.model.emails)}>
 				<AtomItemsControl.itemTemplate>
 					<div>
 						<input
@@ -46,17 +39,16 @@ export default class CustomValidation extends AtomControl {
 				</AtomItemsControl.itemTemplate>
 			</AtomItemsControl>
 			<button
-				eventClick={Bind.event((x) => (x.viewModel).addEmail())}>
+				eventClick={Bind.event(() => this.viewModel.addEmail())}>
 				Add Email
 			</button>
 			<div>
 
 				        Other fields...
 
-				    
 			</div>
 			<button
-				eventClick={Bind.event((x) => (x.viewModel).signup())}>
+				eventClick={Bind.event(() => this.viewModel.signup())}>
 				Signup
 			</button>
 		</div>

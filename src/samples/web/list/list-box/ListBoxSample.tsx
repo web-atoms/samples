@@ -1,25 +1,18 @@
-// tslint:disable
-import Bind from "@web-atoms/core/dist/core/Bind"
-import XNode from "@web-atoms/core/dist/core/XNode"
+import Bind from "@web-atoms/core/dist/core/Bind";
 import {BindableProperty} from "@web-atoms/core/dist/core/BindableProperty";
-import {AtomListBox} from "@web-atoms/core/dist/web/controls/AtomListBox";
+import XNode from "@web-atoms/core/dist/core/XNode";
 import {AtomControl} from "@web-atoms/core/dist/web/controls/AtomControl";
+import {AtomListBox} from "@web-atoms/core/dist/web/controls/AtomListBox";
+import { IMovie } from "@web-atoms/samples/src/services/http/MovieService";
+import ListBoxSampleStyle from "./ListBoxSampleStyle";
+import ListBoxStyle from "./ListBoxStyle";
+import ListBoxViewModel from "./ListBoxViewModel";
 
-    import ListBoxViewModel from "./ListBoxViewModel";    
-
-    import ListBoxSampleStyle from "./ListBoxSampleStyle";
-
-
-    import ListBoxStyle from "./ListBoxStyle";
-
-
-
+const BindMovie = Bind.forData<IMovie>();
 
 export default class ListBoxSample extends AtomControl {
-	
-	constructor(app: any, e?: any) {
-		super(app, e || document.createElement("div"));
-	}
+
+	public viewModel: ListBoxViewModel;
 
 	public create(): void {
 		this.viewModel =  this.resolve(ListBoxViewModel) ;
@@ -30,9 +23,9 @@ export default class ListBoxSample extends AtomControl {
 			style="padding: 10px;">
 			<AtomListBox
 				allowSelectFirst="true"
-				items={Bind.oneWay((x) => x.viewModel.movies.value)}
+				items={Bind.oneWay(() => this.viewModel.movies.value)}
 				controlStyle={Bind.oneTime(() => ListBoxStyle)}
-				selectedItem={Bind.twoWays((x) => x.viewModel.movie)}
+				selectedItem={Bind.twoWays(() => this.viewModel.movie)}
 				style=" color:#7e7e7e;
                 width: 610px;
                 margin-top: 10px;
@@ -40,22 +33,22 @@ export default class ListBoxSample extends AtomControl {
 				for="div">
 				<AtomListBox.itemTemplate>
 					<div
-						style=" border-bottom: 1px solid #ccc; 
+						style=" border-bottom: 1px solid #ccc;
                          border-radius: 0px;
                          padding: 10px">
 						<div>
 							<span
 								style="font-size: 15px;
                                 font-weight: 600"
-								text={Bind.oneTime((x) => x.data.name + ' ( '+ x.data.genre +' )')}>
+								text={BindMovie.oneTime((x) => `${x.data.name} ( ${x.data.genre} )`)}>
 							</span>
 						</div>
 						<div
-							style="font-size: 15px; 
-                            font-weight: 400; 
+							style="font-size: 15px;
+                            font-weight: 400;
                             padding-left: 15px;
                             padding-top: 5px"
-							text={Bind.oneTime((x) => x.data.description)}>
+							text={BindMovie.oneTime((x) => x.data.description)}>
 						</div>
 					</div>
 				</AtomListBox.itemTemplate>
@@ -64,7 +57,7 @@ export default class ListBoxSample extends AtomControl {
 				style="font-size: 15px;
                 margin-top: 20px;
                 font-weight: 600"
-				text={Bind.oneWay((x) => 'Selected Item: ' + x.viewModel.movie.name)}>
+				text={Bind.oneWay(() => "Selected Item: " + this.viewModel.movie.name)}>
 			</div>
 		</div>
 		);
