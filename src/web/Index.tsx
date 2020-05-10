@@ -60,13 +60,13 @@ export default class Index extends AtomControl {
 						</a>
 					</li>
 					<li>
-						<a href="https://www.webatoms.in/xf/samples.html" 
+						<a href="/xf/samples.html" 
 							eventClick={Bind.event((x) => (x.viewModel).menuClick())}
 							target="_blank">XF Docs
 						</a>
 					</li>
 					<li>
-						<a href="https://www.webatoms.in/samples.html"
+						<a href="/samples.html"
 							eventClick={Bind.event((x) => (x.viewModel).menuClick())}
 							target="_blank">Web Docs
 						</a>
