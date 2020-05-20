@@ -6,7 +6,7 @@
 export default class TaskService extends BaseService {
 
     @Get("user")
-    public getUser(): Promise<IUser>;
+    public getUser(): Promise<IUser> { return null; }
 
     @Get("tasks")
     public getTasks(
@@ -14,21 +14,34 @@ export default class TaskService extends BaseService {
         // default value should be specified in
         // decorator and not in argument declaration
         @Query("status", "open") status?: string
-    ): Promise<ITask[]>
+    ): Promise<ITask[]> { return null; }
+
+    /**
+    * `@Queries` (plural) will accept an object with key value pairs
+    */
+    @Get("tasks")
+    public getTasksAdvanced(
+        @Queries queries: {
+            search?: string,
+            status?: "open" | "closed",
+            start?: number,
+            size?: number
+        }
+    ): Promise<ITask[]> { return null; }
 
     @Get("tasks/{id}/attachments")
     public getAttachments(
         @Path("id") id: number
-    ): Promise<ITaskAttachment[]>;
+    ): Promise<ITaskAttachment[]> { return null; }
 
     @Put("tasks")
-    public createTask(@Body task: ITask): Promise<ITask>;
+    public createTask(@Body task: ITask): Promise<ITask> { return null; }
 
     @Post("tasks/{id}/attachments")
     public uploadAttachment(
         @Path("id") id: number,
         @Body att: IAttachment,
-        cancelToken: CancelToken): Promise<void>;
+        cancelToken: CancelToken): Promise<void> { return null; }
 }
 ```
 
