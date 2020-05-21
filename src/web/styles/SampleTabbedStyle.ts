@@ -8,6 +8,7 @@ export class SampleTabbedStyle extends AtomTabbedPageStyle {
             ... this.getBaseProperty(SampleTabbedStyle, "root"),
             marginTop: "5px",
             subclasses: {
+                ... this.getBaseProperty(SampleTabbedStyle, "root").subclasses,
                 " .page-host": {
                     overflow: "auto",
                     subclasses: {

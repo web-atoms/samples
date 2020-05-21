@@ -7,7 +7,7 @@
             "label": "All Build",
             "dependsOn":[
                 "TypeScript Build Watch",
-                "Web Atoms Dev Server"
+                "Web Atoms Dev Server Alpha",
             ],
             "problemMatcher": [],
             "group": {
@@ -26,6 +26,15 @@
             "command": "node",
             "args": [
                 "${env:APPDATA}/npm/node_modules/@web-atoms/dev-server/index.js",
+                "https://test.webatoms.in"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Web Atoms Dev Server Alpha",
+            "command": "node",
+            "args": [
+                "D:\\git\\akash\\github\\web-atoms\\dev-server\\index.js",
                 "https://test.webatoms.in"
             ],
             "problemMatcher": []

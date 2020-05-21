@@ -3,12 +3,12 @@ import { UMD } from "@web-atoms/core/dist/core/types";
 import { Inject } from "@web-atoms/core/dist/di/Inject";
 import { NavigationService } from "@web-atoms/core/dist/services/NavigationService";
 import { AtomViewModel } from "@web-atoms/core/dist/view-model/AtomViewModel";
-import VM from "@web-atoms/xf-samples/dist/samples/form/simple/SimpleFormViewModel";
+// import VM from "@web-atoms/xf-samples/dist/samples/form/simple/SimpleFormViewModel";
 import { ModuleFiles } from "../../ModuleFiles";
 import MenuService from "../../services/MenuService";
 import MDHost from "../../web/views/MDHost";
 
-export class A extends VM {}
+// export class A extends VM {}
 
 declare var bridge: any;
 declare var require: any;

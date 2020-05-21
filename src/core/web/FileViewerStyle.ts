@@ -104,6 +104,7 @@ export class FileBarStyle extends AtomToggleButtonBarStyle {
 
     public get root(): IStyleDeclaration {
         return {
+            ... this.getBaseProperty(FileBarStyle , "root"),
             padding: "2px 5px"
         };
     }

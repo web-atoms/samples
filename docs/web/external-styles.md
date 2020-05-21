@@ -27,7 +27,7 @@ export default class FontAwesomeStyle extends AtomStyle {
 </script>
 <div
     default-style="{ FontAwesomeStyle }"
-    style-class="{ this.controlStyle.root }">
+    style-class="{ this.controlStyle.name }">
     
     <button>
         <i class="far fa-arrow-alt-circle-left"></i>

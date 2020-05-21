@@ -50,7 +50,11 @@ export default class MDViewModel extends AtomViewModel {
 
         const element = this.owner.element as HTMLElement;
 
-        const mdRoot = (element.firstElementChild.firstElementChild) as HTMLElement;
+        const mdRoot = (element?.firstElementChild?.firstElementChild) as HTMLElement;
+
+        if (!mdRoot) {
+            return;
+        }
 
         const md = document.createElement("div");
 

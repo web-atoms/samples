@@ -102,7 +102,7 @@ export default class FileViewer extends AtomGridView {
 			? <div
 			rows="36, *"
 			columns="*, 5, 50%"
-			styleClass={Bind.oneTime(() => this.controlStyle.root)}
+			styleClass={Bind.oneTime(() => this.controlStyle.name)}
 			none={Bind.oneWay(() => setView(this.element, this.demo ))}>
 			<AtomToggleButtonBar
 				controlStyle = {FileBarStyle}
@@ -134,7 +134,7 @@ export default class FileViewer extends AtomGridView {
 		<div
 			rows="120, 400, 5, 590"
 			columns="100%"
-			styleClass={Bind.oneTime(() => this.controlStyle.root)}
+			styleClass={Bind.oneTime(() => this.controlStyle.name)}
 			none={Bind.oneWay(() => setView(this.element, this.demo ))}>
 			<AtomToggleButtonBar
 				items={Bind.oneWay(() => fromPath(this.element, this.files))}

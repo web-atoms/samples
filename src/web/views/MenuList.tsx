@@ -15,7 +15,7 @@ export default class MenuList extends AtomItemsControl {
 
 		this.render(
 		<div
-			styleClass={Bind.oneTime(() => this.controlStyle.root)}
+			styleClass={Bind.oneTime(() => this.controlStyle.name)}
 			items={Bind.oneWay((x) => x.viewModel.menuService.menus)}
 			for="div">
 			<AtomItemsControl.itemTemplate>

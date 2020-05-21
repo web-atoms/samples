@@ -22,7 +22,7 @@ export default class OldIndex extends AtomControl {
 
 		this.render(
 		<div
-			styleClass={Bind.oneTime(() => this.controlStyle.root)}>
+			styleClass={Bind.oneTime(() => this.controlStyle.name)}>
 			<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
 				<div class="container">
 			

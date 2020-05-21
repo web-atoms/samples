@@ -33,7 +33,7 @@ export default class AppHost extends AtomGridView {
 			styleFontFamily="'Segoe UI',Arial,sans-serif"
 			columns="210, *"
 			rows="90, *, 30"
-			styleClass={Bind.oneTime(() => this.controlStyle.root)}>
+			styleClass={Bind.oneTime(() => this.controlStyle.name)}>
 			<header 
 				column="0:2"
 				row="0">

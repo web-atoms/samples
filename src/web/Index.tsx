@@ -29,7 +29,7 @@ export default class Index extends AtomControl {
         
 		this.render(
 		<div
-			styleClass={Bind.oneTime(() => this.controlStyle.root)}
+			styleClass={Bind.oneTime(() => this.controlStyle.name)}
 			id="page-top">
 			<header id="header" class="fixed-top">
 				<div class="container-fluid d-flex">
