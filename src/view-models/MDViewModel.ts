@@ -37,7 +37,7 @@ export default class MDViewModel extends AtomViewModel {
             styleSheetAdded = true;
             const link = document.createElement("link");
             link.rel = "stylesheet";
-            link.href = UMD.resolvePath("@web-atoms/samples/scripts/highlight/styles/light.css");
+            link.href = UMD.resolvePath("@web-atoms/samples/scripts/highlight/styles/lightfair.css");
             document.head.appendChild(link);
         }
 

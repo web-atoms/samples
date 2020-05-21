@@ -1,6 +1,7 @@
 import { AtomTabbedPageStyle } from "@web-atoms/core/dist/web/styles/AtomTabbedPageStyle";
 import { IStyleDeclaration } from "@web-atoms/core/dist/web/styles/IStyleDeclaration";
-import CloseButtonHoverDataUrl from "../images/CloseButtonHoverDataUrl";
+import CloseButtonDataUrl from "@web-atoms/core/src/web/images/close-button-hover.svg";
+import CloseButtonHoverDataUrl from "@web-atoms/core/src/web/images/close-button.svg";
 export class SampleTabbedStyle extends AtomTabbedPageStyle {
 
     public get root(): IStyleDeclaration {
@@ -95,7 +96,7 @@ export class SampleTabbedStyle extends AtomTabbedPageStyle {
     public get closeButton(): IStyleDeclaration {
         return {
             ... this.getBaseProperty(SampleTabbedStyle, "closeButton"),
-            backgroundImage: CloseButtonHoverDataUrl,
+            backgroundImage: CloseButtonDataUrl,
             top: "9px !important",
             subclasses: {
                 ":hover": {
