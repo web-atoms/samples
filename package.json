@@ -25,7 +25,7 @@
     "@web-atoms/xf-controls"
   ],
   "dependencies": {
-    "@web-atoms/core": "^1.2.2-alpha.22",
+    "@web-atoms/core": "^1.2.2-alpha.23",
     "@web-atoms/date-time": "^1.0.23",
     "@web-atoms/module-loader": "^1.0.429",
     "@web-atoms/web-controls": "^1.2.2-alpha.0",

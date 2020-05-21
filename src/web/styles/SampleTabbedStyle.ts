@@ -11,6 +11,11 @@ export class SampleTabbedStyle extends AtomTabbedPageStyle {
                 ... this.getBaseProperty(SampleTabbedStyle, "root").subclasses,
                 " .page-host": {
                     overflow: "auto",
+                    position: "absolute",
+                    left: 0,
+                    right: 0,
+                    top: 0,
+                    bottom: 0,
                     subclasses: {
                         " section:nth-child(1)": {
                             backgroundColor: "White",
