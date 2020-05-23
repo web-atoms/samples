@@ -1,6 +1,7 @@
 import { AtomTabbedPageStyle } from "@web-atoms/core/dist/web/styles/AtomTabbedPageStyle";
 import { IStyleDeclaration } from "@web-atoms/core/dist/web/styles/IStyleDeclaration";
-import CloseButtonHoverDataUrl from "../images/CloseButtonHoverDataUrl";
+import CloseButtonDataUrl from "@web-atoms/core/src/web/images/close-button-hover.svg";
+import CloseButtonHoverDataUrl from "@web-atoms/core/src/web/images/close-button.svg";
 export class SampleTabbedStyle extends AtomTabbedPageStyle {
 
     public get root(): IStyleDeclaration {
@@ -8,8 +9,14 @@ export class SampleTabbedStyle extends AtomTabbedPageStyle {
             ... this.getBaseProperty(SampleTabbedStyle, "root"),
             marginTop: "5px",
             subclasses: {
+                ... this.getBaseProperty(SampleTabbedStyle, "root").subclasses,
                 " .page-host": {
                     overflow: "auto",
+                    position: "absolute",
+                    left: 0,
+                    right: 0,
+                    top: 0,
+                    bottom: 0,
                     subclasses: {
                         " section:nth-child(1)": {
                             backgroundColor: "White",
@@ -39,7 +46,6 @@ export class SampleTabbedStyle extends AtomTabbedPageStyle {
     }
     public get tabItem(): IStyleDeclaration {
         return {
-        // tslint:disable-next-line:no-string-literal
             ... this.getBaseProperty(SampleTabbedStyle, "tabItem"),
             backgroundColor: "#888 !important",
             border: "none",
@@ -65,7 +71,6 @@ export class SampleTabbedStyle extends AtomTabbedPageStyle {
 
     public get selectedTabItem(): IStyleDeclaration {
         return {
-        // tslint:disable-next-line:no-string-literal
             ... this.getBaseProperty(SampleTabbedStyle, "selectedTabItem"),
             backgroundColor: "White !important",
             color: "#2e2e2e",
@@ -89,7 +94,7 @@ export class SampleTabbedStyle extends AtomTabbedPageStyle {
     public get closeButton(): IStyleDeclaration {
         return {
             ... this.getBaseProperty(SampleTabbedStyle, "closeButton"),
-            backgroundImage: CloseButtonHoverDataUrl,
+            backgroundImage: CloseButtonDataUrl,
             top: "9px !important",
             subclasses: {
                 ":hover": {

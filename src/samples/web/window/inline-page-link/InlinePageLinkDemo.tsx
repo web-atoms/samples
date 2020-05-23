@@ -1,21 +1,14 @@
-// tslint:disable
-import Bind from "@web-atoms/core/dist/core/Bind"
-import XNode from "@web-atoms/core/dist/core/XNode"
+import Bind from "@web-atoms/core/dist/core/Bind";
 import {BindableProperty} from "@web-atoms/core/dist/core/BindableProperty";
-import {AtomPageLink} from "@web-atoms/core/dist/web/controls/AtomPageLink";
+import XNode from "@web-atoms/core/dist/core/XNode";
 import {AtomControl} from "@web-atoms/core/dist/web/controls/AtomControl";
-
-    import InlinePageLinkViewModel from "./InlinePageLinkViewModel";
-
-    import WindowSample from "../simple/WindowSample";
-
-
+import {AtomPageLink} from "@web-atoms/core/dist/web/controls/AtomPageLink";
+import WindowSample from "../simple/WindowSample";
+import InlinePageLinkViewModel from "./InlinePageLinkViewModel";
 
 export default class InlinePageLinkDemo extends AtomControl {
-	
-	constructor(app: any, e?: any) {
-		super(app, e || document.createElement("div"));
-	}
+
+	public viewModel: InlinePageLinkViewModel;
 
 	public create(): void {
 		this.viewModel =  this.resolve(InlinePageLinkViewModel) ;
@@ -29,12 +22,14 @@ export default class InlinePageLinkDemo extends AtomControl {
 
 			//  And result will be sent in the event  */}
 			<AtomPageLink
-				eventGetParameters={Bind.event((s, e) => e.detail.parameters = { message: 'Demo' })}
+				eventGetParameters={Bind.event((s, e) => e.detail.parameters = { message: "Demo" })}
 				eventResult={Bind.event((s, e) => this.viewModel.onResult(e.detail))}
 				eventError={Bind.event((s, e) => this.viewModel.onError(e.detail))}
 				text="Open"
 				for="button">
 				<AtomPageLink.page>
+					{/* Since this is inside template, you have to
+						access view model of Page, not `this`*/}
 					<div>
 						<div>
 							This is the popup window
@@ -49,17 +44,17 @@ export default class InlinePageLinkDemo extends AtomControl {
 							You can access parent viewModel by referring $viewModel.parent
 						</div>
 						<button
-							eventClick={Bind.event((x) => (x.viewModel).close('success'))}>
+							eventClick={Bind.event((x) => x.viewModel.close("success"))}>
 							Ok
 						</button>
 					</div>
 				</AtomPageLink.page>
 			</AtomPageLink>
 			<div
-				text={Bind.oneWay((x) => x.viewModel.result)}>
+				text={Bind.oneWay(() => this.viewModel.result)}>
 			</div>
 			<div
-				text={Bind.oneWay((x) => x.viewModel.error)}
+				text={Bind.oneWay(() => this.viewModel.error)}
 				style="color: red">
 			</div>
 		</div>

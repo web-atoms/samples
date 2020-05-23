@@ -1,28 +1,23 @@
-// tslint:disable
-import Bind from "@web-atoms/core/dist/core/Bind"
-import XNode from "@web-atoms/core/dist/core/XNode"
+import Bind from "@web-atoms/core/dist/core/Bind";
 import {BindableProperty} from "@web-atoms/core/dist/core/BindableProperty";
-import {AtomTabbedPage} from "@web-atoms/core/dist/web/controls/AtomTabbedPage";
+import XNode from "@web-atoms/core/dist/core/XNode";
 import {AtomGridView} from "@web-atoms/core/dist/web/controls/AtomGridView";
-
-    import AppHostViewModel from "../../view-models/AppHostViewModel";
-
-    import MenuList from "./MenuList";
-
-    import GitHubMark32px from "../../images/github/GitHubMark32px";
-
-	import logo from "@web-atoms/samples/src/web/images/logo.png";
+import {AtomTabbedPage} from "@web-atoms/core/dist/web/controls/AtomTabbedPage";
+import logo from "@web-atoms/samples/src/web/images/logo.png";
+import GitHubMark32px from "../../images/github/GitHubMark32px";
+import AppHostViewModel from "../../view-models/AppHostViewModel";
 import OldIndexStyle from "../styles/OldIndexStyle";
 import { SampleTabbedStyle } from "../styles/SampleTabbedStyle";
+import MenuList from "./MenuList";
 
 // @web-atoms-pack: true
 /** Web Samples */
 export default class AppHost extends AtomGridView {
-	
+
 	public viewModel: AppHostViewModel;
 
 	public createViewModel() {
-		this.viewModel =  this.resolve(AppHostViewModel);		
+		this.viewModel =  this.resolve(AppHostViewModel);
 	}
 
 	public create(): void {
@@ -33,16 +28,23 @@ export default class AppHost extends AtomGridView {
 			styleFontFamily="'Segoe UI',Arial,sans-serif"
 			columns="210, *"
 			rows="90, *, 30"
-			styleClass={Bind.oneTime(() => this.controlStyle.root)}>
-			<header 
+			styleClass={Bind.oneTime(() => this.controlStyle.name)}>
+			<header
 				column="0:2"
 				row="0">
-				
+
 			<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
 				<div class="container" style="max-width: 2000px">
-			
-				<a class="navbar-brand js-scroll-trigger" href="#page-top"> <img src={Bind.oneTime(() => logo)}/> &nbsp;WEB ATOMS</a>
-				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+
+				<a class="navbar-brand js-scroll-trigger" href="#page-top">
+					<img src={Bind.oneTime(() => logo)}/> &nbsp;WEB ATOMS</a>
+				<button class="navbar-toggler navbar-toggler-right"
+					type="button"
+					data-toggle="collapse"
+					data-target="#navbarResponsive"
+					aria-controls="navbarResponsive"
+					aria-expanded="false"
+					aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarResponsive">
@@ -68,7 +70,7 @@ export default class AppHost extends AtomGridView {
 				column="0"
 				row="1">
 			</MenuList>
-			
+
 			<AtomTabbedPage
 				controlStyle={SampleTabbedStyle}
 				row="1"

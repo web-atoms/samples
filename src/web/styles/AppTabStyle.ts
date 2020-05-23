@@ -5,6 +5,7 @@ export default class AppTabStyle extends AtomTabbedPageStyle {
 
     public get root(): IStyleDeclaration {
         return {
+            ... this.getBaseProperty(AppTabStyle, "root"),
             position: "absolute",
             left: 0,
             right: 0,
@@ -12,6 +13,7 @@ export default class AppTabStyle extends AtomTabbedPageStyle {
             bottom: 0,
             backgroundColor: this.theme.hoverColor,
             subclasses: {
+                ... this.getBaseProperty(AppTabStyle, "root").subclasses,
                 " > * > .presenter": {
                     backgroundColor: this.theme.bgColor,
                     width: "100%",

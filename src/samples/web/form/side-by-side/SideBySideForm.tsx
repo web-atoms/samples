@@ -1,31 +1,19 @@
-// tslint:disable
-import Bind from "@web-atoms/core/dist/core/Bind"
-import XNode from "@web-atoms/core/dist/core/XNode"
-import {BindableProperty} from "@web-atoms/core/dist/core/BindableProperty";
+import Bind from "@web-atoms/core/dist/core/Bind";
+import XNode from "@web-atoms/core/dist/core/XNode";
 import {AtomControl} from "@web-atoms/core/dist/web/controls/AtomControl";
-
-        import AtomForm from "@web-atoms/web-controls/dist/form/AtomForm";
-
-        import AtomField from "@web-atoms/web-controls/dist/form/AtomField";
-
-        import SimpleFormViewModel from "../SimpleFormViewModel";
-
-        import SideBySideFormStyle from "./SideBySideFormStyle"; 
-
-
+import AtomField from "@web-atoms/web-controls/dist/form/AtomField";
+import AtomForm from "@web-atoms/web-controls/dist/form/AtomForm";
+import SimpleFormViewModel from "../SimpleFormViewModel";
+import SideBySideFormStyle from "./SideBySideFormStyle";
 
 export default class SideBySideForm extends AtomControl {
-	
-	constructor(app: any, e?: any) {
-		super(app, e || document.createElement("div"));
-	}
 
 	public create(): void {
 		this.viewModel =  this.resolve(SimpleFormViewModel) ;
 
 		this.render(
 		<div>
-			<AtomForm>
+			<AtomForm controlStyle={SideBySideFormStyle}>
 				<AtomField
 					label="First name:"
 					required="true"

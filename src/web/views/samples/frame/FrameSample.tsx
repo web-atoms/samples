@@ -1,16 +1,14 @@
-// tslint:disable
-import Bind from "@web-atoms/core/dist/core/Bind"
-import XNode from "@web-atoms/core/dist/core/XNode"
+import Bind from "@web-atoms/core/dist/core/Bind";
 import {BindableProperty} from "@web-atoms/core/dist/core/BindableProperty";
+import XNode from "@web-atoms/core/dist/core/XNode";
 import {AtomFrame} from "@web-atoms/core/dist/web/controls/AtomFrame";
 import {AtomGridView} from "@web-atoms/core/dist/web/controls/AtomGridView";
-
-    import FrameViewModel from "./FrameViewModel";
-
-
+import FrameViewModel from "./FrameViewModel";
 
 export default class FrameSample extends AtomGridView {
-	
+
+	public viewModel: FrameViewModel;
+
 	public create(): void {
 		this.viewModel =  this.resolve(FrameViewModel) ;
 
@@ -31,7 +29,7 @@ export default class FrameSample extends AtomGridView {
 			</div>
 			<AtomFrame
 				row="1"
-				url={Bind.oneWay((x) => x.viewModel.url)}>
+				url={Bind.oneWay(() => this.viewModel.url)}>
 			</AtomFrame>
 		</div>
 		);

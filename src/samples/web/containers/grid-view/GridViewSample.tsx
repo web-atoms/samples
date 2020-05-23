@@ -1,12 +1,12 @@
-// tslint:disable
-import Bind from "@web-atoms/core/dist/core/Bind"
-import XNode from "@web-atoms/core/dist/core/XNode"
+import Bind from "@web-atoms/core/dist/core/Bind";
 import {BindableProperty} from "@web-atoms/core/dist/core/BindableProperty";
+import XNode from "@web-atoms/core/dist/core/XNode";
 import {AtomGridView} from "@web-atoms/core/dist/web/controls/AtomGridView";
-// tslint:disable
 
-export default class GridViewSample extends AtomGridView {	
-	public create(): void {		
+export default class GridViewSample extends AtomGridView {
+
+	public create(): void {
+
 		this.render(
 		<div
 			columns="200, *"
@@ -18,46 +18,55 @@ export default class GridViewSample extends AtomGridView {
 				style="background-color: lightgreen;
                 height: 100%;">
 
-				        Header
-				    			</div>
+				        Header
+
+			</div>
 			<div
 				row="1:3"
 				column="0"
 				style="background-color: lightgrey;
         height: 100%;">
 
-				        TreeView
-				    			</div>
+				        TreeView
+
+			</div>
 			<div
 				row="1"
 				column="1"
 				style="background-color: lightblue;
         height: 100%;">
 
-				        Nested DockPanel Header
-				    			</div>
+				        Nested DockPanel Header
+
+			</div>
 			<div
 				row="2"
 				column="1"
 				style="background-color: white;
         height: 100%;">
 
-				        Nested Fill Element
-				    			</div>
+				        Nested Fill Element
+
+			</div>
 			<div
 				row="3"
 				column="1"
 				style="background-color: lightseagreen;
         height: 100%;">
 
-				        Nested DockPanel Footer
-				    			</div>
+				        Nested DockPanel Footer
+
+			</div>
 			<div
 				row="4"
 				column="0:2"
 				style="background-color: lightslategray;
         height: 100%;">
 
-				        Footer
-				    			</div>		</div>
-		);	}}
+				        Footer
+
+			</div>
+		</div>
+		);
+	}
+}

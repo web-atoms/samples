@@ -1,21 +1,16 @@
-// tslint:disable
-import Bind from "@web-atoms/core/dist/core/Bind"
-import XNode from "@web-atoms/core/dist/core/XNode"
+import Bind from "@web-atoms/core/dist/core/Bind";
 import {BindableProperty} from "@web-atoms/core/dist/core/BindableProperty";
-import {AtomListBox} from "@web-atoms/core/dist/web/controls/AtomListBox";
+import XNode from "@web-atoms/core/dist/core/XNode";
 import {AtomControl} from "@web-atoms/core/dist/web/controls/AtomControl";
+import {AtomListBox} from "@web-atoms/core/dist/web/controls/AtomListBox";
 
-    import AppListBoxStyle from "./AppListBoxStyle";
+import AppListBoxStyle from "./AppListBoxStyle";
 
-    import MovieViewModel from "./MovieViewModel";
-
-
+import MovieViewModel from "./MovieViewModel";
 
 export default class ListBox extends AtomControl {
-	
-	constructor(app: any, e?: any) {
-		super(app, e || document.createElement("div"));
-	}
+
+	public viewModel: MovieViewModel;
 
 	public create(): void {
 		this.viewModel =  this.resolve(MovieViewModel) ;
@@ -23,7 +18,7 @@ export default class ListBox extends AtomControl {
 		this.render(
 		<div>
 			<AtomListBox
-				items={Bind.oneWay((x) => x.viewModel.movies.value)}>
+				items={Bind.oneWay(() => this.viewModel.movies.value)}>
 				<AtomListBox.itemTemplate>
 					<div>
 						<span

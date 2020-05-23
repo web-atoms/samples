@@ -1,19 +1,15 @@
-// tslint:disable
-import Bind from "@web-atoms/core/dist/core/Bind"
-import XNode from "@web-atoms/core/dist/core/XNode"
+import Bind from "@web-atoms/core/dist/core/Bind";
 import {BindableProperty} from "@web-atoms/core/dist/core/BindableProperty";
+import XNode from "@web-atoms/core/dist/core/XNode";
+import {AtomGridView} from "@web-atoms/core/dist/web/controls/AtomGridView";
 import {AtomListBox} from "@web-atoms/core/dist/web/controls/AtomListBox";
 import {AtomViewPager} from "@web-atoms/core/dist/web/controls/AtomViewPager";
-import {AtomGridView} from "@web-atoms/core/dist/web/controls/AtomGridView";
-
-    import { ViewPagerViewModel } from "./ViewPagerViewModel";
-
-
+import { ViewPagerViewModel } from "./ViewPagerViewModel";
 
 export default class ViewPager extends AtomGridView {
 
 	public viewModel: ViewPagerViewModel;
-	
+
 	public create(): void {
 		this.viewModel =  this.resolve(ViewPagerViewModel) ;
 

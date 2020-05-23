@@ -1,20 +1,13 @@
-// tslint:disable
-import Bind from "@web-atoms/core/dist/core/Bind"
-import XNode from "@web-atoms/core/dist/core/XNode"
+import Bind from "@web-atoms/core/dist/core/Bind";
 import {BindableProperty} from "@web-atoms/core/dist/core/BindableProperty";
+import XNode from "@web-atoms/core/dist/core/XNode";
 import {AtomControl} from "@web-atoms/core/dist/web/controls/AtomControl";
-
-    import AtomDateField from "@web-atoms/web-controls/dist/date-field/AtomDateField"
-
-    import DateFieldViewModel from "./DateFieldViewModel";
-
-
+import AtomDateField from "@web-atoms/web-controls/dist/date-field/AtomDateField";
+import DateFieldViewModel from "./DateFieldViewModel";
 
 export default class DateField extends AtomControl {
-	
-	constructor(app: any, e?: any) {
-		super(app, e || document.createElement("div"));
-	}
+
+	public viewModel: DateFieldViewModel;
 
 	public create(): void {
 		this.viewModel =  this.resolve(DateFieldViewModel) ;
@@ -26,7 +19,7 @@ export default class DateField extends AtomControl {
 				eventResult={Bind.event((s, e) => this.viewModel.dateClicked(e.detail))}>
 			</AtomDateField>
 			<pre
-				text={Bind.oneWay((x) => x.viewModel.log)}>
+				text={Bind.oneWay(() => this.viewModel.log)}>
 			</pre>
 		</div>
 		);
