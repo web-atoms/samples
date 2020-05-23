@@ -1,17 +1,14 @@
-// tslint:disable
-import Bind from "@web-atoms/core/dist/core/Bind"
-import XNode from "@web-atoms/core/dist/core/XNode"
+import Bind from "@web-atoms/core/dist/core/Bind";
 import {BindableProperty} from "@web-atoms/core/dist/core/BindableProperty";
+import XNode from "@web-atoms/core/dist/core/XNode";
 import {AtomControl} from "@web-atoms/core/dist/web/controls/AtomControl";
-// tslint:disable
 
-export default class MobileView extends AtomControl {	
-	constructor(app: any, e?: any) {		super(app, e || document.createElement("div"));	}
+export default class MobileView extends AtomControl {
 
-	public create(): void {		
+	public create(): void {
+
 		this.render(
-		<div>
-
-			    This is mobile view
-					</div>
-		);	}}
+		<div>This is mobile view</div>
+		);
+	}
+}

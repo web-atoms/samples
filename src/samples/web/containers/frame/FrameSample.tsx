@@ -1,21 +1,14 @@
-// tslint:disable
-import Bind from "@web-atoms/core/dist/core/Bind"
-import XNode from "@web-atoms/core/dist/core/XNode"
+import Bind from "@web-atoms/core/dist/core/Bind";
 import {BindableProperty} from "@web-atoms/core/dist/core/BindableProperty";
-import {AtomFrame} from "@web-atoms/core/dist/web/controls/AtomFrame";
+import XNode from "@web-atoms/core/dist/core/XNode";
 import {AtomControl} from "@web-atoms/core/dist/web/controls/AtomControl";
-
-    import FrameViewModel from "./FrameViewModel";
-
-    import Start from "./Start";
-
-
+import {AtomFrame} from "@web-atoms/core/dist/web/controls/AtomFrame";
+import FrameViewModel from "./FrameViewModel";
+import Start from "./Start";
 
 export default class FrameSample extends AtomControl {
-	
-	constructor(app: any, e?: any) {
-		super(app, e || document.createElement("div"));
-	}
+
+	public viewModel: FrameViewModel;
 
 	public create(): void {
 		this.viewModel =  this.resolve(FrameViewModel) ;
@@ -23,7 +16,7 @@ export default class FrameSample extends AtomControl {
 		this.render(
 		<div>
 			<button
-				eventClick={Bind.event((x) => this.viewModel.back())}>
+				eventClick={Bind.event(() => this.viewModel.back())}>
 				Back
 			</button>
 			<div

@@ -20,13 +20,19 @@ class MDService extends BaseService {
 
 }
 
+export interface IMDHeader {
+    label?: string;
+    pad?: number;
+    value?: HTMLElement;
+}
+
 export default class MDViewModel extends AtomViewModel {
 
     public url: string;
 
     public owner: any;
 
-    public headers: any[] = [];
+    public headers: IMDHeader[] = [];
 
     @Inject
     private mdService: MDService;
@@ -41,7 +47,6 @@ export default class MDViewModel extends AtomViewModel {
             document.head.appendChild(link);
         }
 
-        // tslint:disable-next-line:no-string-literal
         const showdown = await UMD.import("showdown/dist/showdown.js");
 
         const text = await this.mdService.getUrl(this.url);
@@ -80,7 +85,7 @@ export default class MDViewModel extends AtomViewModel {
 
     }
 
-    public show(h: any): void {
+    public show(h: IMDHeader): void {
         const e = h.value as HTMLHeadingElement;
         e.scrollIntoView();
     }

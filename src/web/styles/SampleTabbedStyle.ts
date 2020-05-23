@@ -46,7 +46,6 @@ export class SampleTabbedStyle extends AtomTabbedPageStyle {
     }
     public get tabItem(): IStyleDeclaration {
         return {
-        // tslint:disable-next-line:no-string-literal
             ... this.getBaseProperty(SampleTabbedStyle, "tabItem"),
             backgroundColor: "#888 !important",
             border: "none",
@@ -72,7 +71,6 @@ export class SampleTabbedStyle extends AtomTabbedPageStyle {
 
     public get selectedTabItem(): IStyleDeclaration {
         return {
-        // tslint:disable-next-line:no-string-literal
             ... this.getBaseProperty(SampleTabbedStyle, "selectedTabItem"),
             backgroundColor: "White !important",
             color: "#2e2e2e",

@@ -1,21 +1,19 @@
-// tslint:disable
-import Bind from "@web-atoms/core/dist/core/Bind"
-import XNode from "@web-atoms/core/dist/core/XNode"
-
-import OldIndexStyle from "./styles/OldIndexStyle";
+import Bind from "@web-atoms/core/dist/core/Bind";
+import XNode from "@web-atoms/core/dist/core/XNode";
 import { AtomControl } from "@web-atoms/core/dist/web/controls/AtomControl";
 import logo from "@web-atoms/samples/src/web/images/logo.png";
-import AtomForm from "@web-atoms/web-controls/dist/form/AtomForm";
+import MastheadIcon from "@web-atoms/samples/src/web/images/masthead-icon.jpg";
 import AtomField from "@web-atoms/web-controls/dist/form/AtomField";
+import AtomForm from "@web-atoms/web-controls/dist/form/AtomForm";
+import FormDemo from "../samples/web/form/FromDemo";
 import IndexViewModel from "../view-models/IndexViewModel";
 import IndexFormStyle from "./styles/IndexFormStyle";
-import FormDemo from "../samples/web/form/FromDemo";
-import MastheadIcon from "@web-atoms/samples/src/web/images/masthead-icon.jpg";
+import OldIndexStyle from "./styles/OldIndexStyle";
 
 // @web-atoms-pack: true
 /** XF Home Page */
 export default class OldIndex extends AtomControl {
-	
+
 	public create(): void {
 		this.defaultControlStyle = OldIndexStyle;
 		this.viewModel = this.resolve(IndexViewModel);
@@ -25,23 +23,27 @@ export default class OldIndex extends AtomControl {
 			styleClass={Bind.oneTime(() => this.controlStyle.name)}>
 			<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
 				<div class="container">
-			
-				<a class="navbar-brand js-scroll-trigger" href="https://www.webatoms.in/index.html"> <img src={Bind.oneTime(() => logo)}/> &nbsp;WEB ATOMS</a>
-				<button class="navbar-toggler navbar-toggler-right" 
-						type="button" 
-						data-toggle="collapse" 
-						data-target="#navbarResponsive" 
-						aria-controls="navbarResponsive" 
-						aria-expanded="false" 
+
+				<a class="navbar-brand js-scroll-trigger" href="https://www.webatoms.in/index.html">
+					<img src={Bind.oneTime(() => logo)}/> &nbsp;WEB ATOMS</a>
+				<button class="navbar-toggler navbar-toggler-right"
+						type="button"
+						data-toggle="collapse"
+						data-target="#navbarResponsive"
+						aria-controls="navbarResponsive"
+						aria-expanded="false"
 						aria-label="Toggle navigation"
 						eventClick={Bind.event((x) => (x.viewModel).menuClick())}>
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse"
-					styleClass={Bind.oneWay(() => this.viewModel.collapsed ? 'collapse navbar-collapse show' : 'collapse navbar-collapse')} id="navbarResponsive">
+					styleClass={Bind.oneWay(() => this.viewModel.collapsed
+						? "collapse navbar-collapse show"
+						: "collapse navbar-collapse")}
+						id="navbarResponsive">
 					<ul class="navbar-nav ml-auto my-2 my-lg-0">
 					<li class="nav-item">
-						<a class="nav-link js-scroll-trigger" 
+						<a class="nav-link js-scroll-trigger"
 						eventClick={Bind.event((x) => (x.viewModel).menuClick())} href="#about">About</a>
 					</li>
 					<li class="nav-item">
@@ -77,7 +79,8 @@ export default class OldIndex extends AtomControl {
 					<hr class="divider my-4"></hr>
 					</div>
 					<div class="col-lg-12 align-self-baseline">
-					<p class="text-white-75 font-weight-light mb-5">MVVM Framework for Web and Xamarin.Forms, Hot Reload Xamarin.Forms Apps in Live Environment</p>
+					<p class="text-white-75 font-weight-light mb-5">
+						MVVM Framework for Web and Xamarin.Forms, Hot Reload Xamarin.Forms Apps in Live Environment</p>
 					<p class="text-white-75 mb-4 text-left">
 						<ul style="display:inline-block">
 							<li>MVVM Pattern - ViewModel and Services in TypeScript for Web and Xamarin.Forms</li>
@@ -90,15 +93,15 @@ export default class OldIndex extends AtomControl {
 							<li>Design time mocks</li>
 							<li>Use VS Code to Build Xamarin.Forms Apps</li>
 						</ul>
-						<img styleWidth={Bind.oneTime(() => this.app.screen.screenType === "mobile" ? "100%" : "390px")}  
-							styleFloat={Bind.oneTime(() => this.app.screen.screenType === "mobile" ? "none" : "right")} 
-							style=" display: inline-block; 
+						<img styleWidth={Bind.oneTime(() => this.app.screen.screenType === "mobile" ? "100%" : "390px")}
+							styleFloat={Bind.oneTime(() => this.app.screen.screenType === "mobile" ? "none" : "right")}
+							style=" display: inline-block;
 									vertical-align: top;
-									box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);" 
+									box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);"
 							src={MastheadIcon}></img>
-					</p>					
+					</p>
 					<a class="btn btn-primary btn-xl js-scroll-trigger"
-						styleMarginLeft={Bind.oneTime(() => this.app.screen.screenType === "mobile" ? "0" : "40px")}  
+						styleMarginLeft={Bind.oneTime(() => this.app.screen.screenType === "mobile" ? "0" : "40px")}
 						styleFloat={Bind.oneTime(() => this.app.screen.screenType === "mobile" ? "none" : "left")}
 						href="#about">Find Out More</a>
 					</div>
@@ -110,7 +113,7 @@ export default class OldIndex extends AtomControl {
 					<div class="row text-left" style="position: relative; min-height: 600px; width: 100%; margin: 0; overflow: auto"
 					styleMinHeight={Bind.oneTime(() => this.app.screen.screenType === "mobile" ? "1120px" : "600px")}>
 						<FormDemo></FormDemo>
-					</div>					
+					</div>
 				</div>
 			</section>
 			<section class="page-section" id="services">
@@ -171,7 +174,7 @@ export default class OldIndex extends AtomControl {
 								<li>Xamarin.Forms iOS, $699 with One Year Upgrades</li>
 								<li>Xamarin.Forms Mobile (iOS + Android), $999 with One Year Upgrades</li>
 								<li>For open source discount, please contact us</li>
-							</ul>						
+							</ul>
 						</div>
 					</div>
 				</section>
@@ -191,7 +194,7 @@ export default class OldIndex extends AtomControl {
 					<table>
 					<thead>
 						<tr>
-						 
+
 							<th>PRODUCT</th>
 							<th>LICENCE</th>
 							<th> PRICE </th>
@@ -199,59 +202,64 @@ export default class OldIndex extends AtomControl {
 						</tr>
 					</thead>
 					<tbody>
-					 
+
 						<tr></tr>
 						<tr>
-              
+
 						<td>WEB</td>
 						<td>MIT</td>
 						<td><p align="center" style="margin-bottom: 0">  Free </p></td>
-						<td><p align="center" style="margin-bottom: 0">  <a href="https://www.webatoms.in/samples.html" target="_blank" class="btn btn-block btn-primary text-uppercase"> Download</a></p></td>
+						<td><p align="center" style="margin-bottom: 0">
+							<a href="https://www.webatoms.in/samples.html" target="_blank"
+							class="btn btn-block btn-primary text-uppercase"> Download</a></p></td>
 						</tr>
 						<tr>
-					
+
 					<td>XF DROID</td>
 					<td>COMMERCIAL</td>
 					<td><p align="center" style="margin-bottom: 0">  $699 </p></td>
-					<td><p align="center" style="margin-bottom: 0"> <a href="/ui/Purchase?id=webatoms.xf.droid" class="btn btn-block btn-primary text-uppercase"> BUYNOW</a></p></td>
+					<td><p align="center" style="margin-bottom: 0">
+						<a href="/ui/Purchase?id=webatoms.xf.droid" class="btn btn-block btn-primary text-uppercase">BUYNOW</a></p></td>
 					</tr>
 					<tr>
-					
+
 					<td>XF iOS</td>
 					<td>COMMERCIAL</td>
 					<td><p align="center" style="margin-bottom: 0">  $699 </p></td>
-					<td><p align="center" style="margin-bottom: 0"> <a href="/ui/Purchase?id=webatoms.xf.ios" class="btn btn-block btn-primary text-uppercase"> BUYNOW</a> </p></td>
+					<td><p align="center" style="margin-bottom: 0">
+						<a href="/ui/Purchase?id=webatoms.xf.ios" class="btn btn-block btn-primary text-uppercase">BUYNOW</a> </p></td>
 					</tr>
 					<tr>
-					
+
 					<td>XF MOBILE <br/>
 						(ios + Droid)</td>
 					<td>COMMERCIAL</td>
 
 					<td><p align="center" style="margin-bottom: 0">  $999 </p></td>
-					<td><p align="center" style="margin-bottom: 0"> <a href="/ui/Purchase?id=webatoms.xf.mobile" class="btn btn-block btn-primary text-uppercase"> BUYNOW</a> </p></td>
+					<td><p align="center" style="margin-bottom: 0">
+						<a href="/ui/Purchase?id=webatoms.xf.mobile" class="btn btn-block btn-primary text-uppercase">BUYNOW</a> </p></td>
 					</tr>
 					<tr>
-					
+
 					<td>XF MOBILE SOURCE <br/>
 						(ios + Droid)</td>
 					<td>COMMERCIAL</td>
 					<td><p align="center" style="margin-bottom: 0">  $9,999 </p></td>
-					<td><p align="center" style="margin-bottom: 0"> <a href="/ui/Purchase?id=webatoms.xf.source" class="btn btn-block btn-primary text-uppercase"> BUYNOW</a> </p></td>
+					<td><p align="center" style="margin-bottom: 0">
+						<a href="/ui/Purchase?id=webatoms.xf.source"
+						class="btn btn-block btn-primary text-uppercase"> BUYNOW</a> </p></td>
 					</tr>
           </tbody>
         </table>
 					</div>
 				</section>
-			 
-			<div class="component">
-			 
 
-					 
+			<div class="component">
+
 				</div>
-		 
+
 		</section>
- 
+
 			<footer class="pt-5 pb-4" id="contact">
 			<div class="container">
 				<div class="row">

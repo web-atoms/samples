@@ -1,92 +1,64 @@
-// tslint:disable
-import Bind from "@web-atoms/core/dist/core/Bind"
-import XNode from "@web-atoms/core/dist/core/XNode"
-import {BindableProperty} from "@web-atoms/core/dist/core/BindableProperty";
-import {AtomToggleButtonBar} from "@web-atoms/core/dist/web/controls/AtomToggleButtonBar";
+import Bind from "@web-atoms/core/dist/core/Bind";
+import XNode from "@web-atoms/core/dist/core/XNode";
 import {AtomGridSplitter} from "@web-atoms/core/dist/web/controls/AtomGridSplitter";
 import {AtomGridView} from "@web-atoms/core/dist/web/controls/AtomGridView";
+import {AtomToggleButtonBar} from "@web-atoms/core/dist/web/controls/AtomToggleButtonBar";
 
-    import FileViewerStyle, { MobileFileViewerStyle, FileBarStyle } from "./FileViewerStyle";
+import FileViewerStyle, { FileBarStyle, MobileFileViewerStyle } from "./FileViewerStyle";
 
-    import CodeView from "./CodeView";
+import CodeView from "./CodeView";
 
+declare var UMD: any;
 
-    declare var UMD: any;
+function fromPath(e, files) {
 
+	if (!e || !files || !files.length) {
+		return null;
+	}
 
-    function fromPath(e, files) {
+	const owner = e.atomControl;
+	owner.file = files[0];
 
+	return files.map((p) => {
 
-        if (!e || !files || !files.length) {
+		const t = p.split("/");
+		const n = t[t.length - 1];
+		return {
+			label: n,
+			value: p
+		};
 
-            return null;
+	});
 
-        }
+}
 
-        const owner = e.atomControl;
+function setView(e, d) {
 
-        owner.file = files[0];
+	if (!e || !d) {
+		return;
+	}
 
-        return files.map((p) => {
+	const old = UMD.mock;
+	UMD.mock = e.atomControl.designMode;
 
-            var t = p.split("/");
+	const c = new (d)(e.atomControl.app);
+	e.atomControl.demoPresenter.appendChild(c.element);
+	UMD.mock = old;
 
-            var n = t[t.length - 1];
-
-            return {
-
-                label: n,
-
-                value: p
-
-            };
-
-        });
-
-    }
-
-
-    function setView(e, d) {
-
-        if (!e || !d) {
-
-            return;
-
-        }
-
-        const old = UMD.mock;
-
-        UMD.mock = e.atomControl.designMode;
-
-        const c = new (d)(e.atomControl.app);
-
-        e.atomControl.demoPresenter.appendChild(c.element);
-
-        UMD.mock = old;
-
-    }
-
-
-
+}
 
 export default class FileViewer extends AtomGridView {
-	
-	@BindableProperty
+
 	public files: string[] ;
 
-	@BindableProperty
 	public file: string ;
 
-	@BindableProperty
 	public require: any ;
 
-	@BindableProperty
 	public demo: any ;
 
-	@BindableProperty
 	public designMode: boolean ;
 
-	@BindableProperty
 	public demoPresenter: any ;
 
 	public create(): void {
@@ -130,7 +102,7 @@ export default class FileViewer extends AtomGridView {
 				presenter={Bind.presenter("demoPresenter")}>
 			</div>
 		</div>
-		:					
+		:
 		<div
 			rows="120, 400, 5, 590"
 			columns="100%"

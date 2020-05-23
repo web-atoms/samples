@@ -1,18 +1,10 @@
-// tslint:disable
-import Bind from "@web-atoms/core/dist/core/Bind"
-import XNode from "@web-atoms/core/dist/core/XNode"
+import Bind from "@web-atoms/core/dist/core/Bind";
 import {BindableProperty} from "@web-atoms/core/dist/core/BindableProperty";
+import XNode from "@web-atoms/core/dist/core/XNode";
 import {AtomControl} from "@web-atoms/core/dist/web/controls/AtomControl";
-
-    import AppPanelStyle from "./AppPanelStyle";
-
-
+import AppPanelStyle from "./AppPanelStyle";
 
 export default class Panel extends AtomControl {
-	
-	constructor(app: any, e?: any) {
-		super(app, e || document.createElement("div"));
-	}
 
 	public create(): void {
 		this.defaultControlStyle = AppPanelStyle;

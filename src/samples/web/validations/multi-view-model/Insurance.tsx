@@ -1,21 +1,12 @@
-// tslint:disable
-import Bind from "@web-atoms/core/dist/core/Bind"
-import XNode from "@web-atoms/core/dist/core/XNode"
+import Bind from "@web-atoms/core/dist/core/Bind";
 import {BindableProperty} from "@web-atoms/core/dist/core/BindableProperty";
-import {AtomItemsControl} from "@web-atoms/core/dist/web/controls/AtomItemsControl";
+import XNode from "@web-atoms/core/dist/core/XNode";
 import {AtomControl} from "@web-atoms/core/dist/web/controls/AtomControl";
-
-    import InsuranceViewModel from "./InsuranceViewModel";
-
-    import Applicant from "./Applicant";
-
-
+import {AtomItemsControl} from "@web-atoms/core/dist/web/controls/AtomItemsControl";
+import Applicant from "./Applicant";
+import InsuranceViewModel from "./InsuranceViewModel";
 
 export default class Insurance extends AtomControl {
-	
-	constructor(app: any, e?: any) {
-		super(app, e || document.createElement("div"));
-	}
 
 	public create(): void {
 		this.viewModel =  this.resolve(InsuranceViewModel) ;
@@ -43,12 +34,7 @@ export default class Insurance extends AtomControl {
 				eventClick={Bind.event((x) => (x.viewModel).addApplicant())}>
 				Add Applicant
 			</button>
-			<div>
-
-				        Other fields...
-
-				    
-			</div>
+			<div>Other fields...</div>
 			<button
 				eventClick={Bind.event((x) => (x.viewModel).save())}>
 				Save

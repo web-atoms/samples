@@ -1,32 +1,30 @@
-// tslint:disable
-import Bind from "@web-atoms/core/dist/core/Bind"
-import XNode from "@web-atoms/core/dist/core/XNode"
-
-import IndexStyle from "./styles/IndexStyle";
+import Bind from "@web-atoms/core/dist/core/Bind";
+import XNode from "@web-atoms/core/dist/core/XNode";
 import { AtomControl } from "@web-atoms/core/dist/web/controls/AtomControl";
+import AboutImg from "@web-atoms/samples/src/web/images/about-img.svg";
+import HeroImg from "@web-atoms/samples/src/web/images/hero-img.svg";
 import logo from "@web-atoms/samples/src/web/images/logo.png";
-import AtomForm from "@web-atoms/web-controls/dist/form/AtomForm";
+import Logo from "@web-atoms/samples/src/web/images/logo.png";
+import MastheadIcon from "@web-atoms/samples/src/web/images/masthead-icon.jpg";
 import AtomField from "@web-atoms/web-controls/dist/form/AtomField";
+import AtomForm from "@web-atoms/web-controls/dist/form/AtomForm";
+import FormDemo from "../samples/web/form/FromDemo";
 import IndexViewModel from "../view-models/IndexViewModel";
 import IndexFormStyle from "./styles/IndexFormStyle";
-import FormDemo from "../samples/web/form/FromDemo";
-import MastheadIcon from "@web-atoms/samples/src/web/images/masthead-icon.jpg";
-import Logo from "@web-atoms/samples/src/web/images/logo.png";
-import HeroImg from "@web-atoms/samples/src/web/images/hero-img.svg";
-import AboutImg from "@web-atoms/samples/src/web/images/about-img.svg";
+import IndexStyle from "./styles/IndexStyle";
 export { default as WebApp } from "@web-atoms/core/dist/web/WebApp";
 export { WindowService as W } from "@web-atoms/core/dist/web/services/WindowService";
 
 // @web-atoms-pack: true
 /** XF Home Page */
 export default class Index extends AtomControl {
-	
+
 	public viewModel: IndexViewModel;
 
 	public create(): void {
 		this.defaultControlStyle = IndexStyle;
 		this.viewModel = this.resolve(IndexViewModel);
-        
+
 		this.render(
 		<div
 			styleClass={Bind.oneTime(() => this.controlStyle.name)}
@@ -35,32 +33,34 @@ export default class Index extends AtomControl {
 				<div class="container-fluid d-flex">
 
 				<div class="logo mr-auto">
-					<h1 class="text-light"><a href="index.html"><span><img src={Logo} width="50" height="50"></img>WebAtoms</span></a></h1>
+					<h1 class="text-light"><a href="index.html"><span>
+					<img src={Logo} width="50" height="50"></img>WebAtoms</span></a></h1>
 				</div>
-				<button type="button" 
+				<button type="button"
 				class="mobile-nav-toggle d-lg-none"
 				eventClick={Bind.event((x) => (x.viewModel).menuClick())}><i class="fas fa-bars"
-				styleClass={Bind.oneWay(() => this.viewModel.collapsed ? 'fas fa-times' : 'fas fa-bars')}
-				styleColor={Bind.oneWay(() => this.viewModel.collapsed ? 'White' : '#7a6960')}></i></button>
-				<nav styleClass={Bind.oneWay(() => this.viewModel.collapsed ? 'mobile-nav d-lg-none' : 'nav-menu d-none d-lg-block')}>
+				styleClass={Bind.oneWay(() => this.viewModel.collapsed ? "fas fa-times" : "fas fa-bars")}
+				styleColor={Bind.oneWay(() => this.viewModel.collapsed ? "White" : "#7a6960")}></i></button>
+				<nav styleClass={Bind.oneWay(() =>
+					this.viewModel.collapsed ? "mobile-nav d-lg-none" : "nav-menu d-none d-lg-block")}>
 					<ul>
 					<li class="active">
-						<a href="#page-top" 
+						<a href="#page-top"
 							eventClick={Bind.event((x) => (x.viewModel).menuClick())}>Home
 						</a>
 					</li>
 					{/* <li>
-						<a href="#main" 
+						<a href="#main"
 							eventClick={Bind.event((x) => (x.viewModel).menuClick())}>About Us
 						</a>
 					</li> */}
 					<li>
-						<a href="#services" 
+						<a href="#services"
 							eventClick={Bind.event((x) => (x.viewModel).menuClick())}>Features
 						</a>
 					</li>
 					<li>
-						<a href="/xf/samples.html" 
+						<a href="/xf/samples.html"
 							eventClick={Bind.event((x) => (x.viewModel).menuClick())}
 							target="_blank">XF Docs
 						</a>
@@ -76,7 +76,7 @@ export default class Index extends AtomControl {
 							eventClick={Bind.event((x) => (x.viewModel).menuClick())}>Buy
 						</a>
 					</li>
-				
+
 					<li>
 						<a href="#contact"
 							eventClick={Bind.event((x) => (x.viewModel).menuClick())}>Contact Us
@@ -94,7 +94,7 @@ export default class Index extends AtomControl {
 					</ul>
 				</nav>
 				<div class="mobile-nav-overly"
-				styleDisplay={Bind.oneWay(() => this.viewModel.collapsed ? 'block' : 'none')}></div>
+				styleDisplay={Bind.oneWay(() => this.viewModel.collapsed ? "block" : "none")}></div>
 				</div>
 			</header>
 			<section id="hero" class="d-flex align-items-center">
@@ -124,7 +124,8 @@ export default class Index extends AtomControl {
 					</div>
 					<div class="col-lg-6 pt-5 pt-lg-0">
 						<h3 data-aos="fade-up">MVVM Framework for Web and Xamarin.Forms</h3>
-						<p data-aos="fade-up" data-aos-delay="100">MVVM Pattern - ViewModel and Services in TypeScript for Web and Xamarin.Forms<br></br>
+						<p data-aos="fade-up" data-aos-delay="100">
+							MVVM Pattern - ViewModel and Services in TypeScript for Web and Xamarin.Forms<br></br>
 							View in TSX (JSX) - for Web and Xamarin.Forms<br></br>
 							One time, One way, Two way Binding<br></br>
 							Simple Dependency Injection<br></br>
@@ -177,7 +178,8 @@ export default class Index extends AtomControl {
 						<div class="icon-box">
 						<div class="icon"><i class="fas fa-4x fa-sun"></i></div>
 						<h4 class="title"><a href="">Simple License</a></h4>
-						<p class="description">MIT License for Web, Single Commercial License for Single Xamarin.Forms App, with unlimited users.</p>
+						<p class="description">MIT License for Web, Single Commercial
+						License for Single Xamarin.Forms App, with unlimited users.</p>
 						</div>
 					</div>
 
@@ -191,14 +193,14 @@ export default class Index extends AtomControl {
 							<h2>WebAtoms Sample</h2>
 							<p>Check out our WebAtoms sample</p>
 						</div>
-						<div class="row text-left" 
-							style="position: relative; 
-							min-height: 600px; 
-							width: 100%; 
-							margin: 0; 
+						<div class="row text-left"
+							style="position: relative;
+							min-height: 600px;
+							width: 100%;
+							margin: 0;
 							overflow: auto"
-							styleMinHeight={Bind.oneTime(() => this.app.screen.screenType === "mobile" 
-									? "1120px" : 
+							styleMinHeight={Bind.oneTime(() => this.app.screen.screenType === "mobile"
+									? "1120px" :
 									"600px")}>
 							<FormDemo></FormDemo>
 						</div>
@@ -217,7 +219,8 @@ export default class Index extends AtomControl {
 						<pre style="color: white">
 							<ol>
 								<li>
-									Download github repo from <a href="https://github.com/web-atoms/xf-samples" target="_tab">https://github.com/web-atoms/xf-samples</a>
+									Download github repo from
+									<a href="https://github.com/web-atoms/xf-samples" target="_tab">https://github.com/web-atoms/xf-samples</a>
 								</li>
 								<li>Open project in Visual Studio Code</li>
 								<li>Run <code>npm install -g @web-atoms/dev-server</code></li>
@@ -233,7 +236,6 @@ export default class Index extends AtomControl {
 
 				</div>
 				</section>
-
 
 				<section id="team" class="team">
 					<div class="container">
@@ -256,15 +258,19 @@ export default class Index extends AtomControl {
 										<td>WEB</td>
 										<td>MIT</td>
 										<td>Free</td>
-										<td><p align="center" style="margin-bottom: 0">  <a href="https://www.webatoms.in/samples.html" target="_blank" class="btn btn-block btn-primary text-uppercase"> Download</a></p></td>
+										<td><p align="center" style="margin-bottom: 0">
+											<a
+												href="https://www.webatoms.in/samples.html"
+												target="_blank"
+												class="btn btn-block btn-primary text-uppercase">Download</a></p></td>
 									</tr>
 									<tr>
 										<td>XF DROID</td>
 										<td>COMMERCIAL</td>
 										<td>$699</td>
-										<td><p align="center" 
-											style="margin-bottom: 0"> 
-											<a href="/ui/Purchase?id=webatoms.xf.droid" 
+										<td><p align="center"
+											style="margin-bottom: 0">
+											<a href="/ui/Purchase?id=webatoms.xf.droid"
 												class="btn btn-block btn-primary text-uppercase"> BUY NOW</a>
 											</p>
 										</td>
@@ -273,10 +279,10 @@ export default class Index extends AtomControl {
 										<td>XF iOS</td>
 										<td>COMMERCIAL</td>
 										<td>$699</td>
-										<td><p align="center" 
-											style="margin-bottom: 0"> 
-											<a href="/ui/Purchase?id=webatoms.xf.ios" 
-											class="btn btn-block btn-primary text-uppercase"> BUY NOW</a> 
+										<td><p align="center"
+											style="margin-bottom: 0">
+											<a href="/ui/Purchase?id=webatoms.xf.ios"
+											class="btn btn-block btn-primary text-uppercase"> BUY NOW</a>
 											</p>
 										</td>
 									</tr>
@@ -285,10 +291,10 @@ export default class Index extends AtomControl {
 											(ios + Droid)</td>
 										<td>COMMERCIAL</td>
 										<td>$999</td>
-										<td><p align="center" 
-											style="margin-bottom: 0"> 
-											<a href="/ui/Purchase?id=webatoms.xf.mobile" 
-												class="btn btn-block btn-primary text-uppercase"> BUY NOW</a> 
+										<td><p align="center"
+											style="margin-bottom: 0">
+											<a href="/ui/Purchase?id=webatoms.xf.mobile"
+												class="btn btn-block btn-primary text-uppercase"> BUY NOW</a>
 											</p>
 										</td>
 									</tr>
@@ -297,10 +303,10 @@ export default class Index extends AtomControl {
 											(ios + Droid)</td>
 										<td>COMMERCIAL</td>
 										<td>$9,999</td>
-										<td><p align="center" 
-											style="margin-bottom: 0"> 
-											<a href="/ui/Purchase?id=webatoms.xf.source" 
-											class="btn btn-block btn-primary text-uppercase"> BUY NOW</a> 
+										<td><p align="center"
+											style="margin-bottom: 0">
+											<a href="/ui/Purchase?id=webatoms.xf.source"
+											class="btn btn-block btn-primary text-uppercase"> BUY NOW</a>
 											</p>
 										</td>
 									</tr>
@@ -346,7 +352,10 @@ export default class Index extends AtomControl {
 						</div>
 						<div class="col-lg-5 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
 							<div class="info">
-							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.997827121327!2d73.0170401142132!3d19.107751255940656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c0e7bb361575%3A0x44c18999c53fed6a!2sNeuroSpeech%20Technologies%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1586355911330!5m2!1sen!2sin" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+							<iframe
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.997827121327!2d73.0170401142132!3d19.107751255940656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c0e7bb361575%3A0x44c18999c53fed6a!2sNeuroSpeech%20Technologies%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1586355911330!5m2!1sen!2sin"
+							frameborder="0" style="border:0; width: 100%; height: 290px;"
+							allowfullscreen></iframe>
 							</div>
 						</div>
 
@@ -355,16 +364,16 @@ export default class Index extends AtomControl {
 							<div class="form-row">
 								<div class="form-group col-md-6">
 								<label for="name">Your Name</label>
-								<input 
+								<input
 									type="text"
-									class="form-control" id="name" 
+									class="form-control" id="name"
 									placeholder="Please enter at least 4 chars"
 									value={Bind.twoWays(() => this.viewModel.model.name)} />
 								<div class="validate" text={Bind.oneWay(() => this.viewModel.errorName)}/>
 								</div>
 								<div class="form-group col-md-6">
 								<label for="name">Your Email</label>
-								<input type="email" class="form-control" name="email" id="email" 
+								<input type="email" class="form-control" name="email" id="email"
 									placeholder="Please enter a valid email"
 									value={Bind.twoWays(() => this.viewModel.model.emailAddress)} />
 								<div class="validate" text={Bind.oneWay(() => this.viewModel.errorEmailAddress)}/>
@@ -372,10 +381,10 @@ export default class Index extends AtomControl {
 							</div>
 							<div class="form-group">
 								<label for="name">Subject</label>
-								<input type="text" 
-									class="form-control" 
+								<input type="text"
+									class="form-control"
 									name="subject" id="subject" placeholder="Please enter at least 8 chars of subject"
-									value={Bind.twoWays(() => this.viewModel.model.subject)} 
+									value={Bind.twoWays(() => this.viewModel.model.subject)}
 									/>
 								<div class="validate"></div>
 							</div>
@@ -384,11 +393,11 @@ export default class Index extends AtomControl {
 								<textarea class="form-control" name="message" rows="10" placeholder="Please write something for us"></textarea>
 								<div class="validate"></div>
 							</div>
-							<div class="text-center"><button eventClick={Bind.event(() => this.viewModel.onSubmit())} >Send Message</button></div>
+							<div class="text-center"><button
+								eventClick={Bind.event(() => this.viewModel.onSubmit())} >Send Message</button></div>
 							</form>
 						</div>
 
-						 
 						 </div>
 
 						</div>
@@ -396,7 +405,6 @@ export default class Index extends AtomControl {
 
 				</main>
 
-				
 				<footer id="footer">
 
 					{/* <div class="footer-newsletter" data-aos="fade-up">
@@ -406,7 +414,8 @@ export default class Index extends AtomControl {
 							<h4>Join Our Newsletter</h4>
 							<p>Stay up-to-date on the latest news and expert insights</p>
 							<form>
-							<input type="email" name="email"></input><button eventClick={Bind.event(() => this.viewModel.onSubscribe())}  text="Subscribe"></button>
+							<input type="email" name="email"></input><button
+							eventClick={Bind.event(() => this.viewModel.onSubscribe())}  text="Subscribe"></button>
 							</form>
 						</div>
 						</div>
@@ -420,12 +429,11 @@ export default class Index extends AtomControl {
 						<div class="col-lg-3 col-md-6 footer-contact" data-aos="fade-up" data-aos-delay="100">
 							<h5>NeuroSpeech Technologies Pvt Ltd</h5>
 							<p>
-							
+
 							Unit 103, Building 3, <br></br>
 							Sector 3, Millennium Business Park, <br></br>
 							Mahape, Navi Mumbai<br></br><br></br>
 
-				
 							<strong>Phone:</strong>+91 22 27781459<br></br>
 							<strong>Email:</strong> Support@neurospeech.com<br></br>
 							</p>
@@ -436,7 +444,8 @@ export default class Index extends AtomControl {
 							<ul>
 							<li><i class="fas fa-chevron-right"></i> <a href="#">Home</a></li>
 							<li><i class="fas fa-chevron-right"></i> <a href="#about">About us</a></li>
-							<li><i class="fas fa-chevron-right"></i> <a href="https://www.webatoms.in/xf/samples.html">Xamarin.Forms  Docs</a></li>
+							<li><i class="fas fa-chevron-right"></i>
+								<a href="https://www.webatoms.in/xf/samples.html">Xamarin.Forms  Docs</a></li>
 							<li><i class="fas fa-chevron-right"></i> <a href="https://www.webatoms.in/samples.html">Web Docs</a></li>
 							<li><i class="fas fa-chevron-right"></i> <a href="#team">Buy</a></li>
 							</ul>
@@ -457,7 +466,9 @@ export default class Index extends AtomControl {
 							<h4>Networks</h4>
 							<div class="social-links mt-3">
 							<a href="https://twitter.com/WebAtoms" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
-							<a eventClick={() => alert("Facebook? Seriously for development?")} class="facebook"><i class="fab fa-facebook-f"></i></a>
+							<a
+								eventClick={() => alert("Facebook? Seriously for development?")}
+								class="facebook"><i class="fab fa-facebook-f"></i></a>
 							<a href="https://github.com/web-atoms" target="_blank" class="github"><i class="fab fa-github"></i></a>
 							</div>
 						</div>
@@ -470,7 +481,7 @@ export default class Index extends AtomControl {
 					<div class="copyright">
 					© 2018 NeuroSpeech Technologies Pvt Ltd (India). All Rights Reserved.
 					</div>
-				
+
 					</div>
 				</footer>
 

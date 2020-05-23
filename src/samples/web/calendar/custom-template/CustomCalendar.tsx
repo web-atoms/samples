@@ -1,17 +1,13 @@
-import Bind from "@web-atoms/core/dist/core/Bind"
+import Bind from "@web-atoms/core/dist/core/Bind";
 import {BindableProperty} from "@web-atoms/core/dist/core/BindableProperty";
-import XNode from "@web-atoms/core/dist/core/XNode"
+import XNode from "@web-atoms/core/dist/core/XNode";
 import {AtomControl} from "@web-atoms/core/dist/web/controls/AtomControl";
-import AtomCalendar from "@web-atoms/web-controls/dist/calendar/AtomCalendar"
+import AtomCalendar from "@web-atoms/web-controls/dist/calendar/AtomCalendar";
 import CustomCalendarViewModel from "./CustomCalendarViewModel";
 
 export default class CustomCalendar extends AtomControl {
 
 	public viewModel: CustomCalendarViewModel;
-
-	constructor(app: any, e?: any) {
-		super(app, e || document.createElement("div"));
-	}
 
 	public create(): void {
 		this.viewModel =  this.resolve(CustomCalendarViewModel) ;
@@ -22,6 +18,7 @@ export default class CustomCalendar extends AtomControl {
 				styleWidth="700px"
 				eventDateClicked={Bind.event((s, e) => this.viewModel.dateClicked(e.detail))}>
 				<AtomCalendar.itemTemplate>
+					{/** If you are accessing localViewModel of AtomCalendar, you must use it via x and not this */}
 					<div
 						eventClick={Bind.event((x) => x.localViewModel.dateClicked((x.data)))}>
 						<div

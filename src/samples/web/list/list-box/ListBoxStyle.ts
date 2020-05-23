@@ -13,7 +13,6 @@ export default class ListBoxStyle extends AtomListBoxStyle {
 
     public get selectedItem(): IStyleDeclaration {
         return {
-        // tslint:disable-next-line:no-string-literal
             ... this.getBaseProperty(ListBoxStyle, "selectedItem"),
             backgroundColor: "maroon",
             color: "White",
