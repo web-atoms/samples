@@ -7,7 +7,7 @@
             "label": "All Build",
             "dependsOn":[
                 "TypeScript Build Watch",
-                "Web Atoms Dev Server Alpha",
+                "Web Atoms Dev Server",
             ],
             "problemMatcher": [],
             "group": {

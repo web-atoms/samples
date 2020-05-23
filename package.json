@@ -22,14 +22,16 @@
     "@web-atoms/date-time",
     "@web-atoms/module-loader",
     "@web-atoms/web-controls",
-    "@web-atoms/xf-controls"
+    "@web-atoms/xf-controls",
+    "@web-atoms/xf-samples"
   ],
   "dependencies": {
-    "@web-atoms/core": "^1.2.2-alpha.37",
+    "@web-atoms/core": "^1.2.5",
     "@web-atoms/date-time": "^1.0.23",
     "@web-atoms/module-loader": "^1.0.429",
-    "@web-atoms/web-controls": "^1.2.2-alpha.1",
-    "@web-atoms/xf-controls": "^1.1.2-alpha.3",
+    "@web-atoms/web-controls": "^1.2.4",
+    "@web-atoms/xf-controls": "^1.1.4",
+    "@web-atoms/xf-samples": "^1.1.4",
     "reflect-metadata": "^0.1.13"
   }
 }
