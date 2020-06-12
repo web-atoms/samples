@@ -1,21 +1,23 @@
 # Custom Components
 
-You can easily create and reuse your components.
+You can easily create and reuse your components. To make binding easy and sharing of logic, we have created an extra property called `LocalViewModel` which you can use specifically for custom reusable components. Local view model allows end users to change Visual Appearance with same logic.
 
 ## Simple control
 
 ### Timer.html
 
 ```typescript
-export default class Timer extends AtomControl {
+export default class Timer extends AtomXFContentView {
 
     public localViewModel: TimerViewModel;
 
     public create() {
+        // Lets initialize local view model here
         this.localViewModel = this.resolve(TimerViewModel);
-        this.render(<div>
-            <span text={Bind.oneWay(() => this.localViewModel.time)}/>
-        </div>);
+
+        this.render(<XF.ContentView>
+            <XF.Label text={Bind.oneWay(() => this.localViewModel.time)}/>
+        </XF.ContentView>);
     }
 }
 ```
@@ -32,6 +34,9 @@ export default class TimerViewModel extends AtomViewModel {
             this.time = (new Date()).toString();
         }, 1000);
 
+        // this will ensure that
+        // interval will be cleared
+        // when component is disposed
         this.registerDisposable({
             dispose() {
                 clearInterval(id);
@@ -49,7 +54,7 @@ You can create new properties on custom control by specifying it in properties a
 ### DateSelector.html
 
 ```typescript
-export default class DateSelector extends AtomControl {
+export default class DateSelector extends AtomXFContentView {
 
     public localViewModel: DateSelectorViewModel;
 
@@ -76,30 +81,33 @@ export default class DateSelector extends AtomControl {
         this.endYear = 10;
         this.selectedDate = null;
 
+        /**
+         * Second parameter of resolve method accepts a function that
+         * returns key/value pair that will be set on ViewModel after
+         * creation
+         */
         this.localViewModel = this.resolve(DateSelectorViewModel,
             () => ({ owner: this }));
     }
 
     public create() {
-        this.render(<div>
-            <AtomComboBox
-                value={Bind.twoWays(() => this.localViewModel.day)}
-                items={Bind.oneWay(() => this.localViewModel.dayList)}/>
-            <AtomComboBox
-                value={Bind.twoWays(() => this.localViewModel.month)}
-                items={Bind.oneWay(() => this.localViewModel.monthList)}/>
-            <AtomComboBox
-                value={Bind.twoWays(() => this.localViewModel.year)}
-                items={Bind.oneWay(() => this.localViewModel.yearList)}/>
-        </div>);
+        this.render(<XF.ContentView>
+            <XF.StackLayout orientation="horizontal">
+                <AtomXFComboBox
+                    value={Bind.twoWays(() => this.localViewModel.day)}
+                    items={Bind.oneWay(() => this.localViewModel.dayList)}/>
+                <AtomXFComboBox
+                    value={Bind.twoWays(() => this.localViewModel.month)}
+                    items={Bind.oneWay(() => this.localViewModel.monthList)}/>
+                <AtomXFComboBox
+                    value={Bind.twoWays(() => this.localViewModel.year)}
+                    items={Bind.oneWay(() => this.localViewModel.yearList)}/>
+            </XF.StackLayout>
+        </XF.ContentView>);
 
     }
 
 }
-<script>
-    // full path from the package folder beginning with ~
-    import DateSelectorViewModel from "~src/view-models/DateSelectorViewModel";
-</script>
 ```
 
 ```typescript
@@ -170,91 +178,22 @@ export default class DateSelectorViewModel extends AtomViewModel {
 
 ### Usage
 ```typescript
-export default class Date extends AtomControl {
+export default class Date extends AtomXFContentPage {
 
     public create() {
         this.render(
-            <div>
+            <XF.ContentPage>
+                <XF.StackLayout>
                 <DateSelector
                     selectedDate={Bind.twoWays(() => this.viewModel.startDate)}
                     />
                 <DateSelector
                     selectedDate={Bind.twoWays(() => this.viewModel.endDate)}
                     />
-            </div>
+                </XF.StackLayout>
+            </XF.ContentPage>
         );
     }
 
 }
 ```
-
-### Passing DOM native methods to View Model
-
-As we do not want to reference any HTML native methods in View Model as we may execute view model on any platform. We will instead initialize view model and pass methods that can be executed on view model without referencing DOM.
-
-#### DomHelper
-```typescript
-export default class DomHelper {
-    public static focus(ctrl: AtomControl, className?: string): (() => void) {
-        return () => {
-            const input = ctrl.element.getElementsByTagName("input")[0] as HTMLInputElement;
-            if (input) {
-                input.focus();
-            }
-        };
-    }
-}
-```
-
-#### HTML
-```typescript
-    this.localViewModel = this.resolve(DateSelectorViewModel,
-        () => ({
-            focus: DomHelper.focus(this)
-        }));
-```
-
-#### TypeScript
-```typescript
-export default class DateSelectorViewModel extends AtomViewModel {
-
-    // this will be set by initializer in View
-    // this method should not have any input/output parameter of native platform type
-    public focus: (() => void);
-
-    public async init(): Promise<void> {
-
-        // wait for 10 milliseconds for all initialization to finish
-        await Atom.delay(10);
-
-        this.focus();
-    }
-
-}
-```
-
-## Custom Control Inject
-
-You can resolve dependencies in Custom Control as shown below. `@Inject` does not work in Custom UI Component because resolving them is costly operation and can slow down initialization, as usually single `ViewModel` is used for many UI elements, it is convenient to initialize dependencies in ViewModel with `@Inject`. 
-
-```typescript
-export default class Custom extends AtomControl {
-
-    public srDate: SRDate;
-
-    public preCreate() {
-        this.srDate = this.resolve(SRDate);
-    }
-
-    public create() {
-        this.render(<div>
-            <AtomComboBox
-                items={this.srDate.monthList}
-                />
-        </div>);
-    }
-
-}
-```
-
-> You must use injection in view only for single property access that is independent of the logic. For complex logic, please continue to write logic in view model so it can be unit tested without UI.
