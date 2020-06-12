@@ -67,15 +67,11 @@ export default class XFAppHostViewModel extends AtomViewModel {
             title: "Navigation Service"
         });
         home.addTabLink("Styles", MDHost, {
-            url: UMD.resolvePath("@web-atoms/samples/docs/web/styles.md"),
+            url: UMD.resolvePath("@web-atoms/samples/docs/xf/styles.md"),
             title: "Styles"
         });
-        home.addTabLink("External Styles", MDHost, {
-            url: UMD.resolvePath("@web-atoms/samples/docs/web/external-styles.md"),
-            title: "External Styles"
-        });
         home.addTabLink("Components", MDHost, {
-            url: UMD.resolvePath("@web-atoms/samples/docs/web/components.md"),
+            url: UMD.resolvePath("@web-atoms/samples/docs/xf/components.md"),
             title: "Components"
         });
 
