@@ -58,6 +58,10 @@ export default class XFAppHostViewModel extends AtomViewModel {
             url: UMD.resolvePath("@web-atoms/samples/docs/general/ajax.md"),
             title: "Ajax"
         });
+        home.addTabLink("Rich View Model", MDHost, {
+            url: UMD.resolvePath("@web-atoms/samples/docs/general/rich-view-model.md"),
+            title: "Rich View Model"
+        });
         home.addTabLink("Validation", MDHost, {
             url: UMD.resolvePath("@web-atoms/samples/docs/general/validation.md"),
             title: "Validation"
