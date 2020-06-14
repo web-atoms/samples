@@ -11,7 +11,6 @@ Exposing CLR service is very easy, all you have to do is implement an empty inte
 ### Custom File Service
 
 ```c#
-
     public class FileService: IJSService {
 
         ///<summary>
@@ -25,7 +24,6 @@ Exposing CLR service is very easy, all you have to do is implement an empty inte
             return context.CreateString("current version");
         }
 
-
         ///<summary>
         /// Asynchronous method, tasks are converted to promises
         ///</summary>
@@ -35,8 +33,10 @@ Exposing CLR service is very easy, all you have to do is implement an empty inte
         }
 
         ///<summary>
-        /// In order to send/receive JavaScript objects, you need to serialize Custom Objects.
-        /// You cannot read/write properties of wrapped objects. In order to do that, you need to serialize object.
+        /// In order to send/receive JavaScript objects,
+        /// you need to serialize Custom Objects.
+        /// You cannot read/write properties of wrapped objects. 
+        /// In order to do that, you need to serialize object.
         ///</summary>
         public async Task<IJSValue> SearchFiles(IJSContext context, string pattern) {
 
@@ -44,31 +44,19 @@ Exposing CLR service is very easy, all you have to do is implement an empty inte
 
             // this creates JSON styled objects that be accessed in JavaScript, note
             // only properties are deeply copied
-            var copy = context.Serialize(list, SerializationMode.Copy);
+            var copy = context.Marshal(list, SerializationMode.Copy);
 
             return jsArray;
-
         }
-
     }
-
 
     // register inside a static initializer
-
     public class AppBridge: AtomBridge {
-        static AppBridge() {
-            RegisterService("fileService", DependencyService.Get<FileService>());
-
-            // OR 
-
-            RegisterService("fileService", new FileService());
-        }
+        public FileService FileService => DependencyService.Get<FileService>();
     }
-
 ```
 
 ```typescript
-
     @DISingleton({
         // registered service...
         global: "bridge.fileService",
@@ -95,7 +83,6 @@ Exposing CLR service is very easy, all you have to do is implement an empty inte
         public abstract searchFiles(pattern: string): Promise<any[]>;
         
     }
-
 ```
 
 ### Why do we have to declare class in TypeScript

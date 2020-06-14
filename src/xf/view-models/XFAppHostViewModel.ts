@@ -94,6 +94,10 @@ export default class XFAppHostViewModel extends AtomViewModel {
             url: UMD.resolvePath("@web-atoms/samples/docs/xf/toolbar-item.md"),
             title: "Toolbar Item"
         });
+        xf.addTabLink("Third Party Controls", MDHost, {
+            url: UMD.resolvePath("@web-atoms/samples/docs/xf/third-party.md"),
+            title: "Third Party Controls"
+        });
         xf.addTabLink("Font Awesome", MDHost, {
             url: UMD.resolvePath("@web-atoms/samples/docs/xf/font-awesome.md"),
             title: "Font Awesome"
