@@ -26,6 +26,12 @@ export default class XFAppHostViewModel extends AtomViewModel {
             url: UMD.resolvePath("@web-atoms/samples/docs/general/introduction.md"),
             title: "Introduction"
         });
+
+        home.addTabLink("EULA", MDHost, {
+            url: UMD.resolvePath("@web-atoms/samples/docs/general/eula.md"),
+            title: "End User License Agreement"
+        });
+
         home.addTabLink("Getting Started", MDHost, {
             url: UMD.resolvePath("@web-atoms/samples/docs/general/getting-started.md"),
             title: "Getting Started"
