@@ -482,6 +482,9 @@ export default class Index extends AtomControl {
 					© 2018 NeuroSpeech Technologies Pvt Ltd (India). All Rights Reserved.
 					</div>
 
+					<a href="/terms.html" target="_blank" style="margin-left: 40px">Terms</a>
+					<a href="/eula.html" target="_blank"  style="margin-left: 40px">End User License Agreement</a>
+
 					</div>
 				</footer>
 
