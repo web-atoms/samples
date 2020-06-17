@@ -87,7 +87,7 @@ export default class Index extends AtomControl {
 						<a href="#download">Get Started</a>
 					</li>
 					<li class="get-started">
-						<a href="https://github.com/web-atoms/core/issues" target="_tab">Support
+						<a href="/account/licenses.html" target="_tab">Login
 						</a>
 					</li>
 
