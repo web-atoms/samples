@@ -84,7 +84,7 @@ export default class Index extends AtomControl {
 					</li>
 
 					<li class="get-started">
-						<a href="#download">Get Started</a>
+						<a href="/play">Play</a>
 					</li>
 					<li class="get-started">
 						<a href="/account/licenses.html" target="_tab">Login
