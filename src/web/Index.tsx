@@ -14,6 +14,7 @@ import IndexFormStyle from "./styles/IndexFormStyle";
 import IndexStyle from "./styles/IndexStyle";
 export { default as WebApp } from "@web-atoms/core/dist/web/WebApp";
 export { WindowService as W } from "@web-atoms/core/dist/web/services/WindowService";
+import cs from "@web-atoms/samples/src/images/cs.png";
 
 // @web-atoms-pack: true
 /** XF Home Page */
@@ -270,7 +271,9 @@ export default class Index extends AtomControl {
 										<td>$699</td>
 										<td><p align="center"
 											style="margin-bottom: 0">
-											<a href="/ui/Purchase?id=webatoms.xf.droid"
+											<a
+												href="https://www.componentsource.com/product/web-atoms/prices"
+												target="_blank"
 												class="btn btn-block btn-primary text-uppercase"> BUY NOW</a>
 											</p>
 										</td>
@@ -281,7 +284,9 @@ export default class Index extends AtomControl {
 										<td>$699</td>
 										<td><p align="center"
 											style="margin-bottom: 0">
-											<a href="/ui/Purchase?id=webatoms.xf.ios"
+											<a
+												href="https://www.componentsource.com/product/web-atoms/prices"
+												target="_blank"
 											class="btn btn-block btn-primary text-uppercase"> BUY NOW</a>
 											</p>
 										</td>
@@ -293,7 +298,9 @@ export default class Index extends AtomControl {
 										<td>$999</td>
 										<td><p align="center"
 											style="margin-bottom: 0">
-											<a href="/ui/Purchase?id=webatoms.xf.mobile"
+											<a
+												href="https://www.componentsource.com/product/web-atoms/prices"
+												target="_blank"
 												class="btn btn-block btn-primary text-uppercase"> BUY NOW</a>
 											</p>
 										</td>
@@ -305,13 +312,28 @@ export default class Index extends AtomControl {
 										<td>$9,999</td>
 										<td><p align="center"
 											style="margin-bottom: 0">
-											<a href="/ui/Purchase?id=webatoms.xf.source"
-											class="btn btn-block btn-primary text-uppercase"> BUY NOW</a>
+											<a
+												href="https://www.componentsource.com/product/web-atoms/prices"
+												target="_blank"
+												class="btn btn-block btn-primary text-uppercase"> BUY NOW</a>
 											</p>
 										</td>
 									</tr>
 								</tbody>
 							</table>
+
+							<div>
+								<h3>Authorized Distributor</h3>
+								<a
+									href="https://www.componentsource.com/product/web-atoms"
+									target="_blank"><img src={cs}/></a>
+								<a
+									style="margin-left:20px; font-size: x-large"
+									href="https://www.componentsource.com/help-support/about-us/contact"
+									target="_blank">
+										<i class="fas fa-phone-square-alt"/>Sales Contact</a>
+							</div>
+
 						</div>
 					</div>
 				</section>
