@@ -19,11 +19,23 @@ export default class FileViewerStyle extends AtomStyle {
             margin: "5px",
             minHeight: "600px",
             minWidth: "90%",
+            marginBottom: "15px",
             subclasses: {
                 " > ul": {
                     position: "absolute",
                     margin: 0,
                     padding: 0
+                },
+                " .preview": {
+                    backgroundColor: Colors.white,
+                    margin: "5px",
+                    overflow: "auto",
+                    borderTop: "solid 1px lightgray",
+                    subclasses: {
+                        " img": {
+                            height: "530px"
+                        }
+                    }
                 },
                 " > * > .code": {
                     position: "absolute",

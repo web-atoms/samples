@@ -79,7 +79,7 @@ export default class Index extends AtomControl {
 					</li>
 
 					<li>
-						<a href="#contact"
+						<a href="#footer"
 							eventClick={Bind.event((x) => (x.viewModel).menuClick())}>Contact Us
 						</a>
 					</li>

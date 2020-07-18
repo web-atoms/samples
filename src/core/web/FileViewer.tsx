@@ -98,7 +98,8 @@ export default class FileViewer extends AtomGridView {
 			<div
 				row="1"
 				column="2"
-				style="margin: 5px"
+				class="preview"
+				style="margin: 5px;  overflow: auto"
 				presenter={Bind.presenter("demoPresenter")}>
 			</div>
 		</div>
@@ -129,6 +130,7 @@ export default class FileViewer extends AtomGridView {
 			<div
 				row="3"
 				style="padding: 0.5rem; overflow: auto"
+				class="preview"
 				presenter={Bind.presenter("demoPresenter")}>
 			</div>
 		</div>
