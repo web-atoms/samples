@@ -11,6 +11,8 @@ import MenuItem, { IType } from "../models/MenuItem";
 export default class MenuService {
 
     @BindableProperty
+    public isOpen: boolean;
+    @BindableProperty
     public menus: AtomList<MenuItem>;
 
     constructor(
@@ -21,6 +23,7 @@ export default class MenuService {
 
     public add(label: string, action: () => any, icon?: string): MenuItem {
         const m = this.create(label, action, icon);
+        m.isGroup = true;
         this.menus.add(m);
         return m;
     }
@@ -58,6 +61,7 @@ export default class MenuService {
     public create(label: string, action: (m: MenuItem) => any, icon?: string, require?: any): MenuItem {
         const menu = new MenuItem(this.app, this);
         menu.label = label;
+        this.isOpen = false;
         menu.action = action;
         if (menu.icon) {
             menu.icon = icon;
