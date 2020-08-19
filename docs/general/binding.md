@@ -62,11 +62,15 @@ For control that has multiple items, in item template, `Bind.oneTime` method wil
 
 HTML
 ```typescript
+
+   // enable intellisense on items
+   const BindItem = Bind.forData<Item>();
+
     <AtomItemsControl
         items={Bind.oneTime(() => this.viewModel.items )}>
         <AtomItemsControl.itemTemplate>
             <div>
-                <span text={Bind.oneTime((x) => x.data.label)}/>
+                <span text={BindItem.oneTime((x) => x.data.label)}/>
             </div>
         </AtomItemsControl.itemTemplate>
     </AtomItemsControl>

@@ -1,15 +1,10 @@
 import Colors from "@web-atoms/core/dist/core/Colors";
-import { UMD } from "@web-atoms/core/dist/core/types";
 import { AtomStyle } from "@web-atoms/core/dist/web/styles/AtomStyle";
 import { AtomTheme } from "@web-atoms/core/dist/web/styles/AtomTheme";
 import { AtomToggleButtonBarStyle } from "@web-atoms/core/dist/web/styles/AtomToggleButtonBarStyle";
 import { IStyleDeclaration } from "@web-atoms/core/dist/web/styles/IStyleDeclaration";
 
 export default class FileViewerStyle extends AtomStyle {
-
-    public init(): void {
-        this.registerExternalStyleSheet(UMD.resolvePath("@web-atoms/samples/scripts/highlight/styles/vs.css"));
-    }
 
     public get root(): IStyleDeclaration {
         return {
@@ -24,11 +19,23 @@ export default class FileViewerStyle extends AtomStyle {
             margin: "5px",
             minHeight: "600px",
             minWidth: "90%",
+            marginBottom: "15px",
             subclasses: {
                 " > ul": {
                     position: "absolute",
                     margin: 0,
                     padding: 0
+                },
+                " .preview": {
+                    backgroundColor: Colors.white,
+                    margin: "5px",
+                    overflow: "auto",
+                    borderTop: "solid 1px lightgray",
+                    subclasses: {
+                        " img": {
+                            height: "530px"
+                        }
+                    }
                 },
                 " > * > .code": {
                     position: "absolute",
@@ -58,10 +65,6 @@ export default class FileViewerStyle extends AtomStyle {
 }
 
 export class MobileFileViewerStyle extends AtomStyle {
-
-    public init(): void {
-        this.registerExternalStyleSheet(UMD.resolvePath("@web-atoms/samples/scripts/highlight/styles/vs.css"));
-    }
 
     public get root(): IStyleDeclaration {
         return {
@@ -110,6 +113,13 @@ export class MobileFileViewerStyle extends AtomStyle {
 export class FileBarStyle extends AtomToggleButtonBarStyle {
 
     public screen = (this.styleSheet as AtomTheme).app.screen;
+
+    public get root(): IStyleDeclaration {
+        return {
+            ... this.getBaseProperty(FileBarStyle , "root"),
+            padding: "2px 5px"
+        };
+    }
 
     public get item(): IStyleDeclaration {
         return {

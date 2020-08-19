@@ -197,7 +197,12 @@ export default class CustomValidationViewModel extends AtomViewModel {
 HTML
 ```typescript
 
+const BindEmail = Bind.forData<Email>();
+
 export default class CustomValidation extends AtomControl {
+
+   // this line enables intellisense
+   public viewModel: CustomValidationViewModel;
 
    public create(): void {
       this.viewModel =  this.resolve(CustomValidationViewModel) ;
@@ -207,35 +212,35 @@ export default class CustomValidation extends AtomControl {
          <div>
             <input
                placeholder="Name"
-               value={Bind.twoWays((x) => x.viewModel.model.name)}>
+               value={Bind.twoWays(() => this.viewModel.model.name)}>
             </input>
             <span
                style="color: red"
-               text={Bind.oneWay((x) => x.viewModel.errorName)}>
+               text={Bind.oneWay(() => this.viewModel.errorName)}>
             </span>
          </div>
          <AtomItemsControl
-            items={Bind.oneTime((x) => x.viewModel.model.emails)}>
+            items={Bind.oneTime(() => this.viewModel.model.emails)}>
             <AtomItemsControl.itemTemplate>
                <div>
                   <input
                      placeholder="Email"
-                     value={Bind.twoWays((x) => x.data.email)}>
+                     value={BindEmail.twoWays((x) => x.data.email)}>
                   </input>
                   <span
                      style="color: red"
-                     text={Bind.oneWay((x) => x.data.error)}>
+                     text={BindEmail.oneWay((x) => x.data.error)}>
                   </span>
                </div>
             </AtomItemsControl.itemTemplate>
          </AtomItemsControl>
          <button
-            eventClick={Bind.event((x) => (x.viewModel).addEmail())}>
+            eventClick={Bind.event(() => this.viewModel.addEmail())}>
             Add Email
          </button>
          <div>Other fields...</div>
          <button
-            eventClick={Bind.event((x) => (x.viewModel).signup())}>
+            eventClick={Bind.event(() => this.viewModel.signup())}>
             Signup
          </button>
       </div>
@@ -301,8 +306,12 @@ export default class InsuranceViewModel extends AtomViewModel {
 }
 ```
 #### Insurance.html
-```html
+```typescript
+
 export default class Insurance extends AtomControl {
+
+   // enable intellisense
+   public viewModel: InsuranceViewModel;
 
    public create(): void {
       this.viewModel =  this.resolve(InsuranceViewModel) ;
@@ -312,27 +321,27 @@ export default class Insurance extends AtomControl {
          <div>
             <input
                placeholder="Name"
-               value={Bind.twoWays((x) => x.viewModel.model.broker)}>
+               value={Bind.twoWays(() => this.viewModel.model.broker)}>
             </input>
             <span
                style="color: red"
-               text={Bind.oneWay((x) => x.viewModel.errorBroker)}>
+               text={Bind.oneWay(() => this.viewModel.errorBroker)}>
             </span>
          </div>
          <AtomItemsControl
-            items={Bind.oneTime((x) => x.viewModel.model.applicants)}>
+            items={Bind.oneTime(() => this.viewModel.model.applicants)}>
             <AtomItemsControl.itemTemplate>
                <Applicant>
                </Applicant>
             </AtomItemsControl.itemTemplate>
          </AtomItemsControl>
          <button
-            eventClick={Bind.event((x) => (x.viewModel).addApplicant())}>
+            eventClick={Bind.event(() => this.viewModel.addApplicant())}>
             Add Applicant
          </button>
          <div>Other fields...</div>
          <button
-            eventClick={Bind.event((x) => (x.viewModel).save())}>
+            eventClick={Bind.event(() => this.viewModel.save())}>
             Save
          </button>
       </div>
@@ -372,6 +381,8 @@ export default class ApplicantViewModel extends AtomViewModel {
 #### Applicant.html
 ```typescript
 export default class Applicant extends AtomControl {
+
+   public viewModel: ApplicantViewModel;
    
    public create(): void {
 
@@ -391,25 +402,25 @@ export default class Applicant extends AtomControl {
          <div>
             <input
                placeholder="Name"
-               value={Bind.twoWays((x) => x.viewModel.model.name)}>
+               value={Bind.twoWays(() => this.viewModel.model.name)}>
             </input>
             <span
                style="color: red"
-               text={Bind.oneWay((x) => x.viewModel.errorName)}>
+               text={Bind.oneWay(() => this.viewModel.errorName)}>
             </span>
          </div>
          <div>
             <input
                placeholder="Address"
-               value={Bind.twoWays((x) => x.viewModel.model.address)}>
+               value={Bind.twoWays(() => this.viewModel.model.address)}>
             </input>
             <span
                style="color: red"
-               text={Bind.oneWay((x) => x.viewModel.errorAddress)}>
+               text={Bind.oneWay(() => this.viewModel.errorAddress)}>
             </span>
          </div>
          <button
-            eventClick={Bind.event((x) => (x.viewModel).delete())}>
+            eventClick={Bind.event(() => this.viewModel.delete())}>
             Delete
          </button>
       </div>

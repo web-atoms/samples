@@ -34,7 +34,7 @@ class ListStyle extends AtomStyle {
 </script>
 <ul
     default-style="{ ListStyle }"
-    style-class="{ this.controlStyle.root }">
+    style-class="{ this.controlStyle.name }">
     <li>First Item</li>
     <li>Second Item</li>
     <li>
@@ -132,7 +132,7 @@ OR
 
 <div style-class="{
     ({
-        [this.controlStyle.root.className]: true,
+        [this..controlStyle.name]: true,
         'upload-button' : true 
     })
     }">

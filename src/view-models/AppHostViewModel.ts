@@ -43,6 +43,10 @@ export default class AppHostViewModel extends AtomViewModel {
             url: UMD.resolvePath("@web-atoms/samples/docs/general/dependency-injection.md"),
             title: "Dependency Injection"
         });
+        home.addTabLink("Localization", MDHost, {
+            url: UMD.resolvePath("@web-atoms/samples/docs/general/localization.md"),
+            title: "Localization"
+        });
         home.addTabLink("Messaging", MDHost, {
             url: UMD.resolvePath("@web-atoms/samples/docs/general/messaging.md"),
             title: "Messaging"

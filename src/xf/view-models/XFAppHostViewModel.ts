@@ -26,6 +26,12 @@ export default class XFAppHostViewModel extends AtomViewModel {
             url: UMD.resolvePath("@web-atoms/samples/docs/general/introduction.md"),
             title: "Introduction"
         });
+
+        home.addTabLink("EULA", MDHost, {
+            url: UMD.resolvePath("@web-atoms/samples/docs/general/eula.md"),
+            title: "End User License Agreement"
+        });
+
         home.addTabLink("Getting Started", MDHost, {
             url: UMD.resolvePath("@web-atoms/samples/docs/general/getting-started.md"),
             title: "Getting Started"
@@ -37,6 +43,10 @@ export default class XFAppHostViewModel extends AtomViewModel {
         home.addTabLink("Dependency Injection", MDHost, {
             url: UMD.resolvePath("@web-atoms/samples/docs/general/dependency-injection.md"),
             title: "Dependency Injection"
+        });
+        home.addTabLink("Localization", MDHost, {
+            url: UMD.resolvePath("@web-atoms/samples/docs/general/localization.md"),
+            title: "Localization"
         });
         home.addTabLink("Messaging", MDHost, {
             url: UMD.resolvePath("@web-atoms/samples/docs/general/messaging.md"),
@@ -54,6 +64,10 @@ export default class XFAppHostViewModel extends AtomViewModel {
             url: UMD.resolvePath("@web-atoms/samples/docs/general/ajax.md"),
             title: "Ajax"
         });
+        home.addTabLink("Rich View Model", MDHost, {
+            url: UMD.resolvePath("@web-atoms/samples/docs/general/rich-view-model.md"),
+            title: "Rich View Model"
+        });
         home.addTabLink("Validation", MDHost, {
             url: UMD.resolvePath("@web-atoms/samples/docs/general/validation.md"),
             title: "Validation"
@@ -63,15 +77,11 @@ export default class XFAppHostViewModel extends AtomViewModel {
             title: "Navigation Service"
         });
         home.addTabLink("Styles", MDHost, {
-            url: UMD.resolvePath("@web-atoms/samples/docs/web/styles.md"),
+            url: UMD.resolvePath("@web-atoms/samples/docs/xf/styles.md"),
             title: "Styles"
         });
-        home.addTabLink("External Styles", MDHost, {
-            url: UMD.resolvePath("@web-atoms/samples/docs/web/external-styles.md"),
-            title: "External Styles"
-        });
         home.addTabLink("Components", MDHost, {
-            url: UMD.resolvePath("@web-atoms/samples/docs/web/components.md"),
+            url: UMD.resolvePath("@web-atoms/samples/docs/xf/components.md"),
             title: "Components"
         });
 
@@ -94,16 +104,40 @@ export default class XFAppHostViewModel extends AtomViewModel {
             url: UMD.resolvePath("@web-atoms/samples/docs/xf/toolbar-item.md"),
             title: "Toolbar Item"
         });
+        xf.addTabLink("Third Party Controls", MDHost, {
+            url: UMD.resolvePath("@web-atoms/samples/docs/xf/third-party.md"),
+            title: "Third Party Controls"
+        });
         xf.addTabLink("Font Awesome", MDHost, {
             url: UMD.resolvePath("@web-atoms/samples/docs/xf/font-awesome.md"),
             title: "Font Awesome"
         });
 
         const form = "@web-atoms/xf-samples/src/samples";
+
         this.menuService.addSamples(require, "Form", [
             {
+                label: "Simple Form",
+                demo: `${form}/form/simple/simple-form.PNG`,
+                files: [
+                    `${form}/form/simple/SimpleForm.tsx`,
+                    `${form}/form/simple/SimpleFormViewModel.ts`
+                ]
+            },
+            {
+                label: "Custom Template",
+                demo: `${form}/form/simple/simple-form.PNG`,
+                files: [
+                    `${form}/form/custom/CustomForm.tsx`,
+                    `${form}/form/simple/SimpleFormViewModel.ts`
+                ]
+            }
+        ]);
+
+        this.menuService.addSamples(require, "Form Elements", [
+            {
                 label: "Label",
-                demo: `${form}/label/label.png`,
+                demo: `${form}/label/label.PNG`,
                 files: [
                     `${form}/label/LabelView.tsx`,
                     `${form}/label/LabelViewModel.ts`
@@ -111,7 +145,7 @@ export default class XFAppHostViewModel extends AtomViewModel {
             },
             {
                 label: "CheckBox",
-                demo: `${form}/check-box/check-box.png`,
+                demo: `${form}/check-box/check-box.PNG`,
                 files: [
                     `${form}/check-box/CheckBoxView.tsx`,
                     `${form}/check-box/CheckBoxSampleViewModel.ts`
@@ -119,7 +153,7 @@ export default class XFAppHostViewModel extends AtomViewModel {
             },
             {
                 label: "Entry",
-                demo: `${form}/entry/entry.png`,
+                demo: `${form}/entry/entry.PNG`,
                 files: [
                     `${form}/entry/EntryView.tsx`,
                     `${form}/entry/EntryViewModel.ts`
@@ -127,14 +161,14 @@ export default class XFAppHostViewModel extends AtomViewModel {
             },
             {
                 label: "Image",
-                demo: `${form}/image/image.png`,
+                demo: `${form}/image/image.PNG`,
                 files: [
                     `${form}/image/ImageView.tsx`
                 ]
             },
             {
                 label: "Button",
-                demo: `${form}/button/button.png`,
+                demo: `${form}/button/button.PNG`,
                 files: [
                     `${form}/button/ButtonView.tsx`,
                     `${form}/button/ButtonViewModel.ts`
@@ -150,7 +184,7 @@ export default class XFAppHostViewModel extends AtomViewModel {
             },
             {
                 label: "Search Bar",
-                demo: `${form}/search-bar/search-bar.png`,
+                demo: `${form}/search-bar/search-bar.PNG`,
                 files: [
                     `${form}/search-bar/SearchBarView.tsx`,
                     `${form}/search-bar/SearchBarViewModel.ts`
@@ -158,7 +192,7 @@ export default class XFAppHostViewModel extends AtomViewModel {
             },
             {
                 label: "Date Picker",
-                demo: `${form}/date-picker/date-picker.png`,
+                demo: `${form}/date-picker/date-picker.PNG`,
                 files: [
                     `${form}/date-picker/DatePickerView.tsx`,
                     `${form}/date-picker/DatePickerViewModel.ts`
@@ -166,7 +200,7 @@ export default class XFAppHostViewModel extends AtomViewModel {
             },
             {
                 label: "Time Picker",
-                demo: `${form}/time-picker/time-picker.png`,
+                demo: `${form}/time-picker/time-picker.PNG`,
                 files: [
                     `${form}/time-picker/TimePickerSample.tsx`,
                     `${form}/time-picker/TimePickerViewModel.ts`
@@ -174,7 +208,7 @@ export default class XFAppHostViewModel extends AtomViewModel {
             },
             {
                 label: "Slider",
-                demo: `${form}/slider/slider.png`,
+                demo: `${form}/slider/slider.PNG`,
                 files: [
                     `${form}/slider/SliderView.tsx`,
                     `${form}/slider/SliderViewModel.ts`
@@ -182,20 +216,12 @@ export default class XFAppHostViewModel extends AtomViewModel {
             },
             {
                 label: "Stepper",
-                demo: `${form}/stepper/stepper.png`,
+                demo: `${form}/stepper/stepper.PNG`,
                 files: [
                     `${form}/stepper/StepperView.tsx`,
                     `${form}/stepper/StepperViewModel.ts`
                 ]
-            },
-            {
-                label: "Simple Form",
-                demo: `${form}/form/simple/simple-form.png`,
-                files: [
-                    `${form}/form/simple/SimpleForm.tsx`,
-                    `${form}/form/simple/SimpleFormViewModel.ts`
-                ]
-            },
+            }
         ]);
 
         const layout = "@web-atoms/xf-samples/src/samples/layout/multiple-content";
@@ -234,14 +260,14 @@ export default class XFAppHostViewModel extends AtomViewModel {
         this.menuService.addSamples(require, "Pages", [
             {
                 label: "Tabbed Page",
-                demo: `${samples}/tabbed-page/tabbed-page.png`,
+                demo: `${samples}/tabbed-page/tabbed-page.PNG`,
                 files: [
-                    `${samples}/tabbed-page/TabbedPageView.tsx`
+                    `${samples}/tabbed-page/TabbedPageVIew.tsx`
                 ]
             },
             {
                 label: "Carousel Page",
-                demo: `${samples}/carousel/carousel-page/carousel-page.png`,
+                demo: `${samples}/carousel/carousel-page/carousel-page.PNG`,
                 files: [
                     `${samples}/carousel/carousel-page/CarouselPageView.tsx`
                 ]
@@ -251,7 +277,7 @@ export default class XFAppHostViewModel extends AtomViewModel {
         this.menuService.addSamples(require, "View", [
             {
                 label: "List View",
-                demo: `${samples}/list/list-view/list.png`,
+                demo: `${samples}/list/list-view/list.PNG`,
                 files: [
                     `${samples}/list/list-view/List.tsx`,
                     `${samples}/list/list-view/ListViewModel.ts`
@@ -259,7 +285,7 @@ export default class XFAppHostViewModel extends AtomViewModel {
             },
             {
                 label: "List Template Selector",
-                demo: `${samples}/list/template-selector/list-with-template.png`,
+                demo: `${samples}/list/template-selector/list-with-template.PNG`,
                 files: [
                     `${samples}/list/template-selector/ListWithTemplates.tsx`,
                     `${samples}/list/list-view/ListViewModel.ts`
@@ -267,7 +293,7 @@ export default class XFAppHostViewModel extends AtomViewModel {
             },
             {
                 label: "Carousel View",
-                demo: `${samples}/carousel/carousel-view/carousel-view.png`,
+                demo: `${samples}/carousel/carousel-view/carousel-view.PNG`,
                 files: [
                     `${samples}/carousel/carousel-view/CarouselView.tsx`,
                     `${samples}/carousel/carousel-view/CarouselViewModel.ts`
@@ -283,14 +309,14 @@ export default class XFAppHostViewModel extends AtomViewModel {
             },
             {
                 label: "Web View",
-                demo: `${samples}/web-view/web-view.png`,
+                demo: `${samples}/web-view/web-view.PNG`,
                 files: [
                     `${samples}/web-view/WebView.tsx`
                 ]
             },
             {
                 label: "Content View",
-                demo: `${samples}/layout/single-content/content-view/content-view.png`,
+                demo: `${samples}/layout/single-content/content-view/content-view.PNG`,
                 files: [
                     `${samples}/layout/single-content/content-view/ContentView.tsx`
                 ]
@@ -300,7 +326,7 @@ export default class XFAppHostViewModel extends AtomViewModel {
         this.menuService.addSamples(require, "Box View", [
             {
                 label: "Box View",
-                demo: `${form}/box/box-view.png`,
+                demo: `${form}/box/box-view.PNG`,
                 files: [
                     `${form}/box/BoxView.tsx`
                 ]
@@ -310,7 +336,7 @@ export default class XFAppHostViewModel extends AtomViewModel {
         this.menuService.addSamples(require, "Toggle Button", [
             {
                 label: "Toggle Button",
-                demo: `${form}/toggle-button-bar/simple/toggle-button-bar.png`,
+                demo: `${form}/toggle-button-bar/simple/toggle-button-bar.PNG`,
                 files: [
                     `${form}/toggle-button-bar/simple/ToggleButtonBar.tsx`,
                     `${form}/toggle-button-bar/simple/ToggleButtonBarViewModel.ts`
@@ -318,7 +344,7 @@ export default class XFAppHostViewModel extends AtomViewModel {
             },
             {
                 label: "Custom Toggle Button",
-                demo: `${form}/toggle-button-bar/custom/custom-toggle-button-bar.png`,
+                demo: `${form}/toggle-button-bar/custom/custom-toggle-button-bar.PNG`,
                 files: [
                     `${form}/toggle-button-bar/custom/CustomToggleButtonBar.tsx`,
                     `${form}/toggle-button-bar/simple/ToggleButtonBarViewModel.ts`
@@ -340,7 +366,7 @@ export default class XFAppHostViewModel extends AtomViewModel {
         this.menuService.addSamples(require, "Toolbar Item", [
             {
                 label: "Toolbar Item",
-                demo: `${samples}/toolbar-item/toolbar-item.png`,
+                demo: `${samples}/toolbar-item/toolbar-item.PNG`,
                 files: [
                     `${samples}/toolbar-item/ToolbarItemView.tsx`,
                     `${samples}/toolbar-item/ToolbarItemViewModel.ts`
@@ -351,7 +377,7 @@ export default class XFAppHostViewModel extends AtomViewModel {
         this.menuService.addSamples(require, "Menu Item", [
             {
                 label: "Menu Item",
-                demo: `${form}/menu-item/menu-item.png`,
+                demo: `${form}/menu-item/menu-item.PNG`,
                 files: [
                     `${form}/menu-item/MenuItemView.tsx`,
                     `${form}/menu-item/MenuItemViewModel.ts`
@@ -395,7 +421,7 @@ export default class XFAppHostViewModel extends AtomViewModel {
             },
             {
                 label: "Header Footer",
-                demo: `${view}/header-footer/header-footer-sample.png`,
+                demo: `${view}/header-footer/header-footer-sample.PNG`,
                 files: [
                     `${view}/header-footer/HeaderFooterSample.tsx`,
                     `${view}/header-footer/HeaderFooterViewModel.ts`
@@ -403,7 +429,7 @@ export default class XFAppHostViewModel extends AtomViewModel {
             },
             {
                 label: "Swipe",
-                demo: `${view}/swipe/SwipeViewSample.png`,
+                demo: `${view}/swipe/SwipeViewSample.PNG`,
                 files: [
                     `${view}/swipe/SwipeCollectionViewSample.tsx`
                 ]

@@ -11,31 +11,32 @@ Exposing CLR service is very easy, all you have to do is implement an empty inte
 ### Custom File Service
 
 ```c#
-
     public class FileService: IJSService {
 
         ///<summary>
         /// Synchronous method
         ///</summary>
-        public string GetVersion(IJSContext context) {
-            // convert method converts basic types (string, int, float, date) etc to native JS types
-            // otherwise it wraps an object and you cannot call any methods on it
-            return context.Convert("current version");
+        public IJSValue GetVersion(IJSContext context) {
+            // since JavaScript has different types, and
+            // underlying JavaScript engine could be different on different
+            // platforms, you have to create native representation before
+            // passing it to JavaScript
+            return context.CreateString("current version");
         }
-
 
         ///<summary>
         /// Asynchronous method, tasks are converted to promises
         ///</summary>
         public async Task<IJSValue> IsStorageAvailable(IJSContext context) {
             bool result = await storageService.IsAvailableAsync();
-            return context.Convert(result);
+            return result ? context.True : context.False;
         }
 
         ///<summary>
-        /// In order to send/receive JavaScript objects, you need to serialize Custom Objects.
-        /// `context.Convert` only converts values, strings ,Tasks and wraps the object. 
-        /// You cannot read/write properties of wrapped objects. In order to do that, you need to serialize object.
+        /// In order to send/receive JavaScript objects,
+        /// you need to serialize Custom Objects.
+        /// You cannot read/write properties of wrapped objects. 
+        /// In order to do that, you need to serialize object.
         ///</summary>
         public async Task<IJSValue> SearchFiles(IJSContext context, string pattern) {
 
@@ -43,31 +44,19 @@ Exposing CLR service is very easy, all you have to do is implement an empty inte
 
             // this creates JSON styled objects that be accessed in JavaScript, note
             // only properties are deeply copied
-            var copy = context.Serialize(list, SerializationMode.Copy);
+            var copy = context.Marshal(list, SerializationMode.Copy);
 
             return jsArray;
-
         }
-
     }
-
 
     // register inside a static initializer
-
     public class AppBridge: AtomBridge {
-        static AppBridge() {
-            RegisterService("fileService", DependencyService.Get<FileService>());
-
-            // OR 
-
-            RegisterService("fileService", new FileService());
-        }
+        public FileService FileService => DependencyService.Get<FileService>();
     }
-
 ```
 
 ```typescript
-
     @DISingleton({
         // registered service...
         global: "bridge.fileService",
@@ -94,7 +83,6 @@ Exposing CLR service is very easy, all you have to do is implement an empty inte
         public abstract searchFiles(pattern: string): Promise<any[]>;
         
     }
-
 ```
 
 ### Why do we have to declare class in TypeScript

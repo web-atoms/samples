@@ -1,21 +1,14 @@
-// tslint:disable
-import Bind from "@web-atoms/core/dist/core/Bind"
-import XNode from "@web-atoms/core/dist/core/XNode"
+import Bind from "@web-atoms/core/dist/core/Bind";
 import {BindableProperty} from "@web-atoms/core/dist/core/BindableProperty";
-import {AtomPageLink} from "@web-atoms/core/dist/web/controls/AtomPageLink";
+import XNode from "@web-atoms/core/dist/core/XNode";
 import {AtomControl} from "@web-atoms/core/dist/web/controls/AtomControl";
-
-    import PageLinkViewModel from "./PageLinkViewModel";
-
-    import WindowSample from "../simple/WindowSample";
-
-
+import {AtomPageLink} from "@web-atoms/core/dist/web/controls/AtomPageLink";
+import WindowSample from "../simple/WindowSample";
+import PageLinkViewModel from "./PageLinkViewModel";
 
 export default class PageLinkDemo extends AtomControl {
-	
-	constructor(app: any, e?: any) {
-		super(app, e || document.createElement("div"));
-	}
+
+	public viewModel: PageLinkViewModel;
 
 	public create(): void {
 		this.viewModel =  this.resolve(PageLinkViewModel) ;
@@ -41,17 +34,17 @@ export default class PageLinkDemo extends AtomControl {
 			//         as it will reduce binding memory   */}
 			<AtomPageLink
 				page={Bind.oneTime(() => WindowSample)}
-				eventGetParameters={Bind.event((s, e) => e.detail.parameters = { name: 'demo' })}
+				eventGetParameters={Bind.event((s, e) => e.detail.parameters = { name: "demo" })}
 				eventResult={Bind.event((s, e) => this.viewModel.onResult(e.detail))}
 				eventError={Bind.event((s, e) => this.viewModel.onError(e.detail))}
 				for="button">
 				Open
 			</AtomPageLink>
 			<div
-				text={Bind.oneWay((x) => x.viewModel.result)}>
+				text={Bind.oneWay(() => this.viewModel.result)}>
 			</div>
 			<div
-				text={Bind.oneWay((x) => x.viewModel.error)}
+				text={Bind.oneWay(() => this.viewModel.error)}
 				style="color: red">
 			</div>
 		</div>

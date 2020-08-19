@@ -1,16 +1,14 @@
-// tslint:disable
-import Bind from "@web-atoms/core/dist/core/Bind"
-import XNode from "@web-atoms/core/dist/core/XNode"
+import Bind from "@web-atoms/core/dist/core/Bind";
 import {BindableProperty} from "@web-atoms/core/dist/core/BindableProperty";
+import XNode from "@web-atoms/core/dist/core/XNode";
 import {AtomComboBox} from "@web-atoms/core/dist/web/controls/AtomComboBox";
 import {AtomWindow} from "@web-atoms/core/dist/web/controls/AtomWindow";
-
-        import { WindowSampleViewModel } from "./WindowSampleViewModel";
-
-
+import { WindowSampleViewModel } from "./WindowSampleViewModel";
 
 export default class WindowSample extends AtomWindow {
-	
+
+	public viewModel: WindowSampleViewModel;
+
 	public create(): void {
 		this.viewModel =  this.resolve(WindowSampleViewModel) ;
 
@@ -23,12 +21,7 @@ export default class WindowSample extends AtomWindow {
 				<div>
 					<table>
 						<tr>
-							<td>
-
-								                    Name:
-
-								                
-							</td>
+							<td>Name:</td>
 							<td>
 								<input
 									style="height: 30px;
@@ -36,52 +29,42 @@ export default class WindowSample extends AtomWindow {
                         width: 200px;"
 									type="text"
 									placeholder="Enter Movie Name"
-									value={Bind.twoWays((x) => x.viewModel.movie.name, ["change", "keyup", "keydown", "blur"])}
+									value={Bind.twoWays(() => this.viewModel.movie.name, ["change", "keyup", "keydown", "blur"])}
 									autofocus="autofocus">
 								</input>
 							</td>
 							<td
 								style="color:red; font-size:13px"
-								text={Bind.oneWay((x) => x.viewModel.errorName)}>
+								text={Bind.oneWay(() => this.viewModel.errorName)}>
 							</td>
 						</tr>
 						<tr>
-							<td>
-
-								                    Type:
-
-								                
-							</td>
+							<td>Type:</td>
 							<td>
 								<AtomComboBox
 									style="height: 30px;
                             margin: 10px 0px;"
 									labelPath="label"
 									valuePath="value"
-									items={Bind.oneTime((x) => x.viewModel.types)}
-									value={Bind.twoWays((x) => x.viewModel.movie.genre, ["change", "keyup", "keydown", "blur"])}
+									items={Bind.oneTime(() => this.viewModel.types)}
+									value={Bind.twoWays(() => this.viewModel.movie.genre, ["change", "keyup", "keydown", "blur"])}
 									for="select">
 								</AtomComboBox>
 							</td>
 							<td
 								style="color:red; font-size:13px"
-								text={Bind.oneWay((x) => x.viewModel.errorType)}>
+								text={Bind.oneWay(() => this.viewModel.errorType)}>
 							</td>
 						</tr>
 						<tr>
-							<td>
-
-								                    Description:
-
-								                
-							</td>
+							<td>Description:</td>
 							<td
 								colspan="2">
 								<textarea
 									cols="30"
 									rows="10"
 									placeholder="Enter Movie Description"
-									value={Bind.twoWays((x) => x.viewModel.movie.description)}>
+									value={Bind.twoWays(() => this.viewModel.movie.description)}>
 								</textarea>
 							</td>
 						</tr>
@@ -91,11 +74,11 @@ export default class WindowSample extends AtomWindow {
 			<AtomWindow.commandTemplate>
 				<div>
 					<button
-						eventClick={Bind.event((x) => (x.viewModel).save())}>
+						eventClick={Bind.event(() => this.viewModel.save())}>
 						Save
 					</button>
 					<button
-						eventClick={Bind.event((x) => (x.viewModel).cancel())}>
+						eventClick={Bind.event(() => this.viewModel.cancel())}>
 						Cancel
 					</button>
 				</div>

@@ -1,6 +1,7 @@
 import { App } from "@web-atoms/core/dist/App";
 import { AtomList } from "@web-atoms/core/dist/core/AtomList";
 import { INameValuePairs, UMD } from "@web-atoms/core/dist/core/types";
+import { IPageOptions } from "@web-atoms/core/dist/services/NavigationService";
 import FileViewer from "../core/web/FileViewer";
 import ImageView from "../core/web/ImageView";
 import resolveModulePath from "../core/web/resolveModulePath";
@@ -26,10 +27,13 @@ export function asClass(a: any): IType {
 }
 
 export default class MenuItem {
+    public static selectedMenu: MenuItem;
 
     public enabled: boolean;
 
     public expand: boolean;
+
+    public isGroup: boolean = false;
 
     public label: string;
 
@@ -50,7 +54,13 @@ export default class MenuItem {
     }
 
     public click(): any {
-        return this.action(this);
+        this.menuService.isOpen = true;
+        const r = this.action(this);
+        if (this.children.length <= 0) {
+            MenuItem.selectedMenu = this;
+        }
+        this.menuService.isOpen = false;
+        return r;
     }
 
     public add(label: string, action: () => any, icon?: string): MenuItem {
@@ -69,8 +79,13 @@ export default class MenuItem {
         return m;
     }
 
-    public addLink(label: string, pageSrc: string, pageParameters?: INameValuePairs, icon?: string): MenuItem {
-        const m = this.menuService.createLink(label, pageSrc, pageParameters, icon);
+    public addLink(
+        label: string,
+        pageSrc: string | any,
+        pageParameters?: INameValuePairs,
+        icon?: string,
+        options?: IPageOptions): MenuItem {
+        const m = this.menuService.createLink(label, pageSrc, pageParameters, icon, options);
         this.children.add(m);
         return m;
     }

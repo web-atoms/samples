@@ -1,19 +1,16 @@
-// tslint:disable
 import Bind from "@web-atoms/core/dist/core/Bind"
-import XNode from "@web-atoms/core/dist/core/XNode"
 import {BindableProperty} from "@web-atoms/core/dist/core/BindableProperty";
-import {AtomItemsControl} from "@web-atoms/core/dist/web/controls/AtomItemsControl";
+import XNode from "@web-atoms/core/dist/core/XNode"
 import {AtomControl} from "@web-atoms/core/dist/web/controls/AtomControl";
+import {AtomItemsControl} from "@web-atoms/core/dist/web/controls/AtomItemsControl";
+import { IMovie } from "@web-atoms/samples/src/services/http/MovieService";
+import ItemsControlViewModel from "./ItemsControlViewModel";
 
-        import ItemsControlViewModel from "./ItemsControlViewModel";
-
-
+const BindMovie = Bind.forData<IMovie>();
 
 export default class ItemsControlSample extends AtomControl {
-	
-	constructor(app: any, e?: any) {
-		super(app, e || document.createElement("div"));
-	}
+
+	public viewModel: ItemsControlViewModel;
 
 	public create(): void {
 		this.viewModel =  this.resolve(ItemsControlViewModel) ;
@@ -28,7 +25,6 @@ export default class ItemsControlSample extends AtomControl {
 
 				                 Upcoming Movies:
 
-				    
 			</div>
 			<AtomItemsControl
 				items={Bind.oneWay((x) => x.viewModel.movies.value)}
@@ -38,13 +34,13 @@ export default class ItemsControlSample extends AtomControl {
 						<span
 							style="font-size: 15px;
                                 font-weight: 600"
-							text={Bind.oneTime((x) => x.data.name)}>
+							text={BindMovie.oneTime((x) => x.data.name)}>
 						</span>
 						<span
-							style="font-size: 15px; 
-                                font-weight: 400; 
+							style="font-size: 15px;
+                                font-weight: 400;
                                 padding-left: 15px"
-							text={Bind.oneTime((x) => '( '+x.data.genre+' )')}>
+							text={BindMovie.oneTime((x) => `( ${x.data.genre} )`)}>
 						</span>
 					</li>
 				</AtomItemsControl.itemTemplate>

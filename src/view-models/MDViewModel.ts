@@ -20,13 +20,19 @@ class MDService extends BaseService {
 
 }
 
+export interface IMDHeader {
+    label?: string;
+    pad?: number;
+    value?: HTMLElement;
+}
+
 export default class MDViewModel extends AtomViewModel {
 
     public url: string;
 
     public owner: any;
 
-    public headers: any[] = [];
+    public headers: IMDHeader[] = [];
 
     @Inject
     private mdService: MDService;
@@ -37,11 +43,10 @@ export default class MDViewModel extends AtomViewModel {
             styleSheetAdded = true;
             const link = document.createElement("link");
             link.rel = "stylesheet";
-            link.href = UMD.resolvePath("@web-atoms/samples/scripts/highlight/styles/light.css");
+            link.href = UMD.resolvePath("@web-atoms/samples/scripts/highlight/styles/lightfair.css");
             document.head.appendChild(link);
         }
 
-        // tslint:disable-next-line:no-string-literal
         const showdown = await UMD.import("showdown/dist/showdown.js");
 
         const text = await this.mdService.getUrl(this.url);
@@ -50,7 +55,11 @@ export default class MDViewModel extends AtomViewModel {
 
         const element = this.owner.element as HTMLElement;
 
-        const mdRoot = (element.firstElementChild.firstElementChild) as HTMLElement;
+        const mdRoot = (element?.firstElementChild?.firstElementChild) as HTMLElement;
+
+        if (!mdRoot) {
+            return;
+        }
 
         const md = document.createElement("div");
 
@@ -76,7 +85,7 @@ export default class MDViewModel extends AtomViewModel {
 
     }
 
-    public show(h: any): void {
+    public show(h: IMDHeader): void {
         const e = h.value as HTMLHeadingElement;
         e.scrollIntoView();
     }

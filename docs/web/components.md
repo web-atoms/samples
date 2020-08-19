@@ -1,6 +1,6 @@
 # Custom Components
 
-You can easily create and reuse your components. Every html file is transpiled to a control derived from either `AtomControl` or any other root control specified on root element.
+You can easily create and reuse your components.
 
 ## Simple control
 
