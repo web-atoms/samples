@@ -50,16 +50,16 @@ export default class AppHost extends AtomGridView {
 				<div class="collapse navbar-collapse" id="navbarResponsive">
 					<ul class="navbar-nav ml-auto my-2 my-lg-0">
 					<li class="nav-item">
-						<a class="nav-link js-scroll-trigger" href="#about">About</a>
+						<a class="nav-link js-scroll-trigger" href="https://www.webatoms.in/" target="_blank">Home</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link js-scroll-trigger" href="#services">Services</a>
+						<a class="nav-link js-scroll-trigger" href="https://www.webatoms.in/play" target="_blank">Play</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link js-scroll-trigger" href="#Price">Buy</a>
+						<a class="nav-link js-scroll-trigger"  href="https://www.webatoms.in/" target="_blank">Buy</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+						<a class="nav-link js-scroll-trigger"  href="https://github.com/web-atoms/core/issues" target="_blank">Support</a>
 					</li>
 					</ul>
 				</div>

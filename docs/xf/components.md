@@ -1,3 +1,42 @@
+# Functional Component
+
+We can also easily create functional JSX which can act as lightweight macro.
+
+```typescript
+
+function CommandButton({ text, command, icon, font
+    }: {text: string, command: any, icon: any, font?: any}) {
+    return <XF.Button>    
+        <XF.Button.imageSource>
+            <XF.FontImageSource
+                fontFamily={font || FontAwesomeRegular}
+                glyph={icon}
+                />
+        </XF.Button.imageSource>
+    </XF.Button>;
+}
+
+
+// usage...
+
+    <XF.ContentPage>
+        <CommandButton
+            text="Login",
+            icon={FontAwesomeRegular.lock}
+            command={Bind.event((s, e) => this.viewModel.login())}
+            />
+        <CommandButton
+            text="Signup",
+            icon={FontAwesomeRegular.userCircle}
+            command={Bind.event((s, e) => this.viewModel.signup())}
+            />
+    </XF.ContentPage>
+
+```
+
+You can notice that entire ImageSource and its children can be moved into function to avoid repetition. VS Code offers excellent intellisense for Functional Component. We only recommend using Functional Component to avoid repetition, for more complex logic, we should use Custom Components described in next section.
+
+
 # Custom Components
 
 You can easily create and reuse your components. To make binding easy and sharing of logic, we have created an extra property called `LocalViewModel` which you can use specifically for custom reusable components. Local view model allows end users to change Visual Appearance with same logic.
