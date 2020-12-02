@@ -15,7 +15,7 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org/          
       - run: npm install
-      - run: npm install -g typescript@3.7.3
+      - run: npm install -g typescript@4.0.2
       - run: npm install -D @web-atoms/pack
       - run: tsc
       - run: node ./node_modules/@web-atoms/pack/index.js .
