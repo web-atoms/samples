@@ -2,11 +2,7 @@
 
 ## What is web atoms?
 
-"Web Atoms" is an advanced MVVM framework to write cross platform applications in `HTML5` and `Xamarin.Forms`. Unlike other frameworks, Web Atoms lets you divide User Interface logic in strict MVVM fashion and separates View in `HTML5` and `Xaml`. Benefit of separating User interface logic in ViewModel is you can individually unit test view model to make sure your logic is consistent across platforms.
-
-Also everything is transpiled into JavaScript, your View Model and Services remain in JavaScript and in browser it works flawlessly.
-
-In Xamarin.Forms, Web Atoms package written C# helps you easily host JavaScript modules inside an application and entire User Interface is hosed via JavaScript.
+"Web Atoms" is an advanced MVVM framework to write cross platform applications in `HTML5` and `Xamarin.Forms`. Web Atoms allows you to create Xamarin Forms app in JSX/JavaScript along with C#. Web Atoms allows use of both  NPM and NuGet. Hosting JSX/JavaScript on web server allows you to quickly update the apps quickly with Code Push and it also allows you to distribute side by side versions of the same app. Using JavaScript modules, you can divide large app into smaller modules, also offer localization using modules with reduced app size.
 
 ### Benefits of Web Atoms with Xamarin.Forms
 * Write TSX instead of XAML
