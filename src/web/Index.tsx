@@ -79,7 +79,7 @@ export default class Index extends AtomControl {
 					</li>
 
 					<li>
-						<a href="/FAQ.html">Contact Us</a>
+						<a href="/FAQ.html">FAQ</a>
 					</li>
 
 					<li class="get-started">
