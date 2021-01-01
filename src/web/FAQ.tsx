@@ -46,7 +46,7 @@ export default class FAQ extends AtomControl {
 					this.viewModel.collapsed ? "mobile-nav d-lg-none" : "nav-menu d-none d-lg-block")}>
 					<ul>
 					<li class="active">
-						<a href="#page-top"
+						<a href="/index.html#page-top"
 							eventClick={Bind.event((x) => (x.viewModel).menuClick())}>Home
 						</a>
 					</li>
@@ -56,7 +56,7 @@ export default class FAQ extends AtomControl {
 						</a>
 					</li> */}
 					<li>
-						<a href="#services"
+						<a href="/index.html#services"
 							eventClick={Bind.event((x) => (x.viewModel).menuClick())}>Features
 						</a>
 					</li>
@@ -73,15 +73,13 @@ export default class FAQ extends AtomControl {
 						</a>
 					</li>
 					<li>
-						<a href="#team"
+						<a href="/index.html#team"
 							eventClick={Bind.event((x) => (x.viewModel).menuClick())}>Buy
 						</a>
 					</li>
 
 					<li>
-						<a href="#footer"
-							eventClick={Bind.event((x) => (x.viewModel).menuClick())}>Contact Us
-						</a>
+						<a href="/FAQ.html">FAQ</a>
 					</li>
 
 					<li class="get-started">
@@ -237,12 +235,12 @@ export default class FAQ extends AtomControl {
 					<div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="200">
 						<h4>Useful Links</h4>
 						<ul>
-						<li><i class="fas fa-chevron-right"></i> <a href="#">Home</a></li>
-						<li><i class="fas fa-chevron-right"></i> <a href="#about">About us</a></li>
+						<li><i class="fas fa-chevron-right"></i> <a href="/index.html">Home</a></li>
+						<li><i class="fas fa-chevron-right"></i> <a href="/index.html#about">About us</a></li>
 						<li><i class="fas fa-chevron-right"></i>
 							<a href="https://www.webatoms.in/xf/samples.html">Xamarin.Forms  Docs</a></li>
 						<li><i class="fas fa-chevron-right"></i> <a href="https://www.webatoms.in/samples.html">Web Docs</a></li>
-						<li><i class="fas fa-chevron-right"></i> <a href="#team">Buy</a></li>
+						<li><i class="fas fa-chevron-right"></i> <a href="/index.html#team">Buy</a></li>
 						</ul>
 					</div>
 
