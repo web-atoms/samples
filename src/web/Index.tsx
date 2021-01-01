@@ -476,7 +476,7 @@ export default class Index extends AtomControl {
 						<div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="300">
 							<h4>Our Services</h4>
 							<ul>
-							<li><i class="fas fa-chevron-right"></i> <a href="#team">Web Development</a></li>
+							{/* <li><i class="fas fa-chevron-right"></i> <a href="#team">Web Development</a></li> */}
 							<li><i class="fas fa-chevron-right"></i> <a href="#team">XF Android</a></li>
 							<li><i class="fas fa-chevron-right"></i> <a href="#team">XF iOS</a></li>
 							<li><i class="fas fa-chevron-right"></i> <a href="#team">XF Mobile</a></li>
