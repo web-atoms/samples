@@ -34,7 +34,7 @@ export default class Index extends AtomControl {
 				<div class="container-fluid d-flex">
 
 				<div class="logo mr-auto">
-					<h1 class="text-light"><a href="index.html"><span>
+					<h1 class="text-light"><a href="/index.html"><span>
 					<img src={Logo} width="50" height="50"></img>WebAtoms</span></a></h1>
 				</div>
 				<button type="button"
