@@ -102,7 +102,7 @@ export default class Index extends AtomControl {
 						<div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1">
 						<h1>JavaScript bridge for Xamarin.Forms<br></br>
 						</h1>
-						<h2>TypeScript + TSX for Xamarin.Forms, Hot Reload Your App in Production Environment</h2>
+						<h2>JSX (TSX + TypeScript) for Xamarin.Forms, Hot Reload Your App in Production Environment</h2>
 						<a href="/play" class="btn-get-started scrollto">Playground</a>
 						<a href="https://github.com/web-atoms/xf-samples"  class="btn-get-started scrollto"
 							target="_tab">Samples Repository</a>
