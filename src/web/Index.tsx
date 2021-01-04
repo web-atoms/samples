@@ -103,7 +103,9 @@ export default class Index extends AtomControl {
 						<h1>JavaScript bridge for Xamarin.Forms<br></br>
 						</h1>
 						<h2>TypeScript + TSX for Xamarin.Forms, Hot Reload Your App in Production Environment</h2>
-						<a href="#download" class="btn-get-started scrollto">Get Started</a>
+						<a href="/play" class="btn-get-started scrollto">Playground</a>
+						<a href="https://github.com/web-atoms/xf-samples"  class="btn-get-started scrollto"
+							target="_tab">Samples Repository</a>
 						</div>
 						<div class="col-lg-6 order-1 order-lg-2 hero-img">
 						<img src={HeroImg} class="img-fluid animated" alt=""></img>
@@ -190,7 +192,7 @@ export default class Index extends AtomControl {
 					<div class="container">
 						<div class="section-title" data-aos="fade-up">
 							<h2>WebAtoms Sample</h2>
-							<p>Check out our WebAtoms sample</p>
+							<p><a href="https://github.com/web-atoms/xf-samples" target="_tab">Check out our Xamarin Forms samples</a></p>
 						</div>
 						<div class="row text-left"
 							style="position: relative;
@@ -219,6 +221,7 @@ export default class Index extends AtomControl {
 							<ol>
 								<li>
 									Download github repo from
+									<span text=" "/>
 									<a href="https://github.com/web-atoms/xf-samples" target="_tab">https://github.com/web-atoms/xf-samples</a>
 								</li>
 								<li>Open project in Visual Studio Code</li>
@@ -240,7 +243,7 @@ export default class Index extends AtomControl {
 					<div class="container">
 						<div class="section-title" data-aos="fade-up">
 							<h2>Our Plan</h2>
-							<p>Choose the plan that's right for you</p>
+							<p>Cost for Single App Development Platform (Unlimited Developers)</p>
 						</div>
 						<div class="price-table">
 							<table>
