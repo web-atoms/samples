@@ -56,6 +56,9 @@ export default class AppHost extends AtomGridView {
 						<a class="nav-link js-scroll-trigger" href="https://www.webatoms.in/play" target="_blank">Play</a>
 					</li>
 					<li class="nav-item">
+						<a class="nav-link js-scroll-trigger"  href="https://www.webatoms.in/blog" target="_blank">Blog</a>
+					</li>
+					<li class="nav-item">
 						<a class="nav-link js-scroll-trigger"  href="https://www.webatoms.in/" target="_blank">Buy</a>
 					</li>
 					<li class="nav-item">
