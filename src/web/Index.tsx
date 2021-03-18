@@ -149,7 +149,7 @@ export default class Index extends AtomControl {
 				<div class="container">
 
 					<div class="section-title" data-aos="fade-up">
-					<h2>Services</h2>
+					<h2>Features</h2>
 					<p>Xamarin.Forms with TypeScript</p>
 					</div>
 
@@ -189,6 +189,22 @@ export default class Index extends AtomControl {
 
 					</div>
 
+					<div class="row">
+					<iframe
+						width="560"
+						height="315"
+						src="https://www.youtube.com/embed/1xb-qDKABd0"
+						frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen></iframe>
+					<iframe
+						width="560"
+						height="315"
+						src="https://www.youtube.com/embed/IjkRvKUn8Og"
+						frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen></iframe>
+					</div>
 				</div>
 				</section>
 				<section id="portfolio" class="portfolio">
