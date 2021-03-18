@@ -111,7 +111,7 @@ export default class FAQ extends AtomControl {
 						<p>
 							No, you can continue to use your own app, and you can write new pages in JSX and
 							access JSX from your Prism or other navigation framework. AtomBridge instance can create
-							a View from JSX which you can embed in existing page or you can push the view as Page 
+							a View from JSX which you can embed in existing page or you can push the view as Page
 							inside any Navigation Page such as MasterDetailPage, TabbedPage etc.
 						</p>
 						<h3>How can enable JSX in my existing Xamarin.Forms app</h3>
@@ -122,7 +122,7 @@ export default class FAQ extends AtomControl {
 						</p>
 						<h3>How can I debug JavaScript?</h3>
 						<p>
-							Web Atoms for Android comes with custom built V8 engine which supports Chrome Developer Tools. 
+							Web Atoms for Android comes with custom built V8 engine which supports Chrome Developer Tools.
 							It is recommended to use `@web-atoms/dev-server` node package to enable debugging. As soon as you
 							open your JSX view from the dev-server url, Chrome Developer Tool automatically opens.
 							<br/>
@@ -145,7 +145,7 @@ export default class FAQ extends AtomControl {
 							can be configured to load modules from any type of web server.
 						</p>
 						<h3>Will you help us setup the package distribution?</h3>
-						<p>Yes sure, we will help you in creating application architecture including guidance of 
+						<p>Yes sure, we will help you in creating application architecture including guidance of
 							how to setup your web server.</p>
 						<h3>What is an ideal setup looks like?</h3>
 						<p>
@@ -156,7 +156,7 @@ export default class FAQ extends AtomControl {
 							</ul>
 						</p>
 						<h3>Do we have to use Web Atoms Packer?</h3>
-						<p>It is recommended, you can use webpack for simpler configuration (you may need to disable minimizer 
+						<p>It is recommended, you can use webpack for simpler configuration (you may need to disable minimizer
 							to enable binding),  but for Dynamic Dependency Injection
 							Web Atoms Module loader offers node style package naming and can be configured to load packages from different
 							package sources.
@@ -168,7 +168,7 @@ export default class FAQ extends AtomControl {
 							sources. Unless specified each package is loaded from `node_modules` folder from the root specified
 							in `InitAsync` method of AtomBridge.
 							<br/>
-							Dynamic dependency injection reduces size of initial pay load, packer does not include modules that 
+							Dynamic dependency injection reduces size of initial pay load, packer does not include modules that
 							are referenced as text import.
 						</p>
 						<h3>How does Web Atoms reduce size of the app?</h3>
@@ -258,11 +258,19 @@ export default class FAQ extends AtomControl {
 					<div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="400">
 						<h4>Networks</h4>
 						<div class="social-links mt-3">
-						<a href="https://twitter.com/WebAtoms" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
-						<a
-							eventClick={() => alert("Facebook? Seriously for development?")}
-							class="facebook"><i class="fab fa-facebook-f"></i></a>
-						<a href="https://github.com/web-atoms" target="_blank" class="github"><i class="fab fa-github"></i></a>
+						<a href="https://twitter.com/WebAtoms"
+								target="_blank"
+								class="twitter"
+								title="Web Atoms Twitter"><i class="fab fa-twitter"></i></a>
+							<a
+								eventClick={() => alert("Facebook? Seriously for development?")}
+								class="facebook"><i class="fab fa-facebook-f"></i></a>
+							<a href="https://github.com/web-atoms" target="_blank" class="github"
+								title="Github Repositories"
+								><i class="fab fa-github"></i></a>
+							<a href="https://www.youtube.com/channel/UCewA_Br36iGYmadMfh91YKQ"
+								title="Youtube Videos"
+								target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
 						</div>
 					</div>
 

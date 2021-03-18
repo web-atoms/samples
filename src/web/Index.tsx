@@ -341,93 +341,6 @@ export default class Index extends AtomControl {
 						</div>
 					</div>
 				</section>
-				{/* <section id="contact" class="contact">
-					<div class="container">
-
-						<div class="section-title" data-aos="fade-up">
-						<h2>Contact Us</h2>
-						<p>Contact us for any queries</p>
-						</div>
-
-						<div class="row">
-
-						<div class="col-lg-5 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-							<div class="info">
-							<div class="address">
-								<i class="icofont-google-map"></i>
-								<h4>Location:</h4>
-								<p>Unit 103, Building 3, <br></br>
-									Sector 3, Millennium Business Park,<br></br>
-									Mahape, Navi Mumbai</p>
-							</div>
-
-							<div class="email">
-								<i class="icofont-envelope"></i>
-								<h4>Email:</h4>
-								<p>support@neurospeech.com</p>
-							</div>
-
-							<div class="phone">
-								<i class="icofont-phone"></i>
-								<h4>Call:</h4>
-								<p>+91 22 27781459</p>
-							</div>
-
-							</div>
-
-						</div>
-						<div class="col-lg-5 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-							<div class="info">
-							<iframe
-							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.997827121327!2d73.0170401142132!3d19.107751255940656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c0e7bb361575%3A0x44c18999c53fed6a!2sNeuroSpeech%20Technologies%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1586355911330!5m2!1sen!2sin"
-							frameborder="0" style="border:0; width: 100%; height: 290px;"
-							allowfullscreen></iframe>
-							</div>
-						</div>
-
-						<div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-							<form  class="php-email-form">
-							<div class="form-row">
-								<div class="form-group col-md-6">
-								<label for="name">Your Name</label>
-								<input
-									type="text"
-									class="form-control" id="name"
-									placeholder="Please enter at least 4 chars"
-									value={Bind.twoWays(() => this.viewModel.model.name)} />
-								<div class="validate" text={Bind.oneWay(() => this.viewModel.errorName)}/>
-								</div>
-								<div class="form-group col-md-6">
-								<label for="name">Your Email</label>
-								<input type="email" class="form-control" name="email" id="email"
-									placeholder="Please enter a valid email"
-									value={Bind.twoWays(() => this.viewModel.model.emailAddress)} />
-								<div class="validate" text={Bind.oneWay(() => this.viewModel.errorEmailAddress)}/>
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="name">Subject</label>
-								<input type="text"
-									class="form-control"
-									name="subject" id="subject" placeholder="Please enter at least 8 chars of subject"
-									value={Bind.twoWays(() => this.viewModel.model.subject)}
-									/>
-								<div class="validate"></div>
-							</div>
-							<div class="form-group">
-								<label for="name">Message</label>
-								<textarea class="form-control" name="message" rows="10" placeholder="Please write something for us"></textarea>
-								<div class="validate"></div>
-							</div>
-							<div class="text-center"><button
-								eventClick={Bind.event(() => this.viewModel.onSubmit())} >Send Message</button></div>
-							</form>
-						</div>
-
-						 </div>
-
-						</div>
-					</section> */}
 
 				</main>
 
@@ -491,11 +404,19 @@ export default class Index extends AtomControl {
 						<div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="400">
 							<h4>Networks</h4>
 							<div class="social-links mt-3">
-							<a href="https://twitter.com/WebAtoms" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
+							<a href="https://twitter.com/WebAtoms"
+								target="_blank"
+								class="twitter"
+								title="Web Atoms Twitter"><i class="fab fa-twitter"></i></a>
 							<a
 								eventClick={() => alert("Facebook? Seriously for development?")}
 								class="facebook"><i class="fab fa-facebook-f"></i></a>
-							<a href="https://github.com/web-atoms" target="_blank" class="github"><i class="fab fa-github"></i></a>
+							<a href="https://github.com/web-atoms" target="_blank" class="github"
+								title="Github Repositories"
+								><i class="fab fa-github"></i></a>
+							<a href="https://www.youtube.com/channel/UCewA_Br36iGYmadMfh91YKQ"
+								title="Youtube Videos"
+								target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
 							</div>
 						</div>
 
