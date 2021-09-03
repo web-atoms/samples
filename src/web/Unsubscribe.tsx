@@ -37,7 +37,7 @@ export default class Unsubscribe extends AtomControl {
                         :
                             <div>
                                 Are you sure you want to Unsubscribe from our blog?
-                                <form action="POST">
+                                <form method="POST">
                                     <input type="submit" value="Yes"/>
                                 </form>
                             </div>
