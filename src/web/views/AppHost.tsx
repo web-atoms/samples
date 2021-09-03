@@ -1,6 +1,7 @@
 import Bind from "@web-atoms/core/dist/core/Bind";
 import {BindableProperty} from "@web-atoms/core/dist/core/BindableProperty";
 import XNode from "@web-atoms/core/dist/core/XNode";
+import Pack from "@web-atoms/core/dist/Pack";
 import {AtomGridView} from "@web-atoms/core/dist/web/controls/AtomGridView";
 import {AtomTabbedPage} from "@web-atoms/core/dist/web/controls/AtomTabbedPage";
 import logo from "@web-atoms/samples/src/web/images/logo.png";
@@ -10,8 +11,7 @@ import OldIndexStyle from "../styles/OldIndexStyle";
 import { SampleTabbedStyle } from "../styles/SampleTabbedStyle";
 import MenuList from "./MenuList";
 
-// @web-atoms-pack: true
-/** Web Samples */
+@Pack
 export default class AppHost extends AtomGridView {
 
 	public viewModel: AppHostViewModel;

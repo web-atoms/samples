@@ -14,10 +14,12 @@ import IndexFormStyle from "./styles/IndexFormStyle";
 import IndexStyle from "./styles/IndexStyle";
 export { default as WebApp } from "@web-atoms/core/dist/web/WebApp";
 export { WindowService as W } from "@web-atoms/core/dist/web/services/WindowService";
+import Pack from "@web-atoms/core/dist/Pack";
 import cs from "@web-atoms/samples/src/images/cs.png";
+import Footer from "./Footer";
+import Header from "./Header";
 
-// @web-atoms-pack: true
-/** XF Home Page */
+@Pack
 export default class FAQ extends AtomControl {
 
 	public viewModel: IndexViewModel;
@@ -30,72 +32,7 @@ export default class FAQ extends AtomControl {
 		<div
 			styleClass={Bind.oneTime(() => this.controlStyle.name)}
 			id="page-top">
-			<header id="header" class="fixed-top">
-				<div class="container-fluid d-flex">
-
-				<div class="logo mr-auto">
-					<h1 class="text-light"><a href="/index.html"><span>
-					<img src={Logo} width="50" height="50"></img>WebAtoms</span></a></h1>
-				</div>
-				<button type="button"
-				class="mobile-nav-toggle d-lg-none"
-				eventClick={Bind.event((x) => (x.viewModel).menuClick())}><i class="fas fa-bars"
-				styleClass={Bind.oneWay(() => this.viewModel.collapsed ? "fas fa-times" : "fas fa-bars")}
-				styleColor={Bind.oneWay(() => this.viewModel.collapsed ? "White" : "#7a6960")}></i></button>
-				<nav styleClass={Bind.oneWay(() =>
-					this.viewModel.collapsed ? "mobile-nav d-lg-none" : "nav-menu d-none d-lg-block")}>
-					<ul>
-					<li class="active">
-						<a href="/index.html#page-top"
-							eventClick={Bind.event((x) => (x.viewModel).menuClick())}>Home
-						</a>
-					</li>
-					{/* <li>
-						<a href="#main"
-							eventClick={Bind.event((x) => (x.viewModel).menuClick())}>About Us
-						</a>
-					</li> */}
-					<li>
-						<a href="/index.html#services"
-							eventClick={Bind.event((x) => (x.viewModel).menuClick())}>Features
-						</a>
-					</li>
-					<li>
-						<a href="/xf/samples.html"
-							eventClick={Bind.event((x) => (x.viewModel).menuClick())}
-							target="_blank">XF Docs
-						</a>
-					</li>
-					<li>
-						<a href="/samples.html"
-							eventClick={Bind.event((x) => (x.viewModel).menuClick())}
-							target="_blank">Web Docs
-						</a>
-					</li>
-					<li>
-						<a href="/index.html#team"
-							eventClick={Bind.event((x) => (x.viewModel).menuClick())}>Buy
-						</a>
-					</li>
-
-					<li>
-						<a href="/FAQ.html">FAQ</a>
-					</li>
-
-					<li class="get-started">
-						<a href="/play">Play</a>
-					</li>
-					<li class="get-started">
-						<a href="/account/licenses.html" target="_tab">Login
-						</a>
-					</li>
-
-					</ul>
-				</nav>
-				<div class="mobile-nav-overly"
-				styleDisplay={Bind.oneWay(() => this.viewModel.collapsed ? "block" : "none")}></div>
-				</div>
-			</header>
+			<Header/>
 			<main id="main">
 				<div class="container">
 					<div class="row">
@@ -198,97 +135,7 @@ export default class FAQ extends AtomControl {
 					</div>
 				</div>
 			</main>
-			<footer id="footer">
-
-				{/* <div class="footer-newsletter" data-aos="fade-up">
-				<div class="container">
-					<div class="row justify-content-center">
-					<div class="col-lg-6">
-						<h4>Join Our Newsletter</h4>
-						<p>Stay up-to-date on the latest news and expert insights</p>
-						<form>
-						<input type="email" name="email"></input><button
-						eventClick={Bind.event(() => this.viewModel.onSubscribe())}  text="Subscribe"></button>
-						</form>
-					</div>
-					</div>
-				</div>
-				</div> */}
-
-				<div class="footer-top">
-				<div class="container">
-					<div class="row">
-
-					<div class="col-lg-3 col-md-6 footer-contact" data-aos="fade-up" data-aos-delay="100">
-						<h5>NeuroSpeech Technologies Pvt Ltd</h5>
-						<p>
-
-						Unit 103, Building 3, <br></br>
-						Sector 3, Millennium Business Park, <br></br>
-						Mahape, Navi Mumbai<br></br><br></br>
-
-						<strong>Phone:</strong>+91 22 27781459<br></br>
-						<strong>Email:</strong> Support@neurospeech.com<br></br>
-						</p>
-					</div>
-
-					<div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="200">
-						<h4>Useful Links</h4>
-						<ul>
-						<li><i class="fas fa-chevron-right"></i> <a href="/index.html">Home</a></li>
-						<li><i class="fas fa-chevron-right"></i> <a href="/index.html#about">About us</a></li>
-						<li><i class="fas fa-chevron-right"></i>
-							<a href="https://www.webatoms.in/xf/samples.html">Xamarin.Forms  Docs</a></li>
-						<li><i class="fas fa-chevron-right"></i> <a href="https://www.webatoms.in/samples.html">Web Docs</a></li>
-						<li><i class="fas fa-chevron-right"></i> <a href="/index.html#team">Buy</a></li>
-						</ul>
-					</div>
-
-					<div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="300">
-						<h4>Our Services</h4>
-						<ul>
-						{/* <li><i class="fas fa-chevron-right"></i> <a href="#team">Web Development</a></li> */}
-						<li><i class="fas fa-chevron-right"></i> <a href="#team">XF Android</a></li>
-						<li><i class="fas fa-chevron-right"></i> <a href="#team">XF iOS</a></li>
-						<li><i class="fas fa-chevron-right"></i> <a href="#team">XF Mobile</a></li>
-						<li><i class="fas fa-chevron-right"></i> <a href="#team">XF Mobile Source</a></li>
-						</ul>
-					</div>
-
-					<div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="400">
-						<h4>Networks</h4>
-						<div class="social-links mt-3">
-						<a href="https://twitter.com/WebAtoms"
-								target="_blank"
-								class="twitter"
-								title="Web Atoms Twitter"><i class="fab fa-twitter"></i></a>
-							<a
-								eventClick={() => alert("Facebook? Seriously for development?")}
-								class="facebook"><i class="fab fa-facebook-f"></i></a>
-							<a href="https://github.com/web-atoms" target="_blank" class="github"
-								title="Github Repositories"
-								><i class="fab fa-github"></i></a>
-							<a href="https://www.youtube.com/channel/UCewA_Br36iGYmadMfh91YKQ"
-								title="Youtube Videos"
-								target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
-						</div>
-					</div>
-
-					</div>
-				</div>
-				</div>
-
-				<div class="container py-4">
-				<div class="copyright">
-				© 2018 NeuroSpeech Technologies Pvt Ltd (India). All Rights Reserved.
-				</div>
-
-				<a href="/terms.html" target="_blank" style="margin-left: 40px">Terms</a>
-				<a href="/eula.html" target="_blank"  style="margin-left: 40px">End User License Agreement</a>
-
-				</div>
-			</footer>
-
+			<Footer/>
 			<a href="#" class="back-to-top"><i class="fas fa-angle-up"></i></a>
 
 		</div>

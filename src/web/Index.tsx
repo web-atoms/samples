@@ -14,9 +14,10 @@ import IndexFormStyle from "./styles/IndexFormStyle";
 import IndexStyle from "./styles/IndexStyle";
 export { default as WebApp } from "@web-atoms/core/dist/web/WebApp";
 export { WindowService as W } from "@web-atoms/core/dist/web/services/WindowService";
+import Pack from "@web-atoms/core/dist/Pack";
 import cs from "@web-atoms/samples/src/images/cs.png";
 
-// @web-atoms-pack: true
+@Pack
 /** XF Home Page */
 export default class Index extends AtomControl {
 
@@ -360,98 +361,98 @@ export default class Index extends AtomControl {
 
 				</main>
 
-				<footer id="footer">
+			<footer id="footer">
 
-					{/* <div class="footer-newsletter" data-aos="fade-up">
-					<div class="container">
-						<div class="row justify-content-center">
-						<div class="col-lg-6">
-							<h4>Join Our Newsletter</h4>
-							<p>Stay up-to-date on the latest news and expert insights</p>
-							<form>
-							<input type="email" name="email"></input><button
-							eventClick={Bind.event(() => this.viewModel.onSubscribe())}  text="Subscribe"></button>
-							</form>
-						</div>
-						</div>
-					</div>
-					</div> */}
-
-					<div class="footer-top">
-					<div class="container">
-						<div class="row">
-
-						<div class="col-lg-3 col-md-6 footer-contact" data-aos="fade-up" data-aos-delay="100">
-							<h5>NeuroSpeech Technologies Pvt Ltd</h5>
-							<p>
-
-							Unit 103, Building 3, <br></br>
-							Sector 3, Millennium Business Park, <br></br>
-							Mahape, Navi Mumbai<br></br><br></br>
-
-							<strong>Phone:</strong>+91 22 27781459<br></br>
-							<strong>Email:</strong> Support@neurospeech.com<br></br>
-							</p>
-						</div>
-
-						<div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="200">
-							<h4>Useful Links</h4>
-							<ul>
-							<li><i class="fas fa-chevron-right"></i> <a href="#">Home</a></li>
-							<li><i class="fas fa-chevron-right"></i> <a href="#about">About us</a></li>
-							<li><i class="fas fa-chevron-right"></i>
-								<a href="https://www.webatoms.in/xf/samples.html">Xamarin.Forms  Docs</a></li>
-							<li><i class="fas fa-chevron-right"></i> <a href="https://www.webatoms.in/samples.html">Web Docs</a></li>
-							<li><i class="fas fa-chevron-right"></i> <a href="#team">Buy</a></li>
-							</ul>
-						</div>
-
-						<div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="300">
-							<h4>Our Services</h4>
-							<ul>
-							{/* <li><i class="fas fa-chevron-right"></i> <a href="#team">Web Development</a></li> */}
-							<li><i class="fas fa-chevron-right"></i> <a href="#team">XF Android</a></li>
-							<li><i class="fas fa-chevron-right"></i> <a href="#team">XF iOS</a></li>
-							<li><i class="fas fa-chevron-right"></i> <a href="#team">XF Mobile</a></li>
-							<li><i class="fas fa-chevron-right"></i> <a href="#team">XF Mobile Source</a></li>
-							</ul>
-						</div>
-
-						<div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="400">
-							<h4>Networks</h4>
-							<div class="social-links mt-3">
-							<a href="https://twitter.com/WebAtoms"
-								target="_blank"
-								class="twitter"
-								title="Web Atoms Twitter"><i class="fab fa-twitter"></i></a>
-							<a
-								eventClick={() => alert("Facebook? Seriously for development?")}
-								class="facebook"><i class="fab fa-facebook-f"></i></a>
-							<a href="https://github.com/web-atoms" target="_blank" class="github"
-								title="Github Repositories"
-								><i class="fab fa-github"></i></a>
-							<a href="https://www.youtube.com/channel/UCewA_Br36iGYmadMfh91YKQ"
-								title="Youtube Videos"
-								target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
-							</div>
-						</div>
-
-						</div>
+				{/* <div class="footer-newsletter" data-aos="fade-up">
+				<div class="container">
+					<div class="row justify-content-center">
+					<div class="col-lg-6">
+						<h4>Join Our Newsletter</h4>
+						<p>Stay up-to-date on the latest news and expert insights</p>
+						<form>
+						<input type="email" name="email"></input><button
+						eventClick={Bind.event(() => this.viewModel.onSubscribe())}  text="Subscribe"></button>
+						</form>
 					</div>
 					</div>
+				</div>
+				</div> */}
 
-					<div class="container py-4">
-					<div class="copyright">
-					© 2018 NeuroSpeech Technologies Pvt Ltd (India). All Rights Reserved.
+				<div class="footer-top">
+				<div class="container">
+					<div class="row">
+
+					<div class="col-lg-3 col-md-6 footer-contact" data-aos="fade-up" data-aos-delay="100">
+						<h5>NeuroSpeech Technologies Pvt Ltd</h5>
+						<p>
+
+						Unit 103, Building 3, <br></br>
+						Sector 3, Millennium Business Park, <br></br>
+						Mahape, Navi Mumbai<br></br><br></br>
+
+						<strong>Phone:</strong>+91 22 27781459<br></br>
+						<strong>Email:</strong> Support@neurospeech.com<br></br>
+						</p>
 					</div>
 
-					<a href="/terms.html" target="_blank" style="margin-left: 40px">Terms</a>
-					<a href="/eula.html" target="_blank"  style="margin-left: 40px">End User License Agreement</a>
+					<div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="200">
+						<h4>Useful Links</h4>
+						<ul>
+						<li><i class="fas fa-chevron-right"></i> <a href="#">Home</a></li>
+						<li><i class="fas fa-chevron-right"></i> <a href="#about">About us</a></li>
+						<li><i class="fas fa-chevron-right"></i>
+							<a href="https://www.webatoms.in/xf/samples.html">Xamarin.Forms  Docs</a></li>
+						<li><i class="fas fa-chevron-right"></i> <a href="https://www.webatoms.in/samples.html">Web Docs</a></li>
+						<li><i class="fas fa-chevron-right"></i> <a href="#team">Buy</a></li>
+						</ul>
+					</div>
+
+					<div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="300">
+						<h4>Our Services</h4>
+						<ul>
+						{/* <li><i class="fas fa-chevron-right"></i> <a href="#team">Web Development</a></li> */}
+						<li><i class="fas fa-chevron-right"></i> <a href="#team">XF Android</a></li>
+						<li><i class="fas fa-chevron-right"></i> <a href="#team">XF iOS</a></li>
+						<li><i class="fas fa-chevron-right"></i> <a href="#team">XF Mobile</a></li>
+						<li><i class="fas fa-chevron-right"></i> <a href="#team">XF Mobile Source</a></li>
+						</ul>
+					</div>
+
+					<div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="400">
+						<h4>Networks</h4>
+						<div class="social-links mt-3">
+						<a href="https://twitter.com/WebAtoms"
+							target="_blank"
+							class="twitter"
+							title="Web Atoms Twitter"><i class="fab fa-twitter"></i></a>
+						<a
+							eventClick={() => alert("Facebook? Seriously for development?")}
+							class="facebook"><i class="fab fa-facebook-f"></i></a>
+						<a href="https://github.com/web-atoms" target="_blank" class="github"
+							title="Github Repositories"
+							><i class="fab fa-github"></i></a>
+						<a href="https://www.youtube.com/channel/UCewA_Br36iGYmadMfh91YKQ"
+							title="Youtube Videos"
+							target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
+						</div>
+					</div>
 
 					</div>
-				</footer>
+				</div>
+				</div>
 
-				<a href="#" class="back-to-top"><i class="fas fa-angle-up"></i></a>
+				<div class="container py-4">
+				<div class="copyright">
+				© 2018 NeuroSpeech Technologies Pvt Ltd (India). All Rights Reserved.
+				</div>
+
+				<a href="/terms.html" target="_blank" style="margin-left: 40px">Terms</a>
+				<a href="/eula.html" target="_blank"  style="margin-left: 40px">End User License Agreement</a>
+
+				</div>
+			</footer>
+
+			<a href="#" class="back-to-top"><i class="fas fa-angle-up"></i></a>
 
 		</div>
 		);
