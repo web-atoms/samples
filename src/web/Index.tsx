@@ -289,7 +289,7 @@ export default class Index extends AtomControl {
 									<tr>
 										<td>XF DROID</td>
 										<td>COMMERCIAL</td>
-										<td>$699</td>
+										<td>$399</td>
 										<td><p align="center"
 											style="margin-bottom: 0">
 											<a
@@ -302,7 +302,7 @@ export default class Index extends AtomControl {
 									<tr>
 										<td>XF iOS</td>
 										<td>COMMERCIAL</td>
-										<td>$699</td>
+										<td>$399</td>
 										<td><p align="center"
 											style="margin-bottom: 0">
 											<a
@@ -316,6 +316,72 @@ export default class Index extends AtomControl {
 										<td>XF MOBILE <br/>
 											(ios + Droid)</td>
 										<td>COMMERCIAL</td>
+										<td>$699</td>
+										<td><p align="center"
+											style="margin-bottom: 0">
+											<a
+												href="https://www.componentsource.com/product/web-atoms/prices"
+												target="_blank"
+												class="btn btn-block btn-primary text-uppercase"> BUY NOW</a>
+											</p>
+										</td>
+									</tr>
+									<tr>
+										<td>XF UWP</td>
+										<td>COMMERCIAL</td>
+										<td>$399</td>
+										<td><p align="center"
+											style="margin-bottom: 0">
+											<a
+												href="https://www.componentsource.com/product/web-atoms/prices"
+												target="_blank"
+											class="btn btn-block btn-primary text-uppercase"> BUY NOW</a>
+											</p>
+										</td>
+									</tr>
+									<tr>
+										<td>XF Tizen*</td>
+										<td>COMMERCIAL</td>
+										<td>$399</td>
+										<td><p align="center"
+											style="margin-bottom: 0">
+											<a
+												href="https://www.componentsource.com/product/web-atoms/prices"
+												target="_blank"
+											class="btn btn-block btn-primary text-uppercase"> BUY NOW</a>
+											</p>
+										</td>
+									</tr>
+									<tr>
+										<td>XF GTK*</td>
+										<td>COMMERCIAL</td>
+										<td>$399</td>
+										<td><p align="center"
+											style="margin-bottom: 0">
+											<a
+												href="https://www.componentsource.com/product/web-atoms/prices"
+												target="_blank"
+											class="btn btn-block btn-primary text-uppercase"> BUY NOW</a>
+											</p>
+										</td>
+									</tr>
+									<tr>
+										<td>XF MacOS</td>
+										<td>COMMERCIAL</td>
+										<td>$399</td>
+										<td><p align="center"
+											style="margin-bottom: 0">
+											<a
+												href="https://www.componentsource.com/product/web-atoms/prices"
+												target="_blank"
+											class="btn btn-block btn-primary text-uppercase"> BUY NOW</a>
+											</p>
+										</td>
+									</tr>
+									<tr>
+										<td>XF Suite <br/>
+											(Every platform)</td>
+										<td>COMMERCIAL</td>
 										<td>$999</td>
 										<td><p align="center"
 											style="margin-bottom: 0">
@@ -328,7 +394,7 @@ export default class Index extends AtomControl {
 									</tr>
 									<tr>
 										<td>XF MOBILE SOURCE <br/>
-											(ios + Droid)</td>
+											(Every platform)</td>
 										<td>COMMERCIAL</td>
 										<td>$9,999</td>
 										<td><p align="center"
@@ -342,6 +408,10 @@ export default class Index extends AtomControl {
 									</tr>
 								</tbody>
 							</table>
+
+							<div>
+								<p>* Community Support - Xamarin does not support these platforms officially, so our support will be limited</p>
+							</div>
 
 							<div>
 								<h3>Authorized Distributor</h3>
