@@ -14,10 +14,12 @@ import IndexFormStyle from "./styles/IndexFormStyle";
 import IndexStyle from "./styles/IndexStyle";
 export { default as WebApp } from "@web-atoms/core/dist/web/WebApp";
 export { WindowService as W } from "@web-atoms/core/dist/web/services/WindowService";
+import Pack from "@web-atoms/core/dist/Pack";
 import cs from "@web-atoms/samples/src/images/cs.png";
 
 // @web-atoms-pack: true
 /** XF Home Page */
+@Pack
 export default class Index extends AtomControl {
 
 	public viewModel: IndexViewModel;
