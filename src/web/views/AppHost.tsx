@@ -11,8 +11,6 @@ import OldIndexStyle from "../styles/OldIndexStyle";
 import { SampleTabbedStyle } from "../styles/SampleTabbedStyle";
 import MenuList from "./MenuList";
 
-// @web-atoms-pack: true
-/** Web Samples */
 @Pack
 export default class AppHost extends AtomGridView {
 

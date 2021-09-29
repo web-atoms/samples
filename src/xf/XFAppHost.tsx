@@ -1,8 +1,8 @@
+import Pack from "@web-atoms/core/dist/Pack";
 import AppHost from "../web/views/AppHost";
 import XFAppHostViewModel from "./view-models/XFAppHostViewModel";
 
-// @web-atoms-pack: true
-/** XF Samples */
+@Pack
 export default class XFAppHost extends AppHost {
 
     public createViewModel() {
