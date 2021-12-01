@@ -5,7 +5,6 @@ import AutoFocusNext from "./auto-focus/AutoFocusNext";
 import CustomForm from "./custom/CustomForm";
 import CustomFormSample from "./custom/CustomFormSample";
 import CustomFormStyle from "./custom/CustomFormStyle";
-import CustomTemplate from "./custom/CustomTemplate";
 import SideBySideForm from "./side-by-side/SideBySideForm";
 import SideBySideFormStyle from "./side-by-side/SideBySideFormStyle";
 import MockSignupService from "./simple/MockSignupService";
@@ -52,7 +51,6 @@ export function addFormSamples(ms: MenuService) {
                 asView(CustomFormSample),
                 asClass(CustomForm),
                 asClass(CustomFormStyle),
-                asView(CustomTemplate),
                 asClass(SimpleFormViewModel)
             ]
         }
