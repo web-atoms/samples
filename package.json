@@ -26,11 +26,11 @@
     "@web-atoms/xf-samples"
   ],
   "dependencies": {
-    "@web-atoms/core": "^2.1.64",
+    "@web-atoms/core": "^2.1.65",
     "@web-atoms/date-time": "^1.0.26",
     "@web-atoms/font-awesome": "^1.0.25",
     "@web-atoms/module-loader": "^2.0.27",
-    "@web-atoms/web-controls": "^2.1.1",
+    "@web-atoms/web-controls": "^2.1.3",
     "@web-atoms/xf-controls": "^2.1.3",
     "@web-atoms/xf-samples": "^2.1.1",
     "reflect-metadata": "^0.1.13"
