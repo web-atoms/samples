@@ -2,15 +2,8 @@
 
 ## What is web atoms?
 
-"Web Atoms" is an advanced MVVM framework to write cross platform applications in `HTML5` and `Xamarin.Forms`. Web Atoms allows you to create Xamarin Forms app in JSX/JavaScript along with C#. Web Atoms allows use of both  NPM and NuGet. Hosting JSX/JavaScript on web server allows you to quickly update the apps quickly with Code Push and it also allows you to distribute side by side versions of the same app. Using JavaScript modules, you can divide large app into smaller modules, also offer localization using modules with reduced app size.
+"Web Atoms" is an light weight advanced MVVM & MVU framework to write web applications in `HTML5`. Using JavaScript modules, you can divide large app into smaller modules, also offer localization using modules with reduced app size.
 
-### Benefits of Web Atoms with Xamarin.Forms
-* Write TSX instead of XAML
-* Small application download size
-* Dynamic Module Loading from web
-* Reuse existing NuGet components by exposing via services
-* Host javascript on server with instant updates to apps
-* No native compilation needed unless you add/modify native services written in c#
 
 ## Requirements
 
@@ -19,16 +12,6 @@
 3. NodeJS with NPM
 4. Visual Studio for Xamarin.Forms app [optional]
 5. Gitlense [optional]
-
-## Lets run Samples for Xamarin.Forms
-
-1. Download XF-Samples from https://github.com/web-atoms/xf-samples
-2. Run `npm install`
-3. In VS Code, run Tasks, run `All Tasks`
-4. Open `XFSamples.sln` in Visual Studio
-5. Go to file `App.xaml.cs`
-6. Change root to `http://..../` displayed in step 3
-7. If you are unable to run it from there, you can still use cdn to run published samples
 
 ## UMD Loader
 
@@ -81,10 +64,7 @@ root
      + tests        // all unit tests
      + view-models  // all view models must be placed here
      + web          // all tsx files must be placed inside web folder
-     + xf           // all tsx files must be placed inside xf folder
 ```
-
-It is important that you keep files inside `web` and `xf` folder, as module loader will replace `{platform}` variable in url to corresponding folder to load views. This will make view models completely independent of platform.
 
 ## Startup
 
@@ -98,7 +78,7 @@ It is important that you keep files inside `web` and `xf` folder, as module load
 
 ## AtomControl
 
-AtomControl is a UI control which contains logic to render visual elements on the screen. AtomControl has an initialization lifecycle that is common in every platform. However, rendering lifecycle differs on every platform. For example, `Xamarin.Forms` has its own render lifecycle so AtomControl only does binding to properties. In `Web Browser`, it has special lifecycle to render contents. Most of the time developer does not need to worry about it as controls are created with best performance in mind.
+AtomControl is a UI control which contains logic to render visual elements on the screen. AtomControl has an initialization lifecycle that is common in every platform. In `Web Browser`, it has special lifecycle to render contents. Most of the time developer does not need to worry about it as controls are created with best performance in mind.
 
 Following properties exist on AtomControl and they are **Logically Inherited**. 
 
@@ -192,11 +172,6 @@ In order to update a readonly property, you can set `@Watch` on getter method, t
 HTML
 ```typescript
     <span text={Bind.oneWay( () => this.viewModel.fullName )}></span>
-```
-
-Xamarin.Forms
-```typescript
-    <XF.Label text={Bind.oneWay( () => this.viewModel.fullName )}/>
 ```
 
 You can bind any view property to `fullName` and it will refresh automatically whenever any changes was detected in `model.firstName` or `model.lastName`. Again, both must not initialized to `undefined`.
@@ -295,43 +270,6 @@ export default class Signup extends AtomControl {
             </AtomField>
         </AtomForm>
         </div>);
-    }
-
-}
-```
-
-Xamarin.Forms
-```typescript
-export default class Signup extends AtomXFContentPage {
-
-    /** This enables intellisense, do not initialize this*/
-    public viewModel: SignupViewModel;
-
-    public create() {
-        this.viewModel = this.resolve(SignupViewModel);
-
-        this.render(<XF.ContentPage>
-        <AtomForm>
-            <AtomField
-                label="Username"
-                error={Bind.oneWay(() => this.viewModel.errorUsername)}>
-                <Entry
-                    text={Bind.twoWays(() => this.viewModel.model.firstName)}/>
-            </AtomField>
-            <AtomField
-                label="Password"
-                error={Bind.oneWay(() => this.viewModel.errorPassword)}>
-                <Entry
-                    isPassword={true}
-                    text={Bind.twoWays(() => this.viewModel.model.password)}/>
-            </AtomField>
-            <AtomField>
-                <button
-                    eventClick={Bind.event(() => this.viewModel.signup())} 
-                    text="Signup"/>
-            </AtomField>
-        </AtomForm>
-        </XF.ContentPage>);
     }
 
 }

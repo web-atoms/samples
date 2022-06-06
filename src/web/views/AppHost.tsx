@@ -16,6 +16,7 @@ import StyleRule from "@web-atoms/core/dist/style/StyleRule";
 
 const css = CSS(StyleRule()
 	.maximizeAbsolute()
+	.overflow("hidden")
 	.display("grid")
 	.gridTemplateColumns("210px 1fr")
 	.gridTemplateRows("90px 1fr 30px")

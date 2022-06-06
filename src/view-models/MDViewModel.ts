@@ -3,6 +3,7 @@ import { Inject } from "@web-atoms/core/dist/di/Inject";
 import { RegisterSingleton } from "@web-atoms/core/dist/di/RegisterSingleton";
 import { BaseService, Get } from "@web-atoms/core/dist/services/http/RestService";
 import { AtomViewModel } from "@web-atoms/core/dist/view-model/AtomViewModel";
+import sleep from "@web-atoms/core/dist/core/sleep";
 
 declare var UMD;
 
@@ -55,10 +56,11 @@ export default class MDViewModel extends AtomViewModel {
 
         const element = this.owner.element as HTMLElement;
 
-        const mdRoot = (element?.firstElementChild?.firstElementChild) as HTMLElement;
+        let mdRoot = (element?.firstElementChild?.firstElementChild) as HTMLElement;
 
-        if (!mdRoot) {
-            return;
+        while (!mdRoot) {
+            await sleep(100);
+            mdRoot = (element?.firstElementChild?.firstElementChild) as HTMLElement;
         }
 
         const md = document.createElement("div");
