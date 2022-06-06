@@ -19,7 +19,6 @@ export default class FormDemo extends FileViewer {
         this.require = require;
         this.demo = SimpleForm;
         this.files = [
-            "@web-atoms/samples/src/samples/web/form/simple/SimpleFormXF.tsx",
             resolveModulePath(require, SimpleForm).replace("/dist/", "/src/") + ".tsx",
             resolveModulePath(require, SimpleViewModel).replace("/dist/", "/src/") + ".ts",
             resolveModulePath(require, SignupService).replace("/dist/", "/src/") + ".ts",

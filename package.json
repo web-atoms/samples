@@ -21,18 +21,13 @@
     "@web-atoms/core",
     "@web-atoms/date-time",
     "@web-atoms/module-loader",
-    "@web-atoms/web-controls",
-    "@web-atoms/xf-controls",
-    "@web-atoms/xf-samples"
+    "@web-atoms/web-controls"
   ],
   "dependencies": {
-    "@web-atoms/core": "^2.1.65",
-    "@web-atoms/date-time": "^1.0.26",
-    "@web-atoms/font-awesome": "^1.0.25",
-    "@web-atoms/module-loader": "^2.0.27",
-    "@web-atoms/web-controls": "^2.1.3",
-    "@web-atoms/xf-controls": "^2.1.3",
-    "@web-atoms/xf-samples": "^2.1.1",
+    "@web-atoms/core": "^2.1.357",
+    "@web-atoms/date-time": "^1.0.29",
+    "@web-atoms/module-loader": "^2.0.44",
+    "@web-atoms/web-controls": "^2.1.265",
     "reflect-metadata": "^0.1.13"
   }
 }

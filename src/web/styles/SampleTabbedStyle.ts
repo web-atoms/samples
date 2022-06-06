@@ -15,7 +15,7 @@ export class SampleTabbedStyle extends AtomTabbedPageStyle {
                     position: "absolute",
                     left: 0,
                     right: 0,
-                    top: 0,
+                    top: "30px",
                     bottom: 0,
                     subclasses: {
                         " section:nth-child(1)": {

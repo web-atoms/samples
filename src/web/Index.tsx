@@ -62,23 +62,23 @@ export default class Index extends AtomControl {
 							eventClick={Bind.event((x) => (x.viewModel).menuClick())}>Features
 						</a>
 					</li>
-					<li>
+					{/* <li>
 						<a href="/xf/samples.html"
 							eventClick={Bind.event((x) => (x.viewModel).menuClick())}
 							target="_blank">XF Docs
 						</a>
-					</li>
+					</li> */}
 					<li>
 						<a href="/samples.html"
 							eventClick={Bind.event((x) => (x.viewModel).menuClick())}
 							target="_blank">Web Docs
 						</a>
 					</li>
-					<li>
+					{/* <li>
 						<a href="#team"
 							eventClick={Bind.event((x) => (x.viewModel).menuClick())}>Buy
 						</a>
-					</li>
+					</li> */}
 
 					<li>
 						<a href="/FAQ.html">FAQ</a>
@@ -87,9 +87,9 @@ export default class Index extends AtomControl {
 						<a href="/blog">Blog</a>
 					</li>
 
-					<li class="get-started">
+					{/* <li class="get-started">
 						<a href="/play">Play</a>
-					</li>
+					</li> */}
 					<li class="get-started">
 						<a href="/account/licenses.html" target="_tab">Login
 						</a>
@@ -105,11 +105,11 @@ export default class Index extends AtomControl {
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1">
-						<h1>JavaScript bridge for Xamarin.Forms<br></br>
+						<h1>Light weight JSX JavaScript Framework MVVM and MVU Pattern<br></br>
 						</h1>
-						<h2>JSX (TSX + TypeScript) for Xamarin.Forms, Hot Reload Your App in Production Environment</h2>
-						<a href="/play" class="btn-get-started scrollto">Playground</a>
-						<a href="https://github.com/web-atoms/xf-samples"  class="btn-get-started scrollto"
+						<h2>For Desktop and Mobile Web Environment</h2>
+						{/* <a href="/play" class="btn-get-started scrollto">Playground</a> */}
+						<a href="https://github.com/web-atoms/samples"  class="btn-get-started scrollto"
 							target="_tab">Samples Repository</a>
 						</div>
 						<div class="col-lg-6 order-1 order-lg-2 hero-img">
@@ -129,17 +129,18 @@ export default class Index extends AtomControl {
 						<img src={AboutImg} class="img-fluid" alt="" data-aos="zoom-in"></img>
 					</div>
 					<div class="col-lg-6 pt-5 pt-lg-0">
-						<h3 data-aos="fade-up">MVVM Framework for Web and Xamarin.Forms</h3>
+						<h3 data-aos="fade-up">MVVM and MVU pattern to design modern Web Applications</h3>
 						<p data-aos="fade-up" data-aos-delay="100">
-							MVVM Pattern - ViewModel and Services in TypeScript for Web and Xamarin.Forms<br></br>
-							View in TSX (JSX) - for Web and Xamarin.Forms<br></br>
-							One time, One way, Two way Binding<br></br>
-							Simple Dependency Injection<br></br>
-							Simple Internationalization using Dependency Injection<br></br>
-							Simple Unit Tests<br></br>
-							Easy HTTP Rest API<br></br>
-							Design time mocks<br></br>
-							Use VS Code to Build Xamarin.Forms Apps</p>
+							Functional Components <br/>
+							Abstract Atom Component <br/>
+							Abstract Device API (Browser Service, Message Broadcast) <br/>
+							Theme and styles support without CSS <br/>
+							One time, One way and Two way binding support <br/>
+							Simple dependency Injection <br/>
+							In built simple unit testing framework <br/>
+							UMD module support <br/>
+							Full featured MVVM Framework with powerful validation<br/>
+						</p>
 						<div class="row"></div>
 					</div>
 					</div>
@@ -152,7 +153,6 @@ export default class Index extends AtomControl {
 
 					<div class="section-title" data-aos="fade-up">
 					<h2>Features</h2>
-					<p>Xamarin.Forms with TypeScript</p>
 					</div>
 
 					<div class="row">
@@ -160,7 +160,7 @@ export default class Index extends AtomControl {
 						<div class="icon-box">
 							<div class="icon"><i class="fas fa-4x fa-gem"></i></div>
 							<h4 class="title"><a href="">Controls</a></h4>
-							<p class="description"> Line of Business Controls for Web and Xamarin.Forms</p>
+							<p class="description"> Line of Business Controls for Web</p>
 						</div>
 					</div>
 
@@ -168,15 +168,15 @@ export default class Index extends AtomControl {
 						<div class="icon-box">
 						<div class="icon"><i class="fas fa-4x fa-laptop-code"></i></div>
 						<h4 class="title"><a href="">Leverage TSX</a></h4>
-						<p class="description">All Views (for Web and Xamarin.Forms) can be written in TSX.</p>
+						<p class="description">Super fast Functional Components as well as Class Components.</p>
 						</div>
 					</div>
 
 					<div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="300">
 						<div class="icon-box">
 						<div class="icon"><i class="fas fa-4x fa-globe"></i></div>
-						<h4 class="title"><a href="">Live Hot Reload</a></h4>
-						<p class="description">Hot Reload Xamarin.Forms Applications from web server!</p>
+						<h4 class="title"><a href="">Mobile WebView Ready</a></h4>
+						<p class="description">Easily integrate into Mobile WebView!</p>
 						</div>
 					</div>
 
@@ -184,8 +184,7 @@ export default class Index extends AtomControl {
 						<div class="icon-box">
 						<div class="icon"><i class="fas fa-4x fa-sun"></i></div>
 						<h4 class="title"><a href="">Simple License</a></h4>
-						<p class="description">MIT License for Web, Single Commercial
-						License for Single Xamarin.Forms App, with unlimited users.</p>
+						<p class="description">MIT License.</p>
 						</div>
 					</div>
 
@@ -213,7 +212,7 @@ export default class Index extends AtomControl {
 					<div class="container">
 						<div class="section-title" data-aos="fade-up">
 							<h2>WebAtoms Sample</h2>
-							<p><a href="https://github.com/web-atoms/xf-samples" target="_tab">Check out our Xamarin Forms samples</a></p>
+							<p><a href="https://github.com/web-atoms/samples" target="_tab">Check out our samples</a></p>
 						</div>
 						<div class="row text-left"
 							style="position: relative;
@@ -229,7 +228,7 @@ export default class Index extends AtomControl {
 					</div>
 				</section>
 
-				<section id="download" class="services section-bg">
+				{/* <section id="download" class="services section-bg">
 				<div class="container">
 
 					<div class="section-title" data-aos="fade-up">
@@ -258,9 +257,9 @@ export default class Index extends AtomControl {
 					</div>
 
 				</div>
-				</section>
+				</section> */}
 
-				<section id="team" class="team">
+				{/* <section id="team" class="team">
 					<div class="container">
 						<div class="section-title" data-aos="fade-up">
 							<h2>Our Plan</h2>
@@ -428,7 +427,7 @@ export default class Index extends AtomControl {
 
 						</div>
 					</div>
-				</section>
+				</section> */}
 
 				</main>
 
@@ -471,8 +470,8 @@ export default class Index extends AtomControl {
 						<ul>
 						<li><i class="fas fa-chevron-right"></i> <a href="#">Home</a></li>
 						<li><i class="fas fa-chevron-right"></i> <a href="#about">About us</a></li>
-						<li><i class="fas fa-chevron-right"></i>
-							<a href="https://www.webatoms.in/xf/samples.html">Xamarin.Forms  Docs</a></li>
+						{/* <li><i class="fas fa-chevron-right"></i>
+							<a href="https://www.webatoms.in/xf/samples.html">Xamarin.Forms  Docs</a></li> */}
 						<li><i class="fas fa-chevron-right"></i> <a href="https://www.webatoms.in/samples.html">Web Docs</a></li>
 						<li><i class="fas fa-chevron-right"></i> <a href="#team">Buy</a></li>
 						</ul>

@@ -6,6 +6,7 @@ import FileViewer from "../core/web/FileViewer";
 import ImageView from "../core/web/ImageView";
 import resolveModulePath from "../core/web/resolveModulePath";
 import MenuService from "../services/MenuService";
+import { isControl } from "@web-atoms/core/dist/core/XNode";
 
 export type IType = string | {
     class: any;
@@ -116,7 +117,7 @@ export default class MenuItem {
             return f.toString();
         });
 
-        if (!demo.isControl) {
+        if (!demo[isControl]) {
             const src = UMD.resolvePath(demo);
             demo = class ImageViewEx extends ImageView {
                 public create() {
