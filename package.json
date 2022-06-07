@@ -24,10 +24,10 @@
     "@web-atoms/web-controls"
   ],
   "dependencies": {
-    "@web-atoms/core": "^2.1.357",
+    "@web-atoms/core": "^2.1.378",
     "@web-atoms/date-time": "^1.0.29",
     "@web-atoms/module-loader": "^2.0.44",
-    "@web-atoms/web-controls": "^2.1.265",
+    "@web-atoms/web-controls": "^2.1.272",
     "reflect-metadata": "^0.1.13"
   }
 }

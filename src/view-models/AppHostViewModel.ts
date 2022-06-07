@@ -84,29 +84,29 @@ export default class AppHostViewModel extends AtomViewModel {
             title: "Components"
         });
 
-        const xf = ms.addGroup("Xamarin.Forms");
+        // const xf = ms.addGroup("Xamarin.Forms");
 
-        xf.addTabLink("CLR Interop", MDHost, {
-            url: UMD.resolvePath("@web-atoms/samples/docs/xf/clr-service.md"),
-            title: "CLR Interop"
-        });
+        // xf.addTabLink("CLR Interop", MDHost, {
+        //     url: UMD.resolvePath("@web-atoms/samples/docs/xf/clr-service.md"),
+        //     title: "CLR Interop"
+        // });
 
-        xf.addTabLink("Attached Properties", MDHost, {
-            url: UMD.resolvePath("@web-atoms/samples/docs/xf/attached-properties.md"),
-            title: "Attached Properties"
-        });
-        xf.addTabLink("Grid", MDHost, {
-            url: UMD.resolvePath("@web-atoms/samples/docs/xf/grid.md"),
-            title: "Grid Example"
-        });
-        xf.addTabLink("Toolbar Item", MDHost, {
-            url: UMD.resolvePath("@web-atoms/samples/docs/xf/toolbar-item.md"),
-            title: "Toolbar Item"
-        });
-        xf.addTabLink("Font Awesome", MDHost, {
-            url: UMD.resolvePath("@web-atoms/samples/docs/xf/font-awesome.md"),
-            title: "Font Awesome"
-        });
+        // xf.addTabLink("Attached Properties", MDHost, {
+        //     url: UMD.resolvePath("@web-atoms/samples/docs/xf/attached-properties.md"),
+        //     title: "Attached Properties"
+        // });
+        // xf.addTabLink("Grid", MDHost, {
+        //     url: UMD.resolvePath("@web-atoms/samples/docs/xf/grid.md"),
+        //     title: "Grid Example"
+        // });
+        // xf.addTabLink("Toolbar Item", MDHost, {
+        //     url: UMD.resolvePath("@web-atoms/samples/docs/xf/toolbar-item.md"),
+        //     title: "Toolbar Item"
+        // });
+        // xf.addTabLink("Font Awesome", MDHost, {
+        //     url: UMD.resolvePath("@web-atoms/samples/docs/xf/font-awesome.md"),
+        //     title: "Font Awesome"
+        // });
 
         addBindingSamples(ms);
 
