@@ -102,9 +102,9 @@ export default class Index extends AtomControl {
 						<a href="/blog">Blog</a>
 					</li>
 
-					{/* <li class="get-started">
+					<li class="get-started" target="_tab">
 						<a href="/play">Play</a>
-					</li> */}
+					</li>
 					<li class="get-started">
 						<a href="/account/licenses.html" target="_tab">Login
 						</a>
